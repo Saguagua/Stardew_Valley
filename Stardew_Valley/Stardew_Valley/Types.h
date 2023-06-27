@@ -4,6 +4,8 @@
 
 #define CENTER			Vector2(WIN_WIDTH * 0.5f, WIN_HEIGHT * 0.5f)
 
+#define PI				3.141592f
+
 #define GREEN			XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f)
 
 #define DEVICE			Device::GetInstance()->GetDevice()

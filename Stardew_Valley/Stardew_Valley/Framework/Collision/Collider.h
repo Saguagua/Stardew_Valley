@@ -1,6 +1,20 @@
 #pragma once
 class Collider
 {
+public:
+	Collider() {}
+	~Collider() {}
+
+	void Update();
+	virtual void Render() abstract;
+
+	bool IsCollision(shared_ptr<Collider> other);
+	virtual bool IsCollision(shared_ptr<class RectCollider> other) abstract;
+	virtual bool IsCollision(shared_ptr<class CircleCollider> other) abstract;
+
+	void SetPos(Vector2 pos) {_transform->SetPos(pos);}
+
+protected:
 	enum Type
 	{
 		NONE,
@@ -8,19 +22,9 @@ class Collider
 		RECT
 	};
 
-public:
-	Collider() {}
-	~Collider() {}
-
-	void Update();
-	void Render();
-
-	bool IsCollision(shared_ptr<Collider> other);
-	virtual bool IsCollision(shared_ptr<class RectCollider> other) abstract;
-	virtual bool IsCollision(shared_ptr<class CircleCollider> other) abstract;
-
-protected:
-	shared_ptr<Transform> _transform = make_shared<Transform>();;
+	shared_ptr<class ShapeLine> _renderer;
+	shared_ptr<Transform> _transform = make_shared<Transform>();
 	Collider::Type _type = Type::NONE;
+
 };
 

@@ -1,5 +1,11 @@
 #include "framework.h"
 #include "Collider.h"
+#include "../../Object/BagicObj/ShapeLine.h"
+
+void Collider::Update()
+{
+	_transform->Update();
+}
 
 bool Collider::IsCollision(shared_ptr<Collider> other)
 {

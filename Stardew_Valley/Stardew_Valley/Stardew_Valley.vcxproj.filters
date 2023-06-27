@@ -126,6 +126,9 @@
     <ClInclude Include="Object\BagicObj\CircleLine.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\BagicObj\ShapeLine.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -222,6 +225,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\BagicObj\CircleLine.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\BagicObj\ShapeLine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

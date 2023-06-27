@@ -28,6 +28,7 @@ private:
 
 	shared_ptr<Transform> _transform;
 	shared_ptr<class RectLine> _tile;
+	shared_ptr<class CircleLine> _circle;
 	shared_ptr<Quad> _beachQuad;
 
 	Vector2 _mapSize;
