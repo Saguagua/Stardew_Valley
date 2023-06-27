@@ -142,6 +142,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\BagicObj\CircleLine.h" />
+    <ClInclude Include="Framework\Collision\CircleCollider.h" />
+    <ClInclude Include="Framework\Collision\Collider.h" />
+    <ClInclude Include="Framework\Camera\Camera.h" />
     <ClInclude Include="Object\Character\Character.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Framework\Device\Device.h" />
@@ -162,6 +166,7 @@
     <ClInclude Include="Framework\Utility\Timer.h" />
     <ClInclude Include="Program\Program.h" />
     <ClInclude Include="Object\BagicObj\Quad.h" />
+    <ClInclude Include="Framework\Collision\RectCollider.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Framework\TextureMapping\SamplerState.h" />
     <ClInclude Include="Scene\InGame\TestScene.h" />
@@ -171,11 +176,15 @@
     <ClInclude Include="Stardew_Valley.h" />
     <ClInclude Include="Framework\TextureMapping\StateManager.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TileMap\Tile.h" />
-    <ClInclude Include="TileMap\TileMap.h" />
+    <ClInclude Include="Object\BagicObj\RectLine.h" />
+    <ClInclude Include="Object\BagicObj\TileMap.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\BagicObj\CircleLine.cpp" />
+    <ClCompile Include="Framework\Collision\CircleCollider.cpp" />
+    <ClCompile Include="Framework\Collision\Collider.cpp" />
+    <ClCompile Include="Framework\Camera\Camera.cpp" />
     <ClCompile Include="Object\Character\Character.cpp" />
     <ClCompile Include="framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -198,14 +207,15 @@
     <ClCompile Include="Program\Program.cpp" />
     <ClCompile Include="Framework\TextureMapping\SamplerState.cpp" />
     <ClCompile Include="Object\BagicObj\Quad.cpp" />
+    <ClCompile Include="Framework\Collision\RectCollider.cpp" />
     <ClCompile Include="Scene\InGame\TestScene.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Framework\TextureMapping\SRVManager.cpp" />
     <ClCompile Include="Object\BagicObj\Sprite.cpp" />
     <ClCompile Include="Stardew_Valley.cpp" />
     <ClCompile Include="Framework\TextureMapping\StateManager.cpp" />
-    <ClCompile Include="TileMap\Tile.cpp" />
-    <ClCompile Include="TileMap\TileMap.cpp" />
+    <ClCompile Include="Object\BagicObj\RectLine.cpp" />
+    <ClCompile Include="Object\BagicObj\TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />

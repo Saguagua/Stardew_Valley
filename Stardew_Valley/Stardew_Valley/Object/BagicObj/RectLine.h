@@ -1,13 +1,14 @@
 #pragma once
-class Tile
+class RectLine
 {
 
 public:
-	Tile(Vector2 size);
-	~Tile() {}
+	RectLine(Vector2 size);
+	~RectLine() {}
 
-	void Update();
 	void Render();
+
+	void SetColor(XMFLOAT4 color) { _color = color; }
 
 private:
 	void CreateVertices();

@@ -27,7 +27,7 @@ private:
 	void CreateTiles();
 
 	shared_ptr<Transform> _transform;
-	shared_ptr<class Tile> _tile;
+	shared_ptr<class RectLine> _tile;
 	shared_ptr<Quad> _beachQuad;
 
 	Vector2 _mapSize;

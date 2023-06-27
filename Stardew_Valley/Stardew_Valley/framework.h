@@ -45,6 +45,9 @@ using namespace Microsoft::WRL;
 #include "Framework/Device/Device.h"
 
 //Collider
+#include "Framework/Collision/Collider.h"
+#include "Framework/Collision/CircleCollider.h"
+#include "Framework/Collision/RectCollider.h"
 
 //Render
 #include "Framework/Render/InputLayout.h"
@@ -63,6 +66,9 @@ using namespace Microsoft::WRL;
 #include "Framework/TextureMapping/BlendState.h"
 #include "Framework/TextureMapping/SRVManager.h"
 #include "Framework/TextureMapping/StateManager.h"
+
+//Camera
+#include"Framework/Camera/Camera.h"
 
 //Utility
 #include "Framework/Utility/Timer.h"

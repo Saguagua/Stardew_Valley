@@ -1,7 +1,6 @@
 #include "framework.h"
 #include "TestScene.h"
-#include "../../TileMap/TileMap.h"
-#include "../../TileMap/Tile.h"
+#include "../../Object/BagicObj/TileMap.h"
 
 TestScene::TestScene()
 {

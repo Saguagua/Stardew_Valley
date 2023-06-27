@@ -1,7 +1,7 @@
 #include "framework.h"
-#include "Tile.h"
+#include "RectLine.h"
 
-Tile::Tile(Vector2 size)
+RectLine::RectLine(Vector2 size)
 	:_size(size)
 {
 	CreateVertices();
@@ -11,11 +11,7 @@ Tile::Tile(Vector2 size)
 	_cBuffer->Update();
 }
 
-void Tile::Update()
-{
-}
-
-void Tile::Render()
+void RectLine::Render()
 {
 	_cBuffer->Set_PS(0);
 	_vBuffer->SetIA_VertexBuffer(0);
@@ -29,7 +25,7 @@ void Tile::Render()
 	DC->Draw(_vertices.size(), 0);
 }
 
-void Tile::CreateVertices()
+void RectLine::CreateVertices()
 {
 	Vertex v = {};
 
@@ -51,7 +47,7 @@ void Tile::CreateVertices()
 	_vertices.push_back(v);
 }
 
-void Tile::CreateData()
+void RectLine::CreateData()
 {
 	_vBuffer = make_shared<VertexBuffer>(_vertices.data(), sizeof(Vertex), _vertices.size());
 	_cBuffer = make_shared<ColorBuffer>();

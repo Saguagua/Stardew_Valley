@@ -1,5 +1,5 @@
 #include "framework.h"
-#include "Tile.h"
+#include "RectLine.h"
 #include "TileMap.h"
 
 TileMap::TileMap(Vector2 size, wstring path)
@@ -7,7 +7,7 @@ TileMap::TileMap(Vector2 size, wstring path)
 {
 	_transform = make_shared<Transform>();
 	_tileSize = Vector2(50 , 50);
-	_tile = make_shared<Tile>(_tileSize);
+	_tile = make_shared<RectLine>(_tileSize);
 	_beachQuad = make_shared<Quad>(L"Resource/Tile/spring_beach.png", Vector2(17, 32), _tileSize);
 	CreateTiles();
 }
@@ -56,7 +56,7 @@ void TileMap::Render()
 			_beachQuad->SetCurFrame(_infos[i][j].curClip);
 			_beachQuad->Update();
 			_beachQuad->Render();
-			_tile->Update();
+
 			_tile->Render();
 		}
 	}
@@ -73,7 +73,7 @@ void TileMap::CreateTiles()
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			TileInfo info;
-			info.centerPos = Vector2(50 + 50 * j, 50 + 50 * i);
+			info.centerPos = Vector2(25 + 50 * j, 25 + 50 * i);
 			tmp.push_back(info);
 		}
 
