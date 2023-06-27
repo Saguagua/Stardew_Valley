@@ -43,6 +43,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MSG msg = {};
 
     Device::Create();
+    Timer::Create();
     Camera::Create();
     SRVManager::Create();
     StateManager::Create();
@@ -73,6 +74,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     StateManager::Delete();
     SRVManager::Delete();
     Camera::Delete();
+    Timer::Delete();
     Device::Delete();
 
     return (int) msg.wParam;

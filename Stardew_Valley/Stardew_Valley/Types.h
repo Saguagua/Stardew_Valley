@@ -11,6 +11,13 @@
 #define DEVICE			Device::GetInstance()->GetDevice()
 #define DC				Device::GetInstance()->GetContext()
 
+#define CAMERA			Camera::GetInstance()
+
+#define TIMER			Timer::GetInstance()
+#define DELTA_TIME		Timer::GetInstance()->GetDeltaTime()
+#define FPS				Timer::GetInstance()->GetFPS()
+#define RUNTIME			Timer::GetInstance()->GetRunTime()
+
 #define MOUSE_POS		InputManager::GetInstance()->GetMousePos()
 #define KEY_UP(k)		InputManager::GetInstance()->Up(k)
 #define KEY_PRESS(k)	InputManager::GetInstance()->Press(k)

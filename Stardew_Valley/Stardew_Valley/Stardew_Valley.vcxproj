@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Framework\Utility\MathUtility.h" />
     <ClInclude Include="Object\BagicObj\CircleLine.h" />
     <ClInclude Include="Framework\Collision\CircleCollider.h" />
     <ClInclude Include="Framework\Collision\Collider.h" />

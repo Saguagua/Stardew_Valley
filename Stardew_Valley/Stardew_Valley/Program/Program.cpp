@@ -5,10 +5,14 @@
 Program::Program()
 {
 	_scene = make_shared<TestScene>();
+	TIMER->LockRunTime(60);
 }
 
 void Program::Update()
 {
+	TIMER->Update();
+	CAMERA->Update();
+
 	InputManager::GetInstance()->Update();
 	_scene->Update();
 }
@@ -16,7 +20,8 @@ void Program::Update()
 void Program::Render()
 {
 	Device::GetInstance()->Clear();
-	Camera::GetInstance()->Update();
+	CAMERA->SetViewBuffer();
+	CAMERA->SetProjectionBuffer();
 	_scene->Render();
 	Device::GetInstance()->Present();
 }

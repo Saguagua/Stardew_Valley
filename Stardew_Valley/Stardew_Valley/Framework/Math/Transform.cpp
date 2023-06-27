@@ -37,3 +37,11 @@ void Transform::Set_World(UINT slot)
 {
 	_buffer->Set_VS(slot);
 }
+
+Vector2 Transform::GetWorldPos()
+{
+	XMFLOAT4X4 tmp;
+	XMStoreFloat4x4(&tmp, _srt);
+
+	return Vector2(tmp._41, tmp._42);
+}

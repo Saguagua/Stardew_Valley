@@ -23,31 +23,12 @@ void TileMap::Update()
 		mouse.x /= 50;
 		mouse.y /= 50;
 
-		int intValue = static_cast<int>(mouse.x); 
-		float fractionalPart = mouse.x - intValue;
-
-		if (fractionalPart >= 0.5f)
-			mouse.x++;
-		else if (fractionalPart <= -0.5f)
-			mouse.x;
-
-
-		intValue = static_cast<int>(mouse.y);
-		fractionalPart = mouse.y - intValue;
-
-		if (fractionalPart >= 0.5f)
-			mouse.y++;
-		else if (fractionalPart <= -0.5f)
-			mouse.y;
-
-		_infos[mouse.y-1][mouse.x-1].curClip.y++;
+		_infos[mouse.y][mouse.x].curClip.y++;
 	}
 }
 
 void TileMap::Render()
 {
-
-
 	for (int i = 0; i < _infos.size(); i++)
 	{
 		for (int j = 0; j < _infos[i].size(); j++)

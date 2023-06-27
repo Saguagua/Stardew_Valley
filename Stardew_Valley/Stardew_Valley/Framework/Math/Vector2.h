@@ -1,12 +1,12 @@
 #pragma once
-struct Vector2
+struct Vector2 : public XMFLOAT2
 {
-	Vector2():x(0), y(0) {}
-	Vector2(float x, float y) :x(x), y(y) {}
-	Vector2(int x, int y) :x(x), y(y) {}
+	Vector2(): XMFLOAT2(0.0f, 0.0f) {}
+	Vector2(float x, float y) :XMFLOAT2(x, y) {}
+	Vector2(int x, int y) :XMFLOAT2(x, y) {}
 	~Vector2() {}
 
-	Vector2 operator+(const Vector2& other)
+	Vector2 operator+(const Vector2& other) const
 	{
 		Vector2 result;
 		result.x = x + other.x;
@@ -15,7 +15,7 @@ struct Vector2
 		return result;
 	}
 
-	Vector2 operator-(const Vector2& other)
+	Vector2 operator-(const Vector2& other) const
 	{
 		Vector2 result;
 		result.x = x - other.x;
@@ -24,7 +24,7 @@ struct Vector2
 		return result;
 	}
 
-	Vector2 operator*(float scalar)
+	Vector2 operator*(float scalar) const
 	{
 		Vector2 result;
 		result.x = x * scalar;
@@ -59,7 +59,15 @@ struct Vector2
 		return x * x + y * y;
 	}
 
-	float x;
-	float y;
+	Vector2 TransformCoord(XMMATRIX matrix)
+	{
+		XMVECTOR tmp = XMLoadFloat2(this);
+
+		tmp = XMVector2TransformCoord(tmp, matrix);
+		Vector2 result;
+		XMStoreFloat2(&result, tmp);
+
+		return result;
+	}
 };
 
