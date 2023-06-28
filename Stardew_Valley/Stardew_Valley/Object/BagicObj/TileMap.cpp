@@ -7,9 +7,8 @@ TileMap::TileMap(Vector2 size, wstring path)
 	:_mapSize(size)
 {
 	_transform = make_shared<Transform>();
-	_tileSize = Vector2(50 , 50);
+	_tileSize = Vector2(30 , 30);
 	_tile = make_shared<RectLine>(_tileSize);
-	_circle = make_shared<CircleLine>(50);
 	_beachQuad = make_shared<Quad>(L"Resource/Tile/spring_beach.png", Vector2(17, 32), _tileSize);
 	_springOutdoorQuad = make_shared<Quad>(L"Resource/Tile/spring_outdoors.png", Vector2(25, 79), _tileSize);
 	CreateTiles();
@@ -21,10 +20,16 @@ void TileMap::Update()
 	{
 		Vector2 mouse  = CAMERA->GetWorldMousePos();
 		Vector2 mouse2 = CAMERA->GetWorldMousePos();
-		mouse.x /= 50;
-		mouse.y /= 50;
+		mouse.x /= _tileSize.x;
+		mouse.y /= _tileSize.y;
 
-		_infos[mouse.y + 25][mouse.x + 25].curClip.y++;
+		float tmpX = _mapSize.x / 2 + 0.5f;
+		float tmpY = _mapSize.y / 2 + 0.5f;
+
+		int indexX = mouse.x + tmpX;
+		int indexY = mouse.y + tmpY;
+
+		_infos[indexY][indexX].curClip.y++;
 	}
 }
 
@@ -50,6 +55,10 @@ void TileMap::Render()
 void TileMap::CreateTiles()
 {
 	//todo : 파일 읽어서 타입 저장
+	Vector2 startPos;
+	startPos.x = -(_tileSize.x * (_mapSize.x / 2));
+	startPos.y = -(_tileSize.y * (_mapSize.y / 2));
+
 	for (int i = 0; i < _mapSize.y; i++)
 	{
 		vector<TileInfo> tmp;
@@ -57,7 +66,7 @@ void TileMap::CreateTiles()
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			TileInfo info;
-			info.centerPos = Vector2(-1225 + 50 * j, -1225 + 50 * i);
+			info.centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
 			info.curClip = { 0, 6 };
 			tmp.push_back(info);
 		}
