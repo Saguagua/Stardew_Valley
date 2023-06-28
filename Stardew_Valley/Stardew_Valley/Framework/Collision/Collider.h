@@ -9,6 +9,7 @@ public:
 	virtual void Render() abstract;
 
 	bool IsCollision(shared_ptr<Collider> other);
+	virtual bool IsCollision(Vector2 other) abstract;
 	virtual bool IsCollision(shared_ptr<class RectCollider> other) abstract;
 	virtual bool IsCollision(shared_ptr<class CircleCollider> other) abstract;
 

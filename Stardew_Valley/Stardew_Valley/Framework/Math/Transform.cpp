@@ -41,7 +41,21 @@ void Transform::Set_World(UINT slot)
 Vector2 Transform::GetWorldPos()
 {
 	XMFLOAT4X4 tmp;
-	XMStoreFloat4x4(&tmp, _srt);
+	XMStoreFloat4x4(&tmp, _posM);
 
 	return Vector2(tmp._41, tmp._42);
+}
+
+Vector2 Transform::GetWorldScale()
+{
+	XMFLOAT4X4 tmp;
+	XMStoreFloat4x4(&tmp, _srt);
+
+	if (!_parent.expired())
+	{
+		Vector2 pos = _parent.lock()->GetWorldScale();
+		return Vector2(pos.x * tmp._11, pos.y * tmp._22);
+	}
+
+	return Vector2(tmp._11, tmp._22);
 }

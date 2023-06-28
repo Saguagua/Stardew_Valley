@@ -23,7 +23,8 @@ public:
 	Vector2 GetPos() { return _pos; }
 	Vector2 GetScale() { return _scale; }
 	Vector2 GetWorldPos();
-	
+	Vector2 GetWorldScale();
+
 	XMMATRIX GetSRT() { return _srt; }
 
 private:

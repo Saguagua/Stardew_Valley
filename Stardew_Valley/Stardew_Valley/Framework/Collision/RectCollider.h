@@ -4,10 +4,10 @@ class RectCollider : public Collider
 public:
 	struct AABB_Info
 	{
-		Vector2 leftUp;
-		Vector2 rightUp;
-		Vector2 leftDown;
-		Vector2 rightDown;
+		float Up;
+		float Down;
+		float left;
+		float right;
 	};
 
 	RectCollider(Vector2 size);
@@ -17,6 +17,7 @@ public:
 
 	virtual void Render() override;
 	
+	virtual bool IsCollision(Vector2 other) override;
 	virtual bool IsCollision(shared_ptr<class RectCollider> other) override;
 	virtual bool IsCollision(shared_ptr<class CircleCollider> other) override;
 

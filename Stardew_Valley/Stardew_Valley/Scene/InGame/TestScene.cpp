@@ -23,8 +23,7 @@ void TestScene::Update()
 	_tileMap->Update();
 	_character->Update();
 	vector<vector<shared_ptr<TileMap::TileInfo>>> v = _tileMap->GetInfo();
-	Vector2 cWorldPos = _character->GetTransform()->GetWorldPos();
-	Vector2 worldIndex = _tileMap->GetWorldIndex(cWorldPos);
+	Vector2 worldIndex = _tileMap->GetWorldIndex(_character->GetTransform()->GetWorldPos());
 	v[worldIndex.y][worldIndex.x]->curClip.x = 1;
 }
 

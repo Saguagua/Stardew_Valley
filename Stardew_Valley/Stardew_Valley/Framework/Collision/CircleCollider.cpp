@@ -15,12 +15,29 @@ void CircleCollider::Render()
 	_renderer->Render();
 }
 
+bool CircleCollider::IsCollision(Vector2 other)
+{
+	Vector2 pos = _transform->GetWorldPos();
+	float length = (other - pos).Length();
+	float worldRadius = GetWorldRadius();
+
+	return length < worldRadius* worldRadius;
+}
+
 bool CircleCollider::IsCollision(shared_ptr<class RectCollider> other)
 {
-	return false;
+	return other->IsCollision(shared_from_this());
 }
 
 bool CircleCollider::IsCollision(shared_ptr<class CircleCollider> other)
 {
-	return false;
+	float radiusLength = (GetWorldRadius() + other->GetWorldRadius()) * (GetWorldRadius() + other->GetWorldRadius());
+	float centerLength = (_transform->GetWorldPos() - other->GetTransform()->GetWorldPos()).Length();
+	return radiusLength > centerLength;
+}
+
+float CircleCollider::GetWorldRadius()
+{
+	Vector2 worldScale = _transform->GetWorldScale();
+	return _radius * worldScale.x * worldScale.y / 2;
 }
