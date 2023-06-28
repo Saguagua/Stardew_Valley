@@ -3,15 +3,17 @@
 
 Character::Character()
 {
-	_collider = make_shared<CircleCollider>(30);
+	_collider = make_shared<CircleCollider>(10);
 	_quadSlot = make_shared<Transform>();
 	_quad = make_shared<Quad>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(30, 50));
+	_quadSlot->AddPos(Vector2(0, 15));
 	_quadSlot->SetParent(_collider->GetTransform());
 }
 
 void Character::Update()
 {
 	KeyInput();
+	Vector2 pos = _quadSlot->GetWorldPos();
 	_collider->Update();
 	_quadSlot->Update();
 	_quad->Update();
@@ -19,9 +21,9 @@ void Character::Update()
 
 void Character::Render()
 {
-	_collider->Render();
 	_quadSlot->Set_World(0);
 	_quad->Render();
+	_collider->Render();
 }
 
 void Character::KeyInput()

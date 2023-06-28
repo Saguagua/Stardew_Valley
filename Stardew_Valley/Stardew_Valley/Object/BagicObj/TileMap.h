@@ -26,9 +26,9 @@ public:
 private:
 	void CreateTiles();
 
+
 	shared_ptr<Transform> _transform;
-	shared_ptr<class RectLine> _tile;
-	shared_ptr<class CircleLine> _circle;
+	shared_ptr<class RectCollider> _tile;
 	shared_ptr<Quad> _beachQuad;
 	shared_ptr<Quad> _springOutdoorQuad;
 

@@ -8,9 +8,10 @@ TileMap::TileMap(Vector2 size, wstring path)
 {
 	_transform = make_shared<Transform>();
 	_tileSize = Vector2(30 , 30);
-	_tile = make_shared<RectLine>(_tileSize);
+	_tile = make_shared<RectCollider>(_tileSize);
 	_beachQuad = make_shared<Quad>(L"Resource/Tile/spring_beach.png", Vector2(17, 32), _tileSize);
 	_springOutdoorQuad = make_shared<Quad>(L"Resource/Tile/spring_outdoors.png", Vector2(25, 79), _tileSize);
+
 	CreateTiles();
 }
 
@@ -45,11 +46,11 @@ void TileMap::Render()
 			_springOutdoorQuad->SetCurFrame(_infos[i][j].curClip);
 			_springOutdoorQuad->Update();
 			_springOutdoorQuad->Render();
-
+			_tile->SetPos(_infos[i][j].centerPos);
+			_tile->Update();
 			_tile->Render();
 		}
 	}
-			
 }
 
 void TileMap::CreateTiles()

@@ -11,9 +11,9 @@ Device::Device()
 
 void Device::Clear()
 {
-    FLOAT myColorR = 0.0f;
-    FLOAT myColorG = 0.0f;
-    FLOAT myColorB = 0.0f;
+    FLOAT myColorR = 1.0f;
+    FLOAT myColorG = 1.0f;
+    FLOAT myColorB = 1.0f;
 
     FLOAT clearColor[4] = { myColorR, myColorG, myColorB, 1.0f };
 
@@ -78,13 +78,4 @@ void Device::CreateRenderTarget()
     _device->CreateRenderTargetView(backBuffer.Get(), nullptr, _renderTarget.GetAddressOf());
 
     _deviceContext->OMSetRenderTargets(1, _renderTarget.GetAddressOf(), nullptr);
-
-    D3D11_VIEWPORT vp;
-    vp.Width = WIN_WIDTH;
-    vp.Height = WIN_HEIGHT;
-    vp.MinDepth = 0.0f;
-    vp.MaxDepth = 1.0f;
-    vp.TopLeftX = 0;
-    vp.TopLeftY = 0;
-    _deviceContext->RSSetViewports(1, &vp);
 }

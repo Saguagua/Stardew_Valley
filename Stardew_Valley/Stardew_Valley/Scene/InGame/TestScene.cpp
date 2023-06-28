@@ -11,6 +11,8 @@ TestScene::TestScene()
 	_character = make_shared<Character>();
 	_character->GetTransform()->SetPos(Vector2(0,0));
 
+	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
+
 	CAMERA->SetTarget(_character->GetTransform());
 	CAMERA->SetLeftBottom(Vector2(-1250 + WIN_WIDTH / 2, -1250 + WIN_HEIGHT / 2));
 	CAMERA->SetRightTop(Vector2(1250 - WIN_WIDTH / 2, 1250 - WIN_HEIGHT / 2));

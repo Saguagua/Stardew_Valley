@@ -12,5 +12,4 @@ private:
 	Vector2 curF = { 0,0 };
 	shared_ptr<class TileMap> _tileMap;
 	shared_ptr<class Character> _character;
-
 };

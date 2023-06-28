@@ -31,6 +31,14 @@ void Camera::PostRender()
 
 void Camera::SetViewPort(UINT width, UINT height)
 {
+	D3D11_VIEWPORT vp;
+	vp.Width = width;
+	vp.Height = height;
+	vp.MinDepth = 0.0f;
+	vp.MaxDepth = 1.0f;
+	vp.TopLeftX = 0;
+	vp.TopLeftY = 0;
+	DC->RSSetViewports(1, &vp);
 }
 
 void Camera::SetViewBuffer()
