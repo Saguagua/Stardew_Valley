@@ -14,14 +14,18 @@ TestScene::TestScene()
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
 
 	CAMERA->SetTarget(_character->GetTransform());
-	CAMERA->SetLeftBottom(Vector2(-1250 + WIN_WIDTH / 2, -1250 + WIN_HEIGHT / 2));
-	CAMERA->SetRightTop(Vector2(1250 - WIN_WIDTH / 2, 1250 - WIN_HEIGHT / 2));
+	CAMERA->SetLeftBottom(Vector2(-735 + WIN_WIDTH / 2, -735 + WIN_HEIGHT / 2));
+	CAMERA->SetRightTop(Vector2(735 - WIN_WIDTH / 2, 735 - WIN_HEIGHT / 2));
 }
 
 void TestScene::Update()
 {
 	_tileMap->Update();
 	_character->Update();
+	vector<vector<shared_ptr<TileMap::TileInfo>>> v = _tileMap->GetInfo();
+	Vector2 cWorldPos = _character->GetTransform()->GetWorldPos();
+	Vector2 worldIndex = _tileMap->GetWorldIndex(cWorldPos);
+	v[worldIndex.y][worldIndex.x]->curClip.x = 1;
 }
 
 void TestScene::Render()

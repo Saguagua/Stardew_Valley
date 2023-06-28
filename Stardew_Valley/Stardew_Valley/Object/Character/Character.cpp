@@ -6,6 +6,7 @@ Character::Character()
 	_collider = make_shared<CircleCollider>(10);
 	_quadSlot = make_shared<Transform>();
 	_quad = make_shared<Quad>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(30, 50));
+	
 	_quadSlot->AddPos(Vector2(0, 15));
 	_quadSlot->SetParent(_collider->GetTransform());
 }

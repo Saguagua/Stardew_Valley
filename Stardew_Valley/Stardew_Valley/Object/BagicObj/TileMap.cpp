@@ -19,18 +19,9 @@ void TileMap::Update()
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		Vector2 mouse  = CAMERA->GetWorldMousePos();
-		Vector2 mouse2 = CAMERA->GetWorldMousePos();
-		mouse.x /= _tileSize.x;
-		mouse.y /= _tileSize.y;
+		Vector2 index = GetWorldIndex(CAMERA->GetWorldMousePos());
 
-		float tmpX = _mapSize.x / 2 + 0.5f;
-		float tmpY = _mapSize.y / 2 + 0.5f;
-
-		int indexX = mouse.x + tmpX;
-		int indexY = mouse.y + tmpY;
-
-		_infos[indexY][indexX].curClip.y++;
+		_infos[index.y][index.x]->curClip.y++;
 	}
 }
 
@@ -40,17 +31,31 @@ void TileMap::Render()
 	{
 		for (int j = 0; j < _infos[i].size(); j++)
 		{
-			_transform->SetPos(_infos[i][j].centerPos);
+			_transform->SetPos(_infos[i][j]->centerPos);
 			_transform->Update();
 			_transform->Set_World();
-			_springOutdoorQuad->SetCurFrame(_infos[i][j].curClip);
+			_springOutdoorQuad->SetCurFrame(_infos[i][j]->curClip);
 			_springOutdoorQuad->Update();
 			_springOutdoorQuad->Render();
-			_tile->SetPos(_infos[i][j].centerPos);
+			_tile->SetPos(_infos[i][j]->centerPos);
 			_tile->Update();
 			_tile->Render();
 		}
 	}
+}
+
+Vector2 TileMap::GetWorldIndex(Vector2 pos)
+{
+	pos.x /= _tileSize.x;
+	pos.y /= _tileSize.y;
+
+	float tmpX = _mapSize.x / 2 + 0.5f;
+	float tmpY = _mapSize.y / 2 + 0.5f;
+
+	pos.x += tmpX;
+	pos.y += tmpY;
+
+	return pos;
 }
 
 void TileMap::CreateTiles()
@@ -62,13 +67,12 @@ void TileMap::CreateTiles()
 
 	for (int i = 0; i < _mapSize.y; i++)
 	{
-		vector<TileInfo> tmp;
+		vector<shared_ptr<TileInfo>> tmp;
 
 		for (int j = 0; j < _mapSize.x; j++)
 		{
-			TileInfo info;
-			info.centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
-			info.curClip = { 0, 6 };
+			Vector2 centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 6), Type::NONE);
 			tmp.push_back(info);
 		}
 
