@@ -30,6 +30,7 @@ private:
 	shared_ptr<class RectLine> _tile;
 	shared_ptr<class CircleLine> _circle;
 	shared_ptr<Quad> _beachQuad;
+	shared_ptr<Quad> _springOutdoorQuad;
 
 	Vector2 _mapSize;
 	Vector2 _tileSize;

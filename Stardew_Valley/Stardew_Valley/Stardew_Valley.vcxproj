@@ -236,7 +236,9 @@
     <ResourceCompile Include="Stardew_Valley.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resource\Player\farmer_base.png" />
     <Image Include="Resource\Tile\spring_beach.png" />
+    <Image Include="Resource\Tile\spring_outdoors.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>

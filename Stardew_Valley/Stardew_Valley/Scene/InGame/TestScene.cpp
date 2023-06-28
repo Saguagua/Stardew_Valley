@@ -3,30 +3,27 @@
 #include "../../Object/BagicObj/TileMap.h"
 #include "../../Framework/Collision/RectCollider.h"
 #include "../../Framework/Collision/CircleCollider.h"
+#include "../../Object/Character/Character.h"
 
 TestScene::TestScene()
 {
 	_tileMap = make_shared<TileMap>(Vector2(50, 50));
-	_circle = make_shared<CircleCollider>(30);
-	_circle->SetPos(CENTER);
-	_circle->Update();
+	_character = make_shared<Character>();
+	_character->GetTransform()->SetPos(Vector2(0,0));
 
-	CAMERA->SetTarget(_circle->GetTransform());
-	CAMERA->SetLeftBottom(CENTER);
-	CAMERA->SetRightTop(Vector2(2500 - CENTER.x, 2500 - CENTER.y));
-
+	CAMERA->SetTarget(_character->GetTransform());
+	CAMERA->SetLeftBottom(Vector2(-1250 + WIN_WIDTH / 2, -1250 + WIN_HEIGHT / 2));
+	CAMERA->SetRightTop(Vector2(1250 - WIN_WIDTH / 2, 1250 - WIN_HEIGHT / 2));
 }
 
 void TestScene::Update()
 {
-	if (KEY_PRESS('D'))
-		_circle->AddPos(Vector2(1,0) * DELTA_TIME * 100.0f);
 	_tileMap->Update();
-	_circle->Update();
+	_character->Update();
 }
 
 void TestScene::Render()
 {
 	_tileMap->Render();
-	_circle->Render();
+	_character->Render();
 }

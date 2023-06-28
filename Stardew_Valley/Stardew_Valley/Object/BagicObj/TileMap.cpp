@@ -11,6 +11,7 @@ TileMap::TileMap(Vector2 size, wstring path)
 	_tile = make_shared<RectLine>(_tileSize);
 	_circle = make_shared<CircleLine>(50);
 	_beachQuad = make_shared<Quad>(L"Resource/Tile/spring_beach.png", Vector2(17, 32), _tileSize);
+	_springOutdoorQuad = make_shared<Quad>(L"Resource/Tile/spring_outdoors.png", Vector2(25, 79), _tileSize);
 	CreateTiles();
 }
 
@@ -18,12 +19,12 @@ void TileMap::Update()
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		Vector2 mouse  = MOUSE_POS;
-		Vector2 mouse2 = MOUSE_POS;
+		Vector2 mouse  = CAMERA->GetWorldMousePos();
+		Vector2 mouse2 = CAMERA->GetWorldMousePos();
 		mouse.x /= 50;
 		mouse.y /= 50;
 
-		_infos[mouse.y][mouse.x].curClip.y++;
+		_infos[mouse.y + 25][mouse.x + 25].curClip.y++;
 	}
 }
 
@@ -36,9 +37,9 @@ void TileMap::Render()
 			_transform->SetPos(_infos[i][j].centerPos);
 			_transform->Update();
 			_transform->Set_World();
-			_beachQuad->SetCurFrame(_infos[i][j].curClip);
-			_beachQuad->Update();
-			_beachQuad->Render();
+			_springOutdoorQuad->SetCurFrame(_infos[i][j].curClip);
+			_springOutdoorQuad->Update();
+			_springOutdoorQuad->Render();
 
 			_tile->Render();
 		}
@@ -56,7 +57,8 @@ void TileMap::CreateTiles()
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			TileInfo info;
-			info.centerPos = Vector2(25 + 50 * j, 25 + 50 * i);
+			info.centerPos = Vector2(-1225 + 50 * j, -1225 + 50 * i);
+			info.curClip = { 0, 6 };
 			tmp.push_back(info);
 		}
 
