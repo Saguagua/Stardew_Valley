@@ -9,7 +9,6 @@ Camera::Camera()
 	_view = make_shared<Transform>();
 	_proj = make_shared<MatrixBuffer>();
 
-	//XMMATRIX projMatrix = XMMatrixOrthographicOffCenterLH(0, WIN_WIDTH, 0, WIN_HEIGHT, 0.0f, 1.0f);
 	XMMATRIX projMatrix = XMMatrixOrthographicLH(WIN_WIDTH, WIN_HEIGHT, 0.0f, 1.0f);
 	_proj->SetMatrix(projMatrix);
 	_proj->Update();
@@ -27,6 +26,7 @@ void Camera::Update()
 
 void Camera::PostRender()
 {
+	
 }
 
 void Camera::SetViewPort(UINT width, UINT height)
@@ -61,6 +61,7 @@ Vector2 Camera::GetWorldMousePos()
 
 void Camera::FreeMode()
 {
+	
 }
 
 void Camera::FollowMode()

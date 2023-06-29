@@ -27,6 +27,7 @@ void TestScene::Update()
 	Vector2 worldIndex = _tileMap->GetWorldIndex(mainWorldPos);
 
 	v[worldIndex.y][worldIndex.x]->curClip.x = 1;
+
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		Vector2 mouse = CAMERA->GetWorldMousePos();
@@ -34,6 +35,38 @@ void TestScene::Update()
 
 		float angle = target.Angle() * 57.2958;
 
+		if (angle > -25.0f && angle <= 25.0f)
+		{
+			v[worldIndex.y][worldIndex.x+1]->curClip.x++;
+		}
+		else if (angle > 25.0f && angle <= 70.0f)
+		{
+			v[worldIndex.y + 1][worldIndex.x + 1]->curClip.x++;
+		}
+		else if (angle > 70.0f && angle <= 115.0f)
+		{
+			v[worldIndex.y + 1][worldIndex.x]->curClip.x++;
+		}
+		else if (angle > 115.0f && angle < 160.0f)
+		{
+			v[worldIndex.y + 1][worldIndex.x - 1]->curClip.x++;
+		}
+		else if (angle > -70.0f && angle <= -25.0f)
+		{
+			v[worldIndex.y - 1][worldIndex.x + 1]->curClip.x++;
+		}
+		else if (angle > -115.0f && angle <= -70.0f)
+		{
+			v[worldIndex.y - 1][worldIndex.x]->curClip.x++;
+		}
+		else if (angle > -160.0f && angle <= -25.0f)
+		{
+			v[worldIndex.y - 1][worldIndex.x - 1]->curClip.x++;
+		}
+		else
+		{
+			v[worldIndex.y][worldIndex.x - 1]->curClip.x++;
+		}
 	}
 	
 }
