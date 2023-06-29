@@ -189,6 +189,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Object\BagicObj\RectLine.h" />
     <ClInclude Include="Object\BagicObj\TileMap.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +232,7 @@
     <ClCompile Include="Framework\TextureMapping\StateManager.cpp" />
     <ClCompile Include="Object\BagicObj\RectLine.cpp" />
     <ClCompile Include="Object\BagicObj\TileMap.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />

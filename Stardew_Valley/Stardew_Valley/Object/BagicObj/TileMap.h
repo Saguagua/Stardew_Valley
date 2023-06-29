@@ -46,6 +46,5 @@ private:
 	Vector2 _mapSize;
 	Vector2 _tileSize;
 	vector<vector<shared_ptr<TileInfo>>> _infos;
-	
 };
 

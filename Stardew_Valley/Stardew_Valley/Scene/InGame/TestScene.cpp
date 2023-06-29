@@ -22,9 +22,20 @@ void TestScene::Update()
 {
 	_tileMap->Update();
 	_character->Update();
+	Vector2 mainWorldPos = _character->GetTransform()->GetWorldPos();
 	vector<vector<shared_ptr<TileMap::TileInfo>>> v = _tileMap->GetInfo();
-	Vector2 worldIndex = _tileMap->GetWorldIndex(_character->GetTransform()->GetWorldPos());
+	Vector2 worldIndex = _tileMap->GetWorldIndex(mainWorldPos);
+
 	v[worldIndex.y][worldIndex.x]->curClip.x = 1;
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		Vector2 mouse = CAMERA->GetWorldMousePos();
+		Vector2 target = mouse - mainWorldPos;
+
+		float angle = target.Angle() * 57.2958;
+
+	}
+	
 }
 
 void TestScene::Render()

@@ -59,6 +59,22 @@ struct Vector2 : public XMFLOAT2
 		return x * x + y * y;
 	}
 
+	float Angle()
+	{
+		return atan2(y, x);
+	}
+
+	Vector2 Normalize()
+	{
+		Vector2 result;
+		float length = Length();
+
+		result.x = this->x / length;
+		result.y = this->y / length;
+
+		return result;
+	}
+
 	Vector2 TransformCoord(XMMATRIX matrix)
 	{
 		XMVECTOR tmp = XMLoadFloat2(this);
