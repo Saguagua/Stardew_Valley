@@ -8,7 +8,7 @@ TileMap::TileMap(Vector2 size, wstring path)
 {
 	_transform = make_shared<Transform>();
 	_tileSize = Vector2(30 , 30);
-	_tile = make_shared<RectCollider>(_tileSize);
+	_tile = make_shared<RectLine>(_tileSize);
 	_beachQuad = make_shared<Quad>(L"Resource/Tile/spring_beach.png", Vector2(17, 32), _tileSize);
 	_springOutdoorQuad = make_shared<Quad>(L"Resource/Tile/spring_outdoors.png", Vector2(25, 79), _tileSize);
 
@@ -17,12 +17,7 @@ TileMap::TileMap(Vector2 size, wstring path)
 
 void TileMap::Update()
 {
-	if (KEY_DOWN(VK_LBUTTON))
-	{
-		Vector2 index = GetWorldIndex(CAMERA->GetWorldMousePos());
-
-		_infos[index.y][index.x]->curClip.y++;
-	}
+	
 }
 
 void TileMap::Render()
@@ -37,8 +32,6 @@ void TileMap::Render()
 			_springOutdoorQuad->SetCurFrame(_infos[i][j]->curClip);
 			_springOutdoorQuad->Update();
 			_springOutdoorQuad->Render();
-			_tile->SetPos(_infos[i][j]->centerPos);
-			_tile->Update();
 			_tile->Render();
 		}
 	}

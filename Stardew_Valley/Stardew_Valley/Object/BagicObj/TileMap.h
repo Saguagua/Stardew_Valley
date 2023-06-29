@@ -8,7 +8,6 @@ class TileMap
 		MOVEABLE,
 		BLOCK
 	};
-
 	
 public:
 
@@ -20,6 +19,7 @@ public:
 			this->curClip = curClip;
 			this->type = type;
 		}
+
 		Vector2 centerPos = { 0,0 };
 		Vector2 curClip = { 0,0 };
 		TileMap::Type type = TileMap::Type::NONE;
@@ -34,12 +34,12 @@ public:
 	vector<vector<shared_ptr<TileInfo>>>& GetInfo() { return _infos; }
 
 	Vector2 GetWorldIndex(Vector2 pos);
-
+	
 private:
 	void CreateTiles();
 
 	shared_ptr<Transform> _transform;
-	shared_ptr<class RectCollider> _tile;
+	shared_ptr<class RectLine> _tile;
 	shared_ptr<Quad> _beachQuad;
 	shared_ptr<Quad> _springOutdoorQuad;
 
