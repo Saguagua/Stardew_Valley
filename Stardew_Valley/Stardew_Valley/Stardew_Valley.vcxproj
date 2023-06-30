@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Scene\TestScene\ColliderScene.h" />
     <ClInclude Include="Framework\Utility\MathUtility.h" />
     <ClInclude Include="Object\BagicObj\CircleLine.h" />
     <ClInclude Include="Framework\Collision\CircleCollider.h" />
@@ -179,7 +180,7 @@
     <ClInclude Include="Framework\Collision\RectCollider.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Framework\TextureMapping\SamplerState.h" />
-    <ClInclude Include="Scene\InGame\TestScene.h" />
+    <ClInclude Include="Scene\TestScene\TestScene.h" />
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Framework\TextureMapping\SRVManager.h" />
     <ClInclude Include="Object\BagicObj\Sprite.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
     <ClCompile Include="Object\BagicObj\CircleLine.cpp" />
     <ClCompile Include="Framework\Collision\CircleCollider.cpp" />
     <ClCompile Include="Framework\Collision\Collider.cpp" />
@@ -223,7 +225,7 @@
     <ClCompile Include="Framework\TextureMapping\SamplerState.cpp" />
     <ClCompile Include="Object\BagicObj\Quad.cpp" />
     <ClCompile Include="Framework\Collision\RectCollider.cpp" />
-    <ClCompile Include="Scene\InGame\TestScene.cpp" />
+    <ClCompile Include="Scene\TestScene\TestScene.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Framework\TextureMapping\SRVManager.cpp" />
     <ClCompile Include="Object\BagicObj\Sprite.cpp" />

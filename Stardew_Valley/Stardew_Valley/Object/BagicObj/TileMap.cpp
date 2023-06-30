@@ -1,40 +1,112 @@
 #include "framework.h"
-#include "RectLine.h"
-#include "CircleLine.h"
 #include "TileMap.h"
+#include "../Character/Character.h"
 
-TileMap::TileMap(Vector2 size, wstring path)
-	:_mapSize(size)
+TileMap::TileMap(Vector2 size, wstring path, shared_ptr<Character> mainCharacter)
+	:_mapSize(size), _mainCharacter(mainCharacter)
 {
 	_transform = make_shared<Transform>();
 	_tileSize = Vector2(30 , 30);
-	_tile = make_shared<RectLine>(_tileSize);
-	_beachQuad = make_shared<Quad>(L"Resource/Tile/spring_beach.png", Vector2(17, 32), _tileSize);
-	_springOutdoorQuad = make_shared<Quad>(L"Resource/Tile/spring_outdoors.png", Vector2(25, 79), _tileSize);
-
+	_lineRenderer = make_shared<RectLine>(_tileSize);
+	_quad = make_shared<Quad>(path, Vector2(17, 32), _tileSize);
+	
 	CreateTiles();
 }
 
 void TileMap::Update()
 {
-	
+	if (!_isActive)
+		return;
+
+	Vector2 mainWorldPos = _mainCharacter.lock()->GetTransform()->GetWorldPos();
+	Vector2 worldIndex = GetWorldIndex(mainWorldPos);
+
+	_infos[worldIndex.y][worldIndex.x]->curClip.x = 1;
+
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		Vector2 mouse = CAMERA->GetWorldMousePos();
+		Vector2 target = mouse - mainWorldPos;
+
+		float angle = target.Angle() * 57.2958;
+
+		if (angle > -25.0f && angle <= 25.0f)
+		{
+			_infos[worldIndex.y][worldIndex.x + 1]->curClip.x++;
+		}
+		else if (angle > 25.0f && angle <= 70.0f)
+		{
+			_infos[worldIndex.y + 1][worldIndex.x + 1]->curClip.x++;
+		}
+		else if (angle > 70.0f && angle <= 115.0f)
+		{
+			_infos[worldIndex.y + 1][worldIndex.x]->curClip.x++;
+		}
+		else if (angle > 115.0f && angle < 160.0f)
+		{
+			_infos[worldIndex.y + 1][worldIndex.x - 1]->curClip.x++;
+		}
+		else if (angle > -70.0f && angle <= -25.0f)
+		{
+			_infos[worldIndex.y - 1][worldIndex.x + 1]->curClip.x++;
+		}
+		else if (angle > -115.0f && angle <= -70.0f)
+		{
+			_infos[worldIndex.y - 1][worldIndex.x]->curClip.x++;
+		}
+		else if (angle > -160.0f && angle <= -25.0f)
+		{
+			_infos[worldIndex.y - 1][worldIndex.x - 1]->curClip.x++;
+		}
+		else
+		{
+			_infos[worldIndex.y][worldIndex.x - 1]->curClip.x++;
+		}
+	}
 }
 
 void TileMap::Render()
 {
-	for (int i = 0; i < _infos.size(); i++)
+	if (_isDebug)
 	{
-		for (int j = 0; j < _infos[i].size(); j++)
+		for (int i = 0; i < _infos.size(); i++)
 		{
-			_transform->SetPos(_infos[i][j]->centerPos);
-			_transform->Update();
-			_transform->Set_World();
-			_springOutdoorQuad->SetCurFrame(_infos[i][j]->curClip);
-			_springOutdoorQuad->Update();
-			_springOutdoorQuad->Render();
-			_tile->Render();
+			for (int j = 0; j < _infos[i].size(); j++)
+			{
+				_transform->SetPos(_infos[i][j]->centerPos);
+				_transform->Update();
+				_transform->Set_World();
+				_quad->SetCurFrame(_infos[i][j]->curClip);
+				_quad->Update();
+				_quad->Render();
+				_lineRenderer->Render();
+			}
 		}
 	}
+	else
+	{
+		for (int i = 0; i < _infos.size(); i++)
+		{
+			for (int j = 0; j < _infos[i].size(); j++)
+			{
+				_transform->SetPos(_infos[i][j]->centerPos);
+				_transform->Update();
+				_transform->Set_World();
+				_quad->SetCurFrame(_infos[i][j]->curClip);
+				_quad->Update();
+				_quad->Render();
+			}
+		}
+	}
+	
+}
+
+void TileMap::SetCameraRange()
+{
+	float Xhalf = (_mapSize.x * _tileSize.x) / 2 - _tileSize.x / 2;
+	float Yhalf = (_mapSize.y * _tileSize.y) / 2 - _tileSize.y / 2;
+	CAMERA->SetLeftBottom(Vector2(-Xhalf + WIN_WIDTH / 2, -Yhalf + WIN_HEIGHT / 2));
+	CAMERA->SetRightTop(Vector2(Xhalf - WIN_WIDTH / 2, Yhalf - WIN_HEIGHT / 2));
 }
 
 Vector2 TileMap::GetWorldIndex(Vector2 pos)

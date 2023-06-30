@@ -11,9 +11,9 @@ Device::Device()
 
 void Device::Clear()
 {
-    FLOAT myColorR = 1.0f;
-    FLOAT myColorG = 1.0f;
-    FLOAT myColorB = 1.0f;
+    FLOAT myColorR = 0.0f;
+    FLOAT myColorG = 0.0f;
+    FLOAT myColorB = 0.0f;
 
     FLOAT clearColor[4] = { myColorR, myColorG, myColorB, 1.0f };
 
