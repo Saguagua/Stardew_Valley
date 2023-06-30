@@ -23,6 +23,7 @@ public:
 		Vector2 centerPos = { 0,0 };
 		Vector2 curClip = { 0,0 };
 		TileMap::Type type = TileMap::Type::NONE;
+		XMFLOAT4 color = GREEN;
 	};
 
 	TileMap(Vector2 size, wstring path, shared_ptr<class Character> mainCharacter);
@@ -43,8 +44,10 @@ private:
 	void CreateTiles();
 
 	shared_ptr<Transform> _transform;
+	shared_ptr<class RectCollider> _col;
 	shared_ptr<class RectLine> _lineRenderer;
-	shared_ptr<Quad> _quad;
+	shared_ptr<Quad> _tileRenderer;
+
 	weak_ptr<class Character> _mainCharacter;
 
 	Vector2 _mapSize;
@@ -52,6 +55,6 @@ private:
 	vector<vector<shared_ptr<TileInfo>>> _infos;
 
 	bool _isActive = false;
-	bool _isDebug = false;
+	bool _isDebug = true;
 };
 

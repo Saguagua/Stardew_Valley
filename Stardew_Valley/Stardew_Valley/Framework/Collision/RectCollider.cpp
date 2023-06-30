@@ -62,9 +62,6 @@ bool RectCollider::IsCollision(shared_ptr<class CircleCollider> other)
 		}
 	}
 
-	//_rectCollider = make_shared<RectCollider>(Vector2(90, 150));
-	//_rectCollider2 = make_shared<RectCollider>(Vector2(40, 70));
-
 	if (otherWorldPos.y > myInfo.Down && otherWorldPos.y < myInfo.Up)
 	{
 		if (circleLeft < myInfo.right && circleRight > myInfo.left)
@@ -80,7 +77,6 @@ bool RectCollider::IsCollision(shared_ptr<class CircleCollider> other)
 	{
 		return true;
 	}
-
 
 	return false;
 }

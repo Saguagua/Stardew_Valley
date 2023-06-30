@@ -7,9 +7,9 @@ TileMap::TileMap(Vector2 size, wstring path, shared_ptr<Character> mainCharacter
 {
 	_transform = make_shared<Transform>();
 	_tileSize = Vector2(30 , 30);
+	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_quad = make_shared<Quad>(path, Vector2(17, 32), _tileSize);
-	
+	_tileRenderer = make_shared<Quad>(path, Vector2(17, 32), _tileSize);
 	CreateTiles();
 }
 
@@ -22,6 +22,28 @@ void TileMap::Update()
 	Vector2 worldIndex = GetWorldIndex(mainWorldPos);
 
 	_infos[worldIndex.y][worldIndex.x]->curClip.x = 1;
+
+	for (int i = -1; i < 2; i++)
+	{
+		if (worldIndex.y + i < 0 || worldIndex.y + i > _mapSize.y-1)
+			continue;
+		for (int j = -1; j < 2; j++)
+		{
+			if (worldIndex.x + j < 0 || worldIndex.x + j > _mapSize.x - 1)
+				continue;
+			if (i == 0 && j == 0)
+				continue;
+			_col->SetPos(_infos[worldIndex.y + i][worldIndex.x + j]->centerPos);
+			if (_col->IsCollision(_mainCharacter.lock()->GetCollider()))
+			{
+				_infos[worldIndex.y + i][worldIndex.x + j]->color = XMFLOAT4(1,0,0,1);
+			}
+			else
+			{
+				_infos[worldIndex.y + i][worldIndex.x + j]->color = XMFLOAT4(0, 1, 0, 1);
+			}
+		}
+	}
 
 	if (KEY_DOWN(VK_LBUTTON))
 	{
@@ -76,9 +98,10 @@ void TileMap::Render()
 				_transform->SetPos(_infos[i][j]->centerPos);
 				_transform->Update();
 				_transform->Set_World();
-				_quad->SetCurFrame(_infos[i][j]->curClip);
-				_quad->Update();
-				_quad->Render();
+				_tileRenderer->SetCurFrame(_infos[i][j]->curClip);
+				_tileRenderer->Update();
+				_tileRenderer->Render();
+				_lineRenderer->SetColor(_infos[i][j]->color);
 				_lineRenderer->Render();
 			}
 		}
@@ -92,9 +115,9 @@ void TileMap::Render()
 				_transform->SetPos(_infos[i][j]->centerPos);
 				_transform->Update();
 				_transform->Set_World();
-				_quad->SetCurFrame(_infos[i][j]->curClip);
-				_quad->Update();
-				_quad->Render();
+				_tileRenderer->SetCurFrame(_infos[i][j]->curClip);
+				_tileRenderer->Update();
+				_tileRenderer->Render();
 			}
 		}
 	}
@@ -138,6 +161,8 @@ void TileMap::CreateTiles()
 		{
 			Vector2 centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
 			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 6), Type::NONE);
+			if (j % 5 == 0)
+				info->type = Type::BLOCK;
 			tmp.push_back(info);
 		}
 

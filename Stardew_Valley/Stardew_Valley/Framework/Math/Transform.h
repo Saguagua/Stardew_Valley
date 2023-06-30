@@ -12,7 +12,7 @@ public:
 	void Set_World(UINT slot = 0);
 	void SetParent(shared_ptr<Transform> other) { _parent = other; }
 
-	void SetPos(Vector2 pos) { _pos = pos; }
+	void SetPos(Vector2 pos) { _pos = pos; Update_SRT(); }
 	void SetScale(Vector2 scale) { _scale = scale; }
 	void SetAngle(float angle) { _angle = angle; }
 

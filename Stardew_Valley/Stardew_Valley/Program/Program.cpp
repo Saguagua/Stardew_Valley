@@ -5,7 +5,7 @@
 
 Program::Program()
 {
-	_scene = make_shared<ColliderScene>();
+	_scene = make_shared<TestScene>();
 	TIMER->LockRunTime(60);
 }
 
