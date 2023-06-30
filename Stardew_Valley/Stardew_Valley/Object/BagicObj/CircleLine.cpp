@@ -7,7 +7,7 @@ CircleLine::CircleLine(float radius)
 	CreateVertices();
 	CreateData();
 
-	_cBuffer->SetColor(_color);
+	_cBuffer->SetColor(GREEN);
 	_cBuffer->Update();
 }
 

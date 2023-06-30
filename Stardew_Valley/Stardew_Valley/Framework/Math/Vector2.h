@@ -69,8 +69,12 @@ struct Vector2 : public XMFLOAT2
 		Vector2 result;
 		float length = Length();
 
-		result.x = this->x / length;
-		result.y = this->y / length;
+		result.x = x * x / length;
+		result.y = y * y / length;
+		if (x < 0)
+			result.x *= -1;
+		if (y < 0)
+			result.y *= -1;
 
 		return result;
 	}

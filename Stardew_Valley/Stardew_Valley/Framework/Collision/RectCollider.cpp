@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "../../Object/BagicObj/RectLine.h"
 #include "RectCollider.h"
 
 RectCollider::RectCollider(Vector2 size)
@@ -86,16 +85,49 @@ bool RectCollider::IsCollision(shared_ptr<class CircleCollider> other)
 	return false;
 }
 
+bool RectCollider::Block(shared_ptr<CircleCollider> other)
+{
+	if (!IsCollision(other))
+		return false;
+	
+	Vector2 myPos = _transform->GetWorldPos();
+	Vector2 otherPos = other->GetTransform()->GetWorldPos();
+	Vector2 AtoB = otherPos - myPos;
+
+	float otherRadius = other->GetWorldRadius();
+
+	float yDistance = _size.y / 2 + otherRadius - abs(otherPos.y - myPos.y);
+	float xDistance = _size.x / 2 + otherRadius - abs(otherPos.x - myPos.x);
+	
+	if (xDistance > yDistance)
+	{
+		AtoB.x = 0;
+		Vector2 normal = AtoB.Normalize();
+		Vector2 power = normal * yDistance;
+		other->SetPos(otherPos + normal * yDistance);
+	}
+	else
+	{
+		AtoB.y = 0;
+		Vector2 normal = AtoB.Normalize();
+		Vector2 power = normal * xDistance;
+		other->SetPos(otherPos + normal * xDistance);
+	}
+
+
+	return true;
+}
+
 RectCollider::AABB_Info RectCollider::GetAABB_Info()
 {
 	AABB_Info info = {};
 
 	Vector2 worldPos = _transform->GetWorldPos();
-
-	info.Up = worldPos.y + _size.y;
-	info.Down = worldPos.y - _size.y;
-	info.right = worldPos.x + _size.x;
-	info.left = worldPos.x - _size.x;
+	Vector2 halfSize = _size * 0.5f;
+	info.Up = worldPos.y + halfSize.y;
+	info.Down = worldPos.y - halfSize.y;
+	info.right = worldPos.x + halfSize.x;
+	info.left = worldPos.x - halfSize.x;
 
 	return info;
 }

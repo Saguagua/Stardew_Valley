@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "../../Object/BagicObj/CircleLine.h"
 #include "CircleCollider.h"
 
 CircleCollider::CircleCollider(float radius)
@@ -31,13 +30,19 @@ bool CircleCollider::IsCollision(shared_ptr<class RectCollider> other)
 
 bool CircleCollider::IsCollision(shared_ptr<class CircleCollider> other)
 {
-	float radiusLength = (GetWorldRadius() + other->GetWorldRadius()) * (GetWorldRadius() + other->GetWorldRadius());
-	float centerLength = (_transform->GetWorldPos() - other->GetTransform()->GetWorldPos()).Length();
+	float len1 = GetWorldRadius();
+	float len2 = other->GetWorldRadius();
+	float radiusLength = (len1 + len2) * (len1 + len2);
+
+	Vector2 pos1 = _transform->GetWorldPos();
+	Vector2 pos2 = other->GetTransform()->GetWorldPos();
+	float centerLength = (pos1 - pos2).Length();
+
 	return radiusLength > centerLength;
 }
 
 float CircleCollider::GetWorldRadius()
 {
 	Vector2 worldScale = _transform->GetWorldScale();
-	return _radius * worldScale.x * worldScale.y / 2;
+	return _radius * (worldScale.x + worldScale.y) / 2;
 }

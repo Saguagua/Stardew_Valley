@@ -1,4 +1,5 @@
 #pragma once
+#include "../../Types.h"
 class ShapeLine
 {
 public:
@@ -6,7 +7,7 @@ public:
 	~ShapeLine() {}
 
 	void Render();
-	void SetColor(XMFLOAT4 color) {_color = color;}
+	void SetColor(XMFLOAT4 color) {_cBuffer->SetColor(color);}
 
 protected:
 	virtual void CreateVertices() abstract;
@@ -19,7 +20,5 @@ protected:
 
 	weak_ptr<VertexShader> _vShader;
 	weak_ptr<PixelShader> _pShader;
-
-	XMFLOAT4 _color = GREEN;
 };
 

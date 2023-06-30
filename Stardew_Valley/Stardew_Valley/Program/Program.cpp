@@ -1,10 +1,11 @@
 #include "framework.h"
 #include "Program.h"
-#include "../Scene/InGame/TestScene.h"
+#include "../Scene/TestScene/TestScene.h"
+#include "../Scene/TestScene/ColliderScene.h"
 
 Program::Program()
 {
-	_scene = make_shared<TestScene>();
+	_scene = make_shared<ColliderScene>();
 	TIMER->LockRunTime(60);
 }
 

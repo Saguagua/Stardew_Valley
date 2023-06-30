@@ -7,7 +7,7 @@ RectLine::RectLine(Vector2 size)
 	CreateVertices();
 	CreateData();
 	
-	_cBuffer->SetColor(_color);
+	_cBuffer->SetColor(GREEN);
 	_cBuffer->Update();
 }
 

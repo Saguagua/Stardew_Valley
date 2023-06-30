@@ -22,7 +22,7 @@ public:
 	void AddAngle(float angle) { _transform->AddAngle(angle); }
 
 	shared_ptr<Transform> GetTransform() { return _transform; }
-
+	
 protected:
 	enum Type
 	{

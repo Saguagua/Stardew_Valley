@@ -7,15 +7,18 @@ public:
 
 	virtual void Render() override;
 
+	void SetColor(XMFLOAT4 color) { _renderer->SetColor(color); }
+
 	virtual bool IsCollision(Vector2 other) override;
 	virtual bool IsCollision(shared_ptr<class RectCollider> other) override;
 	virtual bool IsCollision(shared_ptr<class CircleCollider> other) override;
 	float GetRadius() { return _radius; }
 	float GetWorldRadius();
+
 private:
 	friend RectCollider;
 
-	shared_ptr<class CircleLine> _renderer;
+	shared_ptr<CircleLine> _renderer;
 	float _radius;
 };
 
