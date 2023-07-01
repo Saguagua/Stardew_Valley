@@ -11,7 +11,9 @@ CircleCollider::CircleCollider(float radius)
 void CircleCollider::Render()
 {
 	_transform->Set_World(0);
-	_renderer->Render();
+
+	if (_isDebug)
+		_renderer->Render();
 }
 
 bool CircleCollider::IsCollision(Vector2 other)

@@ -11,7 +11,8 @@ RectCollider::RectCollider(Vector2 size)
 void RectCollider::Render()
 {
 	_transform->Set_World(0);
-	_renderer->Render();
+	if (_isDebug)
+		_renderer->Render();
 }
 
 bool RectCollider::IsCollision(Vector2 other)

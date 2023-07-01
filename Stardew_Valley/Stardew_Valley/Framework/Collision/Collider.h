@@ -35,5 +35,7 @@ protected:
 	shared_ptr<Transform> _transform = make_shared<Transform>();
 	Collider::Type _type = Type::NONE;
 
+	bool _isDebug = false;
+
 };
 
