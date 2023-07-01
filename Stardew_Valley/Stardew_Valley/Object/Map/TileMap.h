@@ -2,30 +2,7 @@
 
 class TileMap
 {
-	enum Type
-	{
-		NONE,
-		MOVEABLE,
-		BLOCK
-	};
-	
 public:
-
-	struct TileInfo
-	{
-		TileInfo(Vector2 centerPos, Vector2 curClip, TileMap::Type type)
-		{
-			this->centerPos = centerPos;
-			this->curClip = curClip;
-			this->type = type;
-		}
-
-		Vector2 centerPos = { 0,0 };
-		Vector2 curClip = { 0,0 };
-		TileMap::Type type = TileMap::Type::NONE;
-		XMFLOAT4 color = GREEN;
-	};
-
 	TileMap(Vector2 size, wstring path, shared_ptr<class Character> mainCharacter);
 	~TileMap() {}
 
@@ -44,11 +21,11 @@ private:
 	void CreateTiles();
 
 	shared_ptr<Transform> _transform;
-	shared_ptr<class RectCollider> _col;
-	shared_ptr<class RectLine> _lineRenderer;
-	shared_ptr<Quad> _tileRenderer;
+	shared_ptr<RectCollider> _col;
+	shared_ptr<RectLine> _lineRenderer;
+	shared_ptr<TextureRect> _tileRenderer;
 
-	weak_ptr<class Character> _mainCharacter;
+	weak_ptr<Character> _mainCharacter;
 
 	Vector2 _mapSize;
 	Vector2 _tileSize;

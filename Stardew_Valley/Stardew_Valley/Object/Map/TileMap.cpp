@@ -9,7 +9,7 @@ TileMap::TileMap(Vector2 size, wstring path, shared_ptr<Character> mainCharacter
 	_tileSize = Vector2(30 , 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = make_shared<Quad>(path, Vector2(17, 32), _tileSize);
+	_tileRenderer = make_shared<TextureRect>(path, Vector2(17, 32), _tileSize);
 	CreateTiles();
 }
 
@@ -160,12 +160,11 @@ void TileMap::CreateTiles()
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			Vector2 centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
-			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 6), Type::NONE);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 6), TileInfo::Type::NONE);
 			if (j % 5 == 0)
-				info->type = Type::BLOCK;
+				info->type = TileInfo::Type::BLOCK;
 			tmp.push_back(info);
 		}
-
 		_infos.push_back(tmp);
 	}
 
