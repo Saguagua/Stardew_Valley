@@ -87,7 +87,7 @@
     <ClInclude Include="Object\BagicObj\RectLine.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\BagicObj\TileMap.h">
+    <ClInclude Include="Object\Map\TileMap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Types.h">
@@ -108,7 +108,7 @@
     <ClInclude Include="Object\BagicObj\Sprite.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\BagicObj\Quad.h">
+    <ClInclude Include="Object\BagicObj\TextureRect.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Camera\Camera.h">
@@ -132,10 +132,28 @@
     <ClInclude Include="Framework\Utility\MathUtility.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Tile.h">
+    <ClInclude Include="Scene\TestScene\ColliderScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TestScene\ColliderScene.h">
+    <ClInclude Include="Scene\MapTool\MapToolScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\UI\Palette.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\BagicObj\SingleColorRect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Map\TileInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\UI\Button.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\UI\ColorButton.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\UI\TextureButton.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -200,7 +218,7 @@
     <ClCompile Include="Object\BagicObj\RectLine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\BagicObj\TileMap.cpp">
+    <ClCompile Include="Object\Map\TileMap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\TextureMapping\SamplerState.cpp">
@@ -218,7 +236,7 @@
     <ClCompile Include="Object\BagicObj\Sprite.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\BagicObj\Quad.cpp">
+    <ClCompile Include="Object\BagicObj\TextureRect.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Camera\Camera.cpp">
@@ -239,10 +257,25 @@
     <ClCompile Include="Object\BagicObj\ShapeLine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
+    <ClCompile Include="Scene\TestScene\ColliderScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TestScene\ColliderScene.cpp">
+    <ClCompile Include="Scene\MapTool\MapToolScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\Palette.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\BagicObj\SingleColorRect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\Button.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\ColorButton.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\TextureButton.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

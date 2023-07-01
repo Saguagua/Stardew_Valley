@@ -1,9 +1,9 @@
 #pragma once
-class Quad
+class TextureRect
 {
 public:
-	Quad(wstring path, Vector2 maxFrame, Vector2 size);
-	~Quad() {}
+	TextureRect(wstring path, Vector2 maxFrame, Vector2 size);
+	~TextureRect() {}
 
 	virtual void Render();
 	virtual void Update();

@@ -6,7 +6,11 @@
 
 #define PI				3.141592f
 
+#define RED				XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f)
 #define GREEN			XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f)
+#define BLUE			XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f)
+#define PURPLE			XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f)
+#define LIGHTPURPLE		XMFLOAT4(0.4f, 0.4f, 1.0f, 1.0f)
 
 #define DEVICE			Device::GetInstance()->GetDevice()
 #define DC				Device::GetInstance()->GetContext()
@@ -19,6 +23,7 @@
 #define RUNTIME			Timer::GetInstance()->GetRunTime()
 
 #define MOUSE_POS		InputManager::GetInstance()->GetMousePos()
+#define W_MOUSE_POS		Camera::GetInstance()->GetWorldMousePos()
 #define KEY_UP(k)		InputManager::GetInstance()->Up(k)
 #define KEY_PRESS(k)	InputManager::GetInstance()->Press(k)
 #define KEY_DOWN(k)		InputManager::GetInstance()->Down(k)
@@ -32,3 +37,5 @@
 #define SAMPLER			StateManager::GetInstance()->GetSampler()
 
 #define ADD_SRV(k)		SRVManager::GetInstance()->AddSRV(k);
+
+#define CallBack		function<void()>

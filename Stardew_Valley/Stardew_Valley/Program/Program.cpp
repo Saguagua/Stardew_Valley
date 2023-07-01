@@ -2,11 +2,13 @@
 #include "Program.h"
 #include "../Scene/TestScene/TestScene.h"
 #include "../Scene/TestScene/ColliderScene.h"
+#include "../Scene/MapTool/MapToolScene.h"
 
 Program::Program()
 {
-	_scene = make_shared<TestScene>();
+	_scene = make_shared<MapToolScene>();
 	TIMER->LockRunTime(60);
+	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
 }
 
 void Program::Update()
@@ -24,5 +26,6 @@ void Program::Render()
 	CAMERA->SetViewBuffer();
 	CAMERA->SetProjectionBuffer();
 	_scene->Render();
+	_scene->PostRender();
 	Device::GetInstance()->Present();
 }

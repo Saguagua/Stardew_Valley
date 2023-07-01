@@ -44,7 +44,6 @@ using namespace Microsoft::WRL;
 //Device
 #include "Framework/Device/Device.h"
 
-
 //Render
 #include "Framework/Render/InputLayout.h"
 #include "Framework/Render/ConstantBuffer.h"
@@ -67,12 +66,23 @@ using namespace Microsoft::WRL;
 #include "Object/BagicObj/ShapeLine.h"
 #include "Object/BagicObj/CircleLine.h"
 #include "Object/BagicObj/RectLine.h"
-#include "Object/BagicObj/Quad.h"
+#include "Object/BagicObj/SingleColorRect.h"
+#include "Object/BagicObj/TextureRect.h"
 
 //Collider
 #include "Framework/Collision/Collider.h"
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/RectCollider.h"
+
+//Map
+#include "Object/Map/TileInfo.h"
+#include "Object/Map/TileMap.h"
+
+//UI
+#include "Object/UI/Button.h"
+#include "Object/UI/ColorButton.h"
+#include "Object/UI/TextureButton.h"
+#include "Object/UI/Palette.h"
 
 //Camera
 #include"Framework/Camera/Camera.h"
@@ -81,11 +91,8 @@ using namespace Microsoft::WRL;
 #include "Framework/Utility/Timer.h"
 #include "Framework/Utility/InputManager.h"
 
-
-
 //Scene
 #include "Scene/Scene.h"
-
 
 //Program
 #include "Program/Program.h"

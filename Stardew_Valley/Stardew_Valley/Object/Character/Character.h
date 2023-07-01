@@ -16,6 +16,6 @@ public:
 private:
 	shared_ptr<Transform> _quadSlot;
 	shared_ptr<CircleCollider> _collider;
-	shared_ptr<Quad> _quad;
+	shared_ptr<TextureRect> _quad;
 };
 

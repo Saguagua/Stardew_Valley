@@ -1,25 +1,25 @@
 #include "framework.h"
-#include "Quad.h"
+#include "TextureRect.h"
 
-Quad::Quad(wstring path, Vector2 maxFrame, Vector2 size)
+TextureRect::TextureRect(wstring path, Vector2 maxFrame, Vector2 size)
 	:_size(size)
 {
 	_srv = ADD_SRV(path);
-	_fBuffer = make_shared<FrameBuffer>();
-	_fBuffer->SetMaxFrame(maxFrame);
 
 	CreateVertex();
 	CreateData();
+
+	_fBuffer->SetMaxFrame(maxFrame);
 }
 
-void Quad::Render()
+void TextureRect::Render()
 {
 	_fBuffer->Set_PS(1);
 
 	_vBuffer->SetIA_VertexBuffer();
 	_iBuffer->SetIA_IndexBuffer();
 	_vShader.lock()->SetIA_InputLayout();
-
+	
 	DC->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	_srv.lock()->SetSRV(0);
@@ -31,13 +31,13 @@ void Quad::Render()
 	DC->DrawIndexed(_indices.size(), 0, 0);
 }
 
-void Quad::Update()
+void TextureRect::Update()
 {
 	_fBuffer->SetStart(_curFrame);
 	_fBuffer->Update();
 }
 
-void Quad::SetCurFrame(Vector2 frame)
+void TextureRect::SetCurFrame(Vector2 frame)
 {
 	Vector2 max = _fBuffer->GetMaxFrame();
 	if (frame.x > -1 && frame.x < max.x
@@ -45,7 +45,7 @@ void Quad::SetCurFrame(Vector2 frame)
 		_curFrame = frame;
 }
 
-void Quad::CreateVertex()
+void TextureRect::CreateVertex()
 {
 	VertexTexture v;
 	Vector2 halfSize = _size * 0.5f;
@@ -75,13 +75,12 @@ void Quad::CreateVertex()
 	_indices.push_back(3);
 }
 
-void Quad::CreateData()
+void TextureRect::CreateData()
 {
 	_vBuffer = make_shared<VertexBuffer>(_vertices.data(), sizeof(VertexTexture), _vertices.size());
 	_iBuffer = make_shared<IndexBuffer>(_indices.data(), _indices.size());
+	_fBuffer = make_shared<FrameBuffer>();
 
 	_vShader = ADD_VS(L"Shader/TextureVS.hlsl");
 	_pShader = ADD_PS(L"Shader/ClipFilterPS.hlsl");
-
-	
 }

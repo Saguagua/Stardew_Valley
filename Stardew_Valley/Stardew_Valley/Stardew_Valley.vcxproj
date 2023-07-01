@@ -151,6 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\UI\ColorButton.h" />
+    <ClInclude Include="Object\UI\Button.h" />
+    <ClInclude Include="Object\BagicObj\SingleColorRect.h" />
+    <ClInclude Include="Object\Map\TileInfo.h" />
+    <ClInclude Include="Object\UI\Palette.h" />
+    <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
     <ClInclude Include="Framework\Utility\MathUtility.h" />
     <ClInclude Include="Object\BagicObj\CircleLine.h" />
@@ -176,7 +182,7 @@
     <ClInclude Include="Framework\Utility\InputManager.h" />
     <ClInclude Include="Framework\Utility\Timer.h" />
     <ClInclude Include="Program\Program.h" />
-    <ClInclude Include="Object\BagicObj\Quad.h" />
+    <ClInclude Include="Object\BagicObj\TextureRect.h" />
     <ClInclude Include="Framework\Collision\RectCollider.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Framework\TextureMapping\SamplerState.h" />
@@ -189,11 +195,16 @@
     <ClInclude Include="Framework\TextureMapping\StateManager.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Object\BagicObj\RectLine.h" />
-    <ClInclude Include="Object\BagicObj\TileMap.h" />
-    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Object\Map\TileMap.h" />
+    <ClInclude Include="Object\UI\TextureButton.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\UI\ColorButton.cpp" />
+    <ClCompile Include="Object\UI\Button.cpp" />
+    <ClCompile Include="Object\BagicObj\SingleColorRect.cpp" />
+    <ClCompile Include="Object\UI\Palette.cpp" />
+    <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
     <ClCompile Include="Object\BagicObj\CircleLine.cpp" />
     <ClCompile Include="Framework\Collision\CircleCollider.cpp" />
@@ -223,7 +234,7 @@
     <ClCompile Include="Framework\Utility\Timer.cpp" />
     <ClCompile Include="Program\Program.cpp" />
     <ClCompile Include="Framework\TextureMapping\SamplerState.cpp" />
-    <ClCompile Include="Object\BagicObj\Quad.cpp" />
+    <ClCompile Include="Object\BagicObj\TextureRect.cpp" />
     <ClCompile Include="Framework\Collision\RectCollider.cpp" />
     <ClCompile Include="Scene\TestScene\TestScene.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
@@ -233,8 +244,8 @@
     <ClCompile Include="Stardew_Valley.cpp" />
     <ClCompile Include="Framework\TextureMapping\StateManager.cpp" />
     <ClCompile Include="Object\BagicObj\RectLine.cpp" />
-    <ClCompile Include="Object\BagicObj\TileMap.cpp" />
-    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="Object\Map\TileMap.cpp" />
+    <ClCompile Include="Object\UI\TextureButton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />
