@@ -4,32 +4,27 @@
 Palette::Palette(Vector2 size)
 	:_size(size)
 {
-	_mainRect = make_shared<ColorButton>(PURPLE,_size);
-	_subRect = make_shared<ColorButton>(LIGHTPURPLE, _size * 0.9);
-	_subRect->GetTransform()->SetParent(_mainRect->GetTransform());
-	_subRect->GetTransform()->SetPos(Vector2(0, -20));
+	_mainWin = make_shared<Window>(_size, PURPLE);
+	_subWin = make_shared<Window>(_size, LIGHTPURPLE);
+
+	_mainWin->AddWindow(_subWin);
+
+	
 }
 
 void Palette::PostRender()
 {
-	_mainRect->Render();
-	_subRect->Render();
+	_mainWin->Render();
+	_subWin->Render();
 }
 
 void Palette::Update()
 {
-	_mainRect->Update();
-	_subRect->Update();
+	_mainWin->Update();
+	_subWin->Update();
 }
 
 void Palette::KeyInput()
 {
-	if (KEY_DOWN(VK_LBUTTON))
-	{
-		_centerToMouse = W_MOUSE_POS - _mainRect->GetTransform()->GetWorldPos();
-	}
-	if (KEY_PRESS(VK_LBUTTON))
-	{
-		_mainRect->GetTransform()->SetPos(W_MOUSE_POS - _centerToMouse);
-	}
+	
 }

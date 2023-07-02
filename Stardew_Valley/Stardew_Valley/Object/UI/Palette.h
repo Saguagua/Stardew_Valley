@@ -11,13 +11,16 @@ public:
 	void KeyInput();
 
 private:
-	shared_ptr<ColorButton> _mainRect;
-	shared_ptr<ColorButton> _subRect;
+	shared_ptr<Window> _mainWin;
+	shared_ptr<Window> _subWin;
 
 	Vector2 _centerToMouse;
 
 	Vector2 _size;
 
-	shared_ptr<TextureRect> _tile;
+	vector<shared_ptr<TextureButton>> _buttons;
+	vector<shared_ptr<TextureButton>> _tiles;
+
+	vector<shared_ptr<TileInfo>> _infos;
 };
 

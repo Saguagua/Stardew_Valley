@@ -82,6 +82,7 @@ using namespace Microsoft::WRL;
 #include "Object/UI/Button.h"
 #include "Object/UI/ColorButton.h"
 #include "Object/UI/TextureButton.h"
+#include "Object/UI/Window.h"
 #include "Object/UI/Palette.h"
 
 //Camera

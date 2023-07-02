@@ -3,7 +3,7 @@
 
 MapToolScene::MapToolScene()
 {
-	_palette = make_shared<Palette>(Vector2(300, 400));
+	_palette = make_shared<Palette>(Vector2(500, 600));
 }
 
 void MapToolScene::Update()

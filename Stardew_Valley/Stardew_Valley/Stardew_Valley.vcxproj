@@ -198,6 +198,7 @@
     <ClInclude Include="Object\Map\TileMap.h" />
     <ClInclude Include="Object\UI\TextureButton.h" />
     <ClInclude Include="Types.h" />
+    <ClInclude Include="Object\UI\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object\UI\ColorButton.cpp" />
@@ -246,12 +247,14 @@
     <ClCompile Include="Object\BagicObj\RectLine.cpp" />
     <ClCompile Include="Object\Map\TileMap.cpp" />
     <ClCompile Include="Object\UI\TextureButton.cpp" />
+    <ClCompile Include="Object\UI\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\Player\farmer_base.png" />
+    <Image Include="Resource\Tile\MapTiles.png" />
     <Image Include="Resource\Tile\spring_beach.png" />
     <Image Include="Resource\Tile\spring_outdoors.png" />
     <Image Include="small.ico" />
