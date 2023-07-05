@@ -3,7 +3,7 @@
 class TileMap
 {
 public:
-	TileMap(Vector2 size, wstring path, shared_ptr<class Character> mainCharacter);
+	TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<class Character> mainCharacter);
 	~TileMap() {}
 
 	void Update();
@@ -23,7 +23,7 @@ private:
 	shared_ptr<Transform> _transform;
 	shared_ptr<RectCollider> _col;
 	shared_ptr<RectLine> _lineRenderer;
-	shared_ptr<TextureRect> _tileRenderer;
+	weak_ptr<TextureRect> _tileRenderer;
 
 	weak_ptr<Character> _mainCharacter;
 

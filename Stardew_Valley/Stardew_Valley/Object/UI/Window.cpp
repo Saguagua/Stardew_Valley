@@ -26,6 +26,9 @@ void Window::PostRender()
 void Window::Update()
 {
 	_col->Update();
+
+	if (_col->IsCollision(W_MOUSE_POS))
+		KeyInput();
 }
 
 void Window::AddButton(shared_ptr<Button> button)

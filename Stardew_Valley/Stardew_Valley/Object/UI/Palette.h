@@ -10,9 +10,12 @@ public:
 
 	void KeyInput();
 
+	void Move();
+
 private:
-	shared_ptr<Window> _mainWin;
-	shared_ptr<Window> _subWin;
+	shared_ptr<ColorButton> _mainWin;
+	shared_ptr<List> _list;
+	shared_ptr<ColorButton> _subWin;
 
 	Vector2 _centerToMouse;
 

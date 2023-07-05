@@ -39,4 +39,6 @@
 
 #define ADD_SRV(k)		SRVManager::GetInstance()->AddSRV(k);
 
+#define ADD_TILE(path, frame, size)		TileManager::GetInstance()->GetTile(path, frame, size);
+
 #define CallBack		function<void()>

@@ -2,14 +2,14 @@
 #include "TileMap.h"
 #include "../Character/Character.h"
 
-TileMap::TileMap(Vector2 size, wstring path, shared_ptr<Character> mainCharacter)
+TileMap::TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<Character> mainCharacter)
 	:_mapSize(size), _mainCharacter(mainCharacter)
 {
 	_transform = make_shared<Transform>();
 	_tileSize = Vector2(30 , 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = make_shared<TextureRect>(path, Vector2(17, 32), _tileSize);
+	_tileRenderer = ADD_TILE(path, size, tileSize);
 	CreateTiles();
 }
 
@@ -98,9 +98,9 @@ void TileMap::Render()
 				_transform->SetPos(_infos[i][j]->centerPos);
 				_transform->Update();
 				_transform->Set_World();
-				_tileRenderer->SetCurFrame(_infos[i][j]->curClip);
-				_tileRenderer->Update();
-				_tileRenderer->Render();
+				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curClip);
+				_tileRenderer.lock()->Update();
+				_tileRenderer.lock()->Render();
 				_lineRenderer->SetColor(_infos[i][j]->color);
 				_lineRenderer->Render();
 			}
@@ -115,9 +115,9 @@ void TileMap::Render()
 				_transform->SetPos(_infos[i][j]->centerPos);
 				_transform->Update();
 				_transform->Set_World();
-				_tileRenderer->SetCurFrame(_infos[i][j]->curClip);
-				_tileRenderer->Update();
-				_tileRenderer->Render();
+				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curClip);
+				_tileRenderer.lock()->Update();
+				_tileRenderer.lock()->Render();
 			}
 		}
 	}

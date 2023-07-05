@@ -76,6 +76,7 @@ using namespace Microsoft::WRL;
 
 //Map
 #include "Object/Map/TileInfo.h"
+#include "Object/Map/TileManager.h"
 #include "Object/Map/TileMap.h"
 
 //UI
@@ -83,6 +84,7 @@ using namespace Microsoft::WRL;
 #include "Object/UI/ColorButton.h"
 #include "Object/UI/TextureButton.h"
 #include "Object/UI/Window.h"
+#include "Object/UI/List.h"
 #include "Object/UI/Palette.h"
 
 //Camera

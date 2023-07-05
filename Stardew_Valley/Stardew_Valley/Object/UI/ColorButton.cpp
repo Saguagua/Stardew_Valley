@@ -1,8 +1,8 @@
 #include "framework.h"
 #include "ColorButton.h"
 
-ColorButton::ColorButton(XMFLOAT4 color, Vector2 size, CallBack callback)
-	:Button(size, callback)
+ColorButton::ColorButton(XMFLOAT4 color, Vector2 size)
+	:Button(size)
 {
 	_renderer = make_shared<SingleColorRect>(size, color);
 }

@@ -159,6 +159,12 @@
     <ClInclude Include="Object\UI\Window.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\UI\List.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Map\TileManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -284,6 +290,12 @@
     <ClCompile Include="Object\UI\Window.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object\UI\List.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Map\TileManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -307,6 +319,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\Tile\MapTiles.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Tile\Tile.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

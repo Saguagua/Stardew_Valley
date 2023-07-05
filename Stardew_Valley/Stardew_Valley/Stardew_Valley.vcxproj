@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
     <ClInclude Include="Object\UI\Button.h" />
     <ClInclude Include="Object\BagicObj\SingleColorRect.h" />
@@ -197,10 +198,12 @@
     <ClInclude Include="Object\BagicObj\RectLine.h" />
     <ClInclude Include="Object\Map\TileMap.h" />
     <ClInclude Include="Object\UI\TextureButton.h" />
+    <ClInclude Include="Object\Map\TileManager.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="Object\UI\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\UI\List.cpp" />
     <ClCompile Include="Object\UI\ColorButton.cpp" />
     <ClCompile Include="Object\UI\Button.cpp" />
     <ClCompile Include="Object\BagicObj\SingleColorRect.cpp" />
@@ -248,6 +251,7 @@
     <ClCompile Include="Object\Map\TileMap.cpp" />
     <ClCompile Include="Object\UI\TextureButton.cpp" />
     <ClCompile Include="Object\UI\Window.cpp" />
+    <ClCompile Include="Object\Map\TileManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />
@@ -257,6 +261,7 @@
     <Image Include="Resource\Tile\MapTiles.png" />
     <Image Include="Resource\Tile\spring_beach.png" />
     <Image Include="Resource\Tile\spring_outdoors.png" />
+    <Image Include="Resource\Tile\Tile.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>

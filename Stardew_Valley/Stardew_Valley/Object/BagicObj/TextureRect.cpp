@@ -42,7 +42,11 @@ void TextureRect::SetCurFrame(Vector2 frame)
 	Vector2 max = _fBuffer->GetMaxFrame();
 	if (frame.x > -1 && frame.x < max.x
 		&& frame.y > -1 && frame.y < max.y)
+	{
 		_curFrame = frame;
+		_fBuffer->SetStart(_curFrame);
+		_fBuffer->Update();
+	}
 }
 
 void TextureRect::CreateVertex()
