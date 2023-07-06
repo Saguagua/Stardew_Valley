@@ -7,11 +7,11 @@ public:
 	virtual ~TextureButton() {}
 
 	virtual void Render() override;
-	virtual void PostRender() override;
 	virtual void Update() override;
 
-	void SetFrame(Vector2 frame) { _renderer.lock()->SetCurFrame(frame); }
+	void SetFrame(Vector2 frame) { _curFrame = frame; }
 private:
 	weak_ptr<TextureRect> _renderer;
+	Vector2 _curFrame;
 };
 

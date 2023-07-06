@@ -7,8 +7,10 @@ Camera* Camera::_instance = nullptr;
 Camera::Camera()
 {
 	_view = make_shared<Transform>();
+	_postView = make_shared<MatrixBuffer>();
 	_proj = make_shared<MatrixBuffer>();
-
+	_postView->Update();
+	
 	XMMATRIX projMatrix = XMMatrixOrthographicLH(WIN_WIDTH, WIN_HEIGHT, 0.0f, 1.0f);
 	_proj->SetMatrix(projMatrix);
 	_proj->Update();
@@ -24,9 +26,9 @@ void Camera::Update()
 	_view->Update();
 }
 
-void Camera::PostRender()
+void Camera::SetPostViewPort()
 {
-	
+	_postView->Set_VS(1);
 }
 
 void Camera::SetViewPort(UINT width, UINT height)
@@ -57,6 +59,11 @@ Vector2 Camera::GetWorldMousePos()
 
 	Vector2 mousePos = MOUSE_POS - CENTER;
 	return mousePos.TransformCoord(inverseMatrix);
+}
+
+Vector2 Camera::GetScreenMousePos()
+{
+	return MOUSE_POS - CENTER;
 }
 
 void Camera::FreeMode()

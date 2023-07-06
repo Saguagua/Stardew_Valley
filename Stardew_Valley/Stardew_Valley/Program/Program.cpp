@@ -26,6 +26,7 @@ void Program::Render()
 	CAMERA->SetViewBuffer();
 	CAMERA->SetProjectionBuffer();
 	_scene->Render();
+	CAMERA->SetPostViewPort();
 	_scene->PostRender();
 	Device::GetInstance()->Present();
 }

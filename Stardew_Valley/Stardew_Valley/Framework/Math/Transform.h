@@ -35,7 +35,6 @@ private:
 	float _angle = 0.0f;
 	
 	XMMATRIX _srt = XMMatrixIdentity();
-	XMMATRIX _posM = XMMatrixIdentity();
 
 	weak_ptr<Transform> _parent;
 };

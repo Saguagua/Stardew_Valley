@@ -13,13 +13,9 @@ void ColorButton::Render()
 	_renderer->Render();
 }
 
-void ColorButton::PostRender()
-{
-	_col->Render();
-	_renderer->Render();
-}
-
 void ColorButton::Update()
 {
+	_col->Update();
+
 	Button::Update();
 }

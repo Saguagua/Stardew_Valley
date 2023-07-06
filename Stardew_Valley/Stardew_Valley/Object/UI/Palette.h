@@ -8,11 +8,9 @@ public:
 	void PostRender();
 	void Update();
 
-	void KeyInput();
-
+private:
 	void Move();
 
-private:
 	shared_ptr<ColorButton> _mainWin;
 	shared_ptr<List> _list;
 	shared_ptr<ColorButton> _subWin;

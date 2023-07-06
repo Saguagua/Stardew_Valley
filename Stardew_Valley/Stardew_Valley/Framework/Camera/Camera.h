@@ -29,9 +29,8 @@ public:
 	}
 
 	void Update();
-	void PostRender();
+	void SetPostViewPort();
 
-	//void ShakeStart(float magnitude, float duration, float reduceDamping = 1.0f);
 
 	void SetViewPort(UINT width = WIN_WIDTH, UINT height = WIN_HEIGHT);
 
@@ -52,6 +51,7 @@ public:
 	void AddAngle(float angle) { _view->AddAngle(-angle); }
 
 	Vector2 GetWorldMousePos();
+	Vector2 GetScreenMousePos();
 
 private:
 	void FreeMode();
@@ -60,6 +60,7 @@ private:
 	static Camera* _instance;
 
 	shared_ptr<Transform> _view;
+	shared_ptr<MatrixBuffer> _postView;
 	shared_ptr<MatrixBuffer> _proj;
 
 	float _speed;

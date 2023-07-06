@@ -16,12 +16,7 @@ TextureButton::TextureButton(wstring path, Vector2 clip, Vector2 size)
 void TextureButton::Render()
 {
 	_col->Render();
-	_renderer.lock()->Render();
-}
-
-void TextureButton::PostRender()
-{
-	_col->Render();			//둘 다 PostRender 만들어야함
+	_renderer.lock()->SetCurFrame(_curFrame);
 	_renderer.lock()->Render();
 }
 

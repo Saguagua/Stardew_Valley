@@ -25,9 +25,9 @@ void Transform::Update_SRT()
 {
 	XMMATRIX scale = XMMatrixScaling(_scale.x, _scale.y, 1);
 	XMMATRIX rotate = XMMatrixRotationZ(_angle);
-	_posM = XMMatrixTranslation(_pos.x, _pos.y, 0);
+	XMMATRIX pos = XMMatrixTranslation(_pos.x, _pos.y, 0);
 
-	_srt = scale * rotate * _posM;
+	_srt = scale * rotate * pos;
 
 	if (!_parent.expired())
 		_srt *= _parent.lock()->GetSRT();
@@ -41,7 +41,7 @@ void Transform::Set_World(UINT slot)
 Vector2 Transform::GetWorldPos()
 {
 	XMFLOAT4X4 tmp;
-	XMStoreFloat4x4(&tmp, _posM);
+	XMStoreFloat4x4(&tmp, _srt);
 
 	return Vector2(tmp._41, tmp._42);
 }

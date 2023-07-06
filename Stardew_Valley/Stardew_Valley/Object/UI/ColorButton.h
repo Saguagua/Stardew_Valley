@@ -6,7 +6,6 @@ public:
 	virtual ~ColorButton() {}
 
 	virtual void Render() override;
-	virtual void PostRender() override;
 	virtual void Update() override;
 
 private:
