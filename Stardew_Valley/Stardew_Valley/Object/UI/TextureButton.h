@@ -10,6 +10,7 @@ public:
 	virtual void Update() override;
 
 	void SetFrame(Vector2 frame) { _curFrame = frame; }
+	Vector2 GetFrame() { return _curFrame; }
 private:
 	weak_ptr<TextureRect> _renderer;
 	Vector2 _curFrame;

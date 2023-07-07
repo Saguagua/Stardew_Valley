@@ -44,6 +44,11 @@ public:
 	const Vector2& GetMousePos() { return _mousePos; }
 	void SetMousePos(Vector2 pos) { _mousePos = pos; }
 
+	int GetMouseScroll() { return _mouseScroll; }
+	void SetMouseScroll(short val) { _mouseScroll = val; }
+
+	bool ScrollUp() { return _mouseScroll > 0; }
+	bool ScrollDown() { return _mouseScroll < 0; }
 private:
 	static InputManager* _instance;
 
@@ -52,5 +57,6 @@ private:
 	byte _stateMap[KEY_MAX] = {};
 
 	Vector2 _mousePos;
+	short _mouseScroll = 0;
 };
 

@@ -23,5 +23,10 @@ void Button::Update()
 			if (_pushIntEvent != nullptr)
 				_pushIntEvent(0);
 		}
+		if (MOUSE_SCROLL)
+		{
+			if (_scrollEvent != nullptr)
+				_scrollEvent();
+		}
 	}
 }

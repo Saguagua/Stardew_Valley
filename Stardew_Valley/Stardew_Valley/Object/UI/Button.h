@@ -11,6 +11,10 @@ public:
 
 	void SetPushEvent(CallBack cb) { _pushEvent = cb; }
 	void SetPushEvent(CallBackInt cb) { _pushIntEvent = cb; }
+
+	void SetScrollEvent(CallBack cb) { _scrollEvent = cb; }
+	void SetScrollEvent(CallBackInt cb) { _scrollIntEvent = cb; }
+
 	void SetMouseOnEvent(CallBack cb) { _mouseOnEvent = cb; }
 	void SetMouseOnEvent(CallBackInt cb) { _mouseOnIntEvent = cb; }
 
@@ -24,5 +28,7 @@ protected:
 	CallBackInt _pushIntEvent;
 	CallBack _mouseOnEvent;
 	CallBackInt _mouseOnIntEvent;
+	CallBack _scrollEvent;
+	CallBackInt _scrollIntEvent;
 };
 

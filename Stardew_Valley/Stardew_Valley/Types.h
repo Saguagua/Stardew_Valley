@@ -26,6 +26,8 @@
 #define MOUSE_POS		InputManager::GetInstance()->GetMousePos()
 #define W_MOUSE_POS		Camera::GetInstance()->GetWorldMousePos()
 #define S_MOUSE_POS		Camera::GetInstance()->GetScreenMousePos()
+#define MOUSE_SCROLL	InputManager::GetInstance()->GetMouseScroll()
+
 #define KEY_UP(k)		InputManager::GetInstance()->Up(k)
 #define KEY_PRESS(k)	InputManager::GetInstance()->Press(k)
 #define KEY_DOWN(k)		InputManager::GetInstance()->Down(k)

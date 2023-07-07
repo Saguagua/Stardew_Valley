@@ -2,11 +2,13 @@
 #include "List.h"
 
 List::List(Vector2 size, wstring path, Vector2 frame)
-	:_size(size)
+	:_size(size), _maxFrame(frame)
 {
 	_mainRect = make_shared<ColorButton>(LIGHTPURPLE, _size);
 	
-	CreateButtons(path, frame);
+	CreateButtons(path, _maxFrame);
+	CallBack scroll = std::bind(&List::Scroll, this);
+	_mainRect->SetScrollEvent(scroll);
 }
 
 void List::Render()
@@ -29,30 +31,25 @@ void List::Update()
 	}
 }
 
-void List::KeyInput()
-{
-}
-
 void List::CreateButtons(wstring path, Vector2 frame)
 {
-	Vector2 buttonSize;
-	buttonSize.x = _size.x / frame.x / 1.125;
-	buttonSize.y = _size.y / frame.y;
+	_buttonSize.x = _size.x / 5.0f;
+	_buttonSize.y = _size.y / 5.0f;
 
 	Vector2 startPos;
-	startPos.x = -buttonSize.x * frame.x / 2- buttonSize.x / 2;
-	startPos.y = buttonSize.y * frame.y / 2 - buttonSize.y / 2;
+	startPos.x = -_size.x / 2 + _buttonSize.x;
+	startPos.y = _size.y / 2 - _buttonSize.y;
 
-	for (int i = 0; i <= frame.y; i++)
+	for (int i = 0; i <= frame.x; i++)
 	{
-		for (int j = 0; j <= frame.x; j++)
+		for (int j = 0; j < 4; j++)
 		{
-			shared_ptr<TextureButton> button = make_shared<TextureButton>(path, frame, buttonSize);
-			button->GetTransform()->SetPos(Vector2(startPos.x + i * (buttonSize.x + 5), startPos.y - j * (buttonSize.y + 5)));
+			shared_ptr<TextureButton> button = make_shared<TextureButton>(path, frame, _buttonSize);
+			button->GetTransform()->SetPos(Vector2(startPos.x + i * (_buttonSize.x + _buttonSize.x/2), startPos.y - j * (_buttonSize.y + _buttonSize.y/2)));
 			button->GetTransform()->SetParent(_mainRect->GetTransform());
-			button->SetFrame(Vector2(i,j));
-			CallBackInt pEvent = std::bind(&List::PushButtonEvent, this, j + i * frame.y);
-			button->SetPushEvent(pEvent);
+			button->SetFrame(Vector2(i, j));
+			//CallBackInt pEvent = std::bind(&List::PushButtonEvent, this, j + i * 3);
+			//button->SetPushEvent(pEvent);
 			_buttons.push_back(button);
 		}
 	}
@@ -67,4 +64,54 @@ void List::PushButtonEvent(int index)
 		return;
 	_curIndex = index;
 	_buttons[_curIndex]->GetCollider()->SetDebug(true);
+}
+
+void List::Scroll()
+{
+	short val = MOUSE_SCROLL;
+
+	if (val > 0)
+	{
+		for (int i = 0; i < _buttons.size(); i++)
+		{
+			Vector2 tmp = _buttons[i]->GetTransform()->GetPos();
+			tmp += Vector2(0.0f, 1.0f) * DELTA_TIME * 1000.0f;
+
+			if (tmp.y > _size.y / 2 + _buttonSize.y / 2)
+			{
+				tmp.y = -_size.y / 2 - _buttonSize.y / 2;
+
+				Vector2 curFrame = _buttons[i]->GetFrame();
+				curFrame.y -= 5;
+
+				_buttons[i]->SetFrame(curFrame);
+			}
+
+			_buttons[i]->GetTransform()->SetPos(tmp);
+
+		}
+		InputManager::GetInstance()->SetMouseScroll(0);
+	}
+	else if (val < 0)
+	{
+		for (int i = 0; i < _buttons.size(); i++)
+		{
+			Vector2 tmp = _buttons[i]->GetTransform()->GetPos();
+			tmp += Vector2(0.0f, -1.0f) * DELTA_TIME * 1000.0f;
+
+			if (tmp.y < -_size.y / 2 - _buttonSize.y / 2)
+			{
+				tmp.y = _size.y / 2 + _buttonSize.y / 2;
+
+				Vector2 curFrame = _buttons[i]->GetFrame();
+				curFrame.y += 5;
+
+				_buttons[i]->SetFrame(curFrame);
+			}
+
+			_buttons[i]->GetTransform()->SetPos(tmp);
+		}
+		
+		InputManager::GetInstance()->SetMouseScroll(0);
+	}
 }
