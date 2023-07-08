@@ -2,13 +2,11 @@
 #include "List.h"
 
 List::List(Vector2 size, wstring path, Vector2 frame)
-	:_size(size), _maxFrame(frame)
+	:_size(size)
 {
 	_mainRect = make_shared<ColorButton>(LIGHTPURPLE, _size);
 	
-	CreateButtons(path, _maxFrame);
-	CallBack scroll = std::bind(&List::Scroll, this);
-	_mainRect->SetScrollEvent(scroll);
+	CreateButtons(path, frame);
 }
 
 void List::Render()
@@ -33,27 +31,30 @@ void List::Update()
 
 void List::CreateButtons(wstring path, Vector2 frame)
 {
-	_buttonSize.x = _size.x / 5.0f;
-	_buttonSize.y = _size.y / 5.0f;
+	Vector2 space;
+	space.x = _size.x / frame.x / frame.x;
+	space.y = _size.y / frame.y / frame.y;
+
+	_buttonSize.x = _size.x / frame.x - 2*space.x;
+	_buttonSize.y = _size.y / frame.y - 2*space.y;
 
 	Vector2 startPos;
-	startPos.x = -_size.x / 2 + _buttonSize.x;
-	startPos.y = _size.y / 2 - _buttonSize.y;
+	startPos.x = -_size.x / 2 + _buttonSize.x/2;
+	startPos.y = _size.y / 2 - _buttonSize.y/2;
 
-	for (int i = 0; i <= frame.x; i++)
+	for (int i = 0; i <= frame.y; i++)
 	{
-		for (int j = 0; j < 4; j++)
+		for (int j = 0; j <= frame.x; j++)
 		{
 			shared_ptr<TextureButton> button = make_shared<TextureButton>(path, frame, _buttonSize);
-			button->GetTransform()->SetPos(Vector2(startPos.x + i * (_buttonSize.x + _buttonSize.x/2), startPos.y - j * (_buttonSize.y + _buttonSize.y/2)));
+			button->GetTransform()->SetPos(Vector2(startPos.x + j * (_buttonSize.x + space.x), startPos.y - i * (_buttonSize.y + space.y)));
 			button->GetTransform()->SetParent(_mainRect->GetTransform());
-			button->SetFrame(Vector2(i, j));
-			//CallBackInt pEvent = std::bind(&List::PushButtonEvent, this, j + i * 3);
-			//button->SetPushEvent(pEvent);
+			button->SetFrame(Vector2(j, i));
+			CallBackInt pEvent = std::bind(&List::PushButtonEvent, this, j + i * (frame.x+1));
+			button->SetPushEvent(pEvent);
 			_buttons.push_back(button);
 		}
 	}
-
 }
 
 void List::PushButtonEvent(int index)

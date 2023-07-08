@@ -8,6 +8,7 @@ public:
 	void Render();
 	void Update();
 	void SetParent(shared_ptr<Transform> trans) { _mainRect->GetTransform()->SetParent(trans); }
+	shared_ptr<TileInfo> GetCurTileInfo() { return _infos[_curIndex]; }
 private:
 	void CreateButtons(wstring path, Vector2 frame);
 	void PushButtonEvent(int index);
@@ -16,11 +17,10 @@ private:
 
 	Vector2 _size;
 	Vector2 _buttonSize;
-	Vector2 _curFrame;
-	Vector2 _maxFrame;
 
 	shared_ptr<ColorButton> _mainRect;
 	vector<shared_ptr<TextureButton>> _buttons;
+	vector<shared_ptr<TileInfo>> _infos;
 
 	int _curIndex = -1;
 };

@@ -1,6 +1,7 @@
 #include "framework.h"
 #include "TileMap.h"
 #include "../Character/Character.h"
+#include "../UI/Palette.h"
 
 TileMap::TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<Character> mainCharacter)
 	:_mapSize(size), _mainCharacter(mainCharacter)
@@ -9,8 +10,20 @@ TileMap::TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<Charac
 	_tileSize = Vector2(30 , 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = ADD_TILE(path, size, tileSize);
-	CreateTiles();
+	_tileRenderer = ADD_TILE(path, _mapSize, _tileSize);
+	ReadFile(path);
+}
+
+TileMap::TileMap(Vector2 size, shared_ptr<Palette> palette)
+	:_mapSize(size), _palette(palette)
+{
+	_transform = make_shared<Transform>();
+	_tileSize = Vector2(30, 30);
+	_col = make_shared<RectCollider>(_tileSize);
+	_lineRenderer = make_shared<RectLine>(_tileSize);
+	_tileRenderer = ADD_TILE(L"Resource/Tile/Tile.png", _mapSize, _tileSize);
+
+	CreateTileInfos();
 }
 
 void TileMap::Update()
@@ -18,6 +31,15 @@ void TileMap::Update()
 	if (!_isActive)
 		return;
 
+	if (!_mainCharacter.expired())
+		Play();
+	if (!_palette.expired())
+		CreateMap();
+	
+}
+
+void TileMap::Play()
+{
 	Vector2 mainWorldPos = _mainCharacter.lock()->GetTransform()->GetWorldPos();
 	Vector2 worldIndex = GetWorldIndex(mainWorldPos);
 
@@ -25,7 +47,7 @@ void TileMap::Update()
 
 	for (int i = -1; i < 2; i++)
 	{
-		if (worldIndex.y + i < 0 || worldIndex.y + i > _mapSize.y-1)
+		if (worldIndex.y + i < 0 || worldIndex.y + i > _mapSize.y - 1)
 			continue;
 		for (int j = -1; j < 2; j++)
 		{
@@ -36,7 +58,7 @@ void TileMap::Update()
 			_col->SetPos(_infos[worldIndex.y + i][worldIndex.x + j]->centerPos);
 			if (_col->IsCollision(_mainCharacter.lock()->GetCollider()))
 			{
-				_infos[worldIndex.y + i][worldIndex.x + j]->color = XMFLOAT4(1,0,0,1);
+				_infos[worldIndex.y + i][worldIndex.x + j]->color = XMFLOAT4(1, 0, 0, 1);
 			}
 			else
 			{
@@ -87,6 +109,16 @@ void TileMap::Update()
 	}
 }
 
+void TileMap::CreateMap()
+{
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		Vector2 index = GetWorldIndex(W_MOUSE_POS);
+
+		_infos[index.y][index.x] = _palette.lock()->GetCurTileInfo();
+	}
+}
+
 void TileMap::Render()
 {
 	if (_isDebug)
@@ -95,9 +127,21 @@ void TileMap::Render()
 		{
 			for (int j = 0; j < _infos[i].size(); j++)
 			{
-				_transform->SetPos(_infos[i][j]->centerPos);
-				_transform->Update();
-				_transform->Set_World();
+				if (_infos[i][j]->type == TileInfo::Type::NONE)
+				{
+					_col->SetPos(_infos[i][j]->centerPos);
+					_col->Update();
+					_col->GetTransform()->Set_World();
+
+					_lineRenderer->SetColor(_infos[i][j]->color);
+					_lineRenderer->Render();
+
+					continue;
+				}
+				_col->SetPos(_infos[i][j]->centerPos);
+				_col->Update();
+				_col->GetTransform()->Set_World();
+
 				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curClip);
 				_tileRenderer.lock()->Update();
 				_tileRenderer.lock()->Render();
@@ -146,7 +190,27 @@ Vector2 TileMap::GetWorldIndex(Vector2 pos)
 	return pos;
 }
 
-void TileMap::CreateTiles()
+void TileMap::CreateTileInfos()
+{
+	Vector2 startPos;
+	startPos.x = -(_tileSize.x * (_mapSize.x / 2));
+	startPos.y = -(_tileSize.y * (_mapSize.y / 2));
+
+	for (int i = 0; i < _mapSize.y; i++)
+	{
+		vector<shared_ptr<TileInfo>> tmp;
+
+		for (int j = 0; j < _mapSize.x; j++)
+		{
+			Vector2 centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 0), TileInfo::Type::NONE);
+			tmp.push_back(info);
+		}
+		_infos.push_back(tmp);
+	}
+}
+
+void TileMap::ReadFile(wstring path)
 {
 	//todo : 파일 읽어서 타입 저장
 	Vector2 startPos;
@@ -161,11 +225,8 @@ void TileMap::CreateTiles()
 		{
 			Vector2 centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
 			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 6), TileInfo::Type::NONE);
-			if (j % 5 == 0)
-				info->type = TileInfo::Type::BLOCK;
 			tmp.push_back(info);
 		}
 		_infos.push_back(tmp);
 	}
-
 }

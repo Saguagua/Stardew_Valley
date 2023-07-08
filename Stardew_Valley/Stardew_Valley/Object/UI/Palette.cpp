@@ -26,6 +26,11 @@ void Palette::Update()
 	_list->Update();
 }
 
+shared_ptr<TileInfo> Palette::GetCurTileInfo()
+{
+	return shared_ptr<TileInfo>();
+}
+
 void Palette::Move()
 {
 	if (KEY_DOWN(VK_LBUTTON))

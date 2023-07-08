@@ -8,6 +8,7 @@ public:
 	void PostRender();
 	void Update();
 
+	shared_ptr<TileInfo> GetCurTileInfo() { return _list->GetCurTileInfo(); }
 private:
 	void Move();
 

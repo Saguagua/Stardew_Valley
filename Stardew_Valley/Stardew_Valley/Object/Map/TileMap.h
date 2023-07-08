@@ -3,10 +3,15 @@
 class TileMap
 {
 public:
+	//todo : 파일을 읽어오는 생성자와 파일 없는 생성자 만들어야함
 	TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<class Character> mainCharacter);
+	TileMap(Vector2 size, shared_ptr<Palette> palette);
 	~TileMap() {}
 
 	void Update();
+	void Play();
+	void CreateMap();
+
 	void Render();
 
 	void SetCameraRange();
@@ -18,7 +23,8 @@ public:
 	Vector2 GetWorldSize() { return Vector2(_mapSize.x * _tileSize.x, _mapSize.y * _tileSize.y); }
 
 private:
-	void CreateTiles();
+	void CreateTileInfos();
+	void ReadFile(wstring path);
 
 	shared_ptr<Transform> _transform;
 	shared_ptr<RectCollider> _col;
@@ -26,6 +32,7 @@ private:
 	weak_ptr<TextureRect> _tileRenderer;
 
 	weak_ptr<Character> _mainCharacter;
+	weak_ptr<Palette> _palette;
 
 	Vector2 _mapSize;
 	Vector2 _tileSize;

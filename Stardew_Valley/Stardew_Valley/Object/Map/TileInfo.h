@@ -7,7 +7,8 @@ struct TileInfo
 	{
 		NONE,
 		MOVEABLE,
-		BLOCK
+		BLOCK,
+		SPAWN
 	};
 
 	TileInfo(Vector2 centerPos, Vector2 curClip, TileInfo::Type type)
