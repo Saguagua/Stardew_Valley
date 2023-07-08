@@ -324,6 +324,9 @@
     <Image Include="Resource\Tile\Tile.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\Tile\TileBright.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\VertexVS.hlsl" />

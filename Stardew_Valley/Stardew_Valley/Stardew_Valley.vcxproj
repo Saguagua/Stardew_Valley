@@ -262,6 +262,7 @@
     <Image Include="Resource\Tile\spring_beach.png" />
     <Image Include="Resource\Tile\spring_outdoors.png" />
     <Image Include="Resource\Tile\Tile.png" />
+    <Image Include="Resource\Tile\TileBright.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>

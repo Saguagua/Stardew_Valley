@@ -12,6 +12,7 @@
 #define PURPLE			XMFLOAT4(0.2f, 0.2f, 1.0f, 1.0f)
 #define LIGHTPURPLE		XMFLOAT4(0.4f, 0.4f, 1.0f, 1.0f)
 #define GRAY			XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f)
+#define WHITE			XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f)
 
 #define DEVICE			Device::GetInstance()->GetDevice()
 #define DC				Device::GetInstance()->GetContext()
@@ -46,3 +47,4 @@
 
 #define CallBack		function<void()>
 #define CallBackInt		function<void(int)>
+#define CallBackBool	function<void(bool)>

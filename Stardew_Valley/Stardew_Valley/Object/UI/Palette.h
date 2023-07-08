@@ -9,8 +9,10 @@ public:
 	void Update();
 
 	shared_ptr<TileInfo> GetCurTileInfo() { return _list->GetCurTileInfo(); }
+	bool GetFocus() { return _onFocus; }
 private:
 	void Move();
+	void OnFocus(bool val) { _onFocus = val; }
 
 	shared_ptr<ColorButton> _mainWin;
 	shared_ptr<List> _list;
@@ -24,5 +26,7 @@ private:
 	vector<shared_ptr<TextureButton>> _tiles;
 
 	vector<shared_ptr<TileInfo>> _infos;
+
+	bool _onFocus = false;
 };
 

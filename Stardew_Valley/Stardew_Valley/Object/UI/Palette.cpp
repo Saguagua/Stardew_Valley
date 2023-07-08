@@ -5,11 +5,13 @@ Palette::Palette(Vector2 size)
 	:_size(size)
 {
 	_mainWin = make_shared<ColorButton>(PURPLE, _size);
-	_list = make_shared<List>(_size * 0.9f, L"Resource/Tile/Tile.png", Vector2(13, 14));
+	_list = make_shared<List>(_size * 0.95f, L"Resource/Tile/TileBright.png", Vector2(13, 14));
 
 	_list->SetParent(_mainWin->GetTransform());
 	CallBack onEvent = std::bind(&Palette::Move, this);
 	_mainWin->SetMouseOnEvent(onEvent);
+	CallBackBool onEvent2 = std::bind(&Palette::OnFocus, this, std::placeholders::_1);
+	_mainWin->SetMouseOnEvent(onEvent2);
 }
 
 void Palette::PostRender()
@@ -24,11 +26,6 @@ void Palette::Update()
 		Move();*/
 	_mainWin->Update();
 	_list->Update();
-}
-
-shared_ptr<TileInfo> Palette::GetCurTileInfo()
-{
-	return shared_ptr<TileInfo>();
 }
 
 void Palette::Move()

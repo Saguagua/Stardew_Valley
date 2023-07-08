@@ -8,7 +8,7 @@ public:
 	void Render();
 	void Update();
 	void SetParent(shared_ptr<Transform> trans) { _mainRect->GetTransform()->SetParent(trans); }
-	shared_ptr<TileInfo> GetCurTileInfo() { return _infos[_curIndex]; }
+	shared_ptr<TileInfo> GetCurTileInfo();
 private:
 	void CreateButtons(wstring path, Vector2 frame);
 	void PushButtonEvent(int index);

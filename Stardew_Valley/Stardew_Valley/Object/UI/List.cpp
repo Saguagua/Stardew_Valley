@@ -29,30 +29,41 @@ void List::Update()
 	}
 }
 
+shared_ptr<TileInfo> List::GetCurTileInfo()
+{
+	if (_curIndex == -1)
+		return nullptr;
+	
+	return _infos[_curIndex];
+}
+
 void List::CreateButtons(wstring path, Vector2 frame)
 {
 	Vector2 space;
 	space.x = _size.x / frame.x / frame.x;
 	space.y = _size.y / frame.y / frame.y;
 
-	_buttonSize.x = _size.x / frame.x - 2*space.x;
-	_buttonSize.y = _size.y / frame.y - 2*space.y;
+	_buttonSize.x = 30;// _size.x / frame.x - 2 * space.x;
+	_buttonSize.y = 30;// _size.y / frame.y - 2 * space.y;
 
 	Vector2 startPos;
 	startPos.x = -_size.x / 2 + _buttonSize.x/2;
 	startPos.y = _size.y / 2 - _buttonSize.y/2;
 
-	for (int i = 0; i <= frame.y; i++)
+	for (int i = 0; i < frame.y; i++)
 	{
-		for (int j = 0; j <= frame.x; j++)
+		for (int j = 0; j < frame.x; j++)
 		{
 			shared_ptr<TextureButton> button = make_shared<TextureButton>(path, frame, _buttonSize);
 			button->GetTransform()->SetPos(Vector2(startPos.x + j * (_buttonSize.x + space.x), startPos.y - i * (_buttonSize.y + space.y)));
 			button->GetTransform()->SetParent(_mainRect->GetTransform());
 			button->SetFrame(Vector2(j, i));
-			CallBackInt pEvent = std::bind(&List::PushButtonEvent, this, j + i * (frame.x+1));
+			CallBackInt pEvent = std::bind(&List::PushButtonEvent, this, j + i * (frame.x));
 			button->SetPushEvent(pEvent);
 			_buttons.push_back(button);
+
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(Vector2(0,0), Vector2(j, i), TileInfo::Type::MOVEABLE);
+			_infos.push_back(info);
 		}
 	}
 }
@@ -62,7 +73,10 @@ void List::PushButtonEvent(int index)
 	if (_curIndex != -1)
 		_buttons[_curIndex]->GetCollider()->SetDebug(false);
 	if (_curIndex == index)
+	{
+		_curIndex = -1;
 		return;
+	}
 	_curIndex = index;
 	_buttons[_curIndex]->GetCollider()->SetDebug(true);
 }

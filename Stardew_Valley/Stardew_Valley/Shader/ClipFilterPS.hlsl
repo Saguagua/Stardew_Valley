@@ -30,6 +30,6 @@ float4 PS(Input input) : SV_TARGET
 	resultUV.y = input.uv.y / maxFrame.y + curFrame.y / maxFrame.y;
 
 	float4 color = resource.Sample(samp, resultUV);
-
+	
 	return color;
 }

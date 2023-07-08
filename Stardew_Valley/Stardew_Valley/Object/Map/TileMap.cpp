@@ -21,7 +21,7 @@ TileMap::TileMap(Vector2 size, shared_ptr<Palette> palette)
 	_tileSize = Vector2(30, 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = ADD_TILE(L"Resource/Tile/Tile.png", _mapSize, _tileSize);
+	_tileRenderer = ADD_TILE(L"Resource/Tile/TileBright.png", _mapSize, _tileSize);
 
 	CreateTileInfos();
 }
@@ -33,7 +33,7 @@ void TileMap::Update()
 
 	if (!_mainCharacter.expired())
 		Play();
-	if (!_palette.expired())
+	if (!_palette.expired() && !_palette.lock()->GetFocus())
 		CreateMap();
 	
 }
@@ -43,7 +43,7 @@ void TileMap::Play()
 	Vector2 mainWorldPos = _mainCharacter.lock()->GetTransform()->GetWorldPos();
 	Vector2 worldIndex = GetWorldIndex(mainWorldPos);
 
-	_infos[worldIndex.y][worldIndex.x]->curClip.x = 1;
+	_infos[worldIndex.y][worldIndex.x]->curFrame.x = 1;
 
 	for (int i = -1; i < 2; i++)
 	{
@@ -76,35 +76,35 @@ void TileMap::Play()
 
 		if (angle > -25.0f && angle <= 25.0f)
 		{
-			_infos[worldIndex.y][worldIndex.x + 1]->curClip.x++;
+			_infos[worldIndex.y][worldIndex.x + 1]->curFrame.x++;
 		}
 		else if (angle > 25.0f && angle <= 70.0f)
 		{
-			_infos[worldIndex.y + 1][worldIndex.x + 1]->curClip.x++;
+			_infos[worldIndex.y + 1][worldIndex.x + 1]->curFrame.x++;
 		}
 		else if (angle > 70.0f && angle <= 115.0f)
 		{
-			_infos[worldIndex.y + 1][worldIndex.x]->curClip.x++;
+			_infos[worldIndex.y + 1][worldIndex.x]->curFrame.x++;
 		}
 		else if (angle > 115.0f && angle < 160.0f)
 		{
-			_infos[worldIndex.y + 1][worldIndex.x - 1]->curClip.x++;
+			_infos[worldIndex.y + 1][worldIndex.x - 1]->curFrame.x++;
 		}
 		else if (angle > -70.0f && angle <= -25.0f)
 		{
-			_infos[worldIndex.y - 1][worldIndex.x + 1]->curClip.x++;
+			_infos[worldIndex.y - 1][worldIndex.x + 1]->curFrame.x++;
 		}
 		else if (angle > -115.0f && angle <= -70.0f)
 		{
-			_infos[worldIndex.y - 1][worldIndex.x]->curClip.x++;
+			_infos[worldIndex.y - 1][worldIndex.x]->curFrame.x++;
 		}
 		else if (angle > -160.0f && angle <= -25.0f)
 		{
-			_infos[worldIndex.y - 1][worldIndex.x - 1]->curClip.x++;
+			_infos[worldIndex.y - 1][worldIndex.x - 1]->curFrame.x++;
 		}
 		else
 		{
-			_infos[worldIndex.y][worldIndex.x - 1]->curClip.x++;
+			_infos[worldIndex.y][worldIndex.x - 1]->curFrame.x++;
 		}
 	}
 }
@@ -114,8 +114,11 @@ void TileMap::CreateMap()
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		Vector2 index = GetWorldIndex(W_MOUSE_POS);
-
-		_infos[index.y][index.x] = _palette.lock()->GetCurTileInfo();
+		shared_ptr<TileInfo> info = _palette.lock()->GetCurTileInfo();
+		if (info == nullptr)
+			return;
+		_infos[index.y][index.x]->type = info->type;
+		_infos[index.y][index.x]->curFrame = info->curFrame;
 	}
 }
 
@@ -142,7 +145,7 @@ void TileMap::Render()
 				_col->Update();
 				_col->GetTransform()->Set_World();
 
-				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curClip);
+				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curFrame);
 				_tileRenderer.lock()->Update();
 				_tileRenderer.lock()->Render();
 				_lineRenderer->SetColor(_infos[i][j]->color);
@@ -159,7 +162,7 @@ void TileMap::Render()
 				_transform->SetPos(_infos[i][j]->centerPos);
 				_transform->Update();
 				_transform->Set_World();
-				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curClip);
+				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curFrame);
 				_tileRenderer.lock()->Update();
 				_tileRenderer.lock()->Render();
 			}

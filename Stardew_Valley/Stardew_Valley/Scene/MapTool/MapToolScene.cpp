@@ -3,14 +3,15 @@
 
 MapToolScene::MapToolScene()
 {
-	_palette = make_shared<Palette>(Vector2(400, 600));
-	_map = make_shared<TileMap>(Vector2(50, 50));
+	_palette = make_shared<Palette>(Vector2(440, 500));
+	_map = make_shared<TileMap>(Vector2(50, 50), _palette);
+	_map->SetActive(true);
 }
 
 void MapToolScene::Update()
 {
-	_map->Update();
 	_palette->Update();
+	_map->Update();
 }
 
 void MapToolScene::Render()
