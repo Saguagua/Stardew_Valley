@@ -8,10 +8,13 @@ Palette::Palette(Vector2 size)
 	_list = make_shared<List>(_size * 0.95f, L"Resource/Tile/TileBright.png", Vector2(13, 14));
 
 	_list->SetParent(_mainWin->GetTransform());
+
 	CallBack onEvent = std::bind(&Palette::Move, this);
 	_mainWin->SetMouseOnEvent(onEvent);
+
 	CallBackBool onEvent2 = std::bind(&Palette::OnFocus, this, std::placeholders::_1);
 	_mainWin->SetMouseOnEvent(onEvent2);
+
 }
 
 void Palette::PostRender()
@@ -22,8 +25,6 @@ void Palette::PostRender()
 
 void Palette::Update()
 {
-	/*if (_mainWin->GetCollider()->IsCollision(S_MOUSE_POS))
-		Move();*/
 	_mainWin->Update();
 	_list->Update();
 }
@@ -37,5 +38,15 @@ void Palette::Move()
 	if (KEY_PRESS(VK_LBUTTON))
 	{
 		_mainWin->GetTransform()->SetPos(S_MOUSE_POS - _centerToMouse);
+	}
+}
+
+void Palette::CreateChartButtons()
+{
+	for (int i = 0; i < 3; i++)
+	{
+		shared_ptr<TextureButton> button = make_shared<TextureButton>();
+
+		
 	}
 }

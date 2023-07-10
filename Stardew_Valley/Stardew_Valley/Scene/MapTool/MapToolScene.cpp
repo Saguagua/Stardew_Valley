@@ -23,3 +23,18 @@ void MapToolScene::PostRender()
 {
 	_palette->PostRender();
 }
+
+
+void MapToolScene::Save(string filename)
+{
+	_fin.open(filename);
+
+
+}
+
+void MapToolScene::Load(string filename)
+{
+	_fout.open(filename);
+
+
+}

@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "TileMap.h"
-#include "../Character/Character.h"
-#include "../UI/Palette.h"
+#include "../../Object/Character/Character.h"
+#include "../../Object/UI/Palette.h"
 
 TileMap::TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<Character> mainCharacter)
 	:_mapSize(size), _mainCharacter(mainCharacter)
@@ -35,7 +35,6 @@ void TileMap::Update()
 		Play();
 	if (!_palette.expired() && !_palette.lock()->GetFocus())
 		CreateMap();
-	
 }
 
 void TileMap::Play()

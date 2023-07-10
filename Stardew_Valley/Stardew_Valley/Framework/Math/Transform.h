@@ -12,7 +12,7 @@ public:
 	void Set_World(UINT slot = 0);
 	void SetParent(shared_ptr<Transform> other) { _parent = other; }
 
-	void SetPos(Vector2 pos) { _pos = pos; Update_SRT(); }
+	void SetPos(Vector2 pos) { _pos = pos; } //캐릭터와 콜라이더 충돌 업데이트 시 문제 있음
 	void SetScale(Vector2 scale) { _scale = scale; }
 	void SetAngle(float angle) { _angle = angle; }
 

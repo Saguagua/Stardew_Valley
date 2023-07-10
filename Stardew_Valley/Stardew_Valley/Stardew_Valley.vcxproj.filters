@@ -87,7 +87,7 @@
     <ClInclude Include="Object\BagicObj\RectLine.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Map\TileMap.h">
+    <ClInclude Include="Map\Tile\TileMap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Types.h">
@@ -144,7 +144,7 @@
     <ClInclude Include="Object\BagicObj\SingleColorRect.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Map\TileInfo.h">
+    <ClInclude Include="Map\Tile\TileInfo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\UI\Button.h">
@@ -162,7 +162,7 @@
     <ClInclude Include="Object\UI\List.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Map\TileManager.h">
+    <ClInclude Include="Map\Tile\TileManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -227,7 +227,7 @@
     <ClCompile Include="Object\BagicObj\RectLine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Map\TileMap.cpp">
+    <ClCompile Include="Map\Tile\TileMap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\TextureMapping\SamplerState.cpp">
@@ -293,7 +293,7 @@
     <ClCompile Include="Object\UI\List.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Map\TileManager.cpp">
+    <ClCompile Include="Map\Tile\TileManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

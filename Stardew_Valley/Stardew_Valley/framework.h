@@ -18,6 +18,7 @@
 #include <vector>
 #include <string>
 #include <wrl/client.h>
+#include <fstream>
 #include <functional>
 
 #include <d3d11.h>
@@ -75,9 +76,9 @@ using namespace Microsoft::WRL;
 #include "Framework/Collision/RectCollider.h"
 
 //Map
-#include "Object/Map/TileInfo.h"
-#include "Object/Map/TileManager.h"
-#include "Object/Map/TileMap.h"
+#include "Map/Tile/TileInfo.h"
+#include "Map/Tile/TileManager.h"
+#include "Map/Tile/TileMap.h"
 
 //UI
 #include "Object/UI/Button.h"
