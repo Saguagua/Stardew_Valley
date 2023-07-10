@@ -5,7 +5,8 @@
 TestScene::TestScene()
 {
 	_character = make_shared<Character>();
-	//_beachMap = make_shared<TileMap>(Vector2(50, 50), L"Resource/Tile/spring_beach.png", _character);
+	_beachMap = make_shared<TileMap>(L"Resource/Tile/spring_beach.png", Vector2(50, 50), Vector2(30, 30) ,_character);
+	_beachMap->SetActive(true);
 }
 
 void TestScene::Update()

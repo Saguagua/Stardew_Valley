@@ -6,7 +6,7 @@
 
 Program::Program()
 {
-	_scene = make_shared<MapToolScene>();
+	_scene = make_shared<TestScene>();
 	TIMER->LockRunTime(60);
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
 }

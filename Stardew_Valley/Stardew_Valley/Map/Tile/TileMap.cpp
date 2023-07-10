@@ -55,6 +55,7 @@ void TileMap::Play()
 			if (i == 0 && j == 0)
 				continue;
 			_col->SetPos(_infos[worldIndex.y + i][worldIndex.x + j]->centerPos);
+			_col->GetTransform()->Update_SRT();
 			if (_col->IsCollision(_mainCharacter.lock()->GetCollider()))
 			{
 				_infos[worldIndex.y + i][worldIndex.x + j]->color = XMFLOAT4(1, 0, 0, 1);
