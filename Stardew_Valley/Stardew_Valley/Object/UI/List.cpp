@@ -4,13 +4,16 @@
 List::List(Vector2 size, wstring path, Vector2 frame)
 	:_size(size)
 {
-	_mainRect = make_shared<ColorButton>(LIGHTPURPLE, _size);
+	_mainRect = make_shared<ColorButton>(GRAY, _size);
 	
 	CreateButtons(path, frame);
 }
 
 void List::Render()
 {
+	if (!_isActive)
+		return;
+
 	_mainRect->Render();
 
 	for (shared_ptr<TextureButton> button : _buttons)
@@ -21,6 +24,9 @@ void List::Render()
 
 void List::Update()
 {
+	if (!_isActive)
+		return;
+
 	_mainRect->Update();
 
 	for (shared_ptr<TextureButton> button : _buttons)
@@ -43,12 +49,12 @@ void List::CreateButtons(wstring path, Vector2 frame)
 	space.x = _size.x / frame.x / frame.x;
 	space.y = _size.y / frame.y / frame.y;
 
-	_buttonSize.x = 30;// _size.x / frame.x - 2 * space.x;
-	_buttonSize.y = 30;// _size.y / frame.y - 2 * space.y;
+	_buttonSize.x =  _size.x / frame.x - space.x;
+	_buttonSize.y =  _size.y / frame.y - space.y;
 
 	Vector2 startPos;
-	startPos.x = -_size.x / 2 + _buttonSize.x/2;
-	startPos.y = _size.y / 2 - _buttonSize.y/2;
+	startPos.x = -_buttonSize.x * (frame.x/2);
+	startPos.y =  _buttonSize.y * (frame.y/2);
 
 	for (int i = 0; i < frame.y; i++)
 	{

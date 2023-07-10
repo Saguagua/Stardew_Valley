@@ -8,24 +8,25 @@ public:
 	void PostRender();
 	void Update();
 
-	shared_ptr<TileInfo> GetCurTileInfo() { return _list->GetCurTileInfo(); }
+	shared_ptr<TileInfo> GetCurTileInfo() { return _tileList->GetCurTileInfo(); }
 	bool GetFocus() { return _onFocus; }
 private:
-	void Move();
-	void OnFocus(bool val) { _onFocus = val; }
 	void CreateChartButtons();
 
+	void OnFocus(bool val) { _onFocus = val; }
+	void Move();
+	void ChageChart(int index);
+
 	shared_ptr<ColorButton> _mainWin;
-	shared_ptr<List> _list;
-
-	Vector2 _centerToMouse;
-
-	Vector2 _size;
-
+	shared_ptr<List> _tileList;
 	vector<shared_ptr<TextureButton>> _chartButtons;
 	vector<shared_ptr<TextureButton>> _tiles;
-
 	vector<shared_ptr<TileInfo>> _infos;
+
+	Vector2 _size;
+	Vector2 _centerToMouse;
+
+	int _chartIndex = 0;
 
 	bool _onFocus = false;
 };

@@ -4,25 +4,25 @@
 TextureButton::TextureButton(wstring path, Vector2 size)
 	:Button(size)
 {
-	_renderer = ADD_TILE(path, Vector2(1,1), size); //todo 버튼 2개 붙여서 누를 때마다 프레임 변경
+	_renderer = make_shared<TextureRect>(path, Vector2(1, 1), size);
 }
 
 TextureButton::TextureButton(wstring path, Vector2 clip, Vector2 size)
 	: Button(size)
 {
-	_renderer = ADD_TILE(path, clip, size);
+	_renderer = make_shared<TextureRect>(path, clip, size);
 }
 
 void TextureButton::Render()
 {
 	_col->Render();
-	_renderer.lock()->SetCurFrame(_curFrame);
-	_renderer.lock()->Render();
+	_renderer->SetCurFrame(_curFrame);
+	_renderer->Render();
 }
 
 void TextureButton::Update()
 {
 	_col->Update();
-	_renderer.lock()->Update();
+	_renderer->Update();
 	Button::Update();
 }

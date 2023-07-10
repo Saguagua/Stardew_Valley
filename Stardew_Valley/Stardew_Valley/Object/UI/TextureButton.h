@@ -9,12 +9,12 @@ public:
 	virtual void Render() override;
 	virtual void Update() override;
 
-	shared_ptr<TextureRect> GetTexture() { return _renderer.lock(); }
+	shared_ptr<TextureRect> GetTexture() { return _renderer; }
 
 	void SetFrame(Vector2 frame) { _curFrame = frame; }
 	Vector2 GetFrame() { return _curFrame; }
 private:
-	weak_ptr<TextureRect> _renderer;
-	Vector2 _curFrame;
+	shared_ptr<TextureRect> _renderer;
+	Vector2 _curFrame = {0, 0};
 };
 
