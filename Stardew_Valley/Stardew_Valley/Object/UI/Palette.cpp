@@ -17,13 +17,21 @@ Palette::Palette(Vector2 size)
 	_mainWin->SetMouseOnEvent(onEvent2);
 
 	CreateChartButtons();
+
+	/*CreateWindow(TEXT("EDIT"), TEXT("VALUE"),
+		WS_VISIBLE | WS_CHILD | WS_BORDER,
+		CENTER.x, CENTER.y, 200, 25,
+		hwnd, (HMENU)NULL, NULL, NULL);*/
+
 }
 
 void Palette::PostRender()
 {
 	_mainWin->Render();
+
 	for (auto button : _chartButtons)
 		button->Render();
+
 	_tileList->Render();
 }
 
@@ -60,10 +68,12 @@ void Palette::ChageChart(int index)
 	case 1:
 	{
 		_tileList->SetActive(false);
+		
 		break;
 	}
 	case 2:
 	{
+		
 
 		break;
 	}

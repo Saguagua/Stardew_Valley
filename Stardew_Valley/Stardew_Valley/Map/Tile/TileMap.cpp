@@ -21,7 +21,7 @@ TileMap::TileMap(Vector2 size, shared_ptr<Palette> palette)
 	_tileSize = Vector2(30, 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = ADD_TILE(L"Resource/Tile/TileBright.png", _mapSize, _tileSize);
+	_tileRenderer = ADD_TILE(L"Resource/Tile/TileBright.png", Vector2(13, 14), _tileSize);
 
 	CreateTileInfos();
 }

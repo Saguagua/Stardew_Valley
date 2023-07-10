@@ -29,5 +29,7 @@ private:
 	int _chartIndex = 0;
 
 	bool _onFocus = false;
+
+	HWND hwnd;
 };
 

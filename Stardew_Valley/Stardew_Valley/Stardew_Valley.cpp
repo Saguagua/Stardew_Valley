@@ -160,6 +160,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {
+    case WM_CREATE:
+    {
+        // 윈도우 창 만들기
+        break;
+    }
     case WM_COMMAND:
         {
             int wmId = LOWORD(wParam);
