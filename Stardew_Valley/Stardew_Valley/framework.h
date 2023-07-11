@@ -75,6 +75,9 @@ using namespace Microsoft::WRL;
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/RectCollider.h"
 
+#include "Save/MapInfo.h"
+#include "Save/SaveManager.h"
+
 //Map
 #include "Map/Tile/TileInfo.h"
 #include "Map/Tile/TileManager.h"

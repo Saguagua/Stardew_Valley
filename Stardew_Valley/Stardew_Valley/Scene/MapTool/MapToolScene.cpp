@@ -12,8 +12,6 @@ void MapToolScene::Update()
 {
 	_palette->Update();
 	_map->Update();
-
-	
 }
 
 void MapToolScene::Render()

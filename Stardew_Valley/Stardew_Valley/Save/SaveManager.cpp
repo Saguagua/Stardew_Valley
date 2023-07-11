@@ -1,6 +1,8 @@
 #include "framework.h"
 #include "SaveManager.h"
 
+SaveManager* SaveManager::_instance = nullptr;
+
 SaveManager::SaveManager()
 {
 	ReadMaps();
@@ -39,12 +41,27 @@ void SaveManager::ReadMaps()
 {
 	_fin.open("Map/Save/MapNames.txt");
 
+	while (!_fin.eof())
+	{
+		string name;
+		getline(_fin, name);
+		_mapTable[name] = true;
+	}
+
 	_fin.close();
 }
 
 void SaveManager::ReadTypes()
 {
 	_fin.open("Map/Save/ClipTypes.txt");
+
+	while (!_fin.eof())
+	{
+		int type;
+
+		_fin >> type;
+		_clipTypes.push_back(type);
+	}
 
 	_fin.close();
 }
