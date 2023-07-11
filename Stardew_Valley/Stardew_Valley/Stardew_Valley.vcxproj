@@ -151,12 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Save\MapInfo.h" />
     <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
     <ClInclude Include="Object\UI\Button.h" />
     <ClInclude Include="Object\BagicObj\SingleColorRect.h" />
     <ClInclude Include="Map\Tile\TileInfo.h" />
     <ClInclude Include="Object\UI\Palette.h" />
+    <ClInclude Include="Save\SaveManager.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
     <ClInclude Include="Framework\Utility\MathUtility.h" />
@@ -208,6 +210,7 @@
     <ClCompile Include="Object\UI\Button.cpp" />
     <ClCompile Include="Object\BagicObj\SingleColorRect.cpp" />
     <ClCompile Include="Object\UI\Palette.cpp" />
+    <ClCompile Include="Save\SaveManager.cpp" />
     <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
     <ClCompile Include="Object\BagicObj\CircleLine.cpp" />
