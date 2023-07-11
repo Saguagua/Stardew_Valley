@@ -25,8 +25,8 @@ public:
 		return nullptr;
 	}
 
-	void SaveMap(string mapName, Vector2 size, vector<int> clips);
-	void LoadMap(string mapName);
+	void SaveMap(shared_ptr<MapInfo> info);
+	shared_ptr<MapInfo> LoadMap(string mapName);
 
 private:
 	void ReadMaps();

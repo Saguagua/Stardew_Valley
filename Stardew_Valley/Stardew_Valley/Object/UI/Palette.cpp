@@ -17,12 +17,6 @@ Palette::Palette(Vector2 size)
 	_mainWin->SetMouseOnEvent(onEvent2);
 
 	CreateChartButtons();
-
-	/*CreateWindow(TEXT("EDIT"), TEXT("VALUE"),
-		WS_VISIBLE | WS_CHILD | WS_BORDER,
-		CENTER.x, CENTER.y, 200, 25,
-		hwnd, (HMENU)NULL, NULL, NULL);*/
-
 }
 
 void Palette::PostRender()
@@ -73,7 +67,7 @@ void Palette::ChageChart(int index)
 	}
 	case 2:
 	{
-		
+		//SaveManager::GetInstance()->SaveMap();
 
 		break;
 	}
