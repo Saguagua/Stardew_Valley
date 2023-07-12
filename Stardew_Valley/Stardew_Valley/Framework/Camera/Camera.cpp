@@ -9,9 +9,12 @@ Camera::Camera()
 	_view = make_shared<Transform>();
 	_postView = make_shared<MatrixBuffer>();
 	_proj = make_shared<MatrixBuffer>();
+	XMMATRIX projMatrix = XMMatrixOrthographicLH(WIN_WIDTH, WIN_HEIGHT, 0.0f, 1.0f);
+
+	_view->SetPos(-CENTER);
+	_view->Update();
 	_postView->Update();
 	
-	XMMATRIX projMatrix = XMMatrixOrthographicLH(WIN_WIDTH, WIN_HEIGHT, 0.0f, 1.0f);
 	_proj->SetMatrix(projMatrix);
 	_proj->Update();
 }
@@ -68,7 +71,24 @@ Vector2 Camera::GetScreenMousePos()
 
 void Camera::FreeMode()
 {
-	
+	if (KEY_PRESS('W'))
+	{
+		_view->AddPos(Vector2(0, -1) * DELTA_TIME * 220.0f);
+	}
+	if (KEY_PRESS('A'))
+	{
+		_view->AddPos(Vector2(1, 0) * DELTA_TIME * 220.0f);
+
+	}
+	if (KEY_PRESS('S'))
+	{
+		_view->AddPos(Vector2(0, 1) * DELTA_TIME * 220.0f);
+
+	}
+	if (KEY_PRESS('D'))
+	{
+		_view->AddPos(Vector2(-1, 0) * DELTA_TIME * 220.0f);
+	}
 }
 
 void Camera::FollowMode()

@@ -28,8 +28,8 @@ public:
 	void SetActive(bool active) { _isActive = active; }
 	void SetDebug(bool debug) { _isActive = debug; }
 
-	vector<vector<shared_ptr<TileInfo>>>& GetInfo() { return _infos; }
-	Vector2 GetWorldIndex(Vector2 pos);
+	vector<Vector2>& GetFrames() { return _frames; }
+	int GetWorldIndex(Vector2 pos);
 	Vector2 GetWorldSize() { return Vector2(_mapSize.x * _tileSize.x, _mapSize.y * _tileSize.y); }
 
 private:
@@ -46,7 +46,9 @@ private:
 
 	Vector2 _mapSize;
 	Vector2 _tileSize;
-	vector<vector<shared_ptr<TileInfo>>> _infos;
+
+	vector<Vector2> _centers;
+	vector<Vector2> _frames;
 
 	vector<int> _frameTypes;
 

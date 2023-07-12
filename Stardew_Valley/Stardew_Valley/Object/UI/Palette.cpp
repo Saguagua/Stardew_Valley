@@ -74,7 +74,9 @@ void Palette::ChageChart(int index)
 	}
 	case 2:
 	{
-		//SaveManager::GetInstance()->SaveMap();
+		shared_ptr<MapInfo> info = make_shared<MapInfo>("Farming", Vector2(50, 50), _tileMap.lock()->GetFrames());
+		
+		SaveManager::GetInstance()->SaveMap(info);
 
 		break;
 	}
@@ -103,6 +105,8 @@ void Palette::CreateChartButtons()
 	button->SetPushEvent(cb);
 	cb = std::bind(&Palette::ChageChart, this, 1);
 	button2->SetPushEvent(cb);
+	cb = std::bind(&Palette::ChageChart, this, 2);
+	button3->SetPushEvent(cb);
 
 	_chartButtons.push_back(button);
 	_chartButtons.push_back(button2);
@@ -137,5 +141,4 @@ void Palette::CreateTileList()
 
 void Palette::CreateSaveList()
 {
-
 }

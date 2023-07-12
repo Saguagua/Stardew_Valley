@@ -37,6 +37,7 @@ private:
 
 	unordered_map<string, bool> _mapTable;
 	vector<int> _frameTypes;
+	Vector2 _maxFrame;
 
 	ofstream _fout;
 	ifstream _fin;

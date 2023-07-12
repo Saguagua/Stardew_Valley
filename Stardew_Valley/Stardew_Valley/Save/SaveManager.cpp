@@ -13,7 +13,7 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 {
 	string name = info->GetName();
 	Vector2 size = info->GetSize();
-	vector<int> frames = info->GetFrames();
+	vector<Vector2> frames = info->GetFrames();
 
 	if (_mapTable.count(name) == false)
 	{
@@ -30,7 +30,8 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 
 	for (int i = 0; i < frames.size(); i++)
 	{
-		_fout << frames[i] << " ";
+		int frame = frames[i].x + frames[i].y * 13;
+		_fout << frame << " ";
 		if (i % (int)size.x == 0)
 			_fout << endl;
 	}
@@ -47,12 +48,15 @@ shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
 	_fin >> size.x;
 	_fin >> size.y;
 
-	vector<int> frames;
+	vector<Vector2> frames;
 
 	while (!_fin.eof())
 	{
-		int frame;
-		_fin >> frame;
+		int tmp;
+		_fin >> tmp;
+		Vector2 frame;
+		frame.x = tmp % 13;
+		frame.y = tmp / 13;
 		frames.push_back(frame);
 	}
 
@@ -80,6 +84,9 @@ void SaveManager::ReadMaps()
 void SaveManager::ReadTypes()
 {
 	_fin.open("Map/Save/ClipTypes.txt");
+
+	_fin >> _maxFrame.x;
+	_fin >> _maxFrame.y;
 
 	while (!_fin.eof())
 	{

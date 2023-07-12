@@ -9,13 +9,14 @@ TestScene::TestScene()
 	_beachMap->SetActive(true);
 
 	Vector2 size = _beachMap->GetWorldSize();
-	Vector2 view;
-	view.x = size.x / 2 - WIN_WIDTH / 2;
-	view.y = size.y / 2 - WIN_HEIGHT / 2;
 
-	CAMERA->SetLeftBottom(-view);
-	CAMERA->SetRightTop(view);
+	_character->GetTransform()->SetPos(CENTER);
+	//_character->Update();
+
+	CAMERA->SetLeftBottom(Vector2(WIN_WIDTH / 2, WIN_HEIGHT / 2));
+	CAMERA->SetRightTop(size - Vector2(WIN_WIDTH/2, WIN_HEIGHT/2));
 	CAMERA->SetTarget(_character->GetTransform());
+	CAMERA->Update();
 }
 
 void TestScene::Update()
