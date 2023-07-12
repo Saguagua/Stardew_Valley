@@ -2,6 +2,15 @@
 
 class TileMap
 {
+	enum Type
+	{
+		NONE,
+		MOVEABLE = (1 << 0),
+		BLOCK = (1 << 1),
+		FARMING = (1 << 2),
+		FISHING = (1 << 3)
+	};
+
 public:
 	//todo : 파일을 읽어오는 생성자와 파일 없는 생성자 만들어야함
 	TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<class Character> mainCharacter);
@@ -38,6 +47,8 @@ private:
 	Vector2 _mapSize;
 	Vector2 _tileSize;
 	vector<vector<shared_ptr<TileInfo>>> _infos;
+
+	vector<int> _frameTypes;
 
 	bool _isActive = false;
 	bool _isDebug = true;

@@ -265,6 +265,7 @@
     <Image Include="Resource\Icons\Tiles.png" />
     <Image Include="Resource\Player\farmer_base.png" />
     <Image Include="Resource\Tile\MapTiles.png" />
+    <Image Include="Resource\Tile\Objects.png" />
     <Image Include="Resource\Tile\spring_beach.png" />
     <Image Include="Resource\Tile\spring_outdoors.png" />
     <Image Include="Resource\Tile\Tile.png" />

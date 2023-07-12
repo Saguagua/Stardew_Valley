@@ -86,7 +86,7 @@ void SaveManager::ReadTypes()
 		int type;
 
 		_fin >> type;
-		_clipTypes.push_back(type);
+		_frameTypes.push_back(type);
 	}
 
 	_fin.close();

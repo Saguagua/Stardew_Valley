@@ -27,6 +27,7 @@ public:
 
 	void SaveMap(shared_ptr<MapInfo> info);
 	shared_ptr<MapInfo> LoadMap(string mapName);
+	vector<int>& GetTypes() { return _frameTypes; }
 
 private:
 	void ReadMaps();
@@ -35,7 +36,7 @@ private:
 	static SaveManager* _instance;
 
 	unordered_map<string, bool> _mapTable;
-	vector<int> _clipTypes;
+	vector<int> _frameTypes;
 
 	ofstream _fout;
 	ifstream _fin;

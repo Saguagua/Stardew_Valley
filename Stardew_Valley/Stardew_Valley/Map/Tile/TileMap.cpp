@@ -10,7 +10,10 @@ TileMap::TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<Charac
 	_tileSize = Vector2(30 , 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = ADD_TILE(path, _mapSize, _tileSize); //싱글턴 필요 없을 듯
+	_tileRenderer = ADD_TILE(path, Vector2(13, 7), _tileSize); //싱글턴 필요 없을 듯
+
+	_frameTypes = SaveManager::GetInstance()->GetTypes();
+
 	ReadFile(path);
 }
 
@@ -21,7 +24,9 @@ TileMap::TileMap(Vector2 size)
 	_tileSize = Vector2(30, 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = ADD_TILE(L"Resource/Tile/TileBright.png", Vector2(13, 14), _tileSize);
+	_tileRenderer = ADD_TILE(L"Resource/Tile/Tile.png", Vector2(13, 7), _tileSize);
+
+	_frameTypes = SaveManager::GetInstance()->GetTypes();
 
 	CreateTileInfos();
 }
@@ -54,15 +59,17 @@ void TileMap::Play()
 				continue;
 			if (i == 0 && j == 0)
 				continue;
+
 			_col->SetPos(_infos[worldIndex.y + i][worldIndex.x + j]->centerPos);
 			_col->GetTransform()->Update_SRT();
+
 			if (_col->IsCollision(_mainCharacter.lock()->GetCollider()))
 			{
-				_infos[worldIndex.y + i][worldIndex.x + j]->color = XMFLOAT4(1, 0, 0, 1);
+				
 			}
 			else
 			{
-				_infos[worldIndex.y + i][worldIndex.x + j]->color = XMFLOAT4(0, 1, 0, 1);
+				
 			}
 		}
 	}
@@ -117,12 +124,11 @@ void TileMap::CreateMap()
 		shared_ptr<TileInfo> info = _palette.lock()->GetCurTileInfo();
 		if (info == nullptr)
 			return;
-		_infos[index.y][index.x]->type = info->type;
 		_infos[index.y][index.x]->curFrame = info->curFrame;
 	}
 }
 
-void TileMap::Render()
+void TileMap::Render() //Value out of Range 에러
 {
 	if (_isDebug)
 	{
@@ -130,13 +136,13 @@ void TileMap::Render()
 		{
 			for (int j = 0; j < _infos[i].size(); j++)
 			{
-				if (_infos[i][j]->type == TileInfo::Type::NONE)
+				Vector2 frame = _infos[i][j]->curFrame;
+
+				if (_frameTypes[i + j*13] == Type::NONE)
 				{
 					_col->SetPos(_infos[i][j]->centerPos);
 					_col->Update();
 					_col->GetTransform()->Set_World();
-
-					_lineRenderer->SetColor(_infos[i][j]->color);
 					_lineRenderer->Render();
 
 					continue;
@@ -148,7 +154,6 @@ void TileMap::Render()
 				_tileRenderer.lock()->SetCurFrame(_infos[i][j]->curFrame);
 				_tileRenderer.lock()->Update();
 				_tileRenderer.lock()->Render();
-				_lineRenderer->SetColor(_infos[i][j]->color);
 				_lineRenderer->Render();
 			}
 		}
@@ -206,7 +211,7 @@ void TileMap::CreateTileInfos()
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			Vector2 centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
-			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 0), TileInfo::Type::NONE);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 0));
 			tmp.push_back(info);
 		}
 		_infos.push_back(tmp);
@@ -227,7 +232,7 @@ void TileMap::ReadFile(wstring path)
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			Vector2 centerPos = Vector2(startPos.x + _tileSize.x * j, startPos.y + _tileSize.y * i);
-			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 6), TileInfo::Type::NONE);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(centerPos, Vector2(0, 6));
 			tmp.push_back(info);
 		}
 		_infos.push_back(tmp);

@@ -40,7 +40,8 @@ shared_ptr<TileInfo> Palette::GetCurTileInfo()
 	int index = _tileList->GetCurIndex();
 	if (index == -1)
 		return nullptr;
-	shared_ptr<TileInfo> info = make_shared<TileInfo>(Vector2(0,0), Vector2(index % 13, index / 13), TileInfo::Type::MOVEABLE);
+
+	shared_ptr<TileInfo> info = make_shared<TileInfo>(Vector2(0,0), Vector2(index % 13, index / 13));
 	return info;
 }
 
@@ -114,23 +115,22 @@ void Palette::CreateTileList()
 
 	Vector2 space;
 	space.x = _size.x * 0.9f / 13 / 14;
-	space.y = _size.y * 0.9f / 14 / 15;
+	space.y = _size.y * 0.9f / 7 / 8;
 
 	Vector2 buttonSize;
 	buttonSize.x = _size.x * 0.9f / 13 - space.x;
-	buttonSize.y = _size.y * 0.9f / 14 - space.y;
+	buttonSize.y = _size.y * 0.9f / 7 - space.y;
 
-	for (int i = 0; i < 14; i++)
+	for (int i = 0; i < 7; i++)
 	{
 		for (int j = 0; j < 13; j++)
 		{
-			shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Tile/TileBright.png", Vector2(13, 14), buttonSize);
+			shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Tile/Tile.png", Vector2(13, 7), buttonSize);
 			buttons.push_back(button);
 		}
 	}
 
-	_tileList = make_shared<List>(_size * 0.90f, buttons, Vector2(13, 14));
-
+	_tileList = make_shared<List>(_size * 0.90f, buttons, Vector2(13, 7));
 	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	_tileList->SetParent(_mainRect->GetTransform());
 }
