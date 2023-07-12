@@ -1,22 +1,23 @@
 #include "framework.h"
 #include "List.h"
 
-List::List(Vector2 size, wstring path, Vector2 frame)
+List::List(Vector2 size, vector<shared_ptr<TextureButton>> buttons, Vector2 frame)
 	:_size(size)
 {
-	_mainRect = make_shared<ColorButton>(GRAY, _size);
-	
-	CreateButtons(path, frame);
+	_transform = make_shared<Transform>();
+	_mainRect = make_shared<SingleColorRect>(_size, GRAY);
+	_buttons = buttons;
+	SetButtons(frame);
 }
 
 void List::Render()
 {
 	if (!_isActive)
 		return;
-
+	_transform->Set_World(0);
 	_mainRect->Render();
 
-	for (shared_ptr<TextureButton> button : _buttons)
+	for (auto button : _buttons)
 	{
 		button->Render();
 	}
@@ -27,7 +28,7 @@ void List::Update()
 	if (!_isActive)
 		return;
 
-	_mainRect->Update();
+	_transform->Update();
 
 	for (shared_ptr<TextureButton> button : _buttons)
 	{
@@ -35,42 +36,36 @@ void List::Update()
 	}
 }
 
-shared_ptr<TileInfo> List::GetCurTileInfo()
-{
-	if (_curIndex == -1)
-		return nullptr;
-	
-	return _infos[_curIndex];
-}
-
-void List::CreateButtons(wstring path, Vector2 frame)
+void List::SetButtons(Vector2 frame)
 {
 	Vector2 space;
 	space.x = _size.x / frame.x / frame.x;
 	space.y = _size.y / frame.y / frame.y;
 
-	_buttonSize.x =  _size.x / frame.x - space.x;
-	_buttonSize.y =  _size.y / frame.y - space.y;
+	_buttonSize.x = _size.x / frame.x - space.x;
+	_buttonSize.y = _size.y / frame.y - space.y;
 
 	Vector2 startPos;
-	startPos.x = -_buttonSize.x * (frame.x/2);
-	startPos.y =  _buttonSize.y * (frame.y/2);
+	startPos.x = -_buttonSize.x * (frame.x / 2);
+	startPos.y = _buttonSize.y * (frame.y / 2);
+	int x = 0;
+	int y = 0;
 
-	for (int i = 0; i < frame.y; i++)
+	for (int i = 0; i < _buttons.size(); i++)
 	{
-		for (int j = 0; j < frame.x; j++)
-		{
-			shared_ptr<TextureButton> button = make_shared<TextureButton>(path, frame, _buttonSize);
-			button->GetTransform()->SetPos(Vector2(startPos.x + j * (_buttonSize.x + space.x), startPos.y - i * (_buttonSize.y + space.y)));
-			button->GetTransform()->SetParent(_mainRect->GetTransform());
-			button->SetFrame(Vector2(j, i));
-			CallBackInt pEvent = std::bind(&List::PushButtonEvent, this, j + i * (frame.x));
-			button->SetPushEvent(pEvent);
-			_buttons.push_back(button);
+		Vector2 pos;
+		pos.x = startPos.x + x * (_buttonSize.x + space.x);
+		pos.y = startPos.y - y * (_buttonSize.y + space.y);
 
-			shared_ptr<TileInfo> info = make_shared<TileInfo>(Vector2(0,0), Vector2(j, i), TileInfo::Type::MOVEABLE);
-			_infos.push_back(info);
-		}
+		_buttons[i]->GetTransform()->SetPos(pos);
+		_buttons[i]->GetTransform()->SetParent(_transform);
+		_buttons[i]->SetFrame(Vector2(x,y));
+		CallBackInt cb = std::bind(&List::PushButtonEvent, this, x + y * frame.x);
+		_buttons[i]->SetPushEvent(cb);
+
+		x = (x + 1) % (int)frame.x;
+		if (x == 0)
+			y++;
 	}
 }
 

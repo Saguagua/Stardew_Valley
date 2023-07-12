@@ -5,7 +5,7 @@ class TileMap
 public:
 	//todo : 파일을 읽어오는 생성자와 파일 없는 생성자 만들어야함
 	TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<class Character> mainCharacter);
-	TileMap(Vector2 size, shared_ptr<class Palette> palette);
+	TileMap(Vector2 size);
 	~TileMap() {}
 
 	void Update();
@@ -14,6 +14,7 @@ public:
 
 	void Render();
 
+	void SetPalette(shared_ptr<class Palette> palette) { _palette = palette; }
 	void SetCameraRange();
 	void SetActive(bool active) { _isActive = active; }
 	void SetDebug(bool debug) { _isActive = debug; }

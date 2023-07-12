@@ -13,8 +13,5 @@ private:
 
 	shared_ptr<TileMap> _map;
 	shared_ptr<Palette> _palette;
-	ofstream _fout;
-	ofstream _fout2;
-	ifstream _fin;
 };
 

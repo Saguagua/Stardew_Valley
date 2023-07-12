@@ -10,12 +10,12 @@ TileMap::TileMap(wstring path, Vector2 size, Vector2 tileSize, shared_ptr<Charac
 	_tileSize = Vector2(30 , 30);
 	_col = make_shared<RectCollider>(_tileSize);
 	_lineRenderer = make_shared<RectLine>(_tileSize);
-	_tileRenderer = ADD_TILE(path, _mapSize, _tileSize);
+	_tileRenderer = ADD_TILE(path, _mapSize, _tileSize); //싱글턴 필요 없을 듯
 	ReadFile(path);
 }
 
-TileMap::TileMap(Vector2 size, shared_ptr<Palette> palette)
-	:_mapSize(size), _palette(palette)
+TileMap::TileMap(Vector2 size)
+	:_mapSize(size)
 {
 	_transform = make_shared<Transform>();
 	_tileSize = Vector2(30, 30);

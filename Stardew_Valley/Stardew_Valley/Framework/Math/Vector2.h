@@ -33,12 +33,13 @@ struct Vector2 : public XMFLOAT2
 		return result;
 	}
 
-	Vector2& operator-()
+	Vector2 operator-()
 	{
-		x *= -1;
-		y *= -1;
+		Vector2 result;
+		result.x = -x;
+		result.y = -y;
 
-		return *this;
+		return result;
 	}
 
 	Vector2& operator+=(Vector2 other)

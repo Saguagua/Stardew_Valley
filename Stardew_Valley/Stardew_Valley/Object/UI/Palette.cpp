@@ -4,24 +4,21 @@
 Palette::Palette(Vector2 size)
 	:_size(size)
 {
-	_mainWin = make_shared<ColorButton>(PURPLE, _size);
-	_tileList = make_shared<List>(_size * 0.90f, L"Resource/Tile/TileBright.png", Vector2(13, 14));
-
-	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
-	_tileList->SetParent(_mainWin->GetTransform());
-
+	_mainRect = make_shared<ColorButton>(PURPLE, _size);
 	CallBack onEvent = std::bind(&Palette::Move, this);
-	_mainWin->SetMouseOnEvent(onEvent);
+	_mainRect->SetMouseOnEvent(onEvent);
 
 	CallBackBool onEvent2 = std::bind(&Palette::OnFocus, this, std::placeholders::_1);
-	_mainWin->SetMouseOnEvent(onEvent2);
+	_mainRect->SetMouseOnEvent(onEvent2);
 
 	CreateChartButtons();
+	CreateTileList();
+	CreateSaveList();
 }
 
 void Palette::PostRender()
 {
-	_mainWin->Render();
+	_mainRect->Render();
 
 	for (auto button : _chartButtons)
 		button->Render();
@@ -31,22 +28,31 @@ void Palette::PostRender()
 
 void Palette::Update()
 {
-	_mainWin->Update();
+	_mainRect->Update();
 	for (auto button : _chartButtons)
 		button->Update();
 
 	_tileList->Update();
 }
 
+shared_ptr<TileInfo> Palette::GetCurTileInfo()
+{
+	int index = _tileList->GetCurIndex();
+	if (index == -1)
+		return nullptr;
+	shared_ptr<TileInfo> info = make_shared<TileInfo>(Vector2(0,0), Vector2(index % 13, index / 13), TileInfo::Type::MOVEABLE);
+	return info;
+}
+
 void Palette::Move()
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		_centerToMouse = S_MOUSE_POS - _mainWin->GetTransform()->GetPos();
+		_centerToMouse = S_MOUSE_POS - _mainRect->GetTransform()->GetPos();
 	}
 	if (KEY_PRESS(VK_LBUTTON))
 	{
-		_mainWin->GetTransform()->SetPos(S_MOUSE_POS - _centerToMouse);
+		_mainRect->GetTransform()->SetPos(S_MOUSE_POS - _centerToMouse);
 	}
 }
 
@@ -88,9 +94,9 @@ void Palette::CreateChartButtons()
 	button2->GetTransform()->SetPos(Vector2(0.0f, _size.y/2 - buttonSize.y));
 	button3->GetTransform()->SetPos(Vector2(_size.x/2 - buttonSize.x - space, _size.y/2 - buttonSize.y));
 
-	button->GetTransform()->SetParent(_mainWin->GetTransform());
-	button2->GetTransform()->SetParent(_mainWin->GetTransform());
-	button3->GetTransform()->SetParent(_mainWin->GetTransform());
+	button->GetTransform()->SetParent(_mainRect->GetTransform());
+	button2->GetTransform()->SetParent(_mainRect->GetTransform());
+	button3->GetTransform()->SetParent(_mainRect->GetTransform());
 
 	CallBackInt cb = std::bind(&Palette::ChageChart, this, 0);
 	button->SetPushEvent(cb);
@@ -100,4 +106,36 @@ void Palette::CreateChartButtons()
 	_chartButtons.push_back(button);
 	_chartButtons.push_back(button2);
 	_chartButtons.push_back(button3);
+}
+
+void Palette::CreateTileList()
+{
+	vector<shared_ptr<TextureButton>> buttons;
+
+	Vector2 space;
+	space.x = _size.x * 0.9f / 13 / 14;
+	space.y = _size.y * 0.9f / 14 / 15;
+
+	Vector2 buttonSize;
+	buttonSize.x = _size.x * 0.9f / 13 - space.x;
+	buttonSize.y = _size.y * 0.9f / 14 - space.y;
+
+	for (int i = 0; i < 14; i++)
+	{
+		for (int j = 0; j < 13; j++)
+		{
+			shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Tile/TileBright.png", Vector2(13, 14), buttonSize);
+			buttons.push_back(button);
+		}
+	}
+
+	_tileList = make_shared<List>(_size * 0.90f, buttons, Vector2(13, 14));
+
+	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	_tileList->SetParent(_mainRect->GetTransform());
+}
+
+void Palette::CreateSaveList()
+{
+
 }

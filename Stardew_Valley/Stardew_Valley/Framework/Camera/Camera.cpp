@@ -89,6 +89,7 @@ void Camera::FollowMode()
 
 	if (targetPos.y > _rightTop.y)
 		targetPos.y = _rightTop.y;
+
 	Vector2 tmp = -_view->GetWorldPos();
 	Vector2 temp = Lerp(tmp, targetPos, 0.04f);
 
