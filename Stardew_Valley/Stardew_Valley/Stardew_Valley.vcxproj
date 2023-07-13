@@ -327,6 +327,10 @@
       <Project>{cbc80606-cfba-4317-b628-51ec3af5f7c2}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Map\Save\Dungeon.txt" />
+    <Text Include="Map\Save\Fishing.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

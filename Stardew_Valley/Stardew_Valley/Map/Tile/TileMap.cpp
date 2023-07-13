@@ -113,7 +113,7 @@ void TileMap::Play()
 
 void TileMap::CreateMap()
 {
-	if (KEY_DOWN(VK_LBUTTON))
+	if (KEY_PRESS(VK_LBUTTON))
 	{
 		int index = GetWorldIndex(W_MOUSE_POS);
 		Vector2 frame = _palette.lock()->GetCurTileFrame();
@@ -156,7 +156,12 @@ void TileMap::Render()
 
 void TileMap::LoadMap(shared_ptr<MapInfo> info)
 {
-	_frames = info->GetFrames();
+	vector<Vector2> frame = info->GetFrames();
+	for (int i = 0; i < frame.size(); i++)
+	{
+		_frames[i] = frame[i];
+	}
+
 	_mapName = info->GetName();
 }
 
@@ -174,6 +179,8 @@ int TileMap::GetWorldIndex(Vector2 pos)
 	int y = pos.y / _tileSize.y;
 
 	int sum = x + y * _mapSize.x;
+	if (sum >= _frames.size())
+		return _frames.size() - 1;
 	return sum;
 }
 

@@ -47,6 +47,8 @@
 
 #define ADD_TILE(path, frame, size)		TileManager::GetInstance()->GetTile(path, frame, size);
 
+#define MAP_SIZE		Vector2(50, 50)
+
 #define CallBack		function<void()>
 #define CallBackInt		function<void(int)>
 #define CallBackBool	function<void(bool)>

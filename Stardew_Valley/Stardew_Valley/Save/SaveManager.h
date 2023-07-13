@@ -47,4 +47,3 @@ private:
 	ofstream _fout;
 	ifstream _fin;
 };
-

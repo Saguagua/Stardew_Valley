@@ -20,7 +20,7 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 		_mapTable[name] = true;
 
 		_fout.open("Map/Save/MapNames.txt", std::ios::app);
-		_fout << name << endl;
+		_fout << endl << name;
 		_fout.close();
 	}
 
@@ -31,9 +31,11 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 	for (int i = 0; i < frames.size(); i++)
 	{
 		int frame = frames[i].x + frames[i].y * 13;
-		_fout << frame << " ";
-		if (i % (int)size.x == 0)
+		_fout << frame;
+		if (i != 0 && i % (int)size.x == 0)
 			_fout << endl;
+		else
+			_fout << " ";
 	}
 
 	_fout.close();

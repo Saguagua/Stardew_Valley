@@ -14,7 +14,7 @@ public:
 	Vector2 GetSize() { return _size; }
 	vector<Vector2>& GetFrames() { return _frames; }
 
-	string SetName(string name) { _name = name; }
+	void SetName(string name) { _name = name; }
 	Vector2 SetSize(Vector2 size) { _size = size; }
 	vector<int>& SetFrames(vector<Vector2> frames) { _frames = frames; }
 

@@ -355,4 +355,8 @@
     <FxCompile Include="Shader\ClipFilterPS.hlsl" />
     <FxCompile Include="Shader\TextureVS.hlsl" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Map\Save\Fishing.txt" />
+    <Text Include="Map\Save\Dungeon.txt" />
+  </ItemGroup>
 </Project>

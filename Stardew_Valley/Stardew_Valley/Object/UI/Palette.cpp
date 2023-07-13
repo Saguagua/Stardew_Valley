@@ -78,7 +78,26 @@ void Palette::ChageChart(int index)
 	}
 	case 2:
 	{
-		shared_ptr<MapInfo> info = make_shared<MapInfo>("Farming", Vector2(50, 50), _tileMap.lock()->GetFrames());
+		shared_ptr<MapInfo> info = make_shared<MapInfo>("Dungeon", Vector2(MAP_SIZE), _tileMap.lock()->GetFrames());
+
+		switch (_saveList->GetCurIndex())
+		{
+		case 0:
+		{
+			info->SetName("Farming");
+			break;
+		}
+		case 1:
+		{
+			info->SetName("Fishing");
+			break;
+		}
+		case 2:
+		{
+			info->SetName("Dungeon");
+			break;
+		}
+		}
 		
 		SaveManager::GetInstance()->SaveMap(info);
 

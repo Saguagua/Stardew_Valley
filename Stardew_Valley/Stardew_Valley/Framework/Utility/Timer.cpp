@@ -9,20 +9,20 @@ Timer::Timer()
 
 	QueryPerformanceCounter((LARGE_INTEGER*)&_lastTime);
 
-	_timeScale = 1.0 / (double)_periodFrequency;
+	_timeScale = 1.0f / (float)_periodFrequency;
 }
 
 void Timer::Update()
 {
 	QueryPerformanceCounter((LARGE_INTEGER*)&_curTime);
-	_deltaTime = (double)(_curTime - _lastTime) * _timeScale;
+	_deltaTime = (float)(_curTime - _lastTime) * _timeScale;
 
 	if (_lockFPS != 0)
 	{
-		while (_deltaTime < (1.0 / _lockFPS))
+		while (_deltaTime < (1.0f / _lockFPS))
 		{
 			QueryPerformanceCounter((LARGE_INTEGER*)&_curTime);
-			_deltaTime = (double)(_curTime - _lastTime) * _timeScale;
+			_deltaTime = (float)(_curTime - _lastTime) * _timeScale;
 		}
 	}
 
