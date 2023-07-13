@@ -116,10 +116,10 @@ void TileMap::CreateMap()
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		int index = GetWorldIndex(W_MOUSE_POS);
-		shared_ptr<TileInfo> info = _palette.lock()->GetCurTileInfo();
-		if (info == nullptr)
+		Vector2 frame = _palette.lock()->GetCurTileFrame();
+		if (frame.x == -1 || frame.y == -1)
 			return;
-		_frames[index] = info->curFrame;
+		_frames[index] = frame;
 	}
 }
 
@@ -152,6 +152,12 @@ void TileMap::Render()
 		}
 	}
 	
+}
+
+void TileMap::LoadMap(shared_ptr<MapInfo> info)
+{
+	_frames = info->GetFrames();
+	_mapName = info->GetName();
 }
 
 void TileMap::SetCameraRange()

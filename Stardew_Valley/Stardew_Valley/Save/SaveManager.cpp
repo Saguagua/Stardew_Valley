@@ -41,26 +41,28 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 
 shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
 {
-	_fin.open("Map/Save/" + mapName +".txt");
+	ifstream fin;
+	fin.open("Map/Save/" + mapName +".txt");
 
+	if (!fin.is_open())
+		return nullptr;
 	Vector2 size;
-
-	_fin >> size.x;
-	_fin >> size.y;
+	fin >> size.x;
+	fin >> size.y;
 
 	vector<Vector2> frames;
 
-	while (!_fin.eof())
+	while (!fin.eof())
 	{
 		int tmp;
-		_fin >> tmp;
+		fin >> tmp;
 		Vector2 frame;
 		frame.x = tmp % 13;
 		frame.y = tmp / 13;
 		frames.push_back(frame);
 	}
 
-	_fin.close();
+	fin.close();
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, frames);
 
@@ -76,6 +78,7 @@ void SaveManager::ReadMaps()
 		string name;
 		getline(_fin, name);
 		_mapTable[name] = true;
+		_mapInfos.push_back(LoadMap(name));
 	}
 
 	_fin.close();

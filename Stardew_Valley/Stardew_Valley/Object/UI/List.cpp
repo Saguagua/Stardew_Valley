@@ -1,13 +1,14 @@
 #include "framework.h"
 #include "List.h"
 
-List::List(Vector2 size, vector<shared_ptr<TextureButton>> buttons, Vector2 frame)
-	:_size(size)
+List::List(Vector2 size, vector<shared_ptr<TextureButton>> buttons, Vector2 matrix)
+	:_size(size), _matrix(matrix)
 {
 	_transform = make_shared<Transform>();
 	_mainRect = make_shared<SingleColorRect>(_size, GRAY);
 	_buttons = buttons;
-	SetButtons(frame);
+	_buttonSize = _buttons[0]->GetSize();
+	SetButtons();
 }
 
 void List::Render()
@@ -36,18 +37,18 @@ void List::Update()
 	}
 }
 
-void List::SetButtons(Vector2 frame)
+void List::SetButtons()
 {
-	Vector2 space;
-	space.x = _size.x / frame.x / frame.x;
-	space.y = _size.y / frame.y / frame.y;
-
-	_buttonSize.x = _size.x / frame.x - space.x;
-	_buttonSize.y = _size.y / frame.y - space.y;
+	Vector2 frame = _buttons[0]->GetMaxFrame();
 
 	Vector2 startPos;
-	startPos.x = -_buttonSize.x * (frame.x / 2);
-	startPos.y = _buttonSize.y * (frame.y / 2);
+	startPos.x = -_buttonSize.x * (_matrix.x / 2);
+	startPos.y = _buttonSize.y * (_matrix.y / 2);
+
+	Vector2 space;
+	space.x = _buttonSize.x / _matrix.x;
+	space.y = _buttonSize.y / _matrix.y;
+
 	int x = 0;
 	int y = 0;
 
@@ -97,7 +98,7 @@ void List::Scroll()
 			{
 				tmp.y = -_size.y / 2 - _buttonSize.y / 2;
 
-				Vector2 curFrame = _buttons[i]->GetFrame();
+				Vector2 curFrame = _buttons[i]->GetCurFrame();
 				curFrame.y -= 5;
 
 				_buttons[i]->SetFrame(curFrame);
@@ -119,7 +120,7 @@ void List::Scroll()
 			{
 				tmp.y = _size.y / 2 + _buttonSize.y / 2;
 
-				Vector2 curFrame = _buttons[i]->GetFrame();
+				Vector2 curFrame = _buttons[i]->GetCurFrame();
 				curFrame.y += 5;
 
 				_buttons[i]->SetFrame(curFrame);

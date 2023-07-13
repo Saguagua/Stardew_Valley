@@ -10,7 +10,7 @@ public:
 
 	void SetTileMap(shared_ptr<TileMap> tileMap) { _tileMap = tileMap; }
 
-	shared_ptr<TileInfo> GetCurTileInfo();
+	Vector2 GetCurTileFrame();
 	bool GetFocus() { return _onFocus; }
 
 private:
@@ -22,7 +22,9 @@ private:
 	void OnFocus(bool val) { _onFocus = val; }
 	void Move();
 	void ChageChart(int index);
+	void ChangeMap(bool chosen);
 
+	vector<shared_ptr<MapInfo>> _mapInfos;
 	shared_ptr<ColorButton> _mainRect;
 	shared_ptr<List> _tileList;
 	shared_ptr<List> _saveList;

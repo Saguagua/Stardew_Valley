@@ -24,6 +24,7 @@ void Palette::PostRender()
 		button->Render();
 
 	_tileList->Render();
+	_saveList->Render();
 }
 
 void Palette::Update()
@@ -33,16 +34,17 @@ void Palette::Update()
 		button->Update();
 
 	_tileList->Update();
+	_saveList->Update();
 }
 
-shared_ptr<TileInfo> Palette::GetCurTileInfo()
+Vector2 Palette::GetCurTileFrame()
 {
 	int index = _tileList->GetCurIndex();
 	if (index == -1)
-		return nullptr;
+		return Vector2(-1, -1);
+	Vector2 maxFrame = SaveManager::GetInstance()->GetMaxFrame();
 
-	shared_ptr<TileInfo> info = make_shared<TileInfo>(Vector2(0,0), Vector2(index % 13, index / 13));
-	return info;
+	return Vector2(index % (int)maxFrame.x, index / (int)maxFrame.x);
 }
 
 void Palette::Move()
@@ -64,11 +66,13 @@ void Palette::ChageChart(int index)
 	case 0:
 	{
 		_tileList->SetActive(true);
+		_saveList->SetActive(false);
 		break;
 	}
 	case 1:
 	{
 		_tileList->SetActive(false);
+		_saveList->SetActive(true);
 		
 		break;
 	}
@@ -83,6 +87,16 @@ void Palette::ChageChart(int index)
 	default:
 		break;
 	}
+}
+
+void Palette::ChangeMap(bool chosen)
+{
+	if (chosen)
+		return;
+	int index = _saveList->GetCurIndex();
+
+	
+	_tileMap.lock()->LoadMap(_mapInfos[index]);
 }
 
 void Palette::CreateChartButtons()
@@ -116,29 +130,45 @@ void Palette::CreateChartButtons()
 void Palette::CreateTileList()
 {
 	vector<shared_ptr<TextureButton>> buttons;
-
-	Vector2 space;
-	space.x = _size.x * 0.9f / 13 / 14;
-	space.y = _size.y * 0.9f / 7 / 8;
+	Vector2 frame = SaveManager::GetInstance()->GetMaxFrame();
 
 	Vector2 buttonSize;
-	buttonSize.x = _size.x * 0.9f / 13 - space.x;
-	buttonSize.y = _size.y * 0.9f / 7 - space.y;
+	buttonSize.x = _size.x * 0.9f / (frame.x + 1);
+	buttonSize.y = _size.y * 0.9f / (frame.y + 1);
 
 	for (int i = 0; i < 7; i++)
 	{
 		for (int j = 0; j < 13; j++)
 		{
-			shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Tile/Tile.png", Vector2(13, 7), buttonSize);
+			shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Tile/Tile.png", frame, buttonSize);
 			buttons.push_back(button);
 		}
 	}
 
-	_tileList = make_shared<List>(_size * 0.90f, buttons, Vector2(13, 7));
+	_tileList = make_shared<List>(_size * 0.90f, buttons, frame);
 	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	_tileList->SetParent(_mainRect->GetTransform());
 }
 
 void Palette::CreateSaveList()
 {
+	_mapInfos = SaveManager::GetInstance()->GetMapInfos();
+	vector<shared_ptr<TextureButton>> buttons;
+
+	Vector2 buttonSize;
+	buttonSize.x = _size.x * 0.9f / 7;
+	buttonSize.y = _size.y * 0.9f / 7;
+
+	for (int i = 0; i < _mapInfos.size(); i++)
+	{
+		shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Tile/Tile.png", Vector2(13, 7), buttonSize);
+		CallBackBool cb = std::bind(&Palette::ChangeMap, this, std::placeholders::_1);
+		button->SetPushEvent(cb);
+		buttons.push_back(button);
+	}
+
+	_saveList = make_shared<List>(_size * 0.9f, buttons, Vector2(6,6));
+	_saveList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	_saveList->SetParent(_mainRect->GetTransform());
+	_saveList->SetActive(false);
 }

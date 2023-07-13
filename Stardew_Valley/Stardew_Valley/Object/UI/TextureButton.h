@@ -12,7 +12,8 @@ public:
 	shared_ptr<TextureRect> GetTexture() { return _renderer; }
 
 	void SetFrame(Vector2 frame) { _curFrame = frame; }
-	Vector2 GetFrame() { return _curFrame; }
+	Vector2 GetCurFrame() { return _curFrame; }
+	Vector2 GetMaxFrame() { return _renderer->GetMaxFrame(); }
 private:
 	shared_ptr<TextureRect> _renderer;
 	Vector2 _curFrame = {0, 0};

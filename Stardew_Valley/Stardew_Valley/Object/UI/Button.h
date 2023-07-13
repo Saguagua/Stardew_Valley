@@ -11,6 +11,7 @@ public:
 
 	void SetPushEvent(CallBack cb) { _pushEvent = cb; }
 	void SetPushEvent(CallBackInt cb) { _pushIntEvent = cb; }
+	void SetPushEvent(CallBackBool cb) { _pushBoolEvent = cb; }
 
 	void SetScrollEvent(CallBack cb) { _scrollEvent = cb; }
 	void SetScrollEvent(CallBackInt cb) { _scrollIntEvent = cb; }
@@ -19,6 +20,7 @@ public:
 	void SetMouseOnEvent(CallBackInt cb) { _mouseOnIntEvent = cb; }
 	void SetMouseOnEvent(CallBackBool cb) { _mouseOnBoolEvent = cb; }
 
+	Vector2 GetSize() { return _size; }
 	shared_ptr<RectCollider> GetCollider() { return _col; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 protected:
@@ -35,5 +37,6 @@ protected:
 
 	CallBack _pushEvent;
 	CallBackInt _pushIntEvent;
+	CallBackBool _pushBoolEvent;
 };
 

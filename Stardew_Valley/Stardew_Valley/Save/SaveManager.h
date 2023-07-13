@@ -27,13 +27,18 @@ public:
 
 	void SaveMap(shared_ptr<MapInfo> info);
 	shared_ptr<MapInfo> LoadMap(string mapName);
-	vector<int>& GetTypes() { return _frameTypes; }
 
+	Vector2 GetMaxFrame() { return _maxFrame; }
+	vector<shared_ptr<MapInfo>> GetMapInfos() { return _mapInfos; }
+	vector<int>& GetTypes() { return _frameTypes; }
+	
 private:
 	void ReadMaps();
 	void ReadTypes();
 
 	static SaveManager* _instance;
+
+	vector<shared_ptr<MapInfo>> _mapInfos;
 
 	unordered_map<string, bool> _mapTable;
 	vector<int> _frameTypes;

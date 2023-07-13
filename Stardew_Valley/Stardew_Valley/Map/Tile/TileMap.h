@@ -18,10 +18,9 @@ public:
 	~TileMap() {}
 
 	void Update();
-	void Play();
-	void CreateMap();
-
 	void Render();
+
+	void LoadMap(shared_ptr<MapInfo> info);
 
 	void SetPalette(shared_ptr<class Palette> palette) { _palette = palette; }
 	void SetCameraRange();
@@ -33,6 +32,8 @@ public:
 	Vector2 GetWorldSize() { return Vector2(_mapSize.x * _tileSize.x, _mapSize.y * _tileSize.y); }
 
 private:
+	void Play();
+	void CreateMap();
 	void CreateTileInfos();
 	void ReadFile(wstring path);
 
@@ -54,5 +55,6 @@ private:
 
 	bool _isActive = false;
 	bool _isDebug = true;
+	string _mapName;
 };
 
