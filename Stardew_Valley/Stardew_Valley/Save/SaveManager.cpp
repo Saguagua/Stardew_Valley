@@ -27,12 +27,12 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 	_fout.open("Map/Save/" + name + ".txt");
 
 	_fout << size.x << " " << size.y << endl;
-
-	for (int i = 0; i < frames.size(); i++)
+	int Size = size.x * size.y;
+	for (int i = 0; i < Size; i++)
 	{
 		int frame = frames[i].x + frames[i].y * 13;
 		_fout << frame;
-		if (i != 0 && i % (int)size.x == 0)
+		if ((i + 1) % (int)size.x == 0)
 			_fout << endl;
 		else
 			_fout << " ";
@@ -65,6 +65,9 @@ shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
 	}
 
 	fin.close();
+
+	if (frames.size() > 0)
+		frames.pop_back();
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, frames);
 

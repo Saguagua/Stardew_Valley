@@ -5,28 +5,34 @@
 TestScene::TestScene()
 {
 	_character = make_shared<Character>();
-	_beachMap = make_shared<TileMap>(L"Resource/Tile/spring_beach.png", Vector2(50, 50), Vector2(30, 30) ,_character);
-	_beachMap->SetActive(true);
 
-	Vector2 size = _beachMap->GetWorldSize();
+	vector<shared_ptr<MapInfo>> v = SaveManager::GetInstance()->GetMapInfos();
+	
+	_farmmingMap = make_shared<TileMap>(v[0]);
+	_beachMap = make_shared<TileMap>(v[1]);
+	_beachMap->SetActive(true);
+	_farmmingMap->SetActive(false);
+
+	_farmmingMap->SetPlayer(_character);
+	_beachMap->SetPlayer(_character);
 
 	_character->GetTransform()->SetPos(CENTER);
-	//_character->Update();
-
-	CAMERA->SetLeftBottom(Vector2(WIN_WIDTH / 2, WIN_HEIGHT / 2));
-	CAMERA->SetRightTop(size - Vector2(WIN_WIDTH/2, WIN_HEIGHT/2));
+	_character->Update();
+	_beachMap->SetCameraRange();
 	CAMERA->SetTarget(_character->GetTransform());
 	CAMERA->Update();
 }
 
 void TestScene::Update()
 {
+	_farmmingMap->Update();
 	_beachMap->Update();
 	_character->Update();
 }
 
 void TestScene::Render()
 {
+	_farmmingMap->Render();
 	_beachMap->Render();
 	_character->Render();
 }

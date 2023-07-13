@@ -14,4 +14,3 @@ private:
 	shared_ptr<TileMap> _map;
 	shared_ptr<Palette> _palette;
 };
-

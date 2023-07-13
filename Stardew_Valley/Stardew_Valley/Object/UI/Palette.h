@@ -21,7 +21,7 @@ private:
 	//CallBack
 	void OnFocus(bool val) { _onFocus = val; }
 	void Move();
-	void ChageChart(int index);
+	void ChartButtonEvent(int index);
 	void ChangeMap(bool chosen);
 
 	vector<shared_ptr<MapInfo>> _mapInfos;

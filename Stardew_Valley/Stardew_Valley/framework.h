@@ -64,11 +64,11 @@ using namespace Microsoft::WRL;
 #include "Framework/TextureMapping/StateManager.h"
 
 //Object
-#include "Object/BagicObj/ShapeLine.h"
-#include "Object/BagicObj/CircleLine.h"
-#include "Object/BagicObj/RectLine.h"
-#include "Object/BagicObj/SingleColorRect.h"
-#include "Object/BagicObj/TextureRect.h"
+#include "Object/BasicObj/ShapeLine.h"
+#include "Object/BasicObj/CircleLine.h"
+#include "Object/BasicObj/RectLine.h"
+#include "Object/BasicObj/SingleColorRect.h"
+#include "Object/BasicObj/TextureRect.h"
 
 //Collider
 #include "Framework/Collision/Collider.h"
@@ -80,7 +80,6 @@ using namespace Microsoft::WRL;
 
 //Map
 #include "Map/Tile/TileInfo.h"
-#include "Map/Tile/TileManager.h"
 #include "Map/Tile/TileMap.h"
 
 //UI

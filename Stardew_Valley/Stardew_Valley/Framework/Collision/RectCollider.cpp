@@ -101,14 +101,14 @@ bool RectCollider::Block(shared_ptr<CircleCollider> other)
 		AtoB.x = 0;
 		Vector2 normal = AtoB.Normalize();
 		Vector2 power = normal * yDistance;
-		other->SetPos(otherPos + normal * yDistance);
+		other->SetPos(otherPos + power);
 	}
 	else
 	{
 		AtoB.y = 0;
 		Vector2 normal = AtoB.Normalize();
 		Vector2 power = normal * xDistance;
-		other->SetPos(otherPos + normal * xDistance);
+		other->SetPos(otherPos + power);
 	}
 
 

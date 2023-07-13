@@ -1,6 +1,6 @@
 #include "framework.h"
 #include "Collider.h"
-#include "../../Object/BagicObj/ShapeLine.h"
+#include "../../Object/BasicObj/ShapeLine.h"
 
 void Collider::Update()
 {

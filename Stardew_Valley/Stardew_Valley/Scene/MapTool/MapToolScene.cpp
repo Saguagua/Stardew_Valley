@@ -4,7 +4,7 @@
 MapToolScene::MapToolScene()
 {
 	_palette = make_shared<Palette>(Vector2(450, 600));
-	_map = make_shared<TileMap>(MAP_SIZE);
+	_map = make_shared<TileMap>();
 	_palette->SetTileMap(_map);
 	_map->SetPalette(_palette);
 	_map->SetActive(true);

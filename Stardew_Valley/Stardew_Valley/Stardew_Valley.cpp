@@ -50,7 +50,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     ShaderManager::Create();
     SaveManager::Create();
     InputManager::Create();
-    TileManager::Create();
 
 
     shared_ptr<Program> program = make_shared<Program>();
@@ -72,7 +71,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
     }
 
-    TileManager::Delete();
     InputManager::Delete();
     SaveManager::Delete();
     ShaderManager::Delete();
