@@ -33,8 +33,8 @@ void TextureRect::Render()
 
 void TextureRect::Update()
 {
-	_fBuffer->SetStart(_curFrame);
-	_fBuffer->Update();
+	//_fBuffer->SetStart(_curFrame);
+	//_fBuffer->Update();
 }
 
 void TextureRect::SetCurFrame(Vector2 frame)

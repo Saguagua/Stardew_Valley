@@ -7,6 +7,7 @@ Character::Character()
 	_quadSlot = make_shared<Transform>();
 	_quad = make_shared<TextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(30, 50));
 	
+	_quad->SetCurFrame(Vector2(0, 0));
 	_quadSlot->AddPos(Vector2(0, 15));
 	_quadSlot->SetParent(_collider->GetTransform());
 }
