@@ -10,15 +10,15 @@ TestScene::TestScene()
 	
 	_farmmingMap = make_shared<TileMap>(v[0]);
 	_beachMap = make_shared<TileMap>(v[1]);
-	_beachMap->SetActive(true);
-	_farmmingMap->SetActive(false);
+	_beachMap->SetActive(false);
+	_farmmingMap->SetActive(true);
 
 	_farmmingMap->SetPlayer(_character);
 	_beachMap->SetPlayer(_character);
 
 	_character->GetTransform()->SetPos(CENTER);
 	_character->Update();
-	_beachMap->SetCameraRange();
+	_farmmingMap->SetCameraRange();
 	CAMERA->SetTarget(_character->GetTransform());
 	CAMERA->Update();
 }

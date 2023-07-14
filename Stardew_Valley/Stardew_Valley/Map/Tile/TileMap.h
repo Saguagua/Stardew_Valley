@@ -25,7 +25,7 @@ public:
 	void SetPlayer(shared_ptr<class Character> player) { _player = player; }
 	void SetPalette(shared_ptr<class Palette> palette) { _palette = palette; }
 	void SetActive(bool active) { _isActive = active; }
-	void SetDebug(bool debug) { _isActive = debug; }
+	void SetDebug(bool debug) { _isDebug = debug; }
 
 	vector<Vector2>& GetFrames() { return _frames; }
 	int GetWorldIndex(Vector2 pos);
@@ -52,7 +52,7 @@ private:
 	vector<int> _frameTypes;
 
 	bool _isActive = false;
-	bool _isDebug = true;
+	bool _isDebug = false;
 
 	string _mapName;
 	Vector2 _mapSize;

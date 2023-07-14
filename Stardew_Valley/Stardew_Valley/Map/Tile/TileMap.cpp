@@ -123,23 +123,6 @@ void TileMap::KeyInput()
 	Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
 	int worldIndex = GetWorldIndex(mainWorldPos);
 
-	if (KEY_PRESS('W'))
-	{
-		
-	}
-	if (KEY_PRESS('A'))
-	{
-		
-	}
-	if (KEY_PRESS('S'))
-	{
-		
-	}
-	if (KEY_PRESS('D'))
-	{
-		
-	}
-
 	for (int i = -1; i < 2; i++)
 	{
 		for (int j = -1; j < 2; j++)
@@ -239,7 +222,6 @@ void TileMap::Render()
 			_tileRenderer->Render();
 		}
 	}
-	
 }
 
 void TileMap::LoadMap(shared_ptr<MapInfo> info)

@@ -8,6 +8,7 @@ MapToolScene::MapToolScene()
 	_palette->SetTileMap(_map);
 	_map->SetPalette(_palette);
 	_map->SetActive(true);
+	_map->SetDebug(true);
 }
 
 void MapToolScene::Update()
