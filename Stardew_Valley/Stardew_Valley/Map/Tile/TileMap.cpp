@@ -6,7 +6,7 @@
 TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 	:_mapName(mapInfo->GetName()), _frames(mapInfo->GetFrames()), _mapSize(mapInfo->GetSize())
 {
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE * 1.5f);
 		_colliders.push_back(col);
@@ -152,7 +152,7 @@ void TileMap::Blocking()
 	int x = -2;
 	int y = -1;
 
-	for (int i = 0; i < _colliders.size(); i++)
+	for (int i = 1; i < _colliders.size(); i++)
 	{
 		x += 1;
 
@@ -203,9 +203,7 @@ void TileMap::Render()
 			_colliders[0]->SetPos(_centers[i]);
 			_colliders[0]->Update();
 			_colliders[0]->GetTransform()->Set_World();
-			_lineRenderer->Render();
 			_tileRenderer->SetCurFrame(_frames[i]);
-			_tileRenderer->Update();
 			_tileRenderer->Render();
 			_lineRenderer->Render();
 		}
@@ -218,7 +216,6 @@ void TileMap::Render()
 			_colliders[0]->Update();
 			_colliders[0]->GetTransform()->Set_World();
 			_tileRenderer->SetCurFrame(_frames[i]);
-			_tileRenderer->Update();
 			_tileRenderer->Render();
 		}
 	}
