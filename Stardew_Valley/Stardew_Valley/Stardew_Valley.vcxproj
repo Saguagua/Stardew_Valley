@@ -151,12 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\GameObj\GameObject.h" />
     <ClInclude Include="Save\MapInfo.h" />
     <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
     <ClInclude Include="Object\UI\Button.h" />
     <ClInclude Include="Object\BasicObj\SingleColorRect.h" />
-    <ClInclude Include="Map\Tile\TileInfo.h" />
     <ClInclude Include="Object\UI\Palette.h" />
     <ClInclude Include="Save\SaveManager.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
@@ -204,6 +204,7 @@
     <ClInclude Include="Object\UI\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\GameObj\GameObject.cpp" />
     <ClCompile Include="Object\UI\List.cpp" />
     <ClCompile Include="Object\UI\ColorButton.cpp" />
     <ClCompile Include="Object\UI\Button.cpp" />
@@ -261,6 +262,7 @@
     <Image Include="Resource\Icons\file.png" />
     <Image Include="Resource\Icons\save.png" />
     <Image Include="Resource\Icons\Tiles.png" />
+    <Image Include="Resource\Object\house.png" />
     <Image Include="Resource\Player\farmer_base.png" />
     <Image Include="Resource\Tile\MapTiles.png" />
     <Image Include="Resource\Tile\Objects.png" />

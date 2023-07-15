@@ -63,7 +63,7 @@ using namespace Microsoft::WRL;
 #include "Framework/TextureMapping/SRVManager.h"
 #include "Framework/TextureMapping/StateManager.h"
 
-//Object
+//BasicObject
 #include "Object/BasicObj/ShapeLine.h"
 #include "Object/BasicObj/CircleLine.h"
 #include "Object/BasicObj/RectLine.h"
@@ -75,11 +75,15 @@ using namespace Microsoft::WRL;
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/RectCollider.h"
 
+//GameObject
+#include "Object/GameObj/GameObject.h"
+//#include "Object/GameObj/"
+
+//Save
 #include "Save/MapInfo.h"
 #include "Save/SaveManager.h"
 
 //Map
-#include "Map/Tile/TileInfo.h"
 #include "Map/Tile/TileMap.h"
 
 //UI

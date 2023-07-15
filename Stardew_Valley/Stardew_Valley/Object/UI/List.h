@@ -26,7 +26,6 @@ private:
 	shared_ptr<Transform> _transform;
 	shared_ptr<SingleColorRect> _mainRect;
 	vector<shared_ptr<TextureButton>> _buttons;
-	vector<shared_ptr<TileInfo>> _infos;
 
 	int _curIndex = -1;
 	bool _isActive;

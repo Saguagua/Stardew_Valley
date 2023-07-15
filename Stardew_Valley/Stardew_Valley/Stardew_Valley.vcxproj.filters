@@ -144,9 +144,6 @@
     <ClInclude Include="Object\BasicObj\SingleColorRect.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Map\Tile\TileInfo.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\UI\Button.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -166,6 +163,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Save\MapInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\GameObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -299,6 +299,9 @@
     <ClCompile Include="Save\SaveManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object\GameObj\GameObject.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -340,6 +343,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\Tile\Objects.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Object\house.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

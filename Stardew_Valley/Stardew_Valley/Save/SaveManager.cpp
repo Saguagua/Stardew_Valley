@@ -19,12 +19,12 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 	{
 		_mapTable[name] = true;
 
-		_fout.open("Map/Save/MapNames.txt", std::ios::app);
+		_fout.open("Save/Contents/MapNames.txt", std::ios::app);
 		_fout << endl << name;
 		_fout.close();
 	}
 
-	_fout.open("Map/Save/" + name + ".txt");
+	_fout.open("Save/SaveFiles/" + name + ".txt");
 
 	_fout << size.x << " " << size.y << endl;
 	int Size = size.x * size.y;
@@ -44,7 +44,7 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
 {
 	ifstream fin;
-	fin.open("Map/Save/" + mapName +".txt");
+	fin.open("Save/SaveFiles/" + mapName +".txt");
 
 	if (!fin.is_open())
 		return nullptr;
@@ -76,7 +76,7 @@ shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
 
 void SaveManager::ReadMaps()
 {
-	_fin.open("Map/Save/MapNames.txt");
+	_fin.open("Save/Contents/MapNames.txt");
 
 	while (!_fin.eof())
 	{
@@ -91,7 +91,7 @@ void SaveManager::ReadMaps()
 
 void SaveManager::ReadTypes()
 {
-	_fin.open("Map/Save/ClipTypes.txt");
+	_fin.open("Save/Contents/TileTypes.txt");
 
 	_fin >> _maxFrame.x;
 	_fin >> _maxFrame.y;
