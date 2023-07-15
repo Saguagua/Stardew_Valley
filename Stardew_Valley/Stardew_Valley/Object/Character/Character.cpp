@@ -8,7 +8,7 @@ Character::Character()
 	_quad = make_shared<TextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(30, 50));
 	
 	_quad->SetCurFrame(Vector2(0, 0));
-	_quadSlot->AddPos(Vector2(0, 15));
+	_quadSlot->AddPos(Vector2(-5, 0));
 	_quadSlot->SetParent(_collider->GetTransform());
 }
 
@@ -46,4 +46,9 @@ void Character::KeyInput()
 	{
 		_collider->AddPos(Vector2(1, 0) * DELTA_TIME * 200);
 	}
+}
+
+Vector2 Character::GetWorldPos()
+{
+	return _collider->GetWorldPos();
 }

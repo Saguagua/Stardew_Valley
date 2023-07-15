@@ -25,6 +25,9 @@ public:
 
 	bool Block(shared_ptr<CircleCollider>);
 
+	virtual Vector2 GetWorldPos() override;
+	virtual Vector2 GetWorldScale() override;
+	
 private:
 	friend CircleCollider;
 	friend RectCollider;

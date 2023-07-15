@@ -15,8 +15,10 @@ TestScene::TestScene()
 
 	_farmmingMap->SetPlayer(_character);
 	_beachMap->SetPlayer(_character);
+	_beachMap->SetDebug(true);
 
 	_character->GetTransform()->SetPos(CENTER);
+	_character->SetDebug(true);
 	_character->Update();
 	_beachMap->SetCameraRange();
 	CAMERA->SetTarget(_character->GetTransform());

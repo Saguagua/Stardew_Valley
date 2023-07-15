@@ -8,7 +8,7 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 {
 	for (int i = 0; i < 10; i++)
 	{
-		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE * 1.5f);
+		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE * 1.2f);
 		_colliders.push_back(col);
 	}
 
@@ -18,14 +18,12 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 	_frameTypes = SaveManager::GetInstance()->GetTypes();
 	_maxFrame = SaveManager::GetInstance()->GetMaxFrame();
 
-	Vector2 startPos = TILE_SIZE * 0.5f;
-
 	for (int i = 0; i < _mapSize.y; i++)
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
-			Vector2 centerPos = Vector2(startPos.x + TILE_SIZE.x * j, startPos.y + TILE_SIZE.y * i);
-			_centers.push_back(centerPos);
+			Vector2 centerPos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
+			_startPoses.push_back(centerPos);
 		}
 	}
 }
@@ -35,7 +33,7 @@ TileMap::TileMap()
 {
 	for (int i = 0; i < 5; i++)
 	{
-		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE);
+		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE * 1.5f);
 		_colliders.push_back(col);
 	}
 	_lineRenderer = make_shared<RectLine>(TILE_SIZE);
@@ -45,14 +43,12 @@ TileMap::TileMap()
 
 	_maxFrame = SaveManager::GetInstance()->GetMaxFrame();
 
-	Vector2 startPos = TILE_SIZE * 0.5f;
-
 	for (int i = 0; i < _mapSize.y; i++)
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
-			Vector2 centerPos = Vector2(startPos.x + TILE_SIZE.x * j, startPos.y + TILE_SIZE.y * i);
-			_centers.push_back(centerPos);
+			Vector2 centerPos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
+			_startPoses.push_back(centerPos);
 			_frames.push_back(Vector2(_maxFrame.x-1, _maxFrame.y-1));
 		}
 	}
@@ -77,45 +73,49 @@ void TileMap::Play()
 
 void TileMap::MouseInput()
 {
-	Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
-	Vector2 mouse = W_MOUSE_POS;
-	Vector2 target = mouse - mainWorldPos;
-	int index = GetWorldIndex(mouse);
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
+		Vector2 mouse = W_MOUSE_POS;
+		Vector2 target = mouse - mainWorldPos;
+		int index = GetWorldIndex(mouse);
 
-	float angle = target.Angle() * 57.2958f;
+		float angle = target.Angle() * 57.2958f;
 
-	if (angle > -25.0f && angle <= 25.0f)
-	{
-		//_infos[worldIndex.y][worldIndex.x + 1]->curFrame.x++;
+		if (angle > -25.0f && angle <= 25.0f)
+		{
+			//_infos[worldIndex.y][worldIndex.x + 1]->curFrame.x++;
+		}
+		else if (angle > 25.0f && angle <= 70.0f)
+		{
+			//_infos[worldIndex.y + 1][worldIndex.x + 1]->curFrame.x++;
+		}
+		else if (angle > 70.0f && angle <= 115.0f)
+		{
+			//_infos[worldIndex.y + 1][worldIndex.x]->curFrame.x++;
+		}
+		else if (angle > 115.0f && angle < 160.0f)
+		{
+			//_infos[worldIndex.y + 1][worldIndex.x - 1]->curFrame.x++;
+		}
+		else if (angle > -70.0f && angle <= -25.0f)
+		{
+			//_infos[worldIndex.y - 1][worldIndex.x + 1]->curFrame.x++;
+		}
+		else if (angle > -115.0f && angle <= -70.0f)
+		{
+			//_infos[worldIndex.y - 1][worldIndex.x]->curFrame.x++;
+		}
+		else if (angle > -160.0f && angle <= -25.0f)
+		{
+			//_infos[worldIndex.y - 1][worldIndex.x - 1]->curFrame.x++;
+		}
+		else
+		{
+			//_infos[worldIndex.y][worldIndex.x - 1]->curFrame.x++;
+		}
 	}
-	else if (angle > 25.0f && angle <= 70.0f)
-	{
-		//_infos[worldIndex.y + 1][worldIndex.x + 1]->curFrame.x++;
-	}
-	else if (angle > 70.0f && angle <= 115.0f)
-	{
-		//_infos[worldIndex.y + 1][worldIndex.x]->curFrame.x++;
-	}
-	else if (angle > 115.0f && angle < 160.0f)
-	{
-		//_infos[worldIndex.y + 1][worldIndex.x - 1]->curFrame.x++;
-	}
-	else if (angle > -70.0f && angle <= -25.0f)
-	{
-		//_infos[worldIndex.y - 1][worldIndex.x + 1]->curFrame.x++;
-	}
-	else if (angle > -115.0f && angle <= -70.0f)
-	{
-		//_infos[worldIndex.y - 1][worldIndex.x]->curFrame.x++;
-	}
-	else if (angle > -160.0f && angle <= -25.0f)
-	{
-		//_infos[worldIndex.y - 1][worldIndex.x - 1]->curFrame.x++;
-	}
-	else
-	{
-		//_infos[worldIndex.y][worldIndex.x - 1]->curFrame.x++;
-	}
+	
 }
 
 void TileMap::KeyInput()
@@ -137,7 +137,7 @@ void TileMap::KeyInput()
 			if (!(_frameTypes[frame.x + frame.y * _maxFrame.x] & Type::BLOCK))
 				continue;
 
-			_colliders[0]->SetPos(_centers[worldIndex + j + i * _maxFrame.x]);
+			_colliders[0]->SetPos(_startPoses[worldIndex + j + i * _maxFrame.x]);
 			_colliders[0]->GetTransform()->Update_SRT();
 
 			_colliders[0]->Block(_player.lock()->GetCollider());
@@ -147,7 +147,7 @@ void TileMap::KeyInput()
 
 void TileMap::Blocking()
 {
-	Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
+	Vector2 mainWorldPos = _player.lock()->GetWorldPos();
 	int worldIndex = GetWorldIndex(mainWorldPos);
 	int x = -2;
 	int y = -1;
@@ -167,14 +167,17 @@ void TileMap::Blocking()
 		if (index < 0 || index >= _mapSize.x * _mapSize.y)
 			continue;
 
-		Vector2 curFrame =  _frames[index];
+		Vector2 curFrame = _frames[index];
 
 		if (!(_frameTypes[curFrame.x + curFrame.y * _maxFrame.x] & Type::BLOCK))
 			continue;
 
-		_colliders[i]->SetPos(_centers[index]);
+		_colliders[i]->SetPos(_startPoses[index]);
 		_colliders[i]->GetTransform()->Update_SRT();
-		_colliders[i]->Block(_player.lock()->GetCollider());
+		if (_colliders[i]->Block(_player.lock()->GetCollider()))
+		{
+			_colliders[i]->IsCollision(_player.lock()->GetCollider());
+		}
 	}
 }
 
@@ -196,11 +199,17 @@ void TileMap::Render()
 {
 	if (!_isActive)
 		return;
+	int index = GetWorldIndex(_player.lock()->GetWorldPos());
 	if (_isDebug)
 	{
 		for (int i = 0; i < _frames.size(); i++)
 		{
-			_colliders[0]->SetPos(_centers[i]);
+			if (i == index)
+				_lineRenderer->SetColor(RED);
+			else
+				_lineRenderer->SetColor(GREEN);
+				
+			_colliders[0]->SetPos(_startPoses[i]);
 			_colliders[0]->Update();
 			_colliders[0]->GetTransform()->Set_World();
 			_tileRenderer->SetCurFrame(_frames[i]);
@@ -212,7 +221,7 @@ void TileMap::Render()
 	{
 		for (int i = 0; i < _frames.size(); i++)
 		{
-			_colliders[0]->SetPos(_centers[i]);
+			_colliders[0]->SetPos(_startPoses[i]);
 			_colliders[0]->Update();
 			_colliders[0]->GetTransform()->Set_World();
 			_tileRenderer->SetCurFrame(_frames[i]);
@@ -247,6 +256,7 @@ int TileMap::GetWorldIndex(Vector2 pos)
 	int y = pos.y / TILE_SIZE.y;
 
 	int sum = x + y * _mapSize.x;
+
 	if (sum >= _frames.size())
 		return _frames.size() - 1;
 	return sum;

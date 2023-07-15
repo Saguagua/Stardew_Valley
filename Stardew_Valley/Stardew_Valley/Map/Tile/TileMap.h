@@ -45,7 +45,7 @@ private:
 	weak_ptr<class Character> _player;
 	weak_ptr<Palette> _palette;
 
-	vector<Vector2> _centers;
+	vector<Vector2> _startPoses;
 
 	vector<Vector2> _frames;
 	Vector2 _maxFrame;

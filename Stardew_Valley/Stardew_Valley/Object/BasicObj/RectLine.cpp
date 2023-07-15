@@ -16,20 +16,18 @@ void RectLine::CreateVertices()
 {
 	Vertex v = {};
 
-	Vector2 halfSize = _size * 0.5f;
-
-	v.pos = { -halfSize.x, halfSize.y, 0.0f }; // 왼쪽 위
+	v.pos = { 0, _size.y, 0.0f }; // 왼쪽 위
 	_vertices.push_back(v);
 
-	v.pos = { halfSize.x, halfSize.y, 0.0f }; // 오른쪽 위
+	v.pos = { _size.x, _size.y, 0.0f }; // 오른쪽 위
 	_vertices.push_back(v);
 
-	v.pos = { halfSize.x, -halfSize.y, 0.0f }; // 오른쪽 아래
+	v.pos = { _size.x, 0, 0.0f }; // 오른쪽 아래
 	_vertices.push_back(v);
 
-	v.pos = { -halfSize.x, -halfSize.y, 0.0f }; // 왼쪽 아래
+	v.pos = { 0, 0, 0.0f }; // 왼쪽 아래
 	_vertices.push_back(v);
 
-	v.pos = { -halfSize.x, halfSize.y, 0.0f }; // 왼쪽 위
+	v.pos = { 0, _size.y, 0.0f }; // 왼쪽 위
 	_vertices.push_back(v);
 }

@@ -53,21 +53,21 @@ void TextureRect::SetCurFrame(Vector2 frame)
 void TextureRect::CreateVertex()
 {
 	VertexTexture v;
-	Vector2 halfSize = _size * 0.5f;
+	
 
-	v.pos = {-halfSize.x, halfSize.y, 0.0f};//øﬁ¿ß
+	v.pos = {0, _size.y, 0.0f};//øﬁ¿ß
 	v.uv = {0, 0};
 	_vertices.push_back(v);
 
-	v.pos = { halfSize.x, halfSize.y, 0.0f };//ø¿¿ß
+	v.pos = { _size.x, _size.y, 0.0f };//ø¿¿ß
 	v.uv = {1, 0};
 	_vertices.push_back(v);
 	
-	v.pos = { halfSize.x, -halfSize.y, 0.0f };//ø¿æ∆
+	v.pos = { _size.x, 0, 0.0f };//ø¿æ∆
 	v.uv = {1, 1};
 	_vertices.push_back(v);
 	
-	v.pos = { -halfSize.x, -halfSize.y, 0.0f };//øﬁæ∆
+	v.pos = { 0, 0, 0.0f };//øﬁæ∆
 	v.uv = {0, 1};
 	_vertices.push_back(v);
 

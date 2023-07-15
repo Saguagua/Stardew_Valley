@@ -47,15 +47,15 @@ bool RectCollider::IsCollision(shared_ptr<class RectCollider> other)
 bool RectCollider::IsCollision(shared_ptr<class CircleCollider> other)
 {
 	AABB_Info myInfo = GetAABB_Info();
-	Vector2 otherWorldPos = other->GetTransform()->GetWorldPos();
+	Vector2 otherWorldCenter = other->GetWorldPos();
 	float otherRadius = other->GetWorldRadius();
 
-	float circleUp = otherWorldPos.y + otherRadius;
-	float circleDown = otherWorldPos.y - otherRadius;
-	float circleLeft = otherWorldPos.x - otherRadius;
-	float circleRight = otherWorldPos.x + otherRadius;
+	float circleUp = otherWorldCenter.y + otherRadius;
+	float circleDown = otherWorldCenter.y - otherRadius;
+	float circleLeft = otherWorldCenter.x - otherRadius;
+	float circleRight = otherWorldCenter.x + otherRadius;
 
-	if (otherWorldPos.x < myInfo.right && otherWorldPos.x > myInfo.left)
+	if (otherWorldCenter.x < myInfo.right && otherWorldCenter.x > myInfo.left)
 	{
 		if (circleDown < myInfo.Up && circleUp > myInfo.Down)
 		{
@@ -63,7 +63,7 @@ bool RectCollider::IsCollision(shared_ptr<class CircleCollider> other)
 		}
 	}
 
-	if (otherWorldPos.y > myInfo.Down && otherWorldPos.y < myInfo.Up)
+	if (otherWorldCenter.y > myInfo.Down && otherWorldCenter.y < myInfo.Up)
 	{
 		if (circleLeft < myInfo.right && circleRight > myInfo.left)
 		{
@@ -87,40 +87,51 @@ bool RectCollider::Block(shared_ptr<CircleCollider> other)
 	if (!IsCollision(other))
 		return false;
 	
-	Vector2 myPos = _transform->GetWorldPos();
-	Vector2 otherPos = other->GetTransform()->GetWorldPos();
-	Vector2 AtoB = otherPos - myPos;
+	Vector2 myCenter = GetWorldPos();
+	Vector2 otherCenter = other->GetWorldPos();
+	Vector2 AtoB = otherCenter - myCenter;
 
 	float otherRadius = other->GetWorldRadius();
 
-	float yDistance = _size.y / 2 + otherRadius - abs(otherPos.y - myPos.y);
-	float xDistance = _size.x / 2 + otherRadius - abs(otherPos.x - myPos.x);
+	float yDistance = _size.y / 2 + otherRadius - abs(otherCenter.y - myCenter.y);
+	float xDistance = _size.x / 2 + otherRadius - abs(otherCenter.x - myCenter.x);
 	
 	if (xDistance > yDistance)
 	{
 		AtoB.x = 0;
 		Vector2 normal = AtoB.Normalize();
 		Vector2 power = normal * yDistance;
-		other->SetPos(otherPos + power);
+		other->SetPos(other->GetTransform()->GetWorldPos() + power);
 	}
 	else
 	{
 		AtoB.y = 0;
 		Vector2 normal = AtoB.Normalize();
 		Vector2 power = normal * xDistance;
-		other->SetPos(otherPos + power);
+		other->SetPos(other->GetTransform()->GetWorldPos() + power);
 	}
 
 
 	return true;
 }
 
+Vector2 RectCollider::GetWorldPos()
+{
+	return _transform->GetWorldPos() + _size * 0.5f;
+}
+
+Vector2 RectCollider::GetWorldScale()
+{
+	return _transform->GetWorldScale();
+}
+
 RectCollider::AABB_Info RectCollider::GetAABB_Info()
 {
 	AABB_Info info = {};
 
-	Vector2 worldPos = _transform->GetWorldPos();
+	Vector2 worldPos = GetWorldPos();
 	Vector2 halfSize = _size * 0.5f;
+
 	info.Up = worldPos.y + halfSize.y;
 	info.Down = worldPos.y - halfSize.y;
 	info.right = worldPos.x + halfSize.x;

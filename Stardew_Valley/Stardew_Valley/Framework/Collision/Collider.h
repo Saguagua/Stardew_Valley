@@ -24,8 +24,10 @@ public:
 
 	shared_ptr<Transform> GetTransform() { return _transform; }
 	
+	virtual Vector2 GetWorldPos() abstract;
+	virtual Vector2 GetWorldScale() abstract;
 protected:
-	enum Type
+	enum class Type
 	{
 		NONE,
 		CIRCLE,
@@ -34,9 +36,8 @@ protected:
 
 	shared_ptr<class ShapeLine> _renderer;
 	shared_ptr<Transform> _transform = make_shared<Transform>();
-	Collider::Type _type = Type::NONE;
+	Collider::Type _type = Collider::Type::NONE;
 
 	bool _isDebug = false;
 
 };
-

@@ -12,6 +12,9 @@ public:
 	virtual bool IsCollision(Vector2 other) override;
 	virtual bool IsCollision(shared_ptr<class RectCollider> other) override;
 	virtual bool IsCollision(shared_ptr<class CircleCollider> other) override;
+	
+	virtual Vector2 GetWorldPos() override;
+	virtual Vector2 GetWorldScale() override;
 	float GetRadius() { return _radius; }
 	float GetWorldRadius();
 

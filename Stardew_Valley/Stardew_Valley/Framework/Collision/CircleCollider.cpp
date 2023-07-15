@@ -18,11 +18,11 @@ void CircleCollider::Render()
 
 bool CircleCollider::IsCollision(Vector2 other)
 {
-	Vector2 pos = _transform->GetWorldPos();
-	float length = (other - pos).Length();
 	float worldRadius = GetWorldRadius();
+	Vector2 pos = GetWorldPos();
+	float length = (other - pos).Length();
 
-	return length < worldRadius* worldRadius;
+	return length < worldRadius * worldRadius;
 }
 
 bool CircleCollider::IsCollision(shared_ptr<class RectCollider> other)
@@ -41,6 +41,17 @@ bool CircleCollider::IsCollision(shared_ptr<class CircleCollider> other)
 	float centerLength = (pos1 - pos2).Length();
 
 	return radiusLength > centerLength;
+}
+
+Vector2 CircleCollider::GetWorldPos()
+{
+	float raidus = GetWorldRadius();
+	return _transform->GetWorldPos() + Vector2(raidus, raidus);
+}
+
+Vector2 CircleCollider::GetWorldScale()
+{
+	return _transform->GetWorldScale();
 }
 
 float CircleCollider::GetWorldRadius()
