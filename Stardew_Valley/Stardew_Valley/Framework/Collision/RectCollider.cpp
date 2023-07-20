@@ -111,7 +111,6 @@ bool RectCollider::Block(shared_ptr<CircleCollider> other)
 		other->SetPos(other->GetTransform()->GetWorldPos() + power);
 	}
 
-
 	return true;
 }
 

@@ -8,9 +8,15 @@ public:
 	void Update();
 	void Render();
 
-private:
+	void SetPos(Vector2 pos);
+	void SetFrame(Vector2 frame);
+	bool Block(shared_ptr<CircleCollider> other);
+
+	void Spawn(Vector2 pos, Vector2 frame);
+
+protected:
+	bool _isActive = false;
 	shared_ptr<CircleCollider> _col;
-	shared_ptr<TextureRect> _textureRenderer;
-	shared_ptr<RectLine> _lineRenderer;
+	shared_ptr<class TextureButton> _body;
 };
 

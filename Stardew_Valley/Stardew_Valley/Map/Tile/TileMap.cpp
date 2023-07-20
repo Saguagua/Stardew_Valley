@@ -12,7 +12,6 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 		_colliders.push_back(col);
 	}
 
-	_lineRenderer = make_shared<RectLine>(TILE_SIZE * 1.5f);
 	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", SaveManager::GetInstance()->GetMaxFrame(), TILE_SIZE);
 	
 	_frameTypes = SaveManager::GetInstance()->GetTypes();
@@ -26,6 +25,17 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 			_startPoses.push_back(centerPos);
 		}
 	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 16; j++)
+		{
+			shared_ptr<GameObject> obj = make_shared<GameObject>();
+			obj->SetFrame(Vector2(j, i));
+			obj->SetPos(CENTER + Vector2(i+1, j+1) * TILE_SIZE.x);
+			_objs.push_back(obj);
+		}
+	}
 }
 
 TileMap::TileMap()
@@ -36,7 +46,6 @@ TileMap::TileMap()
 		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE * 1.5f);
 		_colliders.push_back(col);
 	}
-	_lineRenderer = make_shared<RectLine>(TILE_SIZE);
 	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", SaveManager::GetInstance()->GetMaxFrame(), TILE_SIZE);
 
 	_frameTypes = SaveManager::GetInstance()->GetTypes();
@@ -63,6 +72,11 @@ void TileMap::Update()
 		Play();
 	else if (!_palette.expired() && !_palette.lock()->GetFocus())
 		ChangeTile();
+
+	for (auto obj : _objs)
+	{
+		obj->Update();
+	}
 }
 
 void TileMap::Play()
@@ -179,6 +193,10 @@ void TileMap::Blocking()
 			_colliders[i]->IsCollision(_player.lock()->GetCollider());
 		}
 	}
+
+	for (auto obj : _objs)
+		obj->Block(_player.lock()->GetCollider());
+		
 }
 
 void TileMap::ChangeTile()
@@ -200,34 +218,18 @@ void TileMap::Render()
 	if (!_isActive)
 		return;
 	int index = GetWorldIndex(_player.lock()->GetWorldPos());
-	if (_isDebug)
+	
+	for (int i = 0; i < _frames.size(); i++)
 	{
-		for (int i = 0; i < _frames.size(); i++)
-		{
-			if (i == index)
-				_lineRenderer->SetColor(RED);
-			else
-				_lineRenderer->SetColor(GREEN);
-				
-			_colliders[0]->SetPos(_startPoses[i]);
-			_colliders[0]->Update();
-			_colliders[0]->GetTransform()->Set_World();
-			_tileRenderer->SetCurFrame(_frames[i]);
-			_tileRenderer->Render();
-			_lineRenderer->Render();
-		}
+		_colliders[0]->SetPos(_startPoses[i]);
+		_colliders[0]->Update();
+		_colliders[0]->Render();
+		_tileRenderer->SetCurFrame(_frames[i]);
+		_tileRenderer->Render();
 	}
-	else
-	{
-		for (int i = 0; i < _frames.size(); i++)
-		{
-			_colliders[0]->SetPos(_startPoses[i]);
-			_colliders[0]->Update();
-			_colliders[0]->GetTransform()->Set_World();
-			_tileRenderer->SetCurFrame(_frames[i]);
-			_tileRenderer->Render();
-		}
-	}
+
+	for (auto obj : _objs)
+		obj->Render();
 }
 
 void TileMap::LoadMap(shared_ptr<MapInfo> info)
