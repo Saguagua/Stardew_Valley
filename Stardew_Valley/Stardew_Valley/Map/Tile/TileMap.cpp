@@ -1,10 +1,11 @@
 #include "framework.h"
 #include "TileMap.h"
+#include "TileInfo.h"
 #include "../../Object/Character/Character.h"
 #include "../../Object/UI/Palette.h"
 
 TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
-	:_mapName(mapInfo->GetName()), _frames(mapInfo->GetFrames()), _mapSize(mapInfo->GetSize())
+	:_mapName(mapInfo->GetName()), _mapSize(mapInfo->GetSize())
 {
 	for (int i = 0; i < 10; i++)
 	{
@@ -17,23 +18,16 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 	_frameTypes = SaveManager::GetInstance()->GetTypes();
 	_maxFrame = SaveManager::GetInstance()->GetMaxFrame();
 
+	vector<Vector2> frames = mapInfo->GetFrames();
+
 	for (int i = 0; i < _mapSize.y; i++)
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
-			Vector2 centerPos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
-			_startPoses.push_back(centerPos);
-		}
-	}
+			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(pos, frames[j + i * _mapSize.x], -1);
 
-	for (int i = 0; i < 5; i++)
-	{
-		for (int j = 0; j < 16; j++)
-		{
-			shared_ptr<GameObject> obj = make_shared<GameObject>();
-			obj->SetFrame(Vector2(j, i));
-			obj->SetPos(CENTER + Vector2(i+1, j+1) * TILE_SIZE.x);
-			_objs.push_back(obj);
+			_infos.push_back(info);
 		}
 	}
 }
@@ -56,9 +50,10 @@ TileMap::TileMap()
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
-			Vector2 centerPos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
-			_startPoses.push_back(centerPos);
-			_frames.push_back(Vector2(_maxFrame.x-1, _maxFrame.y-1));
+			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(pos, Vector2(_maxFrame.x - 1, _maxFrame.y - 1), -1);
+		
+			_infos.push_back(info);
 		}
 	}
 }
@@ -72,11 +67,6 @@ void TileMap::Update()
 		Play();
 	else if (!_palette.expired() && !_palette.lock()->GetFocus())
 		ChangeTile();
-
-	for (auto obj : _objs)
-	{
-		obj->Update();
-	}
 }
 
 void TileMap::Play()
@@ -132,33 +122,6 @@ void TileMap::MouseInput()
 	
 }
 
-void TileMap::KeyInput()
-{
-	Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
-	int worldIndex = GetWorldIndex(mainWorldPos);
-
-	for (int i = -1; i < 2; i++)
-	{
-		for (int j = -1; j < 2; j++)
-		{
-			int index = worldIndex + j + i * _maxFrame.x;
-
-			if (index < 0 || index >= _mapSize.x * _mapSize.y)
-				continue;
-
-			Vector2 frame = _frames[index];
-
-			if (!(_frameTypes[frame.x + frame.y * _maxFrame.x] & Type::BLOCK))
-				continue;
-
-			_colliders[0]->SetPos(_startPoses[worldIndex + j + i * _maxFrame.x]);
-			_colliders[0]->GetTransform()->Update_SRT();
-
-			_colliders[0]->Block(_player.lock()->GetCollider());
-		}
-	}
-}
-
 void TileMap::Blocking()
 {
 	Vector2 mainWorldPos = _player.lock()->GetWorldPos();
@@ -181,22 +144,16 @@ void TileMap::Blocking()
 		if (index < 0 || index >= _mapSize.x * _mapSize.y)
 			continue;
 
-		Vector2 curFrame = _frames[index];
+		Vector2 curFrame = _infos[index]->GetTileFrame();
 
 		if (!(_frameTypes[curFrame.x + curFrame.y * _maxFrame.x] & Type::BLOCK))
 			continue;
 
-		_colliders[i]->SetPos(_startPoses[index]);
+		_colliders[i]->SetPos(_infos[index]->GetStartPos());
 		_colliders[i]->GetTransform()->Update_SRT();
-		if (_colliders[i]->Block(_player.lock()->GetCollider()))
-		{
-			_colliders[i]->IsCollision(_player.lock()->GetCollider());
-		}
+		_colliders[i]->Block(_player.lock()->GetCollider());
 	}
-
-	for (auto obj : _objs)
-		obj->Block(_player.lock()->GetCollider());
-		
+	
 }
 
 void TileMap::ChangeTile()
@@ -209,7 +166,7 @@ void TileMap::ChangeTile()
 			return;
 
 		int index = GetWorldIndex(W_MOUSE_POS);
-		_frames[index] = frame;
+		_infos[index]->SetTileFrame(frame);
 	}
 }
 
@@ -217,19 +174,17 @@ void TileMap::Render()
 {
 	if (!_isActive)
 		return;
-	int index = GetWorldIndex(_player.lock()->GetWorldPos());
 	
-	for (int i = 0; i < _frames.size(); i++)
+	for (int i = 0; i < _infos.size(); i++)
 	{
-		_colliders[0]->SetPos(_startPoses[i]);
+		_colliders[0]->SetPos(_infos[i]->GetStartPos());
 		_colliders[0]->Update();
 		_colliders[0]->Render();
-		_tileRenderer->SetCurFrame(_frames[i]);
+		_tileRenderer->SetCurFrame(_infos[i]->GetTileFrame());
 		_tileRenderer->Render();
+		_objectRenderer->SetCurFrame(_infos[i]->GetObjectFrame());
 	}
 
-	for (auto obj : _objs)
-		obj->Render();
 }
 
 void TileMap::LoadMap(shared_ptr<MapInfo> info)
@@ -238,7 +193,7 @@ void TileMap::LoadMap(shared_ptr<MapInfo> info)
 
 	for (int i = 0; i < frame.size(); i++)
 	{
-		_frames[i] = frame[i];
+		_infos[i]->SetTileFrame(frame[i]);
 	}
 
 	_mapName = info->GetName();
@@ -259,7 +214,8 @@ int TileMap::GetWorldIndex(Vector2 pos)
 
 	int sum = x + y * _mapSize.x;
 
-	if (sum >= _frames.size())
-		return _frames.size() - 1;
+	if (sum >= _infos.size())
+		return _infos.size() - 1;
+
 	return sum;
 }

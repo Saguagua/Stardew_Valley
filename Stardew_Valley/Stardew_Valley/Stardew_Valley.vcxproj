@@ -151,7 +151,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Framework\Animation\Action.h" />
+    <ClInclude Include="Object\GameObj\BreakableItem.h" />
     <ClInclude Include="Object\GameObj\GameObject.h" />
+    <ClInclude Include="Object\GameObj\ItemInfo.h" />
     <ClInclude Include="Save\MapInfo.h" />
     <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
@@ -200,10 +203,13 @@
     <ClInclude Include="Object\BasicObj\RectLine.h" />
     <ClInclude Include="Map\Tile\TileMap.h" />
     <ClInclude Include="Object\UI\TextureButton.h" />
+    <ClInclude Include="Map\Tile\TileInfo.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="Object\UI\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Framework\Animation\Action.cpp" />
+    <ClCompile Include="Object\GameObj\BreakableItem.cpp" />
     <ClCompile Include="Object\GameObj\GameObject.cpp" />
     <ClCompile Include="Object\UI\List.cpp" />
     <ClCompile Include="Object\UI\ColorButton.cpp" />
@@ -254,6 +260,7 @@
     <ClCompile Include="Map\Tile\TileMap.cpp" />
     <ClCompile Include="Object\UI\TextureButton.cpp" />
     <ClCompile Include="Object\UI\Window.cpp" />
+    <ClCompile Include="Map\Tile\TileInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />

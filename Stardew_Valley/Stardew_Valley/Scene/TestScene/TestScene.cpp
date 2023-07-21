@@ -15,11 +15,11 @@ TestScene::TestScene()
 
 	_farmmingMap->SetPlayer(_character);
 	_beachMap->SetPlayer(_character);
-	_beachMap->SetDebug(true);
+	//_beachMap->SetDebug(true);
 
 	_character->GetTransform()->SetPos(CENTER + Vector2(0, 100));
 	
-	_character->SetDebug(true);
+	//_character->SetDebug(true);
 	_character->Update();
 	_beachMap->SetCameraRange();
 	CAMERA->SetTarget(_character->GetTransform());
@@ -31,7 +31,6 @@ void TestScene::Update()
 	_farmmingMap->Update();
 	_beachMap->Update();
 	_character->Update();
-	
 }
 
 void TestScene::Render()
@@ -39,5 +38,4 @@ void TestScene::Render()
 	_farmmingMap->Render();
 	_beachMap->Render();
 	_character->Render();
-	
 }

@@ -2,7 +2,7 @@
 class GameObject
 {
 public:
-	GameObject();
+	GameObject(int itemCode);
 	~GameObject() {}
 
 	void Update();
@@ -10,13 +10,13 @@ public:
 
 	void SetPos(Vector2 pos);
 	void SetFrame(Vector2 frame);
-	bool Block(shared_ptr<CircleCollider> other);
 
-	void Spawn(Vector2 pos, Vector2 frame);
+	void Spawn(int itemCode, Vector2 pos);
+
+	bool Block(shared_ptr<CircleCollider> other);
 
 protected:
 	bool _isActive = false;
-	shared_ptr<CircleCollider> _col;
-	shared_ptr<class TextureButton> _body;
+	int _itemCode;
 };
 

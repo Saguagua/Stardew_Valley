@@ -27,27 +27,24 @@ public:
 	void SetActive(bool active) { _isActive = active; }
 	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
 
-	vector<Vector2>& GetFrames() { return _frames; }
 	int GetWorldIndex(Vector2 pos);
 
 private:
 	void Play();
 	void MouseInput();
-	void KeyInput();
 	void Blocking();
 
 	void ChangeTile();
 
 	shared_ptr<TextureRect> _tileRenderer;
+	shared_ptr<TextureRect> _objectRenderer;
 
-	vector<shared_ptr<RectCollider>> _colliders;
 	Vector2 _maxFrame;
+	vector<shared_ptr<RectCollider>> _colliders;
+
 	vector<int> _frameTypes;
 
-	vector<Vector2> _frames;
-	vector<Vector2> _startPoses;
-
-	vector<shared_ptr<class GameObject>> _objs;
+	vector<shared_ptr<TileInfo>> _infos;
 
 	weak_ptr<class Character> _player;
 	weak_ptr<Palette> _palette;
