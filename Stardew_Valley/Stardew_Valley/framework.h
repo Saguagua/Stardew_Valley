@@ -75,9 +75,13 @@ using namespace Microsoft::WRL;
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/RectCollider.h"
 
+//Animation
+#include "Framework/Animation/Action.h"
+
 //GameObject
 #include "Object/GameObj/GameObject.h"
-//#include "Object/GameObj/"
+
+#include "Map/Tile/TileInfo.h"
 
 //Save
 #include "Save/MapInfo.h"

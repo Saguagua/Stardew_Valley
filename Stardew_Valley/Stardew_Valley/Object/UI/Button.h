@@ -9,6 +9,9 @@ public:
 	virtual void Render() abstract;
 	virtual void Update();
 
+	void SetDebug(bool val) { _col->SetDebug(val); }
+	void SetPos(Vector2 pos) { _col->SetPos(pos); }
+
 	void SetPushEvent(CallBack cb) { _pushEvent = cb; }
 	void SetPushEvent(CallBackInt cb) { _pushIntEvent = cb; }
 	void SetPushEvent(CallBackBool cb) { _pushBoolEvent = cb; }
@@ -23,6 +26,7 @@ public:
 	Vector2 GetSize() { return _size; }
 	shared_ptr<RectCollider> GetCollider() { return _col; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
+
 protected:
 	shared_ptr<RectCollider> _col;
 

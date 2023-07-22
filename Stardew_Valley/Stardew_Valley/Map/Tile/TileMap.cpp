@@ -13,21 +13,21 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 		_colliders.push_back(col);
 	}
 
-	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", SaveManager::GetInstance()->GetMaxFrame(), TILE_SIZE);
-	
 	_frameTypes = SaveManager::GetInstance()->GetTypes();
-	_maxFrame = SaveManager::GetInstance()->GetMaxFrame();
+	_tileMaxFrame = SaveManager::GetInstance()->GetTileMaxFrame();
+	_objectMaxFrame = SaveManager::GetInstance()->GetObjectMaxFrame();
 
-	vector<Vector2> frames = mapInfo->GetFrames();
+	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", _tileMaxFrame, TILE_SIZE);
+	_objectRenderer = make_shared<TextureRect>(L"Resource/Object/Objects.png", _objectMaxFrame, TILE_SIZE);
 
+	_infos = mapInfo->GetInfos();
+	
 	for (int i = 0; i < _mapSize.y; i++)
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
-			shared_ptr<TileInfo> info = make_shared<TileInfo>(pos, frames[j + i * _mapSize.x], -1);
-
-			_infos.push_back(info);
+			_infos[j + i * _mapSize.x]->SetStartPos(pos);
 		}
 	}
 }
@@ -37,21 +37,23 @@ TileMap::TileMap()
 {
 	for (int i = 0; i < 5; i++)
 	{
-		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE * 1.5f);
+		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE);
 		_colliders.push_back(col);
 	}
-	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", SaveManager::GetInstance()->GetMaxFrame(), TILE_SIZE);
 
 	_frameTypes = SaveManager::GetInstance()->GetTypes();
-
-	_maxFrame = SaveManager::GetInstance()->GetMaxFrame();
+	_tileMaxFrame = SaveManager::GetInstance()->GetTileMaxFrame();
+	_objectMaxFrame = SaveManager::GetInstance()->GetObjectMaxFrame();
+	
+	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", _tileMaxFrame, TILE_SIZE);
+	_objectRenderer = make_shared<TextureRect>(L"Resource/Object/Objects.png", _objectMaxFrame, TILE_SIZE);
 
 	for (int i = 0; i < _mapSize.y; i++)
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
 			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
-			shared_ptr<TileInfo> info = make_shared<TileInfo>(pos, Vector2(_maxFrame.x - 1, _maxFrame.y - 1), -1);
+			shared_ptr<TileInfo> info = make_shared<TileInfo>(pos, Vector2(_tileMaxFrame.x - 1, _tileMaxFrame.y - 1), Vector2(_objectMaxFrame.x-1, _objectMaxFrame.y-1));
 		
 			_infos.push_back(info);
 		}
@@ -72,54 +74,6 @@ void TileMap::Update()
 void TileMap::Play()
 {
 	Blocking();
-	MouseInput();
-}
-
-void TileMap::MouseInput()
-{
-	if (KEY_DOWN(VK_LBUTTON))
-	{
-		Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
-		Vector2 mouse = W_MOUSE_POS;
-		Vector2 target = mouse - mainWorldPos;
-		int index = GetWorldIndex(mouse);
-
-		float angle = target.Angle() * 57.2958f;
-
-		if (angle > -25.0f && angle <= 25.0f)
-		{
-			//_infos[worldIndex.y][worldIndex.x + 1]->curFrame.x++;
-		}
-		else if (angle > 25.0f && angle <= 70.0f)
-		{
-			//_infos[worldIndex.y + 1][worldIndex.x + 1]->curFrame.x++;
-		}
-		else if (angle > 70.0f && angle <= 115.0f)
-		{
-			//_infos[worldIndex.y + 1][worldIndex.x]->curFrame.x++;
-		}
-		else if (angle > 115.0f && angle < 160.0f)
-		{
-			//_infos[worldIndex.y + 1][worldIndex.x - 1]->curFrame.x++;
-		}
-		else if (angle > -70.0f && angle <= -25.0f)
-		{
-			//_infos[worldIndex.y - 1][worldIndex.x + 1]->curFrame.x++;
-		}
-		else if (angle > -115.0f && angle <= -70.0f)
-		{
-			//_infos[worldIndex.y - 1][worldIndex.x]->curFrame.x++;
-		}
-		else if (angle > -160.0f && angle <= -25.0f)
-		{
-			//_infos[worldIndex.y - 1][worldIndex.x - 1]->curFrame.x++;
-		}
-		else
-		{
-			//_infos[worldIndex.y][worldIndex.x - 1]->curFrame.x++;
-		}
-	}
-	
 }
 
 void TileMap::Blocking()
@@ -146,7 +100,10 @@ void TileMap::Blocking()
 
 		Vector2 curFrame = _infos[index]->GetTileFrame();
 
-		if (!(_frameTypes[curFrame.x + curFrame.y * _maxFrame.x] & Type::BLOCK))
+		Vector2 objFrame = _infos[index]->GetObjectFrame();
+
+		if (!(_frameTypes[curFrame.x + curFrame.y * _tileMaxFrame.x] & Type::BLOCK)
+			&& objFrame.x == _objectMaxFrame.x - 1 && objFrame.y == _objectMaxFrame.y - 1)
 			continue;
 
 		_colliders[i]->SetPos(_infos[index]->GetStartPos());
@@ -160,13 +117,26 @@ void TileMap::ChangeTile()
 {
 	if (KEY_PRESS(VK_LBUTTON))
 	{
-		Vector2 frame = _palette.lock()->GetCurTileFrame();
+		int index = _palette.lock()->GetIndex();
+		
+		if (index == 0)
+		{
+			Vector2 frame = _palette.lock()->GetCurTileFrame();
 
-		if (frame.x == -1 || frame.y == -1)
-			return;
+			if (frame.x == -1 || frame.y == -1)
+				return;
 
-		int index = GetWorldIndex(W_MOUSE_POS);
-		_infos[index]->SetTileFrame(frame);
+			int index = GetWorldIndex(W_MOUSE_POS);
+			_infos[index]->SetTileFrame(frame);
+		}
+		else if (index == 1)
+		{
+			Vector2 frame = _palette.lock()->GetCurObjectFrame();
+
+
+			int index = GetWorldIndex(W_MOUSE_POS);
+			_infos[index]->SetObjectFrame(frame);
+		}
 	}
 }
 
@@ -183,20 +153,23 @@ void TileMap::Render()
 		_tileRenderer->SetCurFrame(_infos[i]->GetTileFrame());
 		_tileRenderer->Render();
 		_objectRenderer->SetCurFrame(_infos[i]->GetObjectFrame());
+		_objectRenderer->Render();
 	}
 
 }
 
 void TileMap::LoadMap(shared_ptr<MapInfo> info)
 {
-	vector<Vector2> frame = info->GetFrames();
+	_mapName = info->GetName();
+	_mapSize = info->GetSize();
+	vector<shared_ptr<TileInfo>> infos = info->GetInfos();
 
-	for (int i = 0; i < frame.size(); i++)
+	for (int i = 0; i < infos.size(); i++)
 	{
-		_infos[i]->SetTileFrame(frame[i]);
+		_infos[i]->SetTileFrame(infos[i]->GetTileFrame());
+		_infos[i]->SetObjectFrame(infos[i]->GetObjectFrame());
 	}
 
-	_mapName = info->GetName();
 }
 
 void TileMap::SetCameraRange()
@@ -218,4 +191,55 @@ int TileMap::GetWorldIndex(Vector2 pos)
 		return _infos.size() - 1;
 
 	return sum;
+}
+
+shared_ptr<TileInfo> TileMap::GetMouseToPlayerIndex(Vector2 mousePos) //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
+{
+	Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
+	Vector2 target = mousePos - mainWorldPos;
+
+	int index = GetWorldIndex(mousePos);
+	float angle = target.Angle() * 57.2958f;
+
+	if (angle > -25.0f && angle <= 25.0f)
+	{
+		index += 1;
+	}
+	else if (angle > 25.0f && angle <= 70.0f)
+	{
+		index += 1 + _mapSize.x;
+	}
+	else if (angle > 70.0f && angle <= 115.0f)
+	{
+		index += _mapSize.x;
+	}
+	else if (angle > 115.0f && angle < 160.0f)
+	{
+		index += _mapSize.x - 1;
+	}
+	else if (angle > -70.0f && angle <= -25.0f)
+	{
+		index += 1 - _mapSize.x;
+	}
+	else if (angle > -115.0f && angle <= -70.0f)
+	{
+		index -= _mapSize.x;
+	}
+	else if (angle > -160.0f && angle <= -25.0f)
+	{
+		index -= 1 + _mapSize.x;
+	}
+	else
+	{
+		index -= 1;
+	}
+
+	return _infos[index];
+}
+
+shared_ptr<MapInfo> TileMap::GetMapInfo()
+{
+	shared_ptr<MapInfo> info = make_shared<MapInfo>(_mapName, _mapSize, _infos);
+
+	return info;
 }

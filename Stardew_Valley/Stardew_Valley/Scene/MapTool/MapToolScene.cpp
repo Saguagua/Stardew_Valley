@@ -9,6 +9,7 @@ MapToolScene::MapToolScene()
 	_map->SetPalette(_palette);
 	_map->SetActive(true);
 	_map->SetDebug(true);
+	_palette->SetPos(CENTER - _palette->GetSize());
 }
 
 void MapToolScene::Update()

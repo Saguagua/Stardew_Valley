@@ -28,10 +28,11 @@ public:
 	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
+	shared_ptr<TileInfo> GetMouseToPlayerIndex(Vector2 pos);
+	shared_ptr<MapInfo> GetMapInfo();
 
 private:
 	void Play();
-	void MouseInput();
 	void Blocking();
 
 	void ChangeTile();
@@ -39,7 +40,8 @@ private:
 	shared_ptr<TextureRect> _tileRenderer;
 	shared_ptr<TextureRect> _objectRenderer;
 
-	Vector2 _maxFrame;
+	Vector2 _tileMaxFrame;
+	Vector2 _objectMaxFrame;
 	vector<shared_ptr<RectCollider>> _colliders;
 
 	vector<int> _frameTypes;

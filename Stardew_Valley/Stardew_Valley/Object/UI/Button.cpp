@@ -4,7 +4,7 @@
 Button::Button(Vector2 size)
 	:_size(size)
 {
-	_col = make_shared<RectCollider>(_size * 1.1f);
+	_col = make_shared<RectCollider>(_size);
 }
 
 void Button::Update()

@@ -1,12 +1,6 @@
 #include "framework.h"
 #include "Action.h"
 
-Action::Action(vector<Clip> clips, Type type, float speed)
-	: _clips(clips)
-	, _repeatType(type)
-	, _speed(speed)
-{
-}
 
 void Action::Update()
 {
@@ -23,29 +17,30 @@ void Action::Update()
 		{
 		case Action::END:
 		{
-			_curClipIndex++;
-			if (_curClipIndex >= _clips.size())
+			_curAnimationIndex++;
+			if (_curAnimationIndex >= _end)
 				Stop();
 		}
 		break;
 		case Action::LOOP:
 		{
-			_curClipIndex++;
-			_curClipIndex %= _clips.size();
+			_curAnimationIndex++;
+			if (_curAnimationIndex > _end)
+				_curAnimationIndex = _start;
 		}
 		break;
 		case Action::PINGPONG:
 		{
 			if (_isReverse)
 			{
-				_curClipIndex--;
-				if (_curClipIndex <= 0)
+				_curAnimationIndex--;
+				if (_curAnimationIndex <= _start)
 					_isReverse = false;
 			}
 			else
 			{
-				_curClipIndex++;
-				if (_curClipIndex >= _clips.size() - 1)
+				_curAnimationIndex++;
+				if (_curAnimationIndex >= _end)
 					_isReverse = true;
 			}
 		}
@@ -58,7 +53,7 @@ void Action::Update()
 
 void Action::Play()
 {
-	_curClipIndex = 0;
+	_curAnimationIndex = _start;
 	_isPlay = true;
 	_isReverse = false;
 	_time = 0.0f;
@@ -73,7 +68,7 @@ void Action::Stop()
 {
 	_isPlay = false;
 	_time = 0.0f;
-	_curClipIndex = 0;
+	_curAnimationIndex = _start;
 
 	if (_endEvent != nullptr)
 		_endEvent();
@@ -82,6 +77,6 @@ void Action::Stop()
 void Action::Reset()
 {
 	_isPlay = false;
-	_curClipIndex = 0;
+	_curAnimationIndex = _start;
 	_time = 0.0f;
 }

@@ -15,8 +15,17 @@ public:
 	shared_ptr<CircleCollider> GetCollider() { return _collider; }
 	Vector2 GetWorldPos();
 private:
-	shared_ptr<Transform> _quadSlot;
+	void CreateAction();
+
+	vector<shared_ptr<Action>> _bodyActions;
+	vector<shared_ptr<Action>> _armActions;
+
+	shared_ptr<Transform> _bodySlot;
 	shared_ptr<CircleCollider> _collider;
-	shared_ptr<TextureRect> _quad;
+	shared_ptr<TextureRect> _body;
+	shared_ptr<TextureRect> _arm;
+
+	int _bodyIndex = 0;
+	int _armIndex = 0;
 };
 

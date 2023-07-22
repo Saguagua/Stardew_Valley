@@ -11,7 +11,7 @@ public:
 	void SetCurFrame(Vector2 frame);
 
 	Vector2 GetMaxFrame() { return _fBuffer->GetMaxFrame(); }
-
+	Vector2 GetCurFrame() { return _curFrame; }
 protected:
 	virtual void CreateVertex();
 	virtual void CreateData();

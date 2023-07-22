@@ -5,15 +5,16 @@ SaveManager* SaveManager::_instance = nullptr;
 
 SaveManager::SaveManager()
 {
+	ReadTileTypes();
+	ReadObjectFile();
 	ReadMaps();
-	ReadTypes();
 }
 
 void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 {
 	string name = info->GetName();
 	Vector2 size = info->GetSize();
-	vector<Vector2> frames = info->GetFrames();
+	vector<shared_ptr<TileInfo>> infos = info->GetInfos();
 
 	if (_mapTable.count(name) == false)
 	{
@@ -27,11 +28,22 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 	_fout.open("Save/SaveFiles/" + name + ".txt");
 
 	_fout << size.x << " " << size.y << endl;
-	int Size = size.x * size.y;
-	for (int i = 0; i < Size; i++)
+	
+	Vector2 tileFrame;
+	Vector2 objectFrame;
+	int tileIndex;
+	int objectIndex;
+
+	for (int i = 0; i < infos.size(); i++)
 	{
-		int frame = frames[i].x + frames[i].y * 13;
-		_fout << frame;
+		tileFrame = infos[i]->GetTileFrame();
+		tileIndex = (int)tileFrame.x + (int)tileFrame.y * (int)_tileMaxFrame.x;
+		_fout << tileIndex << " ";
+
+		objectFrame = infos[i]->GetObjectFrame();
+		objectIndex = (int)objectFrame.x + (int)objectFrame.y * (int)_objectMaxFrame.x;
+		_fout << objectIndex;
+
 		if ((i + 1) % (int)size.x == 0)
 			_fout << endl;
 		else
@@ -48,28 +60,40 @@ shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
 
 	if (!fin.is_open())
 		return nullptr;
+
 	Vector2 size;
 	fin >> size.x;
 	fin >> size.y;
 
-	vector<Vector2> frames;
+	vector<shared_ptr<TileInfo>> infos;
+
+	int tileIndex;
+	int objectIndex;
+	Vector2 tileFrame;
+	Vector2 objectFrame;
 
 	while (!fin.eof())
 	{
-		int tmp;
-		fin >> tmp;
-		Vector2 frame;
-		frame.x = tmp % 13;
-		frame.y = tmp / 13;
-		frames.push_back(frame);
+		fin >> tileIndex;
+		tileFrame.x = tileIndex % (int)_tileMaxFrame.x;
+		tileFrame.y = tileIndex / (int)_tileMaxFrame.x;
+
+		fin >> objectIndex;
+		objectFrame.x = objectIndex % (int)_objectMaxFrame.x;
+		objectFrame.y = objectIndex / (int)_objectMaxFrame.x;
+
+		shared_ptr<TileInfo> info = make_shared<TileInfo>();
+		info->SetTileFrame(tileFrame);
+		info->SetObjectFrame(objectFrame);
+		infos.push_back(info);
 	}
 
 	fin.close();
 
-	if (frames.size() > 0)
-		frames.pop_back();
+	if (infos.size() > 0)
+		infos.pop_back();
 
-	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, frames);
+	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
 
 	return mapInfo;
 }
@@ -89,12 +113,12 @@ void SaveManager::ReadMaps()
 	_fin.close();
 }
 
-void SaveManager::ReadTypes()
+void SaveManager::ReadTileTypes()
 {
 	_fin.open("Save/Contents/TileTypes.txt");
 
-	_fin >> _maxFrame.x;
-	_fin >> _maxFrame.y;
+	_fin >> _tileMaxFrame.x;
+	_fin >> _tileMaxFrame.y;
 
 	while (!_fin.eof())
 	{
@@ -103,6 +127,16 @@ void SaveManager::ReadTypes()
 		_fin >> type;
 		_frameTypes.push_back(type);
 	}
+
+	_fin.close();
+}
+
+void SaveManager::ReadObjectFile()
+{
+	_fin.open("Save/Contents/Object.txt");
+
+	_fin >> _objectMaxFrame.x;
+	_fin >> _objectMaxFrame.y;
 
 	_fin.close();
 }
