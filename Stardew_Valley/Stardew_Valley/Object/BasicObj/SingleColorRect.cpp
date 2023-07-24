@@ -34,17 +34,18 @@ void SingleColorRect::SetColor(XMFLOAT4 color)
 void SingleColorRect::CreateVertices()
 {
 	Vertex v;
+	Vector2 halfSize = _size * 0.5f;
 
-	v.pos = {0.0f, _size.y, 0.0f};
+	v.pos = { -halfSize.x, halfSize.y, 0.0f};
 	_vertices.push_back(v);
 
-	v.pos = { _size.x, _size.y, 0.0f };
+	v.pos = { halfSize.x, halfSize.y, 0.0f };
 	_vertices.push_back(v);
 
-	v.pos = { _size.x, 0.0f, 0.0f };
+	v.pos = { halfSize.x, -halfSize.y, 0.0f };
 	_vertices.push_back(v);
 
-	v.pos = { 0.0f, 0.0f, 0.0f };
+	v.pos = { -halfSize.x, -halfSize.y, 0.0f };
 	_vertices.push_back(v);
 
 	_indices.push_back(0);

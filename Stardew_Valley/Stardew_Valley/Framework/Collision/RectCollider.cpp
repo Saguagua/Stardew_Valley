@@ -11,6 +11,7 @@ RectCollider::RectCollider(Vector2 size)
 void RectCollider::Render()
 {
 	_transform->Set_World(0);
+
 	if (_isDebug)
 		_renderer->Render();
 }
@@ -112,16 +113,6 @@ bool RectCollider::Block(shared_ptr<CircleCollider> other)
 	}
 
 	return true;
-}
-
-Vector2 RectCollider::GetWorldPos()
-{
-	return _transform->GetWorldPos() + _size * 0.5f;
-}
-
-Vector2 RectCollider::GetWorldScale()
-{
-	return _transform->GetWorldScale();
 }
 
 RectCollider::AABB_Info RectCollider::GetAABB_Info()

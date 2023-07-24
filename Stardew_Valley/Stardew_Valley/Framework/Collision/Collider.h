@@ -24,8 +24,8 @@ public:
 
 	shared_ptr<Transform> GetTransform() { return _transform; }
 	
-	virtual Vector2 GetWorldPos() abstract;
-	virtual Vector2 GetWorldScale() abstract;
+	Vector2 GetWorldPos();
+	Vector2 GetWorldScale();
 protected:
 	enum class Type
 	{

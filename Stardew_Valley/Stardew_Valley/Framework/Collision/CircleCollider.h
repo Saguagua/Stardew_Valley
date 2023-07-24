@@ -15,8 +15,6 @@ public:
 	
 	bool Block(shared_ptr<CircleCollider>);
 
-	virtual Vector2 GetWorldPos() override;
-	virtual Vector2 GetWorldScale() override;
 	float GetRadius() { return _radius; }
 	float GetWorldRadius();
 

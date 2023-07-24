@@ -25,3 +25,13 @@ bool Collider::IsCollision(shared_ptr<Collider> other)
 
     return false;
 }
+
+Vector2 Collider::GetWorldPos()
+{
+	return _transform->GetWorldPos();
+}
+
+Vector2 Collider::GetWorldScale()
+{
+	return _transform->GetWorldScale();
+}

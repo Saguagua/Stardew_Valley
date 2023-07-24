@@ -66,17 +66,6 @@ bool CircleCollider::Block(shared_ptr<CircleCollider> other)
 	return true;
 }
 
-Vector2 CircleCollider::GetWorldPos()
-{
-	float raidus = GetWorldRadius();
-	return _transform->GetWorldPos() + Vector2(raidus, raidus);
-}
-
-Vector2 CircleCollider::GetWorldScale()
-{
-	return _transform->GetWorldScale();
-}
-
 float CircleCollider::GetWorldRadius()
 {
 	Vector2 worldScale = _transform->GetWorldScale();

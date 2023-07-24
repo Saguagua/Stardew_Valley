@@ -13,29 +13,29 @@ ColliderScene::ColliderScene()
 	_rect->SetDebug(true);
 	_rect2->SetDebug(true);
 
-	_rect->SetPos(Vector2(-100, -100));
+	_circle->SetPos(Vector2(-100, -100));
 	_circle2->SetPos(CENTER);
 }
 
 void ColliderScene::Update()
 {
-	_rect->Update();
+	_circle->Update();
 	_circle2->Update();
 
-	_rect->SetPos(CAMERA->GetWorldMousePos());
+	_circle->SetPos(CAMERA->GetWorldMousePos());
 
-	if (_rect->Block(_circle2))
+	if (_circle->IsCollision(_circle2))
 	{
-		_rect->SetColor(XMFLOAT4(1,0,0,1));
+		_circle->SetColor(XMFLOAT4(1,0,0,1));
 	}
 	else
 	{
-		_rect->SetColor(XMFLOAT4(0,1,0,1));
+		_circle->SetColor(XMFLOAT4(0,1,0,1));
 	}
 }
 
 void ColliderScene::Render()
 {
-	_rect->Render();
+	_circle->Render();
 	_circle2->Render();
 }

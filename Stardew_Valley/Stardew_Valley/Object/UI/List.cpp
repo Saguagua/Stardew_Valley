@@ -41,6 +41,10 @@ void List::SetButtons()
 {
 	Vector2 frame = _buttons[0]->GetMaxFrame();
 
+	Vector2 startPos;
+	startPos.x = -_size.x * 0.5f + _buttonSize.x * 0.5f;
+	startPos.y = _size.y * 0.5f - _buttonSize.y * 0.5f;
+
 	Vector2 space;
 	space.x = _buttonSize.x / _matrix.x;
 	space.y = _buttonSize.y / _matrix.y;
@@ -51,8 +55,8 @@ void List::SetButtons()
 	for (int i = 0; i < _buttons.size(); i++)
 	{
 		Vector2 pos;
-		pos.x = x * (_buttonSize.x + space.x);
-		pos.y = _size.y - _buttonSize.y - y * (_buttonSize.y + space.y);
+		pos.x = startPos.x + x * (_buttonSize.x + space.x);
+		pos.y = startPos.y - y * (_buttonSize.y + space.y);
 
 		_buttons[i]->GetTransform()->SetPos(pos);
 		_buttons[i]->GetTransform()->SetParent(_transform);

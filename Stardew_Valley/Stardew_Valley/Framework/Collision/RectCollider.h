@@ -24,9 +24,6 @@ public:
 	virtual bool IsCollision(shared_ptr<class CircleCollider> other) override;
 
 	bool Block(shared_ptr<CircleCollider>);
-
-	virtual Vector2 GetWorldPos() override;
-	virtual Vector2 GetWorldScale() override;
 	
 private:
 	friend CircleCollider;

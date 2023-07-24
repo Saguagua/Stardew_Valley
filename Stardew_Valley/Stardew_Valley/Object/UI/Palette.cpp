@@ -155,17 +155,19 @@ void Palette::ChangeMap(bool chosen)
 
 void Palette::CreateChartButtons()
 {
+	Vector2 halfSize = _size * 0.5f;
 	Vector2 buttonSize = _size * 0.05f;
 	float space = (_size.x - buttonSize.x * 4) / 5;
+
 	shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Icons/Tiles.png", buttonSize);
 	shared_ptr<TextureButton> button2 = make_shared<TextureButton>(L"Resource/Icons/Tiles.png", buttonSize);
 	shared_ptr<TextureButton> button3 = make_shared<TextureButton>(L"Resource/Icons/file.png", buttonSize);
 	shared_ptr<TextureButton> button4 = make_shared<TextureButton>(L"Resource/Icons/save.png", buttonSize);
 
-	button->GetTransform()->SetPos(Vector2(space, _size.y - buttonSize.y));
-	button2->GetTransform()->SetPos(Vector2(space * 2 + buttonSize.x, _size.y - buttonSize.y));
-	button3->GetTransform()->SetPos(Vector2(space * 3 + buttonSize.x * 2, _size.y - buttonSize.y));
-	button4->GetTransform()->SetPos(Vector2(space * 4 + buttonSize.x * 3, _size.y - buttonSize.y));
+	button->GetTransform()->SetPos(Vector2(-halfSize.x + space, halfSize.y - buttonSize.y));
+	button2->GetTransform()->SetPos(Vector2(-halfSize.x + space * 2 + buttonSize.x, halfSize.y - buttonSize.y));
+	button3->GetTransform()->SetPos(Vector2(-halfSize.x + space * 3 + buttonSize.x * 2, halfSize.y - buttonSize.y));
+	button4->GetTransform()->SetPos(Vector2(-halfSize.x + space * 4 + buttonSize.x * 3, halfSize.y - buttonSize.y));
 
 	button->GetTransform()->SetParent(_mainRect->GetTransform());
 	button2->GetTransform()->SetParent(_mainRect->GetTransform());
@@ -203,9 +205,8 @@ void Palette::CreateTileList()
 			buttons.push_back(button);
 		}
 	}
-	Vector2 pos = _size - _size * 0.9f;
 	_tileList = make_shared<List>(_size * 0.9f, buttons, _tileMaxFrame);
-	_tileList->GetTransform()->SetPos(Vector2(pos.x/2, 0.0f));
+	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	_tileList->SetParent(_mainRect->GetTransform());
 }
 
@@ -225,10 +226,8 @@ void Palette::CreateObjectList()
 			buttons.push_back(button);
 		}
 	}
-
-	Vector2 pos = _size - _size * 0.9f;
 	_objectList = make_shared<List>(_size * 0.9f, buttons, _objectMaxFrame);
-	_objectList->GetTransform()->SetPos(Vector2(pos.x / 2, 0.0f));
+	_objectList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	_objectList->SetParent(_mainRect->GetTransform());
 	_objectList->SetActive(false);
 }

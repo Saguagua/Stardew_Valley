@@ -26,7 +26,7 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
-			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
+			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i) + TILE_SIZE * 0.5f;
 			_infos[j + i * _mapSize.x]->SetStartPos(pos);
 		}
 	}
@@ -52,7 +52,7 @@ TileMap::TileMap()
 	{
 		for (int j = 0; j < _mapSize.x; j++)
 		{
-			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i);
+			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i) + TILE_SIZE * 0.5f;
 			shared_ptr<TileInfo> info = make_shared<TileInfo>(pos, Vector2(_tileMaxFrame.x - 1, _tileMaxFrame.y - 1), Vector2(_objectMaxFrame.x-1, _objectMaxFrame.y-1));
 		
 			_infos.push_back(info);
