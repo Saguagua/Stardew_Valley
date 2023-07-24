@@ -12,8 +12,8 @@ Palette::Palette(Vector2 size)
 	CallBackBool onEvent2 = std::bind(&Palette::OnFocus, this, std::placeholders::_1);
 	_mainRect->SetMouseOnEvent(onEvent2);
 
-	_tileMaxFrame = SaveManager::GetInstance()->GetTileMaxFrame();
-	_objectMaxFrame = SaveManager::GetInstance()->GetObjectMaxFrame();
+	_tileMaxFrame = DATA->GetTileMaxFrame();
+	_objectMaxFrame = DATA->GetObjectMaxFrame();
 
 	CreateChartButtons();
 	CreateTileList();
@@ -134,7 +134,7 @@ void Palette::ChartButtonEvent(int index)
 		}
 		}
 		
-		SaveManager::GetInstance()->SaveMap(info);
+		DATA->SaveMap(info);
 
 		break;
 	}
@@ -235,7 +235,7 @@ void Palette::CreateObjectList()
 
 void Palette::CreateSaveList()
 {
-	_mapInfos = SaveManager::GetInstance()->GetMapInfos();
+	_mapInfos = DATA->GetMapInfos();
 	vector<shared_ptr<TextureButton>> buttons;
 
 	Vector2 buttonSize;

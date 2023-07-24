@@ -1,16 +1,17 @@
 #include "framework.h"
-#include "SaveManager.h"
+#include "DataManager.h"
+#include "PlayerInfo.h"
+DataManager* DataManager::_instance = nullptr;
 
-SaveManager* SaveManager::_instance = nullptr;
-
-SaveManager::SaveManager()
+DataManager::DataManager()
 {
 	ReadTileTypes();
 	ReadObjectFile();
 	ReadMaps();
+	ReadPlayerFile();
 }
 
-void SaveManager::SaveMap(shared_ptr<MapInfo> info)
+void DataManager::SaveMap(shared_ptr<MapInfo> info)
 {
 	string name = info->GetName();
 	Vector2 size = info->GetSize();
@@ -20,12 +21,12 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 	{
 		_mapTable[name] = true;
 
-		_fout.open("Save/Contents/MapNames.txt", std::ios::app);
+		_fout.open("Data/Contents/MapNames.txt", std::ios::app);
 		_fout << endl << name;
 		_fout.close();
 	}
 
-	_fout.open("Save/SaveFiles/" + name + ".txt");
+	_fout.open("Data/SaveFiles/" + name + ".txt");
 
 	_fout << size.x << " " << size.y << endl;
 	
@@ -53,10 +54,10 @@ void SaveManager::SaveMap(shared_ptr<MapInfo> info)
 	_fout.close();
 }
 
-shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
+shared_ptr<MapInfo> DataManager::LoadMap(string mapName)
 {
 	ifstream fin;
-	fin.open("Save/SaveFiles/" + mapName +".txt");
+	fin.open("Data/SaveFiles/" + mapName +".txt");
 
 	if (!fin.is_open())
 		return nullptr;
@@ -98,9 +99,9 @@ shared_ptr<MapInfo> SaveManager::LoadMap(string mapName)
 	return mapInfo;
 }
 
-void SaveManager::ReadMaps()
+void DataManager::ReadMaps()
 {
-	_fin.open("Save/Contents/MapNames.txt");
+	_fin.open("Data/Contents/MapNames.txt");
 
 	while (!_fin.eof())
 	{
@@ -113,9 +114,9 @@ void SaveManager::ReadMaps()
 	_fin.close();
 }
 
-void SaveManager::ReadTileTypes()
+void DataManager::ReadTileTypes()
 {
-	_fin.open("Save/Contents/TileTypes.txt");
+	_fin.open("Data/Contents/TileTypes.txt");
 
 	_fin >> _tileMaxFrame.x;
 	_fin >> _tileMaxFrame.y;
@@ -131,12 +132,16 @@ void SaveManager::ReadTileTypes()
 	_fin.close();
 }
 
-void SaveManager::ReadObjectFile()
+void DataManager::ReadObjectFile()
 {
-	_fin.open("Save/Contents/Object.txt");
+	_fin.open("Data/Contents/Object.txt");
 
 	_fin >> _objectMaxFrame.x;
 	_fin >> _objectMaxFrame.y;
 
 	_fin.close();
+}
+
+void DataManager::ReadPlayerFile()
+{
 }

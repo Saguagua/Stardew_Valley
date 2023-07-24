@@ -17,3 +17,8 @@ void BreakableItem::GetDamage(int amount)
 
 	}
 }
+
+int BreakableItem::UseItem()
+{
+	return 0;
+}

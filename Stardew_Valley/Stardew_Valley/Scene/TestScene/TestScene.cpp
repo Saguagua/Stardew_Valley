@@ -6,7 +6,7 @@ TestScene::TestScene()
 {
 	_character = make_shared<Character>();
 	
-	vector<shared_ptr<MapInfo>> v = SaveManager::GetInstance()->GetMapInfos();
+	vector<shared_ptr<MapInfo>> v = DATA->GetMapInfos();
 	
 	_farmmingMap = make_shared<TileMap>(v[0]);
 	
@@ -16,8 +16,8 @@ TestScene::TestScene()
 
 	_character->GetTransform()->SetPos(CENTER);
 	
-	_character->SetDebug(true);
-	_farmmingMap->SetDebug(true);
+	//_character->SetDebug(true);
+	//_farmmingMap->SetDebug(true);
 
 	_character->Update();
 	_farmmingMap->SetCameraRange();

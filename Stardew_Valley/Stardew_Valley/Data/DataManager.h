@@ -1,15 +1,15 @@
 #pragma once
-class SaveManager
+class DataManager
 {
 private:
-	SaveManager();
-	~SaveManager() {}
+	DataManager();
+	~DataManager() {}
 
 public:
 	static void Create()
 	{
 		if (_instance == nullptr)
-			_instance = new SaveManager();
+			_instance = new DataManager();
 	}
 
 	static void Delete()
@@ -18,7 +18,7 @@ public:
 			delete _instance;
 	}
 
-	static SaveManager* GetInstance()
+	static DataManager* GetInstance()
 	{
 		if (_instance != nullptr)
 			return _instance;
@@ -32,13 +32,17 @@ public:
 	Vector2 GetObjectMaxFrame() { return _objectMaxFrame; }
 	vector<shared_ptr<MapInfo>> GetMapInfos() { return _mapInfos; }
 	vector<int>& GetTypes() { return _frameTypes; }
-	
+	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
+
+
 private:
 	void ReadMaps();
 	void ReadTileTypes();
 	void ReadObjectFile();
+	void ReadPlayerFile();
 
-	static SaveManager* _instance;
+	static DataManager* _instance;
+	shared_ptr<PlayerInfo> _playerInfo;
 	vector<shared_ptr<MapInfo>> _mapInfos;
 	unordered_map<string, bool> _mapTable;
 	vector<int> _frameTypes;
