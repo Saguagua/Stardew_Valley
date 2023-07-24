@@ -13,9 +13,9 @@ TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
 		_colliders.push_back(col);
 	}
 
-	_frameTypes = SaveManager::GetInstance()->GetTypes();
-	_tileMaxFrame = SaveManager::GetInstance()->GetTileMaxFrame();
-	_objectMaxFrame = SaveManager::GetInstance()->GetObjectMaxFrame();
+	_frameTypes = DATA->GetTypes();
+	_tileMaxFrame = DATA->GetTileMaxFrame();
+	_objectMaxFrame = DATA->GetObjectMaxFrame();
 
 	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", _tileMaxFrame, TILE_SIZE);
 	_objectRenderer = make_shared<TextureRect>(L"Resource/Object/Objects.png", _objectMaxFrame, TILE_SIZE);
@@ -41,9 +41,9 @@ TileMap::TileMap()
 		_colliders.push_back(col);
 	}
 
-	_frameTypes = SaveManager::GetInstance()->GetTypes();
-	_tileMaxFrame = SaveManager::GetInstance()->GetTileMaxFrame();
-	_objectMaxFrame = SaveManager::GetInstance()->GetObjectMaxFrame();
+	_frameTypes = DATA->GetTypes();
+	_tileMaxFrame = DATA->GetTileMaxFrame();
+	_objectMaxFrame = DATA->GetObjectMaxFrame();
 	
 	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", _tileMaxFrame, TILE_SIZE);
 	_objectRenderer = make_shared<TextureRect>(L"Resource/Object/Objects.png", _objectMaxFrame, TILE_SIZE);

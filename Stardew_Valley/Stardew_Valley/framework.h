@@ -84,8 +84,11 @@ using namespace Microsoft::WRL;
 #include "Map/Tile/TileInfo.h"
 
 //Save
-#include "Save/MapInfo.h"
-#include "Save/SaveManager.h"
+#include "Data/MapInfo.h"
+#include "Data/DataManager.h"
+
+//Player
+#include "Object/Player/PlayerInfoManager.h"
 
 //Map
 #include "Map/Tile/TileMap.h"

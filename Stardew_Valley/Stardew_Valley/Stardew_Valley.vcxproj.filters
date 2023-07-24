@@ -159,10 +159,10 @@
     <ClInclude Include="Object\UI\List.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Save\SaveManager.h">
+    <ClInclude Include="Data\DataManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Save\MapInfo.h">
+    <ClInclude Include="Data\MapInfo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\GameObj\GameObject.h">
@@ -178,6 +178,30 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Map\Tile\TileInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player\PlayerInfoManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\PlayerInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player\Player.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\Pickaxe.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\Hoe.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\Axe.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\FishingRod.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\UseableItem.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -308,7 +332,7 @@
     <ClCompile Include="Object\UI\List.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Save\SaveManager.cpp">
+    <ClCompile Include="Data\DataManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\GameObj\GameObject.cpp">
@@ -321,6 +345,27 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Map\Tile\TileInfo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Player\PlayerInfoManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Player\Player.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\Pickaxe.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\Hoe.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\Axe.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\FishingRod.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\UseableItem.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

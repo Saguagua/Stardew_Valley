@@ -18,15 +18,14 @@ void Action::Update()
 		case Action::END:
 		{
 			_curAnimationIndex++;
-			if (_curAnimationIndex >= _end)
+			if (_curAnimationIndex >= _indices.size() - 1)
 				Stop();
 		}
 		break;
 		case Action::LOOP:
 		{
 			_curAnimationIndex++;
-			if (_curAnimationIndex > _end)
-				_curAnimationIndex = _start;
+			_curAnimationIndex %= _indices.size();
 		}
 		break;
 		case Action::PINGPONG:
@@ -34,13 +33,13 @@ void Action::Update()
 			if (_isReverse)
 			{
 				_curAnimationIndex--;
-				if (_curAnimationIndex <= _start)
+				if (_curAnimationIndex <= 0)
 					_isReverse = false;
 			}
 			else
 			{
 				_curAnimationIndex++;
-				if (_curAnimationIndex >= _end)
+				if (_curAnimationIndex >= _indices.size() - 1)
 					_isReverse = true;
 			}
 		}
@@ -53,7 +52,7 @@ void Action::Update()
 
 void Action::Play()
 {
-	_curAnimationIndex = _start;
+	_curAnimationIndex = 0;
 	_isPlay = true;
 	_isReverse = false;
 	_time = 0.0f;
@@ -68,7 +67,7 @@ void Action::Stop()
 {
 	_isPlay = false;
 	_time = 0.0f;
-	_curAnimationIndex = _start;
+	_curAnimationIndex = 0;
 
 	if (_endEvent != nullptr)
 		_endEvent();
@@ -77,6 +76,6 @@ void Action::Stop()
 void Action::Reset()
 {
 	_isPlay = false;
-	_curAnimationIndex = _start;
+	_curAnimationIndex = 0;
 	_time = 0.0f;
 }

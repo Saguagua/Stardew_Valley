@@ -10,8 +10,9 @@ public:
 		PINGPONG
 	};
 
-	Action(int start, int end, int y, Action::Type type = Action::Type::LOOP, float speed = 0.1f)
-		:_start(start), _end(end), _y(y), _repeatType(type), _speed(speed) {}
+	Action(vector<Vector2> indices, Action::Type type = Action::Type::LOOP, float speed = 0.1f)
+		:_indices(indices), _repeatType(type), _speed(speed) {}
+
 	~Action() {}
 
 	void Update();
@@ -21,7 +22,7 @@ public:
 	void Stop();
 	void Reset();
 
-	Vector2 GetCurFrame() { return Vector2(_curAnimationIndex, _y); }
+	Vector2 GetCurFrame() { return _indices[_curAnimationIndex]; }
 
 	void SetEndEvent(CallBack cb) { _endEvent = cb; }
 
@@ -31,10 +32,9 @@ private:
 	Type _repeatType;
 	bool _isPlay = false;
 
-	int _start;
-	int _end;
+	vector<Vector2> _indices;
+
 	int _curAnimationIndex = 0;
-	int _y;
 
 	float _time = 0.0f;
 	float _speed = 0.0f;

@@ -26,6 +26,8 @@
 #define FPS				Timer::GetInstance()->GetFPS()
 #define RUNTIME			Timer::GetInstance()->GetRunTime()
 
+#define DATA			DataManager::GetInstance()
+
 #define MOUSE_POS		InputManager::GetInstance()->GetMousePos()
 #define W_MOUSE_POS		Camera::GetInstance()->GetWorldMousePos()
 #define S_MOUSE_POS		Camera::GetInstance()->GetScreenMousePos()

@@ -2,4 +2,6 @@
 class ItemInfo
 {
 	int itemNumber;
+
+	
 };
