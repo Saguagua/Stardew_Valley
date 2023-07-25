@@ -1,10 +1,12 @@
 #include "framework.h"
-#include "Player.h"
 #include "../../Data/PlayerInfo.h"
+#include "Player.h"
+
+Player* Player::_instance = nullptr;
 
 Player::Player()
 {
-	_collider = make_shared<CircleCollider>(15);
+	_col = make_shared<CircleCollider>(15);
 	_bodySlot = make_shared<Transform>();
 	_body = make_shared<TextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
 	_arm = make_shared<TextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
@@ -13,7 +15,7 @@ Player::Player()
 	_arm->SetCurFrame(Vector2(0, 0));
 
 	_bodySlot->AddPos(Vector2(-5, 0));
-	_bodySlot->SetParent(_collider->GetTransform());
+	_bodySlot->SetParent(_col->GetTransform());
 
 	SetInfos();
 	CreateAction();
@@ -26,7 +28,7 @@ void Player::Update()
 {
 	KeyInput();
 	Vector2 pos = _bodySlot->GetWorldPos();
-	_collider->Update();
+	_col->Update();
 	_bodySlot->Update();
 
 	_bodyActions[_bodyIndex]->Update();
@@ -42,7 +44,7 @@ void Player::Render()
 	_bodySlot->Set_World(0);
 	_body->Render();
 	_arm->Render();
-	_collider->Render();
+	_col->Render();
 }
 
 void Player::KeyInput()
@@ -54,18 +56,27 @@ void Player::KeyInput()
 
 Vector2 Player::GetWorldPos()
 {
-	return _collider->GetWorldPos();
+	return _col->GetWorldPos();
 }
 
-void Player::SetInfos()
+void Player::AddMaxHP(short amount)
 {
-	shared_ptr<PlayerInfo> info = DATA->GetPlayerInfo();
+	_playerInfo->AddMaxHP(amount);
+}
 
-	_items = info->GetItems();
-	_maxHp = info->GetMaxHP();
-	_hp = info->GetHP();
-	_maxStamina = info->GetMaxStamina();
-	_stamina = info->GetStamina();
+void Player::AddMaxStamina(short amount)
+{
+	_playerInfo->AddMaxStamina(amount);
+}
+
+void Player::AddHP(short amount)
+{
+	_playerInfo->AddHP(amount);
+}
+
+void Player::AddStamina(short amount)
+{
+	_playerInfo->AddStamina(amount);
 }
 
 void Player::CreateAction()
@@ -183,7 +194,7 @@ void Player::Move()
 			SetAction(PlayerAction::BACKRUN);
 		}
 
-		_collider->AddPos(Vector2(0, 1) * DELTA_TIME * SPEED);
+		_col->AddPos(Vector2(0, 1) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('W'))
 	{
@@ -196,9 +207,9 @@ void Player::Move()
 		{
 			SetAction(PlayerAction::SIDERUN);
 		}
-		_collider->SetScale(Vector2(-1, 1));
+		_col->SetScale(Vector2(-1, 1));
 
-		_collider->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
+		_col->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('A'))
 	{
@@ -211,7 +222,7 @@ void Player::Move()
 		{
 			SetAction(PlayerAction::FRONTRUN);
 		}
-		_collider->AddPos(Vector2(0, -1) * DELTA_TIME * SPEED);
+		_col->AddPos(Vector2(0, -1) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('S'))
 	{
@@ -224,9 +235,9 @@ void Player::Move()
 		{
 			SetAction(PlayerAction::SIDERUN);
 		}
-		_collider->SetScale(Vector2(1, 1));
+		_col->SetScale(Vector2(1, 1));
 
-		_collider->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
+		_col->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('D'))
 	{
@@ -237,43 +248,43 @@ void Player::Items()
 {
 	if (KEY_DOWN('1'))
 	{
-		_itemIndex = 0;
+		_selectedItemIndex = 0;
 	}
 	else if (KEY_DOWN('2'))
 	{
-		_itemIndex = 1;
+		_selectedItemIndex = 1;
 	}
 	else if (KEY_DOWN('3'))
 	{
-		_itemIndex = 2;
+		_selectedItemIndex = 2;
 	}
 	else if (KEY_DOWN('4'))
 	{
-		_itemIndex = 3;
+		_selectedItemIndex = 3;
 	}
 	else if (KEY_DOWN('5'))
 	{
-		_itemIndex = 4;
+		_selectedItemIndex = 4;
 	}
 	else if (KEY_DOWN('6'))
 	{
-		_itemIndex = 5;
+		_selectedItemIndex = 5;
 	}
 	else if (KEY_DOWN('7'))
 	{
-		_itemIndex = 6;
+		_selectedItemIndex = 6;
 	}
 	else if (KEY_DOWN('8'))
 	{
-		_itemIndex = 7;
+		_selectedItemIndex = 7;
 	}
 	else if (KEY_DOWN('9'))
 	{
-		_itemIndex = 8;
+		_selectedItemIndex = 8;
 	}
 	else if (KEY_DOWN('0'))
 	{
-		_itemIndex = 9;
+		_selectedItemIndex = 9;
 	}
 }
 
@@ -281,6 +292,6 @@ void Player::Mouse()
 {
 	if (KEY_PRESS(VK_LBUTTON))
 	{
-		_items[_itemIndex]->UseItem();
+		_playerInfo->GetItems()[_selectedItemIndex]->UseItem();
 	}
 }

@@ -11,20 +11,55 @@ class Player
 		BACKRUN
 	};
 
-public:
 	Player();
 	~Player() {}
+
+public:
+
+	static void Create()
+	{
+		if (_instance == nullptr)
+			_instance = new Player();
+	}
+
+	static void Delete()
+	{
+		if (_instance != nullptr)
+			delete _instance;
+	}
+
+	static Player* GetInstance()
+	{
+		if (_instance != nullptr)
+			return _instance;
+		return nullptr;
+	}
 
 	void Update();
 	void Render();
 
-	void SetDebug(bool val) { _collider->SetDebug(val); }
+	void SetDebug(bool val) { _col->SetDebug(val); }
+	void SetPos(Vector2 pos) { _col->SetPos(pos); }
+	void SetAngle(float angle) { _col->SetAngle(angle); }
+	void SetScale(Vector2 scale) { _col->SetScale(scale); }
 
-	shared_ptr<Transform> GetTransform() { return _collider->GetTransform(); }
-	shared_ptr<CircleCollider> GetCollider() { return _collider; }
+	void AddPos(Vector2 pos) { _col->AddPos(pos); }
+	void AddAngle(float angle) { _col->AddAngle(angle); }
+	void AddScale(Vector2 scale) { _col->AddScale(scale); }
+	void AddMaxHP(short amount);
+	void AddMaxStamina(short amount);
+	void AddHP(short amount);
+	void AddStamina(short amount);
+
+	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
+	shared_ptr<CircleCollider> GetCollider() { return _col; }
 	Vector2 GetWorldPos();
 private:
-	void SetInfos();
+	void SetInfos()
+	{
+		_playerInfo = DATA->GetPlayerInfo();
+	}
+
 	void CreateAction();
 	void SetAction(PlayerAction state);
 
@@ -33,19 +68,15 @@ private:
 	void Items();
 	void Mouse();
 
-	shared_ptr<CircleCollider> _collider;
+	static Player* _instance;
+	shared_ptr<class PlayerInfo> _playerInfo;
+
+	shared_ptr<CircleCollider> _col;
 	shared_ptr<Transform> _bodySlot;
 	shared_ptr<Transform> _itemSlot;
 	shared_ptr<TextureRect> _body;
 	shared_ptr<TextureRect> _arm;
 	shared_ptr<TextureRect> _obj;
-
-	int _itemIndex;
-	vector<shared_ptr<GameObject>> _items;
-	short _maxHp;
-	short _hp;
-	short _maxStamina;
-	short _stamina;
 
 	vector<shared_ptr<Action>> _bodyActions;
 	vector<shared_ptr<Action>> _armActions;

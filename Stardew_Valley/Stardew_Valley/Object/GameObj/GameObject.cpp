@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "GameObject.h"
 
-GameObject::GameObject(int itemCode, short count = 1)
+GameObject::GameObject(int itemCode, short count)
 	:_itemCode(itemCode), _count(count)
 {
 }

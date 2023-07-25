@@ -78,20 +78,17 @@ using namespace Microsoft::WRL;
 //Animation
 #include "Framework/Animation/Action.h"
 
-//GameObject
-#include "Object/GameObj/GameObject.h"
-
-#include "Map/Tile/TileInfo.h"
-
 //Save
-#include "Data/MapInfo.h"
 #include "Data/DataManager.h"
 
 //Player
-#include "Object/Player/PlayerInfoManager.h"
+#include "Object/Player/Player.h"
+
+//GameObject
+#include "Object/GameObj/GameObject.h"
 
 //Map
-#include "Map/Tile/TileMap.h"
+#include "Map/TileMap.h"
 
 //UI
 #include "Object/UI/Button.h"

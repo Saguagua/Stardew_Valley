@@ -25,7 +25,7 @@ public:
 		return nullptr;
 	}
 
-	void SaveMap(shared_ptr<MapInfo> info);
+	void SaveMaps(vector<shared_ptr<class MapInfo>> infos);
 	shared_ptr<MapInfo> LoadMap(string mapName);
 
 	Vector2 GetTileMaxFrame() { return _tileMaxFrame; }

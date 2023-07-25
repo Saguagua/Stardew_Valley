@@ -1,5 +1,8 @@
 #include "framework.h"
+#include "../../Data/MapInfo.h"
 #include "Palette.h"
+
+Palette* Palette::_instance = nullptr;
 
 Palette::Palette(Vector2 size)
 	:_size(size)
@@ -107,34 +110,9 @@ void Palette::ChartButtonEvent(int index)
 	}
 	case 3:
 	{
-		shared_ptr<MapInfo> info = _tileMap.lock()->GetMapInfo();
-
-		switch (_saveList->GetCurIndex())
-		{
-		case 0:
-		{
-			info->SetName("Farming");
-			break;
-		}
-		case 1:
-		{
-			info->SetName("Fishing");
-			break;
-		}
-		case 2:
-		{
-			info->SetName("Dungeon");
-			break;
-		}
-		case 3:
-		{
-			info->SetName("Test");
-			info->SetSize(Vector2(5, 5));
-			break;
-		}
-		}
-		
-		DATA->SaveMap(info);
+		vector<shared_ptr<MapInfo>> infos = TILEMAP->GetMapInfo();
+	
+		DATA->SaveMaps(infos);
 
 		break;
 	}
@@ -150,7 +128,7 @@ void Palette::ChangeMap(bool chosen)
 
 	int index = _saveList->GetCurIndex();
 	
-	_tileMap.lock()->LoadMap(_mapInfos[index]);
+	TILEMAP->ChangeMap(index);
 }
 
 void Palette::CreateChartButtons()

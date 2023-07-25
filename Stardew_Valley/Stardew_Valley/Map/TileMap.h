@@ -11,50 +11,62 @@ class TileMap
 		FISHING = (1 << 3)
 	};
 
-public:
-	TileMap(shared_ptr<class MapInfo> mapInfo);
 	TileMap();
 	~TileMap() {}
+public:
+
+	static void Create()
+	{
+		if (_instance == nullptr)
+			_instance = new TileMap();
+	}
+
+	static void Delete()
+	{
+		if (_instance != nullptr)
+			delete _instance;
+	}
+
+	static TileMap* GetInstance()
+	{
+		if (_instance != nullptr)
+			return _instance;
+		return nullptr;
+	}
 
 	void Update();
 	void Render();
 
-	void LoadMap(shared_ptr<MapInfo> info);
-
-	void SetCameraRange();
-	void SetPlayer(shared_ptr<class Player> player) { _player = player; }
-	void SetPalette(shared_ptr<class Palette> palette) { _palette = palette; }
-	void SetActive(bool active) { _isActive = active; }
 	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
 	int GetMouseToPlayerIndex(Vector2 pos);
-	shared_ptr<MapInfo> GetMapInfo();
+	vector<shared_ptr<class MapInfo>>& GetMapInfo() { return _mapInfos; }
 
+	void ChangeMap(int index);
 private:
+	void SetCameraRange();
 	void Play();
 	void Blocking();
 	void Mouse();
 
 	void ChangeTile();
 
+	static TileMap* _instance;
+
 	shared_ptr<TextureRect> _tileRenderer;
 	shared_ptr<TextureRect> _objectRenderer;
 
 	Vector2 _tileMaxFrame;
 	Vector2 _objectMaxFrame;
-	vector<shared_ptr<RectCollider>> _colliders;
-
 	vector<int> _frameTypes;
 
-	vector<shared_ptr<TileInfo>> _infos;
+	vector<shared_ptr<RectCollider>> _colliders;
 
-	weak_ptr<class Player> _player;
-	weak_ptr<Palette> _palette;
-
-	bool _isActive = false;
+	vector<shared_ptr<class MapInfo>> _mapInfos;
 
 	string _mapName;
 	Vector2 _mapSize;
+	vector<shared_ptr<class TileInfo>> _tileInfos;
 };
 

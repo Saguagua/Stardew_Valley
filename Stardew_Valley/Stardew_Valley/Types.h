@@ -28,8 +28,12 @@
 
 #define DATA			DataManager::GetInstance()
 
-#define PLAYER			PlayerInfoManager::GetInstance()
-#define PLAYERINFO		PlayerInfoManager::GetInstance()->GetInfo()
+#define TILEMAP			TileMap::GetInstance()
+
+#define PLAYER			Player::GetInstance()
+#define PLAYERINFO		Player::GetInstance()->GetInfo()
+
+#define PALETTE			Palette::GetInstance()
 
 #define MOUSE_POS		InputManager::GetInstance()->GetMousePos()
 #define W_MOUSE_POS		Camera::GetInstance()->GetWorldMousePos()

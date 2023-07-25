@@ -48,9 +48,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     SRVManager::Create();
     StateManager::Create();
     ShaderManager::Create();
-    DataManager::Create();
-    PlayerInfoManager::Create();
     InputManager::Create();
+    DataManager::Create();
 
 
     shared_ptr<Program> program = make_shared<Program>();
@@ -72,9 +71,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
     }
 
-    InputManager::Delete();
-    PlayerInfoManager::Delete();
     DataManager::Delete();
+    InputManager::Delete();
     ShaderManager::Delete();
     StateManager::Delete();
     SRVManager::Delete();

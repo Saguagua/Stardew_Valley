@@ -3,7 +3,7 @@ class TestScene :public Scene
 {
 public:
 	TestScene();
-	virtual ~TestScene() {}
+	virtual ~TestScene();
 
 	virtual void Update() override;
 	virtual void Render() override;
@@ -14,6 +14,4 @@ private:
 	shared_ptr<class TileMap> _farmmingMap;
 	shared_ptr<class TileMap> _beachMap;
 	shared_ptr<class TileMap> _dungeonMap;
-
-	shared_ptr<class Player> _player;
 };

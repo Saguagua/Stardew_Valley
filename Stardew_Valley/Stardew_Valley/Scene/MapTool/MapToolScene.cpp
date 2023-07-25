@@ -3,27 +3,30 @@
 
 MapToolScene::MapToolScene()
 {
-	_palette = make_shared<Palette>(Vector2(450, 600));
-	_map = make_shared<TileMap>();
-	_palette->SetTileMap(_map);
-	_map->SetPalette(_palette);
-	_map->SetActive(true);
-	_map->SetDebug(true);
-	_palette->SetPos(CENTER - _palette->GetSize());
+	TileMap::Create();
+	Palette::Create();
+	TILEMAP->SetDebug(true);
+	PALETTE->SetPos(CENTER - PALETTE->GetSize());
+}
+
+MapToolScene::~MapToolScene()
+{
+	Palette::Delete();
+	TileMap::Delete();
 }
 
 void MapToolScene::Update()
 {
-	_palette->Update();
-	_map->Update();
+	PALETTE->Update();
+	TILEMAP->Update();
 }
 
 void MapToolScene::Render()
 {
-	_map->Render();
+	TILEMAP->Render();
 }
 
 void MapToolScene::PostRender()
 {
-	_palette->PostRender();
+	PALETTE->PostRender();
 }

@@ -1,35 +1,34 @@
 #include "framework.h"
-#include "TestScene.h"
+#include "../../Data/MapInfo.h"
 #include "../../Object/Player/Player.h"
+#include "TestScene.h"
 
 TestScene::TestScene()
 {
-	_player = make_shared<Player>();
-	vector<shared_ptr<MapInfo>> v = DATA->GetMapInfos();
-	
-	_farmmingMap = make_shared<TileMap>(v[0]);
-	
-	_farmmingMap->SetActive(true);
+	Player::Create();
+	TileMap::Create();
 
-	_farmmingMap->SetPlayer(_player);
-
-	_player->GetTransform()->SetPos(CENTER);
-	
-	//_farmmingMap->SetDebug(true);
-	_player->Update();
-	_farmmingMap->SetCameraRange();
-	CAMERA->SetTarget(_player->GetTransform());
+	PLAYER->SetPos(CENTER);
+	TILEMAP->ChangeMap(0);
+	PLAYER->Update();
+	CAMERA->SetTarget(PLAYER->GetTransform());
 	CAMERA->Update();
+}
+
+TestScene::~TestScene()
+{
+	TileMap::Delete();
+	Player::Delete();
 }
 
 void TestScene::Update()
 {
-	_farmmingMap->Update();
-	_player->Update();
+	TILEMAP->Update();
+	PLAYER->Update();
 }
 
 void TestScene::Render()
 {
-	_farmmingMap->Render();
-	_player->Render();
+	TILEMAP->Render();
+	PLAYER->Render();
 }

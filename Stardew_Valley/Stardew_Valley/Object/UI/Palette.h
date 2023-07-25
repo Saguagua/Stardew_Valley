@@ -1,15 +1,32 @@
 #pragma once
 class Palette
 {
-public:
 	Palette(Vector2 size);
 	~Palette() {}
+public:
+	static void Create()
+	{
+		if (_instance == nullptr)
+			_instance = new Palette(Vector2(450, 600));
+	}
+
+	static void Delete()
+	{
+		if (_instance != nullptr)
+			delete _instance;
+	}
+
+	static Palette* GetInstance()
+	{
+		if (_instance != nullptr)
+			return _instance;
+		return nullptr;
+	}
 
 	void PostRender();
 	void Update();
 
 	void SetPos(Vector2 pos) { _mainRect->SetPos(pos); }
-	void SetTileMap(shared_ptr<TileMap> tileMap) { _tileMap = tileMap; }
 
 	Vector2 GetSize() { return _size; }
 	Vector2 GetCurTileFrame();
@@ -29,14 +46,15 @@ private:
 	void ChartButtonEvent(int index);
 	void ChangeMap(bool chosen);
 
-	vector<shared_ptr<MapInfo>> _mapInfos;
+	static Palette* _instance;
+
+	vector<shared_ptr<class MapInfo>> _mapInfos;
 	shared_ptr<ColorButton> _mainRect;
 	shared_ptr<List> _tileList;
 	shared_ptr<List> _objectList;
 	shared_ptr<List> _saveList;
 
 	vector<shared_ptr<TextureButton>> _chartButtons;
-	weak_ptr<TileMap> _tileMap;
 
 	Vector2 _size;
 	Vector2 _centerToMouse;
