@@ -14,6 +14,7 @@ public:
 	void SetTileFrame(Vector2 frame) { _tileFrame = frame; }
 	void SetObjectFrame(Vector2 frame) { _objFrame = frame; }
 
+	void PlayerInteration(shared_ptr<class Player> player);
 private:
 	Vector2 _startPos;
 	Vector2 _tileFrame;

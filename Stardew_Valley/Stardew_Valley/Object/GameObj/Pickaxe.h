@@ -5,7 +5,7 @@ public:
 	Pickaxe(int itemCode);
 	virtual ~Pickaxe() {}
 
-	virtual void UseItem() override;
+	virtual int UseItem() override;
 
 private:
 	void SetProperty();

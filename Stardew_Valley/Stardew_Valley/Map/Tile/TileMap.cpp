@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "TileMap.h"
 #include "TileInfo.h"
-#include "../../Object/Character/Character.h"
+#include "../../Object/Player/Player.h"
 #include "../../Object/UI/Palette.h"
 
 TileMap::TileMap(shared_ptr<class MapInfo> mapInfo)
@@ -74,6 +74,7 @@ void TileMap::Update()
 void TileMap::Play()
 {
 	Blocking();
+	Mouse();
 }
 
 void TileMap::Blocking()
@@ -111,6 +112,11 @@ void TileMap::Blocking()
 		_colliders[i]->Block(_player.lock()->GetCollider());
 	}
 	
+}
+
+void TileMap::Mouse()
+{
+	int index = GetMouseToPlayerIndex(W_MOUSE_POS);
 }
 
 void TileMap::ChangeTile()
@@ -193,7 +199,7 @@ int TileMap::GetWorldIndex(Vector2 pos)
 	return sum;
 }
 
-shared_ptr<TileInfo> TileMap::GetMouseToPlayerIndex(Vector2 mousePos) //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
+int TileMap::GetMouseToPlayerIndex(Vector2 mousePos) //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
 {
 	Vector2 mainWorldPos = _player.lock()->GetTransform()->GetWorldPos();
 	Vector2 target = mousePos - mainWorldPos;
@@ -234,7 +240,7 @@ shared_ptr<TileInfo> TileMap::GetMouseToPlayerIndex(Vector2 mousePos) //µµ³¢³ª °
 		index -= 1;
 	}
 
-	return _infos[index];
+	return index;
 }
 
 shared_ptr<MapInfo> TileMap::GetMapInfo()

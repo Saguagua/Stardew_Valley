@@ -22,18 +22,19 @@ public:
 	void LoadMap(shared_ptr<MapInfo> info);
 
 	void SetCameraRange();
-	void SetPlayer(shared_ptr<class Character> player) { _player = player; }
+	void SetPlayer(shared_ptr<class Player> player) { _player = player; }
 	void SetPalette(shared_ptr<class Palette> palette) { _palette = palette; }
 	void SetActive(bool active) { _isActive = active; }
 	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
-	shared_ptr<TileInfo> GetMouseToPlayerIndex(Vector2 pos);
+	int GetMouseToPlayerIndex(Vector2 pos);
 	shared_ptr<MapInfo> GetMapInfo();
 
 private:
 	void Play();
 	void Blocking();
+	void Mouse();
 
 	void ChangeTile();
 
@@ -48,7 +49,7 @@ private:
 
 	vector<shared_ptr<TileInfo>> _infos;
 
-	weak_ptr<class Character> _player;
+	weak_ptr<class Player> _player;
 	weak_ptr<Palette> _palette;
 
 	bool _isActive = false;

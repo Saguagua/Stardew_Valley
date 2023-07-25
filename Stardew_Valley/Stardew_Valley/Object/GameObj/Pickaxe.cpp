@@ -4,11 +4,12 @@
 Pickaxe::Pickaxe(int itemCode)
 	:GameObject(itemCode)
 {
-
 }
 
-void Pickaxe::UseItem()
+int Pickaxe::UseItem()
 {
+
+	return 0;
 }
 
 void Pickaxe::SetProperty()

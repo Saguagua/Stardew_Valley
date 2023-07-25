@@ -11,5 +11,8 @@ protected:
 	void GetDamage(int amount);
 
 	int _hp;
+
+	// GameObject을(를) 통해 상속됨
+	virtual int UseItem() override;
 };
 

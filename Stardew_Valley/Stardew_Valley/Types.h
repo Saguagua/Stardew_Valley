@@ -28,6 +28,9 @@
 
 #define DATA			DataManager::GetInstance()
 
+#define PLAYER			PlayerInfoManager::GetInstance()
+#define PLAYERINFO		PlayerInfoManager::GetInstance()->GetInfo()
+
 #define MOUSE_POS		InputManager::GetInstance()->GetMousePos()
 #define W_MOUSE_POS		Camera::GetInstance()->GetWorldMousePos()
 #define S_MOUSE_POS		Camera::GetInstance()->GetScreenMousePos()

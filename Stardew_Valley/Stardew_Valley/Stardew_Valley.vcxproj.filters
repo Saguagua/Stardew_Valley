@@ -102,9 +102,6 @@
     <ClInclude Include="Framework\TextureMapping\StateManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Character\Character.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\BasicObj\Sprite.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -201,7 +198,10 @@
     <ClInclude Include="Object\GameObj\FishingRod.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\GameObj\UseableItem.h">
+    <ClInclude Include="Object\GameObj\EatableItem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\WateringCan.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -276,9 +276,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\TextureMapping\StateManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Character\Character.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\BasicObj\Sprite.cpp">
@@ -365,7 +362,10 @@
     <ClCompile Include="Object\GameObj\FishingRod.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\GameObj\UseableItem.cpp">
+    <ClCompile Include="Object\GameObj\EatableItem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\WateringCan.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

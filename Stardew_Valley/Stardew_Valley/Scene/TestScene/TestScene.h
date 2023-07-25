@@ -15,5 +15,5 @@ private:
 	shared_ptr<class TileMap> _beachMap;
 	shared_ptr<class TileMap> _dungeonMap;
 
-	shared_ptr<class Character> _character;
+	shared_ptr<class Player> _player;
 };

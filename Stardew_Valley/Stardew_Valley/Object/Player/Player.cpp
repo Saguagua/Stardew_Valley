@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "Player.h"
+#include "../../Data/PlayerInfo.h"
 
 Player::Player()
 {
@@ -14,6 +15,7 @@ Player::Player()
 	_bodySlot->AddPos(Vector2(-5, 0));
 	_bodySlot->SetParent(_collider->GetTransform());
 
+	SetInfos();
 	CreateAction();
 
 	_armActions[_armIndex]->Play();
@@ -45,72 +47,9 @@ void Player::Render()
 
 void Player::KeyInput()
 {
-	if (KEY_PRESS('W'))
-	{
-		if (_armIndex != 2)
-		{
-			_armActions[_armIndex]->Stop();
-			_bodyActions[_bodyIndex]->Stop();
-
-			_armIndex = 2;
-			_bodyIndex = 2;
-
-
-			_armActions[_armIndex]->Play();
-			_bodyActions[_bodyIndex]->Play();
-		}
-
-		_collider->AddPos(Vector2(0, 1) * DELTA_TIME * SPEED);
-	}
-	if (KEY_PRESS('A'))
-	{
-		if (_armIndex != 1)
-		{
-			_armActions[_armIndex]->Stop();
-			_bodyActions[_bodyIndex]->Stop();
-
-			_armIndex = 1;
-			_bodyIndex = 1;
-
-			_armActions[_armIndex]->Play();
-			_bodyActions[_bodyIndex]->Play();
-		}
-		_collider->SetScale(Vector2(-1, 1));
-
-		_collider->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
-	}
-	if (KEY_PRESS('S'))
-	{
-		if (_armIndex != 0)
-		{
-			_armActions[_armIndex]->Stop();
-			_bodyActions[_bodyIndex]->Stop();
-
-			_armIndex = 0;
-			_bodyIndex = 0;
-
-			_armActions[_armIndex]->Play();
-			_bodyActions[_bodyIndex]->Play();
-		}
-		_collider->AddPos(Vector2(0, -1) * DELTA_TIME * SPEED);
-	}
-	if (KEY_PRESS('D'))
-	{
-		if (_armIndex != 1)
-		{
-			_armActions[_armIndex]->Stop();
-			_bodyActions[_bodyIndex]->Stop();
-
-			_armIndex = 1;
-			_bodyIndex = 1;
-
-			_armActions[_armIndex]->Play();
-			_bodyActions[_bodyIndex]->Play();
-		}
-		_collider->SetScale(Vector2(1, 1));
-
-		_collider->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
-	}
+	Move();
+	Items();
+	Mouse();
 }
 
 Vector2 Player::GetWorldPos()
@@ -118,20 +57,230 @@ Vector2 Player::GetWorldPos()
 	return _collider->GetWorldPos();
 }
 
+void Player::SetInfos()
+{
+	shared_ptr<PlayerInfo> info = DATA->GetPlayerInfo();
+
+	_items = info->GetItems();
+	_maxHp = info->GetMaxHP();
+	_hp = info->GetHP();
+	_maxStamina = info->GetMaxStamina();
+	_stamina = info->GetStamina();
+}
+
 void Player::CreateAction()
 {
-	/*shared_ptr<Action> frontRunBody = make_shared<Action>(1, 2, 0, Action::Type::LOOP, 0.25f);
-	shared_ptr<Action> sideRunBody = make_shared<Action>(1, 2, 1, Action::Type::LOOP, 0.25f);
-	shared_ptr<Action> upRunBody = make_shared<Action>(1, 2, 2, Action::Type::LOOP, 0.25f);
-	shared_ptr<Action> frontRunArm = make_shared<Action>(6, 8, 0, Action::Type::LOOP, 0.25f);
-	shared_ptr<Action> sideRunArm = make_shared<Action>(6, 8, 1, Action::Type::LOOP, 0.25f);
-	shared_ptr<Action> upRunArm = make_shared<Action>(6, 8, 2, Action::Type::LOOP, 0.25f);
+	vector<Vector2> frontIdleBody;
+	frontIdleBody.push_back(Vector2(0, 0));
+
+	vector<Vector2> sideIdleBody;
+	sideIdleBody.push_back(Vector2(0, 1));
+
+	vector<Vector2> backIdleBody;
+	backIdleBody.push_back(Vector2(0, 2));
+
+	shared_ptr<Action> frontIdleB = make_shared<Action>(frontIdleBody, Action::Type::LOOP, 0.25f);
+	shared_ptr<Action> sideIdleB = make_shared<Action>(sideIdleBody, Action::Type::LOOP, 0.25f);
+	shared_ptr<Action> backIdleB = make_shared<Action>(backIdleBody, Action::Type::LOOP, 0.25f);
+
+	_bodyActions.push_back(frontIdleB);
+	_bodyActions.push_back(sideIdleB);
+	_bodyActions.push_back(backIdleB);
+
+	vector<Vector2> frontIdleArm;
+	frontIdleArm.push_back(Vector2(6, 0));
+
+	vector<Vector2> sideIdleArm;
+	sideIdleArm.push_back(Vector2(6, 1));
+
+	vector<Vector2> backIdleArm;
+	backIdleArm.push_back(Vector2(6, 2));
+
+
+	shared_ptr<Action> frontIdleA = make_shared<Action>(frontIdleArm, Action::Type::LOOP, 0.25f);
+	shared_ptr<Action> sideIdleA = make_shared<Action>(sideIdleArm, Action::Type::LOOP, 0.25f);
+	shared_ptr<Action> backIdleA = make_shared<Action>(backIdleArm, Action::Type::LOOP, 0.25f);
+
+	_armActions.push_back(frontIdleA);
+	_armActions.push_back(sideIdleA);
+	_armActions.push_back(backIdleA);
+
+	vector<Vector2> frontRunIndex;
+	frontRunIndex.push_back(Vector2(1, 0));
+	frontRunIndex.push_back(Vector2(0, 3));
+	frontRunIndex.push_back(Vector2(2, 0));
+	frontRunIndex.push_back(Vector2(1, 3));
+
+	shared_ptr<Action> frontRunBody = make_shared<Action>(frontRunIndex, Action::Type::LOOP, 0.25f);
+
+	vector<Vector2> sideRunIndex;
+	sideRunIndex.push_back(Vector2(5, 1));
+	sideRunIndex.push_back(Vector2(2, 3));
+	sideRunIndex.push_back(Vector2(5, 2));
+	sideRunIndex.push_back(Vector2(3, 3));
+
+	shared_ptr<Action> sideRunBody = make_shared<Action>(sideRunIndex, Action::Type::LOOP, 0.25f);
+
+	vector<Vector2> backRunIndex;
+	backRunIndex.push_back(Vector2(1, 2));
+	backRunIndex.push_back(Vector2(4, 3));
+	backRunIndex.push_back(Vector2(2, 2));
+	backRunIndex.push_back(Vector2(5, 3));
+
+	shared_ptr<Action> backRunBody = make_shared<Action>(backRunIndex, Action::Type::LOOP, 0.25f);
+
+	vector<Vector2> frontArmIndex;
+	frontArmIndex.push_back(Vector2(7, 0));
+	frontArmIndex.push_back(Vector2(6, 3));
+	frontArmIndex.push_back(Vector2(8, 0));
+	frontArmIndex.push_back(Vector2(7, 3));
+
+	shared_ptr<Action> frontRunArm = make_shared<Action>(frontArmIndex, Action::Type::LOOP, 0.25f);
+
+	vector<Vector2> sideArmIndex;
+	sideArmIndex.push_back(Vector2(11, 1));
+	sideArmIndex.push_back(Vector2(8, 3));
+	sideArmIndex.push_back(Vector2(11, 2));
+	sideArmIndex.push_back(Vector2(9, 3));
+
+	shared_ptr<Action> sideRunArm = make_shared<Action>(sideArmIndex, Action::Type::LOOP, 0.25f);
+
+	vector<Vector2> backArmIndex;
+	backArmIndex.push_back(Vector2(7, 2));
+	backArmIndex.push_back(Vector2(10, 3));
+	backArmIndex.push_back(Vector2(8, 2));
+	backArmIndex.push_back(Vector2(11, 3));
+
+	shared_ptr<Action> backRunArm = make_shared<Action>(backArmIndex, Action::Type::LOOP, 0.25f);
 
 	_bodyActions.push_back(frontRunBody);
 	_bodyActions.push_back(sideRunBody);
-	_bodyActions.push_back(upRunBody);
+	_bodyActions.push_back(backRunBody);
 
 	_armActions.push_back(frontRunArm);
 	_armActions.push_back(sideRunArm);
-	_armActions.push_back(upRunArm);*/
+	_armActions.push_back(backRunArm);
+}
+
+void Player::SetAction(PlayerAction state)
+{
+	_armActions[_armIndex]->Stop();
+	_bodyActions[_bodyIndex]->Stop();
+
+	_armIndex = state;
+	_bodyIndex = state;
+
+	_armActions[_armIndex]->Play();
+	_bodyActions[_bodyIndex]->Play();
+}
+
+void Player::Move()
+{
+	if (KEY_PRESS('W'))
+	{
+		if (_bodyIndex != PlayerAction::BACKRUN)
+		{
+			SetAction(PlayerAction::BACKRUN);
+		}
+
+		_collider->AddPos(Vector2(0, 1) * DELTA_TIME * SPEED);
+	}
+	else if (KEY_UP('W'))
+	{
+		SetAction(PlayerAction::BACKIDLE);
+	}
+
+	if (KEY_PRESS('A'))
+	{
+		if (_bodyIndex != PlayerAction::SIDERUN)
+		{
+			SetAction(PlayerAction::SIDERUN);
+		}
+		_collider->SetScale(Vector2(-1, 1));
+
+		_collider->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
+	}
+	else if (KEY_UP('A'))
+	{
+		SetAction(PlayerAction::SIDEIDLE);
+	}
+
+	if (KEY_PRESS('S'))
+	{
+		if (_armIndex != PlayerAction::FRONTRUN)
+		{
+			SetAction(PlayerAction::FRONTRUN);
+		}
+		_collider->AddPos(Vector2(0, -1) * DELTA_TIME * SPEED);
+	}
+	else if (KEY_UP('S'))
+	{
+		SetAction(PlayerAction::FRONTIDLE);
+	}
+
+	if (KEY_PRESS('D'))
+	{
+		if (_armIndex != PlayerAction::SIDERUN)
+		{
+			SetAction(PlayerAction::SIDERUN);
+		}
+		_collider->SetScale(Vector2(1, 1));
+
+		_collider->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
+	}
+	else if (KEY_UP('D'))
+	{
+		SetAction(PlayerAction::SIDEIDLE);
+	}
+}
+void Player::Items()
+{
+	if (KEY_DOWN('1'))
+	{
+		_itemIndex = 0;
+	}
+	else if (KEY_DOWN('2'))
+	{
+		_itemIndex = 1;
+	}
+	else if (KEY_DOWN('3'))
+	{
+		_itemIndex = 2;
+	}
+	else if (KEY_DOWN('4'))
+	{
+		_itemIndex = 3;
+	}
+	else if (KEY_DOWN('5'))
+	{
+		_itemIndex = 4;
+	}
+	else if (KEY_DOWN('6'))
+	{
+		_itemIndex = 5;
+	}
+	else if (KEY_DOWN('7'))
+	{
+		_itemIndex = 6;
+	}
+	else if (KEY_DOWN('8'))
+	{
+		_itemIndex = 7;
+	}
+	else if (KEY_DOWN('9'))
+	{
+		_itemIndex = 8;
+	}
+	else if (KEY_DOWN('0'))
+	{
+		_itemIndex = 9;
+	}
+}
+
+void Player::Mouse()
+{
+	if (KEY_PRESS(VK_LBUTTON))
+	{
+		_items[_itemIndex]->UseItem();
+	}
 }

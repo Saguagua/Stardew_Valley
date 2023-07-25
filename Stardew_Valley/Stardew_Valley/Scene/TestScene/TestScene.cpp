@@ -1,39 +1,35 @@
 #include "framework.h"
 #include "TestScene.h"
-#include "../../Object/Character/Character.h"
+#include "../../Object/Player/Player.h"
 
 TestScene::TestScene()
 {
-	_character = make_shared<Character>();
-	
+	_player = make_shared<Player>();
 	vector<shared_ptr<MapInfo>> v = DATA->GetMapInfos();
 	
 	_farmmingMap = make_shared<TileMap>(v[0]);
 	
 	_farmmingMap->SetActive(true);
 
-	_farmmingMap->SetPlayer(_character);
+	_farmmingMap->SetPlayer(_player);
 
-	_character->GetTransform()->SetPos(CENTER);
+	_player->GetTransform()->SetPos(CENTER);
 	
-	//_character->SetDebug(true);
 	//_farmmingMap->SetDebug(true);
-
-	_character->Update();
+	_player->Update();
 	_farmmingMap->SetCameraRange();
-	CAMERA->SetTarget(_character->GetTransform());
+	CAMERA->SetTarget(_player->GetTransform());
 	CAMERA->Update();
 }
 
 void TestScene::Update()
 {
 	_farmmingMap->Update();
-	
-	_character->Update();
+	_player->Update();
 }
 
 void TestScene::Render()
 {
 	_farmmingMap->Render();
-	_character->Render();
+	_player->Render();
 }
