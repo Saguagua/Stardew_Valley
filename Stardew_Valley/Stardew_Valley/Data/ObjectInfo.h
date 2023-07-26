@@ -16,7 +16,9 @@ public:
 		HOE,
 		WATERINGCAN,
 		FISHINGROD,
-		WEAPON
+		WEAPON,
+		SEED,
+		FARMMING
 	};
 
 	ObjectInfo(string name, vector<int> vals)

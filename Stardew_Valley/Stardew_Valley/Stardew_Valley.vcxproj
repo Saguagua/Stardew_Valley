@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\Tile\TileType\ArableTile.h" />
     <ClInclude Include="Data\ObjectInfo.h" />
+    <ClInclude Include="Object\Tile\TileType\FishableTile.h" />
     <ClInclude Include="Object\GameObj\ObjType\DropItem.h" />
     <ClInclude Include="Object\GameObj\ObjectSpawner.h" />
     <ClInclude Include="Object\GameObj\ObjType\EatableItem.h" />
@@ -220,6 +222,8 @@
     <ClInclude Include="Object\UI\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\Tile\TileType\ArableTile.cpp" />
+    <ClCompile Include="Object\Tile\TileType\FishableTile.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\DropItem.cpp" />
     <ClCompile Include="Object\GameObj\ObjectSpawner.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\EatableItem.cpp" />
@@ -281,7 +285,6 @@
     <ClCompile Include="Map\TileMap.cpp" />
     <ClCompile Include="Object\UI\TextureButton.cpp" />
     <ClCompile Include="Object\UI\Window.cpp" />
-    <ClCompile Include="Data\TileInfo.cpp" />
     <ClCompile Include="Object\Tile\Tile.cpp" />
   </ItemGroup>
   <ItemGroup>

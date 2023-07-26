@@ -3,6 +3,8 @@
 
 MapToolScene::MapToolScene()
 {
+	ObjectSpawner::Create();
+	DATA->ReadMaps();
 	TileMap::Create();
 	Palette::Create();
 	TILEMAP->SetDebug(true);
@@ -13,6 +15,7 @@ MapToolScene::~MapToolScene()
 {
 	Palette::Delete();
 	TileMap::Delete();
+	ObjectSpawner::Delete();
 }
 
 void MapToolScene::Update()

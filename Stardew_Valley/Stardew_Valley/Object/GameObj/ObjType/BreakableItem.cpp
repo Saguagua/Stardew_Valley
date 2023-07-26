@@ -14,6 +14,6 @@ void BreakableItem::GetDamage(int amount)
 	}
 }
 
-void BreakableItem::UseItem()
+void BreakableItem::Interaction()
 {
 }

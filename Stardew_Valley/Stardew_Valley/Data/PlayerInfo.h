@@ -15,6 +15,7 @@ public:
 	short GetStamina() { return _stamina; }
 	short GetMaxStamina() { return _maxStamina; }
 	vector<shared_ptr<GameObject>> GetItems() { return _items; }
+	shared_ptr<GameObject> GetItem(int index) { return _items[index]; }
 
 	void AddHP(short amount) { _hp += amount; }
 	void AddMaxHP(short amount) { _maxHp += amount; }

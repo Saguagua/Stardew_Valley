@@ -216,6 +216,12 @@
     <ClInclude Include="Object\Tile\Tile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Tile\TileType\FishableTile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Tile\TileType\ArableTile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -353,9 +359,6 @@
     <ClCompile Include="Framework\Animation\Action.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Data\TileInfo.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Object\Player\Player.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -387,6 +390,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Tile\Tile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Tile\TileType\FishableTile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Tile\TileType\ArableTile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -48,7 +48,7 @@ void TextureRect::SetCurFrame(int index)
 {
 	Vector2 maxFrame = _fBuffer->GetMaxFrame();
 	_curFrame.x = index % (int)maxFrame.x;
-	_curFrame.y = index / (int)maxFrame.y;
+	_curFrame.y = index / (int)maxFrame.x;
 	_fBuffer->SetStart(_curFrame);
 	_fBuffer->Update();
 }

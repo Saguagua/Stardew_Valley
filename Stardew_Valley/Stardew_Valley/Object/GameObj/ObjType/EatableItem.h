@@ -5,7 +5,7 @@ public:
 	EatableItem(int itemCode, short count);
 	~EatableItem() {}
 	
-	virtual void UseItem() override;
+	virtual void Interaction() override;
 protected:
 	short _maxHpCost;
 	short _hpCost;

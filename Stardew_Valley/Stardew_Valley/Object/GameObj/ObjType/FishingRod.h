@@ -3,9 +3,7 @@ class FishingRod:public GameObject
 {
 public:
 
+	virtual void Interaction() override;
 private:
-
-	// GameObject을(를) 통해 상속됨
-	virtual void UseItem() override;
 };
 

@@ -10,7 +10,7 @@ TileMap* TileMap::_instance = nullptr;
 
 TileMap::TileMap()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 9; i++)
 	{
 		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE);
 		_colliders.push_back(col);
@@ -28,8 +28,8 @@ TileMap::TileMap()
 		for (int j = 0; j < MAP_SIZE.x; j++)
 		{
 			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i) + TILE_SIZE * 0.5f;
-			int tileIndex = tileMaxFrame.x - 1 + tileMaxFrame.y - 1 * tileMaxFrame.x;
-			int objIndex = objectMaxFrame.x - 1 + objectMaxFrame.y - 1 * objectMaxFrame.x;
+			int tileIndex = tileMaxFrame.x - 1 + (tileMaxFrame.y - 1) * tileMaxFrame.x;
+			int objIndex = objectMaxFrame.x - 1 + (objectMaxFrame.y - 1) * objectMaxFrame.x;
 			shared_ptr<Tile> tile = make_shared<Tile>(pos, tileIndex, objIndex);
 
 			_tiles.push_back(tile);
@@ -49,6 +49,7 @@ void TileMap::Update()
 void TileMap::Play()
 {
 	Blocking();
+	Mouse();
 }
 
 void TileMap::Blocking()
@@ -74,12 +75,25 @@ void TileMap::Blocking()
 
 		int bitFlag = _tiles[index]->GetBitFlag();
 
-		if (!(bitFlag & TileInfo::Type::BLOCK) && _tiles[index]->GetObj() == nullptr)
+		if (!(bitFlag & TileInfo::Type::BLOCK) && _tiles[index]->GetObjectCode() == 103)
 			continue;
 
 		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
 		_colliders[i]->GetTransform()->Update_SRT();
 		_colliders[i]->Block(PLAYER->GetCollider());
+	}
+}
+
+void TileMap::Mouse()
+{
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		shared_ptr<Tile> tile = GetMouseToPlayerIndex(W_MOUSE_POS);
+		int bitFlag = tile->GetBitFlag();
+
+		tile->Interaction();
+
+		shared_ptr<GameObject> obj = tile->GetObj();
 	}
 }
 

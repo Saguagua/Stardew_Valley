@@ -54,6 +54,8 @@ public:
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 	shared_ptr<CircleCollider> GetCollider() { return _col; }
 	Vector2 GetWorldPos();
+
+	shared_ptr<class GameObject> GetSelectedItem();
 private:
 	void SetInfos()
 	{

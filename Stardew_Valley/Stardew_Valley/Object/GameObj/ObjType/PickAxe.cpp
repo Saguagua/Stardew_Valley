@@ -4,7 +4,7 @@
 #include "../../Tile/Tile.h"
 #include "PickAxe.h"
 
-void PickAxe::UseItem()
+void PickAxe::Interaction()
 {
 	shared_ptr<Tile> info = TILEMAP->GetMouseToPlayerIndex(W_MOUSE_POS);
 	shared_ptr<GameObject> obj = info->GetObj();

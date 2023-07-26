@@ -6,7 +6,7 @@ EatableItem::EatableItem(int itemCode, short count)
 {
 }
 
-void EatableItem::UseItem()
+void EatableItem::Interaction()
 {
 	PLAYER->AddMaxHP(_maxHpCost);
 	PLAYER->AddHP(_hpCost);

@@ -69,5 +69,6 @@ bool CircleCollider::Block(shared_ptr<CircleCollider> other)
 float CircleCollider::GetWorldRadius()
 {
 	Vector2 worldScale = _transform->GetWorldScale();
+	worldScale.x = abs(worldScale.x);
 	return _radius * (worldScale.x + worldScale.y) / 2;
 }

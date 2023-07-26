@@ -1,6 +1,6 @@
 #include "framework.h"
 #include "FishingRod.h"
 
-void FishingRod::UseItem()
+void FishingRod::Interaction()
 {
 }

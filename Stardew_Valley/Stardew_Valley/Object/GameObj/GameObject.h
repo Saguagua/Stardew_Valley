@@ -14,7 +14,7 @@ public:
 	int GetCode() { return _itemCode; }
 	short GetCount() { return _count; }
 	
-	virtual void UseItem() abstract;
+	virtual void Interaction() {};
 
 protected:
 	ObjectInfo::Type _type = ObjectInfo::Type::NONE;

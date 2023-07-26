@@ -1,5 +1,5 @@
 #pragma once
-class Tile
+class Tile :public enable_shared_from_this<Tile>
 {
 public:
 	enum Type
@@ -24,7 +24,8 @@ public:
 	void SetObject(shared_ptr<GameObject> obj) { _obj = obj; }
 	void SetObject(int code) { _obj = ObjectSpawner::CreateObj(code); }
 	void SetBitFlag(int bitFlag) { _bitFlag = bitFlag; }
-
+	
+	virtual void Interaction();
 private:
 	shared_ptr<GameObject> _obj;
 	Vector2 _centerPos;

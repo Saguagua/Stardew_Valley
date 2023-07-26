@@ -67,7 +67,7 @@ shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode)
 		break;
 	}
 
-    return nullptr;
+    return make_shared<GameObject>(itemCode);
 }
 
 void ObjectSpawner::Update()

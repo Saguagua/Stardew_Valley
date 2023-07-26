@@ -39,6 +39,7 @@ private:
 	void SetCameraRange();
 	void Play();
 	void Blocking();
+	void Mouse();
 
 	void ChangeTile();
 

@@ -1,6 +1,6 @@
 #include "framework.h"
 #include "Hoe.h"
 
-void Hoe::UseItem()
+void Hoe::Interaction()
 {
 }

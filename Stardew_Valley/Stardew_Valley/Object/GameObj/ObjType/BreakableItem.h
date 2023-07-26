@@ -5,7 +5,7 @@ public:
 	BreakableItem(int itemCode, short count, short hp);
 	~BreakableItem() {}
 
-	virtual void UseItem() override;
+	virtual void Interaction() override;
 
 	void SetPos(Vector2 pos) { _pos = pos; }
 	void GetDamage(int amount);

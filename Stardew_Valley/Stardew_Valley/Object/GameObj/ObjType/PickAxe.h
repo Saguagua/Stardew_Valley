@@ -6,7 +6,7 @@ public:
 		:GameObject(itemCode), _damage(damage), _cost(cost) {}
 	virtual ~PickAxe() {}
 
-	virtual void UseItem() override;
+	virtual void Interaction() override;
 private:
 	short _damage;
 	short _cost;

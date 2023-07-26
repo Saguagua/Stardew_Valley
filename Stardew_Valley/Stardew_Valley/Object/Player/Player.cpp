@@ -14,7 +14,7 @@ Player::Player()
 	_body->SetCurFrame(Vector2(3, 0));
 	_arm->SetCurFrame(Vector2(0, 0));
 
-	_bodySlot->AddPos(Vector2(-5, 0));
+	_bodySlot->AddPos(Vector2(0, 15));
 	_bodySlot->SetParent(_col->GetTransform());
 
 	SetInfos();
@@ -49,12 +49,17 @@ void Player::KeyInput()
 {
 	Move();
 	Items();
-	Mouse();
+	//Mouse();
 }
 
 Vector2 Player::GetWorldPos()
 {
 	return _col->GetWorldPos();
+}
+
+shared_ptr<GameObject> Player::GetSelectedItem()
+{
+	return _playerInfo->GetItem(_selectedItemIndex);
 }
 
 void Player::AddMaxHP(short amount)
@@ -242,6 +247,7 @@ void Player::Move()
 		SetAction(PlayerAction::SIDEIDLE);
 	}
 }
+
 void Player::Items()
 {
 	if (KEY_DOWN('1'))
@@ -288,8 +294,4 @@ void Player::Items()
 
 void Player::Mouse()
 {
-	if (KEY_PRESS(VK_LBUTTON))
-	{
-		_playerInfo->GetItems()[_selectedItemIndex]->UseItem();
-	}
 }

@@ -78,6 +78,12 @@ shared_ptr<MapInfo> DataManager::LoadMap(string mapName)
 
 		shared_ptr<Tile> info = make_shared<Tile>(pos, tileCode, objectCode);
 		infos.push_back(info);
+		x++;
+		if (x == MAP_SIZE.x)
+		{
+			x = 0;
+			y++;
+		}
 	}
 
 	fin.close();
@@ -146,7 +152,6 @@ void DataManager::ReadObjectFile()
 		shared_ptr<ObjectInfo> obj = make_shared<ObjectInfo>(name, vals);
 		_objInfos.push_back(obj);
 	}
-	_objInfos.pop_back();
 	_fin.close();
 }
 

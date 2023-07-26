@@ -1,4 +1,6 @@
 #pragma once
+#include "framework.h"
+
 class TileInfo
 {
 public:
@@ -7,8 +9,7 @@ public:
 		NONE,
 		BLOCK = (1 << 0),
 		FARMING = (1 << 1),
-		FISHING = (1 << 2),
-		ITEM = (1 << 3)
+		FISHING = (1 << 2)
 	};
 
 	TileInfo(int bitFlag)

@@ -11,7 +11,7 @@ public:
 	shared_ptr<CircleCollider> GetCollider() { return _col; }
 	bool IsActive() { return _isActive; }
 
-	virtual void UseItem() {}
+	virtual void Interaction() {}
 
 	void Spawn(Vector2 pos, int itemCode);
 private:
