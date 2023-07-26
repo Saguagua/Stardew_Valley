@@ -23,6 +23,5 @@ void TextureButton::Render()
 void TextureButton::Update()
 {
 	_col->Update();
-	_renderer->Update();
 	Button::Update();
 }

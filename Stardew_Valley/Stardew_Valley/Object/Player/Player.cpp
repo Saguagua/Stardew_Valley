@@ -35,8 +35,6 @@ void Player::Update()
 	_armActions[_armIndex]->Update();
 	_body->SetCurFrame(_bodyActions[_bodyIndex]->GetCurFrame());
 	_arm->SetCurFrame(_armActions[_armIndex]->GetCurFrame());
-	_body->Update();
-	_arm->Update();
 }
 
 void Player::Render()

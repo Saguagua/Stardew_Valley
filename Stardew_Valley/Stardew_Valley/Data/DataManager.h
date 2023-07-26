@@ -30,13 +30,17 @@ public:
 
 	Vector2 GetTileMaxFrame() { return _tileMaxFrame; }
 	Vector2 GetObjectMaxFrame() { return _objectMaxFrame; }
+
 	vector<shared_ptr<MapInfo>> GetMapInfos() { return _mapInfos; }
-	vector<int>& GetTypes() { return _frameTypes; }
 	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
 
+	vector<shared_ptr<class TileInfo>>& GetTileInfos() { return _tileInfos; }
+	shared_ptr<class TileInfo> GetTileInfo(int tileCode) { return _tileInfos[tileCode]; }
+	vector<shared_ptr<class ObjectInfo>> GetObjectInfos() { return _objInfos; }
+	shared_ptr<ObjectInfo> GetObjectInfo(int index) { return _objInfos[index]; }
 
-private:
 	void ReadMaps();
+private:
 	void ReadTileTypes();
 	void ReadObjectFile();
 	void ReadPlayerFile();
@@ -45,7 +49,9 @@ private:
 	shared_ptr<PlayerInfo> _playerInfo;
 	vector<shared_ptr<MapInfo>> _mapInfos;
 	unordered_map<string, bool> _mapTable;
-	vector<int> _frameTypes;
+	vector<shared_ptr<ObjectInfo>> _objInfos;
+	vector<shared_ptr<TileInfo>> _tileInfos;
+
 	Vector2 _tileMaxFrame;
 	Vector2 _objectMaxFrame;
 

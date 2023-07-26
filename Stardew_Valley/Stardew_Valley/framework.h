@@ -86,6 +86,7 @@ using namespace Microsoft::WRL;
 
 //GameObject
 #include "Object/GameObj/GameObject.h"
+#include "Object/GameObj/ObjectSpawner.h"
 
 //Map
 #include "Map/TileMap.h"

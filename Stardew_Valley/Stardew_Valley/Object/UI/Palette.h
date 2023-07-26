@@ -29,8 +29,8 @@ public:
 	void SetPos(Vector2 pos) { _mainRect->SetPos(pos); }
 
 	Vector2 GetSize() { return _size; }
-	Vector2 GetCurTileFrame();
-	Vector2 GetCurObjectFrame();
+	int GetCurTileCode();
+	int GetCurObjectCode();
 	int GetIndex() { return _chartIndex; }
 	bool GetFocus() { return _onFocus; }
 

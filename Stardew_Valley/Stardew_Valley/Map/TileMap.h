@@ -2,15 +2,6 @@
 
 class TileMap
 {
-	enum Type
-	{
-		NONE,
-		MOVEABLE = (1 << 0),
-		BLOCK = (1 << 1),
-		FARMING = (1 << 2),
-		FISHING = (1 << 3)
-	};
-
 	TileMap();
 	~TileMap() {}
 public:
@@ -40,15 +31,14 @@ public:
 	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
-	int GetMouseToPlayerIndex(Vector2 pos);
-	vector<shared_ptr<class MapInfo>>& GetMapInfo() { return _mapInfos; }
+	shared_ptr<class Tile> GetMouseToPlayerIndex(Vector2 pos);
+	vector<shared_ptr<MapInfo>>& GetMapInfo() { return _mapInfos; }
 
 	void ChangeMap(int index);
 private:
 	void SetCameraRange();
 	void Play();
 	void Blocking();
-	void Mouse();
 
 	void ChangeTile();
 
@@ -57,16 +47,12 @@ private:
 	shared_ptr<TextureRect> _tileRenderer;
 	shared_ptr<TextureRect> _objectRenderer;
 
-	Vector2 _tileMaxFrame;
-	Vector2 _objectMaxFrame;
-	vector<int> _frameTypes;
-
 	vector<shared_ptr<RectCollider>> _colliders;
 
 	vector<shared_ptr<class MapInfo>> _mapInfos;
+	vector<shared_ptr<class Tile>> _tiles;
 
-	string _mapName;
-	Vector2 _mapSize;
-	vector<shared_ptr<class TileInfo>> _tileInfos;
+	string _curMapName;
+	Vector2 _curMapSize;
 };
 

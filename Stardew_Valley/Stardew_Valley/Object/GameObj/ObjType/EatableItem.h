@@ -4,8 +4,8 @@ class EatableItem : public GameObject
 public:
 	EatableItem(int itemCode, short count);
 	~EatableItem() {}
-
-	virtual int UseItem() override;
+	
+	virtual void UseItem() override;
 protected:
 	short _maxHpCost;
 	short _hpCost;

@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "MapInfo.h"
+#include "ObjectInfo.h"
 #include "PlayerInfo.h"
 #include "TileInfo.h"
 #include "DataManager.h"
@@ -10,7 +11,6 @@ DataManager::DataManager()
 {
 	ReadTileTypes();
 	ReadObjectFile();
-	ReadMaps();
 	ReadPlayerFile();
 }
 
@@ -20,7 +20,7 @@ void DataManager::SaveMaps(vector<shared_ptr<MapInfo>> infos)
 	{
 		string name = infos[i]->GetName();
 		Vector2 size = infos[i]->GetSize();
-		vector<shared_ptr<TileInfo>> tileInfo = infos[i]->GetInfos();
+		vector<shared_ptr<Tile>> tileInfo = infos[i]->GetInfos();
 
 		if (_mapTable.count(name) == false)
 		{
@@ -35,20 +35,10 @@ void DataManager::SaveMaps(vector<shared_ptr<MapInfo>> infos)
 
 		_fout << size.x << " " << size.y << endl;
 
-		Vector2 tileFrame;
-		Vector2 objectFrame;
-		int tileIndex;
-		int objectIndex;
-
 		for (int i = 0; i < tileInfo.size(); i++)
 		{
-			tileFrame = tileInfo[i]->GetTileFrame();
-			tileIndex = (int)tileFrame.x + (int)tileFrame.y * (int)_tileMaxFrame.x;
-			_fout << tileIndex << " ";
-
-			objectFrame = tileInfo[i]->GetObjectFrame();
-			objectIndex = (int)objectFrame.x + (int)objectFrame.y * (int)_objectMaxFrame.x;
-			_fout << objectIndex;
+			_fout << tileInfo[i]->GetTileCode() << " ";
+			_fout << tileInfo[i]->GetObjectCode();;
 
 			if ((i + 1) % (int)size.x == 0)
 				_fout << endl;
@@ -72,39 +62,22 @@ shared_ptr<MapInfo> DataManager::LoadMap(string mapName)
 	fin >> size.x;
 	fin >> size.y;
 
-	vector<shared_ptr<TileInfo>> infos;
+	vector<shared_ptr<Tile>> infos;
 
 	int x = 0;
 	int y = 0;
-	int tileIndex;
-	int objectIndex;
-	Vector2 tileFrame;
-	Vector2 objectFrame;
+	int tileCode;
+	int objectCode;
 
 	while (!fin.eof())
 	{
-		fin >> tileIndex;
-		tileFrame.x = tileIndex % (int)_tileMaxFrame.x;
-		tileFrame.y = tileIndex / (int)_tileMaxFrame.x;
-
-		fin >> objectIndex;
-		objectFrame.x = objectIndex % (int)_objectMaxFrame.x;
-		objectFrame.y = objectIndex / (int)_objectMaxFrame.x;
+		fin >> tileCode;
+		fin >> objectCode;
 
 		Vector2 pos = Vector2(TILE_SIZE.x * x, TILE_SIZE.y * y) + TILE_SIZE * 0.5f;
 
-		shared_ptr<TileInfo> info = make_shared<TileInfo>();
-		info->SetTileFrame(tileFrame);
-		info->SetObjectFrame(objectFrame);
-		info->SetCenterPos(pos);
+		shared_ptr<Tile> info = make_shared<Tile>(pos, tileCode, objectCode);
 		infos.push_back(info);
-
-		x++;
-		if (x == MAP_SIZE.x - 1)
-		{
-			y++;
-			x = 0;
-		}
 	}
 
 	fin.close();
@@ -142,9 +115,10 @@ void DataManager::ReadTileTypes()
 	while (!_fin.eof())
 	{
 		int type;
-
 		_fin >> type;
-		_frameTypes.push_back(type);
+
+		shared_ptr<TileInfo> info = make_shared<TileInfo>(type);
+		_tileInfos.push_back(info);
 	}
 
 	_fin.close();
@@ -157,6 +131,22 @@ void DataManager::ReadObjectFile()
 	_fin >> _objectMaxFrame.x;
 	_fin >> _objectMaxFrame.y;
 
+	while (!_fin.eof())
+	{
+		string name;
+		vector<int> vals;
+
+		_fin >> name;
+		for (int i = 0; i < 7; i++)
+		{
+			int tmp;
+			_fin >> tmp;
+			vals.push_back(tmp);
+		}
+		shared_ptr<ObjectInfo> obj = make_shared<ObjectInfo>(name, vals);
+		_objInfos.push_back(obj);
+	}
+	_objInfos.pop_back();
 	_fin.close();
 }
 

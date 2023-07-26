@@ -48,23 +48,14 @@ void Palette::Update()
 	_saveList->Update();
 }
 
-Vector2 Palette::GetCurTileFrame()
+int Palette::GetCurTileCode()
 {
-	int index = _tileList->GetCurIndex();
-
-	if (index == -1)
-		return Vector2(-1, -1);
-
-	return Vector2(index % (int)_tileMaxFrame.x, index / (int)_tileMaxFrame.x);
+	return _tileList->GetCurIndex();;
 }
 
-Vector2 Palette::GetCurObjectFrame()
+int Palette::GetCurObjectCode()
 {
-	int index = _objectList->GetCurIndex();
-
-	if (index == -1)
-		return Vector2(-1, -1);
-	return Vector2(index % (int)_objectMaxFrame.x, index / (int)_objectMaxFrame.x);
+	return _objectList->GetCurIndex();
 }
 
 void Palette::Move()

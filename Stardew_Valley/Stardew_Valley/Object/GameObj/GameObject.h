@@ -1,21 +1,24 @@
 #pragma once
+#include "../../Data/ObjectInfo.h"
+
 class GameObject
 {
 public:
-	GameObject(int itemCode, short count = 1);
+	GameObject(int itemCode, short count = 1)
+		:_itemCode(itemCode), _count(count) {}
 	~GameObject() {}
 
-	void Update();
-	void Render();
+	void SetCode(int code) { _itemCode = code; }
 
-	void SetPos(Vector2 pos);
-	void SetFrame(Vector2 frame);
+	ObjectInfo::Type GetType() { return _type; }
+	int GetCode() { return _itemCode; }
+	short GetCount() { return _count; }
 	
-	virtual int UseItem() abstract;
+	virtual void UseItem() abstract;
+
 protected:
+	ObjectInfo::Type _type = ObjectInfo::Type::NONE;
 	int _itemCode;
-	int _price;
 	short _count;
-	short _maxCount;
 };
 

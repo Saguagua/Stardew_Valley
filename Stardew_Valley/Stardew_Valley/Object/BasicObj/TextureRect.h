@@ -6,9 +6,9 @@ public:
 	~TextureRect() {}
 
 	virtual void Render();
-	virtual void Update();
 
 	void SetCurFrame(Vector2 frame);
+	void SetCurFrame(int index);
 
 	Vector2 GetMaxFrame() { return _fBuffer->GetMaxFrame(); }
 	Vector2 GetCurFrame() { return _curFrame; }

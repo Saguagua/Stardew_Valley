@@ -151,17 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Object\GameObj\EatableItem.h" />
-    <ClInclude Include="Object\GameObj\FishingRod.h" />
-    <ClInclude Include="Object\GameObj\Axe.h" />
+    <ClInclude Include="Data\ObjectInfo.h" />
+    <ClInclude Include="Object\GameObj\ObjType\DropItem.h" />
+    <ClInclude Include="Object\GameObj\ObjectSpawner.h" />
+    <ClInclude Include="Object\GameObj\ObjType\EatableItem.h" />
+    <ClInclude Include="Object\GameObj\ObjType\FishingRod.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Axe.h" />
     <ClInclude Include="Framework\Animation\Action.h" />
-    <ClInclude Include="Object\GameObj\Hoe.h" />
-    <ClInclude Include="Object\GameObj\BreakableItem.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Hoe.h" />
+    <ClInclude Include="Object\GameObj\ObjType\BreakableItem.h" />
     <ClInclude Include="Object\GameObj\GameObject.h" />
     <ClInclude Include="Object\GameObj\ItemInfo.h" />
-    <ClInclude Include="Object\GameObj\WateringCan.h" />
+    <ClInclude Include="Object\GameObj\ObjType\WateringCan.h" />
     <ClInclude Include="Object\Player\Player.h" />
-    <ClInclude Include="Object\GameObj\Pickaxe.h" />
+    <ClInclude Include="Object\GameObj\ObjType\PickAxe.h" />
     <ClInclude Include="Data\MapInfo.h" />
     <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
@@ -170,6 +173,7 @@
     <ClInclude Include="Object\UI\Palette.h" />
     <ClInclude Include="Data\PlayerInfo.h" />
     <ClInclude Include="Data\DataManager.h" />
+    <ClInclude Include="Object\GameObj\ObjType\PickableItem.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
     <ClInclude Include="Framework\Utility\MathUtility.h" />
@@ -211,26 +215,30 @@
     <ClInclude Include="Map\TileMap.h" />
     <ClInclude Include="Object\UI\TextureButton.h" />
     <ClInclude Include="Data\TileInfo.h" />
+    <ClInclude Include="Object\Tile\Tile.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="Object\UI\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Object\GameObj\EatableItem.cpp" />
-    <ClCompile Include="Object\GameObj\FishingRod.cpp" />
-    <ClCompile Include="Object\GameObj\Axe.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\DropItem.cpp" />
+    <ClCompile Include="Object\GameObj\ObjectSpawner.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\EatableItem.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\FishingRod.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Axe.cpp" />
     <ClCompile Include="Framework\Animation\Action.cpp" />
-    <ClCompile Include="Object\GameObj\Hoe.cpp" />
-    <ClCompile Include="Object\GameObj\BreakableItem.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Hoe.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\BreakableItem.cpp" />
     <ClCompile Include="Object\GameObj\GameObject.cpp" />
-    <ClCompile Include="Object\GameObj\WateringCan.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\WateringCan.cpp" />
     <ClCompile Include="Object\UI\List.cpp" />
     <ClCompile Include="Object\UI\ColorButton.cpp" />
     <ClCompile Include="Object\UI\Button.cpp" />
     <ClCompile Include="Object\BasicObj\SingleColorRect.cpp" />
     <ClCompile Include="Object\UI\Palette.cpp" />
     <ClCompile Include="Object\Player\Player.cpp" />
-    <ClCompile Include="Object\GameObj\Pickaxe.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\PickAxe.cpp" />
     <ClCompile Include="Data\DataManager.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\PickableItem.cpp" />
     <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
     <ClCompile Include="Object\BasicObj\CircleLine.cpp" />
@@ -274,6 +282,7 @@
     <ClCompile Include="Object\UI\TextureButton.cpp" />
     <ClCompile Include="Object\UI\Window.cpp" />
     <ClCompile Include="Data\TileInfo.cpp" />
+    <ClCompile Include="Object\Tile\Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />

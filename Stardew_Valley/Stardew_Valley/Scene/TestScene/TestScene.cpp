@@ -5,6 +5,8 @@
 
 TestScene::TestScene()
 {
+	ObjectSpawner::Create();
+	DATA->ReadMaps();
 	Player::Create();
 	TileMap::Create();
 
@@ -19,6 +21,7 @@ TestScene::~TestScene()
 {
 	TileMap::Delete();
 	Player::Delete();
+	ObjectSpawner::Delete();
 }
 
 void TestScene::Update()
