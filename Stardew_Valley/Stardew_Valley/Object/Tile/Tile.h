@@ -5,12 +5,13 @@ public:
 	enum Type
 	{
 		NONE,
-		BLOCK = (1 << 0),
-		FARMING = (1 << 1),
-		FISHING = (1 << 2)
+		BLOCK,
+		FARMING,
+		FISHING
 	};
 
 	Tile(Vector2 pos, int tileCode, int objCode);
+	Tile(Vector2 pos, int tileCode, int bitFlag, int objCode);
 	~Tile() {}
 
 	shared_ptr<GameObject> GetObj() { return _obj; }

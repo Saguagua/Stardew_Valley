@@ -3,6 +3,8 @@
 #include "ObjectInfo.h"
 #include "PlayerInfo.h"
 #include "TileInfo.h"
+#include "../Object/Tile/TileType/ArableTile.h"
+#include "../Object/Tile/TileType/FishableTile.h"
 #include "DataManager.h"
 
 DataManager* DataManager::_instance = nullptr;
@@ -76,8 +78,23 @@ shared_ptr<MapInfo> DataManager::LoadMap(string mapName)
 
 		Vector2 pos = Vector2(TILE_SIZE.x * x, TILE_SIZE.y * y) + TILE_SIZE * 0.5f;
 
-		shared_ptr<Tile> info = make_shared<Tile>(pos, tileCode, objectCode);
+		shared_ptr<Tile> info;
+		int bitFlag = _tileInfos[tileCode]->GetBitFlag();
+		if (bitFlag & TileInfo::Type::FARMING)
+		{
+			info = make_shared<ArableTile>(pos, tileCode, bitFlag, objectCode);
+		}
+		else if (bitFlag & TileInfo::Type::FISHING)
+		{
+			info = make_shared<FishableTile>(pos, tileCode, bitFlag, objectCode);
+		}
+		else
+		{
+			info = make_shared<Tile>(pos, tileCode, bitFlag, objectCode);
+		}
+		
 		infos.push_back(info);
+
 		x++;
 		if (x == MAP_SIZE.x)
 		{

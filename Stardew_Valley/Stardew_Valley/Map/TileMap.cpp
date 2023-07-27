@@ -92,8 +92,6 @@ void TileMap::Mouse()
 		int bitFlag = tile->GetBitFlag();
 
 		tile->Interaction();
-
-		shared_ptr<GameObject> obj = tile->GetObj();
 	}
 }
 

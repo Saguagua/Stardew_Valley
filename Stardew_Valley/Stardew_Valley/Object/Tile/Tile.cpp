@@ -13,6 +13,12 @@ Tile::Tile(Vector2 pos, int tileCode, int objCode)
 	_bitFlag = DATA->GetTileInfo(tileCode)->GetBitFlag();
 }
 
+Tile::Tile(Vector2 pos, int tileCode, int bitFlag, int objCode)
+	:_centerPos(pos), _bitFlag(bitFlag), _tileCode(tileCode)
+{
+	_obj = ObjectSpawner::CreateObj(objCode);
+}
+
 void Tile::Interaction()
 {
 	switch (_obj->GetType())
