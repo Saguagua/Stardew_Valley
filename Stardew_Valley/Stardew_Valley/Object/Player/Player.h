@@ -56,6 +56,7 @@ public:
 	Vector2 GetWorldPos();
 
 	shared_ptr<class GameObject> GetSelectedItem();
+	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
 private:
 	void SetInfos()
 	{

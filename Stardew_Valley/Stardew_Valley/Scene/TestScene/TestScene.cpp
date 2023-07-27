@@ -6,7 +6,7 @@
 TestScene::TestScene()
 {
 	ObjectSpawner::Create();
-	DATA->ReadMaps();
+	DATA->Load("Test");
 	Player::Create();
 	TileMap::Create();
 

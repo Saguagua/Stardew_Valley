@@ -1,3 +1,4 @@
+#include <atlstr.h>
 #include "framework.h"
 #include "MapInfo.h"
 #include "ObjectInfo.h"
@@ -9,56 +10,145 @@
 
 DataManager* DataManager::_instance = nullptr;
 
+
 DataManager::DataManager()
 {
+	ReadMaps();
 	ReadTileTypes();
 	ReadObjectFile();
-	ReadPlayerFile();
+	ReadPlayers();
 }
 
-void DataManager::SaveMaps(vector<shared_ptr<MapInfo>> infos)
+void DataManager::Save()
 {
+	CString path;
+	TCHAR programPath[_MAX_PATH];
+	GetModuleFileName(NULL, programPath, _MAX_PATH);
+	GetCurrentDirectory(_MAX_PATH, programPath);
+	path += programPath;
+	path += L"/";
+	path += PLAYER->GetPlayerInfo()->GetName().c_str();
+	CreateDirectory(path, NULL);
+
+	SaveMaps();
+	SavePlayerInfo();
+}
+
+void DataManager::Load(string name)
+{
+	for (pair<string, bool> iter : _mapTable)
+	{
+		LoadMap(name, iter.first);
+	}
+
+	LoadPlayerInfo(name);
+}
+
+void DataManager::SaveMaps()
+{
+	vector<shared_ptr<MapInfo>> infos = TILEMAP->GetMapInfos();
+	string playerName = PLAYER->GetPlayerInfo()->GetName();
+	ofstream fout;
+
 	for (int i = 0; i < infos.size(); i++)
 	{
-		string name = infos[i]->GetName();
+		string mapName = infos[i]->GetName();
 		Vector2 size = infos[i]->GetSize();
 		vector<shared_ptr<Tile>> tileInfo = infos[i]->GetInfos();
 
-		if (_mapTable.count(name) == false)
+		if (_mapTable.count(mapName) == false)
 		{
-			_mapTable[name] = true;
+			_mapTable[mapName] = true;
 
-			_fout.open("Data/Contents/MapNames.txt", std::ios::app);
-			_fout << endl << name;
-			_fout.close();
+			fout.open("Data/Contents/MapNames.txt", std::ios::app);
+			fout << endl << mapName;
+			fout.close();
 		}
 
-		_fout.open("Data/SaveFiles/" + name + ".txt");
+		fout.open("Data/SaveFiles/" + playerName + "/" + mapName + ".txt");
 
-		_fout << size.x << " " << size.y << endl;
+		fout << size.x << " " << size.y << endl;
 
 		for (int i = 0; i < tileInfo.size(); i++)
 		{
-			_fout << tileInfo[i]->GetTileCode() << " ";
-			_fout << tileInfo[i]->GetObjectCode();;
+			fout << tileInfo[i]->GetTileCode() << " ";
+			fout << tileInfo[i]->GetObjectCode();;
 
 			if ((i + 1) % (int)size.x == 0)
-				_fout << endl;
+				fout << endl;
 			else
-				_fout << " ";
+				fout << " ";
 		}
 
-		_fout.close();
+		fout.close();
 	}
 }
 
-shared_ptr<MapInfo> DataManager::LoadMap(string mapName)
+void DataManager::SavePlayerInfo()
+{
+	shared_ptr<PlayerInfo> info = PLAYER->GetPlayerInfo();
+
+	ofstream fout;
+	fout.open("Data/SaveFiles/" + info->GetName() + "/PlayerInfo.txt");
+
+	fout << info->GetName() << endl;
+	fout << info->GetMaxHP() << " " << info->GetHP() << endl;
+	fout << info->GetMaxStamina() << " " << info->GetStamina() << endl;
+	Vector2 pos = info->GetPos();
+	fout << pos.x << " " << pos.y;
+
+	fout.close();
+
+	fout.open("Data/SaveFiles/"+info->GetName() + "/PlayerItems.txt");
+
+	vector<shared_ptr<GameObject>> items = info->GetItems();
+
+	for (int i = 0; i < items.size(); i++)
+	{
+		fout << items[i]->GetCode() << " " << items[i]->GetCount() << endl;
+	}
+
+	fout.close();
+}
+
+void DataManager::LoadPlayerInfo(string playerName)
+{
+	int itemCode;
+	int itemCount;
+	short maxHp;
+	short hp;
+	short maxStamina;
+	short stamina;
+	Vector2 pos;
+	vector<shared_ptr<GameObject>> items;
+	
+	ifstream fin;
+	fin.open("Data/SaveFiles/"+playerName+"/PlayerInfo.txt");
+
+	fin >> maxHp;
+	fin >> hp;
+	fin >> maxStamina;
+	fin >> stamina;
+	fin >> pos.x;
+	fin >> pos.y;
+
+	fin.close();
+
+	fin.open("Data/SaveFiles/"+playerName+"/PlayerItems.txt");
+
+	while (!fin.eof())
+	{
+		fin >> itemCode >> itemCount;
+		items.push_back(ObjectSpawner::CreateObj(itemCode, itemCount));
+	}
+
+	fin.close();
+}
+
+void DataManager::LoadMap(string playerName, string mapName)
 {
 	ifstream fin;
-	fin.open("Data/SaveFiles/" + mapName +".txt");
-
-	if (!fin.is_open())
-		return nullptr;
+	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + ".txt");
 
 	Vector2 size;
 	fin >> size.x;
@@ -109,69 +199,85 @@ shared_ptr<MapInfo> DataManager::LoadMap(string mapName)
 		infos.pop_back();
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
-
-	return mapInfo;
+	_mapInfos.push_back(mapInfo);
 }
+
+
 
 void DataManager::ReadMaps()
 {
-	_fin.open("Data/Contents/MapNames.txt");
+	ifstream fin;
+	fin.open("Data/Contents/MapNames.txt");
 
-	while (!_fin.eof())
+	while (!fin.eof())
 	{
 		string name;
-		getline(_fin, name);
+		fin >> name;
 		_mapTable[name] = true;
-		_mapInfos.push_back(LoadMap(name));
 	}
 
-	_fin.close();
+	fin.close();
 }
 
 void DataManager::ReadTileTypes()
 {
-	_fin.open("Data/Contents/TileTypes.txt");
+	ifstream fin;
+	fin.open("Data/Contents/TileTypes.txt");
 
-	_fin >> _tileMaxFrame.x;
-	_fin >> _tileMaxFrame.y;
+	fin >> _tileMaxFrame.x;
+	fin >> _tileMaxFrame.y;
 
-	while (!_fin.eof())
+	while (!fin.eof())
 	{
 		int type;
-		_fin >> type;
+		fin >> type;
 
 		shared_ptr<TileInfo> info = make_shared<TileInfo>(type);
 		_tileInfos.push_back(info);
 	}
 
-	_fin.close();
+	fin.close();
 }
 
 void DataManager::ReadObjectFile()
 {
-	_fin.open("Data/Contents/Object.txt");
+	ifstream fin;
+	fin.open("Data/Contents/Object.txt");
 
-	_fin >> _objectMaxFrame.x;
-	_fin >> _objectMaxFrame.y;
+	fin >> _objectMaxFrame.x;
+	fin >> _objectMaxFrame.y;
 
-	while (!_fin.eof())
+	while (!fin.eof())
 	{
 		string name;
 		vector<int> vals;
 
-		_fin >> name;
+		fin >> name;
 		for (int i = 0; i < 7; i++)
 		{
 			int tmp;
-			_fin >> tmp;
+			fin >> tmp;
 			vals.push_back(tmp);
 		}
 		shared_ptr<ObjectInfo> obj = make_shared<ObjectInfo>(name, vals);
 		_objInfos.push_back(obj);
 	}
-	_fin.close();
+	fin.close();
 }
 
-void DataManager::ReadPlayerFile()
+void DataManager::ReadPlayers()
 {
+	ifstream fin;
+	fin.open("Data/Contents/PlayerNames.txt");
+
+	while (!fin.eof())
+	{
+		string name;
+		fin >> name;
+		_playerTable[name] = true;
+	}
+
+	fin.close();
 }
+
+

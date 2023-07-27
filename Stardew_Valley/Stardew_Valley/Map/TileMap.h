@@ -32,7 +32,7 @@ public:
 
 	int GetWorldIndex(Vector2 pos);
 	shared_ptr<class Tile> GetMouseToPlayerIndex(Vector2 pos);
-	vector<shared_ptr<MapInfo>>& GetMapInfo() { return _mapInfos; }
+	vector<shared_ptr<MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);
 private:

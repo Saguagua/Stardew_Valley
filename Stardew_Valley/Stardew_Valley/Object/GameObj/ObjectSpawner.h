@@ -25,7 +25,7 @@ public:
 		return nullptr;
 	}
 
-	static shared_ptr<GameObject> CreateObj(int itemCode);
+	static shared_ptr<GameObject> CreateObj(int itemCode, short count = 1);
 	
 	void Update();
 	void Render();

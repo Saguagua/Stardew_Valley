@@ -101,10 +101,7 @@ void Palette::ChartButtonEvent(int index)
 	}
 	case 3:
 	{
-		vector<shared_ptr<MapInfo>> infos = TILEMAP->GetMapInfo();
-	
-		DATA->SaveMaps(infos);
-
+		DATA->Save();
 		break;
 	}
 	default:

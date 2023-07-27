@@ -4,7 +4,7 @@
 MapToolScene::MapToolScene()
 {
 	ObjectSpawner::Create();
-	DATA->ReadMaps();
+	DATA->Load("Admin");
 	TileMap::Create();
 	Palette::Create();
 	TILEMAP->SetDebug(true);

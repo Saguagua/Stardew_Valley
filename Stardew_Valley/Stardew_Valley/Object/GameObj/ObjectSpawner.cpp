@@ -24,7 +24,7 @@ ObjectSpawner::ObjectSpawner()
 	}
 }
 
-shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode)
+shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode, short count)
 {
 	shared_ptr<ObjectInfo> info = DATA->GetObjectInfo(itemCode);
 
@@ -67,7 +67,7 @@ shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode)
 		break;
 	}
 
-    return make_shared<GameObject>(itemCode);
+    return make_shared<GameObject>(itemCode, count);
 }
 
 void ObjectSpawner::Update()
