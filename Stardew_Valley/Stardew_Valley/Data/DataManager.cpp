@@ -10,7 +10,6 @@
 
 DataManager* DataManager::_instance = nullptr;
 
-
 DataManager::DataManager()
 {
 	ReadMaps();
@@ -21,14 +20,14 @@ DataManager::DataManager()
 
 void DataManager::Save()
 {
-	CString path;
+	/*CString path;
 	TCHAR programPath[_MAX_PATH];
 	GetModuleFileName(NULL, programPath, _MAX_PATH);
 	GetCurrentDirectory(_MAX_PATH, programPath);
 	path += programPath;
 	path += L"/";
 	path += PLAYER->GetPlayerInfo()->GetName().c_str();
-	CreateDirectory(path, NULL);
+	CreateDirectory(path, NULL);*/
 
 	SaveMaps();
 	SavePlayerInfo();
@@ -143,6 +142,8 @@ void DataManager::LoadPlayerInfo(string playerName)
 	}
 
 	fin.close();
+
+	_playerInfo = make_shared<PlayerInfo>(playerName, maxHp, hp, maxStamina, stamina, items, pos);
 }
 
 void DataManager::LoadMap(string playerName, string mapName)
@@ -202,8 +203,6 @@ void DataManager::LoadMap(string playerName, string mapName)
 	_mapInfos.push_back(mapInfo);
 }
 
-
-
 void DataManager::ReadMaps()
 {
 	ifstream fin;
@@ -250,18 +249,19 @@ void DataManager::ReadObjectFile()
 	while (!fin.eof())
 	{
 		string name;
-		vector<int> vals;
+		vector<short> vals;
 
 		fin >> name;
-		for (int i = 0; i < 7; i++)
+		for (int i = 0; i < 8; i++)
 		{
-			int tmp;
+			short tmp;
 			fin >> tmp;
 			vals.push_back(tmp);
 		}
 		shared_ptr<ObjectInfo> obj = make_shared<ObjectInfo>(name, vals);
 		_objInfos.push_back(obj);
 	}
+
 	fin.close();
 }
 

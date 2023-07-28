@@ -18,6 +18,7 @@ public:
 	Vector2 GetCenterPos() { return _centerPos; }
 	int GetTileCode() { return _tileCode; }
 	int GetObjectCode() { return _obj->GetCode(); }
+	int GetObjectFrameIndex() { return _obj->GetFrameIndex(); }
 	int GetBitFlag() { return _bitFlag; }
 
 	void SetCenterPos(Vector2 pos) { _centerPos = pos; }

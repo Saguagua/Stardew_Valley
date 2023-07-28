@@ -35,10 +35,6 @@ void Tile::Interaction()
 	}
 	default:
 	{
-		if (_bitFlag & Tile::Type::FISHING)
-			dynamic_pointer_cast<FishableTile>(shared_from_this())->Interaction();
-		else if (_bitFlag & Tile::Type::FARMING)
-			dynamic_pointer_cast<ArableTile>(shared_from_this())->Interaction();
 	}
 	}
 }

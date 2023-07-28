@@ -4,6 +4,7 @@
 
 void ArableTile::Interaction()
 {
+	Tile::Interaction();
 	shared_ptr<GameObject> obj = PLAYER->GetSelectedItem();
 
 	switch (obj->GetType())

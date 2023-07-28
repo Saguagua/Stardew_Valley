@@ -18,17 +18,18 @@ public:
 		FISHINGROD,
 		WEAPON,
 		SEED,
-		FARMMING
+		FARMMING,
+		BLANK
 	};
 
-	ObjectInfo(string name, vector<int> vals)
+	ObjectInfo(string name, vector<short> vals)
 		:_name(name), _vals(vals) {}
 	~ObjectInfo() {}
 
 	string GetName() { return _name; }
-	vector<int>& GetVals() { return _vals; }
+	vector<short>& GetVals() { return _vals; }
 
 private:
 	string _name;
-	vector<int> _vals;
+	vector<short> _vals;
 };

@@ -44,9 +44,9 @@ private:
 	void ReadObjectFile();
 	void ReadPlayers();
 	void ReadMaps();
+
 	void SaveMaps();
 	void SavePlayerInfo();
-	void LoadMaps(string playerName);
 	void LoadMap(string playerName, string mapName);
 	void LoadPlayerInfo(string playerName);
 

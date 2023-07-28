@@ -72,14 +72,53 @@ void Player::AddMaxStamina(short amount)
 	_playerInfo->AddMaxStamina(amount);
 }
 
-void Player::AddHP(short amount)
+bool Player::AddHP(short amount)
 {
-	_playerInfo->AddHP(amount);
+	short hp = _playerInfo->GetHP();
+	hp -= amount;
+	if (hp <= 0)
+		_isDead = true;
+
+	_playerInfo->SetHP(hp);
+
+	return !_isDead;
 }
 
-void Player::AddStamina(short amount)
+bool Player::AddStamina(short amount)
 {
-	_playerInfo->AddStamina(amount);
+	short stamina = _playerInfo->GetStamina();
+	stamina -= amount;
+	if (stamina <= 0)
+		_isDead = true;
+
+	_playerInfo->SetStamina(stamina);
+
+	return !_isDead;
+}
+
+bool Player::GetItem(int objCode)
+{
+	vector<shared_ptr<GameObject>> items = _playerInfo->GetItems();
+
+	for (int i = 0; i < items.size(); i++)
+	{
+		if (objCode == items[i]->GetCode())
+		{
+			if (items[i]->AddCount())
+				return true;
+		}
+	}
+
+	for (int i = 0; i < items.size(); i++)
+	{
+		if (items[i]->GetCode() == 139)
+		{
+			items[i] = ObjectSpawner::CreateObj(objCode);
+			return true;
+		}
+	}
+	
+	return false;
 }
 
 void Player::CreateAction()

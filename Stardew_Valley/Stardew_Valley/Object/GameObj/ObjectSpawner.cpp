@@ -16,7 +16,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 ObjectSpawner::ObjectSpawner()
 {
 	_renderer = make_shared<TextureRect>(L"Resource/Object/Objects.png", DATA->GetObjectMaxFrame(), Vector2(20, 20));
-
+	
 	for (int i = 0; i < 60; i++)
 	{
 		shared_ptr<DropItem> item = make_shared<DropItem>();
@@ -24,15 +24,15 @@ ObjectSpawner::ObjectSpawner()
 	}
 }
 
-shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode, short count)
+shared_ptr<GameObject> ObjectSpawner::CreateObj(int objCode, short count)
 {
-	shared_ptr<ObjectInfo> info = DATA->GetObjectInfo(itemCode);
+	vector<short> vals = DATA->GetObjectInfo(objCode)->GetVals();
 
-	switch (info->GetVals()[0])
+	switch (vals[0])
 	{
 	case ObjectInfo::BREAKABLE:
 	{
-		//return make_shared<BreakableItem>(itemCode, 1, info->GetHp());
+		return make_shared<BreakableItem>(objCode, vals[1], vals[2], vals[3], vals[4], vals[5], vals[6]);
 	}
 	case ObjectInfo::EATABLE:
 	{
@@ -40,7 +40,7 @@ shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode, short count)
 	}
 	case ObjectInfo::PICKABLE:
 	{
-		//return make_shared<PickableItem>(itemCode);
+		return make_shared<PickableItem>(objCode, vals[1], vals[2], vals[7]);
 	}
 	case ObjectInfo::AXE:
 	{
@@ -48,7 +48,7 @@ shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode, short count)
 	}
 	case ObjectInfo::PICKAXE:
 	{
-		//return make_shared<PickAxe>(itemCode);
+		return make_shared<PickAxe>(objCode, vals[1], vals[2], vals[3]);
 	}
 	case ObjectInfo::HOE:
 	{
@@ -62,12 +62,16 @@ shared_ptr<GameObject> ObjectSpawner::CreateObj(int itemCode, short count)
 	{
 		//return make_shared<FishingRod>(itemCode);
 	}
+	case ObjectInfo::BLANK:
+	{
+		return make_shared<GameObject>(objCode, vals[1]);
+	}
 
 	default:
 		break;
 	}
 
-    return make_shared<GameObject>(itemCode, count);
+    return make_shared<GameObject>(objCode, vals[1], vals[7], count);
 }
 
 void ObjectSpawner::Update()
@@ -92,26 +96,18 @@ void ObjectSpawner::Render()
 	}
 }
 
-void ObjectSpawner::ActiveDropItem(Vector2 pos, int itemCode, int count)
+void ObjectSpawner::ActiveDropItem(Vector2 pos, int objCode, int count)
 {
 	for (int i = 0; i < count; i++)
 	{
-		int index = 0;
-
 		for (int i = 0; i < _dropItems.size(); i++)
 		{
 			if (!_dropItems[i]->IsActive())
 			{
-				index = i;
+				vector<short> vals = DATA->GetObjectInfo(objCode)->GetVals();
+				_dropItems[i]->Spawn(pos, objCode, vals[1], vals[2]);
 				break;
 			}
 		}
-
-		if (index != _dropItems.size()-1)
-		{
-			_dropItems[index]->Spawn(pos, itemCode);
-		}
-		else 
-			break;
 	}
 }

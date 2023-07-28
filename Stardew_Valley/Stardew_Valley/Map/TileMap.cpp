@@ -29,8 +29,7 @@ TileMap::TileMap()
 		{
 			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i) + TILE_SIZE * 0.5f;
 			int tileIndex = tileMaxFrame.x - 1 + (tileMaxFrame.y - 1) * tileMaxFrame.x;
-			int objIndex = objectMaxFrame.x - 1 + (objectMaxFrame.y - 1) * objectMaxFrame.x;
-			shared_ptr<Tile> tile = make_shared<Tile>(pos, tileIndex, objIndex);
+			shared_ptr<Tile> tile = make_shared<Tile>(pos, tileIndex, 139);
 
 			_tiles.push_back(tile);
 		}
@@ -75,7 +74,7 @@ void TileMap::Blocking()
 
 		int bitFlag = _tiles[index]->GetBitFlag();
 
-		if (!(bitFlag & TileInfo::Type::BLOCK) && _tiles[index]->GetObjectCode() == 103)
+		if (!(bitFlag & TileInfo::Type::BLOCK) && _tiles[index]->GetObj()->GetType() == ObjectInfo::Type::BLANK)
 			continue;
 
 		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
@@ -89,7 +88,6 @@ void TileMap::Mouse()
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		shared_ptr<Tile> tile = GetMouseToPlayerIndex(W_MOUSE_POS);
-		int bitFlag = tile->GetBitFlag();
 
 		tile->Interaction();
 	}
@@ -130,7 +128,7 @@ void TileMap::Render()
 		_colliders[0]->Render();
 		_tileRenderer->SetCurFrame(_tiles[i]->GetTileCode());
 		_tileRenderer->Render();
-		_objectRenderer->SetCurFrame(_tiles[i]->GetObjectCode());
+		_objectRenderer->SetCurFrame(_tiles[i]->GetObjectFrameIndex());
 		_objectRenderer->Render();
 	}
 
@@ -168,44 +166,47 @@ int TileMap::GetWorldIndex(Vector2 pos)
 shared_ptr<Tile> TileMap::GetMouseToPlayerIndex(Vector2 mousePos) //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
 {
 	Vector2 target = mousePos - PLAYER->GetWorldPos();
-
-	int index = GetWorldIndex(mousePos);
+	int worldIndex = GetWorldIndex(PLAYER->GetWorldPos());
 	float angle = target.Angle() * 57.2958f;
 
 	if (angle > -25.0f && angle <= 25.0f)
 	{
-		index += 1;
+		worldIndex += 1;
 	}
 	else if (angle > 25.0f && angle <= 70.0f)
 	{
-		index += 1 + _curMapSize.x;
+		worldIndex += 1 + _curMapSize.x;
 	}
 	else if (angle > 70.0f && angle <= 115.0f)
 	{
-		index += _curMapSize.x;
+		worldIndex += _curMapSize.x;
 	}
 	else if (angle > 115.0f && angle < 160.0f)
 	{
-		index += _curMapSize.x - 1;
+		worldIndex += _curMapSize.x - 1;
 	}
 	else if (angle > -70.0f && angle <= -25.0f)
 	{
-		index += 1 - _curMapSize.x;
+		worldIndex += 1 - _curMapSize.x;
 	}
 	else if (angle > -115.0f && angle <= -70.0f)
 	{
-		index -= _curMapSize.x;
+		worldIndex -= _curMapSize.x;
 	}
 	else if (angle > -160.0f && angle <= -25.0f)
 	{
-		index -= 1 + _curMapSize.x;
+		worldIndex -= 1 + _curMapSize.x;
 	}
 	else
 	{
-		index -= 1;
+		worldIndex -= 1;
 	}
+	if (worldIndex < 0)
+		worldIndex = 0;
+	else if (worldIndex > _curMapSize.x * _curMapSize.y)
+		worldIndex = _curMapSize.x * _curMapSize.y - 1;
 
-	return _tiles[index];
+	return _tiles[worldIndex];
 }
 
 

@@ -2,8 +2,9 @@
 #include "DropItem.h"
 
 DropItem::DropItem()
-    :GameObject(-1)
+    :GameObject(125, 125, 1, 1)
 {
+    _type = ObjectInfo::Type::DROP;
     _col = make_shared<CircleCollider>(20);
 }
 
@@ -18,9 +19,11 @@ void DropItem::Render()
 }
 
 
-void DropItem::Spawn(Vector2 pos, int itemCode)
+void DropItem::Spawn(Vector2 pos, int objCode, int frameIndex, int itemCode)
 {
     _isActive = true;
+    _objCode = objCode;
+    _frameIndex = frameIndex;
     _itemCode = itemCode;
     _col->SetPos(pos);
 }

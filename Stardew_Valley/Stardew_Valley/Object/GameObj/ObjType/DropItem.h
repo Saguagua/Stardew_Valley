@@ -13,9 +13,10 @@ public:
 
 	virtual void Interaction() {}
 
-	void Spawn(Vector2 pos, int itemCode);
+	void Spawn(Vector2 pos, int objCode, int frameIndex, int itemCode);
 private:
 	shared_ptr<CircleCollider> _col;
+	int _itemCode;
 	bool _isActive;
 };
 

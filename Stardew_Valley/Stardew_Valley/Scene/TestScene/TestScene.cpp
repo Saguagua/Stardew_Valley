@@ -13,7 +13,6 @@ TestScene::TestScene()
 	PLAYER->SetPos(CENTER);
 	TILEMAP->ChangeMap(0);
 
-
 	PLAYER->Update();
 	CAMERA->SetTarget(PLAYER->GetTransform());
 	CAMERA->Update();

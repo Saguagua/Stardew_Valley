@@ -4,8 +4,8 @@
 class PlayerInfo
 {
 public:
-	PlayerInfo(string name, short maxHp, short hp, short maxStamina, short stamina, vector<shared_ptr<GameObject>>& items)
-		:_name(name), _maxHp(maxHp), _hp(hp), _maxStamina(maxStamina), _stamina(stamina), _items(items)
+	PlayerInfo(string name, short maxHp, short hp, short maxStamina, short stamina, vector<shared_ptr<GameObject>>& items, Vector2 pos)
+		:_name(name), _maxHp(maxHp), _hp(hp), _maxStamina(maxStamina), _stamina(stamina), _items(items), _pos(pos)
 	{}
 	PlayerInfo() {}
 	~PlayerInfo() {}

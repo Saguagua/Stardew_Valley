@@ -48,8 +48,10 @@ public:
 	void AddScale(Vector2 scale) { _col->AddScale(scale); }
 	void AddMaxHP(short amount);
 	void AddMaxStamina(short amount);
-	void AddHP(short amount);
-	void AddStamina(short amount);
+	bool AddHP(short amount);
+	bool AddStamina(short amount);
+
+	bool GetItem(int objCode);
 
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 	shared_ptr<CircleCollider> GetCollider() { return _col; }
@@ -87,5 +89,6 @@ private:
 	PlayerAction _bodyIndex = PlayerAction::FRONTIDLE;
 	PlayerAction _armIndex = PlayerAction::FRONTIDLE;
 	int _selectedItemIndex = 0;
+	bool _isDead = false;
 };
 

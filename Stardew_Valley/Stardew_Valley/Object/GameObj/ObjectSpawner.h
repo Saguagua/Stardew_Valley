@@ -1,8 +1,6 @@
 #pragma once
 class ObjectSpawner
 {
-	
-
 	ObjectSpawner();
 	~ObjectSpawner() {}
 public:
@@ -25,12 +23,12 @@ public:
 		return nullptr;
 	}
 
-	static shared_ptr<GameObject> CreateObj(int itemCode, short count = 1);
+	static shared_ptr<GameObject> CreateObj(int objCode, short count = 1);
 	
 	void Update();
 	void Render();
 
-	void ActiveDropItem(Vector2 pos, int itemCode, int count);
+	void ActiveDropItem(Vector2 pos, int objCode, int count);
 private:
 	static ObjectSpawner* _instance;
 	vector<shared_ptr<class DropItem>> _dropItems;
