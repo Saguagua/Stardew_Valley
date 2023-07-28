@@ -8,7 +8,23 @@ class Player
 		BACKIDLE,
 		FRONTRUN,
 		SIDERUN,
-		BACKRUN
+		BACKRUN,
+		FRONTHOLD,
+		SIDEHOLD,
+		BACKHOLD
+	};
+
+	enum PlayerState
+	{
+		IDLE = 0,
+		RUN = (15 < 4),
+		RUNF = (1 << 0),
+		RUNB = (1 << 1),
+		RUNL = (1 << 2),
+		RUNR = (1 << 3),
+		ACTION = (1 << 4),
+		HOLDING = (1 << 5),
+		DEAD = (1 << 6)
 	};
 
 	Player();
@@ -66,12 +82,12 @@ private:
 	}
 
 	void CreateAction();
-	void SetAction(PlayerAction state);
+	void SetAction(int index);
+	void SetRun(int index);
 
 	void KeyInput();
 	void Move();
 	void Items();
-	void Mouse();
 
 	static Player* _instance;
 	shared_ptr<class PlayerInfo> _playerInfo;
@@ -86,9 +102,10 @@ private:
 	vector<shared_ptr<Action>> _bodyActions;
 	vector<shared_ptr<Action>> _armActions;
 
-	PlayerAction _bodyIndex = PlayerAction::FRONTIDLE;
-	PlayerAction _armIndex = PlayerAction::FRONTIDLE;
+	int _bodyIndex = PlayerAction::FRONTIDLE;
+	int _armIndex = PlayerAction::FRONTIDLE;
+	int bodyIn;
 	int _selectedItemIndex = 0;
-	bool _isDead = false;
+	int _playerState = Player::PlayerState::IDLE;
 };
 
