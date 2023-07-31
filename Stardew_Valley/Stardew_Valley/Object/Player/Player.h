@@ -58,6 +58,7 @@ public:
 	void SetPos(Vector2 pos) { _col->SetPos(pos); }
 	void SetAngle(float angle) { _col->SetAngle(angle); }
 	void SetScale(Vector2 scale) { _col->SetScale(scale); }
+	void SetSelectedItemIndex(int index);
 
 	void AddPos(Vector2 pos) { _col->AddPos(pos); }
 	void AddAngle(float angle) { _col->AddAngle(angle); }
@@ -67,14 +68,16 @@ public:
 	bool AddHP(short amount);
 	bool AddStamina(short amount);
 
-	bool GetItem(int objCode);
 
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 	shared_ptr<CircleCollider> GetCollider() { return _col; }
-	Vector2 GetWorldPos();
-
 	shared_ptr<class GameObject> GetSelectedItem();
+	vector<shared_ptr<GameObject>> GetItems();
 	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
+	vector<CallBackInt> GetSelectedIndexCallback();
+	Vector2 GetWorldPos();
+	bool GetItem(int objCode);
+
 private:
 	void SetInfos()
 	{

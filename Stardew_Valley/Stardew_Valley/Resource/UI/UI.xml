@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated-->
+<TextureAtlas imagePath="UI.png" width="191" height="195" scale="1" format="RGBA8888">
+  <sprite n="ItemBar.png" x="3" y="3" w="160" h="33" pX="0.5" pY="0.5"/>
+  <sprite n="FishingGame.png" x="3" y="42" w="38" h="150" pX="0.5" pY="0.5"/>
+  <sprite n="DateTime.png" x="47" y="42" w="72" h="57" pX="0.5" pY="0.5"/>
+  <sprite n="FishingGameTutorial.png" x="47" y="105" w="47" h="69" pX="0.5" pY="0.5"/>
+  <sprite n="HPBar.png" x="125" y="42" w="12" h="56" pX="0.5" pY="0.5"/>
+  <sprite n="StaminaBar.png" x="143" y="42" w="12" h="56" pX="0.5" pY="0.5"/>
+  <sprite n="TrashCan.png" x="125" y="104" w="18" h="37" pX="0.5" pY="0.5"/>
+  <sprite n="Snowing.png" x="47" y="180" w="28" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="Windy.png" x="81" y="180" w="27" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="FallWindy.png" x="100" y="147" w="26" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="Rainny.png" x="100" y="163" w="26" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="Sunny.png" x="114" y="180" w="26" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="FishingGameKingFish.png" x="100" y="105" w="19" h="20" pX="0.5" pY="0.5"/>
+  <sprite n="FishingGameFish.png" x="132" y="147" w="19" h="19" pX="0.5" pY="0.5"/>
+  <sprite n="TimePicker.png" x="146" y="172" w="7" h="19" pX="0.5" pY="0.5"/>
+  <sprite n="Fall.png" x="100" y="131" w="12" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="Spring.png" x="149" y="104" w="12" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="Summer.png" x="149" y="118" w="12" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="Winter.png" x="149" y="132" w="12" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="NormalCursor.png" x="169" y="3" w="8" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="ObjectCursor.png" x="167" y="42" w="10" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="FishingGameCursor.png" x="167" y="58" w="9" h="9" pX="0.5" pY="0.5"/>
+  <sprite n="TEight.png" x="169" y="19" w="8" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TFive.png" x="167" y="73" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TFour.png" x="161" y="87" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TNine.png" x="167" y="101" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TOne.png" x="167" y="115" w="6" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TSeven.png" x="167" y="129" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TSix.png" x="167" y="143" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TThree.png" x="157" y="157" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TTwo.png" x="170" y="157" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="TZero.png" x="159" y="171" w="7" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="T_.png" x="172" y="171" w="4" h="8" pX="0.5" pY="0.5"/>
+  <sprite n="Eight.png" x="159" y="185" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Five.png" x="170" y="185" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Four.png" x="181" y="185" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Nine.png" x="183" y="3" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="One.png" x="183" y="16" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Seven.png" x="183" y="29" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Six.png" x="183" y="42" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Three.png" x="183" y="55" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Two.png" x="183" y="68" w="5" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Zero.png" x="183" y="81" w="5" h="7" pX="0.5" pY="0.5"/>
+</TextureAtlas>

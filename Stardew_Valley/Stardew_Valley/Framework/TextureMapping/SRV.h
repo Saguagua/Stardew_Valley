@@ -3,6 +3,7 @@ class SRV
 {
 public:
 	SRV(wstring path);
+	SRV(wstring path, Vector2 size);
 	~SRV() {}
 
 	void SetSRV(UINT slot = 0);

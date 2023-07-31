@@ -53,6 +53,7 @@
 #define SAMPLER			StateManager::GetInstance()->GetSampler()
 
 #define ADD_SRV(k)		SRVManager::GetInstance()->AddSRV(k);
+#define ADD_SRV_SIZE(p, s)		SRVManager::GetInstance()->AddSRV(p, s);
 
 #define ADD_TILE(path, frame, size)		TileManager::GetInstance()->GetTile(path, frame, size);
 

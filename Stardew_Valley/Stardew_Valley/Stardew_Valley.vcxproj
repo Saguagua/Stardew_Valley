@@ -151,6 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\UI\Bar.h" />
+    <ClInclude Include="Framework\Utility\tinyxml2.h" />
+    <ClInclude Include="Object\UI\ItemSlot.h" />
     <ClInclude Include="Object\Tile\TileType\ArableTile.h" />
     <ClInclude Include="Data\ObjectInfo.h" />
     <ClInclude Include="Object\Tile\TileType\FishableTile.h" />
@@ -176,6 +179,7 @@
     <ClInclude Include="Data\PlayerInfo.h" />
     <ClInclude Include="Data\DataManager.h" />
     <ClInclude Include="Object\GameObj\ObjType\PickableItem.h" />
+    <ClInclude Include="Object\UI\PlayerUI.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
     <ClInclude Include="Framework\Utility\MathUtility.h" />
@@ -220,8 +224,12 @@
     <ClInclude Include="Object\Tile\Tile.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="Object\UI\Window.h" />
+    <ClInclude Include="Object\BasicObj\XMLRect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\UI\Bar.cpp" />
+    <ClCompile Include="Framework\Utility\tinyxml2.cpp" />
+    <ClCompile Include="Object\UI\ItemSlot.cpp" />
     <ClCompile Include="Object\Tile\TileType\ArableTile.cpp" />
     <ClCompile Include="Object\Tile\TileType\FishableTile.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\DropItem.cpp" />
@@ -243,6 +251,7 @@
     <ClCompile Include="Object\GameObj\ObjType\PickAxe.cpp" />
     <ClCompile Include="Data\DataManager.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\PickableItem.cpp" />
+    <ClCompile Include="Object\UI\PlayerUI.cpp" />
     <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
     <ClCompile Include="Object\BasicObj\CircleLine.cpp" />
@@ -286,6 +295,7 @@
     <ClCompile Include="Object\UI\TextureButton.cpp" />
     <ClCompile Include="Object\UI\Window.cpp" />
     <ClCompile Include="Object\Tile\Tile.cpp" />
+    <ClCompile Include="Object\BasicObj\XMLRect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />
@@ -295,6 +305,8 @@
     <Image Include="Resource\Icons\save.png" />
     <Image Include="Resource\Icons\Tiles.png" />
     <Image Include="Resource\Object\house.png" />
+    <Image Include="Resource\Object\Objects.png" />
+    <Image Include="Resource\Object\Tree.png" />
     <Image Include="Resource\Player\farmer_base.png" />
     <Image Include="Resource\Tile\MapTiles.png" />
     <Image Include="Resource\Tile\Objects.png" />
@@ -302,6 +314,11 @@
     <Image Include="Resource\Tile\spring_outdoors.png" />
     <Image Include="Resource\Tile\Tile.png" />
     <Image Include="Resource\Tile\TileBright.png" />
+    <Image Include="Resource\UI\Border.png" />
+    <Image Include="Resource\UI\DialogBoxGreen.png" />
+    <Image Include="Resource\UI\ItemListBox.png" />
+    <Image Include="Resource\UI\ListBox.png" />
+    <Image Include="Resource\UI\UI.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>
@@ -316,6 +333,7 @@
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
     </FxCompile>
     <FxCompile Include="Shader\SingleColorPS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
@@ -327,6 +345,7 @@
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
     </FxCompile>
     <FxCompile Include="Shader\TextureVS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
@@ -338,6 +357,7 @@
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
     </FxCompile>
     <FxCompile Include="Shader\VertexVS.hlsl">
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS</EntryPointName>
@@ -349,6 +369,15 @@
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">VS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="Shader\XMLPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
@@ -362,6 +391,15 @@
   <ItemGroup>
     <Text Include="Map\Save\Dungeon.txt" />
     <Text Include="Map\Save\Fishing.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Resource\UI\UI.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Library\FMOD\fmod_vc.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fmod.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

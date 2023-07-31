@@ -3,6 +3,8 @@ class TextureRect
 {
 public:
 	TextureRect(wstring path, Vector2 maxFrame, Vector2 size);
+	TextureRect(wstring path, Vector2 maxFrame);
+	TextureRect() {}
 	~TextureRect() {}
 
 	virtual void Render();
@@ -25,7 +27,6 @@ protected:
 	shared_ptr<VertexBuffer> _vBuffer;
 	shared_ptr<IndexBuffer> _iBuffer;
 	shared_ptr<FrameBuffer> _fBuffer;
-
 
 	weak_ptr<SRV> _srv;
 	weak_ptr<VertexShader> _vShader;

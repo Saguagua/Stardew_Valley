@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "../../Object/UI/Palette.h"
 #include "MapToolScene.h"
 
 MapToolScene::MapToolScene()

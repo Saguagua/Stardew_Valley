@@ -31,9 +31,9 @@ void Palette::PostRender()
 	for (auto button : _chartButtons)
 		button->Render();
 
-	_tileList->Render();
-	_objectList->Render();
-	_saveList->Render();
+	//_tileList->Render();
+	//_objectList->Render();
+	//_saveList->Render();
 }
 
 void Palette::Update()
@@ -43,19 +43,19 @@ void Palette::Update()
 	for (auto button : _chartButtons)
 		button->Update();
 
-	_tileList->Update();
-	_objectList->Update();
-	_saveList->Update();
+	//_tileList->Update();
+	//_objectList->Update();
+	//_saveList->Update();
 }
 
 int Palette::GetCurTileCode()
 {
-	return _tileList->GetCurIndex();;
+	return 0;//_tileList->GetCurIndex();;
 }
 
 int Palette::GetCurObjectCode()
 {
-	return _objectList->GetCurIndex();
+	return 0;//_objectList->GetCurIndex();
 }
 
 void Palette::Move()
@@ -78,24 +78,24 @@ void Palette::ChartButtonEvent(int index)
 	{
 	case 0:
 	{
-		_tileList->SetActive(true);
-		_objectList->SetActive(false);
-		_saveList->SetActive(false);
+		//_tileList->SetActive(true);
+		//_objectList->SetActive(false);
+		//_saveList->SetActive(false);
 		break;
 	}
 	case 1:
 	{
-		_tileList->SetActive(false);
-		_objectList->SetActive(true);
-		_saveList->SetActive(false);
+		//_tileList->SetActive(false);
+		//_objectList->SetActive(true);
+		//_saveList->SetActive(false);
 
 		break;
 	}
 	case 2:
 	{
-		_tileList->SetActive(false);
-		_objectList->SetActive(false);
-		_saveList->SetActive(true);
+		//_tileList->SetActive(false);
+		//_objectList->SetActive(false);
+		//_saveList->SetActive(true);
 		
 		break;
 	}
@@ -114,8 +114,8 @@ void Palette::ChangeMap(bool chosen)
 	if (chosen)
 		return;
 
-	int index = _saveList->GetCurIndex();
-	
+	//int index = _saveList->GetCurIndex();
+	int index = 0;
 	TILEMAP->ChangeMap(index);
 }
 
@@ -171,9 +171,9 @@ void Palette::CreateTileList()
 			buttons.push_back(button);
 		}
 	}
-	_tileList = make_shared<List>(_size * 0.9f, buttons, _tileMaxFrame);
-	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
-	_tileList->SetParent(_mainRect->GetTransform());
+	//_tileList = make_shared<List>(_size * 0.9f, buttons, _tileMaxFrame);
+	//_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	//_tileList->SetParent(_mainRect->GetTransform());
 }
 
 void Palette::CreateObjectList()
@@ -192,10 +192,10 @@ void Palette::CreateObjectList()
 			buttons.push_back(button);
 		}
 	}
-	_objectList = make_shared<List>(_size * 0.9f, buttons, _objectMaxFrame);
-	_objectList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
-	_objectList->SetParent(_mainRect->GetTransform());
-	_objectList->SetActive(false);
+	//_objectList = make_shared<List>(_size * 0.9f, buttons, _objectMaxFrame);
+	//_objectList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	//_objectList->SetParent(_mainRect->GetTransform());
+	//_objectList->SetActive(false);
 }
 
 void Palette::CreateSaveList()
@@ -215,8 +215,8 @@ void Palette::CreateSaveList()
 		buttons.push_back(button);
 	}
 
-	_saveList = make_shared<List>(_size * 0.9f, buttons, Vector2(6,6));
-	_saveList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
-	_saveList->SetParent(_mainRect->GetTransform());
-	_saveList->SetActive(false);
+	//_saveList = make_shared<List>(_size * 0.9f, buttons, Vector2(6,6));
+	//_saveList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	//_saveList->SetParent(_mainRect->GetTransform());
+	//_saveList->SetActive(false);
 }

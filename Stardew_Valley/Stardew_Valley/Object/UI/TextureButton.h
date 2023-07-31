@@ -11,11 +11,11 @@ public:
 
 	shared_ptr<TextureRect> GetTexture() { return _renderer; }
 
-	void SetFrame(Vector2 frame) { _curFrame = frame; }
-	Vector2 GetCurFrame() { return _curFrame; }
+	void SetFrame(Vector2 frame);
+	void SetFrame(int index);
+	Vector2 GetCurFrame() { return _renderer->GetCurFrame(); }
 	Vector2 GetMaxFrame() { return _renderer->GetMaxFrame(); }
 private:
 	shared_ptr<TextureRect> _renderer;
-	Vector2 _curFrame = {0, 0};
 };
 

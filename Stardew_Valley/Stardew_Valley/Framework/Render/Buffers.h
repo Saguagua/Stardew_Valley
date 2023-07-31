@@ -82,3 +82,32 @@ private:
 
 	Data _data;
 };
+
+struct XMLBuffer : public ConstantBuffer
+{
+	XMLBuffer() :ConstantBuffer(&_data, sizeof(_data))
+	{}
+
+	virtual ~XMLBuffer() {}
+
+	void SetSize(Vector2 size) { _data.size = size; }
+	void SetStart(Vector2 start) { _data.startPos = start; }
+	void SetImgSize(Vector2 size) { _data.imgSize = size; }
+	void SetRatio(Vector2 ratio) { _data.ratio = ratio; }
+
+	Vector2& GetSize() { return _data.size; }
+	Vector2& GetStart() { return _data.startPos; }
+	Vector2& GetImgSize() { return _data.imgSize; }
+	Vector2& GetRatio() { return _data.ratio; }
+
+private:
+	struct Data
+	{
+		Vector2 startPos;
+		Vector2 size;
+		Vector2 imgSize;
+		Vector2 ratio = {1,1};
+	};
+
+	Data _data;
+};

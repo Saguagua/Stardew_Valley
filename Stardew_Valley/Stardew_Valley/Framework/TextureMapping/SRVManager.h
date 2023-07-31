@@ -27,6 +27,7 @@ public:
 	}
 
 	shared_ptr<SRV> AddSRV(wstring file);
+	shared_ptr<SRV> AddSRV(wstring file, Vector2 size);
 
 private:
 	static SRVManager* _instance;

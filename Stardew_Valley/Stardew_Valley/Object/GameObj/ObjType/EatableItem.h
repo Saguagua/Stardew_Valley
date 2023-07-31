@@ -2,9 +2,9 @@
 class EatableItem : public GameObject
 {
 public:
-	EatableItem(int itemCode, int frameIndex, short maxHp, short hp, short maxStamina, short stamina,  short maxCount, short count = 1)
-	: GameObject(itemCode, frameIndex, maxCount, count),
-		_maxHpCost(maxHp), _hpCost(hp), _maxStaminaCost(maxStamina), _staminaCost(stamina)
+	EatableItem(int itemCode, vector<short> vals)
+	: GameObject(itemCode, vals[1], vals[7], 1),
+		_maxHpCost(vals[2]), _maxStaminaCost(vals[3]), _hpCost(vals[4]), _staminaCost(vals[5]), _price(vals[6])
 	{
 		_type = ObjectInfo::Type::EATABLE;
 	}

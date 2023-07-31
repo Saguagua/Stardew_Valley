@@ -13,6 +13,16 @@ SRV::SRV(wstring path)
 		img.GetImageCount(), img.GetMetadata(), _srv.GetAddressOf());
 }
 
+SRV::SRV(wstring path, Vector2 size)
+	:_imgSize(size)
+{
+	ScratchImage img;
+	LoadFromWICFile(path.c_str(), WIC_FLAGS_NONE, nullptr, img);
+
+	CreateShaderResourceView(DEVICE.Get(), img.GetImages(),
+		img.GetImageCount(), img.GetMetadata(), _srv.GetAddressOf());
+}
+
 void SRV::SetSRV(UINT slot)
 {
 	DC->PSSetShaderResources(slot, 1, _srv.GetAddressOf());

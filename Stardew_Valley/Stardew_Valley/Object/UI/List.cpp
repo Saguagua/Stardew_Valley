@@ -1,22 +1,13 @@
 #include "framework.h"
+#include "../BasicObj/XMLRect.h"
 #include "List.h"
-
-List::List(Vector2 size, vector<shared_ptr<TextureButton>> buttons, Vector2 matrix)
-	:_size(size), _matrix(matrix)
-{
-	_transform = make_shared<Transform>();
-	_mainRect = make_shared<SingleColorRect>(_size, GRAY);
-	_buttons = buttons;
-	_buttonSize = _buttons[0]->GetSize();
-	SetButtons();
-}
 
 void List::Render()
 {
 	if (!_isActive)
 		return;
 	_transform->Set_World(0);
-	_mainRect->Render();
+	_body->Render();
 
 	for (auto button : _buttons)
 	{
@@ -26,9 +17,6 @@ void List::Render()
 
 void List::Update()
 {
-	if (!_isActive)
-		return;
-
 	_transform->Update();
 
 	for (shared_ptr<TextureButton> button : _buttons)
@@ -37,36 +25,26 @@ void List::Update()
 	}
 }
 
-void List::SetButtons()
+void List::SetButtons(Vector2 startPos, Vector2 space)
 {
 	Vector2 frame = _buttons[0]->GetMaxFrame();
+	int index = 0;
 
-	Vector2 startPos;
-	startPos.x = -_size.x * 0.5f + _buttonSize.x * 0.5f;
-	startPos.y = _size.y * 0.5f - _buttonSize.y * 0.5f;
-
-	Vector2 space;
-	space.x = _buttonSize.x / _matrix.x;
-	space.y = _buttonSize.y / _matrix.y;
-
-	int x = 0;
-	int y = 0;
-
-	for (int i = 0; i < _buttons.size(); i++)
+	for (int i = 0; i < _matrix.y; i++)
 	{
-		Vector2 pos;
-		pos.x = startPos.x + x * (_buttonSize.x + space.x);
-		pos.y = startPos.y - y * (_buttonSize.y + space.y);
-
-		_buttons[i]->GetTransform()->SetPos(pos);
-		_buttons[i]->GetTransform()->SetParent(_transform);
-		_buttons[i]->SetFrame(Vector2(x,y));
-		CallBackInt cb = std::bind(&List::PushButtonEvent, this, x + y * frame.x);
-		_buttons[i]->SetPushEvent(cb);
-
-		x = (x + 1) % (int)frame.x;
-		if (x == 0)
-			y++;
+		for (int j = 0; j < _matrix.x; j++)
+		{
+			Vector2 pos;
+			pos.x = startPos.x + space.x + j * (_buttonSize.x + space.x);
+			pos.y = startPos.y - space.y + i * (_buttonSize.y - space.y);
+			_buttons[index]->GetTransform()->SetPos(pos);
+			_buttons[index]->GetTransform()->SetParent(_transform);
+			_buttons[index]->SetFrame(Vector2(j, i));
+			CallBackInt cb = std::bind(&List::PushButtonEvent, this, index);
+			_buttons[index]->SetPushEvent(cb);
+			_buttons[index]->SetLineColor(RED);
+			index++;
+		}
 	}
 }
 

@@ -222,6 +222,21 @@
     <ClInclude Include="Object\Tile\TileType\ArableTile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\UI\PlayerUI.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\UI\ItemSlot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\BasicObj\XMLRect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\tinyxml2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\UI\Bar.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -398,6 +413,21 @@
     <ClCompile Include="Object\Tile\TileType\ArableTile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object\UI\PlayerUI.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\ItemSlot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\BasicObj\XMLRect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\tinyxml2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\Bar.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -444,15 +474,46 @@
     <Image Include="Resource\Object\house.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\UI\Border.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\UI\DialogBoxGreen.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Object\Tree.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\Object\Objects.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\UI\ListBox.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\UI\ItemListBox.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\UI\UI.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\VertexVS.hlsl" />
     <FxCompile Include="Shader\SingleColorPS.hlsl" />
     <FxCompile Include="Shader\ClipFilterPS.hlsl" />
     <FxCompile Include="Shader\TextureVS.hlsl" />
+    <FxCompile Include="Shader\XMLPS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Map\Save\Fishing.txt" />
     <Text Include="Map\Save\Dungeon.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Resource\UI\UI.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Library\FMOD\fmod_vc.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fmod.dll" />
   </ItemGroup>
 </Project>

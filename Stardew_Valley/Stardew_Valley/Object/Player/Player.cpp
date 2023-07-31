@@ -51,6 +51,18 @@ void Player::KeyInput()
 	Items();
 }
 
+vector<CallBackInt> Player::GetSelectedIndexCallback()
+{
+	vector<CallBackInt> cbs;
+	for (int i = 0; i < 10; i++)
+	{
+		CallBackInt cb = std::bind(&Player::SetSelectedItemIndex, _instance, i);
+		cbs.push_back(cb);
+	}
+
+	return cbs;
+}
+
 Vector2 Player::GetWorldPos()
 {
 	return _col->GetWorldPos();
@@ -59,6 +71,31 @@ Vector2 Player::GetWorldPos()
 shared_ptr<GameObject> Player::GetSelectedItem()
 {
 	return _playerInfo->GetItem(_selectedItemIndex);
+}
+
+vector<shared_ptr<GameObject>> Player::GetItems()
+{
+	return _playerInfo->GetItems();
+}
+
+void Player::SetSelectedItemIndex(int index)
+{
+	_selectedItemIndex = index;
+	auto items = _playerInfo->GetItems();
+	int type = _playerInfo->GetItem(_selectedItemIndex)->GetType();
+
+	if (type == ObjectInfo::Type::NONE ||
+		type == ObjectInfo::Type::EATABLE ||
+		type == ObjectInfo::Type::FARMMING ||
+		type == ObjectInfo::Type::SEED)
+	{
+		_playerState |= PlayerState::HOLDING;
+	}
+	else
+	{
+		_playerState &= ~(PlayerState::HOLDING);
+	}
+	SetAction(_bodyIndex);
 }
 
 void Player::AddMaxHP(short amount)
@@ -85,11 +122,15 @@ bool Player::AddHP(short amount)
 
 bool Player::AddStamina(short amount)
 {
-	short stamina = _playerInfo->GetStamina();
-	stamina -= amount;
+	float maxStamina = _playerInfo->GetMaxStamina();
+	float stamina = _playerInfo->GetStamina();
+
+	stamina += amount;
+
 	if (stamina <= 0)
 		_playerState |= Player::PlayerState::DEAD;
-
+	float ratio = stamina / maxStamina;
+	PlayerUI::GetInstance()->SetStamina(ratio);
 	_playerInfo->SetStamina(stamina);
 
 	return !(_playerState & Player::PlayerState::DEAD);
@@ -358,42 +399,42 @@ void Player::Items()
 {
 	if (KEY_DOWN('1'))
 	{
-		_selectedItemIndex = 0;
+		SetSelectedItemIndex(0);
 	}
 	else if (KEY_DOWN('2'))
 	{
-		_selectedItemIndex = 1;
+		SetSelectedItemIndex(1);
 	}
 	else if (KEY_DOWN('3'))
 	{
-		_selectedItemIndex = 2;
+		SetSelectedItemIndex(2);
 	}
 	else if (KEY_DOWN('4'))
 	{
-		_selectedItemIndex = 3;
+		SetSelectedItemIndex(3);
 	}
 	else if (KEY_DOWN('5'))
 	{
-		_selectedItemIndex = 4;
+		SetSelectedItemIndex(4);
 	}
 	else if (KEY_DOWN('6'))
 	{
-		_selectedItemIndex = 5;
+		SetSelectedItemIndex(5);
 	}
 	else if (KEY_DOWN('7'))
 	{
-		_selectedItemIndex = 6;
+		SetSelectedItemIndex(6);
 	}
 	else if (KEY_DOWN('8'))
 	{
-		_selectedItemIndex = 7;
+		SetSelectedItemIndex(7);
 	}
 	else if (KEY_DOWN('9'))
 	{
-		_selectedItemIndex = 8;
+		SetSelectedItemIndex(8);
 	}
 	else if (KEY_DOWN('0'))
 	{
-		_selectedItemIndex = 9;
+		SetSelectedItemIndex(9);
 	}
 }

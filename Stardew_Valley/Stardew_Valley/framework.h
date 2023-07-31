@@ -34,6 +34,11 @@
 #include "../ImGui/imgui_impl_dx11.h"
 #include "../ImGuI/imgui_impl_win32.h"
 
+
+// FMOD
+#include "Library/FMOD/inc/fmod.hpp"
+#pragma comment(lib,"Library/FMOD/fmod_vc.lib")
+
 using namespace std;
 using namespace DirectX;
 using namespace Microsoft::WRL;
@@ -95,9 +100,7 @@ using namespace Microsoft::WRL;
 #include "Object/UI/Button.h"
 #include "Object/UI/ColorButton.h"
 #include "Object/UI/TextureButton.h"
-#include "Object/UI/Window.h"
-#include "Object/UI/List.h"
-#include "Object/UI/Palette.h"
+#include "Object/UI/PlayerUI.h"
 
 //Camera
 #include"Framework/Camera/Camera.h"

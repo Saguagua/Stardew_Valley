@@ -11,18 +11,21 @@ void Button::Update()
 {
 	if (_col->IsCollision(S_MOUSE_POS))
 	{
-		if (_mouseOnEvent != nullptr)
-			_mouseOnEvent();
-		if (_mouseOnIntEvent != nullptr)
-			_mouseOnIntEvent(0);
-		if (_mouseOnBoolEvent != nullptr)
-			_mouseOnBoolEvent(true);
+		if (_onEvent != nullptr)
+			_onEvent();
+		if (_onIntEvent != nullptr)
+			_onIntEvent(0);
+		if (_onBoolEvent != nullptr)
+			_onBoolEvent(true);
 		if (KEY_DOWN(VK_LBUTTON))
 		{
 			if (_pushEvent != nullptr)
 				_pushEvent();
-			if (_pushIntEvent != nullptr)
-				_pushIntEvent(0);
+			if (_pushIntEvents.size() != 0)
+			{
+				for (auto cb : _pushIntEvents)
+					cb(0);
+			}
 			if (_pushBoolEvent != nullptr)
 				_pushBoolEvent(false);
 		}
@@ -34,7 +37,7 @@ void Button::Update()
 	}
 	else
 	{
-		if (_mouseOnBoolEvent != nullptr)
-			_mouseOnBoolEvent(false);
+		if (_onBoolEvent != nullptr)
+			_onBoolEvent(false);
 	}
 }

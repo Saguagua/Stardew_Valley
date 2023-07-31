@@ -49,12 +49,12 @@ private:
 	static Palette* _instance;
 
 	vector<shared_ptr<class MapInfo>> _mapInfos;
-	shared_ptr<ColorButton> _mainRect;
-	shared_ptr<List> _tileList;
-	shared_ptr<List> _objectList;
-	shared_ptr<List> _saveList;
+	shared_ptr<class ColorButton> _mainRect;
+	//shared_ptr<List> _tileList;
+	//shared_ptr<List> _objectList;
+	//shared_ptr<List> _saveList;
 
-	vector<shared_ptr<TextureButton>> _chartButtons;
+	vector<shared_ptr<class TextureButton>> _chartButtons;
 
 	Vector2 _size;
 	Vector2 _centerToMouse;

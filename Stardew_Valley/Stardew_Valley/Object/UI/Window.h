@@ -9,7 +9,7 @@ public:
 	void PostRender();
 	void Update();
 
-	void AddButton(shared_ptr<Button> button);
+	void AddButton(shared_ptr<class Button> button);
 	void AddWindow(shared_ptr<Window> other);
 
 	void KeyInput();

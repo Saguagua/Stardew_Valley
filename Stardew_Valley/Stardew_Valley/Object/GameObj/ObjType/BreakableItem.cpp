@@ -13,7 +13,7 @@ void BreakableItem::GetDamage(shared_ptr<PickAxe> obj)
 			ObjectSpawner::GetInstance()->ActiveDropItem(_pos, _dropItemCodeMin, _countMin);
 			_type = ObjectInfo::Type::BLANK;
 			_objCode = 139;
-			_frameIndex = 103;
+			_frameIndex = 127;
 		}
 	}
 	

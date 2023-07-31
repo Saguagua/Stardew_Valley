@@ -4,8 +4,20 @@
 TextureRect::TextureRect(wstring path, Vector2 maxFrame, Vector2 size)
 	:_size(size)
 {
-	_srv = ADD_SRV(path);
+	_srv = ADD_SRV_SIZE(path, size);
 
+	CreateVertex();
+	CreateData();
+
+	_fBuffer->SetMaxFrame(maxFrame);
+	_fBuffer->SetStart(_curFrame);
+	_fBuffer->Update();
+}
+
+TextureRect::TextureRect(wstring path, Vector2 maxFrame)
+{
+	_srv = ADD_SRV(path);
+	_size = _srv.lock()->GetImageSize();
 	CreateVertex();
 	CreateData();
 
@@ -14,7 +26,7 @@ TextureRect::TextureRect(wstring path, Vector2 maxFrame, Vector2 size)
 
 void TextureRect::Render()
 {
-	_fBuffer->Set_PS(1);
+	_fBuffer->Set_PS();
 
 	_vBuffer->SetIA_VertexBuffer();
 	_iBuffer->SetIA_IndexBuffer();

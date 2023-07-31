@@ -15,7 +15,6 @@ TileMap::TileMap()
 		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE);
 		_colliders.push_back(col);
 	}
-
 	Vector2 tileMaxFrame = DATA->GetTileMaxFrame();
 	Vector2 objectMaxFrame = DATA->GetObjectMaxFrame();
 	_mapInfos = DATA->GetMapInfos();
@@ -131,7 +130,6 @@ void TileMap::Render()
 		_objectRenderer->SetCurFrame(_tiles[i]->GetObjectFrameIndex());
 		_objectRenderer->Render();
 	}
-
 }
 
 void TileMap::ChangeMap(int index)

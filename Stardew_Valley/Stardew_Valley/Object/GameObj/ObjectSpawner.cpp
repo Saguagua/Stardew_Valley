@@ -36,7 +36,7 @@ shared_ptr<GameObject> ObjectSpawner::CreateObj(int objCode, short count)
 	}
 	case ObjectInfo::EATABLE:
 	{
-		//return make_shared<EatableItem>(itemCode, 1);
+		return make_shared<EatableItem>(objCode, vals);
 	}
 	case ObjectInfo::PICKABLE:
 	{
