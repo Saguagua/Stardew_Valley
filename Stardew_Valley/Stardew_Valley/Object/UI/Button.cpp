@@ -19,8 +19,11 @@ void Button::Update()
 			_onBoolEvent(true);
 		if (KEY_DOWN(VK_LBUTTON))
 		{
-			if (_pushEvent != nullptr)
-				_pushEvent();
+			if (_pushEvents.size() != 0)
+			{
+				for (auto cb : _pushEvents)
+					cb();
+			}
 			if (_pushIntEvents.size() != 0)
 			{
 				for (auto cb : _pushIntEvents)

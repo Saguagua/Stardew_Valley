@@ -10,7 +10,7 @@ public:
 	virtual void PushButtonEvent(int index) override;
 
 private:
-	virtual void CreateButtons() override;
+	virtual void CreateButtons(wstring path, int count) override;
 	virtual void SetButtons(Vector2 startPos, Vector2 space) override;
 	vector<shared_ptr<GameObject>> _items;
 };

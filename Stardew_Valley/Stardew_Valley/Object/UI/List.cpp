@@ -2,6 +2,23 @@
 #include "../BasicObj/XMLRect.h"
 #include "List.h"
 
+List::List(wstring path, Vector2 size, Vector2 matrix, int count)
+	:_size(size), _matrix(matrix)
+{
+	_transform = make_shared<Transform>();
+	_body = make_shared<XMLRect>("Resource/UI/UI", "ItemBar.png", _size);
+	CreateButtons(path, count);
+
+	Vector2 space;
+	space.x = (_size.x - _buttonSize.x * matrix.x) / (matrix.x + 1);
+	space.y = (_size.y - _buttonSize.y * matrix.y) / (matrix.y + 1);
+	Vector2 startPos;
+	startPos.x = _size.x * -0.5f + space.x + _buttonSize.x * 0.5f;
+	startPos.y = _size.y * 0.5f - space.y - _buttonSize.y * 0.5f;
+	
+	SetButtons(startPos, space);
+}
+
 void List::Render()
 {
 	if (!_isActive)
@@ -25,25 +42,57 @@ void List::Update()
 	}
 }
 
+void List::AddCallBack(vector<CallBack> cbs)
+{
+	for (int i = 0; i < cbs.size(); i++)
+	{
+		_buttons[i]->AddPushEvent(cbs[i]);
+	}
+}
+
+void List::AddCallBackInt(vector<CallBackInt> cbs)
+{
+	for (int i = 0; i < cbs.size(); i++)
+	{
+		_buttons[i]->AddPushEvent(cbs[i]);
+	}
+}
+
+void List::CreateButtons(wstring path, int count)
+{
+	_buttonSize.x = _size.x * 0.9f / (_matrix.x + 1);
+	_buttonSize.y = _size.y * 0.9f / (_matrix.y + 1);
+
+	for (int i = 0; i < count; i++)
+	{
+		shared_ptr<TextureButton> button = make_shared<TextureButton>(path, _matrix, _buttonSize);
+		_buttons.push_back(button);
+	}
+}
+
 void List::SetButtons(Vector2 startPos, Vector2 space)
 {
 	Vector2 frame = _buttons[0]->GetMaxFrame();
-	int index = 0;
+	int x = 0;
+	int y = 0;
 
-	for (int i = 0; i < _matrix.y; i++)
+	for (int i = 0; i < _buttons.size(); i++)
 	{
-		for (int j = 0; j < _matrix.x; j++)
+		_buttons[i]->SetFrame(Vector2(x,y));
+		Vector2 pos;
+		pos.x = startPos.x + x * (_buttonSize.x + space.x);
+		pos.y = startPos.y - y * (_buttonSize.y + space.y);
+		_buttons[i]->SetPos(pos);
+		_buttons[i]->GetTransform()->SetParent(_transform);
+		CallBackInt cb = std::bind(&List::PushButtonEvent, this, i);
+		_buttons[i]->SetPushEvent(cb);
+		_buttons[i]->SetLineColor(RED);
+		x++;
+
+		if (x == _matrix.x)
 		{
-			Vector2 pos;
-			pos.x = startPos.x + space.x + j * (_buttonSize.x + space.x);
-			pos.y = startPos.y - space.y + i * (_buttonSize.y - space.y);
-			_buttons[index]->GetTransform()->SetPos(pos);
-			_buttons[index]->GetTransform()->SetParent(_transform);
-			_buttons[index]->SetFrame(Vector2(j, i));
-			CallBackInt cb = std::bind(&List::PushButtonEvent, this, index);
-			_buttons[index]->SetPushEvent(cb);
-			_buttons[index]->SetLineColor(RED);
-			index++;
+			x = 0;
+			y++;
 		}
 	}
 }

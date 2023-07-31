@@ -14,7 +14,7 @@ public:
 
 	void SetLineColor(XMFLOAT4 color) { _col->SetColor(color); }
 
-	void SetPushEvent(CallBack cb) { _pushEvent = cb; }
+	void AddPushEvent(CallBack cb) { _pushEvents.push_back(cb); }
 	void AddPushEvent(CallBackInt cb) { _pushIntEvents.push_back(cb); }
 	void SetPushEvent(CallBackBool cb) { _pushBoolEvent = cb; }
 
@@ -41,7 +41,7 @@ protected:
 	CallBack _scrollEvent;
 	CallBackInt _scrollIntEvent;
 
-	CallBack _pushEvent;
+	vector<CallBack> _pushEvents;
 	CallBackBool _pushBoolEvent;
 	vector<CallBackInt> _pushIntEvents;
 };

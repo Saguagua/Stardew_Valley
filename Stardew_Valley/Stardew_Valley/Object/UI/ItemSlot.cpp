@@ -6,14 +6,15 @@
 ItemSlot::ItemSlot()
 	:List(Vector2(10,1))
 {
-	CreateButtons();
+	CreateButtons(L"Resource/Object/Objects.png", 10);
 	_items = PLAYER->GetItems();
 	_buttonSize = _buttons[0]->GetSize();
 	Vector2 space = {10, 0};
 	_size.x = _buttonSize.x  * _matrix.x + space.x * 11 + 20;
 	_size.y = _buttonSize.y * _matrix.y + 25;
+	
 	Vector2 startPos = -_size * 0.5f;
-	startPos.x += 30;
+	startPos.x += 40;
 	startPos.y = 0;
 	_transform = make_shared<Transform>();
 	_body = make_shared<XMLRect>("Resource/UI/UI", "ItemBar.png", _size);
@@ -33,14 +34,14 @@ void ItemSlot::PushButtonEvent(int index)
 	List::PushButtonEvent(index);
 }
 
-void ItemSlot::CreateButtons()
+void ItemSlot::CreateButtons(wstring path, int count)
 {
 	Vector2 maxFrame = DATA->GetObjectMaxFrame();
 	vector<CallBackInt> callbacks = PLAYER->GetSelectedIndexCallback();
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < count; i++)
 	{
-		shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Object/Objects.png", maxFrame, Vector2(40, 40));
+		shared_ptr<TextureButton> button = make_shared<TextureButton>(path, maxFrame, Vector2(40, 40));
 		button->AddPushEvent(callbacks[i]);
 		_buttons.push_back(button);
 	}

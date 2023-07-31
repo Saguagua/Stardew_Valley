@@ -14,6 +14,7 @@ PlayerUI::PlayerUI()
 	_itemSlot = make_shared<ItemSlot>();
 	_hpBar = make_shared<Bar>("Resource/UI/UI", "HPBar.png", Vector2(35, 200));
 	_staminaBar = make_shared<Bar>("Resource/UI/UI", "StaminaBar.png", Vector2(35, 200));
+	_itemSlot->SetActive(true);
 	_itemSlot->SetPos(Vector2(0, -300));
 	_hpBar->SetPos(Vector2(500, -250));
 	_staminaBar->SetPos(Vector2(545, -250));

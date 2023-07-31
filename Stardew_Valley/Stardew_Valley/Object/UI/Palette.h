@@ -44,22 +44,20 @@ private:
 	void OnFocus(bool val) { _onFocus = val; }
 	void Move();
 	void ChartButtonEvent(int index);
-	void ChangeMap(bool chosen);
+	void ChangeMap(int index);
 
 	static Palette* _instance;
 
 	vector<shared_ptr<class MapInfo>> _mapInfos;
 	shared_ptr<class ColorButton> _mainRect;
-	//shared_ptr<List> _tileList;
-	//shared_ptr<List> _objectList;
-	//shared_ptr<List> _saveList;
+	shared_ptr<class List> _tileList;
+	shared_ptr<List> _objectList;
+	shared_ptr<List> _saveList;
 
 	vector<shared_ptr<class TextureButton>> _chartButtons;
 
 	Vector2 _size;
 	Vector2 _centerToMouse;
-	Vector2 _tileMaxFrame;
-	Vector2 _objectMaxFrame;
 
 	int _chartIndex = 0;
 	bool _onFocus = false;
