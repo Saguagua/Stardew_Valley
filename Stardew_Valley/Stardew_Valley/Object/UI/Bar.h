@@ -15,6 +15,6 @@ private:
 	shared_ptr<Transform> _bodyTransform;
 	shared_ptr<Transform> _guageTransform;
 	shared_ptr<class XMLRect> _body;
-	shared_ptr<class XMLRect> _gauge;
+	shared_ptr<class SingleColorRect> _gauge;
 };
 

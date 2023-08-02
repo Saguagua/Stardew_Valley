@@ -7,14 +7,19 @@ public:
 
 	void Render();
 	void SetColor(XMFLOAT4 color);
+	void SetRatio(Vector2 ratio);
 
+	void AddColor(XMFLOAT4 color);
+
+	Vector2 GetRatio();
+	XMFLOAT4 GetColor();
 private:
 	void CreateVertices();
 	void CreateData();
 
 	Vector2 _size;
 
-	vector<Vertex> _vertices;
+	vector<VertexTexture> _vertices;
 	vector<int> _indices;
 	
 	shared_ptr<ColorBuffer> _cBuffer;

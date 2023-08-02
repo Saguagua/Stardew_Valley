@@ -15,8 +15,8 @@ void PixelShader::SetShader()
 
 void PixelShader::CreateBlob(wstring path)
 {
-	DWORD flags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG;
-
+	DWORD flags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+	
 	D3DCompileFromFile(path.c_str(),
 		nullptr, nullptr, "PS", "ps_5_0", flags, 0, _blob.GetAddressOf(), nullptr);
 }

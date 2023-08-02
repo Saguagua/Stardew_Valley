@@ -36,6 +36,7 @@ struct ColorBuffer :public ConstantBuffer
 	ColorBuffer() :ConstantBuffer(&_data, sizeof(_data))
 	{
 		_data.color = XMFLOAT4();
+		_data.ratio = Vector2(1, 1);
 	}
 
 	virtual ~ColorBuffer() {}
@@ -43,7 +44,16 @@ struct ColorBuffer :public ConstantBuffer
 	void SetColor(XMFLOAT4 color)
 	{
 		_data.color = color;
-		Update();
+	}
+	void SetRatio(Vector2 ratio)
+	{
+		_data.ratio = ratio;
+	}
+	void AddColor(XMFLOAT4 color)
+	{
+		_data.color.x += color.x;
+		_data.color.y += color.y;
+		_data.color.z += color.z;
 	}
 
 	XMFLOAT4 GetColor()
@@ -51,10 +61,17 @@ struct ColorBuffer :public ConstantBuffer
 		return _data.color;
 	}
 
+	Vector2 GetRatio()
+	{
+		return _data.ratio;
+	}
+
 private:
 	struct Data
 	{
 		XMFLOAT4 color;
+		Vector2 ratio;
+		int padding[2];
 	};
 
 	Data _data;
@@ -107,6 +124,74 @@ private:
 		Vector2 size;
 		Vector2 imgSize;
 		Vector2 ratio = {1,1};
+	};
+
+	Data _data;
+};
+
+struct LightPoseBuffer : public ConstantBuffer
+{
+	LightPoseBuffer() :ConstantBuffer(&_data, sizeof(_data))
+	{
+		_data.lightPose1 = {0,0,0,1};
+		_data.lightPose2 = {0,0,0,1};
+		_data.lightPose3 = {0,0,0,1};
+		_data.lightPose4 = {0,0,0,1};
+	}
+
+	virtual ~LightPoseBuffer() {}
+
+	void SetFirstLight(XMFLOAT4 light) { _data.lightPose1 = light; }
+	void SetSecondLight(XMFLOAT4 light) { _data.lightPose2 = light; }
+	void SetThirdLight(XMFLOAT4 light) { _data.lightPose3 = light; }
+	void SetFourthLight(XMFLOAT4 light) { _data.lightPose4 = light; }
+
+	XMFLOAT4 GetFirstLight() { return _data.lightPose1; }
+	XMFLOAT4 GetSecondLight() { return _data.lightPose2; }
+	XMFLOAT4 GetThirdLight() { return _data.lightPose3; }
+	XMFLOAT4 GetFourthLight() { return _data.lightPose4; }
+
+private:
+	struct Data
+	{
+		XMFLOAT4 lightPose1;
+		XMFLOAT4 lightPose2;
+		XMFLOAT4 lightPose3;
+		XMFLOAT4 lightPose4;
+	};
+
+	Data _data;
+};
+
+struct LightColorBuffer : public ConstantBuffer
+{
+	LightColorBuffer() :ConstantBuffer(&_data, sizeof(_data))
+	{
+		_data.lightColor1 = {0,0,0,1};
+		_data.lightColor2 = {0,0,0,1};
+		_data.lightColor3 = {0,0,0,1};
+		_data.lightColor4 = {0,0,0,1};
+	}
+
+	virtual ~LightColorBuffer() {}
+
+	void SetFirstLight(XMFLOAT4 light) { _data.lightColor1 = light; }
+	void SetSecondLight(XMFLOAT4 light) { _data.lightColor2 = light; }
+	void SetThirdLight(XMFLOAT4 light) { _data.lightColor3 = light; }
+	void SetFourthLight(XMFLOAT4 light) { _data.lightColor4 = light; }
+
+	XMFLOAT4 GetFirstLight() { return _data.lightColor1; }
+	XMFLOAT4 GetSecondLight() { return _data.lightColor2; }
+	XMFLOAT4 GetThirdLight() { return _data.lightColor3; }
+	XMFLOAT4 GetFourthLight() { return _data.lightColor4; }
+
+private:
+	struct Data
+	{
+		XMFLOAT4 lightColor1;
+		XMFLOAT4 lightColor2;
+		XMFLOAT4 lightColor3;
+		XMFLOAT4 lightColor4;
 	};
 
 	Data _data;

@@ -8,10 +8,12 @@ cbuffer ColorBuffer : register(b0)
 struct Input
 {
 	float4 pos : SV_POSITION;
+	float2 uv : UV;
 };
 
 float4 PS(Input input) : SV_TARGET
 {
-	if ()
+	if (input.uv.x > ratio.x || input.uv.y > ratio.y)
+		return float4(0,0,0,0);
 	return color;
 }

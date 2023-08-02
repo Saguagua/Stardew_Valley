@@ -6,7 +6,7 @@ public:
 	~VertexBuffer() {}
 
 	void SetIA_VertexBuffer(UINT slot = 0);
-
+	
 private:
 	void CreateVertexBuffer();
 

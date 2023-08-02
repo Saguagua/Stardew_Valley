@@ -237,6 +237,12 @@
     <ClInclude Include="Object\UI\Bar.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\BasicObj\LightTextureRect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\TestScene\LightTestScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -428,6 +434,12 @@
     <ClCompile Include="Object\UI\Bar.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object\BasicObj\LightTextureRect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\TestScene\LightTestScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -502,6 +514,9 @@
     <FxCompile Include="Shader\ClipFilterPS.hlsl" />
     <FxCompile Include="Shader\TextureVS.hlsl" />
     <FxCompile Include="Shader\XMLPS.hlsl" />
+    <FxCompile Include="Shader\SingleColorVS.hlsl" />
+    <FxCompile Include="Shader\LightVS.hlsl" />
+    <FxCompile Include="Shader\LightPS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Map\Save\Fishing.txt" />

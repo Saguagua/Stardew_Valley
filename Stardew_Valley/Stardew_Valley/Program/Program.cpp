@@ -3,10 +3,11 @@
 #include "../Scene/TestScene/TestScene.h"
 #include "../Scene/TestScene/ColliderScene.h"
 #include "../Scene/MapTool/MapToolScene.h"
+#include "../Scene/TestScene/LightTestScene.h"
 
 Program::Program()
 {
-	_scene = make_shared<TestScene>();
+	_scene = make_shared<LightTestScene>();
 	TIMER->LockRunTime(60);
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
 }

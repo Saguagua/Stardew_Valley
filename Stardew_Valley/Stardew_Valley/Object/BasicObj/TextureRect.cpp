@@ -10,7 +10,7 @@ TextureRect::TextureRect(wstring path, Vector2 maxFrame, Vector2 size)
 	CreateData();
 
 	_fBuffer->SetMaxFrame(maxFrame);
-	_fBuffer->SetStart(_curFrame);
+	_fBuffer->SetStart(Vector2(0,0));
 	_fBuffer->Update();
 }
 
@@ -22,6 +22,8 @@ TextureRect::TextureRect(wstring path, Vector2 maxFrame)
 	CreateData();
 
 	_fBuffer->SetMaxFrame(maxFrame);
+	_fBuffer->SetStart(Vector2(0, 0));
+	_fBuffer->Update();
 }
 
 void TextureRect::Render()
@@ -43,25 +45,19 @@ void TextureRect::Render()
 	DC->DrawIndexed(_indices.size(), 0, 0);
 }
 
-void TextureRect::SetCurFrame(Vector2 frame)
-{
-	Vector2 max = _fBuffer->GetMaxFrame();
-
-	if (frame.x > -1 && frame.x < max.x
-		&& frame.y > -1 && frame.y < max.y)
-	{
-		_curFrame = frame;
-		_fBuffer->SetStart(_curFrame);
-		_fBuffer->Update();
-	}
-}
-
 void TextureRect::SetCurFrame(int index)
 {
 	Vector2 maxFrame = _fBuffer->GetMaxFrame();
-	_curFrame.x = index % (int)maxFrame.x;
-	_curFrame.y = index / (int)maxFrame.x;
-	_fBuffer->SetStart(_curFrame);
+	Vector2 frame;
+	frame.x = index % (int)maxFrame.x;
+	frame.y = index / (int)maxFrame.x;
+	_fBuffer->SetStart(frame);
+	_fBuffer->Update();
+}
+
+void TextureRect::SetCurFrame(Vector2 frame)
+{
+	_fBuffer->SetStart(frame);
 	_fBuffer->Update();
 }
 

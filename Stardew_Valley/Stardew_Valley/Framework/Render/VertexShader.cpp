@@ -12,7 +12,7 @@ VertexShader::VertexShader(wstring path)
 void VertexShader::CreateBlob(wstring path)
 	
 {
-	DWORD flags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG;
+    DWORD flags = D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_DEBUG;
 
 	D3DCompileFromFile(path.c_str(),
 		nullptr, nullptr, "VS", "vs_5_0", flags, 0, _blob.GetAddressOf(), nullptr);
@@ -41,26 +41,9 @@ void VertexShader::CreateInputLayout(wstring path)
         DEVICE->CreateInputLayout(layOut, layOutSize,
             _blob->GetBufferPointer(), _blob->GetBufferSize(), IN _inputLayout.GetAddressOf());
     }
-    else if (path == L"Shader/ColorVS.hlsl")
-    {
-        D3D11_INPUT_ELEMENT_DESC layOut[] =
-        {
-            {
-                "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,0,0,
-                D3D11_INPUT_PER_VERTEX_DATA,0
-            },
-            {
-                "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT,0,12,
-                D3D11_INPUT_PER_VERTEX_DATA,0
-            }
-        };
-
-        UINT layOutSize = ARRAYSIZE(layOut);
-
-        DEVICE->CreateInputLayout(layOut, layOutSize,
-            _blob->GetBufferPointer(), _blob->GetBufferSize(), IN _inputLayout.GetAddressOf());
-    }
-    else if (path == L"Shader/TextureVS.hlsl")
+    else if (path == L"Shader/TextureVS.hlsl" 
+        || path == L"Shader/SingleColorVS.hlsl"
+        || path == L"Shader/LightVS.hlsl")
     {
         D3D11_INPUT_ELEMENT_DESC layOut[] =
         {

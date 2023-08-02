@@ -4,7 +4,7 @@ class ConstantBuffer
 {
 public:
 	ConstantBuffer(void* data, UINT dataSize);
-	~ConstantBuffer() {}
+	virtual ~ConstantBuffer() {}
 
 	void Update();
 	void Set_PS(UINT slot = 0);
