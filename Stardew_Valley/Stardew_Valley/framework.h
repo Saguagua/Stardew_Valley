@@ -74,6 +74,7 @@ using namespace Microsoft::WRL;
 #include "Object/BasicObj/RectLine.h"
 #include "Object/BasicObj/SingleColorRect.h"
 #include "Object/BasicObj/TextureRect.h"
+#include "Object/BasicObj/LightTextureRect.h"
 
 //Collider
 #include "Framework/Collision/Collider.h"
@@ -108,6 +109,8 @@ using namespace Microsoft::WRL;
 //Utility
 #include "Framework/Utility/Timer.h"
 #include "Framework/Utility/InputManager.h"
+
+#include "Framework/Light/LightManager.h"
 
 //Scene
 #include "Scene/Scene.h"

@@ -98,9 +98,9 @@ private:
 	shared_ptr<CircleCollider> _col;
 	shared_ptr<Transform> _bodySlot;
 	shared_ptr<Transform> _itemSlot;
-	shared_ptr<TextureRect> _body;
-	shared_ptr<TextureRect> _arm;
-	shared_ptr<TextureRect> _obj;
+	shared_ptr<class LightTextureRect> _body;
+	shared_ptr<LightTextureRect> _arm;
+	shared_ptr<LightTextureRect> _obj;
 
 	vector<shared_ptr<Action>> _bodyActions;
 	vector<shared_ptr<Action>> _armActions;

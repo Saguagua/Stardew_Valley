@@ -4,25 +4,20 @@
 LightTextureRect::LightTextureRect(wstring path, Vector2 maxFrame, Vector2 size)
 	:_size(size)
 {
-	_transform = make_shared<Transform>();
 	_srv = ADD_SRV(path);
 	CreateVertices();
 	CreateData();
 	_fBuffer->SetMaxFrame(maxFrame);
 	_fBuffer->SetStart(Vector2(0, 0));
 	_fBuffer->Update();
-	_lPBuffer->Update();
-	_lCBuffer->Update();
 }
 
 void LightTextureRect::Render()
 {
-	_transform->Set_World();
-	_fBuffer->Set_PS(0);
-	_lPBuffer->Set_VS(3);
-	_lCBuffer->Set_PS(1);
+	_fBuffer->Set_PS();
 	_vBuffer->SetIA_VertexBuffer();
 	_iBuffer->SetIA_IndexBuffer();
+	LightManager::GetInstance()->Set_Shader();
 	_vShader.lock()->SetIA_InputLayout();
 
 	DC->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -34,12 +29,6 @@ void LightTextureRect::Render()
 	_pShader.lock()->SetShader();
 
 	DC->DrawIndexed(_indices.size(), 0, 0);
-}
-
-void LightTextureRect::SetPos(Vector2 pos)
-{
-	_transform->SetPos(pos);
-	_transform->Update();
 }
 
 void LightTextureRect::SetCurFrame(Vector2 frame)
@@ -96,17 +85,4 @@ void LightTextureRect::CreateData()
 
 	_vShader = ADD_VS(L"Shader/LightVS.hlsl");
 	_pShader = ADD_PS(L"Shader/LightPS.hlsl");
-
-	_lPBuffer = make_shared<LightPoseBuffer>();
-	_lCBuffer = make_shared<LightColorBuffer>();
-
-	_lPBuffer->SetFirstLight(XMFLOAT4(60,60,0,0));
-	_lPBuffer->SetSecondLight(XMFLOAT4(WIN_WIDTH - 60,0,0,0));
-	_lPBuffer->SetThirdLight(XMFLOAT4(WIN_WIDTH - 60,WIN_HEIGHT - 60,0,0));
-	_lPBuffer->SetFourthLight(XMFLOAT4(0, WIN_HEIGHT - 60,0,0));
-
-	_lCBuffer->SetFirstLight(XMFLOAT4(10000, 0, 0, 0.0));
-	_lCBuffer->SetSecondLight(XMFLOAT4(0, 10000, 0, 0.0));
-	_lCBuffer->SetThirdLight(XMFLOAT4(0, 0, 10000, 0.0));
-	_lCBuffer->SetFourthLight(XMFLOAT4(10000, 10000, 10000, 0));
 }

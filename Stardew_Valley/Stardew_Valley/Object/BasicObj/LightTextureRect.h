@@ -7,7 +7,6 @@ public:
 
 	void Render();
 
-	void SetPos(Vector2 pos); 
 	void SetCurFrame(Vector2 frame);
 	void SetCurFrame(int index);
 
@@ -20,16 +19,12 @@ private:
 
 	Vector2 _size;
 
-	shared_ptr<Transform> _transform;
-
 	vector<VertexTexture> _vertices;
 	vector<int> _indices;
 
 	shared_ptr<VertexBuffer> _vBuffer;
 	shared_ptr<IndexBuffer> _iBuffer;
 	shared_ptr<FrameBuffer> _fBuffer;
-	shared_ptr<LightPoseBuffer> _lPBuffer;
-	shared_ptr<LightColorBuffer> _lCBuffer;
 
 	weak_ptr<SRV> _srv;
 	weak_ptr<VertexShader> _vShader;

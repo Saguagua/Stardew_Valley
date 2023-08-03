@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Data\LightInfo.h" />
+    <ClInclude Include="Framework\Light\LightManager.h" />
     <ClInclude Include="Scene\TestScene\LightTestScene.h" />
     <ClInclude Include="Object\BasicObj\LightTextureRect.h" />
     <ClInclude Include="Object\UI\Bar.h" />
@@ -229,6 +231,7 @@
     <ClInclude Include="Object\BasicObj\XMLRect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Framework\Light\LightManager.cpp" />
     <ClCompile Include="Scene\TestScene\LightTestScene.cpp" />
     <ClCompile Include="Object\BasicObj\LightTextureRect.cpp" />
     <ClCompile Include="Object\UI\Bar.cpp" />

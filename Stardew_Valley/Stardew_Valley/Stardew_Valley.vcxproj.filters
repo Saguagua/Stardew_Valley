@@ -243,6 +243,12 @@
     <ClInclude Include="Scene\TestScene\LightTestScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\Light\LightManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\LightInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -438,6 +444,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Scene\TestScene\LightTestScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Light\LightManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -129,35 +129,25 @@ private:
 	Data _data;
 };
 
-struct LightPoseBuffer : public ConstantBuffer
+struct LightPosBuffer : public ConstantBuffer
 {
-	LightPoseBuffer() :ConstantBuffer(&_data, sizeof(_data))
+	LightPosBuffer() :ConstantBuffer(&_data, sizeof(_data))
 	{
-		_data.lightPose1 = {0,0,0,1};
-		_data.lightPose2 = {0,0,0,1};
-		_data.lightPose3 = {0,0,0,1};
-		_data.lightPose4 = {0,0,0,1};
+		for (int i = 0; i < 30; i++)
+			_data.poses[i] = { -1,-1,-1,-1 };
 	}
 
-	virtual ~LightPoseBuffer() {}
+	virtual ~LightPosBuffer() {}
 
-	void SetFirstLight(XMFLOAT4 light) { _data.lightPose1 = light; }
-	void SetSecondLight(XMFLOAT4 light) { _data.lightPose2 = light; }
-	void SetThirdLight(XMFLOAT4 light) { _data.lightPose3 = light; }
-	void SetFourthLight(XMFLOAT4 light) { _data.lightPose4 = light; }
-
-	XMFLOAT4 GetFirstLight() { return _data.lightPose1; }
-	XMFLOAT4 GetSecondLight() { return _data.lightPose2; }
-	XMFLOAT4 GetThirdLight() { return _data.lightPose3; }
-	XMFLOAT4 GetFourthLight() { return _data.lightPose4; }
+	XMFLOAT4* GetPoses()
+	{
+		return _data.poses;
+	}
 
 private:
 	struct Data
 	{
-		XMFLOAT4 lightPose1;
-		XMFLOAT4 lightPose2;
-		XMFLOAT4 lightPose3;
-		XMFLOAT4 lightPose4;
+		XMFLOAT4 poses[30];
 	};
 
 	Data _data;
@@ -167,31 +157,33 @@ struct LightColorBuffer : public ConstantBuffer
 {
 	LightColorBuffer() :ConstantBuffer(&_data, sizeof(_data))
 	{
-		_data.lightColor1 = {0,0,0,1};
-		_data.lightColor2 = {0,0,0,1};
-		_data.lightColor3 = {0,0,0,1};
-		_data.lightColor4 = {0,0,0,1};
+		for (int i = 0; i < 30; i++)
+			_data.colors[i] = { 0,0,0,1 };
 	}
 
 	virtual ~LightColorBuffer() {}
 
-	void SetFirstLight(XMFLOAT4 light) { _data.lightColor1 = light; }
-	void SetSecondLight(XMFLOAT4 light) { _data.lightColor2 = light; }
-	void SetThirdLight(XMFLOAT4 light) { _data.lightColor3 = light; }
-	void SetFourthLight(XMFLOAT4 light) { _data.lightColor4 = light; }
+	XMFLOAT4* GetColors()
+	{
+		return _data.colors;
+	}
 
-	XMFLOAT4 GetFirstLight() { return _data.lightColor1; }
-	XMFLOAT4 GetSecondLight() { return _data.lightColor2; }
-	XMFLOAT4 GetThirdLight() { return _data.lightColor3; }
-	XMFLOAT4 GetFourthLight() { return _data.lightColor4; }
+	XMFLOAT4& GetSun()
+	{
+		return _data.colors[0];
+	}
 
+	void GetDarker(XMFLOAT4 val)
+	{
+		_data.colors[0].x -= val.x;
+		_data.colors[0].y -= val.y;
+		_data.colors[0].z -= val.z;
+		_data.colors[0].w -= val.w;
+	}
 private:
 	struct Data
 	{
-		XMFLOAT4 lightColor1;
-		XMFLOAT4 lightColor2;
-		XMFLOAT4 lightColor3;
-		XMFLOAT4 lightColor4;
+		XMFLOAT4 colors[30];
 	};
 
 	Data _data;

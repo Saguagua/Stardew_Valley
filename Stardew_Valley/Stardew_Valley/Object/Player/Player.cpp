@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "../BasicObj/LightTextureRect.h"
 #include "../../Data/PlayerInfo.h"
 #include "Player.h"
 
@@ -8,8 +9,8 @@ Player::Player()
 {
 	_col = make_shared<CircleCollider>(15);
 	_bodySlot = make_shared<Transform>();
-	_body = make_shared<TextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
-	_arm = make_shared<TextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
+	_body = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
+	_arm = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
 
 	_body->SetCurFrame(Vector2(3, 0));
 	_arm->SetCurFrame(Vector2(0, 0));

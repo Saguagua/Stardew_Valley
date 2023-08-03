@@ -7,7 +7,6 @@ LightTestScene::LightTestScene()
 	ObjectSpawner::Create();
 	renderer = make_shared<LightTextureRect>(L"Resource/Tile/Tile.png", DATA->GetTileMaxFrame(), Vector2(100, 100));
 	trenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", DATA->GetTileMaxFrame(), Vector2(100, 100));
-	renderer->SetPos(CENTER);
 	
 	collider1 = make_shared<CircleCollider>(60);
 	collider2 = make_shared<CircleCollider>(60);
@@ -30,7 +29,7 @@ LightTestScene::~LightTestScene()
 
 void LightTestScene::Update()
 {
-	renderer->SetPos(W_MOUSE_POS);
+	
 	collider1->Update();
 	collider2->Update();
 	collider3->Update();

@@ -15,12 +15,13 @@ TileMap::TileMap()
 		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE);
 		_colliders.push_back(col);
 	}
+
 	Vector2 tileMaxFrame = DATA->GetTileMaxFrame();
 	Vector2 objectMaxFrame = DATA->GetObjectMaxFrame();
 	_mapInfos = DATA->GetMapInfos();
 	
-	_tileRenderer = make_shared<TextureRect>(L"Resource/Tile/Tile.png", tileMaxFrame, TILE_SIZE);
-	_objectRenderer = make_shared<TextureRect>(L"Resource/Object/Objects.png", objectMaxFrame, TILE_SIZE);
+	_tileRenderer = make_shared<LightTextureRect>(L"Resource/Tile/Tile.png", tileMaxFrame, TILE_SIZE);
+	_objectRenderer = make_shared<LightTextureRect>(L"Resource/Object/Objects.png", objectMaxFrame, TILE_SIZE);
 
 	for (int i = 0; i < MAP_SIZE.y; i++)
 	{

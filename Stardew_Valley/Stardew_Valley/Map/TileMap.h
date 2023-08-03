@@ -45,8 +45,8 @@ private:
 
 	static TileMap* _instance;
 
-	shared_ptr<TextureRect> _tileRenderer;
-	shared_ptr<TextureRect> _objectRenderer;
+	shared_ptr<LightTextureRect> _tileRenderer;
+	shared_ptr<LightTextureRect> _objectRenderer;
 
 	vector<shared_ptr<RectCollider>> _colliders;
 

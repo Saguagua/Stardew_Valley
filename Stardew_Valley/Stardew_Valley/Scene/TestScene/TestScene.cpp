@@ -8,6 +8,7 @@ TestScene::TestScene()
 {
 	ObjectSpawner::Create();
 	DATA->Load("Test");
+	LightManager::Create();
 	Player::Create();
 	TileMap::Create();
 	PlayerUI::Create();
@@ -25,12 +26,14 @@ TestScene::~TestScene()
 	PlayerUI::Delete();
 	TileMap::Delete();
 	Player::Delete();
+	LightManager::Delete();
 	ObjectSpawner::Delete();
 }
 
 void TestScene::Update()
 {
 	TILEMAP->Update();
+	LightManager::GetInstance()->Update();
 	PLAYER->Update();
 	PlayerUI::GetInstance()->Update();
 }
