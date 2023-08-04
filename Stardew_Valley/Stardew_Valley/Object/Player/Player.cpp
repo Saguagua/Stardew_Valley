@@ -321,16 +321,7 @@ void Player::SetRun(int state)
 
 void Player::Move()
 {
-	if (KEY_DOWN('E'))
-	{
-		_playerState |= PlayerState::HOLDING;
-		SetRun(PlayerAction::FRONTIDLE);
-	}
-	else if (KEY_DOWN('Q'))
-	{
-		_playerState &= ~(PlayerState::HOLDING);
-		SetRun(PlayerAction::FRONTIDLE);
-	}
+	
 	if (KEY_DOWN('W'))
 	{
 		SetRun(PlayerAction::BACKRUN);

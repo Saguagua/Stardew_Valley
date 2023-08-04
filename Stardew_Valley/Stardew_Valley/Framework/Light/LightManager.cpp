@@ -30,7 +30,7 @@ void LightManager::Update()
 {
 	_timer += DELTA_TIME;
 	
-	if (_timer > 1)
+	if (_timer > 0.1)
 	{
 		if (_colorBuffer->GetSun().x < 0.1)
 			_colorBuffer->GetSun() = { 1,1,1,0 };

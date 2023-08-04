@@ -15,7 +15,7 @@ public:
 	short GetMaxHP() { return _maxHp; }
 	short GetStamina() { return _stamina; }
 	short GetMaxStamina() { return _maxStamina; }
-	vector<shared_ptr<GameObject>> GetItems() { return _items; }
+	vector<shared_ptr<GameObject>>& GetItems() { return _items; }
 	shared_ptr<GameObject> GetItem(int index) { return _items[index]; }
 	Vector2 GetPos() { return _pos; }
 

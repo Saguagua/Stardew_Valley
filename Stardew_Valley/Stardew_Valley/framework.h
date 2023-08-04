@@ -86,7 +86,7 @@ using namespace Microsoft::WRL;
 
 //Save
 #include "Data/DataManager.h"
-#include "Data/PlayerInfoSubscriber.h"
+//#include "Data/PlayerInfoSubscriber.h"
 //Player
 #include "Object/Player/Player.h"
 

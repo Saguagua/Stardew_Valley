@@ -1,13 +1,14 @@
 #include "framework.h"
 #include "List.h"
 #include "../../Data/PlayerInfo.h"
-#include "../../Data/PlayerInfoSubscriber.h"
+//#include "../../Data/PlayerInfoSubscriber.h"
 #include "../BasicObj/XMLRect.h"
 #include "BagUI.h"
 
 BagUI::BagUI()
-	:List(Vector2(10, 3)), PlayerInfoSubscriber()
+	:List(Vector2(10, 3))
 {
+	_playerInfo = DATA->GetPlayerInfo();
 	_objMaxFrame = DATA->GetObjectMaxFrame();
 
 	_transform = make_shared<Transform>();
@@ -53,7 +54,7 @@ void BagUI::Render()
 
 void BagUI::CreateButtons()
 {
-	vector<shared_ptr<GameObject>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<GameObject>> items = _playerInfo->GetItems();
 
 	for (int i = 0; i < 30; i++)
 	{
@@ -75,16 +76,24 @@ void BagUI::ClickItem(int index)
 	}
 	else
 	{
-		DATA->SwapItems(_selectedIndex, index);
+		//DATA->SwapItems(_selectedIndex, index);
+		vector<shared_ptr<GameObject>>& items = _playerInfo->GetItems();
+		shared_ptr<GameObject> tmp = items[index];
+		items[index] = items[_selectedIndex];
+		items[_selectedIndex] = tmp;
+
+		_buttons[index]->SetFrame(items[index]->GetFrameIndex());
+		_buttons[_selectedIndex]->SetFrame(items[_selectedIndex]->GetFrameIndex());
+
 		_selectedIndex = -1;
 	}
 
 }
 
-void BagUI::UpdatePlayerInfo()
-{
-	vector<shared_ptr<GameObject>>& items = _playerInfo.lock()->GetItems();
-
-	for (int i = 0; i < _buttons.size(); i++)
-		_buttons[i]->SetFrame(items[i]->GetFrameIndex());
-}
+//void BagUI::UpdatePlayerInfo()
+//{
+//	vector<shared_ptr<GameObject>>& items = _playerInfo->GetItems();
+//
+//	for (int i = 0; i < _buttons.size(); i++)
+//		_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+//}
