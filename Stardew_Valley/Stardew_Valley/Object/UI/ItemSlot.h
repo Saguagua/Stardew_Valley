@@ -5,13 +5,12 @@ public:
 	ItemSlot();
 	virtual ~ItemSlot() {}
 
-	virtual void Update() override;
+	void Update();
 
-	virtual void PushButtonEvent(int index) override;
-
+	void PushButtonEvent(int index);
 private:
-	virtual void CreateButtons(wstring path, int count) override;
-	virtual void SetButtons(Vector2 startPos, Vector2 space) override;
+	void CreateButtons(wstring path, int count);
+	void SetButtons(Vector2 startPos, Vector2 space);
 	vector<shared_ptr<GameObject>> _items;
 };
 

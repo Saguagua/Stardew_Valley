@@ -15,7 +15,7 @@ cbuffer Projection : register(b2)
 
 cbuffer LightBuffer : register(b3)
 {
-	float4 lightPos[30];
+	float4 lightPos[29];
 }
 
 struct VertexInput
@@ -28,7 +28,7 @@ struct VertexOutput
 {
 	float4 pos : SV_POSITION;
 	float2 uv : UV;
-	float distance[30] : DISTANCE;
+	float distance[29] : DISTANCE;
 };
 
 VertexOutput VS(VertexInput input)
@@ -36,13 +36,13 @@ VertexOutput VS(VertexInput input)
 	VertexOutput result;
 	result.pos = mul(input.pos, world);
 
-	for (int i = 1; i < 30; i++)
+	for (int i = 0; i < 29; i++)
 	{
 		if (lightPos[i].x + lightPos[i].y + lightPos[i].z < 0)
 			result.distance[i] = 0;
 		else
 		{
-			float2 worldLightPos = mul(lightPos[i], world).xy;
+			float2 worldLightPos = lightPos[i].xy;
 			worldLightPos -= result.pos.xy;
 			result.distance[i] = dot(worldLightPos, worldLightPos);
 		}

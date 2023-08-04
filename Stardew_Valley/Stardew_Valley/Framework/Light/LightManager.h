@@ -47,6 +47,5 @@ private:
 	shared_ptr<LightPosBuffer> _posBuffer;
 	shared_ptr<LightColorBuffer> _colorBuffer;
 	float _timer = 0;
-	int _hour = 6;
 };
 

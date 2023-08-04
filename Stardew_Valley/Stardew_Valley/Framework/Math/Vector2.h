@@ -42,7 +42,17 @@ struct Vector2 : public XMFLOAT2
 		return result;
 	}
 
-	Vector2& operator+=(Vector2 other)
+	bool operator==(const Vector2 other)
+	{
+		return x == other.x && y == other.y;
+	}
+
+	bool operator!=(const Vector2 other)
+	{
+		return x != other.x || y != other.y;
+	}
+
+	Vector2& operator+=(const Vector2 other)
 	{
 		x += other.x;
 		y += other.y;

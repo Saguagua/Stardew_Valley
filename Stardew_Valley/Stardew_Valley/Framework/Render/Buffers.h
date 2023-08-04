@@ -133,7 +133,7 @@ struct LightPosBuffer : public ConstantBuffer
 {
 	LightPosBuffer() :ConstantBuffer(&_data, sizeof(_data))
 	{
-		for (int i = 0; i < 30; i++)
+		for (int i = 0; i < 29; i++)
 			_data.poses[i] = { -1,-1,-1,-1 };
 	}
 
@@ -147,7 +147,7 @@ struct LightPosBuffer : public ConstantBuffer
 private:
 	struct Data
 	{
-		XMFLOAT4 poses[30];
+		XMFLOAT4 poses[29];
 	};
 
 	Data _data;

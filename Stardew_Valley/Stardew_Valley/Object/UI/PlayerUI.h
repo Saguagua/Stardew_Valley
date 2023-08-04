@@ -35,8 +35,11 @@ private:
 	
 	static PlayerUI* _instance;
 	shared_ptr<Transform> _transform;
+	shared_ptr<class BagUI> _bagUI;
 	shared_ptr<class ItemSlot> _itemSlot;
 	shared_ptr<class Bar> _hpBar;
 	shared_ptr<class Bar> _staminaBar;
+
+	bool _bagActive;
 };
 

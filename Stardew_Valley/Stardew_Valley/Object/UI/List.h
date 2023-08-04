@@ -4,10 +4,10 @@ class List
 public:
 	List(wstring path, Vector2 size, Vector2 matrix, int count);
 	List(Vector2 matrix) : _matrix(matrix) {}
-	~List() {}
+	virtual ~List() {}
 
 	void Render();
-	virtual void Update();
+	void Update();
 
 	void SetActive(bool val) { _isActive = val; }
 	void SetParent(shared_ptr<Transform> trans) { _transform->SetParent(trans); }
@@ -19,9 +19,9 @@ public:
 	shared_ptr<Transform> GetTransform() { return _transform; }
 
 protected:
-	virtual void CreateButtons(wstring path, int count);
-	virtual void SetButtons(Vector2 startPos, Vector2 space);
-	virtual void PushButtonEvent(int index);
+	void CreateButtons(wstring path, int count);
+	void SetButtons(Vector2 startPos, Vector2 space);
+	void PushButtonEvent(int index);
 
 	void Scroll();
 

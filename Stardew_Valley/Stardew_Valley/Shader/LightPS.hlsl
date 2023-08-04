@@ -16,7 +16,7 @@ struct Input
 {
 	float4 pos : SV_POSITION;
 	float2 uv : UV;
-	float distance[30] : DISTANCE;
+	float distance[29] : DISTANCE;
 };
 
 float4 PS(Input input) : SV_TARGET
@@ -29,9 +29,9 @@ float4 PS(Input input) : SV_TARGET
 	float4 mixedColor = { 0,0,0,0 };
 	float4 colorResult;
 
-	for (int i = 1; i < 30; i++)
+	for (int i = 0; i < 29; i++)
 	{
-		colorResult = saturate(lightColor[i] / input.distance[i]);
+		colorResult = saturate(lightColor[i+1] / input.distance[i]);
 		mixedColor += colorResult;
 	}
 

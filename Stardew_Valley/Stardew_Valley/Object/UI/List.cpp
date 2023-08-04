@@ -72,13 +72,12 @@ void List::CreateButtons(wstring path, int count)
 
 void List::SetButtons(Vector2 startPos, Vector2 space)
 {
-	Vector2 frame = _buttons[0]->GetMaxFrame();
 	int x = 0;
 	int y = 0;
 
 	for (int i = 0; i < _buttons.size(); i++)
 	{
-		_buttons[i]->SetFrame(Vector2(x,y));
+		//_buttons[i]->SetFrame(Vector2(x,y));
 		Vector2 pos;
 		pos.x = startPos.x + x * (_buttonSize.x + space.x);
 		pos.y = startPos.y - y * (_buttonSize.y + space.y);
