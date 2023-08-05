@@ -26,18 +26,19 @@ LightManager::LightManager()
 	_posBuffer->Update();
 }
 
-void LightManager::Update()
+void LightManager::TimeChange()
 {
-	_timer += DELTA_TIME;
-	
-	if (_timer > 0.1)
+	int hour = TIMER->GetHour();
+	if (hour == 6)
+		_colorBuffer->GetSun() = {0.8f, 0.8f, 0.8f, 0};
+	else if (hour < 14)
+		_colorBuffer->GetBrighter({0.028f, 0.028f, 0.028f, 0});
+	else
 	{
-		if (_colorBuffer->GetSun().x < 0.1)
-			_colorBuffer->GetSun() = { 1,1,1,0 };
-		_colorBuffer->GetDarker({0.01,0.01,0.01,0});
-		_timer = 0;
-		_colorBuffer->Update();
+		_colorBuffer->GetDarker({0.083f, 0.083f, 0.083f, 0});
 	}
+
+	_colorBuffer->Update();
 }
 
 void LightManager::SetLight(shared_ptr<LightInfo> info)

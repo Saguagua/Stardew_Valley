@@ -1,29 +1,11 @@
 #pragma once
 
-class TileMap
+class TileMap: public PlayerSubscribe
 {
+	
+public:
 	TileMap();
 	~TileMap() {}
-public:
-
-	static void Create()
-	{
-		if (_instance == nullptr)
-			_instance = new TileMap();
-	}
-
-	static void Delete()
-	{
-		if (_instance != nullptr)
-			delete _instance;
-	}
-
-	static TileMap* GetInstance()
-	{
-		if (_instance != nullptr)
-			return _instance;
-		return nullptr;
-	}
 
 	void Update();
 	void Render();
@@ -35,6 +17,9 @@ public:
 	vector<shared_ptr<MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);
+
+	virtual void UpdateInfo() override;
+	virtual void Dead() override;
 private:
 	void SetCameraRange();
 	void Play();
@@ -43,7 +28,6 @@ private:
 
 	void ChangeTile();
 
-	static TileMap* _instance;
 
 	shared_ptr<LightTextureRect> _tileRenderer;
 	shared_ptr<LightTextureRect> _objectRenderer;
@@ -55,5 +39,6 @@ private:
 
 	string _curMapName;
 	Vector2 _curMapSize;
+
 };
 

@@ -39,6 +39,7 @@ private:
 	shared_ptr<class ItemSlot> _itemSlot;
 	shared_ptr<class Bar> _hpBar;
 	shared_ptr<class Bar> _staminaBar;
+	shared_ptr<class TimeUI> _timeUI;
 
 	bool _bagActive;
 };

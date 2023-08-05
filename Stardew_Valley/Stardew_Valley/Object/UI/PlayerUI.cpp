@@ -5,6 +5,7 @@
 #include "Palette.h"
 #include "BagUI.h"
 #include "Bar.h"
+#include "TimeUI.h"
 #include "PlayerUI.h"
 
 PlayerUI* PlayerUI::_instance = nullptr;
@@ -14,16 +15,18 @@ PlayerUI::PlayerUI()
 	_transform = make_shared<Transform>();
 	_bagUI = make_shared<BagUI>();
 	_itemSlot = make_shared<ItemSlot>();
+	_timeUI = make_shared<TimeUI>();
 	_hpBar = make_shared<Bar>("Resource/UI/UI", "HPBar.png", Vector2(35, 200));
 	_staminaBar = make_shared<Bar>("Resource/UI/UI", "StaminaBar.png", Vector2(35, 200));
+
 	_bagUI->SetActive(false);
 	_itemSlot->SetActive(true);
+
 	_itemSlot->SetPos(Vector2(0, -300));
 	_hpBar->SetPos(Vector2(500, -250));
 	_staminaBar->SetPos(Vector2(545, -250));
 	_bagUI->SetPos(Vector2(0,0));
-	_itemSlot->Update();
-	_bagUI->Update();
+	_timeUI->SetPos(Vector2(500, 250));
 }
 
 void PlayerUI::PostRender()
@@ -32,12 +35,14 @@ void PlayerUI::PostRender()
 	_staminaBar->Render();
 	_itemSlot->Render();
 	_bagUI->Render();
+	_timeUI->Render();
 }
 
 void PlayerUI::Update()
 {
 	_bagUI->Update();
 	_itemSlot->Update();
+	_timeUI->Update();
 	Key();
 }
 

@@ -8,7 +8,8 @@
 BagUI::BagUI()
 	:List(Vector2(10, 3))
 {
-	_playerInfo = DATA->GetPlayerInfo();
+	_type = PlayerSubscribe::Type::ITEMS;
+
 	_objMaxFrame = DATA->GetObjectMaxFrame();
 
 	_transform = make_shared<Transform>();
@@ -54,7 +55,7 @@ void BagUI::Render()
 
 void BagUI::CreateButtons()
 {
-	vector<shared_ptr<GameObject>> items = _playerInfo->GetItems();
+	vector<shared_ptr<GameObject>> items = _playerInfo.lock()->GetItems();
 
 	for (int i = 0; i < 30; i++)
 	{
@@ -76,18 +77,24 @@ void BagUI::ClickItem(int index)
 	}
 	else
 	{
-		//DATA->SwapItems(_selectedIndex, index);
-		vector<shared_ptr<GameObject>>& items = _playerInfo->GetItems();
-		shared_ptr<GameObject> tmp = items[index];
-		items[index] = items[_selectedIndex];
-		items[_selectedIndex] = tmp;
-
-		_buttons[index]->SetFrame(items[index]->GetFrameIndex());
-		_buttons[_selectedIndex]->SetFrame(items[_selectedIndex]->GetFrameIndex());
+		DATA->SwapItems(_selectedIndex, index);
 
 		_selectedIndex = -1;
 	}
+}
 
+void BagUI::UpdateInfo()
+{
+	vector<shared_ptr<GameObject>> items = _playerInfo.lock()->GetItems();
+
+	for (int i = 0; i < _buttons.size(); i++)
+	{
+		_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+	}
+}
+
+void BagUI::Dead()
+{
 }
 
 //void BagUI::UpdatePlayerInfo()

@@ -1,6 +1,7 @@
 #pragma once
-//#include "../../Data/PlayerInfoSubscriber.h"
-class BagUI :public List
+#include "../../Data/PlayerSubscribe.h"
+
+class BagUI :public List, PlayerSubscribe
 {
 public:
 	BagUI();
@@ -8,6 +9,10 @@ public:
 
 	void Update();
 	void Render();
+
+	virtual void UpdateInfo() override;
+	virtual void Dead() override;
+
 private:
 	void CreateButtons();
 
@@ -15,10 +20,9 @@ private:
 
 	shared_ptr<Transform> _objSlot;
 	shared_ptr<TextureRect> _obj;
-	shared_ptr<class PlayerInfo> _playerInfo;
 
 	Vector2 _objMaxFrame;
 	int _selectedIndex = -1;
-	
+
 };
 

@@ -3,7 +3,7 @@
 
 void PickableItem::Interaction()
 {
-	if (PLAYER->GetItem(_pickCode))
+	if (DATA->AddItem(_pickCode))
 	{
 		_objCode = 139;
 		_frameIndex = 103;

@@ -85,8 +85,9 @@ using namespace Microsoft::WRL;
 #include "Framework/Animation/Action.h"
 
 //Save
+#include "Data/PlayerSubscribe.h"
 #include "Data/DataManager.h"
-//#include "Data/PlayerInfoSubscriber.h"
+
 //Player
 #include "Object/Player/Player.h"
 

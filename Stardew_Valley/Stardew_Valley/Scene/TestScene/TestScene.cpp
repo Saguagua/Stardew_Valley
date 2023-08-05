@@ -9,39 +9,37 @@ TestScene::TestScene()
 	ObjectSpawner::Create();
 	DATA->Load("Test");
 	LightManager::Create();
-	Player::Create();
-	TileMap::Create();
+	
 	PlayerUI::Create();
 
-	PLAYER->SetPos(CENTER);
-	TILEMAP->ChangeMap(0);
+	_player = make_shared<Player>();
+	_map = make_shared<TileMap>();
 
-	PLAYER->Update();
-	CAMERA->SetTarget(PLAYER->GetTransform());
+	_map->ChangeMap(0);
+
+	_player->Update();
+	CAMERA->SetTarget(DATA->GetPlayerInfo()->GetTransform());
 	CAMERA->Update();
 }
 
 TestScene::~TestScene()
 {
 	PlayerUI::Delete();
-	TileMap::Delete();
-	Player::Delete();
 	LightManager::Delete();
 	ObjectSpawner::Delete();
 }
 
 void TestScene::Update()
 {
-	TILEMAP->Update();
-	LightManager::GetInstance()->Update();
-	PLAYER->Update();
+	_map->Update();
+	_player->Update();
 	PlayerUI::GetInstance()->Update();
 }
 
 void TestScene::Render()
 {
-	TILEMAP->Render();
-	PLAYER->Render();
+	_map->Render();
+	_player->Render();
 }
 
 void TestScene::PostRender()

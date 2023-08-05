@@ -6,8 +6,6 @@
 #include "../Object/Tile/Tile.h"
 #include "TileMap.h"
 
-TileMap* TileMap::_instance = nullptr;
-
 TileMap::TileMap()
 {
 	for (int i = 0; i < 9; i++)
@@ -34,15 +32,16 @@ TileMap::TileMap()
 			_tiles.push_back(tile);
 		}
 	}
+
 	SetCameraRange();
 }
 
 void TileMap::Update()
 {
-	if (PLAYER != nullptr)
-		Play();
 	if (PALETTE != nullptr && !PALETTE->GetFocus())
 		ChangeTile();
+	else
+		Play();
 }
 
 void TileMap::Play()
@@ -53,7 +52,7 @@ void TileMap::Play()
 
 void TileMap::Blocking()
 {
-	int worldIndex = GetWorldIndex(PLAYER->GetWorldPos());
+	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
 	int x = -2;
 	int y = -1;
 
@@ -79,7 +78,7 @@ void TileMap::Blocking()
 
 		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
 		_colliders[i]->GetTransform()->Update_SRT();
-		_colliders[i]->Block(PLAYER->GetCollider());
+		_colliders[i]->Block(_playerInfo.lock()->GetCollider());
 	}
 }
 
@@ -117,6 +116,14 @@ void TileMap::ChangeTile()
 			_tiles[index]->SetObject(code);
 		}
 	}
+}
+
+void TileMap::UpdateInfo()
+{
+}
+
+void TileMap::Dead()
+{
 }
 
 void TileMap::Render()
@@ -164,8 +171,8 @@ int TileMap::GetWorldIndex(Vector2 pos)
 
 shared_ptr<Tile> TileMap::GetMouseToPlayerIndex(Vector2 mousePos) //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
 {
-	Vector2 target = mousePos - PLAYER->GetWorldPos();
-	int worldIndex = GetWorldIndex(PLAYER->GetWorldPos());
+	Vector2 target = mousePos - _playerInfo.lock()->GetWorldPos();
+	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
 	float angle = target.Angle() * 57.2958f;
 
 	if (angle > -25.0f && angle <= 25.0f)

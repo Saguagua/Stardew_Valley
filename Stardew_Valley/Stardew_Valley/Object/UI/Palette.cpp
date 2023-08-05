@@ -112,7 +112,7 @@ void Palette::ChangeMap(int index)
 	if (_saveList->GetCurIndex() == index)
 		return;
 
-	TILEMAP->ChangeMap(index);
+	//TILEMAP->ChangeMap(index);
 }
 
 void Palette::CreateChartButtons()

@@ -3,11 +3,9 @@
 #include "../../Data/PlayerInfo.h"
 #include "Player.h"
 
-Player* Player::_instance = nullptr;
 
 Player::Player()
 {
-	_col = make_shared<CircleCollider>(15);
 	_bodySlot = make_shared<Transform>();
 	_body = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
 	_arm = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
@@ -16,9 +14,8 @@ Player::Player()
 	_arm->SetCurFrame(Vector2(0, 0));
 
 	_bodySlot->AddPos(Vector2(0, 15));
-	_bodySlot->SetParent(_col->GetTransform());
+	_bodySlot->SetParent(_playerInfo.lock()->GetTransform());
 
-	SetInfos();
 	CreateAction();
 
 	_armActions[_armIndex]->Play();
@@ -28,8 +25,7 @@ Player::Player()
 void Player::Update()
 {
 	KeyInput();
-	Vector2 pos = _bodySlot->GetWorldPos();
-	_col->Update();
+	_playerInfo.lock()->GetCollider()->Update();
 	_bodySlot->Update();
 
 	_bodyActions[_bodyIndex]->Update();
@@ -43,123 +39,40 @@ void Player::Render()
 	_bodySlot->Set_World(0);
 	_body->Render();
 	_arm->Render();
-	_col->Render();
+	_playerInfo.lock()->GetCollider()->Render();
 }
 
 void Player::KeyInput()
 {
+	if (_playerInfo.lock()->GetState() & PlayerInfo::PlayerState::DEAD)
+		return;
+
 	Move();
 	Items();
 }
 
-vector<CallBackInt> Player::GetSelectedIndexCallback()
-{
-	vector<CallBackInt> cbs;
-	for (int i = 0; i < 10; i++)
-	{
-		CallBackInt cb = std::bind(&Player::SetSelectedItemIndex, _instance, i);
-		cbs.push_back(cb);
-	}
-
-	return cbs;
-}
-
-Vector2 Player::GetWorldPos()
-{
-	return _col->GetWorldPos();
-}
-
-shared_ptr<GameObject> Player::GetSelectedItem()
-{
-	return _playerInfo->GetItem(_selectedItemIndex);
-}
-
-vector<shared_ptr<GameObject>> Player::GetItems()
-{
-	return _playerInfo->GetItems();
-}
-
 void Player::SetSelectedItemIndex(int index)
 {
-	_selectedItemIndex = index;
-	auto items = _playerInfo->GetItems();
-	int type = _playerInfo->GetItem(_selectedItemIndex)->GetType();
+	_playerInfo.lock()->SetSelectedIndex(index);
+	auto items = _playerInfo.lock()->GetItems();
+	int type = _playerInfo.lock()->GetItem(index)->GetType();
+	int playerState = _playerInfo.lock()->GetState();
 
 	if (type == ObjectInfo::Type::NONE ||
 		type == ObjectInfo::Type::EATABLE ||
 		type == ObjectInfo::Type::FARMMING ||
 		type == ObjectInfo::Type::SEED)
 	{
-		_playerState |= PlayerState::HOLDING;
+		playerState |= PlayerInfo::PlayerState::HOLDING;
 	}
 	else
 	{
-		_playerState &= ~(PlayerState::HOLDING);
+		playerState &= ~(PlayerInfo::PlayerState::HOLDING);
 	}
+
+	_playerInfo.lock()->SetState(playerState);
+
 	SetAction(_bodyIndex);
-}
-
-void Player::AddMaxHP(short amount)
-{
-	_playerInfo->AddMaxHP(amount);
-}
-
-void Player::AddMaxStamina(short amount)
-{
-	_playerInfo->AddMaxStamina(amount);
-}
-
-bool Player::AddHP(short amount)
-{
-	short hp = _playerInfo->GetHP();
-	hp -= amount;
-	if (hp <= 0)
-		_playerState |= Player::PlayerState::DEAD;
-
-	_playerInfo->SetHP(hp);
-
-	return !(_playerState & Player::PlayerState::DEAD);
-}
-
-bool Player::AddStamina(short amount)
-{
-	float maxStamina = _playerInfo->GetMaxStamina();
-	float stamina = _playerInfo->GetStamina();
-
-	stamina += amount;
-
-	if (stamina <= 0)
-		_playerState |= Player::PlayerState::DEAD;
-	float ratio = stamina / maxStamina;
-	PlayerUI::GetInstance()->SetStamina(ratio);
-	_playerInfo->SetStamina(stamina);
-
-	return !(_playerState & Player::PlayerState::DEAD);
-}
-
-bool Player::GetItem(int objCode)
-{
-	vector<shared_ptr<GameObject>> items = _playerInfo->GetItems();
-
-	for (int i = 0; i < items.size(); i++)
-	{
-		if (objCode == items[i]->GetCode())
-		{
-			if (items[i]->AddCount())
-				return true;
-		}
-	}
-
-	for (int i = 0; i < items.size(); i++)
-	{
-		if (items[i]->GetCode() == 139)
-		{
-			items[i] = ObjectSpawner::CreateObj(objCode);
-			return true;
-		}
-	}
-	
-	return false;
 }
 
 void Player::CreateAction()
@@ -286,7 +199,9 @@ void Player::SetAction(int state)
 	_armActions[_armIndex]->Stop();
 	_bodyActions[_bodyIndex]->Stop();
 
-	if (!(_playerState & PlayerState::HOLDING))
+	int playerState = _playerInfo.lock()->GetState();
+
+	if (!(playerState & PlayerInfo::PlayerState::HOLDING))
 		_armIndex = state;
 	else if (state % 3 == 0)
 		_armIndex = PlayerAction::FRONTHOLD;
@@ -303,17 +218,19 @@ void Player::SetAction(int state)
 
 void Player::SetRun(int state)
 {
-	if (_playerState == PlayerState::IDLE || _playerState == PlayerState::HOLDING)
+	int playerState = _playerInfo.lock()->GetState();
+
+	if (playerState == PlayerInfo::PlayerState::IDLE || playerState == PlayerInfo::PlayerState::HOLDING)
 		SetAction(state);
-	else if (_playerState & (PlayerState::RUNL | PlayerState::RUNR))
+	else if (playerState & (PlayerInfo::PlayerState::RUNL | PlayerInfo::PlayerState::RUNR))
 		SetAction(PlayerAction::SIDERUN);
 	else 
 	{
-		if (state == PlayerState::RUNL || state == PlayerState::RUNR)
+		if (state == PlayerInfo::PlayerState::RUNL || state == PlayerInfo::PlayerState::RUNR)
 			SetAction(PlayerAction::SIDERUN);
-		else if(_playerState & PlayerState::RUNF)
+		else if(playerState & PlayerInfo::PlayerState::RUNF)
 			SetAction(PlayerAction::FRONTRUN);
-		else if (_playerState & PlayerState::RUNB)
+		else if (playerState & PlayerInfo::PlayerState::RUNB)
 			SetAction(PlayerAction::BACKRUN);
 	}
 		
@@ -321,34 +238,36 @@ void Player::SetRun(int state)
 
 void Player::Move()
 {
-	
+	int& playerState = _playerInfo.lock()->GetStateRef();
+	shared_ptr<CircleCollider> collider = _playerInfo.lock()->GetCollider();
+
 	if (KEY_DOWN('W'))
 	{
 		SetRun(PlayerAction::BACKRUN);
-		_playerState |= PlayerState::RUNB;
+		playerState |= PlayerInfo::PlayerState::RUNB;
 	}
 	else if (KEY_PRESS('W'))
 	{
-		_col->AddPos(Vector2(0, 1) * DELTA_TIME * SPEED);
+		collider->AddPos(Vector2(0, 1) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('W'))
 	{
-		_playerState ^= PlayerState::RUNB;
+		playerState ^= PlayerInfo::PlayerState::RUNB;
 		SetRun(PlayerAction::BACKIDLE);
 	}
 
 	if (KEY_DOWN('S'))
 	{
 		SetRun(PlayerAction::FRONTRUN);
-		_playerState |= PlayerState::RUNF;
+		playerState |= PlayerInfo::PlayerState::RUNF;
 	}
 	else if (KEY_PRESS('S'))
 	{
-		_col->AddPos(Vector2(0, -1) * DELTA_TIME * SPEED);
+		collider->AddPos(Vector2(0, -1) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('S'))
 	{
-		_playerState ^= PlayerState::RUNF;
+		playerState ^= PlayerInfo::PlayerState::RUNF;
 		SetRun(PlayerAction::FRONTIDLE);
 	}
 
@@ -356,16 +275,16 @@ void Player::Move()
 	{
 		SetRun(PlayerAction::SIDERUN);
 		
-		_playerState |= Player::PlayerState::RUNL;
-		_col->SetScale(Vector2(-1, 1));
+		playerState |= PlayerInfo::PlayerState::RUNL;
+		collider->SetScale(Vector2(-1, 1));
 	}
 	else if (KEY_PRESS('A'))
 	{
-		_col->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
+		collider->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('A'))
 	{
-		_playerState ^= PlayerState::RUNL;
+		playerState ^= PlayerInfo::PlayerState::RUNL;
 		SetRun(PlayerAction::SIDEIDLE);
 	}
 
@@ -373,16 +292,16 @@ void Player::Move()
 	{
 		SetRun(PlayerAction::SIDERUN);
 
-		_playerState |= Player::PlayerState::RUNR;
-		_col->SetScale(Vector2(1, 1));
+		playerState |= PlayerInfo::PlayerState::RUNR;
+		collider->SetScale(Vector2(1, 1));
 	}
 	if (KEY_PRESS('D'))
 	{
-		_col->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
+		collider->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
 	}
 	else if (KEY_UP('D'))
 	{
-		_playerState ^= PlayerState::RUNR;
+		playerState ^= PlayerInfo::PlayerState::RUNR;
 		SetRun(PlayerAction::SIDEIDLE);
 	}
 }
@@ -429,4 +348,14 @@ void Player::Items()
 	{
 		SetSelectedItemIndex(9);
 	}
+}
+
+void Player::UpdateInfo()
+{
+
+}
+
+void Player::Dead()
+{
+	SetAction(PlayerInfo::PlayerState::DEAD);
 }

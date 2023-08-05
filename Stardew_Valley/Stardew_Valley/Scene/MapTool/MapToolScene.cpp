@@ -6,28 +6,26 @@ MapToolScene::MapToolScene()
 {
 	ObjectSpawner::Create();
 	DATA->Load("Test");
-	TileMap::Create();
 	Palette::Create();
-	TILEMAP->SetDebug(true);
+	_map->SetDebug(true);
 	PALETTE->SetPos(CENTER - PALETTE->GetSize());
 }
 
 MapToolScene::~MapToolScene()
 {
 	Palette::Delete();
-	TileMap::Delete();
 	ObjectSpawner::Delete();
 }
 
 void MapToolScene::Update()
 {
 	PALETTE->Update();
-	TILEMAP->Update();
+	_map->Update();
 }
 
 void MapToolScene::Render()
 {
-	TILEMAP->Render();
+	_map->Render();
 }
 
 void MapToolScene::PostRender()

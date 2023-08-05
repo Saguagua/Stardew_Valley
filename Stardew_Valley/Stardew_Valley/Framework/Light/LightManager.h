@@ -25,7 +25,7 @@ public:
 			return _instance;
 	}
 
-	void Update();
+	void TimeChange();
 
 	void Set_Shader()
 	{
@@ -41,11 +41,9 @@ public:
 		_colorBuffer->GetColors()[index] = { 0,0,0,0 };
 	}
 
-
 private:
 	static LightManager* _instance;
 	shared_ptr<LightPosBuffer> _posBuffer;
 	shared_ptr<LightColorBuffer> _colorBuffer;
-	float _timer = 0;
 };
 

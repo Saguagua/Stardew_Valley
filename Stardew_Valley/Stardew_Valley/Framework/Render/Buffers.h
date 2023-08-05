@@ -180,6 +180,14 @@ struct LightColorBuffer : public ConstantBuffer
 		_data.colors[0].z -= val.z;
 		_data.colors[0].w -= val.w;
 	}
+
+	void GetBrighter(XMFLOAT4 val)
+	{
+		_data.colors[0].x += val.x;
+		_data.colors[0].y += val.y;
+		_data.colors[0].z += val.z;
+		_data.colors[0].w += val.w;
+	}
 private:
 	struct Data
 	{

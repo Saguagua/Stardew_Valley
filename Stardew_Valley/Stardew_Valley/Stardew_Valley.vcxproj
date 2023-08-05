@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Data\PlayerInfoSubscriber.h" />
+    <ClInclude Include="Data\PlayerSubscribe.h" />
     <ClInclude Include="Object\UI\BagUI.h" />
     <ClInclude Include="Data\LightInfo.h" />
     <ClInclude Include="Framework\Light\LightManager.h" />
@@ -228,6 +229,7 @@
     <ClInclude Include="Object\UI\TextureButton.h" />
     <ClInclude Include="Data\TileInfo.h" />
     <ClInclude Include="Object\Tile\Tile.h" />
+    <ClInclude Include="Object\UI\TimeUI.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="Object\UI\Window.h" />
     <ClInclude Include="Object\BasicObj\XMLRect.h" />
@@ -306,6 +308,7 @@
     <ClCompile Include="Object\UI\Window.cpp" />
     <ClCompile Include="Object\Tile\Tile.cpp" />
     <ClCompile Include="Object\BasicObj\XMLRect.cpp" />
+    <ClCompile Include="Object\UI\TimeUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />

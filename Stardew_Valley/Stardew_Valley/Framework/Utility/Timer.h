@@ -33,6 +33,7 @@ public:
 	float GetDeltaTime() { return _deltaTime; }
 	float GetRunTime() { return _runTime; }
 	void LockRunTime(float val) { _lockFPS = val; }
+	int GetHour() { return _hour; }
 
 private:
 	static Timer* _instance;
@@ -50,5 +51,7 @@ private:
 	float _oneSecCount = 0.0;
 	float _runTime = 0.0;
 	float _lockFPS = 0.0;
+	int _hour = 6;
+	int _minute = 0;
 };
 

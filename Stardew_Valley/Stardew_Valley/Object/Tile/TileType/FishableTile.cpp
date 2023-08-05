@@ -5,7 +5,7 @@
 
 void FishableTile::Interaction()
 {
-	shared_ptr<GameObject> obj = PLAYER->GetSelectedItem();
+	shared_ptr<GameObject> obj = DATA->GetSelectedItem();
 
 	if (obj->GetType() == ObjectInfo::Type::FISHINGROD)
 		dynamic_pointer_cast<FishingRod>(obj)->Interaction();

@@ -3,8 +3,8 @@
 
 void EatableItem::Interaction()
 {
-	PLAYER->AddMaxHP(_maxHpCost);
-	PLAYER->AddHP(_hpCost);
-	PLAYER->AddMaxStamina(_maxStaminaCost);
-	PLAYER->AddStamina(_staminaCost);
+	DATA->AddMaxHP(_maxHpCost);
+	DATA->AddHP(_hpCost);
+	DATA->AddMaxStamina(_maxStaminaCost);
+	DATA->AddStamina(_staminaCost);
 }

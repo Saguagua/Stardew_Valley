@@ -4,7 +4,7 @@
 
 void BreakableItem::GetDamage(shared_ptr<PickAxe> obj)
 {
-	if (PLAYER->AddStamina(obj->GetCost()))
+	if (DATA->AddStamina(obj->GetCost()))
 	{
 		_hp -= obj->GetDamage();
 
@@ -21,7 +21,7 @@ void BreakableItem::GetDamage(shared_ptr<PickAxe> obj)
 
 void BreakableItem::Interaction()
 {
-	shared_ptr<GameObject> obj = PLAYER->GetSelectedItem();
+	shared_ptr<GameObject> obj = DATA->GetSelectedItem();
 
 	if (obj->GetType() == ObjectInfo::Type::PICKAXE)
 	{
