@@ -6,18 +6,29 @@ DropItem::DropItem()
 {
     _type = ObjectInfo::Type::DROP;
     _col = make_shared<CircleCollider>(20);
+    _dragArea = make_shared<CircleCollider>(100);
+    _dragArea->SetDebug(true);
+    _dragArea->SetParent(_col->GetTransform());
 }
 
 void DropItem::Update()
 {
     _col->Update();
+    _dragArea->Update();
 }
 
 void DropItem::Render()
 {
     _col->Render();
+    _dragArea->Render();
 }
 
+
+void DropItem::Interaction()
+{
+    DATA->AddItem(_objCode);
+    _isActive = false;
+}
 
 void DropItem::Spawn(Vector2 pos, int objCode, int frameIndex, int itemCode)
 {

@@ -50,4 +50,3 @@ private:
 	int _armIndex = PlayerAction::FRONTIDLE;
 
 };
-

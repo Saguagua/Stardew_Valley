@@ -10,6 +10,9 @@ Tile::Tile(Vector2 pos, int tileCode, int objCode)
 	:_centerPos(pos), _tileCode(tileCode)
 {
 	_obj = ObjectSpawner::CreateObj(objCode);
+	if (_obj->GetType() == ObjectInfo::Type::BREAKABLE)
+		dynamic_pointer_cast<BreakableItem>(_obj)->SetPos(pos);
+	
 	_bitFlag = DATA->GetTileInfo(tileCode)->GetBitFlag();
 }
 
@@ -17,6 +20,9 @@ Tile::Tile(Vector2 pos, int tileCode, int bitFlag, int objCode)
 	:_centerPos(pos), _bitFlag(bitFlag), _tileCode(tileCode)
 {
 	_obj = ObjectSpawner::CreateObj(objCode);
+
+	if (_obj->GetType() == ObjectInfo::Type::BREAKABLE)
+		dynamic_pointer_cast<BreakableItem>(_obj)->SetPos(pos);
 }
 
 void Tile::Interaction()

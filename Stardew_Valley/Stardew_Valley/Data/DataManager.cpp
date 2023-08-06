@@ -98,6 +98,38 @@ shared_ptr<GameObject> DataManager::GetSelectedItem()
 
 bool DataManager::AddItem(int objCode)
 {
+	vector<shared_ptr<GameObject>>& items = _playerInfo->GetItems();
+
+	for (auto item : items)
+	{
+		if (item->GetCode() == objCode)
+		{
+			if (item->AddCount())
+			{
+				PlayerNotification(PlayerSubscribe::Type::ITEMS);
+				return true;
+			}
+		}
+	}
+	for (int i = 0; i < items.size(); i++)
+	{
+		if (items[i]->GetCode() == 139)
+		{
+			items[i] = ObjectSpawner::CreateObj(objCode);
+			PlayerNotification(PlayerSubscribe::Type::ITEMS);
+			return true;
+		}
+	}
+	/*for (auto item : items)
+	{
+		if (item->GetCode() == 139)
+		{
+			item = ObjectSpawner::CreateObj(objCode);
+			PlayerNotification(PlayerSubscribe::Type::ITEMS);
+			return true;
+		}
+	}*/
+
 	return false;
 }
 

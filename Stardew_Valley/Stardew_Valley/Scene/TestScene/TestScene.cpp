@@ -8,6 +8,7 @@ TestScene::TestScene()
 {
 	ObjectSpawner::Create();
 	DATA->Load("Test");
+	ObjectSpawner::GetInstance()->SetPlayerInfo(); // 구조 바뀌면 삭제
 	LightManager::Create();
 	
 	PlayerUI::Create();
@@ -32,6 +33,7 @@ TestScene::~TestScene()
 void TestScene::Update()
 {
 	_map->Update();
+	ObjectSpawner::GetInstance()->Update();
 	_player->Update();
 	PlayerUI::GetInstance()->Update();
 }
@@ -39,6 +41,7 @@ void TestScene::Update()
 void TestScene::Render()
 {
 	_map->Render();
+	ObjectSpawner::GetInstance()->Render();
 	_player->Render();
 }
 

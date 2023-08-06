@@ -357,5 +357,5 @@ void Player::UpdateInfo()
 
 void Player::Dead()
 {
-	SetAction(PlayerInfo::PlayerState::DEAD);
+	//SetAction(PlayerInfo::PlayerState::DEAD);
 }

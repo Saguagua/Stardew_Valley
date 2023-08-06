@@ -15,7 +15,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 
 ObjectSpawner::ObjectSpawner()
 {
-	_renderer = make_shared<TextureRect>(L"Resource/Object/Objects.png", DATA->GetObjectMaxFrame(), Vector2(20, 20));
+	_renderer = make_shared<LightTextureRect>(L"Resource/Object/Objects.png", DATA->GetObjectMaxFrame(), Vector2(40, 40));
 	
 	for (int i = 0; i < 60; i++)
 	{
@@ -30,7 +30,7 @@ shared_ptr<GameObject> ObjectSpawner::CreateObj(int objCode, short count)
 
 	switch (vals[0])
 	{
-	case ObjectInfo::BREAKABLE:
+	case ObjectInfo::BREAKABLE: //pos
 	{
 		return make_shared<BreakableItem>(objCode, vals[1], vals[2], vals[3], vals[4], vals[5], vals[6]);
 	}
@@ -81,6 +81,14 @@ void ObjectSpawner::Update()
 		if (!dropItem->IsActive())
 			continue;
 		dropItem->Update();
+		if (dropItem->GetCollider()->IsCollision(_playerInfo->GetCollider()))
+			dropItem->Interaction();
+		else if (dropItem->GetArea()->IsCollision(_playerInfo->GetCollider()))
+		{
+			Vector2 dir = _playerInfo->GetWorldPos() - dropItem->GetWorldPos();
+			dir = dir.Normalize();
+			dropItem->AddPos(dir * 100 * DELTA_TIME);
+		}
 	}
 }
 

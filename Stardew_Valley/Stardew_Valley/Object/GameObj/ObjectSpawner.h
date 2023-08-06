@@ -28,10 +28,13 @@ public:
 	void Update();
 	void Render();
 
+	void SetPlayerInfo() { _playerInfo = DATA->GetPlayerInfo(); }
+
 	void ActiveDropItem(Vector2 pos, int objCode, int count);
 private:
 	static ObjectSpawner* _instance;
 	vector<shared_ptr<class DropItem>> _dropItems;
-	shared_ptr<TextureRect> _renderer;
+	shared_ptr<class PlayerInfo> _playerInfo;
+	shared_ptr<LightTextureRect> _renderer;
 };
 

@@ -16,6 +16,7 @@ public:
 	void SetPos(Vector2 pos) { _transform->SetPos(pos); }
 	void SetScale(Vector2 scale) { _transform->SetScale(scale); }
 	void SetAngle(float angle) { _transform->SetAngle(angle); }
+	void SetParent(shared_ptr<Transform> other) { _transform->SetParent(other); }
 	void SetDebug(bool val) { _isDebug = val; }
 
 	void AddPos(Vector2 pos) { _transform->AddPos(pos); }
