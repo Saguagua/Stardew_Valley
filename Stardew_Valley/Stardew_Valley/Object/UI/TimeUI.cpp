@@ -12,7 +12,8 @@ TimeUI::TimeUI()
 	_hourHand = make_shared<XMLRect>("Resource/UI/UI", "TimePicker.png", Vector2(25,35));
 
 	_rotateSlot->SetParent(_bodySlot);
-	_rotateSlot->SetPos(Vector2(-30, 25));
+	_rotateSlot->SetPos(Vector2(-27, 25));
+	_rotateSlot->SetAngle(3.14159);
 	_hourHandSlot->SetParent(_rotateSlot);
 	_hourHandSlot->SetPos(Vector2(0.0f, 17.5f));
 }
@@ -30,5 +31,5 @@ void TimeUI::Update()
 	_bodySlot->Update();
 	_rotateSlot->Update();
 	_hourHandSlot->Update();
-	_rotateSlot->SetAngle((240 - TIMER->GetHour() * 10) * 3.14 / 180);
+	_rotateSlot->AddAngle(-3.14 / 180 * DELTA_TIME);
 }

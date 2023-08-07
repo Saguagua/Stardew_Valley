@@ -176,17 +176,31 @@ struct LightColorBuffer : public ConstantBuffer
 	void GetDarker(XMFLOAT4 val)
 	{
 		_data.colors[0].x -= val.x;
+		if (_data.colors[0].x < 0.1)
+			_data.colors[0].x = 0.1;
+
 		_data.colors[0].y -= val.y;
+		if (_data.colors[0].y < 0.1)
+			_data.colors[0].y = 0.1;
+
 		_data.colors[0].z -= val.z;
-		_data.colors[0].w -= val.w;
+		if (_data.colors[0].z < 0.1)
+			_data.colors[0].z = 0.1;
 	}
 
 	void GetBrighter(XMFLOAT4 val)
 	{
 		_data.colors[0].x += val.x;
+		if (_data.colors[0].x > 1.2)
+			_data.colors[0].x = 1.2;
+
 		_data.colors[0].y += val.y;
+		if (_data.colors[0].y > 1.2)
+			_data.colors[0].y = 1.2;
+
 		_data.colors[0].z += val.z;
-		_data.colors[0].w += val.w;
+		if (_data.colors[0].z > 1.2)
+			_data.colors[0].z = 1.2;
 	}
 private:
 	struct Data

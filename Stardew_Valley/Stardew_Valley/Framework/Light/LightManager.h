@@ -25,8 +25,6 @@ public:
 			return _instance;
 	}
 
-	void TimeChange();
-
 	void Set_Shader()
 	{
 		_posBuffer->Set_VS(3);
@@ -40,6 +38,8 @@ public:
 		_posBuffer->GetPoses()[index] = { 0,0,0,0 };
 		_colorBuffer->GetColors()[index] = { 0,0,0,0 };
 	}
+
+	void Update();
 
 private:
 	static LightManager* _instance;

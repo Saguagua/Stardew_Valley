@@ -135,6 +135,9 @@ void TileMap::Render()
 		_colliders[0]->Render();
 		_tileRenderer->SetCurFrame(_tiles[i]->GetTileCode());
 		_tileRenderer->Render();
+		int objIndex = _tiles[i]->GetObjectFrameIndex();
+		if (objIndex == 127)
+			continue;
 		_objectRenderer->SetCurFrame(_tiles[i]->GetObjectFrameIndex());
 		_objectRenderer->Render();
 	}

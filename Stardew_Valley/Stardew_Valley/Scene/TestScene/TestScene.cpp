@@ -34,6 +34,7 @@ void TestScene::Update()
 {
 	_map->Update();
 	ObjectSpawner::GetInstance()->Update();
+	LightManager::GetInstance()->Update();
 	_player->Update();
 	PlayerUI::GetInstance()->Update();
 }

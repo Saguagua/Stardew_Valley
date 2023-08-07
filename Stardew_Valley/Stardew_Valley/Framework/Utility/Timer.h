@@ -34,7 +34,7 @@ public:
 	float GetRunTime() { return _runTime; }
 	void LockRunTime(float val) { _lockFPS = val; }
 	int GetHour() { return _hour; }
-
+	int GetTime() { return _hour * 10 + _minute; }
 private:
 	static Timer* _instance;
 

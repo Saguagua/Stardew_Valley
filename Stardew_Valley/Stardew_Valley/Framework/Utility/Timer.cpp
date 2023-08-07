@@ -39,16 +39,15 @@ void Timer::Update()
 		_frameCount = 0;
 
 		_minute++;
-		if (_minute == 1)
+		if (_minute == 10)
 		{
 			_hour++;
 			_minute = 0;
 
-			if (_hour == 24)
+			if (_hour > 24)
 			{
 				_hour = 6;
 			}
-			LightManager::GetInstance()->TimeChange();
 		}
 	}
 

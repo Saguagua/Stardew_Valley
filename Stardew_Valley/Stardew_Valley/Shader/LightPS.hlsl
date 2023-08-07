@@ -36,6 +36,6 @@ float4 PS(Input input) : SV_TARGET
 	}
 
 	float4 color = resource.Sample(samp, resultUV);
-	color =  saturate(color * (mixedColor + lightColor[0]));
+	color = saturate(color * (mixedColor + lightColor[0]));
 	return color;
 }
