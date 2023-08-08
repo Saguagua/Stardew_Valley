@@ -13,7 +13,7 @@ public:
 	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
-	shared_ptr<class Tile> GetMouseToPlayerIndex(Vector2 pos);
+	shared_ptr<class Tile> GetMouseToPlayerIndex();
 	vector<shared_ptr<MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);

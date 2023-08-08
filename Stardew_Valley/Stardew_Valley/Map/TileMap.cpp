@@ -86,7 +86,7 @@ void TileMap::Mouse()
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		shared_ptr<Tile> tile = GetMouseToPlayerIndex(W_MOUSE_POS);
+		shared_ptr<Tile> tile = GetMouseToPlayerIndex();
 
 		tile->Interaction();
 	}
@@ -138,7 +138,7 @@ void TileMap::Render()
 		int objIndex = _tiles[i]->GetObjectFrameIndex();
 		if (objIndex == 127)
 			continue;
-		_objectRenderer->SetCurFrame(_tiles[i]->GetObjectFrameIndex());
+		_objectRenderer->SetCurFrame(objIndex);
 		_objectRenderer->Render();
 	}
 }
@@ -172,9 +172,9 @@ int TileMap::GetWorldIndex(Vector2 pos)
 	return sum;
 }
 
-shared_ptr<Tile> TileMap::GetMouseToPlayerIndex(Vector2 mousePos) //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
+shared_ptr<Tile> TileMap::GetMouseToPlayerIndex() //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
 {
-	Vector2 target = mousePos - _playerInfo.lock()->GetWorldPos();
+	Vector2 target = W_MOUSE_POS - _playerInfo.lock()->GetWorldPos();
 	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
 	float angle = target.Angle() * 57.2958f;
 

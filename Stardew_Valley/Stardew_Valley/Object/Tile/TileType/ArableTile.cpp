@@ -11,6 +11,7 @@ void ArableTile::Interaction()
 	{
 	case ObjectInfo::Type::HOE:
 	{
+
 		break;
 	}
 	case ObjectInfo::Type::WATERINGCAN:

@@ -8,7 +8,7 @@ public:
 		_type = ObjectInfo::Type::AXE;
 	}
 	// GameObject을(를) 통해 상속됨
-	virtual void Interaction() override;
+	virtual void KeyInput() override;
 private:
 	short _cost;
 	short _damage;

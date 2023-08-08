@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "EatableItem.h"
 
-void EatableItem::Interaction()
+void EatableItem::KeyInput()
 {
 	DATA->AddMaxHP(_maxHpCost);
 	DATA->AddHP(_hpCost);

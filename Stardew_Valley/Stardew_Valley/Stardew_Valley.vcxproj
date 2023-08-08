@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\GameObj\Crop\Crop.h" />
     <ClInclude Include="Data\PlayerInfoSubscriber.h" />
     <ClInclude Include="Data\PlayerSubscribe.h" />
     <ClInclude Include="Object\UI\BagUI.h" />
@@ -235,6 +236,7 @@
     <ClInclude Include="Object\BasicObj\XMLRect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\GameObj\Crop\Crop.cpp" />
     <ClCompile Include="Object\UI\BagUI.cpp" />
     <ClCompile Include="Framework\Light\LightManager.cpp" />
     <ClCompile Include="Scene\TestScene\LightTestScene.cpp" />

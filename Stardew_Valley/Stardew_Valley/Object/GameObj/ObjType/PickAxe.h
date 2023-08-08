@@ -12,6 +12,8 @@ public:
 	short GetDamage() { return _damage; }
 	short GetCost() { return _cost; }
 
+	virtual void KeyInput() override;
+
 private:
 	short _damage;
 	short _cost;

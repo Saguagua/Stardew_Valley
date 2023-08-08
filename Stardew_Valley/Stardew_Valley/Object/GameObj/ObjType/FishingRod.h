@@ -6,7 +6,7 @@ public:
 		:GameObject(itemCode, frameIndex, maxCount, count) {
 		_type = ObjectInfo::Type::FISHINGROD;
 	}
-	virtual void Interaction() override;
+	virtual void KeyInput() override;
 private:
 };
 

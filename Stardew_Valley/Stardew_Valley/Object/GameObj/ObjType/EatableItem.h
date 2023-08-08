@@ -10,7 +10,7 @@ public:
 	}
 	~EatableItem() {}
 	
-	virtual void Interaction() override;
+	virtual void KeyInput() override;
 protected:
 	short _maxHpCost;
 	short _hpCost;

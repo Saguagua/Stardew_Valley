@@ -32,11 +32,14 @@ TestScene::~TestScene()
 
 void TestScene::Update()
 {
-	_map->Update();
-	ObjectSpawner::GetInstance()->Update();
 	LightManager::GetInstance()->Update();
-	_player->Update();
+	ObjectSpawner::GetInstance()->Update();
 	PlayerUI::GetInstance()->Update();
+
+	_map->Update();
+	_player->Update();
+
+	DATA->GetSelectedItem()->KeyInput();
 }
 
 void TestScene::Render()

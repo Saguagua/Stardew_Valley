@@ -8,6 +8,6 @@ public:
 		_type = ObjectInfo::Type::WATERINGCAN;
 	}
 	// GameObject을(를) 통해 상속됨
-	virtual void Interaction() override;
+	virtual void KeyInput() override;
 };
 
