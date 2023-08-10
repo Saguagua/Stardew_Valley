@@ -1,0 +1,370 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Oak Chair/chair/-1/-1/4/350/Tölgyfa szék" #!String
+    3: "Walnut Chair/chair/-1/-1/4/350/Diófa szék" #!String
+    6: "Birch Chair/chair/-1/-1/4/350/Nyírfa szék" #!String
+    9: "Mahogany Chair/chair/-1/-1/4/1000/Mahagóni szék" #!String
+    12: "Red Diner Chair/chair/-1/-1/4/750/Vörös étkező szék" #!String
+    15: "Blue Diner Chair/chair/-1/-1/4/750/Kék étkező szék" #!String
+    18: "Country Chair/chair/-1/-1/4/750/Vidéki szék" #!String
+    21: "Breakfast Chair/chair/-1/-1/4/750/Reggeli szék" #!String
+    24: "Pink Office Chair/chair/-1/-1/4/500/Rózsaszín irodai szék" #!String
+    27: "Purple Office Chair/chair/-1/-1/4/500/Lila irodai szék" #!String
+    30: "Green Office Stool/chair/-1/-1/1/350/Zöld irodai zsámoly" #!String
+    31: "Orange Office Stool/chair/-1/-1/1/350/Narancs irodai zsámoly" #!String
+    64: "Dark Throne/chair/-1/-1/4/2000/Sötét trón" #!String
+    67: "Dining Chair/chair/-1/-1/4/1200/Étkező szék" #!String
+    70: "Dining Chair/chair/-1/-1/4/1200/Étkező szék" #!String
+    73: "Green Plush Seat/chair/-1/-1/4/750/Zöld plüss szék" #!String
+    76: "Pink Plush Seat/chair/-1/-1/4/750/Rózsaszín plüss szék" #!String
+    79: "Winter Chair/chair/-1/-1/4/750/Téli szék" #!String
+    82: "Groovy Chair/chair/-1/-1/4/750/Klassz szék" #!String
+    85: "Cute Chair/chair/-1/-1/4/1200/Cuki szék" #!String
+    88: "Stump Seat/chair/-1/-1/4/2000/Farönk szék" #!String
+    91: "Metal Chair/chair/-1/-1/4/800/Fém szék" #!String
+    94: "Green Stool/chair/-1/-1/1/350/Zöld zsámoly" #!String
+    95: "Blue Stool/chair/-1/-1/1/350/Kék zsámoly" #!String
+    128: "King Chair/chair/-1/-1/4/3000/Király szék" #!String
+    131: "Crystal Chair/chair/-1/-1/4/3000/Kristály szék" #!String
+    134: "Tropical Chair/chair/-1/-1/4/3000/Trópusi szék" #!String
+    192: "Oak Bench/bench/-1/-1/4/750/Tölgyfa pad" #!String
+    197: "Walnut Bench/bench/-1/-1/4/750/Diófa pad" #!String
+    202: "Birch Bench/bench/-1/-1/4/750/Nyírfa pad" #!String
+    207: "Mahogany Bench/bench/-1/-1/4/2000/Mahagóni pad" #!String
+    212: "Modern Bench/bench/-1/-1/4/2000/Modern pad" #!String
+    288: "Blue Armchair/armchair/-1/-1/4/1000/Kék fotel" #!String
+    294: "Red Armchair/armchair/-1/-1/4/1000/Vörös fotel" #!String
+    300: "Green Armchair/armchair/-1/-1/4/1000/Zöld fotel" #!String
+    306: "Yellow Armchair/armchair/-1/-1/4/1000/Sárga fotel" #!String
+    312: "Brown Armchair/armchair/-1/-1/4/1000/Barna fotel" #!String
+    416: "Blue Couch/couch/-1/-1/4/1750/Kék kanapé" #!String
+    424: "Red Couch/couch/-1/-1/4/1750/Vörös kanapé" #!String
+    432: "Green Couch/couch/-1/-1/4/1750/Zöld kanapé" #!String
+    440: "Yellow Couch/couch/-1/-1/4/1750/Sárga kanapé" #!String
+    512: "Brown Couch/couch/-1/-1/4/1750/Barna kanapé" #!String
+    520: "Dark Couch/couch/-1/-1/4/2500/Sötét kanapé" #!String
+    528: "Wizard Couch/couch/-1/-1/4/4000/Varázsló kanapé" #!String
+    536: "Woodsy Couch/couch/-1/-1/4/3000/Fás kanapé" #!String
+    704: "Oak Dresser/dresser/-1/-1/4/5000/Tölgyfa komód" #!String
+    709: "Walnut Dresser/dresser/-1/-1/4/5000/Diófa komód" #!String
+    714: "Birch Dresser/dresser/-1/-1/4/5000/Nyírfa komód" #!String
+    719: "Mahogany Dresser/dresser/-1/-1/4/7500/Mahagóni komód" #!String
+    724: "Coffee Table/table/2 2/2 1/2/1250/Kávésasztal" #!String
+    727: "Stone Slab/table/2 2/2 1/2/1000/Kőtábla" #!String
+    800: "Winter Dining Table/long table/-1/-1/2/3500/Téli ebédlőasztal" #!String
+    807: "Festive Dining Table/long table/-1/-1/2/3500/Ünnepi ebédlőasztal" #!String
+    814: "Mahogany Dining Table/long table/-1/-1/2/3000/Mahagóni ebédlőasztal" #!String
+    821: "Modern Dining Table/long table/-1/-1/2/2700/Modern ebédlőasztal" #!String
+    984: "Long Cactus/decor/1 3/1 1/1/500/Hosszú kaktusz" #!String
+    985: "Long Palm/decor/1 4/1 1/1/500/Hosszú pálma" #!String
+    986: "Exotic Tree/decor/3 5/3 1/1/500/Egzotikus fa" #!String
+    989: "Deluxe Tree/decor/3 5/3 1/1/500/Luxus fa" #!String
+    1120: "Oak Table/table/-1/-1/1/750/Tölgyfa asztal" #!String
+    1122: "Walnut Table/table/-1/-1/1/750/Diófa asztal" #!String
+    1124: "Birch Table/table/-1/-1/1/750/Nyírfa asztal" #!String
+    1126: "Mahogany Table/table/-1/-1/1/1500/Mahagóni asztal" #!String
+    1128: "Sun Table/table/-1/-1/1/2500/Nap asztal" #!String
+    1130: "Moon Table/table/-1/-1/1/2500/Hold asztal" #!String
+    1132: "Modern Table/table/-1/-1/1/1250/Modern asztal" #!String
+    1134: "Pub Table/table/-1/-1/1/800/Kocsma asztal" #!String
+    1136: "Luxury Table/table/-1/-1/1/2000/Luxus asztal" #!String
+    1138: "Diviner Table/table/-1/-1/1/2250/Jövendőmondó asztal" #!String
+    1140: "Neolithic Table/table/-1/-1/1/1800/Neolitikus asztal" #!String
+    1142: "Puzzle Table/table/-1/-1/1/1500/Puzzle asztal" #!String
+    1144: "Winter Table/table/-1/-1/1/1250/Téli asztal" #!String
+    1146: "Candy Table/table/-1/-1/1/1000/Cukorka asztal" #!String
+    1148: "Luau Table/table/-1/-1/1/1000/Luau asztal" #!String
+    1150: "Dark Table/table/-1/-1/1/2000/Sötét asztal" #!String
+    1216: "Oak Tea-Table/table/2 2/-1/1/750/Tölgyfa teás asztal" #!String
+    1218: "Walnut Tea-Table/table/2 2/-1/1/750/Diófa teás asztal" #!String
+    1220: "Birch Tea-Table/table/2 2/-1/1/750/Nyírfa teás asztal" #!String
+    1222: "Mahogany Tea-Table/table/2 2/-1/1/1500/Mahagóni teás asztal" #!String
+    1224: "Modern Tea-Table/table/2 2/-1/1/1000/Modern teás asztal" #!String
+    1226: "Furniture Catalogue/table/2 2/-1/1/200000/Bútorkatalógus" #!String
+    1228: "Oceanic Rug/rug/-1/-1/1/1250/Óceán szőnyeg" #!String
+    1280: "China Cabinet/other/3 3/3 1/1/6000/Kínai vitrin" #!String
+    1283: "Artist Bookcase/bookcase/-1/-1/1/1200/Művészi könyvespolc" #!String
+    1285: "Luxury Bookcase/bookcase/-1/-1/1/2000/Luxus könyvespolc" #!String
+    1287: "Modern Bookcase/bookcase/-1/-1/1/1600/Modern könyvespolc" #!String
+    1289: "Dark Bookcase/bookcase/-1/-1/1/2000/Sötét könyvespolc" #!String
+    1291: "Ceramic Pillar/decor/1 3/1 1/1/250/Kerámia oszlop" #!String
+    1292: "Gold Pillar/decor/1 3/1 1/1/450/Arany oszlop" #!String
+    1293: "Industrial Pipe/decor/1 3/1 1/1/300/Ipari cső" #!String
+    1294: "Indoor Palm/decor/1 3/1 1/1/600/Beltéri pálma" #!String
+    1295: "Totem Pole/decor/1 3/1 1/1/750/Totemoszlop" #!String
+    1296: "Manicured Pine/decor/1 3/1 1/1/500/Lenyírt fenyő" #!String
+    1297: "Topiary Tree/decor/1 3/1 1/1/500/Műkertészi fa" #!String
+    1298: "Standing Geode/decor/1 2/1 1/1/500/Álló geóda" #!String
+    1299: "Obsidian Vase/decor/1 2/1 1/1/500/Obszidián váza" #!String
+    1300: "Singing Stone/decor/1 2/1 1/1/500/Éneklő kő" #!String
+    1301: "Sloth Skeleton L/decor/1 2/1 1/1/500/B. Lajhár csontváz" #!String
+    1302: "Sloth Skeleton M/decor/1 2/1 1/1/500/K. Lajhár csontváz" #!String
+    1303: "Sloth Skeleton R/decor/1 2/1 1/1/500/J. Lajhár csontváz" #!String
+    1304: "Skeleton/decor/1 2/1 1/1/500/Csontváz" #!String
+    1305: "Chicken Statue/decor/1 2/1 1/1/500/Csirke szobor" #!String
+    1306: "Leah's Sculpture/decor/1 2/1 1/1/500/Leah szobra" #!String
+    1307: "Dried Sunflowers/decor/1 2/1 1/1/500/Szárított napraforgó" #!String
+    1308: "Catalogue/decor/1 2/1 1/1/30000/Katalógus" #!String
+    1309: "Sam's Boombox/decor/1 2/1 1/1/500/Sam Zenelejátszója" #!String
+    1362: "Small Plant/decor/1 1/1 1/1/250/Kicsi növény" #!String
+    1363: "Table Plant/decor/1 1/1 1/1/250/Asztali növény" #!String
+    1364: "Decorative Bowl/decor/1 1/1 1/1/250/Dekoratív edény" #!String
+    1365: "Futan Bear/decor/1 1/1 1/1/1500/Kitömött mackó" #!String
+    1366: "Globe/decor/1 1/1 1/1/750/Földgömb" #!String
+    1367: "Model Ship/decor/1 1/1 1/1/750/Hajómodell" #!String
+    1368: "Small Crystal/decor/1 1/1 1/1/750/Apró kristály" #!String
+    1369: "Decorative Lantern/decor/1 1/1 1/1/500/Dekoratív lámpás" #!String
+    1371: "Wumbus Statue/decor/2 3/2 1/1/500/Wumbus szobor" #!String
+    1373: "Bobo Statue/decor/2 3/2 1/1/500/Bobo szobor" #!String
+    1375: "Purple Serpent Statue/decor/1 3/1 1/1/500/Lila kígyó szobor" #!String
+    1376: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1377: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1378: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1379: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1380: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1381: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1382: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1383: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1384: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1385: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1386: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1387: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1388: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1389: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1390: "House Plant/decor/1 2/1 1/1/250/Szobanövény" #!String
+    1391: "Oak End Table/table/1 2/1 1/2/500/Tölgyfa éjjeliszekrény" #!String
+    1393: "Walnut End Table/table/1 2/1 1/2/500/Diófa éjjeliszekrény" #!String
+    1395: "Birch End Table/table/1 2/1 1/2/500/Nyírfa éjjeliszekrény" #!String
+    1397: "Mahogany End Table/table/1 2/1 1/2/1000/Mahagóni éjjeliszekrény" #!String
+    1399: "Modern End Table/table/1 2/1 1/1/800/Modern éjjeliszekrény" #!String
+    1400: "Grandmother End Table/table/1 2/1 1/1/1000/Nagymama éjjeliszekrény" #!String
+    1401: "Winter End Table/table/1 2/1 1/1/800/Téli éjjeliszekrény" #!String
+    1402: "Calendar/painting/1 2/1 2/1/2000/Naptár" #!String
+    1440: "Tree of the Winter Star/decor/3 5/3 2/1/5000/A Téli Csillag fája" #!String
+    1443: "Country Lamp/lamp/-1/-1/1/500/Vidéki lámpa" #!String
+    1445: "Box Lamp/lamp/-1/-1/1/750/Doboz lámpa" #!String
+    1447: "Modern Lamp/lamp/-1/-1/1/750/Modern lámpa" #!String
+    1449: "Classic Lamp/lamp/-1/-1/1/1000/Klasszikus lámpa" #!String
+    1451: "Red Rug/rug/-1/-1/2/1000/Vörös szőnyeg" #!String
+    1456: "Patchwork Rug/rug/-1/-1/2/800/Kockás szőnyeg" #!String
+    1461: "Dark Rug/rug/-1/-1/2/2000/Sötét szőnyeg" #!String
+    1466: "Budget TV/decor/2 3/2 2/1/750/Olcsó TV" #!String
+    1468: "Plasma TV/decor/3 3/3 1/1/4500/Plazma TV" #!String
+    1471: "Green Serpent Statue/decor/1 3/1 1/1/500/Zöld kígyó szobor" #!String
+    1539: "'The Muzzamaroo'/painting/-1/-1/1/1000/'A Muzzamaroo'" #!String
+    1541: "'A Night On Eco-Hill'/painting/-1/-1/1/1000/'Éjszaka az Öko-Dombon'" #!String
+    1543: "'Pathways'/painting/-1/-1/1/750/'Útvonalak'" #!String
+    1545: "'Burnt Offering'/painting/-1/-1/1/1000/'Égő Ajánlás'" #!String
+    1547: "'Queen of the Gem Sea'/painting/3 2/3 2/1/1200/'Drágakő Tenger Királynője'" #!String
+    1550: "'Vanilla Villa'/painting/-1/-1/1/500/'Kedves Villa'" #!String
+    1552: "'Primal Motion'/painting/-1/-1/1/1500/'Ősi Mozzanat'" #!String
+    1554: "'Jade Hills'/painting/3 2/3 2/1/1750/'Jáde Hegyek'" #!String
+    1557: "'Sun #44'/painting/-1/-1/1/800/'44. Nap'" #!String
+    1559: "Wallflower Pal/painting/-1/-1/1/500/Falnövény pajtás" #!String
+    1561: "'Spires'/painting/-1/-1/1/800/'Tornyok'" #!String
+    1563: "'Highway 89'/painting/-1/-1/1/800/'89-es Főút'" #!String
+    1565: "Calico Falls/painting/-1/-1/1/750/Calico vízesés" #!String
+    1567: "Needlepoint Flower/painting/1 2/1 2/1/500/Tüskés szárú virág" #!String
+    1600: "Skull Poster/painting/1 2/1 2/1/500/Koponya poszter" #!String
+    1601: "'Sun #45'/painting/1 2/1 2/1/350/'45. Nap'" #!String
+    1602: "'Little Tree'/painting/1 2/1 2/1/350/'Kicsi Fa'" #!String
+    1603: "'Blueberries'/painting/1 2/1 2/1/250/'Kék Áfonyák'" #!String
+    1604: "'Blue City'/painting/1 2/1 2/1/250/'Kék Város'" #!String
+    1605: "Little Photos/painting/1 2/1 2/1/250/Apró fotók" #!String
+    1606: "'Dancing Grass'/painting/1 2/1 2/1/400/'Táncoló Fű'" #!String
+    1607: "'VGA Paradise'/painting/2 2/2 2/1/1200/'VGA Paradicsom'" #!String
+    1609: "J. Cola Light/painting/3 2/3 2/1/1000/Joja Cola fény" #!String
+    1612: "'Kitemaster '95'/painting/-1/-1/1/600/'Sárkánymester 95'" #!String
+    1614: "Basic Window/window/-1/-1/1/300/Alap ablak" #!String
+    1616: "Small Window/window/-1/-1/1/300/Kicsi ablak" #!String
+    1618: "Red Cottage Rug/rug/-1/-1/2/750/Vörös kunyhós szőnyeg" #!String
+    1623: "Green Cottage Rug/rug/-1/-1/2/750/Zöld kunyhós szőnyeg" #!String
+    1628: "Monster Rug/rug/2 2/2 2/1/1250/Szörny szőnyeg" #!String
+    1630: "Boarded Window/painting/1 2/1 2/1/400/Bedeszkázott ablak" #!String
+    1664: "Mystic Rug/rug/-1/-1/2/1250/Rejtélyes szőnyeg" #!String
+    1669: "Lg. Futan Bear/decor/2 2/2 1/1/4000/Nagy kitömött mackó" #!String
+    1671: "Bear Statue/decor/2 4/2 1/1/4000/Medve szobor" #!String
+    1673: "Porthole/window/-1/-1/1/700/Hajóablak" #!String
+    1675: "Anchor/painting/1 2/1 2/1/750/Horgony" #!String
+    1676: "World Map/painting/-1/-1/1/500/Világtérkép" #!String
+    1678: "Ornate Window/window/-1/-1/1/900/Díszes ablak" #!String
+    1680: "Floor TV/decor/2 2/2 1/1/700/Padló TV" #!String
+    1682: "Carved Window/window/-1/-1/1/900/Faragott ablak" #!String
+    1684: "Colorful Set/painting/1 2/1 2/1/500/Színes szett" #!String
+    1687: "Cloud Decal/painting/2 2/2 2/1/500/Felhő matrica" #!String
+    1692: "Cloud Decal/painting/2 2/2 2/1/500/Felhő matrica" #!String
+    1733: "Junimo Plush/decor/2 2/2 1/1/4000/Junimo plüss" #!String
+    1737: "Nautical Rug/rug/-1/-1/2/1250/Tengeri szőnyeg" #!String
+    1742: "Burlap Rug/rug/2 2/2 2/1/350/Jutaszöveg szőnyeg" #!String
+    1744: "Tree Column/decor/1 3/1 1/1/1000/Fa oszlop" #!String
+    1745: "L. Light String/painting/2 1/2 1/1/400/Nagy koszorú" #!String
+    1747: "S. Pine/decor/1 2/1 1/1/500/Kicsi fenyő" #!String
+    1748: "Bonsai Tree/decor/1 2/1 1/1/800/Bonsai fa" #!String
+    1749: "Metal Window/window/-1/-1/1/800/Fémes ablak" #!String
+    1751: "Candle Lamp/lamp/-1/-1/1/1000/Gyertya lámpa" #!String
+    1753: "Miner's Crest/painting/2 2/2 2/1/1000/Bányászok címere" #!String
+    1755: "Bamboo Mat/rug/2 1/2 1/2/250/Bambusz szőnyeg" #!String
+    1758: "Ornate Lamp/lamp/-1/-1/1/1050/Díszes lámpa" #!String
+    1760: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kicsi Junimo plüss" #!String
+    1761: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kicsi Junimo plüss" #!String
+    1762: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kicsi Junimo plüss" #!String
+    1763: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kicsi Junimo plüss" #!String
+    1764: "Futan Rabbit/decor/1 1/1 1/1/1500/Futan nyúl" #!String
+    1777: "Woodcut Rug/rug/2 2/2 2/1/800/Fametszetes szőnyeg" #!String
+    1792: "Brick Fireplace/fireplace/-1/-1/1/1000/Tégla tűzhely" #!String
+    1794: "Stone Fireplace/fireplace/-1/-1/1/1500/Kő tűzhely" #!String
+    1796: "Iridium Fireplace/fireplace/-1/-1/1/15000/Irídium tűzhely" #!String
+    1798: "Stove Fireplace/fireplace/-1/-1/1/3000/Kemencés tűzhely" #!String
+    1800: "Monster Fireplace/fireplace/-1/-1/1/25000/Szörny tűzhely" #!String
+    1802: "My First Painting/painting/-1/-1/1/500/Az első festményem" #!String
+    1811: "Hanging Shield/painting/1 1/1 1/1/500/Függő pajzs" #!String
+    1812: "Monster Danglers/painting/2 1/2 1/1/1000/Szörny kitűzők" #!String
+    1814: "Ceiling Flags/painting/1 1/1 1/1/50/Plafon zászlók" #!String
+    1817: "Ceiling Leaves/painting/1 1/1 1/1/50/Plafon levelek" #!String
+    1818: "Ceiling Leaves/painting/1 1/1 1/1/50/Plafon levelek" #!String
+    1819: "Ceiling Leaves/painting/1 1/1 1/1/50/Plafon levelek" #!String
+    1820: "Ceiling Leaves/painting/1 1/1 1/1/50/Plafon levelek" #!String
+    1821: "Ceiling Leaves/painting/1 1/1 1/1/50/Plafon levelek" #!String
+    1838: "'Red Eagle'/painting/-1/-1/1/1000/'Vörös Sas'" #!String
+    1840: "'Portrait Of A Mermaid'/painting/-1/-1/1/1000/'Egy Sellő Portréja'" #!String
+    1842: "'Solar Kingdom'/painting/-1/-1/1/1000/'Napkirályság'" #!String
+    1844: "'Clouds'/painting/-1/-1/1/1000/'Felhők'" #!String
+    1846: "'1000 Years From Now'/painting/-1/-1/1/1000/'Mától 1000 Év Múlva'" #!String
+    1848: "'Three Trees'/painting/-1/-1/1/1000/'Három Fa'" #!String
+    1850: "'The Serpent'/painting/-1/-1/1/1000/'A Kígyó'" #!String
+    1852: "'Tropical Fish #173'/painting/-1/-1/1/1000/'173. Trópusi Hal'" #!String
+    1854: "'Land Of Clay'/painting/-1/-1/1/1000/'Agyagföldek'" #!String
+    1866: "Elegant Fireplace/fireplace/-1/-1/1/4000/Elegáns tűzhely" #!String
+    1900: "Pirate Flag/painting/-1/-1/1/4000/Kalóz zászló" #!String
+    1902: "Pirate Rug/rug/-1/-1/2/4000/Kalóz szőnyeg" #!String
+    1907: "Strawberry Decal/painting/-1/-1/1/2500/Eper matrica" #!String
+    1909: "Fruit Salad Rug/rug/-1/-1/2/4000/Gyümölcssalátás szőnyeg" #!String
+    1914: "Night Sky Decal #1/painting/1 2/1 2/1/750/1. éjféli matrica" #!String
+    1915: "Night Sky Decal #2/painting/1 2/1 2/1/750/2. éjféli matrica" #!String
+    1916: "Night Sky Decal #3/painting/1 2/1 2/1/750/3. éjféli matrica" #!String
+    1917: "Wall Pumpkin/painting/1 2/1 2/1/750/Fal tök" #!String
+    1918: "Small Wall Pumpkin/painting/1 2/1 2/1/750/Apró fal tök" #!String
+    1952: "'The Brave Little Sapling'/painting/1 2/1 2/1/400/'A Bátor Kis Csemete'" #!String
+    1953: "'Mysterium'/painting/1 2/1 2/1/400/'Mysterium'" #!String
+    1954: "'Journey Of The Prairie King: The Motion Picture'/painting/1 2/1 2/1/400/'Journey Of The Prairie King: A Mozifilm'" #!String
+    1955: "'Wumbus'/painting/1 2/1 2/1/400/'Wumbus'" #!String
+    1956: "'The Zuzu City Express'/painting/1 2/1 2/1/400/'A Zuzu város Expressz'" #!String
+    1957: "'The Miracle At Coldstar Ranch'/painting/1 2/1 2/1/400/'A Hűvöscsillag Tanya Csodája'" #!String
+    1958: "'Natural Wonders: Exploring Our Vibrant World'/painting/1 2/1 2/1/400/'Természeti Csodák: Fedezzük fel élénk világunkat'" #!String
+    1959: "'It Howls In The Rain'/painting/1 2/1 2/1/400/'Az Esőben Üvölt'" #!String
+    1960: "Indoor Hanging Basket/painting/1 2/1 2/1/400/Belső Függőkosár" #!String
+    1961: "Winter Tree Decal/painting/1 2/1 2/1/400/Téli fa matrica" #!String
+    1964: "Bone Rug/rug/-1/-1/2/1000/Csont szőnyeg" #!String
+    1971: "Butterfly Hutch/decor/2 3/2 1/1/50000/2/Pillangó kunyhó" #!String
+    1973: "Wall Flower/painting/1 3/1 3/1/500/Fali virág" #!String
+    1974: "S. Wall Flower/painting/1 3/1 3/1/500/Kis fali virág" #!String
+    1975: "Clouds Banner/painting/1 3/1 3/1/500/Felhő zászló" #!String
+    1978: "Snowy Rug/rug/-1/-1/2/1000/Havas szőnyeg" #!String
+    2048: "Bed/bed/2 4/2 3/1/5000/Ágy" #!String
+    2052: "Double Bed/bed double/3 4/3 3/1/5000/Dupla ágy" #!String
+    2058: "Starry Double Bed/bed double/3 4/3 3/1/5000/Csillagos dupla ágy" #!String
+    2064: "Strawberry Double Bed/bed double/3 4/3 3/1/5000/Epres dupla ágy" #!String
+    2070: "Pirate Double Bed/bed double/3 4/3 3/1/5000/Kalóz dupla ágy" #!String
+    2076: "Child Bed/bed child/2 4/2 3/1/5000/Gyerekágy" #!String
+    2176: "Tropical Bed/bed/2 4/2 3/1/5000/Trópusi ágy" #!String
+    2180: "Tropical Double Bed/bed double/3 4/3 3/1/5000/Trópusi dupla ágy" #!String
+    2186: "Deluxe Red Double Bed/bed double/3 4/3 3/1/6000/Luxus vörös dupla ágy" #!String
+    2192: "Modern Double Bed/bed double/3 4/3 3/1/6000/Modern dupla ágy" #!String
+    2304: "Large Fish Tank/fishtank/4 3/4 1/1/5000/Nagy haltartály" #!String
+    2312: "Deluxe Fish Tank/fishtank/5 3/5 1/1/10000/Luxus haltartály" #!String
+    2322: "Small Fish Tank/fishtank/2 3/2 1/1/1000/Kicsi haltartály" #!String
+    2326: "Tropical TV/decor/3 3/3 1/1/4500/Trópusi TV" #!String
+    2329: "'Volcano' Photo/painting/-1/-1/1/500/'Vulkán' fotó" #!String
+    2331: "Jungle Torch/torch/-1/-1/1/500/Dzsungel fáklya" #!String
+    2332: "Gourmand Statue/decor/2 2/2 1/1/500/Falánk szobor" #!String
+    2334: "Pyramid Decal/painting/2 2/2 2/1/10000/Piramis matrica" #!String
+    2393: "Palm Wall Ornament/painting/1 1/1 1/2/500/Pálma fal dísz" #!String
+    2396: "Iridium Krobus/decor/1 3/1 1/1/5000/Irídium Krobus" #!String
+    2397: "Plain Torch/torch/-1/-1/1/500/Egyszerű fáklya" #!String
+    2398: "Stump Torch/torch/-1/-1/1/500/Farönk fáklya" #!String
+    2400: "Aquatic Sanctuary/fishtank/7 3/7 1/1/10000/Vizes menedék" #!String
+    2414: "Modern Fish Tank/fishtank/2 3/2 1/1/10000/Modern haltartály" #!String
+    2418: "Lifesaver/painting/1 2/1 2/1/1000/Mentőöv" #!String
+    2419: "Foliage Print/painting/2 2/2 2/1/10000/Lomb lenyomat" #!String
+    2421: "'Boat'/painting/2 2/2 2/1/10000/\"Hajó\"" #!String
+    2423: "'Vista'/painting/2 2/2 2/1/10000/\"Kilátás\"" #!String
+    2425: "Wall Basket/painting/2 2/2 2/1/10000/Fali kosár" #!String
+    2427: "Decorative Trash Can/decor/1 2/1 1/1/500/Dekoratív kuka" #!String
+    2488: "Light Green Rug/rug/3 2/3 2/2/10000/Világoszöld szőnyeg" #!String
+    2496: "Wild Double Bed/bed double/3 4/3 3/1/6000/Vad dupla ágy" #!String
+    2502: "Fisher Double Bed/bed double/3 4/3 3/1/6000/Horgász dupla ágy" #!String
+    2508: "Birch Double Bed/bed double/3 4/3 3/1/6000/Birs dupla ágy" #!String
+    2514: "Exotic Double Bed/bed double/3 4/3 3/1/6000/Egzotikus dupla ágy" #!String
+    2584: "'Jade Hills Extended'/painting/4 2/4 2/1/6750/\"Kibővített Jáde hegyek\"" #!String
+    2624: "Pastel Banner/painting/1 3/1 3/1/500/Pasztell zászló" #!String
+    2625: "Winter Banner/painting/1 3/1 3/1/500/Téli zászló" #!String
+    2626: "Moonlight Jellies Banner/painting/1 3/1 3/1/500/Holdfény medúza zászló" #!String
+    2627: "Jungle Decal/painting/1 3/1 3/1/500/Dzsungel matrica" #!String
+    2628: "Jungle Decal/painting/1 3/1 3/1/500/Dzsungel matrica" #!String
+    2629: "Jungle Decal/painting/1 3/1 3/1/500/Dzsungel matrica" #!String
+    2630: "Jungle Decal/painting/1 3/1 3/1/500/Dzsungel matrica" #!String
+    2631: "Starport Decal/painting/1 3/1 3/1/500/Csillagos kikötő matrica" #!String
+    2632: "Decorative Pitchfork/painting/1 3/1 3/1/500/Dekoratív vasvilla" #!String
+    2633: "Wood Panel/painting/1 3/1 3/1/500/Faburkolat" #!String
+    2634: "Decorative Axe/painting/1 3/1 3/1/500/Dekoratív balta" #!String
+    2635: "Log Panel/painting/1 3/1 3/1/500/Farönk burkolat" #!String
+    2636: "Log Panel/painting/1 3/1 3/1/500/Farönk burkolat" #!String
+    2637: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2638: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2639: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2640: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2641: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2642: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2643: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2644: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2645: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2646: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2647: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2648: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2649: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2650: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2651: "Floor Divider R/rug/1 2/1 1/1/50/Jobb padlóelválasztó" #!String
+    2652: "Floor Divider L/rug/1 2/1 1/1/50/Bal padlóelválasztó" #!String
+    2653: "Icy Banner/painting/1 3/1 3/1/500/Jeges zászló" #!String
+    2654: "Wall Palm/painting/1 3/1 3/1/500/Fali pálma" #!String
+    2655: "Wall Cactus/painting/1 3/1 3/1/500/Fali kaktusz" #!String
+    2720: "Large Brown Couch/couch/4 2/4 1/4/5750/Nagy barna kanapé" #!String
+    2730: "'Frozen Dreams'/painting/2 2/2 2/1/6750/\"Fagyos álmok\"" #!String
+    2732: "'Physics 101'/painting/2 2/2 2/1/6750/\"Fizika 101\"" #!String
+    2734: "Wall Sconce/sconce/-1/-1/1/500/Fali gyertyatartó" #!String
+    2736: "Wall Sconce/sconce/-1/-1/1/500/Fali gyertyatartó" #!String
+    2738: "Wall Sconce/sconce/-1/-1/1/1000/Fali gyertyatartó" #!String
+    2740: "Wall Sconce/sconce/-1/-1/1/500/Fali gyertyatartó" #!String
+    2742: "Blossom Rug/rug/6 4/6 4/1/10000/Virágzó szőnyeg" #!String
+    2748: "Wall Sconce/sconce/-1/-1/1/500/Fali gyertyatartó" #!String
+    2750: "Wall Sconce/sconce/-1/-1/1/500/Fali gyertyatartó" #!String
+    2784: "Large Green Rug/rug/4 3/4 3/1/10000/Nagy zöld szőnyeg" #!String
+    2790: "Icy Rug/rug/4 3/4 3/1/10000/Jeges szőnyeg" #!String
+    2794: "Old World Rug/rug/4 3/4 3/1/10000/Régi világi szőnyeg" #!String
+    2798: "Large Red Rug/rug/4 3/4 3/1/10000/Nagy vörös szőnyeg" #!String
+    2802: "Large Cottage Rug/rug/4 3/4 3/1/10000/Nagy kunyhós szőnyeg" #!String
+    2812: "Wall Sconce/sconce/-1/-1/1/500/Fali gyertyatartó" #!String
+    2814: "Squirrel Figurine/decor/1 1/1 1/1/500/Mókus figura" #!String
+    2870: "Funky Rug/rug/5 4/5 4/1/10000/Menő szőnyeg" #!String
+    2875: "Modern Rug/rug/5 4/5 4/1/10000/Modern szőnyeg" #!String
+

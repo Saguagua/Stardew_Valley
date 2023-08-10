@@ -1,0 +1,31 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Hey, für einen Menschen bist du ziemlich gut im Abbauen." #!String
+    Mon: "Ich habe all das Zeug von der Oberfläche. Ich hole es mir einfach in der Nacht von deinen Leuten.#$e#Hmm? Was ist dieses Konzept von 'Privateigentum', von dem du sprichst?" #!String
+    Tue: "Ah... Höhlenkarotten-Eintopf, geröstete Höhlenkarotten, Höhlenkarotten-Suppe und Höhlenkarotten au Gratin.#$e#... Und ein Höhlenkarotten-Auflauf, um die Nacht zu versüßen.#$e#Was?" #!String
+    Wed: "Hey, willst was kaufen?" #!String
+    Wed_6: "Vor langer Zeit kannten meine Leute die Geheimnisse fortschrittlicher Technologien. Die archäologischen Beweise bestätigen das.#$e#Aber ich frage mich, woher sie kamen? Und wohin sind sie verschwunden? Ich schätze, manche Fragen werden nie beantwortet..." #!String
+    Thu_4: "Ich fühle mich unter der Erde am wohlsten.#$e#Je tiefer, desto besser." #!String
+    Fri: "Du hast noch nie einen Zwerg gesehen, oder?" #!String
+    Sat_8: "Die Minen können ein tückischer Ort sein. Pass auf dich auf, mein Freund." #!String
+    Sat: "In den Minen ist es gefährlich. Warum kaufst du nicht ein paar Dinge aus meinem Laden, um deine Sicherheit zu gewährleisten?" #!String
+    Sun: "Irgendwann musst du mir mehr über dieses Getränk erzählen, das du 'Milch' nennst." #!String
+    Thu: "Du bist kein Spion der Schattenmenschen, oder?#$e#Ich behalte dich im Auge." #!String
+    Fri_2: "Die meisten Menschen fürchten das Unbekannte... Deswegen habe ich meinen Laden hier versteckt.#$e#Deine Fähigkeiten beim Abbauen beweisen, dass man dir vertrauen kann." #!String
+

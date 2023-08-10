@@ -1,0 +1,43 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "...$u#$b#Szia...$u" #!String
+    Resort_Entering: "Látok egy rákot!" #!String
+    Resort_Leaving: "Homok került a cipőmbe...$s" #!String
+    Resort_Shore: "Kagylókat gyűjtök... Csinálok egy nyakláncot!" #!String
+    Resort: "Marnie néni mondta, hogy ne égjek le... De mikor gyorsan sétálok, akkor az jó érzés, szóval szerintem jól leszek.$h" #!String
+    reject_869: "Fúj, undi!$s" #!String
+    Mon: "Ó...Marnie nénit keresed?$u" #!String
+    Mon4: "Helló, @ úr.^Helló, @ néni.#$e#Jó móka farmon élni.$h" #!String
+    Tue: "Hogy? *kuncog*$h#$e#...szia." #!String
+    Tue6: "Játszhatsz a babáimmal, ha szeretnél. Csak mindig fésüld meg a hajukat, ha végeztél." #!String
+    Wed: "...$u" #!String
+    Wed2: "...Szia.$u" #!String
+    Wed4: "Marnie néni nem enged ki hat óra után. Ez nem igazság!$s#$e#Már nem félek a sötéttől!" #!String
+    Thu: "Nem szabadna idegenekkel beszélnem...$u" #!String
+    Thu2: "Penny néni folyóírásra tanít.$h#$e#Olyan szép kézírása van." #!String
+    Fri: "... Nem is ismerlek.$u" #!String
+    Fri2: "Tetszik a masnim?" #!String
+    Fri4: "Szeretek a farmon élni... A kedvencem a friss fagylalt a bocijaink tejéből." #!String
+    Sat: "Fűillatod van.$u" #!String
+    Sat2: "Néha folyami rákokra vadászok a folyóban. Ne mondd el Marnie néninek... de egyszer megetettem egyet egy bocival.#$e#Nagyon ízlett neki." #!String
+    Sat8: "Mindig olyan kedves vagy hozzám, @ bácsi.$h^Mindig olyan kedves vagy hozzám, @ néni.$h#$e#A felnőttek általában gonoszak és unalmasak, de te más vagy." #!String
+    Sun: "Őőő... sze... szeretnél valamit?$u#$e#Nem szabadna idegenekkel beszélnem.$u" #!String
+    Sun2: "Shane keveset van itthon, Marnie néni folyton elfoglalt... szóval magamnak kell kitalálnom a játékokat.#$e#Hálás vagyok az összes játékomért.$h" #!String
+    Sun10: "Tudtad, hogy Shane a keresztapám? A szüleim barátja volt.$s#$e#...ők meghaltak. *szipp*$s" #!String
+

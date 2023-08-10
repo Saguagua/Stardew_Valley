@@ -1,0 +1,190 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    1: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    2: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    3: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    4: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    5: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    6: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    7: "House Plant/50/-300/Crafting -9/Dá personalidade à sua casa ou fazenda./true/true/0/Planta doméstica" #!String
+    8: "Scarecrow/50/-300/Crafting -9/Evita que corvos ataquem suas plantações. Tem um raio limitado (cerca de 8 espaços)./true/true/0/Espantalho" #!String
+    9: "Lightning Rod/50/-300/Crafting -9/Coleciona energia de tempestades de raios e transforma-a em baterias./true/true/0/Para-raios" #!String
+    10: "Bee House/50/-300/Crafting -9/Ponha-o no quintal e obtenha um mel delicioso!(Exceto no inverno)./true/true/0/Apiário" #!String
+    12: "Keg/50/-300/Crafting -9/Ponha uma fruta ou vegetal aqui. Uma hora ele vai se transformar numa bebida./true/true/0/Barril" #!String
+    13: "Furnace/50/-300/Crafting -9/Transforma minério e carvão em barras de metal./true/true/0/Fornalha" #!String
+    15: "Preserves Jar/50/-300/Crafting -9/Transforma legumes em picles e frutas em geléia./true/true/0/Jarra de conserva" #!String
+    16: "Cheese Press/50/-300/Crafting -9/Transforma leite em queijo./true/true/0/Prensa de queijo" #!String
+    17: "Loom/50/-300/Crafting -9/Transforma lã crua em roupas finas./true/true/0/Tear" #!String
+    19: "Oil Maker/50/-300/Crafting -9/Faz óleo gourmet de trufas./true/true/0/Gerador de óleo" #!String
+    20: "Recycling Machine/50/-300/Crafting -9/Transforma restos de pesca em recursos./true/true/0/Máquina de reciclagem" #!String
+    21: "Crystalarium/50/-300/Crafting -9/Insira uma joia de sua escolha e ele a copiará./true/true/0/Cristalário" #!String
+    22: "Table Piece L/50/-300/Crafting -9/Lado esquerdo de uma grande mesa./true/true/0/Lado esq. de mesa" #!String
+    23: "Table Piece R/50/-300/Crafting -9/Lado direito de uma grande mesa./true/true/0/Lado dir. de mesa" #!String
+    24: "Mayonnaise Machine/50/-300/Crafting -9/Transforma ovos em maionese./true/true/0/Máquina de maionese" #!String
+    25: "Seed Maker/50/-300/Crafting -9/Ponha produtos colhidos dentro dele para produzir diversos tipos de sementes. Não funciona com árvores frutíferas./true/true/0/Gerador de sementes" #!String
+    26: "Wood Chair/50/-300/Crafting -9/Cadeira que pode ser orientada de 4 jeitos diferentes./true/true/0/Cadeira de madeira" #!String
+    27: "Wood Chair/50/-300/Crafting -9/Cadeira que pode ser orientada de 4 jeitos diferentes./true/true/0/Cadeira de madeira" #!String
+    28: "Skeleton Model/50/-300/Crafting -9/Uma réplica de esqueleto./true/true/0/Manequim de Esqueleto" #!String
+    29: "Obelisk/50/-300/Crafting -9/Um portal sinistro, radiando energia maligna./false/true/0/Obelisco" #!String
+    31: "Chicken Statue/50/-300/Crafting -9/Estátua de madeira de galinha./true/true/0/Galinha de madeira" #!String
+    32: "Stone Cairn/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Moledro" #!String
+    33: "Suit Of Armor/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Armadura" #!String
+    34: "Sign Of The Vessel/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Sinal da Embarcação" #!String
+    35: "Basic Log/125/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Tronco Básico" #!String
+    36: "Lawn Flamingo/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Flamingo de Jardim" #!String
+    37: "Wood Sign/5/-300/Crafting -9/Use um item nele para mudar o que é exibido. O item não será consumido./true/true/0/Placa de Madeira" #!String
+    38: "Stone Sign/5/-300/Crafting -9/Use um item nele para mudar o que é exibido. O item não será consumido./true/true/0/Placa de Pedra" #!String
+    39: "Dark Sign/5/-300/Crafting -9/Use um item aqui para mudar o que é mostrado. O item não será consumido./true/true/0/Placa Negra" #!String
+    40: "Big Green Cane/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Doce Verde Grande" #!String
+    41: "Green Canes/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Doces Verdes" #!String
+    42: "Mixed Cane/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Doces Misturados" #!String
+    43: "Red Canes/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Doces Vermelhos" #!String
+    44: "Big Red Cane/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Doce Vermelho Grande" #!String
+    45: "Ornamental Hay Bale/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Fardo de Feno Ornamental" #!String
+    46: "Log Section/175/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Seção de Tronco" #!String
+    47: "Grave Stone/50/-300/Crafting -9/Uma peça decorativa para sua fazenda./true/true/0/Lápide" #!String
+    48: "Seasonal Decor/50/-300/Crafting -9/Esta decoração muda a cada estação./true/true/0/Decoração Sazonal" #!String
+    52: "Stone Frog/50/-300/Crafting -9/Uma obra de arte para o jardim em sua fazenda./true/true/0/Sapo de Pedra" #!String
+    53: "Stone Parrot/50/-300/Crafting -9/Uma obra de arte para o jardim em sua fazenda./true/true/0/Papagaio de Pedra" #!String
+    54: "Stone Owl/50/-300/Crafting -9/Uma obra de arte para o jardim em sua fazenda./true/true/0/Coruja de Pedra" #!String
+    55: "Stone Junimo/50/-300/Crafting -9/Uma obra de arte para o jardim em sua fazenda./true/true/0/Junimo de Pedra" #!String
+    56: "Slime Ball/50/-300/Crafting -9/Cheia de gosma./true/true/2/Bola de gosma" #!String
+    62: "Garden Pot/1000/-300/Crafting -9/Crie plantações de qualquer estação em ambientes fechados. Ao ar livre, só pode abrigar plantações sazonais./true/false/0/Vaso de Jardim" #!String
+    64: "Bookcase/50/-300/Crafting -9/O lar dos livros./true/false/1/Estante" #!String
+    65: "Fancy Table/50/-300/Crafting -9/Uma mesa muito bem feita./true/false/1/Mesa sofisticada" #!String
+    66: "Ancient Table/50/-300/Crafting -9/Coberta com teias muito grossas./true/false/1/Mesa antiga" #!String
+    67: "Ancient Stool/50/-300/Crafting -9/Cheiro de apartamento da vovó./true/false/1/Banco antigo" #!String
+    68: "Grandfather Clock/50/-300/Crafting -9/Tão velho que parece que o pêndulo enferrujou e está preso./true/false/1/Relógio do avô" #!String
+    69: "Teddy Timer/50/-300/Crafting -9/Um relógio de pé em forma de urso./true/false/1/Relógio de urso" #!String
+    70: "Dead Tree/0/-300/Crafting -9/Petrificada com o passar do tempo. Coitada./true/false/1/Árvore morta" #!String
+    71: "Staircase/0/-300/Crafting -9/Utilize-a para descer um nível nas minas./true/false/1/Escadaria" #!String
+    72: "Tall Torch/0/-300/Crafting -9/O caule é feito de bambu./true/false/1/Torcha alta" #!String
+    73: "Ritual Mask/0/-300/Crafting -9/Grande demais para ser usada./true/false/1/Máscara de ritual" #!String
+    74: "Bonfire/0/-300/Crafting -9/A brasa vermelha brilha suavemente./true/false/1/Fogueira" #!String
+    75: "Bongo/0/-300/Crafting -9/Um instrumento de percussão decorativo com um som rico./true/false/1/Bongô" #!String
+    76: "Decorative Spears/0/-300/Crafting -9/Decoração não muito segura./true/false/1/Lanças decorativas" #!String
+    78: "Boulder/0/-300/Crafting -9/Um fragmento de pedra extremamente denso./true/false/1/Pedra" #!String
+    79: "Door/0/-300/Crafting -9/Um mecanismo oculto faz com que ela se retraia no chão./true/false/1/Porta" #!String
+    80: "Door/0/-300/Crafting -9/Um mecanismo oculto faz com que ela se retraia no chão./true/false/1/Porta" #!String
+    81: "Locked Door/0/-300/Crafting -9/Um mecanismo oculto faz com que ela se retraia no chão./true/false/2/Porta trancada" #!String
+    82: "Locked Door/0/-300/Crafting -9/Um mecanismo oculto faz com que ela se retraia no chão./true/false/2/Porta trancada" #!String
+    83: "Wicked Statue/0/-300/Crafting -9/Tem algo estranho com essa estátua./true/false/0/Estátua maligna" #!String
+    84: "Wicked Statue/0/-300/Crafting -9/Algo não está certo nessa estátua./true/false/2/Estátua maligna" #!String
+    85: "Sloth Skeleton L/0/-300/Crafting -9/Esta preguiça extinta vivia nas florestas verdejantes e pré-históricas do Vale do Orvalho. Sua mandíbula poderosa rasgava as mais duras plantas./true/false/0/Esqueleto de preguiça E" #!String
+    86: "Sloth Skeleton M/0/-300/Crafting -9/As costelas de uma preguiça pré-histórica./true/false/0/Esqueleto de preguiça M" #!String
+    87: "Sloth Skeleton R/0/-300/Crafting -9/As patas traseiras e cauda de uma preguiça pré-histórica./true/false/0/Esqueleto de preguiça D" #!String
+    88: "Standing Geode/0/-300/Crafting -9/Um grande geodo em uma barraca. Milhares de cristais púrpuras brilham lá dentro./true/false/0/Geodo" #!String
+    89: "Obsidian Vase/0/-300/Crafting -9/Um lindo vaso artesanal feito de obsidiana e ouro./true/false/0/Vaso de Obsidiana" #!String
+    90: "Bone Mill/0/-300/Crafting -9/Transforma itens de osso em fertilizantes./true/true/0/Moedor de Ossos" #!String
+    94: "Singing Stone/0/-300/Crafting -9/Quando batem nela, emite uma música pura./true/false/0/Pedra cantante" #!String
+    95: "Stone Owl/0/-300/Crafting -9/Não está claro de onde veio, mas parece muito bonita./true/false/0/Coruja de pedra" #!String
+    96: "Strange Capsule/0/-300/Crafting -9/Tem algo que parece carne flutuando no líquido.../true/false/0/Cápsula estranha" #!String
+    98: "Empty Capsule/0/-300/Crafting -9/Parte do vidro está estilhaçada./true/false/0/Cápsula vazia" #!String
+    99: "Feed Hopper/0/-300/Crafting -9/Provê acesso conveniente à forragem do silo./true/false/0/Funil de alimentação" #!String
+    101: "Incubator/0/-300/Crafting -9/Choca os ovos de galinhas e patos./true/false/2/Chocadeira" #!String
+    104: "Heater/0/-300/Crafting -9/Mantém seus animais quentinhos e felizes no inverno./true/false/0/Aquecedor" #!String
+    105: "Tapper/0/-300/Crafting -9/Ponha em um ácer, carvalho ou pinheiro e espere o reservatório se encher!/true/false/0/Torneirinha" #!String
+    106: "Camera/0/-300/Crafting -9/Uma velha câmera montada num tripé./true/false/0/Câmera" #!String
+    107: "Plush Bunny/0/-300/Crafting -9/Grande, macio e fofinho./false/true/0/Coelho de pelúcia" #!String
+    108: "Tub o' Flowers/0/-300/Crafting -9/Flores plantadas em um barril de carvalho. Floresce na primavera e verão./true/true/0/Barril de flores" #!String
+    109: "Tub o' Flowers/0/-300/Crafting -9/Flores plantadas em um barril de carvalho. Floresce na primavera e verão./true/true/0/Barril de flores" #!String
+    110: "Rarecrow/0/-300/Crafting -9/Colecione todos!(1 de 8)/true/true/0/Espantalho raro" #!String
+    111: "Decorative Pitcher/0/-300/Crafting -9/Artesanal e feito de latão./true/true/0/Arremessador decorativo" #!String
+    112: "Dried Sunflowers/0/-300/Crafting -9/Decoração vibrante para sua casa./true/true/0/Girassóis secos" #!String
+    113: "Rarecrow/0/-300/Crafting -9/Colecione todos!(2 de 8)/true/true/0/Espantalho raro" #!String
+    114: "Charcoal Kiln/0/-300/Crafting -9/Transforma 10 pedaços de madeira em um grande pedaço de carvão./true/true/0/Carvoaria" #!String
+    116: "Stardew Hero Trophy/0/-300/Crafting -9/A mais prestigiosa recompensa que um morador do Vale do Orvalho poderia receber!/true/true/0/Troféu Vale do Orvalho" #!String
+    117: "Soda Machine/0/-300/Crafting -9/Continua bombeando essa maravilha./true/true/0/Máquina de refrigerante" #!String
+    118: "Barrel/0/-300/Crafting -9/.../true/true/0/Barril" #!String
+    119: "Crate/0/-300/Crafting -9/.../true/true/0/Caixa" #!String
+    120: "Barrel/0/-300/Crafting -9/.../true/true/0/Barril" #!String
+    121: "Crate/0/-300/Crafting -9/.../true/true/0/Caixa" #!String
+    122: "Barrel/0/-300/Crafting -9/.../true/true/0/Barril" #!String
+    123: "Crate/0/-300/Crafting -9/.../true/true/0/Caixa" #!String
+    124: "Barrel/0/-300/Crafting -9/.../true/true/0/Barril" #!String
+    125: "Crate/0/-300/Crafting -9/.../true/true/0/Caixa" #!String
+    126: "Rarecrow/0/-300/Crafting -9/Colecione todos!(3 de 8)/true/true/0/Espantalho raro" #!String
+    127: "Statue Of Endless Fortune/0/-300/Crafting -9/Feita de ouro maciço. Para que serve?/true/true/0/Estátua da Riqueza Eterna" #!String
+    128: "Mushroom Box/0/-300/Crafting -9/Cogumelos crescem periodicamente/true/true/2/Caixa de cogumelos" #!String
+    130: "Chest/0/-300/Crafting -9/Feito para armazenar seus itens./true/true/0/Baú" #!String
+    136: "Rarecrow/0/-300/Crafting -9/Colecione todos!(4 de 8)/true/true/0/Espantalho raro" #!String
+    137: "Rarecrow/0/-300/Crafting -9/Colecione todos!(5 de 8)/true/true/0/Espantalho raro" #!String
+    138: "Rarecrow/0/-300/Crafting -9/Colecione todos!(6 de 8)/true/true/0/Espantalho raro" #!String
+    139: "Rarecrow/0/-300/Crafting -9/Colecione todos!(7 de 8)/true/true/0/Espantalho raro" #!String
+    140: "Rarecrow/0/-300/Crafting -9/Colecione todos!(8 de 8)/true/true/0/Espantalho raro" #!String
+    141: "Prairie King Arcade System/0/-300/Crafting -9/Jogue \"Jornada do Rei da Pradaria\" em sua casa!/true/true/0/Arcade do Rei da Pradaria" #!String
+    143: "Wooden Brazier/25/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro de madeira" #!String
+    144: "Stone Brazier/40/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro de pedra" #!String
+    145: "Gold Brazier/100/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro dourado" #!String
+    146: "Campfire/0/-300/Crafting -9/Ilumina moderadamente./true/true/0/Fogueira" #!String
+    147: "Stump Brazier/80/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro de toco de árvore" #!String
+    148: "Carved Brazier/200/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro esculpido" #!String
+    149: "Skull Brazier/300/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro de crânio" #!String
+    150: "Barrel Brazier/80/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro de barril" #!String
+    151: "Marble Brazier/500/-300/Crafting -9/Ilumina moderadamente./true/true/0/Braseiro de mármore" #!String
+    152: "Wood Lamp-post/50/-300/Crafting -9/Ilumina bem./true/true/0/true/Poste de luz lígneo" #!String
+    153: "Iron Lamp-post/100/-300/Crafting -9/Ilumina bem./true/true/0/true/Poste de luz férreo" #!String
+    154: "Worm Bin/0/-300/Crafting -9/Produz iscas regularmente. As minhocas se sustentam sozinhas./true/true/0/Cesto de minhocas" #!String
+    155: "??HMTGF??/0/-300/Crafting -9/??HMTGF??/true/true/0/??HMTGF??" #!String
+    156: "Slime Incubator/0/-300/Crafting -9/Chocas os ovos de gosmas. Permite criar gosmas em ambientes externos./true/false/0/Incubador de gosmas" #!String
+    158: "Slime Egg-Press/0/-300/Crafting -9/Comprime 100 pedaços de gosmas em um ovo de gosmas. É um milagre científico!/true/false/0/Prensa de Gosmas" #!String
+    159: "Junimo Kart Arcade System/0/-300/Crafting -9/Jogue \"Junimo Kart\" em casa!/true/true/0/Arcade Júnimo Kart" #!String
+    160: "Statue Of Perfection/0/-300/Crafting -9/Feita de puro irídio./true/true/0/Estátua da perfeição" #!String
+    161: "??Pinky Lemon??/0/-300/Crafting -9/??Limão Rosa??/true/true/0/??Limão Rosa??" #!String
+    162: "??Foroguemon??/0/-300/Crafting -9/??Foroguemon??/true/true/0/??Foroguemon??" #!String
+    163: "Cask/0/-300/Crafting -9/Utilizado na adega para envelhecer produtos como queijo e vinho./true/true/0/Barril de madeira" #!String
+    164: "Solid Gold Lewis/0/-300/Crafting -9/O projeto secreto do Prefeito./true/true/0/Lewis de Ouro Maciço" #!String
+    165: "Auto-Grabber/0/-300/Crafting -9/Faz a colheita de animais automaticamente todas as manhãs. Trabalha em vacas, ovelhas e cabras./true/true/0/Auto-Recolhedora" #!String
+    167: "Deluxe Scarecrow/50/-300/Crafting -9/Previne que corvos ataquem suas plantas. Tem um grande alcance (cerca de 16 \"blocos\")./true/true/0/Espantalho de Luxo" #!String
+    174: "Barrel/0/-300/Crafting -9/.../true/true/0/Barril" #!String
+    175: "Crate/0/-300/Crafting -9/.../true/true/0/Caixa" #!String
+    182: "Geode Crusher/0/-300/Crafting -9/Quebra geodos automaticamente. Precisa de carvão para funcionar./true/true/0/Esmagador de Geodos" #!String
+    184: "Seasonal Plant/50/-300/Crafting -9/Uma planta ornamental que muda a cada estação. Não precisa ser regada./true/true/0/Planta Sazonal" #!String
+    188: "Seasonal Plant/50/-300/Crafting -9/Uma planta ornamental que muda a cada estação. Não precisa ser regada./true/true/0/Planta Sazonal" #!String
+    192: "Seasonal Plant/50/-300/Crafting -9/Uma planta ornamental que muda a cada estação. Não precisa ser regada./true/true/0/Planta Sazonal" #!String
+    196: "Seasonal Plant/50/-300/Crafting -9/Uma planta ornamental que muda a cada estação. Não precisa ser regada./true/true/0/Planta Sazonal" #!String
+    200: "Seasonal Plant/200/-300/Crafting -9/Uma planta ornamental que muda a cada estação. Não precisa ser regada./true/true/0/Planta Sazonal" #!String
+    204: "Seasonal Plant/50/-300/Crafting -9/Uma planta ornamental que muda a cada estação. Não precisa ser regada./true/true/0/Planta Sazonal" #!String
+    208: "Workbench/1000/-300/Crafting -9/Quando construir aqui, você terá acesso a qualquer baú adjacente./true/true/0/Bancada de Trabalho" #!String
+    209: "Mini-Jukebox/1500/-300/Crafting -9/Permite que você toque suas músicas favoritas./true/true/0/Mini-Jukebox" #!String
+    211: "Wood Chipper/500/-300/Crafting -9/Coloque um pedaço de madeira de lei para transformá-la em madeira normal./true/true/0/Triturador de Madeira" #!String
+    214: "Telephone/1000/-300/Crafting -9/Pode ser usado para ver horários e invetários de lojas./true/true/0/Telefone" #!String
+    216: "Mini-Fridge/1500/-300/Crafting -9/Permite que você armazene mais ingredientes para conzinhar./true/true/0/Mini-Geladeira" #!String
+    219: "Cursed P.K. Arcade System/0/-300/Crafting -9/Há algo de errado com esse Arcade do Rei da Pradaria.../true/true/0/Arcade de R.P. Amaldiçoado" #!String
+    231: "Solar Panel/0/-300/Crafting -9/Lentamente gera pilhas quando deixado no sol./true/true/0/Painel Solar" #!String
+    232: "Stone Chest/0/-300/Crafting -9/Um lugar para guardar seus itens./true/true/0/Baú de Pedra" #!String
+    238: "Mini-Obelisk/0/-300/Crafting -9/Coloque dois na fazenda para se teletransportar entre eles./true/true/0/Mini Obelisco" #!String
+    239: "Farm Computer/0/-300/Crafting -9/Escaneia a fazenda e mostra informações úteis./true/true/0/Computador da Fazenda" #!String
+    246: "Coffee Maker/0/-300/Crafting -9/Automaticamente faz café toda manhã./true/true/0/Máquina de Café" #!String
+    247: "Sewing Machine/0/-300/Crafting -9/Use para costurar roupas do conforto da sua casa!/true/true/0/Máquina de Costura" #!String
+    248: "Mini-Shipping Bin/0/-300/Crafting -9/Itens colocados aqui vão ser incluídos nas entregas à noite./true/true/0/Mini Caixa de Remessas" #!String
+    254: "Ostrich Incubator/0/-300/Crafting -9/Choca ovos de avestruz em bebês avestruzes. Coloque em um celeiro./true/true/0/Incubadora de Avestruzes" #!String
+    256: "Junimo Chest/0/-300/Crafting -9/Pelos poderes da magia da floresta, todo Baú de Junimo compartilha o mesmo inventário./true/true/0/Baú de Junimo" #!String
+    264: "Heavy Tapper/0/-300/Crafting -9/Ponha em um ácer, carvalho ou pinheiro e espere o reservatório se encher! Funciona duas vezes mais rápido que uma torneirinha normal./true/false/0/Torneirinha Pesada" #!String
+    265: "Deconstructor/0/-300/Crafting -9/Destrói itens criados, mas recupera o seu material mais precioso./true/true/0/Desconstrutor" #!String
+    272: "Auto-Petter/0/-300/Crafting -9/Tecnologia patenteada pela Joja Co. para galinheiros e celeiros. Mantém seus animais contentes, mas não substitui completamente os benefícios do toque humano. Carinho à mão pode ser utilizado para suplementar./true/true/0/Auto-Acariciador" #!String
+    275: "Hopper/0/-300/Crafting -9/Itens colocados aqui irão automaticamente para a máquina à frente do funil./true/true/0/Funil" #!String
+    278: "Campfire/0/-300/Crafting -9/Cozinhe onde quiser!/true/true/1/Fogueira" #!String
+    280: "Statue Of True Perfection/0/-300/Crafting -9/Feita de puro irídio./true/true/0/Estátua da verdadeira perfeição" #!String
+

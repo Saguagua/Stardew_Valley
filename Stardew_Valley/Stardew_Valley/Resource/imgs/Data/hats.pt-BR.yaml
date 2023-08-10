@@ -1,0 +1,117 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Cowboy Hat/O couro está velho e rachado, mas surpreendentemente flexível. Está com cheiro de mofo./false/true/Chapéu de Caubói" #!String
+    1: "Bowler Hat/Feito de feltro macio./false/true/Chapéu-coco" #!String
+    2: "Top Hat/Clássico para um cavalheiro./false/true/Cartola" #!String
+    3: "Sombrero/Chapéu com decoração festiva. Tecido com palha./false/true/Sombreiro" #!String
+    4: "Straw Hat/Leve e fresco. A alegria de um fazendeiro/false/true/Chapéu de palha" #!String
+    5: "Official Cap/Parece ter pertencido a um carteiro ou policial. De qualquer forma, ainda está bem macio e cheira bem./false/true/Boina oficial" #!String
+    6: "Blue Bonnet/Volte aos doces tempos de infância com esta touca./false/true/Touca azul" #!String
+    7: "Plum Chapeau/Parece bom./false/true/Chapéu Gourmet" #!String
+    8: "Skeleton Mask/Os olhos vermelhos brilham misteriosamente/true/true/Máscara de esqueleto" #!String
+    9: "Goblin Mask/Assuste a vizinhança com esta máscara medonha. Juntas de borracha nas orelhas para completar./true/true/Máscara de duende" #!String
+    10: "Chicken Mask/Faça-os todos sorrirem com esta máscara./true/true/Máscara de galinha" #!String
+    11: "Earmuffs/Mantenha suas orelhas aquecidas. Feito com veludo artesanal da Vila Castelo./true/false/Protetor de orelhas" #!String
+    12: "Delicate Bow/Pequenas joias brilham enquanto você a examina./true/false/Lacinho delicado" #!String
+    13: "Tropiclip/Possui a forma de uma pequena palmeira./true/false/Tropiclipe" #!String
+    14: "Butterfly Bow/É bem macia./true/false/Gravata-borboleta" #!String
+    15: "Hunter's Cap/A lã do chapéu continua quente até no meio da floresta./false/true/Chapéu de caçador" #!String
+    16: "Trucker Hat/Ponha atrás para esfriar a sua cabeça./false/true/Chapéu de Caminhoneiro" #!String
+    17: "Sailor's Cap/Fresco e rico em amido./false/true/Chapéu de marinheiro" #!String
+    18: "Good Ol' Cap/Um chapéu flexível com um bico amassado. Parece ter passado por muita coisa./false/true/Bom e velho chapéu" #!String
+    19: "Fedora/Essencial para o habitante da cidade./false/true/Fedora" #!String
+    20: "Cool Cap/Desbotou bastante. Seu azul era bem vivo./false/true/Chapéu legal" #!String
+    21: "Lucky Bow/O meio é feito de ouro maciço./true/false/Gravata da sorte" #!String
+    22: "Polka Bow/É de revirar os olhos./true/false/Gravata de bolinhas" #!String
+    23: "Gnome's Cap/Este gnomo era cabeçudo./false/true/Chapéu de gnomo" #!String
+    24: "Eye Patch/Não dá para saber se é de verdade ou de uma loja de fantasias./true/true/Tampão de olho" #!String
+    25: "Santa Hat/Celebre um natal mágico./false/true/Gorro de papai noel" #!String
+    26: "Tiara/Possui uma grande ametista cercada de ouro./true/true/Tiara" #!String
+    27: "Hard Hat/Para manter sua cabeça inteira./false/true/Chapéu duro" #!String
+    28: "Sou'wester/Sua forma ajuda a manter os marinheiros secos durante tempestades./false/true/Chapéu Sudoeste" #!String
+    29: "Daisy/Uma margarida fresca para colocar no cabelo./true/false/Margarida" #!String
+    30: "Watermelon Band/Cores inspiradas pelo amado melão dourado./true/false/Fita de melancia" #!String
+    31: "Mouse Ears/Feitas de fibra sintética./true/true/Orelhas de rato" #!String
+    32: "Cat Ears/Bigodes incluídos./true/true/Orelhas de gato" #!String
+    33: "Cowgal Hat/O laço está cheio de diamantes falsos./false/true/Chapéu de Vaqueira" #!String
+    34: "Cowpoke Hat/Para especialistas em laticínios./false/true/Chapéu de Vaqueiro" #!String
+    35: "Archer's Cap/Na moda goste você de arqueiros ou não./false/true/Chapéu de arqueiro" #!String
+    36: "Panda Hat/A lovely panda hat./false/true/Panda Hat" #!String
+    37: "Blue Cowboy Hat/Um chapéu de caubói de jeans azul./false/true/Chapéu de Caubói Azul" #!String
+    38: "Red Cowboy Hat/Um chapéu de caubói vermelho chamativo./false/true/Chapéu de Caubói Vermelho" #!String
+    39: "Cone Hat/Uma curiosidade, vinda de uma terra distante./false/true/Chapéu de Cone" #!String
+    40: "Living Hat/Ele absorve humidade do seu escalpo. Sem precisar regar!/false/true/Chapéu Vivo" #!String
+    41: "Emily's Magic Hat/Feito com amor por Emily. É 100% orgânico!/false/true/Chapéu Mágico de Emily" #!String
+    42: "Mushroom Cap/Tem cheiro de terra./false/true/Chapéu de Cogumelo" #!String
+    43: "Dinosaur Hat/Um chapéu feito para parecer um pequeno dinossauro./false/true/Chapéu de Dinossauro" #!String
+    44: "Totem Mask/Não se preocupe, ela não vai deformar sua cara.../true/true/Máscara de Totem" #!String
+    45: "Logo Cap/Um boné vermelho com uma logo na frente./false/true/Boné com Logo" #!String
+    46: "Wearable Dwarf Helm/Uma versão um pouco maior dos capacetes usados pelos anões./hide/true/Elmo de Anão Vestível" #!String
+    47: "Fashion Hat/Um chapéu elegante com uma pena na aba./false/true/Chapéu Elegante" #!String
+    48: "Pumpkin Mask/Essa deve ter sido uma abóbora muito grande.../hide/true/Máscara de Abóbora" #!String
+    49: "Hair Bone/Uma versão pré-histórica do arco de cabelo./true/false/Osso de Cabelo" #!String
+    50: "Knight's Helmet/Parece até que é de verdade!/hide/true/Elmo de Cavaleiro" #!String
+    51: "Squire's Helmet/A cara é exposta pra aumentar o fluxo de ar./hide/true/Elmo de Escudeiro" #!String
+    52: "Spotted Headscarf/Um cachecol vermelho de bolinhas amarrado no pescoço./hide/true/Cachecol de Bolinhas" #!String
+    53: "Beanie/Um chapéu bem quente e justo./hide/true/Gorro" #!String
+    54: "Floppy Beanie/Um chapéu quente e um pouco largo./hide/true/Gorro Grande" #!String
+    55: "Fishing Hat/A aba larga te mantém na sombra enquanto estiver pescando na margem do rio./false/true/Chapéu de Pescador" #!String
+    56: "Blobfish Mask/Tão esponjoso quanto o de verdade!/true/true/Máscara de Peixe-Bolha" #!String
+    57: "Party Hat/Um chapéu vermelho que faz qualquer celebração mais divertida./false/true/Chapéu de Festa" #!String
+    58: "Party Hat/Um chapéu azul que faz qualquer celebração mais divertida./false/true/Chapéu de Festa" #!String
+    59: "Party Hat/Um chapéu verde que faz qualquer celebração mais divertida./false/true/Chapéu de Festa" #!String
+    60: "Arcane Hat/O tipo de chapéu de vaqueiro que é usado por um mago./false/true/Chapéu Arcano" #!String
+    61: "Chef Hat/O chapéu tradicional de um chefe de cozinha./hide/true/Chapéu de Chefe de Cozinha" #!String
+    62: "Pirate Hat/O chapéu de um capitão com um caveira horrivel na frente./false/true/Chapéu de Pirata" #!String
+    63: "Flat Topped Hat/Um chapéu antigo que já foi considerado muito estiloso./false/true/Chapéu Plano" #!String
+    64: "Elegant Turban/Um turbante de tecido preto com detalhes dourados./false/true/Turbante Elegante" #!String
+    65: "White Turban/Um turbante de tecido branco com detalhes azuis./false/true/Turbante Branco" #!String
+    66: "Garbage Hat/É uma tampa de lata de lixo 'reciclada' como chapéu.../false/true/Chapéu de Lixo" #!String
+    67: "Golden Mask/Uma recriação fiel da relíquia do Deserto Calico!/true/true/Máscara Dourada" #!String
+    68: "Propeller Hat/Um chapéu bobo com uma hélice em cima./false/true/Chapéu de Hélice" #!String
+    69: "Bridal Veil/O chapéu tradicional de uma noiva./false/true/Véu de Noiva" #!String
+    70: "Witch Hat/Um chapéu pontudo popular entre bruxas./false/true/Chapéu de Bruxa" #!String
+    71: "Copper Pan/Você coloca a panela de cobre na sua cabeça.../false/true/Panela de Cobre" #!String
+    72: "Green Turban/Um turbante verde de seda com um ornamento dourado na frente./false/true/Turbante Verde" #!String
+    73: "Magic Cowboy Hat/Está brilhando com energia prismática/false/true/Prismatic/Chapéu de Vaqueiro Mágico" #!String
+    74: "Magic Turban/Está brilhando com energia prismática/false/true/Prismatic/Turbante Mágico" #!String
+    75: "Golden Helmet/É a metade de um coco dourado./false/true/Capacete Dourado" #!String
+    76: "Deluxe Pirate Hat/Só o pirata mais infame poderia vestir isso./false/true/Chapéu de Pirata de Luxo" #!String
+    77: "Pink Bow/Este laço gigante é uma declaração e tanto!/true/false/Laço Rosa" #!String
+    78: "Frog Hat/Um amigo pegajoso que vive na sua cabeça./hide/true/Chapéu de Sapo" #!String
+    79: "Small Cap/É um estilo de boné mais aerodinâmico./false/true/Boné Pequeno" #!String
+    80: "Bluebird Mask/Use isto para ficar igual ao se comerciante favorito da ilha./hide/true/Máscara de Pássaro Azul" #!String
+    81: "Deluxe Cowboy Hat/Um chapéu de caubói com um formato mais extremo./false/true/Chapéu de Caubói de Luxo" #!String
+    82: "Mr. Qi's Hat/Uma réplica do chapéu icônico do Sr. Qi./false/true/Chapéu do Sr. Qi" #!String
+    83: "Dark Cowboy Hat/Um chapéu de caubói em um clássico preto./false/true/Chapéu de Caubói Escuro" #!String
+    84: "Radioactive Goggles/Na verdade não fornece nenhuma proteção contra radiação./true/true/Óculos Radioativos" #!String
+    85: "Swashbuckler Hat/A clássica vestimenta de um espadachim./false/true/Chapéu de Espadachim" #!String
+    86: "Qi Mask/???/hide/true/Máscara Qi" #!String
+    87: "Star Helmet/Um chapéu vermelho com estrelas./false/true/Chapéu de Estrela" #!String
+    88: "Sunglasses/Eles te dão uma aparência relaxada./true/true/Óculos de Sol" #!String
+    89: "Goggles/Você vai se sentir muito mais seguro com eles./true/true/Óculos de Proteção" #!String
+    90: "Forager's Hat/É o deleite de um coletor./false/true/Chapéu de Coletor" #!String
+    91: "Tiger Hat/Faz você parecer um belíssimo tigre./hide/true/Chapéu de Tigre" #!String
+    92: "???/???/hide/true" #!String
+    93: "Warrior Helmet/Uma casca de ovo de avestruz reutilizado como capacete./false/true/Capacete de Guerreiro" #!String
+

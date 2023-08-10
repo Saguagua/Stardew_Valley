@@ -1,0 +1,370 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Oak Chair/chair/-1/-1/4/350/Meşe Sandalye" #!String
+    3: "Walnut Chair/chair/-1/-1/4/350/Ceviz Sandalye" #!String
+    6: "Birch Chair/chair/-1/-1/4/350/Huş Sandalye" #!String
+    9: "Mahogany Chair/chair/-1/-1/4/1000/Mahun Sandalye" #!String
+    12: "Red Diner Chair/chair/-1/-1/4/750/Kırmızı Masa Sandalyesi" #!String
+    15: "Blue Diner Chair/chair/-1/-1/4/750/Mavi Masa Sandalyesi" #!String
+    18: "Country Chair/chair/-1/-1/4/750/Kırsal Sandalyesi" #!String
+    21: "Breakfast Chair/chair/-1/-1/4/750/Kahvaltı Sandalyesi" #!String
+    24: "Pink Office Chair/chair/-1/-1/4/500/Pembe Ofis Sandalyesi" #!String
+    27: "Purple Office Chair/chair/-1/-1/4/500/Mor Ofis Sandalyesi" #!String
+    30: "Green Office Stool/chair/-1/-1/1/350/Yeşil Ofis Taburesi" #!String
+    31: "Orange Office Stool/chair/-1/-1/1/350/Turuncu Ofis Taburesi" #!String
+    64: "Dark Throne/chair/-1/-1/4/2000/Kara Taht" #!String
+    67: "Dining Chair/chair/-1/-1/4/1200/Masa Sandalyesi" #!String
+    70: "Dining Chair/chair/-1/-1/4/1200/Masa Sandalyesi" #!String
+    73: "Green Plush Seat/chair/-1/-1/4/750/Yeşil Yumuş Koltuk" #!String
+    76: "Pink Plush Seat/chair/-1/-1/4/750/Pembe Yumuş Koltuk" #!String
+    79: "Winter Chair/chair/-1/-1/4/750/Kış Sandalyesi" #!String
+    82: "Groovy Chair/chair/-1/-1/4/750/Modern Sandalye" #!String
+    85: "Cute Chair/chair/-1/-1/4/1200/Tatlış Sandalye" #!String
+    88: "Stump Seat/chair/-1/-1/4/2000/Kütük Sandalye" #!String
+    91: "Metal Chair/chair/-1/-1/4/800/Metal Sandalye" #!String
+    94: "Green Stool/chair/-1/-1/1/350/Yeşil Tabure" #!String
+    95: "Blue Stool/chair/-1/-1/1/350/Mavi Tabure" #!String
+    128: "King Chair/chair/-1/-1/4/3000/Kral Sandalyesi" #!String
+    131: "Crystal Chair/chair/-1/-1/4/3000/Kristal Sandalye" #!String
+    134: "Tropical Chair/chair/-1/-1/4/3000/Tropik Sandalye" #!String
+    192: "Oak Bench/bench/-1/-1/4/750/Meşe Oturak" #!String
+    197: "Walnut Bench/bench/-1/-1/4/750/Ceviz Oturak" #!String
+    202: "Birch Bench/bench/-1/-1/4/750/Huş Oturak" #!String
+    207: "Mahogany Bench/bench/-1/-1/4/2000/Mahun Oturak" #!String
+    212: "Modern Bench/bench/-1/-1/4/2000/Modern Oturak" #!String
+    288: "Blue Armchair/armchair/-1/-1/4/1000/Mavi Koltuk" #!String
+    294: "Red Armchair/armchair/-1/-1/4/1000/Kırmızı Koltuk" #!String
+    300: "Green Armchair/armchair/-1/-1/4/1000/Yeşil Koltuk" #!String
+    306: "Yellow Armchair/armchair/-1/-1/4/1000/Sarı Koltuk" #!String
+    312: "Brown Armchair/armchair/-1/-1/4/1000/Kahverengi Koltuk" #!String
+    416: "Blue Couch/couch/-1/-1/4/1750/Mavi Kanepe" #!String
+    424: "Red Couch/couch/-1/-1/4/1750/Kırmızı Kanepe" #!String
+    432: "Green Couch/couch/-1/-1/4/1750/Yeşil Kanepe" #!String
+    440: "Yellow Couch/couch/-1/-1/4/1750/Sarı Kanepe" #!String
+    512: "Brown Couch/couch/-1/-1/4/1750/Kahverengi Kanepe" #!String
+    520: "Dark Couch/couch/-1/-1/4/2500/Kara Kanepe" #!String
+    528: "Wizard Couch/couch/-1/-1/4/4000/Büyücü Kanepesi" #!String
+    536: "Woodsy Couch/couch/-1/-1/4/3000/Odunsu Kanepe" #!String
+    704: "Oak Dresser/dresser/-1/-1/4/5000/Meşe Şifoniyer" #!String
+    709: "Walnut Dresser/dresser/-1/-1/4/5000/Ceviz Şifoniyer" #!String
+    714: "Birch Dresser/dresser/-1/-1/4/5000/Huş Şifoniyer" #!String
+    719: "Mahogany Dresser/dresser/-1/-1/4/7500/Mahun Şifoniyer" #!String
+    724: "Coffee Table/table/2 2/2 1/2/1250/Kahve Masası" #!String
+    727: "Stone Slab/table/2 2/2 1/2/1000/Taş Levha" #!String
+    800: "Winter Dining Table/long table/-1/-1/2/3500/Kışlık Yemek Masası" #!String
+    807: "Festive Dining Table/long table/-1/-1/2/3500/Şölenlik Yemek Masası" #!String
+    814: "Mahogany Dining Table/long table/-1/-1/2/3000/Mahun Yemek Masası" #!String
+    821: "Modern Dining Table/long table/-1/-1/2/2700/Modern Yemek Masası" #!String
+    984: "Long Cactus/decor/1 3/1 1/1/500/Uzun Kaktüs" #!String
+    985: "Long Palm/decor/1 4/1 1/1/500/Uzun Palmiye" #!String
+    986: "Exotic Tree/decor/3 5/3 1/1/500/Egzotik Ağaç" #!String
+    989: "Deluxe Tree/decor/3 5/3 1/1/500/Şatafatlı Ağaç" #!String
+    1120: "Oak Table/table/-1/-1/1/750/Meşe Masa" #!String
+    1122: "Walnut Table/table/-1/-1/1/750/Ceviz Masa" #!String
+    1124: "Birch Table/table/-1/-1/1/750/Huş Masa" #!String
+    1126: "Mahogany Table/table/-1/-1/1/1500/Mahun Masa" #!String
+    1128: "Sun Table/table/-1/-1/1/2500/Güneş Masası" #!String
+    1130: "Moon Table/table/-1/-1/1/2500/Ay Masası" #!String
+    1132: "Modern Table/table/-1/-1/1/1250/Modern Masa" #!String
+    1134: "Pub Table/table/-1/-1/1/800/Bar Masası" #!String
+    1136: "Luxury Table/table/-1/-1/1/2000/Lüks Masa" #!String
+    1138: "Diviner Table/table/-1/-1/1/2250/Falcı Masası" #!String
+    1140: "Neolithic Table/table/-1/-1/1/1800/Cilalı Taş Masası" #!String
+    1142: "Puzzle Table/table/-1/-1/1/1500/Yapboz Masası" #!String
+    1144: "Winter Table/table/-1/-1/1/1250/Kış Masası" #!String
+    1146: "Candy Table/table/-1/-1/1/1000/Şeker Masası" #!String
+    1148: "Luau Table/table/-1/-1/1/1000/Luau Masası" #!String
+    1150: "Dark Table/table/-1/-1/1/2000/Kara Masa" #!String
+    1216: "Oak Tea-Table/table/2 2/-1/1/750/Meşe Sehpa" #!String
+    1218: "Walnut Tea-Table/table/2 2/-1/1/750/Ceviz Sehpa" #!String
+    1220: "Birch Tea-Table/table/2 2/-1/1/750/Huş Sehpa" #!String
+    1222: "Mahogany Tea-Table/table/2 2/-1/1/1500/Mahun Sehpa" #!String
+    1224: "Modern Tea-Table/table/2 2/-1/1/1000/Modern Sehpa" #!String
+    1226: "Furniture Catalogue/table/2 2/-1/1/200000/Mobilya Kataloğu" #!String
+    1228: "Oceanic Rug/rug/-1/-1/1/1250/Okyanus Kilimi" #!String
+    1280: "China Cabinet/other/3 3/3 1/1/6000/Çin Dolabı" #!String
+    1283: "Artist Bookcase/bookcase/-1/-1/1/1200/Sanatçı Kitaplığı" #!String
+    1285: "Luxury Bookcase/bookcase/-1/-1/1/2000/Lüks Kitaplık" #!String
+    1287: "Modern Bookcase/bookcase/-1/-1/1/1600/Modern Kitaplık" #!String
+    1289: "Dark Bookcase/bookcase/-1/-1/1/2000/Kara Kitaplık" #!String
+    1291: "Ceramic Pillar/decor/1 3/1 1/1/250/Seramik Sütun" #!String
+    1292: "Gold Pillar/decor/1 3/1 1/1/450/Altın Sütun" #!String
+    1293: "Industrial Pipe/decor/1 3/1 1/1/300/Soba Borusu" #!String
+    1294: "Indoor Palm/decor/1 3/1 1/1/600/Ev Palmiyesi" #!String
+    1295: "Totem Pole/decor/1 3/1 1/1/750/Totem Direği" #!String
+    1296: "Manicured Pine/decor/1 3/1 1/1/500/Cilalı Çam" #!String
+    1297: "Topiary Tree/decor/1 3/1 1/1/500/Budama Ağacı" #!String
+    1298: "Standing Geode/decor/1 2/1 1/1/500/Dikili Jeot" #!String
+    1299: "Obsidian Vase/decor/1 2/1 1/1/500/Obsidyen Vazo" #!String
+    1300: "Singing Stone/decor/1 2/1 1/1/500/Şarkıcı Taş" #!String
+    1301: "Sloth Skeleton L/decor/1 2/1 1/1/500/Tembel Hayvan İskeleti" #!String
+    1302: "Sloth Skeleton M/decor/1 2/1 1/1/500/Tembel Hayvan İskeleti" #!String
+    1303: "Sloth Skeleton R/decor/1 2/1 1/1/500/Tembel Hayvan İskeleti" #!String
+    1304: "Skeleton/decor/1 2/1 1/1/500/İskelet" #!String
+    1305: "Chicken Statue/decor/1 2/1 1/1/500/Tavuk Heykelciği" #!String
+    1306: "Leah's Sculpture/decor/1 2/1 1/1/500/Leah'ın Heykeli" #!String
+    1307: "Dried Sunflowers/decor/1 2/1 1/1/500/Kurumuş Ayçiçekleri" #!String
+    1308: "Catalogue/decor/1 2/1 1/1/30000/Katalog" #!String
+    1309: "Sam's Boombox/decor/1 2/1 1/1/500/Sam'in Seyyar Teybi" #!String
+    1362: "Small Plant/decor/1 1/1 1/1/250/Ufak Bitki" #!String
+    1363: "Table Plant/decor/1 1/1 1/1/250/Masa Bitkisi" #!String
+    1364: "Decorative Bowl/decor/1 1/1 1/1/250/Dekoratif Kase" #!String
+    1365: "Futan Bear/decor/1 1/1 1/1/1500/Futan Ayısı" #!String
+    1366: "Globe/decor/1 1/1 1/1/750/Küre" #!String
+    1367: "Model Ship/decor/1 1/1 1/1/750/Gemi Maketi" #!String
+    1368: "Small Crystal/decor/1 1/1 1/1/750/Ufak Kristal" #!String
+    1369: "Decorative Lantern/decor/1 1/1 1/1/500/Dekoratif Lamba" #!String
+    1371: "Wumbus Statue/decor/2 3/2 1/1/500/Vumbus Heykeli" #!String
+    1373: "Bobo Statue/decor/2 3/2 1/1/500/Bobo Heykeli" #!String
+    1375: "Purple Serpent Statue/decor/1 3/1 1/1/500/Mor Kertenkele Heykeli" #!String
+    1376: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1377: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1378: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1379: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1380: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1381: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1382: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1383: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1384: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1385: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1386: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1387: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1388: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1389: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1390: "House Plant/decor/1 2/1 1/1/250/Ev Bitkisi" #!String
+    1391: "Oak End Table/table/1 2/1 1/2/500/Meşe Komodin" #!String
+    1393: "Walnut End Table/table/1 2/1 1/2/500/Ceviz Komodin" #!String
+    1395: "Birch End Table/table/1 2/1 1/2/500/Huş Komodin" #!String
+    1397: "Mahogany End Table/table/1 2/1 1/2/1000/Mahun Komodin" #!String
+    1399: "Modern End Table/table/1 2/1 1/1/800/Modern Komodin" #!String
+    1400: "Grandmother End Table/table/1 2/1 1/1/1000/Nine Komodini" #!String
+    1401: "Winter End Table/table/1 2/1 1/1/800/Kış Komodini" #!String
+    1402: "Calendar/painting/1 2/1 2/1/2000/Takvim" #!String
+    1440: "Tree of the Winter Star/decor/3 5/3 2/1/5000/Kışyıldızı Ağacı" #!String
+    1443: "Country Lamp/lamp/-1/-1/1/500/Kırsal Lambası" #!String
+    1445: "Box Lamp/lamp/-1/-1/1/750/Kutu Lamba" #!String
+    1447: "Modern Lamp/lamp/-1/-1/1/750/Modern Lamba" #!String
+    1449: "Classic Lamp/lamp/-1/-1/1/1000/Klasik Lamba" #!String
+    1451: "Red Rug/rug/-1/-1/2/1000/Kırmızı Kilim" #!String
+    1456: "Patchwork Rug/rug/-1/-1/2/800/Yamalı Kilim" #!String
+    1461: "Dark Rug/rug/-1/-1/2/2000/Kara Kilim" #!String
+    1466: "Budget TV/decor/2 3/2 2/1/750/Ucuz Televizyon" #!String
+    1468: "Plasma TV/decor/3 3/3 1/1/4500/Plazma Televizyon" #!String
+    1471: "Green Serpent Statue/decor/1 3/1 1/1/500/Yeşil Kertenkele Heykeli" #!String
+    1539: "'The Muzzamaroo'/painting/-1/-1/1/1000/'Muzzamaro'" #!String
+    1541: "'A Night On Eco-Hill'/painting/-1/-1/1/1000/'Tepede Bir Gece'" #!String
+    1543: "'Pathways'/painting/-1/-1/1/750/'Patikalar'" #!String
+    1545: "'Burnt Offering'/painting/-1/-1/1/1000/'Yanık Teklifler'" #!String
+    1547: "'Queen of the Gem Sea'/painting/3 2/3 2/1/1200/'Mücevher Denizi'nin Kraliçesi'" #!String
+    1550: "'Vanilla Villa'/painting/-1/-1/1/500/'Beyaz Köşk'" #!String
+    1552: "'Primal Motion'/painting/-1/-1/1/1500/'İlkel Hareket'" #!String
+    1554: "'Jade Hills'/painting/3 2/3 2/1/1750/'Yeşim Taşı Tepeleri'" #!String
+    1557: "'Sun #44'/painting/-1/-1/1/800/'44. Güneş'" #!String
+    1559: "Wallflower Pal/painting/-1/-1/1/500/Dost Askı" #!String
+    1561: "'Spires'/painting/-1/-1/1/800/'Minareler'" #!String
+    1563: "'Highway 89'/painting/-1/-1/1/800/'89. Otoyol'" #!String
+    1565: "Calico Falls/painting/-1/-1/1/750/Patisko Şelalesi" #!String
+    1567: "Needlepoint Flower/painting/1 2/1 2/1/500/İğneucu Çiceği" #!String
+    1600: "Skull Poster/painting/1 2/1 2/1/500/Kafatası Posteri" #!String
+    1601: "'Sun #45'/painting/1 2/1 2/1/350/'45. Güneş'" #!String
+    1602: "'Little Tree'/painting/1 2/1 2/1/350/'Ufak Ağaç'" #!String
+    1603: "'Blueberries'/painting/1 2/1 2/1/250/'Böğürtlenler'" #!String
+    1604: "'Blue City'/painting/1 2/1 2/1/250/'Mavi Şehir'" #!String
+    1605: "Little Photos/painting/1 2/1 2/1/250/Ufak Fotoğraflar" #!String
+    1606: "'Dancing Grass'/painting/1 2/1 2/1/400/'Dans Eden Çimen'" #!String
+    1607: "'VGA Paradise'/painting/2 2/2 2/1/1200/'V.G.A. Cenneti'" #!String
+    1609: "J. Cola Light/painting/3 2/3 2/1/1000/Diyet J. Kola" #!String
+    1612: "'Kitemaster '95'/painting/-1/-1/1/600/'1995 Uçurtma Şampiyonu'" #!String
+    1614: "Basic Window/window/-1/-1/1/300/Temel Pencere" #!String
+    1616: "Small Window/window/-1/-1/1/300/Ufak Pencere" #!String
+    1618: "Red Cottage Rug/rug/-1/-1/2/750/Kırmızı Baraka" #!String
+    1623: "Green Cottage Rug/rug/-1/-1/2/750/Yeşil Baraka" #!String
+    1628: "Monster Rug/rug/2 2/2 2/1/1250/Canavar Kilimi" #!String
+    1630: "Boarded Window/painting/1 2/1 2/1/400/Kapalı Pencere" #!String
+    1664: "Mystic Rug/rug/-1/-1/2/1250/Mistik Kilim" #!String
+    1669: "Lg. Futan Bear/decor/2 2/2 1/1/4000/Koca Futan Ayısı" #!String
+    1671: "Bear Statue/decor/2 4/2 1/1/4000/Ayı Heykelciği" #!String
+    1673: "Porthole/window/-1/-1/1/700/Lombar" #!String
+    1675: "Anchor/painting/1 2/1 2/1/750/Çapa" #!String
+    1676: "World Map/painting/-1/-1/1/500/Dünya Haritası" #!String
+    1678: "Ornate Window/window/-1/-1/1/900/Süslü Pencere" #!String
+    1680: "Floor TV/decor/2 2/2 1/1/700/Yer Televizyonu" #!String
+    1682: "Carved Window/window/-1/-1/1/900/Oyuk Pencere" #!String
+    1684: "Colorful Set/painting/1 2/1 2/1/500/Renkli Resimler" #!String
+    1687: "Cloud Decal/painting/2 2/2 2/1/500/Bulut Çıkartması" #!String
+    1692: "Cloud Decal/painting/2 2/2 2/1/500/Bulut Çıkartması" #!String
+    1733: "Junimo Plush/decor/2 2/2 1/1/4000/Peluş Junimo" #!String
+    1737: "Nautical Rug/rug/-1/-1/2/1250/Deniz Kilimi" #!String
+    1742: "Burlap Rug/rug/2 2/2 2/1/350/Çuval Kilim" #!String
+    1744: "Tree Column/decor/1 3/1 1/1/1000/Ağaç Sütun" #!String
+    1745: "L. Light String/painting/2 1/2 1/1/400/Büyük Işık Askısı" #!String
+    1747: "S. Pine/decor/1 2/1 1/1/500/Ufak Çam" #!String
+    1748: "Bonsai Tree/decor/1 2/1 1/1/800/Bonzai Bitkisi" #!String
+    1749: "Metal Window/window/-1/-1/1/800/Metal Pencere" #!String
+    1751: "Candle Lamp/lamp/-1/-1/1/1000/Mum Lamba" #!String
+    1753: "Miner's Crest/painting/2 2/2 2/1/1000/Madenci Arması" #!String
+    1755: "Bamboo Mat/rug/2 1/2 1/2/250/Bambu Hasırı" #!String
+    1758: "Ornate Lamp/lamp/-1/-1/1/1050/Süslü Lamba" #!String
+    1760: "Small Junimo Plush/decor/1 1/1 1/1/1500/Küçük Junimo Peluşu" #!String
+    1761: "Small Junimo Plush/decor/1 1/1 1/1/1500/Küçük Junimo Peluşu" #!String
+    1762: "Small Junimo Plush/decor/1 1/1 1/1/1500/Küçük Junimo Peluşu" #!String
+    1763: "Small Junimo Plush/decor/1 1/1 1/1/1500/Küçük Junimo Peluşu" #!String
+    1764: "Futan Rabbit/decor/1 1/1 1/1/1500/Futan Tavşanı" #!String
+    1777: "Woodcut Rug/rug/2 2/2 2/1/800/Gravür Kilim" #!String
+    1792: "Brick Fireplace/fireplace/-1/-1/1/1000/Tuğla Şömine" #!String
+    1794: "Stone Fireplace/fireplace/-1/-1/1/1500/Taş Şömine" #!String
+    1796: "Iridium Fireplace/fireplace/-1/-1/1/15000/İridyum Şömine" #!String
+    1798: "Stove Fireplace/fireplace/-1/-1/1/3000/Soba" #!String
+    1800: "Monster Fireplace/fireplace/-1/-1/1/25000/Canavar Şöminesi" #!String
+    1802: "My First Painting/painting/-1/-1/1/500/İlk Resmim" #!String
+    1811: "Hanging Shield/painting/1 1/1 1/1/500/Asılı Kalkan" #!String
+    1812: "Monster Danglers/painting/2 1/2 1/1/1000/Canavar Sarkacı" #!String
+    1814: "Ceiling Flags/painting/1 1/1 1/1/50/Tavan Bayrakları" #!String
+    1817: "Ceiling Leaves/painting/1 1/1 1/1/50/Tavan Asması" #!String
+    1818: "Ceiling Leaves/painting/1 1/1 1/1/50/Tavan Asması" #!String
+    1819: "Ceiling Leaves/painting/1 1/1 1/1/50/Tavan Asması" #!String
+    1820: "Ceiling Leaves/painting/1 1/1 1/1/50/Tavan Asması" #!String
+    1821: "Ceiling Leaves/painting/1 1/1 1/1/50/Tavan Asması" #!String
+    1838: "'Red Eagle'/painting/-1/-1/1/1000/'Kırmızı Kartal'" #!String
+    1840: "'Portrait Of A Mermaid'/painting/-1/-1/1/1000/'Bir Denizkızı'nın Portresi'" #!String
+    1842: "'Solar Kingdom'/painting/-1/-1/1/1000/'Güneşin Krallığı'" #!String
+    1844: "'Clouds'/painting/-1/-1/1/1000/'Bulutlar'" #!String
+    1846: "'1000 Years From Now'/painting/-1/-1/1/1000/'Bin Yıl Sonrası'" #!String
+    1848: "'Three Trees'/painting/-1/-1/1/1000/'Üç Ağaç'" #!String
+    1850: "'The Serpent'/painting/-1/-1/1/1000/'Yılan'" #!String
+    1852: "'Tropical Fish #173'/painting/-1/-1/1/1000/'173. Tropik Balık'" #!String
+    1854: "'Land Of Clay'/painting/-1/-1/1/1000/'Kilden Memleket'" #!String
+    1866: "Elegant Fireplace/fireplace/-1/-1/1/4000/Zarif Şömine" #!String
+    1900: "Pirate Flag/painting/-1/-1/1/4000/Korsan Bayrağı" #!String
+    1902: "Pirate Rug/rug/-1/-1/2/4000/Korsan Kilimi" #!String
+    1907: "Strawberry Decal/painting/-1/-1/1/2500/Çilek Çıkartması" #!String
+    1909: "Fruit Salad Rug/rug/-1/-1/2/4000/Meyve Salatası Kilimi" #!String
+    1914: "Night Sky Decal #1/painting/1 2/1 2/1/750/Gece Gökyüzü Çıkartması 1" #!String
+    1915: "Night Sky Decal #2/painting/1 2/1 2/1/750/Gece Gökyüzü Çıkartması 2" #!String
+    1916: "Night Sky Decal #3/painting/1 2/1 2/1/750/Gece Gökyüzü Çıkartması 3" #!String
+    1917: "Wall Pumpkin/painting/1 2/1 2/1/750/Duvar Kabağı" #!String
+    1918: "Small Wall Pumpkin/painting/1 2/1 2/1/750/Küçük Duvar Kabağı" #!String
+    1952: "'The Brave Little Sapling'/painting/1 2/1 2/1/400/'Cesur Fidan'" #!String
+    1953: "'Mysterium'/painting/1 2/1 2/1/400/'Gizem'" #!String
+    1954: "'Journey Of The Prairie King: The Motion Picture'/painting/1 2/1 2/1/400/'Çayır Kralı'nın Yolculuğu'" #!String
+    1955: "'Wumbus'/painting/1 2/1 2/1/400/'Vumbus'" #!String
+    1956: "'The Zuzu City Express'/painting/1 2/1 2/1/400/'Zuzu Şehri Ekspresi'" #!String
+    1957: "'The Miracle At Coldstar Ranch'/painting/1 2/1 2/1/400/'Soğukyıldız Çiftliği Mucizesi'" #!String
+    1958: "'Natural Wonders: Exploring Our Vibrant World'/painting/1 2/1 2/1/400/'Doğa Harikaları: Canlı Dünyamızı Keşfediyoruz'" #!String
+    1959: "'It Howls In The Rain'/painting/1 2/1 2/1/400/'Yağmurda Uluyan'" #!String
+    1960: "Indoor Hanging Basket/painting/1 2/1 2/1/400/Ev İçi Asılı Sepet" #!String
+    1961: "Winter Tree Decal/painting/1 2/1 2/1/400/Kış Ağacı Çıkartması" #!String
+    1964: "Bone Rug/rug/-1/-1/2/1000/Kemik Kilimi" #!String
+    1971: "Butterfly Hutch/decor/2 3/2 1/1/50000/2/Kelebek Kafesi" #!String
+    1973: "Wall Flower/painting/1 3/1 3/1/500/Duvar Çiçeği" #!String
+    1974: "S. Wall Flower/painting/1 3/1 3/1/500/Küçük Duvar Çiçeği" #!String
+    1975: "Clouds Banner/painting/1 3/1 3/1/500/Bulut Afişi" #!String
+    1978: "Snowy Rug/rug/-1/-1/2/1000/Kar Kilimi" #!String
+    2048: "Bed/bed/2 4/2 3/1/5000/Yatak" #!String
+    2052: "Double Bed/bed double/3 4/3 3/1/5000/Çift Kişilik Yatak" #!String
+    2058: "Starry Double Bed/bed double/3 4/3 3/1/5000/Yıldızlı Çift Kişilik Yatak" #!String
+    2064: "Strawberry Double Bed/bed double/3 4/3 3/1/5000/Çilekli Çift Kişilik Yatak" #!String
+    2070: "Pirate Double Bed/bed double/3 4/3 3/1/5000/Korsanlı Çift Kişilik Yatak" #!String
+    2076: "Child Bed/bed child/2 4/2 3/1/5000/Çocuk Yatağı" #!String
+    2176: "Tropical Bed/bed/2 4/2 3/1/5000/Tropik Yatak" #!String
+    2180: "Tropical Double Bed/bed double/3 4/3 3/1/5000/Tropik Çift Kişilik Yatak" #!String
+    2186: "Deluxe Red Double Bed/bed double/3 4/3 3/1/6000/Kırmızı Çift Kişilik Yatak" #!String
+    2192: "Modern Double Bed/bed double/3 4/3 3/1/6000/Çağdaş Çift Kişilik Yatak" #!String
+    2304: "Large Fish Tank/fishtank/4 3/4 1/1/5000/Büyük Akvaryum" #!String
+    2312: "Deluxe Fish Tank/fishtank/5 3/5 1/1/10000/Devasa Akvaryum" #!String
+    2322: "Small Fish Tank/fishtank/2 3/2 1/1/1000/Küçük Akvaryum" #!String
+    2326: "Tropical TV/decor/3 3/3 1/1/4500/Tropik Televizyon" #!String
+    2329: "'Volcano' Photo/painting/-1/-1/1/500/'Yanardağ' Fotoğrafı" #!String
+    2331: "Jungle Torch/torch/-1/-1/1/500/Orman Meşalesi" #!String
+    2332: "Gourmand Statue/decor/2 2/2 1/1/500/Gurme Heykelciği" #!String
+    2334: "Pyramid Decal/painting/2 2/2 2/1/10000/Piramit Çıkartması" #!String
+    2393: "Palm Wall Ornament/painting/1 1/1 1/2/500/Palmiye Süsü" #!String
+    2396: "Iridium Krobus/decor/1 3/1 1/1/5000/İridyum Krobus" #!String
+    2397: "Plain Torch/torch/-1/-1/1/500/Düz Meşale" #!String
+    2398: "Stump Torch/torch/-1/-1/1/500/Kütük Meşale" #!String
+    2400: "Aquatic Sanctuary/fishtank/7 3/7 1/1/10000/Su Sığınağı" #!String
+    2414: "Modern Fish Tank/fishtank/2 3/2 1/1/10000/Modern Akvaryum" #!String
+    2418: "Lifesaver/painting/1 2/1 2/1/1000/Can Simidi" #!String
+    2419: "Foliage Print/painting/2 2/2 2/1/10000/Yaprak Çalışması" #!String
+    2421: "'Boat'/painting/2 2/2 2/1/10000/'Tekne'" #!String
+    2423: "'Vista'/painting/2 2/2 2/1/10000/'Manzara'" #!String
+    2425: "Wall Basket/painting/2 2/2 2/1/10000/Duvar Sepeti" #!String
+    2427: "Decorative Trash Can/decor/1 2/1 1/1/500/Süs Çöp Kutusu" #!String
+    2488: "Light Green Rug/rug/3 2/3 2/2/10000/Açık Yeşil Halı" #!String
+    2496: "Wild Double Bed/bed double/3 4/3 3/1/6000/Yabani Çift Kişilik Yatak" #!String
+    2502: "Fisher Double Bed/bed double/3 4/3 3/1/6000/Dalyan Çift Kişilik Yatak" #!String
+    2508: "Birch Double Bed/bed double/3 4/3 3/1/6000/Huş Çift Kişilik Yatak" #!String
+    2514: "Exotic Double Bed/bed double/3 4/3 3/1/6000/Egzotik Çift Kişilik Yatak" #!String
+    2584: "'Jade Hills Extended'/painting/4 2/4 2/1/6750/'Büyük Yeşim Taşı Tepeleri'" #!String
+    2624: "Pastel Banner/painting/1 3/1 3/1/500/Pastel Afiş" #!String
+    2625: "Winter Banner/painting/1 3/1 3/1/500/Kış Afişi" #!String
+    2626: "Moonlight Jellies Banner/painting/1 3/1 3/1/500/Ayışığı Denizanası Afişi" #!String
+    2627: "Jungle Decal/painting/1 3/1 3/1/500/Orman Çıkartması" #!String
+    2628: "Jungle Decal/painting/1 3/1 3/1/500/Orman Çıkartması" #!String
+    2629: "Jungle Decal/painting/1 3/1 3/1/500/Orman Çıkartması" #!String
+    2630: "Jungle Decal/painting/1 3/1 3/1/500/Orman Çıkartması" #!String
+    2631: "Starport Decal/painting/1 3/1 3/1/500/Uzay Çıkartması" #!String
+    2632: "Decorative Pitchfork/painting/1 3/1 3/1/500/Süs Dirgen" #!String
+    2633: "Wood Panel/painting/1 3/1 3/1/500/Ahşap Panel" #!String
+    2634: "Decorative Axe/painting/1 3/1 3/1/500/Süs Balta" #!String
+    2635: "Log Panel/painting/1 3/1 3/1/500/Kütük Paneli" #!String
+    2636: "Log Panel/painting/1 3/1 3/1/500/Kütük Paneli" #!String
+    2637: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2638: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2639: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2640: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2641: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2642: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2643: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2644: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2645: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2646: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2647: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2648: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2649: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2650: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2651: "Floor Divider R/rug/1 2/1 1/1/50/Sol Zemin Bölücü" #!String
+    2652: "Floor Divider L/rug/1 2/1 1/1/50/Sağ Zemin Bölücü" #!String
+    2653: "Icy Banner/painting/1 3/1 3/1/500/Buz Afişi" #!String
+    2654: "Wall Palm/painting/1 3/1 3/1/500/Palmiye Ağacı Çıkartması" #!String
+    2655: "Wall Cactus/painting/1 3/1 3/1/500/Kaktüs Çıkartması" #!String
+    2720: "Large Brown Couch/couch/4 2/4 1/4/5750/Büyük Kahverengi Kanepe" #!String
+    2730: "'Frozen Dreams'/painting/2 2/2 2/1/6750/'Donmuş Düşler'" #!String
+    2732: "'Physics 101'/painting/2 2/2 2/1/6750/'Fizik 101'" #!String
+    2734: "Wall Sconce/sconce/-1/-1/1/500/Duvar Lambası" #!String
+    2736: "Wall Sconce/sconce/-1/-1/1/500/Duvar Lambası" #!String
+    2738: "Wall Sconce/sconce/-1/-1/1/1000/Duvar Lambası" #!String
+    2740: "Wall Sconce/sconce/-1/-1/1/500/Duvar Lambası" #!String
+    2742: "Blossom Rug/rug/6 4/6 4/1/10000/Çiçekli Halı" #!String
+    2748: "Wall Sconce/sconce/-1/-1/1/500/Duvar Lambası" #!String
+    2750: "Wall Sconce/sconce/-1/-1/1/500/Duvar Lambası" #!String
+    2784: "Large Green Rug/rug/4 3/4 3/1/10000/Büyük Yeşil Halı" #!String
+    2790: "Icy Rug/rug/4 3/4 3/1/10000/Buzul Halı" #!String
+    2794: "Old World Rug/rug/4 3/4 3/1/10000/Rustik Halı" #!String
+    2798: "Large Red Rug/rug/4 3/4 3/1/10000/Büyük Kırmızı Halı" #!String
+    2802: "Large Cottage Rug/rug/4 3/4 3/1/10000/Büyük Rustik Halı" #!String
+    2812: "Wall Sconce/sconce/-1/-1/1/500/Duvar Lambası" #!String
+    2814: "Squirrel Figurine/decor/1 1/1 1/1/500/Sincap Heykelciği" #!String
+    2870: "Funky Rug/rug/5 4/5 4/1/10000/Garip Halı" #!String
+    2875: "Modern Rug/rug/5 4/5 4/1/10000/Modern Kilim" #!String
+

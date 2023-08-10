@@ -1,0 +1,628 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Wild Horseradish: "color_brown, forage_item, season_spring" #!String
+    Stone: "color_gray" #!String
+    Daffodil: "color_yellow, forage_item, season_spring" #!String
+    Leek: "color_white, forage_item, season_spring" #!String
+    Dandelion: "color_yellow, forage_item, season_spring" #!String
+    Parsnip: "color_yellow, season_spring, dye_medium" #!String
+    Lumber: "color_brown, wood_item" #!String
+    Emerald: "color_green" #!String
+    Aquamarine: "color_aquamarine" #!String
+    Ruby: "color_red" #!String
+    Amethyst: "color_purple" #!String
+    Topaz: "color_gold" #!String
+    Jade: "color_jade" #!String
+    Diamond: "color_white" #!String
+    Prismatic Shard: "color_prismatic" #!String
+    Cave Carrot: "color_brown, season_all, forage_item, forage_item_mines" #!String
+    Quartz: "color_white" #!String
+    Fire Quartz: "color_red" #!String
+    Frozen Tear: "color_cyan" #!String
+    Earth Crystal: "color_copper" #!String
+    Coconut: "color_dark_brown, forage_item_desert, forage_item, season_all" #!String
+    Cactus Fruit: "color_green, forage_item, forage_item_desert" #!String
+    Sap: "color_yellow" #!String
+    Torch: "light_source, color_yellow" #!String
+    Spirit Torch: "light_source, color_light_cyan" #!String
+    Dwarf Scroll I: "scroll_item, color_red, dye_strong" #!String
+    Dwarf Scroll II: "scroll_item, color_green, dye_strong" #!String
+    Dwarf Scroll III: "scroll_item, color_blue, dye_strong" #!String
+    Dwarf Scroll IV: "scroll_item, color_yellow, dye_strong" #!String
+    Chipped Amphora: "ceramic_item, ancient_item, color_brown, dye_strong" #!String
+    Arrowhead: "hunting_item, color_gray, dye_strong" #!String
+    Lost Book: "book_item" #!String
+    Ancient Doll: "toy_item, color_blue, dye_strong" #!String
+    Elvish Jewelry: "elvish_item, color_yellow, dye_strong" #!String
+    Chewing Stick: "ancient_item, color_brown, dye_strong" #!String
+    Ornamental Fan: "noble_item, color_white, dye_strong" #!String
+    Dinosaur Egg: "dinosaur_item, egg_item, color_green, dye_strong" #!String
+    Rare Disc: "color_dark_gray, dye_strong" #!String
+    Ancient Sword: "ancient_item, color_gray, dye_strong" #!String
+    Rusty Spoon: "cooking_item, color_gray, dye_strong" #!String
+    Rusty Spur: "cowboy_item, color_brown, dye_strong" #!String
+    Rusty Cog: "machine_item, color_brown, dye_strong" #!String
+    id_o_113: "chicken_item, statue_item, color_sand, dye_strong" #!String
+    Ancient Seed: "" #!String
+    Prehistoric Tool: "prehistoric_item, color_gray, dye_strong" #!String
+    Dried Starfish: "marine_item, color_yellow, dye_strong" #!String
+    Anchor: "marine_item, color_gray, dye_strong" #!String
+    Glass Shards: "color_cyan, dye_strong" #!String
+    Bone Flute: "bone_item, prehistoric_item, instrument_item, color_sand, dye_strong" #!String
+    Prehistoric Handaxe: "prehistoric_item, color_gray, dye_strong" #!String
+    Dwarvish Helm: "dwarvish_item, color_brown, dye_strong" #!String
+    Dwarf Gadget: "dwarvish_item, machine_item, color_gray, dye_strong" #!String
+    Ancient Drum: "ancient_item, instrument_item, color_purple, dye_strong" #!String
+    Golden Mask: "golden_relic_item, color_gold, dye_strong" #!String
+    Golden Relic: "golden_relic_item, color_gold, dye_strong" #!String
+    id_o_126: "doll_item, color_green, dye_strong, strange_doll_1" #!String
+    id_o_127: "doll_item, color_yellow, dye_strong, strange_doll_2" #!String
+    Pufferfish: "color_yellow, fish_ocean, season_summer, fish_upright" #!String
+    Anchovy: "color_blue, fish_ocean, season_spring, season_fall, fish_talk_demanding" #!String
+    Tuna: "color_blue, fish_ocean, season_summer, season_winter" #!String
+    Sardine: "color_blue, fish_ocean, season_spring, season_fall, season_winter, fish_talk_demanding" #!String
+    Bream: "color_blue, fish_river, season_all" #!String
+    Largemouth Bass: "color_green, fish_lake, season_all" #!String
+    Smallmouth Bass: "color_brown, fish_river, fish_pond, season_spring, season_fall" #!String
+    Rainbow Trout: "color_orange, fish_river, season_summer" #!String
+    Salmon: "color_salmon, fish_river, season_fall" #!String
+    Walleye: "color_yellow, fish_river, fish_pond, fish_lake, season_fall, season_winter" #!String
+    Perch: "color_yellow, fish_river, fish_pond, fish_lake, season_winter" #!String
+    Carp: "color_yellow, fish_lake, fish_secret_pond, fish_sewers, season_spring, season_fall, season_winter, season_winter" #!String
+    Midnight Carp: "color_iridium, fish_lake, season_fall, season_winter" #!String
+    Flounder: "color_brown, fish_ocean, season_spring, season_summer" #!String
+    Seafoam Pudding: "color_blue, food_seafood" #!String
+    Catfish: "color_gray, fish_river, fish_secret_pond, fish_swamp, season_spring, season_summer, season_fall" #!String
+    Pike: "color_yellow, fish_river, fish_pond, season_summer, season_winter, fish_carnivorous" #!String
+    Sunfish: "color_orange, fish_river, season_spring, season_summer" #!String
+    Red Mullet: "color_red, fish_ocean, season_summer, season_winter" #!String
+    Herring: "color_blue, fish_ocean, season_spring, season_winter, fish_talk_demanding" #!String
+    Eel: "color_copper, fish_ocean, season_spring, season_fall, fish_upright, fish_talk_rude" #!String
+    Octopus: "color_orange, fish_ocean, season_summer, fish_upright" #!String
+    Red Snapper: "color_red, fish_ocean, season_summer, season_fall, season_winter" #!String
+    Squid: "color_white, fish_ocean, season_winter, fish_upright" #!String
+    Seaweed: "color_green, fish_nonfish" #!String
+    Green Algae: "color_dark_green, fish_nonfish, algae_item" #!String
+    Sea Cucumber: "color_yellow, fish_ocean, season_fall, season_winter, fish_upright" #!String
+    Super Cucumber: "color_purple, fish_ocean, season_summer, season_fall, fish_upright" #!String
+    Ghostfish: "color_white, fish_mines, season_all" #!String
+    White Algae: "color_white, fish_nonfish, algae_item" #!String
+    Stonefish: "color_brown, fish_mines, fish_semi_rare, season_all, fish_upright" #!String
+    Crimsonfish: "color_red, fish_legendary" #!String
+    Angler: "color_yellow, fish_legendary, fish_upright" #!String
+    Ice Pip: "color_blue, fish_mines, fish_semi_rare, season_all, fish_talk_demanding" #!String
+    Lava Eel: "color_red, fish_mines, fish_semi_rare, season_all, fish_upright" #!String
+    Legend: "color_green, fish_legendary" #!String
+    Sandfish: "color_yellow, fish_desert, season_all" #!String
+    Scorpion Carp: "color_brown, fish_desert, fish_semi_rare, season_all" #!String
+    Treasure Chest: "color_yellow" #!String
+    Joja Cola: "color_blue, drink_item" #!String
+    Trash: "color_black, trash_item" #!String
+    Driftwood: "color_brown, wood_item, trash_item" #!String
+    Broken Glasses: "color_cyan, trash_item" #!String
+    Broken CD: "color_cyan, trash_item" #!String
+    Soggy Newspaper: "color_gray, trash_item" #!String
+    Egg: "color_white, egg_item" #!String
+    Large Egg: "color_white, egg_item, large_egg_item" #!String
+    Hay: "color_yellow" #!String
+    Milk: "color_white, drink_item, milk_item, cow_milk_item" #!String
+    Large Milk: "color_white, drink_item, milk_item, large_milk_item, cow_milk_item" #!String
+    Green Bean: "color_green, season_spring, dye_medium" #!String
+    Fiddlehead Risotto: "color_green, food_pasta" #!String
+    Cauliflower: "color_white, season_spring, dye_medium" #!String
+    Potato: "color_brown, season_spring, dye_medium" #!String
+    Fried Egg: "color_white, food_breakfast" #!String
+    Omelet: "color_white, food_breakfast" #!String
+    Salad: "color_green, food_salad" #!String
+    Cheese Cauliflower: "color_white" #!String
+    Baked Fish: "color_yellow" #!String
+    Parsnip Soup: "color_yellow" #!String
+    Vegetable Medley: "color_green" #!String
+    Complete Breakfast: "color_yellow, food_breakfast" #!String
+    Fried Calamari: "color_yellow" #!String
+    Strange Bun: "color_pink" #!String
+    Lucky Lunch: "color_yellow" #!String
+    Fried Mushroom: "color_brown" #!String
+    Pizza: "color_red, food_party" #!String
+    Bean Hotpot: "color_green" #!String
+    Glazed Yams: "color_brown" #!String
+    Carp Surprise: "color_brown, food_seafood" #!String
+    Hashbrowns: "color_brown, food_breakfast" #!String
+    Pancakes: "color_brown, food_breakfast" #!String
+    Salmon Dinner: "color_pink, food_seafood" #!String
+    Fish Taco: "color_yellow, food_seafood, food_party" #!String
+    Pepper Poppers: "color_brown, food_spicy" #!String
+    Crispy Bass: "color_brown, food_seafood" #!String
+    Bread: "color_brown, food_bakery" #!String
+    Tom Kha Soup: "color_white, food_soup" #!String
+    Trout Soup: "color_brown, food_seafood, food_soup" #!String
+    Chocolate Cake: "color_brown, food_bakery, food_cake, food_sweet" #!String
+    Pink Cake: "color_pink, food_bakery, food_sweet" #!String
+    Rhubarb Pie: "color_red, food_bakery, food_sweet" #!String
+    Cookie: "color_brown, food_bakery, food_sweet" #!String
+    Spaghetti: "color_red, dye_medium, food_pasta" #!String
+    Fried Eel: "color_yellow, food_seafood" #!String
+    Spicy Eel: "color_red, food_seafood, food_spicy" #!String
+    Sashimi: "color_pink, food_seafood, food_sushi" #!String
+    Maki Roll: "color_black, food_seafood, food_sushi" #!String
+    Tortilla: "color_brown" #!String
+    Red Plate: "color_red" #!String
+    Eggplant Parmesan: "color_red, dye_medium, food_pasta" #!String
+    Rice Pudding: "color_white, food_sweet" #!String
+    Ice Cream: "color_white, food_sweet" #!String
+    Blueberry Tart: "color_blue, food_bakery, food_sweet" #!String
+    Autumn's Bounty: "color_brown" #!String
+    Pumpkin Soup: "color_orange, food_soup" #!String
+    Super Meal: "color_green" #!String
+    Cranberry Sauce: "color_red, dye_strong, food_sauce" #!String
+    Stuffing: "color_brown, food_sauce" #!String
+    Farmer's Lunch: "color_brown" #!String
+    Survival Burger: "color_brown, food_party" #!String
+    Dish O' The Sea: "color_yellow, food_seafood" #!String
+    Miner's Treat: "color_red, food_sweet" #!String
+    Roots Platter: "color_brown" #!String
+    Sugar: "color_white, food_sweet" #!String
+    Wheat Flour: "color_white" #!String
+    Oil: "color_yellow" #!String
+    Garlic: "color_white, season_spring, crop_year_2, dye_medium" #!String
+    Kale: "color_green, season_spring, dye_strong" #!String
+    Rhubarb: "color_red, season_spring, dye_medium" #!String
+    Melon: "color_pink, dye_medium, season_summer" #!String
+    Tomato: "color_red, dye_medium, season_summer" #!String
+    Morel: "color_brown, forage_item, forage_item_secret, forage_item_cave, season_spring" #!String
+    Blueberry: "color_blue, dye_strong, season_summer" #!String
+    Fiddlehead Fern: "color_green, dye_strong, forage_item, forage_item_secret, season_summer" #!String
+    Hot Pepper: "color_red, season_summer, dye_medium" #!String
+    Wheat: "color_yellow" #!String
+    Radish: "color_red, season_summer, dye_medium" #!String
+    Red Cabbage: "color_purple, dye_medium, crop_year_2, season_summer" #!String
+    Starfruit: "color_yellow" #!String
+    Corn: "color_yellow, dye_medium, season_summer, season_fall" #!String
+    Eggplant: "color_purple, dye_medium, season_fall" #!String
+    Artichoke: "color_green, dye_medium, season_fall, crop_year_2" #!String
+    Pumpkin: "color_orange, dye_medium, season_fall" #!String
+    Bok Choy: "color_green, dye_medium, season_fall" #!String
+    Yam: "color_brown, dye_medium, season_fall" #!String
+    Chanterelle: "color_brown, forage_item, forage_item_cave, forage_item_secret, season_fall" #!String
+    Cranberries: "color_red, dye_strong, season_fall" #!String
+    Holly: "color_red, forage_item, season_winter" #!String
+    Beet: "color_dark_purple, dye_strong, season_fall" #!String
+    Cherry Bomb: "color_red, bomb_item" #!String
+    Bomb: "color_black, bomb_item" #!String
+    Mega Bomb: "color_red, bomb_item" #!String
+    Twig: "" #!String
+    Salmonberry: "color_red" #!String
+    Grass Starter: "" #!String
+    Hardwood Fence: "" #!String
+    Amaranth Seeds: "" #!String
+    Amaranth: "color_pale_violet_red, dye_medium, season_fall" #!String
+    Grape Starter: "" #!String
+    Hops Starter: "" #!String
+    Pale Ale: "color_gold, alcohol_item" #!String
+    Hops: "color_green" #!String
+    Void Egg: "color_black, egg_item" #!String
+    Mayonnaise: "color_white" #!String
+    Duck Mayonnaise: "color_white, mayo_item" #!String
+    Dinosaur Mayonnaise: "dinosaur_item, color_white, mayo_item" #!String
+    Void Mayonnaise: "color_red, mayo_item" #!String
+    Acorn: "color_brown, tree_seed_item" #!String
+    Maple Seed: "color_brown, tree_seed_item" #!String
+    Pine Cone: "color_brown, tree_seed_item" #!String
+    Wood Fence: "" #!String
+    Stone Fence: "" #!String
+    Iron Fence: "" #!String
+    Gate: "" #!String
+    Dwarvish Translation Guide: "" #!String
+    Wood Floor: "" #!String
+    Stone Floor: "" #!String
+    Clay: "color_brown" #!String
+    Weathered Floor: "" #!String
+    Crystal Floor: "" #!String
+    Copper Bar: "color_copper, furnace_item" #!String
+    Iron Bar: "color_iron, furnace_item" #!String
+    Gold Bar: "color_gold, furnace_item" #!String
+    Iridium Bar: "color_iridium, furnace_item" #!String
+    Refined Quartz: "color_iridium, furnace_item" #!String
+    id_o_340: "color_yellow, honey_item" #!String
+    Tea Set: "" #!String
+    id_o_342: "color_green, pickle_item" #!String
+    id_o_344: "color_dark_red, jelly_item" #!String
+    Beer: "color_yellow, alcohol_item" #!String
+    Rare Seed: "" #!String
+    id_o_348: "color_dark_purple, drink_item, alcohol_item" #!String
+    Energy Tonic: "color_red, medicine_item" #!String
+    id_o_350: "color_green, drink_item, juice_item" #!String
+    Muscle Remedy: "color_dark_yellow, medicine_item" #!String
+    Tree Fertilizer: "color_brown, fertilizer_item" #!String
+    Basic Fertilizer: "color_brown, fertilizer_item" #!String
+    Quality Fertilizer: "color_brown, quality_fertilizer_item" #!String
+    Basic Retaining Soil: "color_brown, fertilizer_item" #!String
+    Quality Retaining Soil: "color_brown, quality_fertilizer_item" #!String
+    Clam: "color_light_cyan, beach_item, fish_crab_pot, fish_ocean, forage_item, forage_item_beach, fish_upright" #!String
+    Golden Pumpkin: "color_gold" #!String
+    Copper Ore: "color_copper, ore_item" #!String
+    Iron Ore: "color_iron, ore_item" #!String
+    Coal: "color_black" #!String
+    Gold Ore: "color_gold, ore_item" #!String
+    Iridium Ore: "color_iridium, ore_item" #!String
+    Wood: "color_brown, wood_item" #!String
+    Nautilus Shell: "color_orange, marine_item, season_winter, forage_item, forage_item_beach" #!String
+    Coral: "color_red, forage_item, forage_item_beach" #!String
+    Rainbow Shell: "color_prismatic, forage_item, forage_item_beach, season_summer" #!String
+    Coffee: "color_dark_brown" #!String
+    Spice Berry: "color_orange, forage_item, season_summer" #!String
+    Sea Urchin: "color_purple, forage_item, forage_item_beach" #!String
+    Grape: "color_purple, forage_item, season_summer" #!String
+    Spring Onion: "color_white, season_spring, forage_item" #!String
+    Strawberry: "color_red, season_spring, dye_medium" #!String
+    Straw Floor: "" #!String
+    Sweet Pea: "color_purple, forage_item, season_summer, flower_item, dye_medium" #!String
+    Field Snack: "color_brown" #!String
+    Common Mushroom: "color_dark_brown, forage_item, season_spring, season_fall" #!String
+    Wood Path: "" #!String
+    Wild Plum: "color_dark_purple, season_fall, forage_item" #!String
+    Gravel Path: "" #!String
+    Hazelnut: "color_brown, forage_item, season_fall" #!String
+    Crystal Path: "" #!String
+    Blackberry: "color_dark_blue, season_fall, forage_item" #!String
+    Cobblestone Path: "" #!String
+    Winter Root: "color_orange, season_winter, forage_item, forage_item_mines" #!String
+    Blue Slime Egg: "color_blue, slime_item, slime_egg_item" #!String
+    Crystal Fruit: "color_blue, season_winter, forage_item" #!String
+    Stepping Stone Path: "" #!String
+    Snow Yam: "color_white" #!String
+    Sweet Gem Berry: "color_red" #!String
+    Crocus: "color_purple, season_winter, forage_item, flower_item, dye_medium" #!String
+    Vinegar: "color_white" #!String
+    Red Mushroom: "color_red, forage_item, season_summer, season_fall, forage_item_mines, forage_item_secret" #!String
+    Sunflower: "color_yellow, flower_item, season_summer, season_fall, dye_medium" #!String
+    Purple Mushroom: "color_purple, forage_item, forage_item_mines" #!String
+    Rice Shoot: "" #!String
+    Unmilled Rice: "color_brown, crop_year_2, season_spring" #!String
+    Rice: "color_white" #!String
+    Cheese: "color_yellow" #!String
+    Goat Cheese: "color_yellow" #!String
+    Cloth: "color_white" #!String
+    Truffle: "color_brown" #!String
+    Truffle Oil: "color_yellow" #!String
+    Coffee Bean: "color_brown" #!String
+    Stardrop: "" #!String
+    Goat Milk: "color_white, milk_item, goat_milk_item" #!String
+    Red Slime Egg: "color_red, slime_item, slime_egg_item" #!String
+    L. Goat Milk: "color_white, milk_item, large_milk_item, goat_milk_item" #!String
+    Purple Slime Egg: "color_purple, slime_item, slime_egg_item" #!String
+    Wool: "color_white" #!String
+    Explosive Ammo: "color_red" #!String
+    Duck Egg: "color_white, egg_item" #!String
+    Duck Feather: "color_green" #!String
+    Rabbit's Foot: "color_yellow" #!String
+    Stone Base: "" #!String
+    Ancient Fruit: "color_cyan" #!String
+    Algae Soup: "color_dark_green" #!String
+    Pale Broth: "color_white" #!String
+    Bouquet: "color_pink" #!String
+    Mead: "color_gold, alcohol_item" #!String
+    Mermaid's Pendant: "" #!String
+    Decorative Pot: "" #!String
+    Drum Block: "" #!String
+    Flute Block: "" #!String
+    Speed-Gro: "color_brown, fertilizer_item" #!String
+    Deluxe Speed-Gro: "color_brown, quality_fertilizer_item" #!String
+    Parsnip Seeds: "" #!String
+    Bean Starter: "" #!String
+    Cauliflower Seeds: "" #!String
+    Potato Seeds: "" #!String
+    Garlic Seeds: "" #!String
+    Kale Seeds: "" #!String
+    Rhubarb Seeds: "" #!String
+    Melon Seeds: "" #!String
+    Tomato Seeds: "" #!String
+    Blueberry Seeds: "" #!String
+    Pepper Seeds: "" #!String
+    Wheat Seeds: "" #!String
+    Radish Seeds: "" #!String
+    Red Cabbage Seeds: "" #!String
+    Starfruit Seeds: "" #!String
+    Corn Seeds: "" #!String
+    Eggplant Seeds: "" #!String
+    Artichoke Seeds: "" #!String
+    Pumpkin Seeds: "" #!String
+    Bok Choy Seeds: "" #!String
+    Yam Seeds: "" #!String
+    Cranberry Seeds: "" #!String
+    Beet Seeds: "" #!String
+    Spring Seeds: "" #!String
+    Summer Seeds: "" #!String
+    Fall Seeds: "" #!String
+    Winter Seeds: "" #!String
+    Ancient Seeds: "" #!String
+    Tulip Bulb: "" #!String
+    Jazz Seeds: "" #!String
+    Poppy Seeds: "" #!String
+    Spangle Seeds: "" #!String
+    Sunflower Seeds: "" #!String
+    Fairy Seeds: "" #!String
+    Small Glow Ring: "color_yellow" #!String
+    Glow Ring: "color_yellow" #!String
+    Small Magnet Ring: "color_gray" #!String
+    Magnet Ring: "color_gray" #!String
+    Slime Charmer Ring: "color_green" #!String
+    Warrior Ring: "color_sand" #!String
+    Vampire Ring: "color_red" #!String
+    Savage Ring: "color_sand" #!String
+    Ring of Yoba: "color_gold" #!String
+    Sturdy Ring: "color_cyan" #!String
+    Burglar's Ring: "color_jade" #!String
+    Iridium Band: "color_iridium" #!String
+    Wedding Ring: "color_iridium" #!String
+    Jukebox Ring: "color_black" #!String
+    Amethyst Ring: "color_purple" #!String
+    Topaz Ring: "color_orange" #!String
+    Aquamarine Ring: "color_cyan" #!String
+    Jade Ring: "color_jade" #!String
+    Emerald Ring: "color_green" #!String
+    Ruby Ring: "color_red" #!String
+    Geode: "color_brown" #!String
+    Frozen Geode: "color_cyan" #!String
+    Magma Geode: "color_red" #!String
+    Alamite: "color_gray" #!String
+    Bixite: "color_black" #!String
+    Baryte: "color_red" #!String
+    Aerinite: "color_cyan" #!String
+    Calcite: "color_yellow" #!String
+    Dolomite: "color_pink" #!String
+    Esperite: "color_green" #!String
+    Fluorapatite: "color_purple" #!String
+    Geminite: "color_gray" #!String
+    Helvite: "color_red" #!String
+    Jamborite: "color_lime" #!String
+    Jagoite: "color_gold" #!String
+    Kyanite: "color_dark_blue" #!String
+    Lunarite: "color_white, dye_strong" #!String
+    Malachite: "color_green" #!String
+    Neptunite: "color_black" #!String
+    Lemon Stone: "color_orange" #!String
+    Nekoite: "color_pink" #!String
+    Orpiment: "color_orange" #!String
+    Petrified Slime: "color_green, slime_item" #!String
+    Thunder Egg: "color_dark_purple" #!String
+    Pyrite: "color_gold" #!String
+    Ocean Stone: "color_green" #!String
+    Ghost Crystal: "color_gray" #!String
+    Tigerseye: "color_orange" #!String
+    Jasper: "color_red" #!String
+    Opal: "color_light_cyan" #!String
+    Fire Opal: "color_dark_purple" #!String
+    Celestine: "color_iron" #!String
+    Marble: "color_gray" #!String
+    Sandstone: "color_sand" #!String
+    Granite: "color_gray" #!String
+    Basalt: "color_gray" #!String
+    Limestone: "color_gray" #!String
+    Soapstone: "color_white" #!String
+    Hematite: "color_copper" #!String
+    Mudstone: "color_brown" #!String
+    Obsidian: "color_black" #!String
+    Slate: "color_gray" #!String
+    Fairy Stone: "color_purple" #!String
+    Star Shards: "color_pink" #!String
+    Prehistoric Scapula: "bone_item, color_white, prehistoric_item" #!String
+    Prehistoric Tibia: "bone_item, color_white, prehistoric_item" #!String
+    Prehistoric Skull: "bone_item, color_white, prehistoric_item" #!String
+    Skeletal Hand: "bone_item, color_white, prehistoric_item" #!String
+    Prehistoric Rib: "bone_item, color_white, prehistoric_item" #!String
+    Prehistoric Vertebra: "bone_item, color_white, prehistoric_item" #!String
+    Skeletal Tail: "bone_item, color_white, prehistoric_item" #!String
+    Nautilus Fossil: "bone_item, color_white, prehistoric_item, marine_item, fossil_item" #!String
+    Amphibian Fossil: "bone_item, color_white, prehistoric_item, marine_item, fossil_item" #!String
+    Palm Fossil: "bone_item, color_white, fossil_item" #!String
+    Trilobite: "bone_item, color_white, fossil_item" #!String
+    Artifact Spot: "" #!String
+    Tulip: "color_red, flower_item, season_spring, dye_medium" #!String
+    Summer Spangle: "color_yellow, flower_item, season_summer, dye_medium" #!String
+    Fairy Rose: "color_pink, flower_item, season_fall, dye_medium" #!String
+    Blue Jazz: "color_blue, flower_item, season_spring, dye_medium" #!String
+    Sprinkler: "" #!String
+    Poppy: "color_orange, flower_item, season_summer, dye_medium" #!String
+    Plum Pudding: "color_brown, food_sweet" #!String
+    Artichoke Dip: "color_white" #!String
+    Stir Fry: "color_brown" #!String
+    Roasted Hazelnuts: "color_dark_brown" #!String
+    Pumpkin Pie: "color_orange, food_bakery, food_sweet" #!String
+    Radish Salad: "color_red, food_salad" #!String
+    Fruit Salad: "color_yellow, food_salad" #!String
+    Blackberry Cobbler: "color_dark_blue, food_sweet, food_bakery" #!String
+    Cranberry Candy: "color_red, dye_strong, food_sweet" #!String
+    Apple: "color_red, fruit_item, fruit_tree_item" #!String
+    Bruschetta: "color_red, food_pasta" #!String
+    Quality Sprinkler: "" #!String
+    Iridium Sprinkler: "" #!String
+    Coleslaw: "color_green" #!String
+    Poppyseed Muffin: "color_poppyseed, food_sweet, food_bakery" #!String
+    Cherry Sapling: "" #!String
+    Apricot Sapling: "" #!String
+    Orange Sapling: "" #!String
+    Peach Sapling: "" #!String
+    Pomegranate Sapling: "" #!String
+    Apple Sapling: "" #!String
+    Apricot: "color_orange, fruit_item, fruit_tree_item, season_spring" #!String
+    Orange: "color_orange, fruit_item, fruit_tree_item, season_summer" #!String
+    Peach: "color_pink, fruit_item, fruit_tree_item, season_summer" #!String
+    Pomegranate: "color_dark_pink, fruit_item, fruit_tree_item, season_fall" #!String
+    Cherry: "color_red, fruit_item, fruit_tree_item, season_spring" #!String
+    Green Slime Egg: "color_green, slime_item, slime_egg_item" #!String
+    Rain Totem: "color_brown, totem_item" #!String
+    Mutant Carp: "color_green, fish_legendary" #!String
+    Spook Fish: "color_blue, fish_semi_rare, fish_night_market" #!String
+    Midnight Squid: "color_blue, fish_night_market, fish_semi_rare, fish_upright, fish_talk_stiff" #!String
+    Blobfish: "color_sand, fish_night_market, fish_upright" #!String
+    Bug Meat: "color_dark_pink" #!String
+    Bait: "color_pink" #!String
+    Spinner: "" #!String
+    Dressed Spinner: "" #!String
+    "Warp Totem: Farm": "color_brown, totem_item" #!String
+    "Warp Totem: Mountains": "color_brown, totem_item" #!String
+    "Warp Totem: Beach": "color_brown, totem_item" #!String
+    "Warp Totem: Desert": "color_brown, totem_item" #!String
+    Barbed Hook: "" #!String
+    Lead Bobber: "" #!String
+    Treasure Hunter: "" #!String
+    Trap Bobber: "" #!String
+    Cork Bobber: "" #!String
+    Sturgeon: "color_cyan, fish_lake, season_summer, season_winter" #!String
+    Tiger Trout: "color_brown, fish_river, season_fall, season_winter" #!String
+    Bullhead: "color_brown, fish_lake, season_all" #!String
+    Tilapia: "color_gray, fish_ocean, season_summer, season_fall" #!String
+    Chub: "color_gray, fish_river, fish_lake, season_all" #!String
+    Magnet: "" #!String
+    Dorado: "color_orange, fish_river, season_summer, fish_carnivorous" #!String
+    Albacore: "color_blue, fish_ocean, season_fall, season_winter" #!String
+    Shad: "color_green, fish_river, season_spring, season_summer, season_fall" #!String
+    Lingcod: "color_brown, fish_river, fish_lake, season_winter, fish_carnivorous" #!String
+    Halibut: "color_dark_gray, fish_ocean, season_spring, season_summer, season_winter" #!String
+    Hardwood: "color_brown, wood_item" #!String
+    Crab Pot: "color_brown" #!String
+    Lobster: "color_red, fish_crab_pot, fish_ocean" #!String
+    Crayfish: "color_dark_gray, fish_crab_pot, fish_freshwater" #!String
+    Crab: "color_red, fish_crab_pot, fish_ocean, fish_upright" #!String
+    Cockle: "color_dark_gray, fish_crab_pot, fish_ocean, forage_item, forage_item_beach" #!String
+    Mussel: "color_gray, fish_crab_pot, fish_ocean, forage_item, forage_item_beach" #!String
+    Shrimp: "color_pink, fish_crab_pot, fish_ocean, fish_upright" #!String
+    Snail: "color_yellow, fish_crab_pot, fish_freshwater, fish_upright" #!String
+    Periwinkle: "color_cyan, fish_crab_pot, fish_freshwater, fish_upright" #!String
+    Oyster: "color_gray, fish_crab_pot, fish_ocean, forage_item, forage_item_beach, fish_upright" #!String
+    Maple Syrup: "color_brown, syrup_item" #!String
+    Oak Resin: "color_green, syrup_item" #!String
+    Pine Tar: "color_brown, syrup_item" #!String
+    Chowder: "color_white, food_soup" #!String
+    Lobster Bisque: "color_white, food_soup, food_seafood" #!String
+    Fish Stew: "color_gray, food_seafood, food_soup" #!String
+    Escargot: "color_gray" #!String
+    Maple Bar: "color_brown, food_sweet, food_bakery" #!String
+    Crab Cakes: "color_brown, food_seafood" #!String
+    Shrimp Cocktail: "color_pink, food_seafood" #!String
+    Woodskip: "color_orange, fish_secret_pond, fish_pond, season_all" #!String
+    Strawberry Seeds: "" #!String
+    Jack-O-Lantern: "color_orange" #!String
+    Rotten Plant: "color_copper" #!String
+    Omni Geode: "color_gray" #!String
+    Slime: "color_gray, slime_item" #!String
+    Bat Wing: "color_black" #!String
+    Solar Essence: "color_yellow" #!String
+    Void Essence: "color_purple" #!String
+    Mixed Seeds: "" #!String
+    Fiber: "color_green" #!String
+    Oil of Garlic: "color_yellow_green, potion_item" #!String
+    Life Elixir: "color_dark_pink, potion_item" #!String
+    Wild Bait: "" #!String
+    Glacierfish: "color_blue, fish_legendary, fish_upright" #!String
+    Battery Pack: "color_cyan" #!String
+    Lost Axe: "" #!String
+    Pearl: "color_white" #!String
+    Iridium Milk: "color_iridium" #!String
+    Lucky Purple Shorts: "" #!String
+    Berry Basket: "" #!String
+    Void Salmon: "color_dark_purple, fish_semi_rare, fish_swamp, season_all, fish_talk_stiff" #!String
+    Slimejack: "color_green, fish_semi_rare, fish_bug_lair, season_all" #!String
+    Caviar: "color_black" #!String
+    Squid Ink: "color_black" #!String
+    Triple Shot Espresso: "color_dark_brown, dye_strong" #!String
+    Green Tea: "color_green" #!String
+    Tea Leaves: "color_green" #!String
+    id_o_812: "color_orange" #!String
+    id_o_447: "color_orange" #!String
+    Bone Fragment: "bone_item, prehistoric_item, color_sand" #!String
+    Fossilized Skull: "bone_item, prehistoric_item, color_sand" #!String
+    Fossilized Spine: "bone_item, prehistoric_item, color_sand" #!String
+    Fossilized Tail: "bone_item, prehistoric_item, color_sand" #!String
+    Fossilized Leg: "bone_item, prehistoric_item, color_sand" #!String
+    Fossilized Ribs: "bone_item, prehistoric_item, color_sand" #!String
+    Snake Skull: "bone_item, prehistoric_item, color_sand" #!String
+    Snake Vertebrae: "bone_item, prehistoric_item, color_sand" #!String
+    Mummified Bat: "bone_item, prehistoric_item, color_sand" #!String
+    Mummified Frog: "bone_item, prehistoric_item, color_sand" #!String
+    Ginger: "forage_item, color_yellow, ginger_item" #!String
+    Taro Root: "color_brown" #!String
+    Taro Tuber: "" #!String
+    Pineapple: "color_yellow, fruit_item" #!String
+    Mango: "color_yellow, fruit_item, fruit_tree_item" #!String
+    Banana: "color_yellow, fruit_item, fruit_tree_item" #!String
+    Mango Sapling: "" #!String
+    Banana Sapling: "" #!String
+    Mahogany Seed: "color_brown, tree_seed_item" #!String
+    Golden Coconut: "color_yellow" #!String
+    Ostrich Egg: "color_white, egg_item, large_egg_item" #!String
+    Stingray: "color_brown, fish_ocean, season_all, fish_talk_stiff" #!String
+    Lionfish: "color_orange, fish_ocean, season_all, fish_talk_demanding" #!String
+    Blue Discus: "color_cyan, fish_ocean, season_all" #!String
+    Cinder Shard: "color_orange" #!String
+    Magma Cap: "color_orange" #!String
+    Dragon Tooth: "color_orange" #!String
+    Tiger Slime Egg: "color_orange, slime_item, slime_egg_item" #!String
+    Piña Colada: "color_white, alcohol_item" #!String
+    "Warp Totem: Island": "color_brown, totem_item" #!String
+    Curiosity Lure: "" #!String
+    Thorns Ring: "color_sand" #!String
+    Glowstone Ring: "color_gold" #!String
+    Crabshell Ring: "color_brown" #!String
+    Napalm Ring: "color_orange" #!String
+    Lucky Ring: "color_gold" #!String
+    Hot Java Ring: "color_sand" #!String
+    Protection Ring: "color_gray" #!String
+    Immunity Band: "color_iridium" #!String
+    Soul Sapper Ring: "color_yellow_green" #!String
+    Phoenix Ring: "color_gold" #!String
+    War Memento: "" #!String
+    Gourmet Tomato Salt: "" #!String
+    Stardew Valley Rose: "" #!String
+    Advanced TV Remote: "" #!String
+    Arctic Shard: "" #!String
+    Wriggling Worm: "" #!String
+    Pirate's Locket: "" #!String
+    Fairy Dust: "" #!String
+    Bug Steak: "color_pink" #!String
+    Ectoplasm: "" #!String
+    Prismatic Jelly: "" #!String
+    Quality Bobber: "" #!String
+    Monster Musk: "color_purple, potion_item" #!String
+    Fiber Seeds: "" #!String
+    Qi Fruit: "color_blue" #!String
+    Qi Bean: "color_blue" #!String
+    Mushroom Tree Seed: "color_red" #!String
+    "Warp Totem: Qi's Arena": "" #!String
+    Fireworks (Red): "color_red" #!String
+    Fireworks (Purple): "color_purple" #!String
+    Fireworks (Green): "color_green" #!String
+    Galaxy Soul: "" #!String
+    Pierre's Missing Stocklist: "" #!String
+    Son of Crimsonfish: "color_red, fish_legendary" #!String
+    Ms. Angler: "color_pink, fish_legendary, fish_upright" #!String
+    Legend II: "color_green, fish_legendary" #!String
+    Radioactive Carp: "color_green, fish_legendary" #!String
+    Glacierfish Jr.: "color_blue, fish_legendary" #!String
+    Ginger Ale: "color_green, food_sweet, ginger_item" #!String
+    Banana Pudding: "color_yellow, food_sweet" #!String
+    Mango Sticky Rice: "color_yellow, food_sweet" #!String
+    Poi: "color_pink" #!String
+    Tropical Curry: "color_orange" #!String
+    Magic Bait: "" #!String
+    Radioactive Ore: "color_lime, ore_item" #!String
+    Radioactive Bar: "color_lime, furnace_item" #!String
+    Horse Flute: "" #!String
+

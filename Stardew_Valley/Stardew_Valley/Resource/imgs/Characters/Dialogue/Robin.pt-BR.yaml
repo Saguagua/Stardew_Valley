@@ -1,0 +1,57 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Você já se encontrou com alguém da cidade? Parece bem exaustivo." #!String
+    Resort: "Uau, olha essas estruturas!$h#$b#Eu consigo ver que foram feitas por um construtor excelente. Estou muito impressionada!" #!String
+    Resort_Leaving: "Isso foi divertido!$h" #!String
+    Resort_Shore: "Ei, olha! Eu consigo ver outra ilha daqui." #!String
+    Resort_Chair: "Ei @. Sabe, eu estava pensando sobre o quão longe a vila chegou desde que você veio pra cá.#$b#Você devia ter muito orgulho de tudo que fez!$h" #!String
+    Resort_Bar: "Isso é tão relaxante..." #!String
+    reject_865: "Sal vegano? Parece bom, mas eu não preciso." #!String
+    reject_866: "Hmm... quando eu penso em flores, eu penso na Evelyn. Talvez mostre isso para ela?" #!String
+    pamHouseUpgrade: "Nosso plano funcionou muito bem, você não acha? Pam e Penny parecem estar muito felizes." #!String
+    pamHouseUpgradeAnonymous: "Nosso plano funcionou muito bem, você não acha? Pam e Penny parecem estar muito felizes." #!String
+    MovieInvitation: "Ooh... Two tickets for tonight's show, huh? Sounds good! I'll meet you there.$h" #!String
+    cc_Bridge: "Ei! Ouvi alguns barulhos estranhos à noite e acordei hoje de manhã com a ponte completamente restaurada!#$b#É um milagre da carpintaria!" #!String
+    cc_Complete: "Eu sabia desde o momento em que você saiu do ônibus, @... seu destino era ser o herói da cidade!$h" #!String
+    cc_Begin: "Ei! Fiquei sabendo que o Lewis levou você ao Centro Comunitário... Seria ótimo se você pudesse consertar o local. Antigamente ele era um belo edifício!" #!String
+    Mon: "Eu já disse que construí nossa casa do zero?#$e#Definitivamente, é o destaque da minha carreira até agora." #!String
+    Tue: "Ei, se você precisar de materiais ou projetos, minha loja tem o que você precisa!#$e#Além disso, seu negócio ajuda a economia local.$h" #!String
+    Wed: "Olá, @.#$e#Eu estava sonhando acordada com novos projetos de carpintaria.#$e#Você está indo bem na sua casa? Como vai a marcenaria na sua cabana?" #!String
+    Thu: "Você sempre pode nos visitar, mesmo que não compre, sabe?$h#$e#Às vezes fico muito sozinha nas montanhas." #!String
+    Fri: "Você conheceu o meu filho, Sebastian. Certo? Ele vive no andar de baixo.#$e#Ele é meio tímido, mas tenho certeza que vai se abrir com você se for gentil com ele." #!String
+    Fri_inlaw_Sebastian: "Sinto falta do meu Tião... ele nunca foi complicado, mas eu acreditava nele." #!String
+    Fri4: "#$1 RobinSeb#Achei um cinzeiro no quarto do Sebastian, e estava com um cheiro um pouco estranho. Devo me preocupar com isso?#$e#Às vezes me preocupo com o Sebastian... ele não tem muitos amigos e não parece ligar muito para o futuro...#$e#Gostaria de falar com ele, mas ele nunca se abre para mim." #!String
+    Fri4_inlaw_Sebastian: "O Sebastian me disse que está tentando parar de fumar! Estou orgulhosa dele." #!String
+    Sat: "Nossa casa fica em um lugar muito bonito, não acha?#$e#Amo o ar fresco das montanhas." #!String
+    Sun: "Espero que o Demetrius não exploda a casa com seus experimentos científicos.#$e#Não faço nem ideia do que ele está trabalhando. Acho que tem a ver com plantas." #!String
+    Sun2: "#$1 RobinDem#Meu marido quase incendiou a casa na noite passada com seu experimento científico. Um de seus béquers explodiu e lançou uma bola de fogo nas vigas da casa! Graças à Ioba, eu estava com meu laquê à prova de fogo quando construí a casa.$u#$e#Desculpe pelo cheiro estranho aqui, @. É o projeto de ciências bizarro do meu marido..." #!String
+    Sun6: "Oi @! Que bom ver você.#$e#Você é um membro da comunidade agora, não é?" #!String
+    event_wood1: "Ótimo. Então esta planta deve ser bem fácil de entender para você!$h" #!String
+    event_wood2: "Bem, acho que tenho os projetos ideais para você começar!" #!String
+    summer_Mon: "A madeira é um material maravilhoso... é versátil, barata, forte, e cada pedaço têm sua própria personalidade!" #!String
+    summer_Tue: "Se você precisar melhorar alguma de suas construções da fazenda, basta me pedir!#$e#Você vai ter que me dar madeira e pedra o suficiente para o projeto. E também custa dinheiro, tá?#$e#Mas tenho certeza que você vai ficar satisfeito com os resultados!$h" #!String
+    summer_Fri: "Estamos bem isolados do resto do mundo aqui no Vale do Orvalho.#$e#Tem seus prós e contras." #!String
+    fall_Mon: "#$1 RobinMaru#A Maru gosta de pedras preciosas. Ela as usa em suas invenções.#$e#Você e a Maru estão se dando bem?" #!String
+    fall_Thu: "Você sempre pode nos visitar, mesmo que não esteja querendo melhorar suas construções!$h#$e#Às vezes fico muito sozinha aqui nas montanhas." #!String
+    fall_Fri: "Você conheceu o homem selvagem que mora atrás de nossa casa?$s#$e#Não ligo muito para ele, desde que não nos incomode." #!String
+    winter_Mon: "Ei. É a melhor época do ano para coletar madeira.#$e#Talvez se você coletar o suficiente, eu consiga melhorar sua casa!" #!String
+    winter_Fri: "Meus pais ficaram chocados quando disse a eles que queria ser carpinteira.#$e#Eles são bem conservadores." #!String
+    winter_Fri_inlaw_Sebastian: "Acho que a vida na fazenda é muito saudável para o Sebastian." #!String
+    winter_Sat: "Nossa casa está em um lugar tão bonito, não acha?#$e#Tudo parece tão parado após uma nevasca." #!String
+

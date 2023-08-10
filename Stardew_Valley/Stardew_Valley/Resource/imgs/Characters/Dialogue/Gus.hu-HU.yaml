@@ -1,0 +1,45 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Kívánok! Gus vagyok, a Hullócsillag Szalon séfje és tulaja.#$e#Ugorj be, ha frissítőre vágysz. Meleg kávé, vagy hideg sör, a választás csak rajtad áll.$h" #!String
+    accept_865: "*szimat* *szimat* ... ez az erős illat!#$b#*szürcsöl* *szürcsöl* ... ez a pikáns íz! Ez a határozott textúra!#$b#Ez csak ínyenc paradicsom só lehet! Cserélek veled." #!String
+    Resort_Entering: "Hé, @! Örülök, hogy itt vagy. Pár jóságot fogok felszolgálni itt a pult mögül." #!String
+    Resort_Leaving: "Majd otthon találkozunk, @." #!String
+    Resort: "Csak gyere a pulthoz, ha italra van szükséged." #!String
+    IslandSouth_14_21: "Hé, italra van szükséged? Van pár különleges italom, ami a sziget helyi alapanyagait mutatja be.$h" #!String
+    willyCrabs: "Ezek talán a legjobb ráktorták amiket valaha is készítettem..." #!String
+    Mon: "Hát igen, sokat tudok az itt élőkről.#$e#Ez az egyik előnye, ha az ember pultos.$h#$e#Néha túl sokat is hallok..." #!String
+    pamHouseUpgrade: "Hé. Hallottam, hogy mit tettél Pamért. Ez valóban nagyon kedves volt tőled!$h#$e#Kissé szomorú, de nem hiszem, hogy ettől le fog majd szokni az 'italozásról'..." #!String
+    pamHouseUpgradeAnonymous: "Ma korábban láttam Pamet... fültől-fülig tartott a vigyora! Mondta, hogy valaki új házat vett neki!#$e#Bárki is volt az, cserébe minden jót megérdemel!$h" #!String
+    Saloon: "Jó estét. Hozhatok valamit?" #!String
+    Saloon4: "Jó estét. Érezd otthon magad." #!String
+    SeedShop_Entry: "Szia Pierre!/Nos, mi is kell nekem.../Ó, ez jól néz ki!/Ma a különleges szószomat csinálom!/Pierre! Mid van ami friss?/Pierre! Mid van számomra?" #!String
+    Saloon8: "Helló @. Örülök, hogy látlak! Ide bármikor betérhetsz." #!String
+    Saloon_Tue: "Szia! Lazulj el és érezd jól magad." #!String
+    Saloon_Thu: "Úgy nézel ki mint akire ráfér egy kis innivaló." #!String
+    Saloon_Fri: "Ma este nagyon jól ment az üzlet. Meg vagyok elégedve." #!String
+    Tue: "Minden héten változik az étlap, szóval nézz be gyakran, ha erre jársz!#$e#Csodás dolgokat kóstolhatsz nálam.$h#$e#Csak szólj, ha allergiás vagy valamire.$s#$e#Oké, viszlát." #!String
+    Wed: "Emily itt dolgozik már egy ideje. Nem is tudom mihez kezdenék nélküle!#$e#Gyűlölném, ha nekem kellene elmosogatni az edényeket.$s" #!String
+    Thu: "Pam és Clint majd minden este betérnek a szalonba.#$e#Valószínűleg tönkremennék, ha nem jönnének többet.$h#$e#Szóval kérlek ne üldözd el őket!" #!String
+    Thu6: "Clint majdnem minden este bejön a szalonba egyedül és leül ugyanahhoz az asztalhoz.#$e#Néha feszült tekintettel pillant rá Emilyre. Hmmm.#$e#Talán ezért jön ilyen gyakran. Na mindegy, így jobban megy az üzlet." #!String
+    Thu8: "Pam majdnem minden este bejön a szalonba és túl sok sört iszik.#$e#Na mindegy, nem kéne ítélkeznem a vásárlóim felett." #!String
+    Fri: "Szerbusz, @. Ha bármikor megszomjaznál, a szalon ajtaja nyitva áll." #!String
+    Fri4: "Jómagam nem sokat iszom. Azért csinálom, hogy legyen miből megélnem.#$e#Bár néhanapján jól esik egy korty a Stardew Valley óborból." #!String
+    Sat: "Te milyen séf vagy, @?#$e#Ha van konyhád meg egy pár recepted, hasznos ételeket készíthetsz.#$e#Ajándékként is nagyon jó az otthon készült étel." #!String
+    Sun: "A szokásos vendégeimnek köszönhetően megbízhatóan megy az üzlet." #!String
+

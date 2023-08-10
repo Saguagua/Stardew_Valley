@@ -1,0 +1,88 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Rusty Sword/Una espada vieja, roma y oxidada./2/5/1/0/0/0/3/-1/-1/0/.02/3/Espada oxidada" #!String
+    1: "Silver Saber/Chapado en plata para evitar la oxidación./8/15/1/0/1/1/0/50/45/0/.02/3/Sable de plata" #!String
+    2: "Dark Sword/Brilla con una energía misteriosa./30/45/1.5/-10/0/0/0/-1/-1/2/.04/3/Espada oscura" #!String
+    3: "Holy Blade/Blandirla da esperanza./18/24/1.2/0/5/0/3/-1/-1/0/.02/3/Hoja sagrada" #!String
+    4: "Galaxy Sword/Nunca has visto nada parecido./60/80/1/8/0/0/0/-1/-1/0/.02/3/Espada galaxia" #!String
+    5: "Bone Sword/Un trozo muy ligero de hueso afilado./20/30/.8/8/5/0/0/74/50/0/.02/3/Espada ósea" #!String
+    6: "Iron Edge/Un espadón muy pesado./12/25/1.2/-4/0/1/3/44/-1/0/.02/3/Filo de hierro" #!String
+    7: "Templar's Blade/Solía pertenecer a un honorable caballero./22/29/1/0/10/1/3/90/50/0/0/3/Hoja del templario" #!String
+    8: "Obsidian Edge/Increíblemente afilado./30/45/1/-2/0/0/0/121/100/0/.02/3.2/Filo de obsidiana" #!String
+    9: "Lava Katana/Una hoja poderosa forjada en un lago de lava agitada./55/64/1.2/0/0/3/0/-1/-1/2/.015/3.5/Katana de lava" #!String
+    10: "Claymore/Es muy pesada./20/32/1.3/-8/0/2/3/86/50/0/.02/3/Claymore" #!String
+    11: "Steel Smallsword/Una hoja estándar de metal./4/8/1/4/0/0/0/26/-1/0/.02/3/Espadín de acero" #!String
+    12: "Wooden Blade/No está mal para ser madera tallada./3/7/1/0/0/0/0/3/-1/0/.02/3/Hoja de madera" #!String
+    13: "Insect Head/No es muy agradable de blandir./10/20/1/4/9/0/0/-1/-1/0/.04/3/Cabeza de insecto" #!String
+    14: "Neptune's Glaive/Una reliquia de más allá del mar de Gema./18/35/1.4/-2/6/2/3/-1/-1/0/.02/3/Guja de Neptuno" #!String
+    15: "Forest Sword/Poderosa gracias a la magia del bosque./8/18/1/4/5/1/0/-1/-1/0/.02/3/Espada forestal" #!String
+    16: "Carving Knife/Una hoja pequeña y ligera./1/3/.5/0/0/0/1/18/-1/0/.04/3/Navaja de talla" #!String
+    17: "Iron Dirk/Una daga común./2/4/.5/0/0/0/1/62/50/0/.03/3/Puñal de hierro" #!String
+    18: "Burglar's Shank/El arma que eligen los más rápidos y silenciosos./7/12/.5/0/5/0/1/114/100/0/.04/3.5/Pata de ladrón" #!String
+    19: "Shadow Dagger/Si la sostienes junto al oído, podrás oír gritar a 1.000 almas./10/20/.5/0/0/0/1/80/50/0/.04/3/Daga sombría" #!String
+    20: "Elf Blade/Solo las diestras manos de un elfo podrían crear algo así./3/5/.5/0/5/0/1/-1/-1/0/.04/3/Hoja élfica" #!String
+    21: "Crystal Dagger/La hoja está hecha de cuarzo purificado./4/10/1/0/10/0/1/-1/-1/0/.03/4/Daga de cristal" #!String
+    22: "Wind Spire/Una pequeña hoja rápida./1/5/1/0/0/0/1/-1/-1/0/.02/3.2/Aguja del viento" #!String
+    23: "Galaxy Dagger/Nunca has visto nada parecido./30/40/1/3/0/0/1/-1/-1/0/.02/3/Daga galaxia" #!String
+    24: "Wood Club/Una pieza sólida de madera, toscamente esculpida en forma de porra./9/16/1.5/-8/0/0/2/32/-1/0/.02/3/Porra de madera" #!String
+    25: "Alex's Bat/La zona de golpeo está abollada por el famoso Grand Slam de Alex./1/3/1/-8/0/0/2/-1/-1/0/.02/3/Bate de Alex" #!String
+    26: "Lead Rod/Increíblemente pesada./18/27/1.5/-16/0/0/2/56/50/1/.02/3/Vara de plomo" #!String
+    27: "Wood Mallet/Su sólida cabeza pega fuerte. Relativamente ligera para ser una porra./15/24/1.3/-4/1/0/2/68/50/0/.02/3/Maza de madera" #!String
+    28: "The Slammer/Un martillo tremendamente pesado que hará volar a los enemigos./40/55/1.5/-12/0/0/2/128/100/2/.02/3/Machacador" #!String
+    29: "Galaxy Hammer/Hecho de un material ultraligero que no has visto jamás./70/90/1/-4/0/0/2/-1/-1/0/.02/3/Martillo galaxia" #!String
+    30: "Sam's Old Guitar/Ha vivido tiempos mejores./1/3/1/-6/0/0/2/-1/-1/0/.02/3/Guitarra vieja de Sam" #!String
+    31: "Femur/Un hueso viejo y pesado cubierto de siglos de suciedad./6/11/1.5/-4/0/0/2/10/-1/0/.02/3/Fémur" #!String
+    32: "Slingshot/Necesita munición./1/3/1/308/0/0/4/-1/-1/0/.02/3/Tirachinas" #!String
+    33: "Master Slingshot/Necesita munición./1/3/1/308/0/0/4/-1/-1/0/.02/3/Tirachinas maestro" #!String
+    34: "Galaxy Slingshot/Parece muy poderoso./1/3/1/308/0/0/4/-1/-1/0/.02/3/Tirachinas galaxia" #!String
+    35: "Elliott's Pencil/Elliott lo usaba para escribir su novela. ¡Está afilado!/1/3/1/308/0/0/1/-1/-1/0/.02/3/Lápiz de Elliott" #!String
+    36: "Maru's Wrench/Una gran llave inglesa de metal. Huele a Maru./1/3/1/308/0/0/2/-1/-1/0/.02/3/Llave inglesa de Maru" #!String
+    37: "Harvey's Mallet/Trae recuerdos de la clínica de Harvey./1/3/1/308/0/0/2/-1/-1/0/.02/3/Martillo de Harvey" #!String
+    38: "Penny's Fryer/La sartén preferida de Penny. Tiene un poco de mugre gomosa pegada por dentro./1/3/1/308/0/0/2/-1/-1/0/.02/3/Sartén de Penny" #!String
+    39: "Leah's Whittler/La herramienta preferida de Leah para dar forma a la madera./1/3/1/308/0/0/1/-1/-1/0/.02/3/Cincel de Leah" #!String
+    40: "Abby's Planchette/Hecha de madera de mármol de calidad./1/3/1/308/0/0/1/-1/-1/0/.02/3/Ouija de Abby" #!String
+    41: "Seb's Lost Mace/Una de las réplicas medievales de Sebastian./1/3/1/308/0/0/2/-1/-1/0/.02/3/Maza perdida de Seb" #!String
+    42: "Haley's Iron/Está al rojo vivo y huele como su pelo./1/3/1/308/0/0/0/-1/-1/0/.02/3/Rizador de Haley" #!String
+    43: "Pirate's Sword/Parece que en su día perteneció a un pirata./8/14/1/4/0/0/3/40/-1/0/.02/3/Sable pirata" #!String
+    44: "Cutlass/Una hoja elaborada con esmero./9/17/1/4/0/0/0/-1/-1/0/.02/3/Alfanje" #!String
+    45: "Wicked Kris/Su hoja es de aleación de iridio./24/30/.5/0/8/0/1/-1/-1/2/.06/3/Kris maldita" #!String
+    46: "Kudgel/El mejor compañero de un bruto./27/40/1.6/-10/0/0/2/107/100/0/.02/3.1/Garrote" #!String
+    47: "Scythe/Puede cortar hierba y convertirla en heno, si dispones de un silo./1/3/1/0/0/0/0/-1/-1/0/.02/3/Guadaña" #!String
+    48: "Yeti Tooth/Su hoja está helada./26/42/1/0/0/4/0/-1/-1/0/.02/3.2/Diente de yeti" #!String
+    49: "Rapier/Una hoja elegante./15/25/1/4/0/0/0/100/95/2/.02/3/Florete" #!String
+    50: "Steel Falchion/Ligero y poderoso, hecho de acero./28/46/1/8/5/0/0/142/100/0/.02/3.4/Bracamante" #!String
+    51: "Broken Trident/Vino del mar, pero sigue afilado./15/26/.5/0/8/0/1/-1/-1/2/.02/3/Tridente roto" #!String
+    52: "Tempered Broadsword/Parece que pueda aguantarlo todo./29/44/1.2/-6/0/3/0/135/100/1/.02/3/Espadón templado" #!String
+    53: "Golden Scythe/Es más poderoso que una guadaña normal./13/13/1/0/0/0/0/-1/-1/2/.02/4/Guadaña dorada" #!String
+    54: "Dwarf Sword/Es antigua, pero la hoja nunca se desafila./65/75/1/4/0/4/0/-1/-1/0/.02/3/Espada enana" #!String
+    55: "Dwarf Hammer/Emite un zumbido muy tenue./75/85/1/-8/0/2/2/-1/-1/0/.02/3/Martillo enano" #!String
+    56: "Dwarf Dagger/Es antigua, pero la hoja unca se desafila./32/38/1/3/0/6/1/-1/-1/0/.03/3/Daga enana" #!String
+    57: "Dragontooth Cutlass/La hoja fue forjada con un diente mágico./75/90/1/0/0/0/0/-1/-1/0/.02/4/Alfange diente de dragón" #!String
+    58: "Dragontooth Club/Esta maza fue fabricada con un diente mágico./80/100/1.3/-8/0/0/2/-1/-1/0/.02/4/Maza diente de dragón" #!String
+    59: "Dragontooth Shiv/La hoja fue forjada con un diente mágico./40/50/1/0/0/0/1/-1/-1/0/.05/5/Navaja diente de dragón" #!String
+    60: "Ossified Blade/Una gran, afilada hoja hecha de hueso./26/42/1.1/-4/0/1/0/142/100/0/.02/3/Hoja ósea" #!String
+    61: "Iridium Needle/La punta es increíblemente afilada, incluso a nivel atómico./20/35/.5/0/0/0/1/-1/-1/0/.1/7/Aguja de iridio" #!String
+    62: "Infinity Blade/La verdadera forma de la espada galáctica./80/100/1/8/0/2/0/-1/-1/0/.02/3/Espada infinita" #!String
+    63: "Infinity Gavel/La verdadera forma del martillo galáctico./100/120/1/-4/0/1/2/-1/-1/0/.02/3/Maza infinita" #!String
+    64: "Infinity Dagger/La verdadera forma de la daga galáctica./50/70/1/3/0/3/1/-1/-1/0/.06/3/Daga infinita" #!String
+

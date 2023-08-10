@@ -1,0 +1,44 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Mon: "Merhaba, çiftçi.#$e#Uzun zamandır uzaklardaydım... Buralara yabancıymış gibi hissediyorum." #!String
+    Resort_Entering: "Selam @. Seni burada görmek ne güzel." #!String
+    Resort_Leaving: "Yola koyulma zamanı geldi." #!String
+    Resort_Shore: "Bu kumsalda bulunduğumda... daha önce deneyimlemediğim bir huzur hissine kapılıyorum.$h#$e#Okyanus olağanüstü." #!String
+    Resort_Chair: "Bu harika yerde ailemle güzel vakit geçirebiliyorum. Burayı onardığın için sana müteşekkirim." #!String
+    Resort_Bar: "Su alacağım." #!String
+    Resort: "Tekne yolculuğu eğlenceliydi. Rotayı belirlemeye yardımcı olmak adına denizcilik eğitiminde öğrendiklerimi sergileme fırsatım da oldu.$h" #!String
+    MovieInvitation: "Erm... okay. Thank you. I'll meet you there.$h" #!String
+    accept_864: "...!$4#$b#...Bunun nereden buldun?$4#$b#...$5#$b#Bu adamla... Biz birlikte savaşmıştık be @. Kardeşim gibiydi. #$b#Ama... sadece birimiz eve dönebildi.$5#$b#Ölümle yüzyüze geldiğinde dahi cesaretini hiç yitirmedi. Gerçek bir kahramandı... Onu asla unutmayacağım.#$b#Bunu bana getirdiğin için teşekkür ederim... Benim için anlamı çok büyük.#$b#Bunu almanı istiyorum. Yıllardır dolap rafında duruyor. Hiç kullanma fırsatımız olmadı." #!String
+    reject_865: "Evet... Sıkı kapatılmış. Bu yüzden tadını koruyor olmalı.." #!String
+    Mon4: "Eve olmaya alışabilecek miyim emin değilim.#$e#Kasabadaki huzur bana maske gibi geliyor. Muhtemelen sadece bana..." #!String
+    Tue: "Ayrıldığımdan bu yana bir şey değişmemiş.#$e#Senin burda olman dışında." #!String
+    Tue2: "Ayrıldığımdan bu yana bir şey değişmemiş.#$e#Kasabada yeni bir çiftçimiz olması dışında.$h" #!String
+    Wed6: "...Tüm arkadaşlarımı cephede kaybettim.$s#$e#Üzücü olan ise onların yüzlerini bile hatırlayamamam.#$e#..." #!String
+    Wed: "Bir süredir buralardasın, değil mi? Çifliğin oldukça gelişiyor olmalı." #!String
+    Thu6: "#$1 Kent1#Gece 4'ten beri ayaktayım... Bazen rutin hayatıma dönecek miyim diye meraklanıyorum.$k#$e#Sam gittiğimden beri çok büyümüş. Kocaman adam oldu.#$e#Keşke yanında olabilseydim.$s" #!String
+    Thu: "Oğlumla arkadaş mısınız?#$e#Onu benden daha iyi tanıyor olabilirsin...$s" #!String
+    Thu_inlaw_Sam: "Hey, @. Evlilik hayatını sevdin mi?" #!String
+    Fri: "Balıkçılığa çıkmak için güzel bir gün, öyle değil mi?" #!String
+    Sat: "Jodi bana buraya alıştığını ve buranın bir parçası olduğunu söyledi. Buna çok sevindim." #!String
+    Sat8: "Yorgun görünüyorsam kusuruma bakma, geceleri uyuyamıyorum.#$e#Eminim beni anlıyorsundur." #!String
+    Sun: "Geri döndüğümden beri ne yapacağımı bilemiyorum.#$e#Gün içinde düzenimin olmasına çok alıştım." #!String
+    event_popcorn1: "Kapa çeneni, beni karıma karşı doldurmayı bırak.$u" #!String
+    event_popcorn2: "...$s#$b#Çok haklısın, @.$s" #!String
+    event_popcorn3: "Bana yalan söyleme, en nefret ettiğim yalandır!$u" #!String
+

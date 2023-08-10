@@ -1,0 +1,71 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Mon: "No te conozco. ¿Por qué hablas conmigo?" #!String
+    Resort_Entering: "Buh... espero que el bar esté abierto." #!String
+    Resort_Leaving: "Bueno... Ya tengo mi suministro anual de vitamina D. Ahora puedo estar todo el año jugando a videojuegos con las cortinas cerradas." #!String
+    Resort_Shore: "Es cierto... No llevo ni zapatos ni calcetines.#$b#Algunos dicen que es un riesgo de salud pública.#$b#Aunque a los cangrejos aprece gustarle.$h" #!String
+    Resort_Chair: "Hoo... Sienta bien descansar estas nalgas.#$b#Si alguien me necesita, estaré descansando aquí, marinando." #!String
+    Resort_Bar: "Phew... Sienta bien tomarse una bebida fría...#$e#O unas pocas..." #!String
+    Resort: "Vale, esta arena está terriblemente caliente. Me arrepiento de no llevar calcetines.$s" #!String
+    danceRejection: "...Paso.$s" #!String
+    pamHouseUpgrade: "Dicen que le construiste una casa a Pam... Qué generoso por tu parte...#$b#Oye, no me vendrían mal un par de cientos de miles de oro...#$e#*Ejem... esto... Era broma. Ja..." #!String
+    pamHouseUpgradeAnonymous: "Dicen que alguien le compró una casa a Pam... Ay... ¿Qué hizo Pam para ser digna de semejante generosidad?" #!String
+    divorced: "...$a#$e#Déjame en paz de una vez...$a" #!String
+    breakUp: "*gulp* Oh... Sí, vale... Debería haberlo visto venir.$s#$b#Te... uh... supongo que te veré en el Salón." #!String
+    dumped_Guys: "%Shane tiene los ojos vidriosos. No va a querer hablar contigo." #!String
+    secondChance_Guys: "No te entiendo... *Suspiro*..." #!String
+    Mon2: "Apenas te conozco. ¿Por qué hablas conmigo?" #!String
+    Mon4: "Buenas. Lo siento si te parecí grosero cuando nos conocimos.#$e#Me cuesta un poco abrirme a los desconocidos." #!String
+    Mon10: "¿Has sentido alguna vez que todo el mundo te observa como a un asqueroso insecto?" #!String
+    Tue: "¿Qué? ¿Qué quieres? Lárgate." #!String
+    Tue2: "¿Qué quieres de mí? ¿Dinero? ¡Te daría una olla llena de oro para que me dejaras en paz!" #!String
+    Tue4: "Cada vez que intento algo nuevo, algo sale terriblemente mal. Al final aprendes a quedarte en tu concha." #!String
+    Tue6: "La vida no es tan mala... Por lo menos tengo pizza precocinada y huevos.$u" #!String
+    Wed: "No, no tengo tiempo para charlar contigo." #!String
+    Wed8: "Supongo que he cogido cariño a Marnie y Jas. Somos cada uno de su padre y de su madre, pero formamos una especie de familia rara.#$e#Tampoco es que tuviera mucha familia de niño.$s" #!String
+    Wed4: "$d Joja#*Sigh...* Todos los días igual. Reponer estas horribles estanterías, ir al Salón, dar vueltas en la cama toda la noche...$s|Odiaba mi trabajo en MercaJoja, pero ahora que estoy en el paro, me siento aún peor.$s" #!String
+    Thu: "¿Qué quieres? Déjame en paz." #!String
+    Thu4: "Menuda insistencia. Supongo que me sorprende que a alguien le interese hablar conmigo." #!String
+    Thu6: "Buh... ¿Dónde está la Joja-Cola?" #!String
+    Thu8: "¿Me hablas a mí? Supongo que te creo... Igual estás tan mal como yo.$h" #!String
+    Fri: "¿No tienes trabajo que hacer?" #!String
+    JojaMart: "%Shane está trabajando duro. No parece interesado en hablar." #!String
+    Fri4: "$d Joja#¿Qué sentido tiene tu vida si todo lo que haces es trabajar?|Últimamente no puedo pagar el alquiler, pero Marnie me deja quedarme igualmente. Tengo suerte." #!String
+    Fri6: "Esta noche iré al Salón, sin falta. ¿Qué otra cosa puedo hacer?" #!String
+    Sat: "¿Por qué me molestas? Quiero estar solo." #!String
+    Sat2: "#$1 ShaneJOSH#Me sorprende que aún quieras llevarte bien conmigo. ¿No he sido aún lo bastante maleducado?#$e#*Sigh...*$s" #!String
+    Sat4: "$d Joja#Marnie me alquila una de sus habitaciones a muy buen precio. Es pequeña, pero no me puedo quejar.|Si pudiera empezar de cero mi vida, igual montaba una granja de gallinas. Por supuesto, solo huevos de gallinas criadas en libertad." #!String
+    Sat8: "He cogido cariño a las gallinas de Marnie.$h" #!String
+    Sun: "Estoy ocupado, ¿no lo ves?" #!String
+    Sun6: "... Creo que estoy engordando.$s" #!String
+    Sun8: "A lo mejor si veo más televisión consigo olvidarme de cómo me va la vida. Sería un alivio.$u" #!String
+    Sun10: "Hola, @. De momento, estoy teniendo un día bastante bueno.$h" #!String
+    Sun4: "Hmm... Son las %time. ¿Debería meter una pizza precocinada en el microondas o esperar un poco más?$u" #!String
+    Sun2: "¿Otra vez tú? ¿Cuántas veces tengo que decirte que me dejes en paz?$s" #!String
+    event_room1: "Vale... Eso requiere un gran guión. A lo mejor le pido consejo a Elliott la próxima vez que nos veamos en el Salón.$s" #!String
+    event_room2: "Suena genial. Tendré que crear un montón de efectos para que quede guay." #!String
+    event_noLoan1: "No sabía que fueras de la hermandad del puño cerrado...$s" #!String
+    event_noLoan2: "Sí, papá...$s^Sí, mamá...$s" #!String
+    event_noLoan3: "Oh, guau...$s" #!String
+    event_apologize1: "...Sí, yo también." #!String
+    event_apologize2: "Ya lo sé... Por eso me he pasado, para contártelo." #!String
+    event_apologize3: "Caray, sí que iba en serio, ¿no? Apenas me acuerdo..." #!String
+    event_stadium1: "¿Ah, sí? Supongo que tiene sentido.$6#$b#¿Yo? A mí a veces me aburre Pueblo Pelícano.#$b#Pero... Me gusta que seas diferente. Así nos compensamos.$l" #!String
+    event_stadium2: "¿De verdad? Qué sorpresa... ¿No viniste a Stardew Valley para escapar del ruido de la gran ciudad?$6#$b#Quiero decir que... No me malinterpretes, lo entiendo perfectamente. Mi vida en Pueblo Pelícano es bastante sosa, ¿sabes?" #!String
+

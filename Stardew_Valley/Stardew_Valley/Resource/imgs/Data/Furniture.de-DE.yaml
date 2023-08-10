@@ -1,0 +1,370 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Oak Chair/chair/-1/-1/4/350/Eichenstuhl" #!String
+    3: "Walnut Chair/chair/-1/-1/4/350/Walnussstuhl" #!String
+    6: "Birch Chair/chair/-1/-1/4/350/Birkenstuhl" #!String
+    9: "Mahogany Chair/chair/-1/-1/4/1000/Mahagonistuhl" #!String
+    12: "Red Diner Chair/chair/-1/-1/4/750/Roter Imbissstuhl" #!String
+    15: "Blue Diner Chair/chair/-1/-1/4/750/Blauer Imbissstuhl" #!String
+    18: "Country Chair/chair/-1/-1/4/750/Ländlicher Stuhl" #!String
+    21: "Breakfast Chair/chair/-1/-1/4/750/Frühstücksstuhl" #!String
+    24: "Pink Office Chair/chair/-1/-1/4/500/Pinker Bürosessel" #!String
+    27: "Purple Office Chair/chair/-1/-1/4/500/Violetter Bürosessel" #!String
+    30: "Green Office Stool/chair/-1/-1/1/350/Grüner Bürohocker" #!String
+    31: "Orange Office Stool/chair/-1/-1/1/350/Orangefarbener Bürohocker" #!String
+    64: "Dark Throne/chair/-1/-1/4/2000/Dunkler Thron" #!String
+    67: "Dining Chair/chair/-1/-1/4/1200/Essstuhl" #!String
+    70: "Dining Chair/chair/-1/-1/4/1200/Essstuhl" #!String
+    73: "Green Plush Seat/chair/-1/-1/4/750/Grüner Plüschstuhl" #!String
+    76: "Pink Plush Seat/chair/-1/-1/4/750/Pinker Plüschstuhl" #!String
+    79: "Winter Chair/chair/-1/-1/4/750/Winterstuhl" #!String
+    82: "Groovy Chair/chair/-1/-1/4/750/Kultiger Stuhl" #!String
+    85: "Cute Chair/chair/-1/-1/4/1200/Niedlicher Stuhl" #!String
+    88: "Stump Seat/chair/-1/-1/4/2000/Stamm-Sessel" #!String
+    91: "Metal Chair/chair/-1/-1/4/800/Metallstuhl" #!String
+    94: "Green Stool/chair/-1/-1/1/350/Grüner Hocker" #!String
+    95: "Blue Stool/chair/-1/-1/1/350/Blauer Hocker" #!String
+    128: "King Chair/chair/-1/-1/4/3000/Königsstuhl" #!String
+    131: "Crystal Chair/chair/-1/-1/4/3000/Kristallstuhl" #!String
+    134: "Tropical Chair/chair/-1/-1/4/3000/Tropischer Stuhl" #!String
+    192: "Oak Bench/bench/-1/-1/4/750/Eichenbank" #!String
+    197: "Walnut Bench/bench/-1/-1/4/750/Walnussbank" #!String
+    202: "Birch Bench/bench/-1/-1/4/750/Birkenbank" #!String
+    207: "Mahogany Bench/bench/-1/-1/4/2000/Mahagonibank" #!String
+    212: "Modern Bench/bench/-1/-1/4/2000/Moderne Bank" #!String
+    288: "Blue Armchair/armchair/-1/-1/4/1000/Blauer Sessel" #!String
+    294: "Red Armchair/armchair/-1/-1/4/1000/Roter Sessel" #!String
+    300: "Green Armchair/armchair/-1/-1/4/1000/Grüner Sessel" #!String
+    306: "Yellow Armchair/armchair/-1/-1/4/1000/Gelber Sessel" #!String
+    312: "Brown Armchair/armchair/-1/-1/4/1000/Brauner Sessel" #!String
+    416: "Blue Couch/couch/-1/-1/4/1750/Blaue Couch" #!String
+    424: "Red Couch/couch/-1/-1/4/1750/Rote Couch" #!String
+    432: "Green Couch/couch/-1/-1/4/1750/Grüne Couch" #!String
+    440: "Yellow Couch/couch/-1/-1/4/1750/Gelbe Couch" #!String
+    512: "Brown Couch/couch/-1/-1/4/1750/Braune Couch" #!String
+    520: "Dark Couch/couch/-1/-1/4/2500/Dunkle Couch" #!String
+    528: "Wizard Couch/couch/-1/-1/4/4000/Zauberer-Couch" #!String
+    536: "Woodsy Couch/couch/-1/-1/4/3000/Holzige Couch" #!String
+    704: "Oak Dresser/dresser/-1/-1/4/5000/Eichenkommode" #!String
+    709: "Walnut Dresser/dresser/-1/-1/4/5000/Walnusskommode" #!String
+    714: "Birch Dresser/dresser/-1/-1/4/5000/Birkenkommode" #!String
+    719: "Mahogany Dresser/dresser/-1/-1/4/7500/Mahagonikommode" #!String
+    724: "Coffee Table/table/2 2/2 1/2/1250/Kaffeetisch" #!String
+    727: "Stone Slab/table/2 2/2 1/2/1000/Steinplatte" #!String
+    800: "Winter Dining Table/long table/-1/-1/2/3500/Winter-Esstisch" #!String
+    807: "Festive Dining Table/long table/-1/-1/2/3500/Festlicher Esstisch" #!String
+    814: "Mahogany Dining Table/long table/-1/-1/2/3000/Mahagoni-Esstisch" #!String
+    821: "Modern Dining Table/long table/-1/-1/2/2700/Moderner Esstisch" #!String
+    984: "Long Cactus/decor/1 3/1 1/1/500/Langer Kaktus" #!String
+    985: "Long Palm/decor/1 4/1 1/1/500/Lange Palme" #!String
+    986: "Exotic Tree/decor/3 5/3 1/1/500/Exotischer Baum" #!String
+    989: "Deluxe Tree/decor/3 5/3 1/1/500/Deluxe Baum" #!String
+    1120: "Oak Table/table/-1/-1/1/750/Eichentisch" #!String
+    1122: "Walnut Table/table/-1/-1/1/750/Walnusstisch" #!String
+    1124: "Birch Table/table/-1/-1/1/750/Birkentisch" #!String
+    1126: "Mahogany Table/table/-1/-1/1/1500/Mahagonitisch" #!String
+    1128: "Sun Table/table/-1/-1/1/2500/Sonnentisch" #!String
+    1130: "Moon Table/table/-1/-1/1/2500/Mondtisch" #!String
+    1132: "Modern Table/table/-1/-1/1/1250/Moderner Tisch" #!String
+    1134: "Pub Table/table/-1/-1/1/800/Kneipentisch" #!String
+    1136: "Luxury Table/table/-1/-1/1/2000/Luxuriöser Tisch" #!String
+    1138: "Diviner Table/table/-1/-1/1/2250/Wahrsagertisch" #!String
+    1140: "Neolithic Table/table/-1/-1/1/1800/Neolithischer Tisch" #!String
+    1142: "Puzzle Table/table/-1/-1/1/1500/Puzzletisch" #!String
+    1144: "Winter Table/table/-1/-1/1/1250/Wintertisch" #!String
+    1146: "Candy Table/table/-1/-1/1/1000/Süßigkeitentisch" #!String
+    1148: "Luau Table/table/-1/-1/1/1000/Luau-Tisch" #!String
+    1150: "Dark Table/table/-1/-1/1/2000/Dunkler Tisch" #!String
+    1216: "Oak Tea-Table/table/2 2/-1/1/750/Eichenteetisch" #!String
+    1218: "Walnut Tea-Table/table/2 2/-1/1/750/Walnussteetisch" #!String
+    1220: "Birch Tea-Table/table/2 2/-1/1/750/Birkenteetisch" #!String
+    1222: "Mahogany Tea-Table/table/2 2/-1/1/1500/Mahagoniteetisch" #!String
+    1224: "Modern Tea-Table/table/2 2/-1/1/1000/Moderner Teetisch" #!String
+    1226: "Furniture Catalogue/table/2 2/-1/1/200000/Möbelkatalog" #!String
+    1228: "Oceanic Rug/rug/-1/-1/1/1250/Ozeanischer Teppich" #!String
+    1280: "China Cabinet/other/3 3/3 1/1/6000/Porzellanschrank" #!String
+    1283: "Artist Bookcase/bookcase/-1/-1/1/1200/Künstler-Bücherregal" #!String
+    1285: "Luxury Bookcase/bookcase/-1/-1/1/2000/Luxuriöses Bücherregal" #!String
+    1287: "Modern Bookcase/bookcase/-1/-1/1/1600/Modernes Bücherregal" #!String
+    1289: "Dark Bookcase/bookcase/-1/-1/1/2000/Dunkles Bücherregal" #!String
+    1291: "Ceramic Pillar/decor/1 3/1 1/1/250/Keramiksäule" #!String
+    1292: "Gold Pillar/decor/1 3/1 1/1/450/Goldsäule" #!String
+    1293: "Industrial Pipe/decor/1 3/1 1/1/300/Industrierohr" #!String
+    1294: "Indoor Palm/decor/1 3/1 1/1/600/Zimmerpalme" #!String
+    1295: "Totem Pole/decor/1 3/1 1/1/750/Totempfahl" #!String
+    1296: "Manicured Pine/decor/1 3/1 1/1/500/Gepflegte Kiefer" #!String
+    1297: "Topiary Tree/decor/1 3/1 1/1/500/Formschnitt-Baum" #!String
+    1298: "Standing Geode/decor/1 2/1 1/1/500/Stehende Geode" #!String
+    1299: "Obsidian Vase/decor/1 2/1 1/1/500/Obsidian-Vase" #!String
+    1300: "Singing Stone/decor/1 2/1 1/1/500/Singender Stein" #!String
+    1301: "Sloth Skeleton L/decor/1 2/1 1/1/500/Faultier-Skelett L" #!String
+    1302: "Sloth Skeleton M/decor/1 2/1 1/1/500/Faultier-Skelett M" #!String
+    1303: "Sloth Skeleton R/decor/1 2/1 1/1/500/Faultier-Skelett R" #!String
+    1304: "Skeleton/decor/1 2/1 1/1/500/Skelett" #!String
+    1305: "Chicken Statue/decor/1 2/1 1/1/500/Hühnerstatue" #!String
+    1306: "Leah's Sculpture/decor/1 2/1 1/1/500/Leahs Skulptur" #!String
+    1307: "Dried Sunflowers/decor/1 2/1 1/1/500/Getrocknete Sonnenblumen" #!String
+    1308: "Catalogue/decor/1 2/1 1/1/30000/Katalog" #!String
+    1309: "Sam's Boombox/decor/1 2/1 1/1/500/Sam's Kassettenspieler" #!String
+    1362: "Small Plant/decor/1 1/1 1/1/250/Kleine Pflanze" #!String
+    1363: "Table Plant/decor/1 1/1 1/1/250/Tischpflanze" #!String
+    1364: "Decorative Bowl/decor/1 1/1 1/1/250/Dekorative Schale" #!String
+    1365: "Futan Bear/decor/1 1/1 1/1/1500/Futan-Bär" #!String
+    1366: "Globe/decor/1 1/1 1/1/750/Globus" #!String
+    1367: "Model Ship/decor/1 1/1 1/1/750/Modellschiff" #!String
+    1368: "Small Crystal/decor/1 1/1 1/1/750/Kleiner Kristall" #!String
+    1369: "Decorative Lantern/decor/1 1/1 1/1/500/Dekorative Laterne" #!String
+    1371: "Wumbus Statue/decor/2 3/2 1/1/500/Wumbus Statue" #!String
+    1373: "Bobo Statue/decor/2 3/2 1/1/500/Bobo Statue" #!String
+    1375: "Purple Serpent Statue/decor/1 3/1 1/1/500/Lila Schlangenstatue" #!String
+    1376: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1377: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1378: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1379: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1380: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1381: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1382: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1383: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1384: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1385: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1386: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1387: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1388: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1389: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1390: "House Plant/decor/1 2/1 1/1/250/Hauspflanze" #!String
+    1391: "Oak End Table/table/1 2/1 1/2/500/Eichenbeistelltisch" #!String
+    1393: "Walnut End Table/table/1 2/1 1/2/500/Walnussbeistelltisch" #!String
+    1395: "Birch End Table/table/1 2/1 1/2/500/Birkenbeistelltisch" #!String
+    1397: "Mahogany End Table/table/1 2/1 1/2/1000/Mahagonibeistelltisch" #!String
+    1399: "Modern End Table/table/1 2/1 1/1/800/Moderner Beistelltisch" #!String
+    1400: "Grandmother End Table/table/1 2/1 1/1/1000/Großmütterlicher Beistelltisch" #!String
+    1401: "Winter End Table/table/1 2/1 1/1/800/Winter-Beistelltisch" #!String
+    1402: "Calendar/painting/1 2/1 2/1/2000/Kalender" #!String
+    1440: "Tree of the Winter Star/decor/3 5/3 2/1/5000/Baum des Wintersterns" #!String
+    1443: "Country Lamp/lamp/-1/-1/1/500/Ländliche Lampe" #!String
+    1445: "Box Lamp/lamp/-1/-1/1/750/Rechteckige Lampe" #!String
+    1447: "Modern Lamp/lamp/-1/-1/1/750/Moderne Lampe" #!String
+    1449: "Classic Lamp/lamp/-1/-1/1/1000/Klassische Lampe" #!String
+    1451: "Red Rug/rug/-1/-1/2/1000/Roter Vorleger" #!String
+    1456: "Patchwork Rug/rug/-1/-1/2/800/Patchwork-Vorleger" #!String
+    1461: "Dark Rug/rug/-1/-1/2/2000/Dunkler Vorleger" #!String
+    1466: "Budget TV/decor/2 3/2 2/1/750/Billig-Fernseher" #!String
+    1468: "Plasma TV/decor/3 3/3 1/1/4500/Plasma-TV" #!String
+    1471: "Green Serpent Statue/decor/1 3/1 1/1/500/Grüne Schlangenstatue" #!String
+    1539: "'The Muzzamaroo'/painting/-1/-1/1/1000/\"Der Muzzamaroo\"" #!String
+    1541: "'A Night On Eco-Hill'/painting/-1/-1/1/1000/\"Eine Nacht auf den Eco-Hügeln\"" #!String
+    1543: "'Pathways'/painting/-1/-1/1/750/\"Pfade\"" #!String
+    1545: "'Burnt Offering'/painting/-1/-1/1/1000/\"Verbrannte Opfergabe\"" #!String
+    1547: "'Queen of the Gem Sea'/painting/3 2/3 2/1/1200/\"Königin der Edelsteinsee\"" #!String
+    1550: "'Vanilla Villa'/painting/-1/-1/1/500/\"Vanilla Villa\"" #!String
+    1552: "'Primal Motion'/painting/-1/-1/1/1500/\"Urbewegung\"" #!String
+    1554: "'Jade Hills'/painting/3 2/3 2/1/1750/\"Jade-Hügel\"" #!String
+    1557: "'Sun #44'/painting/-1/-1/1/800/\"Sonne #44\"" #!String
+    1559: "Wallflower Pal/painting/-1/-1/1/500/Mauerblümchen-Freund" #!String
+    1561: "'Spires'/painting/-1/-1/1/800/\"Spitzen\"" #!String
+    1563: "'Highway 89'/painting/-1/-1/1/800/\"Highway 89\"" #!String
+    1565: "Calico Falls/painting/-1/-1/1/750/Calico-Wasserfall" #!String
+    1567: "Needlepoint Flower/painting/1 2/1 2/1/500/Nadelspitzenblume" #!String
+    1600: "Skull Poster/painting/1 2/1 2/1/500/Totenkopf-Poster" #!String
+    1601: "'Sun #45'/painting/1 2/1 2/1/350/\"Sonne #45\"" #!String
+    1602: "'Little Tree'/painting/1 2/1 2/1/350/\"Kleiner Baum\"" #!String
+    1603: "'Blueberries'/painting/1 2/1 2/1/250/\"Blaubeeren\"" #!String
+    1604: "'Blue City'/painting/1 2/1 2/1/250/\"Blaue Stadt\"" #!String
+    1605: "Little Photos/painting/1 2/1 2/1/250/Kleine Fotos" #!String
+    1606: "'Dancing Grass'/painting/1 2/1 2/1/400/\"Tanzendes Gras\"" #!String
+    1607: "'VGA Paradise'/painting/2 2/2 2/1/1200/\"VGA-Paradies\"" #!String
+    1609: "J. Cola Light/painting/3 2/3 2/1/1000/J.-Cola Light" #!String
+    1612: "'Kitemaster '95'/painting/-1/-1/1/600/\"Winddrachenmeister '95\"" #!String
+    1614: "Basic Window/window/-1/-1/1/300/Einfaches Fenster" #!String
+    1616: "Small Window/window/-1/-1/1/300/Kleines Fenster" #!String
+    1618: "Red Cottage Rug/rug/-1/-1/2/750/Roter Hüttenvorleger" #!String
+    1623: "Green Cottage Rug/rug/-1/-1/2/750/Grüner Hüttenvorleger" #!String
+    1628: "Monster Rug/rug/2 2/2 2/1/1250/Monster-Teppich" #!String
+    1630: "Boarded Window/painting/1 2/1 2/1/400/Vernageltes Fenster" #!String
+    1664: "Mystic Rug/rug/-1/-1/2/1250/Mystischer Vorleger" #!String
+    1669: "Lg. Futan Bear/decor/2 2/2 1/1/4000/Gr. Futan-Bär" #!String
+    1671: "Bear Statue/decor/2 4/2 1/1/4000/Bärenstatue" #!String
+    1673: "Porthole/window/-1/-1/1/700/Bullauge" #!String
+    1675: "Anchor/painting/1 2/1 2/1/750/Anker" #!String
+    1676: "World Map/painting/-1/-1/1/500/Weltkarte" #!String
+    1678: "Ornate Window/window/-1/-1/1/900/Verziertes Fenster" #!String
+    1680: "Floor TV/decor/2 2/2 1/1/700/Fernseher" #!String
+    1682: "Carved Window/window/-1/-1/1/900/Geschnitztes Fenster" #!String
+    1684: "Colorful Set/painting/1 2/1 2/1/500/Bunte Gemälde" #!String
+    1687: "Cloud Decal/painting/2 2/2 2/1/500/Wolkenaukleber" #!String
+    1692: "Cloud Decal/painting/2 2/2 2/1/500/Wolkenaukleber" #!String
+    1733: "Junimo Plush/decor/2 2/2 1/1/4000/Plüsch-Junimo" #!String
+    1737: "Nautical Rug/rug/-1/-1/2/1250/Nautischer Teppich" #!String
+    1742: "Burlap Rug/rug/2 2/2 2/1/350/Leinen-Teppich" #!String
+    1744: "Tree Column/decor/1 3/1 1/1/1000/Baumsäule" #!String
+    1745: "L. Light String/painting/2 1/2 1/1/400/Lichterkette" #!String
+    1747: "S. Pine/decor/1 2/1 1/1/500/Kleiner Kiefernbaum" #!String
+    1748: "Bonsai Tree/decor/1 2/1 1/1/800/Bonsai-Baum" #!String
+    1749: "Metal Window/window/-1/-1/1/800/Metallfenster" #!String
+    1751: "Candle Lamp/lamp/-1/-1/1/1000/Kerzenlampe" #!String
+    1753: "Miner's Crest/painting/2 2/2 2/1/1000/Bergarbeiter-Wappen" #!String
+    1755: "Bamboo Mat/rug/2 1/2 1/2/250/Bambusmatte" #!String
+    1758: "Ornate Lamp/lamp/-1/-1/1/1050/Verzierte Lampe" #!String
+    1760: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kleines Junimo Plüschtier" #!String
+    1761: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kleines Junimo Plüschtier" #!String
+    1762: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kleines Junimo Plüschtier" #!String
+    1763: "Small Junimo Plush/decor/1 1/1 1/1/1500/Kleines Junimo Plüschtier" #!String
+    1764: "Futan Rabbit/decor/1 1/1 1/1/1500/Futan Kaninchen" #!String
+    1777: "Woodcut Rug/rug/2 2/2 2/1/800/Holzschnitt-Teppich" #!String
+    1792: "Brick Fireplace/fireplace/-1/-1/1/1000/Ziegelkamin" #!String
+    1794: "Stone Fireplace/fireplace/-1/-1/1/1500/Steinkamin" #!String
+    1796: "Iridium Fireplace/fireplace/-1/-1/1/15000/Iridiumkamin" #!String
+    1798: "Stove Fireplace/fireplace/-1/-1/1/3000/Ofenkamin" #!String
+    1800: "Monster Fireplace/fireplace/-1/-1/1/25000/Monster-Kamin" #!String
+    1802: "My First Painting/painting/-1/-1/1/500/Mein erstes Gemälde" #!String
+    1811: "Hanging Shield/painting/1 1/1 1/1/500/Schild zum Aufhängen" #!String
+    1812: "Monster Danglers/painting/2 1/2 1/1/1000/Monster-Aufhänger" #!String
+    1814: "Ceiling Flags/painting/1 1/1 1/1/50/Deckenfahnen" #!String
+    1817: "Ceiling Leaves/painting/1 1/1 1/1/50/Decken-Blätter" #!String
+    1818: "Ceiling Leaves/painting/1 1/1 1/1/50/Decken-Blätter" #!String
+    1819: "Ceiling Leaves/painting/1 1/1 1/1/50/Decken-Blätter" #!String
+    1820: "Ceiling Leaves/painting/1 1/1 1/1/50/Decken-Blätter" #!String
+    1821: "Ceiling Leaves/painting/1 1/1 1/1/50/Decken-Blätter" #!String
+    1838: "'Red Eagle'/painting/-1/-1/1/1000/'Roter Adler'" #!String
+    1840: "'Portrait Of A Mermaid'/painting/-1/-1/1/1000/'Portrait einer Meerjungfrau'" #!String
+    1842: "'Solar Kingdom'/painting/-1/-1/1/1000/'Sonnenkönigreich'" #!String
+    1844: "'Clouds'/painting/-1/-1/1/1000/'Wolken'" #!String
+    1846: "'1000 Years From Now'/painting/-1/-1/1/1000/'1000 Jahre von heute'" #!String
+    1848: "'Three Trees'/painting/-1/-1/1/1000/'Drei Bäume'" #!String
+    1850: "'The Serpent'/painting/-1/-1/1/1000/'Die Schlange'" #!String
+    1852: "'Tropical Fish #173'/painting/-1/-1/1/1000/'Tropischer Fisch Nr. 173'" #!String
+    1854: "'Land Of Clay'/painting/-1/-1/1/1000/'Land des Lehms'" #!String
+    1866: "Elegant Fireplace/fireplace/-1/-1/1/4000/Eleganter Kamin" #!String
+    1900: "Pirate Flag/painting/-1/-1/1/4000/Piratenflagge " #!String
+    1902: "Pirate Rug/rug/-1/-1/2/4000/Piratenteppich" #!String
+    1907: "Strawberry Decal/painting/-1/-1/1/2500/Erdbeer Aufkleber" #!String
+    1909: "Fruit Salad Rug/rug/-1/-1/2/4000/Obstsalat Teppich" #!String
+    1914: "Night Sky Decal #1/painting/1 2/1 2/1/750/Nachthimmel Aufkleber" #!String
+    1915: "Night Sky Decal #2/painting/1 2/1 2/1/750/Nachthimmel Aufkleber #2" #!String
+    1916: "Night Sky Decal #3/painting/1 2/1 2/1/750/Nachthimmel Aufkleber #3" #!String
+    1917: "Wall Pumpkin/painting/1 2/1 2/1/750/Wand Kürbis" #!String
+    1918: "Small Wall Pumpkin/painting/1 2/1 2/1/750/Kleiner Wand Kürbis" #!String
+    1952: "'The Brave Little Sapling'/painting/1 2/1 2/1/400/\"Das mutige kleine Bäumchen\"" #!String
+    1953: "'Mysterium'/painting/1 2/1 2/1/400/\"Mysterium\"" #!String
+    1954: "'Journey Of The Prairie King: The Motion Picture'/painting/1 2/1 2/1/400/\"Die Reise des Prärie Königs: Der Film\"" #!String
+    1955: "'Wumbus'/painting/1 2/1 2/1/400/\"Wumbus\"" #!String
+    1956: "'The Zuzu City Express'/painting/1 2/1 2/1/400/\"Der Zuzu City Express\"" #!String
+    1957: "'The Miracle At Coldstar Ranch'/painting/1 2/1 2/1/400/\"Das Wunder auf der Coldstar Ranch\"" #!String
+    1958: "'Natural Wonders: Exploring Our Vibrant World'/painting/1 2/1 2/1/400/\"Natürliche Wunder:Erkundung unserer lebhaften Welt\"" #!String
+    1959: "'It Howls In The Rain'/painting/1 2/1 2/1/400/\"Das Geheul im Regen\"" #!String
+    1960: "Indoor Hanging Basket/painting/1 2/1 2/1/400/Indoor Hängekorb" #!String
+    1961: "Winter Tree Decal/painting/1 2/1 2/1/400/Winter Baum Aufkleber" #!String
+    1964: "Bone Rug/rug/-1/-1/2/1000/Knochenteppich" #!String
+    1971: "Butterfly Hutch/decor/2 3/2 1/1/50000/2/Schmetterlingsstall" #!String
+    1973: "Wall Flower/painting/1 3/1 3/1/500/Wandblume" #!String
+    1974: "S. Wall Flower/painting/1 3/1 3/1/500/Kleine Wandblume" #!String
+    1975: "Clouds Banner/painting/1 3/1 3/1/500/Wolkenbanner" #!String
+    1978: "Snowy Rug/rug/-1/-1/2/1000/Schnee Teppich" #!String
+    2048: "Bed/bed/2 4/2 3/1/5000/Bett" #!String
+    2052: "Double Bed/bed double/3 4/3 3/1/5000/Doppelbett" #!String
+    2058: "Starry Double Bed/bed double/3 4/3 3/1/5000/Sternenförmiges Doppelbett" #!String
+    2064: "Strawberry Double Bed/bed double/3 4/3 3/1/5000/Erdbeer-Doppelbett" #!String
+    2070: "Pirate Double Bed/bed double/3 4/3 3/1/5000/Piraten-Doppelbett" #!String
+    2076: "Child Bed/bed child/2 4/2 3/1/5000/Kinderbett" #!String
+    2176: "Tropical Bed/bed/2 4/2 3/1/5000/Tropisches Bett" #!String
+    2180: "Tropical Double Bed/bed double/3 4/3 3/1/5000/Tropisches Doppelbett" #!String
+    2186: "Deluxe Red Double Bed/bed double/3 4/3 3/1/6000/Rotes Deluxe-Doppelbett" #!String
+    2192: "Modern Double Bed/bed double/3 4/3 3/1/6000/Modernes Doppelbett" #!String
+    2304: "Large Fish Tank/fishtank/4 3/4 1/1/5000/Großes Aquarium" #!String
+    2312: "Deluxe Fish Tank/fishtank/5 3/5 1/1/10000/Deluxe-Aquarium" #!String
+    2322: "Small Fish Tank/fishtank/2 3/2 1/1/1000/Kleines Aquarium" #!String
+    2326: "Tropical TV/decor/3 3/3 1/1/4500/Tropisches TV" #!String
+    2329: "'Volcano' Photo/painting/-1/-1/1/500/'Vulkan' Foto" #!String
+    2331: "Jungle Torch/torch/-1/-1/1/500/Dschungel-Fackel" #!String
+    2332: "Gourmand Statue/decor/2 2/2 1/1/500/Statue des Vielfraßes" #!String
+    2334: "Pyramid Decal/painting/2 2/2 2/1/10000/Pyramidenaufkleber" #!String
+    2393: "Palm Wall Ornament/painting/1 1/1 1/2/500/Palmwand Ornament" #!String
+    2396: "Iridium Krobus/decor/1 3/1 1/1/5000/Iridium-Krobus" #!String
+    2397: "Plain Torch/torch/-1/-1/1/500/Einfache Fackel" #!String
+    2398: "Stump Torch/torch/-1/-1/1/500/Baumstumpf Fackel" #!String
+    2400: "Aquatic Sanctuary/fishtank/7 3/7 1/1/10000/Wasserparadies" #!String
+    2414: "Modern Fish Tank/fishtank/2 3/2 1/1/10000/Modernes Aquarium" #!String
+    2418: "Lifesaver/painting/1 2/1 2/1/1000/Rettungsring" #!String
+    2419: "Foliage Print/painting/2 2/2 2/1/10000/Pflanzen Druck" #!String
+    2421: "'Boat'/painting/2 2/2 2/1/10000/\"Boot\"" #!String
+    2423: "'Vista'/painting/2 2/2 2/1/10000/\"Landschaft\"" #!String
+    2425: "Wall Basket/painting/2 2/2 2/1/10000/Wand-Pflanzenkorb" #!String
+    2427: "Decorative Trash Can/decor/1 2/1 1/1/500/Dekorativer Mülleimer" #!String
+    2488: "Light Green Rug/rug/3 2/3 2/2/10000/Hellgrüner Teppich" #!String
+    2496: "Wild Double Bed/bed double/3 4/3 3/1/6000/Wildes Doppelbett" #!String
+    2502: "Fisher Double Bed/bed double/3 4/3 3/1/6000/Angler Doppelbett" #!String
+    2508: "Birch Double Bed/bed double/3 4/3 3/1/6000/Birken Doppelbett" #!String
+    2514: "Exotic Double Bed/bed double/3 4/3 3/1/6000/Exotisches Doppelbett" #!String
+    2584: "'Jade Hills Extended'/painting/4 2/4 2/1/6750/\"Jade-Hügel Erweitert\"" #!String
+    2624: "Pastel Banner/painting/1 3/1 3/1/500/Pastell Banner" #!String
+    2625: "Winter Banner/painting/1 3/1 3/1/500/Winterbanner" #!String
+    2626: "Moonlight Jellies Banner/painting/1 3/1 3/1/500/Mondlichtquallen Banner" #!String
+    2627: "Jungle Decal/painting/1 3/1 3/1/500/Dschungelaufkleber" #!String
+    2628: "Jungle Decal/painting/1 3/1 3/1/500/Dschungelaufkleber" #!String
+    2629: "Jungle Decal/painting/1 3/1 3/1/500/Dschungelaufkleber" #!String
+    2630: "Jungle Decal/painting/1 3/1 3/1/500/Dschungelaufkleber" #!String
+    2631: "Starport Decal/painting/1 3/1 3/1/500/Raumschiffaufkleber" #!String
+    2632: "Decorative Pitchfork/painting/1 3/1 3/1/500/Dekorative Heugabel" #!String
+    2633: "Wood Panel/painting/1 3/1 3/1/500/Holztafel" #!String
+    2634: "Decorative Axe/painting/1 3/1 3/1/500/Dekorative Axt" #!String
+    2635: "Log Panel/painting/1 3/1 3/1/500/Baumstamm Tafel" #!String
+    2636: "Log Panel/painting/1 3/1 3/1/500/Baumstamm Tafel" #!String
+    2637: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2638: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2639: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2640: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2641: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2642: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2643: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2644: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2645: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2646: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2647: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2648: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2649: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2650: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2651: "Floor Divider R/rug/1 2/1 1/1/50/Bodentrenner R" #!String
+    2652: "Floor Divider L/rug/1 2/1 1/1/50/Bodentrenner L" #!String
+    2653: "Icy Banner/painting/1 3/1 3/1/500/Eisbanner" #!String
+    2654: "Wall Palm/painting/1 3/1 3/1/500/Palmenaufkleber" #!String
+    2655: "Wall Cactus/painting/1 3/1 3/1/500/Kaktusaufkleber" #!String
+    2720: "Large Brown Couch/couch/4 2/4 1/4/5750/Große braune Couch" #!String
+    2730: "'Frozen Dreams'/painting/2 2/2 2/1/6750/\"Gefrorene Träume\"" #!String
+    2732: "'Physics 101'/painting/2 2/2 2/1/6750/\"Physik 101\"" #!String
+    2734: "Wall Sconce/sconce/-1/-1/1/500/Wandleuchte" #!String
+    2736: "Wall Sconce/sconce/-1/-1/1/500/Wandleuchte" #!String
+    2738: "Wall Sconce/sconce/-1/-1/1/1000/Wandleuchte" #!String
+    2740: "Wall Sconce/sconce/-1/-1/1/500/Wandleuchte" #!String
+    2742: "Blossom Rug/rug/6 4/6 4/1/10000/Blütenteppich" #!String
+    2748: "Wall Sconce/sconce/-1/-1/1/500/Wandleuchte" #!String
+    2750: "Wall Sconce/sconce/-1/-1/1/500/Wandleuchte" #!String
+    2784: "Large Green Rug/rug/4 3/4 3/1/10000/Großer grüner Teppich" #!String
+    2790: "Icy Rug/rug/4 3/4 3/1/10000/Eisteppich" #!String
+    2794: "Old World Rug/rug/4 3/4 3/1/10000/Rustikaler Teppich" #!String
+    2798: "Large Red Rug/rug/4 3/4 3/1/10000/Großer roter Teppich" #!String
+    2802: "Large Cottage Rug/rug/4 3/4 3/1/10000/Großer Hüttenvorleger" #!String
+    2812: "Wall Sconce/sconce/-1/-1/1/500/Wandleuchte" #!String
+    2814: "Squirrel Figurine/decor/1 1/1 1/1/500/Eichhörnchenfigur" #!String
+    2870: "Funky Rug/rug/5 4/5 4/1/10000/Funky Teppich" #!String
+    2875: "Modern Rug/rug/5 4/5 4/1/10000/Moderner Teppich" #!String
+

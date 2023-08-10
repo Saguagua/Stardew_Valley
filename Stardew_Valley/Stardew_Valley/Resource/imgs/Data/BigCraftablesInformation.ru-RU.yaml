@@ -1,0 +1,190 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    1: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    2: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    3: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    4: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    5: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    6: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    7: "House Plant/50/-300/Crafting -9/Украшает дом или ферму./true/true/0/Комнатное растение" #!String
+    8: "Scarecrow/50/-300/Crafting -9/Отпугивает ворон от ваших посевов. Действует в ограниченном радиусе (около 8-ми «клеток»)./true/true/0/Пугало" #!String
+    9: "Lightning Rod/50/-300/Crafting -9/Производит аккумуляторы, используя молнии для их зарядки./true/true/0/Громоотвод" #!String
+    10: "Bee House/50/-300/Crafting -9/Поставьте его под открытым небом, и скоро у вас будет вкусный мeд! (Зимой не работает)/true/true/0/Улей" #!String
+    12: "Keg/50/-300/Crafting -9/Положите в него фрукты или овощи. В конечном итоге из них получится напиток./true/true/0/Бочонок" #!String
+    13: "Furnace/50/-300/Crafting -9/Выплавляет металлические слитки из руды. Требует угля./true/true/0/Плавильная печь" #!String
+    15: "Preserves Jar/50/-300/Crafting -9/Используется для маринования овощей и изготовления джема из фруктов./true/true/0/Кадка" #!String
+    16: "Cheese Press/50/-300/Crafting -9/Превращает молоко в сыр./true/true/0/Пресс для сыра" #!String
+    17: "Loom/50/-300/Crafting -9/Превращает шерсть в ткань./true/true/0/Прялка" #!String
+    19: "Oil Maker/50/-300/Crafting -9/Используется для изготовления трюфельного масла./true/true/0/Пресс для масла" #!String
+    20: "Recycling Machine/50/-300/Crafting -9/Превращает выловленный мусор в полезные ресурсы./true/true/0/Утилизационная машина" #!String
+    21: "Crystalarium/50/-300/Crafting -9/Вставьте в него камень, который хотите размножить./true/true/0/Кристалляриум" #!String
+    22: "Table Piece L/50/-300/Crafting -9/Левая часть большого стола./true/true/0/Часть стола (Л)" #!String
+    23: "Table Piece R/50/-300/Crafting -9/Правая часть большого стола./true/true/0/Часть стола (П)" #!String
+    24: "Mayonnaise Machine/50/-300/Crafting -9/Превращает яйца в майонез./true/true/0/Майонезный автомат" #!String
+    25: "Seed Maker/50/-300/Crafting -9/Извлекает семена из собранного урожая. Не работает с плодами плодовых деревьев./true/true/0/Экстрактор семян" #!String
+    26: "Wood Chair/50/-300/Crafting -9/Стул, который можно развернуть в любую из 4-eх сторон./true/true/0/Деревянный стул" #!String
+    27: "Wood Chair/50/-300/Crafting -9/Стул, который можно развернуть в любую из 4-eх сторон./true/true/0/Деревянный стул" #!String
+    28: "Skeleton Model/50/-300/Crafting -9/Это модель скелета./true/true/0/Модель скелета" #!String
+    29: "Obelisk/50/-300/Crafting -9/Зловещий портал, излучающий нечистую энергию./false/true/0/Обелиск" #!String
+    31: "Chicken Statue/50/-300/Crafting -9/Деревянная статуя курицы./true/true/0/Статуя курицы" #!String
+    32: "Stone Cairn/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Пирамида из камней" #!String
+    33: "Suit Of Armor/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Доспехи" #!String
+    34: "Sign Of The Vessel/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Символ сосуда" #!String
+    35: "Basic Log/125/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Обычное бревно" #!String
+    36: "Lawn Flamingo/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Пластиковый фламинго" #!String
+    37: "Wood Sign/5/-300/Crafting -9/Используйте на нём предмет, чтобы изменить изображение. Предмет не расходуется./true/true/0/Деревянный знак" #!String
+    38: "Stone Sign/5/-300/Crafting -9/Используйте на нём предмет, чтобы изменить изображение. Предмет не расходуется./true/true/0/Каменный знак" #!String
+    39: "Dark Sign/5/-300/Crafting -9/Используйте предмет предмет на нем, чтобы изменить то, что видно глазу. Предмет не тратится./true/true/0/Темный знак" #!String
+    40: "Big Green Cane/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Большой зеленый тростник" #!String
+    41: "Green Canes/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Зеленый тростник" #!String
+    42: "Mixed Cane/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Смешанный тростник" #!String
+    43: "Red Canes/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Красный тростник" #!String
+    44: "Big Red Cane/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Большой красный тростник" #!String
+    45: "Ornamental Hay Bale/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Декоративный тюк сена" #!String
+    46: "Log Section/175/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Кусок бревна" #!String
+    47: "Grave Stone/50/-300/Crafting -9/Украшение для вашей фермы./true/true/0/Могильный камень" #!String
+    48: "Seasonal Decor/50/-300/Crafting -9/Украшение меняется с каждым временем года./true/true/0/Сезонное украшение" #!String
+    52: "Stone Frog/50/-300/Crafting -9/Украшение для вашего сада./true/true/0/Каменная лягушка" #!String
+    53: "Stone Parrot/50/-300/Crafting -9/Украшение для вашего сада./true/true/0/Каменный попугай" #!String
+    54: "Stone Owl/50/-300/Crafting -9/Украшение для вашего сада./true/true/0/Каменная сова" #!String
+    55: "Stone Junimo/50/-300/Crafting -9/Украшение для вашего сада./true/true/0/Каменный джунимо" #!String
+    56: "Slime Ball/50/-300/Crafting -9/Наполнен слизью./true/true/2/Слаймовый шар" #!String
+    62: "Garden Pot/1000/-300/Crafting -9/В помещении в него можно сажать культуры любого времени года. На открытом воздухе можно высаживать только сезонные культуры./true/false/0/Садовый горшок" #!String
+    64: "Bookcase/50/-300/Crafting -9/Место для книг./true/false/1/Книжный шкаф" #!String
+    65: "Fancy Table/50/-300/Crafting -9/Круглый стол тонкой работы./true/false/1/Вычурный стол" #!String
+    66: "Ancient Table/50/-300/Crafting -9/Он весь густо увешан паутиной./true/false/1/Древний стол" #!String
+    67: "Ancient Stool/50/-300/Crafting -9/От него пахнет как в квартире у бабушки./true/false/1/Древний табурет" #!String
+    68: "Grandfather Clock/50/-300/Crafting -9/Такие старые... Кажется, маятник приржавел к месту./true/false/1/Старинные часы" #!String
+    69: "Teddy Timer/50/-300/Crafting -9/Стоячие часы в форме плюшевого мишки./true/false/1/Часы-мишка" #!String
+    70: "Dead Tree/0/-300/Crafting -9/Бедное дерево, оно давно окаменело./true/false/1/Мeртвое дерево" #!String
+    71: "Staircase/0/-300/Crafting -9/Используйте еe в шахте, чтобы спуститься на уровень ниже./true/false/1/Лестница" #!String
+    72: "Tall Torch/0/-300/Crafting -9/Сделан из бамбука./true/false/1/Стоячий факел" #!String
+    73: "Ritual Mask/0/-300/Crafting -9/Слишком большая, чтобы надевать./true/false/1/Ритуальная маска" #!String
+    74: "Bonfire/0/-300/Crafting -9/Красные угли в нeм горят мягким светом./true/false/1/Костeр" #!String
+    75: "Bongo/0/-300/Crafting -9/Декоративный ударный инструмент с богатым звучанием./true/false/1/Бонго" #!String
+    76: "Decorative Spears/0/-300/Crafting -9/Не самое безопасное украшение./true/false/1/Декоративные копья" #!String
+    78: "Boulder/0/-300/Crafting -9/Чрезвычайно твeрдый камень./true/false/1/Булыжник" #!String
+    79: "Door/0/-300/Crafting -9/Потайной механизм опускает еe под землю./true/false/1/Дверь" #!String
+    80: "Door/0/-300/Crafting -9/Потайной механизм опускает еe под землю./true/false/1/Дверь" #!String
+    81: "Locked Door/0/-300/Crafting -9/Потайной механизм опускает еe под землю./true/false/2/Дверь" #!String
+    82: "Locked Door/0/-300/Crafting -9/Потайной механизм опускает еe под землю./true/false/2/Дверь" #!String
+    83: "Wicked Statue/0/-300/Crafting -9/Почему-то от этой статуи становится не по себе./true/false/0/Нечистая статуя" #!String
+    84: "Wicked Statue/0/-300/Crafting -9/С этой статуей что-то нечисто./true/false/2/Нечистая статуя" #!String
+    85: "Sloth Skeleton L/0/-300/Crafting -9/Этот вымерший вид ленивцев населял густые доисторические леса долины Стардью. Его мощные челюсти перемалывали даже самые прочные растительные волокна./true/false/0/Скелет ленивца (Л)" #!String
+    86: "Sloth Skeleton M/0/-300/Crafting -9/Рeбра доисторического ленивца./true/false/0/Скелет ленивца (С)" #!String
+    87: "Sloth Skeleton R/0/-300/Crafting -9/Задние лапы и хвост доисторического ленивца./true/false/0/Скелет Ленивца (П)" #!String
+    88: "Standing Geode/0/-300/Crafting -9/Огромная жеода, закреплeнная на подставке. Внутри блестят сотни фиолетовых кристаллов./true/false/0/Стоячая Жеода" #!String
+    89: "Obsidian Vase/0/-300/Crafting -9/Искусно выполненная декоративная ваза из обсидиана и золота./true/false/0/Обсидиановая ваза" #!String
+    90: "Bone Mill/0/-300/Crafting -9/Перемалывает костяные предметы в удобрение./true/true/0/Костедробилка" #!String
+    94: "Singing Stone/0/-300/Crafting -9/Если по нему стукнуть, он издаeт чистую ноту./true/false/0/Поющий камень" #!String
+    95: "Stone Owl/0/-300/Crafting -9/Неизвестно, откуда она взялась, но выглядит очень неплохо./true/false/0/Каменная сова" #!String
+    96: "Strange Capsule/0/-300/Crafting -9/Внутри покачивается что-то - похоже, из плоти.../true/false/0/Необычная капсула" #!String
+    98: "Empty Capsule/0/-300/Crafting -9/Стекло частично разбито./true/false/0/Пустая капсула" #!String
+    99: "Feed Hopper/0/-300/Crafting -9/Предоставляет быстрый доступ к заготовленному сену./true/false/0/Кормораздаточный бункер" #!String
+    101: "Incubator/0/-300/Crafting -9/Выращивает из яиц цыплят и утят./true/false/2/Инкубатор" #!String
+    104: "Heater/0/-300/Crafting -9/С ним вашим животным будет теплее и веселее зимой./true/false/0/Обогреватель" #!String
+    105: "Tapper/0/-300/Crafting -9/Повесьте его на клeн, дуб или сосну. Через некоторое время вы получите соответствующий продукт!/true/false/0/Подсочник" #!String
+    106: "Camera/0/-300/Crafting -9/Старый фотоаппарат на штативе./true/false/0/Фотоаппарат" #!String
+    107: "Plush Bunny/0/-300/Crafting -9/Он большой, он мягкий и милый./false/true/0/Плюшевый кролик" #!String
+    108: "Tub o' Flowers/0/-300/Crafting -9/Цветы, растущие в дубовой бочке. Цветут весной и летом./true/true/0/Цветочный бочонок" #!String
+    109: "Tub o' Flowers/0/-300/Crafting -9/Цветы, растущие в дубовой бочке. Цветут весной и летом./true/true/0/Цветочный бочонок" #!String
+    110: "Rarecrow/0/-300/Crafting -9/Собери их все! (1 из 8)/true/true/0/Редкое пугало" #!String
+    111: "Decorative Pitcher/0/-300/Crafting -9/Медный, ручной работы./true/true/0/Декоративный кувшин" #!String
+    112: "Dried Sunflowers/0/-300/Crafting -9/Яркое украшение для дома./true/true/0/Высушенные подсолнухи" #!String
+    113: "Rarecrow/0/-300/Crafting -9/Собери их все! (2 из 8)/true/true/0/Редкое пугало" #!String
+    114: "Charcoal Kiln/0/-300/Crafting -9/Превращает 10 единиц дерева в один кусочек угля./true/true/0/Углевыжигательная печь" #!String
+    116: "Stardew Hero Trophy/0/-300/Crafting -9/Самая престижная награда, которую только может получить житель долины Стардью!/true/true/0/Награда герою Стардью" #!String
+    117: "Soda Machine/0/-300/Crafting -9/Производит газировку на радость владельцу./true/true/0/Автомат с газировкой" #!String
+    118: "Barrel/0/-300/Crafting -9/.../true/true/0/Бочка" #!String
+    119: "Crate/0/-300/Crafting -9/.../true/true/0/Ящик" #!String
+    120: "Barrel/0/-300/Crafting -9/.../true/true/0/Бочка" #!String
+    121: "Crate/0/-300/Crafting -9/.../true/true/0/Ящик" #!String
+    122: "Barrel/0/-300/Crafting -9/.../true/true/0/Бочка" #!String
+    123: "Crate/0/-300/Crafting -9/.../true/true/0/Ящик" #!String
+    124: "Barrel/0/-300/Crafting -9/.../true/true/0/Бочка" #!String
+    125: "Crate/0/-300/Crafting -9/.../true/true/0/Ящик" #!String
+    126: "Rarecrow/0/-300/Crafting -9/Собери их все! (3 из 8)/true/true/0/Редкое пугало" #!String
+    127: "Statue Of Endless Fortune/0/-300/Crafting -9/Она из чистого золота. Для чего она нужна?/true/true/0/Статуя Вечной Удачи" #!String
+    128: "Mushroom Box/0/-300/Crafting -9/Каждые несколько дней в нем растут грибы./true/true/2/Ящик с грибами" #!String
+    130: "Chest/0/-300/Crafting -9/Здесь можно хранить предметы./true/true/0/Сундук" #!String
+    136: "Rarecrow/0/-300/Crafting -9/Собери их все! (4 из 8)/true/true/0/Редкое пугало" #!String
+    137: "Rarecrow/0/-300/Crafting -9/Собери их все! (5 из 8)/true/true/0/Редкое пугало" #!String
+    138: "Rarecrow/0/-300/Crafting -9/Собери их все! (6 из 8)/true/true/0/Редкое пугало" #!String
+    139: "Rarecrow/0/-300/Crafting -9/Собери их все! (7 из 8)/true/true/0/Редкое пугало" #!String
+    140: "Rarecrow/0/-300/Crafting -9/Собери их все! (8 из 8)/true/true/0/Редкое пугало" #!String
+    141: "Prairie King Arcade System/0/-300/Crafting -9/Играйте в «Путешествие Короля Прерий» прямо у себя дома!/true/true/0/Игровая система «Король Прерий»" #!String
+    143: "Wooden Brazier/25/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Деревянный светильник" #!String
+    144: "Stone Brazier/40/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Каменный светильник" #!String
+    145: "Gold Brazier/100/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Золотой светильник" #!String
+    146: "Campfire/0/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Костeр" #!String
+    147: "Stump Brazier/80/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Пень-светильник" #!String
+    148: "Carved Brazier/200/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Резной светильник" #!String
+    149: "Skull Brazier/300/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Светильник-череп" #!String
+    150: "Barrel Brazier/80/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Бочка-светильник" #!String
+    151: "Marble Brazier/500/-300/Crafting -9/Умеренно освещает всe вокруг./true/true/0/Мраморный светильник" #!String
+    152: "Wood Lamp-post/50/-300/Crafting -9/Ярко освещает всe вокруг./true/true/0/true/Деревянный фонарь" #!String
+    153: "Iron Lamp-post/100/-300/Crafting -9/Ярко освещает всe вокруг./true/true/0/true/Железный фонарь" #!String
+    154: "Worm Bin/0/-300/Crafting -9/Постоянный источник наживки. Черви внутри не нуждаются в подкормке./true/true/0/Бак с червями" #!String
+    155: "??HMTGF??/0/-300/Crafting -9/??HMTGF??/true/true/0/??HMTGF??" #!String
+    156: "Slime Incubator/0/-300/Crafting -9/Выращивает слаймов из яиц слаймов. Позволяет разводить собственных слаймов./true/false/0/Инкубатор слаймов" #!String
+    158: "Slime Egg-Press/0/-300/Crafting -9/Сжимает 100 кусочков слизи в яйцо слайма. До чего техника дошла!/true/false/0/Пресс для яиц слаймов" #!String
+    159: "Junimo Kart Arcade System/0/-300/Crafting -9/Играйте в «Джунимо Карт» прямо у себя дома!/true/true/0/Игровая система «Джунимо Карт»" #!String
+    160: "Statue Of Perfection/0/-300/Crafting -9/Она сделана из чистого иридия./true/true/0/Статуя Совершенства" #!String
+    161: "??Pinky Lemon??/0/-300/Crafting -9/??Пинки Лемон??/true/true/0/??Пинки Лемон??" #!String
+    162: "??Foroguemon??/0/-300/Crafting -9/??Форогемон??/true/true/0/??Форогемон??" #!String
+    163: "Cask/0/-300/Crafting -9/Используется в подвале для выдержки таких продуктов, как сыр и вино./true/true/0/Бочка" #!String
+    164: "Solid Gold Lewis/0/-300/Crafting -9/Секретный проект мэра./true/true/0/Золотой Льюис" #!String
+    165: "Auto-Grabber/0/-300/Crafting -9/Каждое утро автоматически собирает молоко и шерсть. Работает с коровами, овцами и козами./true/true/0/Авто-сборщик" #!String
+    167: "Deluxe Scarecrow/50/-300/Crafting -9/Отпугивает ворон от ваших посевов. Действует в большом радиусе (около 16-ти «клеток»)./true/true/0/Элитное пугало" #!String
+    174: "Barrel/0/-300/Crafting -9/.../true/true/0/Бочонок" #!String
+    175: "Crate/0/-300/Crafting -9/.../true/true/0/Ящик" #!String
+    182: "Geode Crusher/0/-300/Crafting -9/Автоматически разбивает жеоды. Работает на угле./true/true/0/Разбиватель жеод" #!String
+    184: "Seasonal Plant/50/-300/Crafting -9/Декоративное растение. Меняется с каждым временем года. И поливать не нужно./true/true/0/Сезонное растение" #!String
+    188: "Seasonal Plant/50/-300/Crafting -9/Декоративное растение. Меняется с каждым временем года. И поливать не нужно./true/true/0/Сезонное растение" #!String
+    192: "Seasonal Plant/50/-300/Crafting -9/Декоративное растение. Меняется с каждым временем года. И поливать не нужно./true/true/0/Сезонное растение" #!String
+    196: "Seasonal Plant/50/-300/Crafting -9/Декоративное растение. Меняется с каждым временем года. И поливать не нужно./true/true/0/Сезонное растение" #!String
+    200: "Seasonal Plant/200/-300/Crafting -9/Декоративное растение. Меняется с каждым временем года. И поливать не нужно./true/true/0/Сезонное растение" #!String
+    204: "Seasonal Plant/50/-300/Crafting -9/Декоративное растение. Меняется с каждым временем года. И поливать не нужно./true/true/0/Сезонное растение" #!String
+    208: "Workbench/1000/-300/Crafting -9/Позволяет пользоваться материалами из расположенных рядом сундуков./true/true/0/Верстак" #!String
+    209: "Mini-Jukebox/1500/-300/Crafting -9/Позволяет слушать любимые песни./true/true/0/Музыкальный мини-автомат" #!String
+    211: "Wood Chipper/500/-300/Crafting -9/Делает из одного куска твердой древесины обычную./true/true/0/Дробилка" #!String
+    214: "Telephone/1000/-300/Crafting -9/Можно проверять время работы и ассортимент магазинов./true/true/0/Телефон" #!String
+    216: "Mini-Fridge/1500/-300/Crafting -9/Позволяет хранить дополнительные ингредиенты для готовки./true/true/0/Маленький холодильник" #!String
+    219: "Cursed P.K. Arcade System/0/-300/Crafting -9/С этой игровой системой «Король Прерий» что-то не так.../true/true/0/Проклятая игровая система «Король Прерий»" #!String
+    231: "Solar Panel/0/-300/Crafting -9/Медленно генерирует аккумуляторы, находясь на солнце./true/true/0/Солнечная панель" #!String
+    232: "Stone Chest/0/-300/Crafting -9/Место для хранения вещей./true/true/0/Каменный сундук" #!String
+    238: "Mini-Obelisk/0/-300/Crafting -9/Поставьте два таких на ферме, чтобы перемещаться между ними./true/true/0/Мини-обелиск" #!String
+    239: "Farm Computer/0/-300/Crafting -9/Сканирует ферму и показывает полезную информацию./true/true/0/Фермерский компьютер" #!String
+    246: "Coffee Maker/0/-300/Crafting -9/Автоматически варит чашечку кофе каждое утро./true/true/0/Кофеварка" #!String
+    247: "Sewing Machine/0/-300/Crafting -9/Позволяет шить одежду, не выходя из дома!/true/true/0/Швейная машинка" #!String
+    248: "Mini-Shipping Bin/0/-300/Crafting -9/Все, что будет положено в ящик, будет включено в ночную доставку./true/true/0/Мини-ящик для отгрузок" #!String
+    254: "Ostrich Incubator/0/-300/Crafting -9/Высиживает страусиные яйца. Ставится в Хлев./true/true/0/Инкубатор страусов" #!String
+    256: "Junimo Chest/0/-300/Crafting -9/Благодаря магии леса, каждый сундук Джунимо соединен с общим хранилищем./true/true/0/Сундук Джунимо" #!String
+    264: "Heavy Tapper/0/-300/Crafting -9/Повесьте его на клен, дуб или сосну. Через некоторое время вы получите соответствующий продукт! Работает в два раза быстрее обычного./true/false/0/Тяжелый подсочник" #!String
+    265: "Deconstructor/0/-300/Crafting -9/Уничтожает изготовленные предметы, но добывает из них их самые ценные материалы./true/true/0/Деконструктор" #!String
+    272: "Auto-Petter/0/-300/Crafting -9/Запатентованная технология для хлева от корпорации Джоджа. Гладит ваших животных, но не может полностью заменить человеческое прикосновение. Дополнительное ручное поглаживание приветствуется./true/true/0/Автопоглаживатель" #!String
+    275: "Hopper/0/-300/Crafting -9/Предметы, положенные внутрь, автоматически будут загружаться в устройство перед ним./true/true/0/Раздатчик" #!String
+    278: "Campfire/0/-300/Crafting -9/Готовьте везде!/true/true/1/Походный костер" #!String
+    280: "Statue Of True Perfection/0/-300/Crafting -9/Она сделана из чистого иридия./true/true/0/Статуя Истинного Cовершенства" #!String
+

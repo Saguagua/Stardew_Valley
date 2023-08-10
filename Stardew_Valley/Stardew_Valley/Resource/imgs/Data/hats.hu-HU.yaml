@@ -1,0 +1,117 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Cowboy Hat/A bőr régi és repedt, de meglepően hajlékony. Dohos szaga van./false/true/Cowboy kalap" #!String
+    1: "Bowler Hat/Sík filcből készült./false/true/Keménykalap" #!String
+    2: "Top Hat/Egy úriember klasszikusa./false/true/Cilinder" #!String
+    3: "Sombrero/Egy ünnepi díszekkel dekorált szalmából szőtt kalap./false/true/Sombreró" #!String
+    4: "Straw Hat/Könnyű és laza, a gazdák egyik kedvence./false/true/Szalmakalap" #!String
+    5: "Official Cap/Mintha egy postásé vagy rendőré lett volna. Ennek ellenére nagyon puha és jó az illata./false/true/Hivatalos sapka" #!String
+    6: "Blue Bonnet/Térj vissza az egyszerűbb időkbe ezzel a préri fejkötővel./false/true/Kék fejkötő" #!String
+    7: "Plum Chapeau/Jól néz ki./false/true/Szilvás kalap" #!String
+    8: "Skeleton Mask/A vörös szemek rejtélyesen világítanak./true/true/Csontváz maszk" #!String
+    9: "Goblin Mask/Ijeszd meg a szomszédodat ezzel az ijesztő maszkkal. Gumírozott fülei vannak./true/true/Goblin maszk" #!String
+    10: "Chicken Mask/Ettől biztos, hogy el fognak vigyorodni./true/true/Csirke maszk" #!String
+    11: "Earmuffs/Tartsd melegen a füleidet. A Kastély Faluból származó mesterséges bársonyból készült./true/false/Fülvédő" #!String
+    12: "Delicate Bow/Jobban megvizsgálva kicsi rózsaszín ékszerek tündökölnek rajta./true/false/Kényes masni" #!String
+    13: "Tropiclip/Ennek pálmafa alakja van./true/false/Tropikapocs" #!String
+    14: "Butterfly Bow/Ez nagyon puha./true/false/Pillangó masni" #!String
+    15: "Hunter's Cap/A gyapjús kidolgozása miatt az erdő mélyén is melegen tart./false/true/Vadászsapka" #!String
+    16: "Trucker Hat/Hálós a hátulja, így hűti a fejedet./false/true/Fuvaros kalap" #!String
+    17: "Sailor's Cap/Friss és feszes./false/true/Tengerész sapka" #!String
+    18: "Good Ol' Cap/Egy régi és laza kalap gyűrt felső résszel. Kissé meg van viselve./false/true/Régi jó sapka" #!String
+    19: "Fedora/A dörzsölt városiak alap felszerelése./false/true/Fedora" #!String
+    20: "Cool Cap/Elég kopottnak tűnik, de régen élénk kék volt./false/true/Menő sapka" #!String
+    21: "Lucky Bow/A közepe valódi aranyból készült./true/false/Szerencsés masni" #!String
+    22: "Polka Bow/Ettől biztosan mindenki utánad fordul./true/false/Polka masni" #!String
+    23: "Gnome's Cap/Ennek a gnómnak elég nagy feje volt./false/true/Gnóm sapka" #!String
+    24: "Eye Patch/Nem tudod eldönteni, hogy ez valódi, vagy csak egy jelmezes boltból való./true/true/Szemfedő" #!String
+    25: "Santa Hat/Ünnepeld a mágikus évszakot./false/true/Mikulás sapka" #!String
+    26: "Tiara/Ezen van egy hatalmas, aranyba zárt ametiszt./true/true/Tiara" #!String
+    27: "Hard Hat/Tartsd egyben a buksidat./false/true/Munkavédelmi kalap" #!String
+    28: "Sou'wester/Az alakja segít a tengerészeket vihar esetén szárazon tartani./false/true/Viharkalap" #!String
+    29: "Daisy/Egy friss, tavaszi százszorszép, amit a hajadba tehetsz./true/false/Százszorszép" #!String
+    30: "Watermelon Band/A színvilágát a szeretett nyári dinnye adta./true/false/Dinnyés szalag" #!String
+    31: "Mouse Ears/Mesterséges szálakból készült./true/true/Egérfül" #!String
+    32: "Cat Ears/Bajusz is jár hozzá./true/true/Macskafül" #!String
+    33: "Cowgal Hat/A tetejét hamis gyémántok borítják./false/true/Női cowboy kalap" #!String
+    34: "Cowpoke Hat/A tejgazdaság mestereinek./false/true/Tehenész kalap" #!String
+    35: "Archer's Cap/Akkor is divatos, ha nem lennél íjász./false/true/Íjászok kalapja" #!String
+    36: "Panda Hat/Egy cuki pandás sapka./false/true/Pandás sapka" #!String
+    37: "Blue Cowboy Hat/Egy farmerből készült cowboy kalap, ami laza kék színű./false/true/Kék cowboy kalap" #!String
+    38: "Red Cowboy Hat/Egy szemrevaló cowboy kalap, ami vörös bőrből készült./false/true/Vörös cowboy kalap" #!String
+    39: "Cone Hat/Egy furcsaság egy messzi helyről./false/true/Kúpos kalap" #!String
+    40: "Living Hat/A fejbőrödről szívja fel a nedvességet. Nem szükséges öntözni!/false/true/Élő sapka" #!String
+    41: "Emily's Magic Hat/Szeretettel Emilytől. 100%-ban organikus!/false/true/Emily mágikus kalapja" #!String
+    42: "Mushroom Cap/Földszaga van./false/true/Gomba sapka" #!String
+    43: "Dinosaur Hat/Egy sapka, ami kis dinoszauruszra hasonlít./false/true/Dinoszaurusz sapka" #!String
+    44: "Totem Mask/Ne aggódj, nem fogja eltorzítani az arcodat.../true/true/Totem maszk" #!String
+    45: "Logo Cap/Egy vörös sapka egy logóval az elején./false/true/Logós sapka" #!String
+    46: "Wearable Dwarf Helm/Egy kissé nagyobb, embereknek méretezett sisak, amit törpék viseltek./hide/true/Viselhető törpe sisak" #!String
+    47: "Fashion Hat/Egy divatos kalap, aminek szélén egy toll van./false/true/Divatos kalap" #!String
+    48: "Pumpkin Mask/Ez valaha elég nagy tök lehetett.../hide/true/Tök maszk" #!String
+    49: "Hair Bone/A hajgumi őskori változata./true/false/Hajcsont" #!String
+    50: "Knight's Helmet/Pont úgy néz ki, mint az igazi!/hide/true/Lovag sisak" #!String
+    51: "Squire's Helmet/Fel van fedve az arca, hogy jól áteressze a levegőt./hide/true/Apród sisak" #!String
+    52: "Spotted Headscarf/Egy piros pokla-pöttyös sál, amit a fej köré kötnek./hide/true/Pöttyös fejkendő" #!String
+    53: "Beanie/Egy meleg és szoros sapka./hide/true/Micisapka" #!String
+    54: "Floppy Beanie/Egy meleg, de lazább sapka./hide/true/Laza micisapka" #!String
+    55: "Fishing Hat/Olyan széles, hogy árnyékban tart horgászás közben./false/true/Horgász sapka" #!String
+    56: "Blobfish Mask/Olyan puha mint az igazi!/true/true/Pacahal maszk" #!String
+    57: "Party Hat/Egy vicces piros sapka, ami bármilyen ünnepet mókássá tesz./false/true/Party sapka" #!String
+    58: "Party Hat/Egy vicces kék sapka, ami bármilyen ünnepet mókássá tesz./false/true/Party sapka" #!String
+    59: "Party Hat/Egy vicces zöld sapka, ami bármilyen ünnepet mókássá tesz./false/true/Party sapka" #!String
+    60: "Arcane Hat/Egy olyan cowboy kalap amit egy varázsló visel./false/true/Misztikus kalap" #!String
+    61: "Chef Hat/A főséfek által viselt hagyományos kalap./hide/true/Séf kalap" #!String
+    62: "Pirate Hat/Egy kapitány kalapja, aminek elején egy szörnyűséges koponya van./false/true/Kalóz kalap" #!String
+    63: "Flat Topped Hat/Egy régi stílusú kalap, amit valaha nagyon divatosnak ítéltek./false/true/Lapos cilinder" #!String
+    64: "Elegant Turban/Finom fekete selyemből készült turbán arany peremmel./false/true/Elegáns turbán" #!String
+    65: "White Turban/Finom fehér selyemből készült turbán kék peremmel./false/true/Fehér turbán" #!String
+    66: "Garbage Hat/Egy kukafedő, amit kalappá 'hasznosítottak újra'.../false/true/Kukás sapka" #!String
+    67: "Golden Mask/A Calico Sivatag egyik ereklyéjének hű újraalkotása!/true/true/Arany maszk" #!String
+    68: "Propeller Hat/Egy vicces kalap propellerrel a tetején./false/true/Propeller sapka" #!String
+    69: "Bridal Veil/Egy hagyományos menyasszonyi fátyol./false/true/Menyasszonyi fátyol" #!String
+    70: "Witch Hat/Egy hegyes kalap, ami a boszorkányok körében népszerű./false/true/Boszorkány kalap" #!String
+    71: "Copper Pan/Rárakod a réz serpenyőt a fejedre.../false/true/Réz serpenyő" #!String
+    72: "Green Turban/Zöld selyemből készült turbán az elején arany díszítéssel./false/true/Zöld turbán" #!String
+    73: "Magic Cowboy Hat/Prizmás energiától ragyog./false/true/Prismatic/Mágikus cowboy kalap" #!String
+    74: "Magic Turban/Prizmás energiától ragyog./false/true/Prismatic/Mágikus turbán" #!String
+    75: "Golden Helmet/Ez félig arany kókuszdióból van./false/true/Arany sisak" #!String
+    76: "Deluxe Pirate Hat/Kizárólag a leghirhedtebb kalóz képes így kinézni./false/true/Luxus kalóz kalap" #!String
+    77: "Pink Bow/Ez a hatalmas szalagcsokor elég kifejező!/true/false/Rózsaszín szalagcsokor" #!String
+    78: "Frog Hat/Egy ragacsos barát, aki a fejeden él./hide/true/Béka kalap" #!String
+    79: "Small Cap/Ez a sapka áramvonalasabb változata./false/true/Apró sapka" #!String
+    80: "Bluebird Mask/Viseld ezt, hogy úgy nézz ki, mint kedvenc szigetbeli kereskedőd./hide/true/Kék madár maszk" #!String
+    81: "Deluxe Cowboy Hat/Egy cowboy kalap, aminek extrémebb az alakja./false/true/Luxus cowboy kalap" #!String
+    82: "Mr. Qi's Hat/Mr. Qi ikonikus kalapjának másolata./false/true/Mr. Qi kalapja" #!String
+    83: "Dark Cowboy Hat/Egy divatos, fekete színű cowboy kalap./false/true/Sötét cowboy kalap" #!String
+    84: "Radioactive Goggles/Valójában nem nyújt védelmet a radioaktív sugarak ellen./true/true/Radioaktív szemüvegek" #!String
+    85: "Swashbuckler Hat/A klasszikus krakéler kinézet./false/true/Krakéler kalap" #!String
+    86: "Qi Mask/???/hide/true/Qi maszk" #!String
+    87: "Star Helmet/Egy vörös sapka, amin csillagok vannak./false/true/Csillag sisak" #!String
+    88: "Sunglasses/Ezek laza kinézetet kölcsönöznek neked./true/true/Napszemüveg" #!String
+    89: "Goggles/Ezektől biztonságosnak nézel ki./true/true/Védőszemüveg" #!String
+    90: "Forager's Hat/Ez a gyűjtögetők kedvence./false/true/Gyűjtögető kalap" #!String
+    91: "Tiger Hat/Ettől úgy nézel ki, mint egy gyönyörű tigris./hide/true/Tigris kalap" #!String
+    92: "???/???/hide/true" #!String
+    93: "Warrior Helmet/Egy strucc tojáshéja, amit sisakká alakítottak át./false/true/Harcos sisak" #!String
+

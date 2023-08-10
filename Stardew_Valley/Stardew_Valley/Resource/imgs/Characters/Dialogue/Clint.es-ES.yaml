@@ -1,0 +1,49 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Eh... Hola. Soy Clint. El herrero del pueblo.#$e#Si alguna vez necesitas mejorar tus herramientas, cuenta conmigo." #!String
+    Resort_Entering: "Me voy a poner mi bañador especial rojo. Se supone que llama mucho la atención." #!String
+    Resort_Leaving: "Bueno, no acabó como imaginaba..." #!String
+    Resort_Shore: "Oh no... Se me ha olvidado cortarme las uñas de los pies.$s" #!String
+    Resort_Shore_2: "Creí que trabajar en un horno me habría preparado para este calor, pero estoy sudando por lugares que no sabía que podía sudar.$s#$e#Espero que nadie se dé cuenta...#$e#%El cuerpo de Clint brilla..." #!String
+    Resort_Chair: "Ow... todo mi torso esta quemado del todo.$s" #!String
+    Resort_Bar: "Tengo hambre...$s" #!String
+    Resort: "*suspiro*... Estamos todos en la playa pero me sigo sintiendo tan solo...$s" #!String
+    reject_868: "Hmm... Es una piedra interesante, no se parece a nada que haya visto antes.#$b#Aunque no sabría que hacer con ella. Estoy más acostumbrado a algo más básico como el hierro o el cobre." #!String
+    cc_Minecart: "No sé cómo, el viejo sistema del pueblo ha empezado a funcionar de nuevo. Es muy útil para entrar y salir de las minas.#$b#Pero no te relajes demasiado... si puede volver a funcionar de repente, también podría dejar de funcionar en cualquier momento..." #!String
+    Mon: "Sí. Soy herrero.#$e#Mi padre era herrero.#$e#Mi abuelo también era herrero.$u#$q 9/9 Mon_old#¿A que no adivinas qué era mi bisabuelo...?#$r 9 30 Mon_9#Herrero.#$r 9 50 Mon_clown#Un graciosillo.#$r 9 -50 Mon_rude#Un idiota sarcástico." #!String
+    Mon_old: "Sí, mi bisabuelo también era herrero." #!String
+    Mon_9: "¿Cómo lo has adivinado?$u" #!String
+    Mon_clown: "Ja, ja, ja, ja. Muy buena.$h" #!String
+    Mon_rude: "Guau. ¿A qué ha venido eso? Solo intentaba ser gracioso, pero tú te has pasado de la raya." #!String
+    Mon4: "Alégrate de trabajar en la granja, @. Es mejor trabajar fuera que estar junto a un horno caliente todo el día.#$e#Yo solo soy herrero porque mi padre me obligó a serlo." #!String
+    Tue: "Si quieres que mejore tus herramientas, tendrás que darme el mineral correcto.#$e#Y pagarme una cantidad, por supuesto." #!String
+    Wed: "Buenas. ¿Qué necesitas?" #!String
+    Wed6: "Ah, hola, @. Disculpa que esté hecho un desastre. Llevo trabajando en el horno toda la mañana.$h#$e#¿Querías algo o solo te apetecía una visita?" #!String
+    Thu: "El negocio va lento últimamente.#$e#Deberías mejorar tus herramientas. Me vendría bien el dinero." #!String
+    Fri: "El tiempo que haga me da un poco igual. Suelo estar aquí en la tienda todo el año.#$e#Qué deprimente, ¿no?" #!String
+    Sat: "A veces me pregunto cómo he acabado en este pueblo.$u" #!String
+    Sat6: "Maldita sea. Ya soy demasiado viejo para hacer nada emocionante. Todo lo que me queda son años y años de trabajo asfixiante y sudoroso en el horno." #!String
+    Sun: "¿No tienes trabajo que hacer?" #!String
+    Sun4: "¿Qué tal van tus herramientas?" #!String
+    event_advice1: "Vale... Lo tendré en cuenta." #!String
+    event_advice2: "Ese es el problema... Actúo con naturalidad... Pero nunca con éxito.$s" #!String
+    summer_Mon4: "Alégrate de trabajar en la granja, @. Es mejor trabajar fuera que estar junto a un horno caliente todo el día.#$e#Yo solo soy herrero porque mi padre me obligó a serlo." #!String
+    summer_Wed6: "¡Ah! ¡Hola, @! Disculpa que esté hecho un desastre. Llevo trabajando en el horno toda la mañana.$h#$e#¿Querías algo o solo te apetecía una visita?" #!String
+    summer_Thu: "El negocio va lento últimamente.#$e#Deberías mejorar tus herramientas. Me vendría bien el dinero." #!String
+

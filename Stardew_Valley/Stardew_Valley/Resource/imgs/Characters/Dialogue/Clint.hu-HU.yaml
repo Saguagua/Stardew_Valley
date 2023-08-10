@@ -1,0 +1,49 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Őő... szia. Clint vagyok.#$e#Én vagyok a város kovácsmestere. Ha fejleszteni kéne a szerszámaidon, engem keress." #!String
+    Resort_Entering: "Ma a különös, vörös alsómat veszem fel. Állítólag nagyon szemrevalóak." #!String
+    Resort_Leaving: "Nos, ez nem úgy alakult, mint ahogyan terveztem..." #!String
+    Resort_Shore: "Jaj ne... elfelejtettem levágni a lábujjkörmömet.$s" #!String
+    Resort_Shore_2: "Azt hittem, hogyha egy kemence közelében dolgozok, az felkészít erre a hőségre, de olyan helyeken is izzadok, ahol nem is hittem volna, hogy lehetséges.$s#$e#Remélem senki se veszi észre...#$e#%Clint egész teste fénylik..." #!String
+    Resort_Chair: "Aú... az egész törzsem ropogósra égett.$s" #!String
+    Resort_Bar: "Éhes vagyok...$s" #!String
+    Resort: "*sóhaj*... Mind a strandon vagyunk, és mégis olyan magányosnak érzem magam...$s" #!String
+    reject_868: "Hmm... Az egy érdekes kő, ehhez foghatót még nem láttam.#$b#Habár nem tudom, hogy mit lehetne vele kezdeni. Én az evilági dolgokkal foglalkozom, nem holmi mágiával..." #!String
+    cc_Minecart: "Valamiért a régi, városi csillerendszer ismét működik. Nagyon hasznos arra, hogy a bányákba be és kijussunk.#$b#De ne kényelmesedj el túlságosan... ha ilyen könnyedén beindul, akkor a végén ilyen könnyedén le is állhat..." #!String
+    Mon: "Bizony. Kovács vagyok.#$e#Apám is kovács volt.#$e#Nagyapám szintén kovács volt.$u#$q 9/9 Mon_old#Fogadjunk nem találod ki dédapámnak mi volt a mestersége...#$r 9 30 Mon_9#Kovács.#$r 9 50 Mon_clown#Buta bohóc.#$r 9 -50 Mon_rude#Egy szarkasztikus gyökér." #!String
+    Mon_old: "És igen, dédapám szintén kovács volt." #!String
+    Mon_9: "Honnan tudtad?$u" #!String
+    Mon_clown: "Hahahaha. Ez jó volt.$h" #!String
+    Mon_rude: "Hé. Ez durva volt. Csak viccelni próbáltam egy kicsit, te meg mindjárt gorombáskodsz." #!String
+    Mon4: "Örülj neki, hogy gazda vagy, @. Sokkal jobb a szabad levegőn dolgozni mint egy forró kemence mellett egész nap.#$e#Csak apám nyomására lettem kovács." #!String
+    Tue: "Ha szeretnéd, hogy fejlesszek a szerszámaidon, megfelelő ércet kell hozzá hoznod.#$e#Emellett természetesen ára is van." #!String
+    Wed: "Helló. Mit szeretnél?" #!String
+    Wed6: "Ó, szia @. Elnézést ha kicsit koszosan nézek ki. Egész délelőtt a kemence mellett dolgoztam.$h#$e#Nos, szükséged van valamire, vagy csak meglátogattál?" #!String
+    Thu: "Mostanában gyengén megy az üzlet.#$e#Fejleszthetnéd a szerszámaidat. Jól jönne a pénz." #!String
+    Fri: "Nekem nem igazán számít az időjárás. Úgyis egész évben a műhelyem körül maradok.#$e#Nyomasztó, igaz?" #!String
+    Sat: "Néha elgondolkozom azon, hogy mégis hogy kerültem ebbe a városba.$u" #!String
+    Sat6: "A fene egye meg, túl öreg vagyok én már ahhoz, hogy izgalmas dolgokat csináljak. Mindössze éveken keresztüli izzadságos, kemény munkának nézhetek elébe a kemence mellett." #!String
+    Sun: "Nincs semmi dolgod?" #!String
+    Sun4: "Nos, minden rendben van a szerszámaiddal?" #!String
+    event_advice1: "Oké... Megpróbálom észben tartani." #!String
+    event_advice2: "Itt a probléma... Természetesen viselkedem... de sosem járok sikerrel.$s" #!String
+    summer_Mon4: "Örülj neki, hogy gazda vagy, @. Sokkal jobb a szabad levegőn dolgozni mint egy forró kemence mellett egész nap.#$e#Csak apám nyomására lettem kovács." #!String
+    summer_Wed6: "Ó, szia @! Elnézést ha kicsit koszosan nézek ki. Egész délelőtt a kemence mellett dolgoztam.$h#$e#Nos, szükséged van valamire, vagy csak meglátogattál?" #!String
+    summer_Thu: "Mostanában gyengén megy az üzlet.#$e#Fejleszthetnéd a szerszámaidat. Jól jönne a pénz." #!String
+

@@ -1,0 +1,117 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Cowboy Hat/Le cuir est vieux et craquelé, mais étonnamment souple. Il sent le moisi./false/true/Chapeau de cowboy" #!String
+    1: "Bowler Hat/Fabriqué à partir de feutre lisse./false/true/Chapeau melon" #!String
+    2: "Top Hat/Un classique pour gentleman./false/true/Chapeau haut-de-forme" #!String
+    3: "Sombrero/Un chapeau de fête fabriqué en paille tressée./false/true/Sombrero" #!String
+    4: "Straw Hat/Léger et frais, c’est le favori des fermiers./false/true/Chapeau de paille" #!String
+    5: "Official Cap/On dirait qu’il appartenait à un facteur ou à un policier. Quoi qu’il en soit, il est toujours très doux et il sent bon./false/true/Képi" #!String
+    6: "Blue Bonnet/Retournez à une époque plus simple avec ce bonnet des prairies./false/true/Bonnet bleu" #!String
+    7: "Plum Chapeau/Pas mal./false/true/Toque violette" #!String
+    8: "Skeleton Mask/Les yeux rouges brillent mystérieusement./true/true/Masque de squelette" #!String
+    9: "Goblin Mask/Effrayez le voisinage avec ce masque terrifiant. Des oreilles en caoutchouc pour le style./true/true/Masque de Gobelin" #!String
+    10: "Chicken Mask/Vous ne manquerez pas de faire sourire les gens avec celui-ci./true/true/Masque de Poulet" #!String
+    11: "Earmuffs/Gardez vos oreilles au chaud. Doublé de velours artisanal de Castle Village./true/false/Cache-oreilles" #!String
+    12: "Delicate Bow/De petits diamants roses scintillent lorsque vous regardez de plus près./true/false/Noeud ruban délicat" #!String
+    13: "Tropiclip/Elle a la forme d’un petit palmier./true/false/Barrette hawaïenne" #!String
+    14: "Butterfly Bow/Celui-ci est très doux./true/false/Noeud ruban papillon" #!String
+    15: "Hunter's Cap/La doublure en laine vous permet de rester au chaud dans la forêt./false/true/Casquette du chasseur" #!String
+    16: "Trucker Hat/L'arrière est un filet pour garder votre tête au frais./false/true/Chapeau de camionneur" #!String
+    17: "Sailor's Cap/Il est frais et moelleux./false/true/Casquette de marin" #!String
+    18: "Good Ol' Cap/Une vieille casquette fripée. On dirait qu’elle a beaucoup souffert./false/true/Veille casquette" #!String
+    19: "Fedora/Un classique pour les citadins./false/true/Fedora" #!String
+    20: "Cool Cap/La couleur est délavée, mais elle était d’un bleu vif./false/true/Casquette des glaces" #!String
+    21: "Lucky Bow/La partie centrale est en or massif./true/false/Noeud ruban de la chance" #!String
+    22: "Polka Bow/Celui-ci va faire tourner les têtes./true/false/Noeud ruban polka" #!String
+    23: "Gnome's Cap/Ce gnome avait une très grosse tête./false/true/Coiffe de gnome" #!String
+    24: "Eye Patch/Impossible de savoir si c'est un vrai ou s'il vient d'un magasin de déguisement./true/true/Cache-oeil" #!String
+    25: "Santa Hat/Célébrez la saison des fêtes./false/true/Chapeau de Père Noël" #!String
+    26: "Tiara/Celui-ci a une grosse améthyste entourée d’or./true/true/Diadème" #!String
+    27: "Hard Hat/Garde votre tête droite./false/true/Chapeau rigide" #!String
+    28: "Sou'wester/Sa forme aide à garder les marins au sec pendant les tempêtes./false/true/Suroît" #!String
+    29: "Daisy/Une belle marguerite à mettre dans vos cheveux./true/false/Marguerite" #!String
+    30: "Watermelon Band/La palette de couleurs a été inspirée par ce fruit d’été bien-aimé./true/false/Ruban pastèque" #!String
+    31: "Mouse Ears/Fabriquées à partir de fibres synthétiques./true/true/Oreilles de souris" #!String
+    32: "Cat Ears/Moustaches de chat incluses./true/true/Oreilles de chat" #!String
+    33: "Cowgal Hat/Le bandeau est parsemé de faux diamants./false/true/Chapeau de cowgirl" #!String
+    34: "Cowpoke Hat/Pour les experts laitiers./false/true/Chapeau de l'Ouest" #!String
+    35: "Archer's Cap/À la mode si vous êtes un archer... ou pas./false/true/Casquette d'archer" #!String
+    36: "Panda Hat/Un joli chapeau de panda./false/true/Chapeau panda" #!String
+    37: "Blue Cowboy Hat/Un chapeau de cowboy en denim bleu foncé./false/true/Chapeau de cowboy bleu" #!String
+    38: "Red Cowboy Hat/Un chapeau de cowboy voyant en daim rouge./false/true/Chapeau de cowboy rouge" #!String
+    39: "Cone Hat/Une curiosité d'un pays lointain./false/true/Chapeau conique" #!String
+    40: "Living Hat/Il absorbe l’humidité de votre cuir chevelu. Aucun arrosage nécessaire !/false/true/Chapeau vivant" #!String
+    41: "Emily's Magic Hat/Fabriqué avec amour par Emily. 100% recyclable !/false/true/Chapeau magique d’Emily" #!String
+    42: "Mushroom Cap/Ça sent la terre./false/true/Chapeau de champignon" #!String
+    43: "Dinosaur Hat/Un chapeau façonné pour ressembler à un petit dinosaure./false/true/Chapeau de dinosaure" #!String
+    44: "Totem Mask/Ne vous inquiétez pas, cela ne déformera pas votre visage.../true/true/Masque de rituel" #!String
+    45: "Logo Cap/Un bonnet rouge avec un logo sur le devant./false/true/Bonnet avec un logo" #!String
+    46: "Wearable Dwarf Helm/Une version légèrement plus grande et à taille humaine des casques portés par les nains./hide/true/Heaume de nain pour humain" #!String
+    47: "Fashion Hat/Un chapeau à la mode avec une plume sur le côté./false/true/Chapeau de mode" #!String
+    48: "Pumpkin Mask/Autrefois, ça devait être une jolie citrouille.../hide/true/Masque de citrouille" #!String
+    49: "Hair Bone/Une version préhistorique de l’élastique pour les cheveux./true/false/Os à cheveux" #!String
+    50: "Knight's Helmet/On dirait un vrai !/hide/true/Heaume de chevalier" #!String
+    51: "Squire's Helmet/Le visage est exposé pour permettre à l’air de passer./hide/true/Heaume d'écuyer" #!String
+    52: "Spotted Headscarf/Un foulard à pois rouge à nouer autour de la tête./hide/true/Foulard à pois" #!String
+    53: "Beanie/Un chapeau chaud assez serré./hide/true/Bonnet" #!String
+    54: "Floppy Beanie/Un chapeau chaud un peu plus ample./hide/true/Bonnet ample" #!String
+    55: "Fishing Hat/La grande visière du chapeau vous gardera à l’ombre lorsque vous pêchez au bord de la rivière./false/true/Chapeau de pêche" #!String
+    56: "Blobfish Mask/Aussi spongieux que le poisson !/true/true/Masque de poisson Blob" #!String
+    57: "Party Hat/Un bonnet rouge qui rend les fêtes plus amusantes./false/true/Chapeau de Fête" #!String
+    58: "Party Hat/Un bonnet bleu qui rend les fêtes plus amusantes./false/true/Chapeau de Fête" #!String
+    59: "Party Hat/Un bonnet vert qui rend les fêtes plus amusantes./false/true/Chapeau de Fête" #!String
+    60: "Arcane Hat/Le type de chapeau porté par un sorcier./false/true/Chapeau arcanique" #!String
+    61: "Chef Hat/Le chapeau traditionnel porté par un chef cuisinier./hide/true/Toque" #!String
+    62: "Pirate Hat/Un chapeau de capitaine avec un crâne terrifiant sur le devant./false/true/Chapeau de pirate" #!String
+    63: "Flat Topped Hat/Un chapeau ancien, jadis considéré comme étant très à la mode./false/true/Chapeau plat " #!String
+    64: "Elegant Turban/Un beau turban en soie noire avec une bordure en or./false/true/Turban élégant" #!String
+    65: "White Turban/Un turban de soie blanche avec une bordure bleue./false/true/Turban Blanc" #!String
+    66: "Garbage Hat/C’est un couvercle de poubelle \"recyclé\" en un chapeau.../false/true/Chapeau de poubelle" #!String
+    67: "Golden Mask/Une reconstitution fidèle de la relique du désert de Calico !/true/true/Masque d'or" #!String
+    68: "Propeller Hat/Un bonnet loufoque avec une hélice sur le dessus./false/true/Chapeau à hélice" #!String
+    69: "Bridal Veil/La coiffe traditionnelle pour une mariée./false/true/Voile de mariée" #!String
+    70: "Witch Hat/Un chapeau pointu populaire auprès des sorcières./false/true/Chapeau de sorcière" #!String
+    71: "Copper Pan/Vous devez placer la casserole en cuivre sur votre tête.../false/true/Casserole en cuivre" #!String
+    72: "Green Turban/Turban en soie verte avec un ornement doré sur le devant./false/true/Turban vert" #!String
+    73: "Magic Cowboy Hat/Ça scintille d’énergie prismatique/false/true/Prismatique/Chapeau de cowboy magique" #!String
+    74: "Magic Turban/Ça scintille d’énergie prismatique/false/true/Prismatique/Turban magique" #!String
+    75: "Golden Helmet/C'est la moitié d'une noix de coco dorée./false/true/Casque doré" #!String
+    76: "Deluxe Pirate Hat/Seul un pirate notoire peut avoir de l'allure avec ce chapeau./false/true/Chapeau de pirate de luxe" #!String
+    77: "Pink Bow/Ce ruban gigantesque est unique en son genre./true/false/Ruban rose" #!String
+    78: "Frog Hat/Un ami visqueux qui vit sur le haut de votre tête./hide/true/Chapeau de grenouille" #!String
+    79: "Small Cap/C'est un style de casquette plus aérodynamique./false/true/Petite casquette" #!String
+    80: "Bluebird Mask/Portez ça pour ressembler à votre commerçant insulaire préféré./hide/true/Masque d'oiseau bleu" #!String
+    81: "Deluxe Cowboy Hat/Un chapeau de cowboy avec une forme extrême./false/true/Chapeau de cowboy de luxe" #!String
+    82: "Mr. Qi's Hat/Une réplique du chapeau emblématique de M. Qi./false/true/Chapeau de M. Qi" #!String
+    83: "Dark Cowboy Hat/Un chapeau de cowboy noir à la mode./false/true/Chapeau de cowboy noir" #!String
+    84: "Lunettes radioactives/Ne fournis pas de protection réelle contre les radiations./true/true" #!String
+    85: "Chapeau de bretteur/Le look classique d'un bretteur./false/true" #!String
+    86: "Masque de Qi/???/hide/true" #!String
+    87: "Chapeau étoilé/Un chapeau rouge avec des étoiles dessus./false/true" #!String
+    88: "Lunettes de soleil/Elles vous donnent un air décontracté./true/true" #!String
+    89: "Lunettes/Elles vous donneront la sensation d’être en sécurité./true/true" #!String
+    90: "Chapeau de cueilleur/C’est un pur bonheur pour un cueilleur./false/true" #!String
+    91: "Chapeau de tigre/Ça vous fait ressembler à un tigre magnifique./hide/true" #!String
+    92: "???/???/hide/true" #!String
+    93: "Warrior Helmet/Une coquille d'oeuf d’autruche, reconvertie en un heaume/false/true/Heaume de guerrier" #!String
+

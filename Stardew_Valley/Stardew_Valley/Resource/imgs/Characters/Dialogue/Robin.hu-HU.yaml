@@ -1,0 +1,57 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Már mindenkivel találkoztál a városban? Az elég fárasztónak hangzik." #!String
+    Resort: "Váó, nézd ezt a sok épületet!$h#$b#Meg tudom állapítani, hogy egy mester építész készítette. Le vagyok nyűgözve!" #!String
+    Resort_Leaving: "Ez jó móka volt!$h" #!String
+    Resort_Shore: "Hé, nézd! Látok innen egy másik szigetet." #!String
+    Resort_Chair: "Hé @. Tudod, épp azon gondolkoztam, hogy milyen messzire kerültünk a várostól azóta, mióta először ideköltöztél.#$b#Büszkének kell lenned mindarra, amit elértél!$h" #!String
+    Resort_Bar: "Ez olyan nyugtató..." #!String
+    reject_865: "Zöldség só? Jól hangzik, de nincs szükségem rá." #!String
+    reject_866: "Hmm... ha virágokra gondolok, mindig Evelyn jut eszembe. Mi lenne, ha megmutatnád neki?" #!String
+    pamHouseUpgrade: "A mi kis tervünk egész jól bevált, nem gondolod? Pam és Penny elég boldognak tűnik." #!String
+    pamHouseUpgradeAnonymous: "A mi kis tervünk egész jól bevált, nem gondolod? Pam és Penny elég boldognak tűnik." #!String
+    MovieInvitation: "Ooh... Two tickets for tonight's show, huh? Sounds good! I'll meet you there.$h" #!String
+    cc_Bridge: "Hé! Fura hangokat hallottam tegnap este, és arra ébredtem, hogy a bányához vezető híd teljesen megjavult!#$b#Igazán csodálatos famegmunkálás!" #!String
+    cc_Complete: "Már akkor tudtam @, mikor leléptél arról a buszról... hogy te valódi városi hősnek születtél!$h" #!String
+    cc_Begin: "Hé! Hallottam, hogy Lewis megmutatta neked a Közösségi Központot... Jó volna, ha fel tudnád újítani azt a helyet. Régen nagyon jó és szép épület volt!" #!String
+    Mon: "Meséltem már neked, hogy saját kezűleg építettem fel a házunkat?#$e#Eddig egyértelműen ez a karrierem fénypontja." #!String
+    Tue: "Hé, ha alapanyagokra vagy tervrajzokra van szükséged, akkor te az én boltomat keresnd!#$e#Plusz a te üzleted támogatja a helyi gazdaságot.$h" #!String
+    Wed: "Szia, @.#$e#Épp elkalandoztam pár új ács projekt felett.#$e#Nálad minden jól megy? Jó állapotban van a fa a kunyhódban?" #!String
+    Thu: "Tudod, minket nyugodtan meglátogathatsz, még akkor is, ha épp nem vásárolsz.$h#$e#Elég magányos tud lenni idefent a hegyekben." #!String
+    Fri: "Találkoztál már a fiammal, Sebastiannal, ugye? Odalent lakik.#$e#Egy kissé szerény, de ha jól viselkedsz vele biztosan megkedvel téged." #!String
+    Fri_inlaw_Sebastian: "Hiányzik az én Sebbym... mindig kissé félreérthető volt, de én hittem neki." #!String
+    Fri4: "#$1 RobinSeb#Találtam egy hamutartót Sebastian szobájában, és fura szaga volt. Szerinted aggódnom kellene miatta?#$e#Néha aggódom Sebastian miatt... nincs neki túl sok barátja, és nem igazán törődik a jövőjével...#$e#Elbeszélgetnék vele, de nem igazán nyílik meg előttem." #!String
+    Fri4_inlaw_Sebastian: "Sebastian azt mondta, hogy le fog szokni a dohányzásról! Nagyon büszke vagyok rá." #!String
+    Sat: "A házunk olyan gyönyörű területen van, nem gondolod?#$e#Szeretem a hegyek friss illatát." #!String
+    Sun: "Remélem Demetrius nem fogja felrobbantani a házat az egyik tudományos kísérletével.#$e#Azt se tudom, hogy épp min munkálkodik. Talán valamilyen növényekkel kapcsolatos dolgon." #!String
+    Sun2: "#$1 RobinDem#A férjem tegnap este kísérletezés közben majdnem felgyújtotta a házat. Az egyik kapcsolója felrobbant és egy tűzgolyót lőtt ki a szarufa felé! Yobanak hála tűzálló lakkot használtam, mikor felépítettem ezt a helyet.$u#$e#Elnézést a kellemetlen szagokért, @. Ez a férjem bizarr tudományos kísérlete..." #!String
+    Sun6: "Szia @! Öröm látni téged.#$e#Most már mindennapos tagja vagy a közösségnek, nem gondolod?" #!String
+    event_wood1: "Nagyszerű, akkor ez a tervrajz számodra gyerekjáték lesz!$h" #!String
+    event_wood2: "Nos, akkor kezdésképpen itt a tökéletes tervrajz számodra!" #!String
+    summer_Mon: "A fa egy csodálatos anyag... sokoldalú, olcsó, erős, és minden darabnak egyedi vonása van!" #!String
+    summer_Tue: "Ha bármilyen épületet fel kellene újítani a farmodon, csak szólj nekem!#$e#Elég fát és követ kell adnod a projekt kezdéséhez. És emellett pénzbe is kerül.#$e#De biztosan elégedett leszel az eredménnyel!$h" #!String
+    summer_Fri: "Eléggé el vagyunk zárva itt Stardew Valleyben a világ többi részétől.#$e#Ennek megvannak az előnyei és a hátrányai." #!String
+    fall_Mon: "#$1 RobinMaru#Maru szereti a drágaköveket. A találmányaihoz kellenek.#$e#Szóval mi a helyzet veled és Maruval?" #!String
+    fall_Thu: "Nyugodtan meglátogathatsz minket, még akkor is, ha épp nem fejlesztenéd a házadat!$h#$e#Elég magányos tud lenni idefent a hegyekben." #!String
+    fall_Fri: "Találkoztál már azzal a vademberrel, aki a házunk mögött lakik?$s#$e#Engem annyira nem zavar, amíg távol tartja magát tőlünk." #!String
+    winter_Mon: "Hé, ez az évszakasz tökéletes arra, hogy fát gyűjtsünk.#$e#Lehet, hogy eleget tudsz gyűjteni a házad fejlesztéséhez!" #!String
+    winter_Fri: "A szüleim teljesen meghökkentek, mikor mondtam, hogy ács akarok lenni.#$e#Ők elég régimódiak." #!String
+    winter_Fri_inlaw_Sebastian: "Azt hiszem a gazdalét nagyon egészséges Sebby számára." #!String
+    winter_Sat: "A házunk olyan gyönyörű helyre épült, nem gondolod?#$e#Minden oly békésnek tűnik a friss hótakaróban." #!String
+

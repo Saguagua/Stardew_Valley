@@ -1,0 +1,31 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Emberhez képest egész jól bányászol." #!String
+    Mon: "Ezt itt mindet a felszínről szereztem. Éjszakánként veszem el a te népedtől.#$e#Tessék? Mi ez a \"magántulajdon\" fogalom, amiről beszélsz?" #!String
+    Tue: "Hú... párolt barlangi répa, rostélyos barlangi répa, barlangi répa leves és csőben sült barlangi répa.#$e#Az este fénypontjaként pedig egy kis adag barlangi répa brulée...#$e#Mi az?" #!String
+    Wed: "Hé, akarsz venni valamit?" #!String
+    Wed_6: "Réges régen a népem a fejlett technológia titkainak ismerője volt. Ezt régészeti leletek bizonyítják.#$e#De vajon honnan jött a tudás? Hova lett? Vannak kérdések, melyekre sosem kapunk választ..." #!String
+    Thu_4: "A föld alatt érzem legjobban magam.#$e#Minél mélyebben, annál jobb." #!String
+    Fri: "Még sosem láttál törpét, igaz?" #!String
+    Sat_8: "A bányák veszélyes helyeket rejtenek. Légy óvatos, barátom." #!String
+    Sat: "Veszélyes itt a bányákban. Miért nem veszel tőlem pár dolgot, hogy garantáld a testi épségedet?" #!String
+    Sun: "Egy nap mesélned kell nekem erről az italról melyet ti \"tejnek\" neveztek." #!String
+    Thu: "Nem az Árnyemberek által küldött kém vagy, ugye?#$e#Rajtad tartom a szemem." #!String
+    Fri_2: "A legtöbb ember féli az ismeretlent... Ezért dugtam el a boltomat ide.#$e#Megbízhatóságod a bányászképességed bizonyítja." #!String
+

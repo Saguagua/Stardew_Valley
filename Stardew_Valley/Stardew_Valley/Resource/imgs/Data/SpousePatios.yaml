@@ -1,0 +1,32 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Abigail: "spousePatios/0" #!String
+    Penny: "spousePatios/1" #!String
+    Leah: "spousePatios/2" #!String
+    Haley: "spousePatios/3" #!String
+    Maru: "spousePatios/4" #!String
+    Sebastian: "spousePatios/5" #!String
+    Alex: "spousePatios/6" #!String
+    Harvey: "spousePatios/7" #!String
+    Elliott: "spousePatios/8" #!String
+    Sam: "spousePatios/9" #!String
+    Shane: "spousePatios/10" #!String
+    Emily: "spousePatios/11" #!String
+    Krobus: "spousePatios/12" #!String
+

@@ -1,0 +1,149 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Wood Fence: "388 2/Field/322/false/l 0/Recinto di legno" #!String
+    Stone Fence: "390 2/Field/323/false/Farming 2/Recinto di pietra" #!String
+    Iron Fence: "335 1/Field/324 10/false/Farming 4/Recinto di ferro" #!String
+    Hardwood Fence: "709 1/Field/298/false/Farming 6/Recinto di legno duro" #!String
+    Grass Starter: "771 10/Field/297/false/null/Avvia-erba" #!String
+    Gate: "388 10/Home/325/false/l 0/Cancello" #!String
+    Chest: "388 50/Home/130/true/null/Baule" #!String
+    Torch: "388 1 92 2/Field/93/false/l 0/Torcia" #!String
+    Scarecrow: "388 50 382 1 771 20/Home/8/true/Farming 1/Spaventapasseri" #!String
+    Deluxe Scarecrow: "388 50 386 1 771 40/Home/167/true/null/Spaventapasseri deluxe" #!String
+    Bee House: "388 40 382 8 335 1 724 1/Home/10/true/Farming 3/Arnia" #!String
+    Keg: "388 30 334 1 335 1 725 1/Home/12/true/Farming 8/Barilotto" #!String
+    Cask: "388 20 709 1/Home/163/true/null/Botte" #!String
+    Furnace: "378 20 390 25/Home/13/true/l 2/Fornace" #!String
+    Garden Pot: "330 1 390 10 338 1/Home/62/true/null/Vaso da giardino" #!String
+    Wood Sign: "388 25/Home/37/true/null/Cartello di legno" #!String
+    Stone Sign: "390 25/Home/38/true/null/Cartello di pietra" #!String
+    Cheese Press: "388 45 390 45 709 10 334 1/Home/16/true/Farming 6/Pressa per formaggi" #!String
+    Mayonnaise Machine: "388 15 390 15 86 1 334 1/Home/24/true/Farming 2/Macchina per la maionese" #!String
+    Seed Maker: "388 25 382 10 336 1/Home/25/true/Farming 9/Estrai-semi" #!String
+    Loom: "388 60 771 30 726 1/Home/17/true/Farming 7/Telaio" #!String
+    Oil Maker: "766 50 709 20 336 1/Home/19/true/Farming 8/Frantoio" #!String
+    Recycling Machine: "388 25 390 25 335 1/Home/20/true/Fishing 4/Riciclatore" #!String
+    Worm Bin: "709 25 336 1 335 1 771 50/Home/154/true/Fishing 8/Bidone dei vermi" #!String
+    Preserves Jar: "388 50 390 40 382 8/Home/15/true/Farming 4/Barattolo per conserve" #!String
+    Charcoal Kiln: "388 20 334 2/Home/114/true/Foraging 4/Fornace per il carbone" #!String
+    Tapper: "388 40 334 2/Home/105/true/Foraging 3/Estrattore" #!String
+    Lightning Rod: "335 1 338 1 767 5/Home/9/true/Foraging 6/Parafulmine" #!String
+    Slime Incubator: "337 2 766 100/Home/156/true/Combat 8/Incubatrice per melme" #!String
+    Slime Egg-Press: "382 25 82 1 787 1/Home/158/true/Combat 6/Pressa per uova di melma" #!String
+    Crystalarium: "390 99 336 5 337 2 787 1/Home/21/true/Mining 9/Cristallario" #!String
+    Mini-Jukebox: "335 2 787 1/Home/209/true/null/Mini-Jukebox" #!String
+    Sprinkler: "334 1 335 1/Home/599/false/Farming 2/Irrigatore" #!String
+    Quality Sprinkler: "335 1 336 1 338 1/Home/621/false/Farming 6/Irrigatore di qualità" #!String
+    Iridium Sprinkler: "336 1 337 1 787 1/Home/645/false/Farming 9/Irrigatore d'iridio" #!String
+    Staircase: "390 99/Field/71/true/Mining 2/Scalinata" #!String
+    Flute Block: "388 10 378 2 771 20/Home/464/false/null/Blocco-flauto" #!String
+    Drum Block: "390 10 378 2 771 20/Home/463/false/null/Blocco-tamburo" #!String
+    Basic Fertilizer: "92 2/Field/368/false/s Farming 1/Fertilizzante base" #!String
+    Tree Fertilizer: "771 5 390 5/Field/805/false/s Foraging 7/Fertilizzante per alberi" #!String
+    Quality Fertilizer: "92 2 -4 1/Field/369/false/s Farming 9/Fertilizzante di qualità" #!String
+    Basic Retaining Soil: "390 2/Field/370/false/s Farming 4/Terriccio rattenente base" #!String
+    Quality Retaining Soil: "390 3 330 1/Field/371 2/false/s Farming 7/Terriccio ratt. di qualità" #!String
+    Speed-Gro: "726 1 372 1/Field/465 5/false/s Farming 3/Crescipresto" #!String
+    Deluxe Speed-Gro: "725 1 393 1/Field/466 5/false/s Farming 8/Crescipresto deluxe" #!String
+    Hyper Speed-Gro: "909 1 881 3 768 1/Field/918/false/null/Iper-Crescipresto" #!String
+    Deluxe Fertilizer: "337 1 92 40/Field/919 5/false/null/Fertilizzante deluxe" #!String
+    Deluxe Retaining Soil: "390 5 771 3 330 1/Field/920/false/null/Terriccio rattenente deluxe" #!String
+    Cherry Bomb: "378 4 382 1/Field/286/false/Mining 1/Bombicina" #!String
+    Bomb: "380 4 382 1/Field/287/false/Mining 6/Bomba" #!String
+    Mega Bomb: "384 4 768 1 769 1/Field/288/false/Mining 8/Megabomba" #!String
+    Explosive Ammo: "335 1 382 2/Home/441 5/false/Combat 8/Munizioni esplosive" #!String
+    Transmute (Fe): "334 3/Home/335/false/Mining 4/Trasmuta (Fe)" #!String
+    Transmute (Au): "335 2/Home/336/false/Mining 7/Trasmuta (Au)" #!String
+    Ancient Seeds: "114 1/Field/499/false/null/Semi antichi" #!String
+    Wild Seeds (Sp): "16 1 18 1 20 1 22 1/Field/495 10/false/Foraging 1/Semi selvatici (prim)" #!String
+    Wild Seeds (Su): "396 1 398 1 402 1/Field/496 10/false/Foraging 4/Semi selvatici (est)" #!String
+    Wild Seeds (Fa): "404 1 406 1 408 1 410 1/Field/497 10/false/Foraging 6/Semi selvatici (aut)" #!String
+    Wild Seeds (Wi): "412 1 414 1 416 1 418 1/Field/498 10/false/Foraging 7/Semi selvatici (inv)" #!String
+    Fiber Seeds: "770 1 92 5 330 1/Home/885 4/false/null/Semi di fibra" #!String
+    Tea Sapling: "-777 2 771 5 388 5/Field/251/false/null/Pianticella di tè" #!String
+    "Warp Totem: Farm": "709 1 340 1 771 20/Field/688/false/Foraging 8/Teletra-Totem: Fattoria" #!String
+    "Warp Totem: Mountains": "709 1 335 1 390 25/Field/689/false/Foraging 7/Teletra-Totem: Montagne" #!String
+    "Warp Totem: Beach": "709 1 393 2 771 10/Field/690/false/Foraging 6/Teletra-Totem: Spiaggia" #!String
+    "Warp Totem: Desert": "709 2 88 1 386 4/Field/261/false/null/Teletra-Totem: Deserto" #!String
+    "Warp Totem: Island": "709 5 852 1 829 1/Field/886/false/null/Teletra-Totem: Isola" #!String
+    Rain Totem: "709 1 432 1 726 5/Field/681/false/Foraging 9/Totem della pioggia" #!String
+    Cookout Kit: "388 15 771 10 382 3/Field/926/false/Foraging 9/Kit culinario" #!String
+    Field Snack: "309 1 310 1 311 1/Home/403/false/Foraging 1/Spuntino da campo" #!String
+    Jack-O-Lantern: "276 1 93 1/Home/746/false/null/Zucca-lanterna" #!String
+    Wood Floor: "388 1/Field/328/false/l 0/Pavimento di legno" #!String
+    Straw Floor: "388 1 771 1/Field/401/false/l 0/Pavimento di paglia" #!String
+    Weathered Floor: "388 1/Field/331/false/l 0/Pavimento consunto" #!String
+    Rustic Plank Floor: "388 1/Field/840/false/l 0/Pavimento di assi rustiche" #!String
+    Crystal Floor: "338 1/Field/333 5/false/l 0/Pavimento di cristallo" #!String
+    Stone Floor: "390 1/Field/329/false/l 0/Pavimento di pietra" #!String
+    Stone Walkway Floor: "390 1/Field/841/false/l 0/Pavimento di passerelle di pietra" #!String
+    Brick Floor: "330 2 390 5/Field/293 5/false/l 0/Pavimento di mattoni" #!String
+    Wood Path: "388 1/Field/405/false/l 0/Sentiero di legno" #!String
+    Gravel Path: "390 1/Field/407/false/l 0/Sentiero di ghiaia" #!String
+    Cobblestone Path: "390 1/Field/411/false/l 0/Sentiero di ciottoli" #!String
+    Stepping Stone Path: "390 1/Field/415/false/l 0/Sentiero di pietre" #!String
+    Crystal Path: "338 1/Field/409 5/false/l 0/Sentiero di cristallo" #!String
+    Wild Bait: "771 10 684 5 766 5/Home/774 5/false/null/Esca selvatica" #!String
+    Bait: "684 1/Home/685 5/false/Fishing 2/Esca" #!String
+    Spinner: "335 2/Home/686/false/Fishing 6/Rotante" #!String
+    Magnet: "335 1/Home/703 3/false/Fishing 9/Calamita" #!String
+    Trap Bobber: "334 1 92 10/Home/694/false/Fishing 6/Galleggiante trappola" #!String
+    Cork Bobber: "388 10 709 5 766 10/Home/695/false/Fishing 7/Galleggiante di sughero" #!String
+    Dressed Spinner: "335 2 428 1/Home/687/false/Fishing 8/Rotante travestito" #!String
+    Treasure Hunter: "336 2/Home/693/false/Fishing 7/Caccia-tesori" #!String
+    Barbed Hook: "334 1 335 1 336 1/Home/691/false/Fishing 8/Amo spinato" #!String
+    Oil Of Garlic: "248 10 247 1/Home/772 1/false/Combat 6/Olio d'aglio" #!String
+    Life Elixir: "420 1 422 1 257 1 281 1/Home/773 1/false/Combat 2/Elisir vitale" #!String
+    Crab Pot: "388 40 335 3/Home/710/false/Fishing 3/Nassa per granchi" #!String
+    Iridium Band: "337 5 768 50 769 50/Home/527/false/Combat 9/Fascia d'iridio" #!String
+    Wedding Ring: "337 5 74 1/Home/801/false/null/Fede nuziale" #!String
+    Ring of Yoba: "336 5 335 5 72 1/Home/524/false/Combat 7/Anello di Yoba" #!String
+    Sturdy Ring: "334 2 684 25 766 25/Home/525/false/Combat 1/Anello gagliardo" #!String
+    Warrior Ring: "335 10 382 25 84 10/Home/521/false/Combat 4/Anello del guerriero" #!String
+    Tub o' Flowers: "388 15 427 1 429 1 453 1 455 1/Home/108/true/null/Fiorinbotte" #!String
+    Wooden Brazier: "388 10 382 1 771 5/Home/143/true/null/Braciere di legno" #!String
+    Wicked Statue: "382 5 390 25/Home/83/true/null/Statua maligna" #!String
+    Stone Brazier: "390 10 382 1 771 5/Home/144/true/null/Braciere di pietra" #!String
+    Gold Brazier: "336 1 382 1 771 5/Home/145/true/null/Braciere d'oro" #!String
+    Campfire: "390 10 388 10 771 10/Home/146/true/null/Fuoco da campo" #!String
+    Stump Brazier: "709 5 382 1/Home/147/true/null/Braciere-ceppo" #!String
+    Carved Brazier: "709 10 382 1/Home/148/true/null/Braciere intagliato" #!String
+    Skull Brazier: "709 10 768 1 382 1/Home/149/true/null/Braciere-teschio" #!String
+    Barrel Brazier: "388 50 768 1 382 1/Home/150/true/null/Braciere-barile" #!String
+    Marble Brazier: "567 1 62 1 390 100/Home/151/true/null/Braciere di marmo" #!String
+    Wood Lamp-post: "388 50 787 1/Home/152/true/null/Lampione di legno" #!String
+    Iron Lamp-post: "335 1 787 1/Home/153/true/null/Lampione di ferro" #!String
+    Fairy Dust: "72 1 595 1/Home/872/false/null/Polvere di fata" #!String
+    Bug Steak: "684 10/Home/874/false/Combat 1/Bistecca d'insetto" #!String
+    Dark Sign: "767 5 881 5/Home/39/true/f Krobus 3/Cartello oscuro" #!String
+    Quality Bobber: "334 1 92 20 768 5/Home/877/false/null/Galleggiante di qualità" #!String
+    Stone Chest: "390 50/Home/232/true/null/Baule di pietra" #!String
+    Monster Musk: "767 30 766 30/Home/879/false/null/Fragranza di mostro" #!String
+    Mini-Obelisk: "709 30 768 20 336 3/Home/238/true/null/Mini-obelisco" #!String
+    Farm Computer: "122 1 787 1 338 10/Home/239/true/null/Computer della Fattoria" #!String
+    Ostrich Incubator: "881 50 709 50 848 20/Home/254/true/null/Incubatrice per struzzi" #!String
+    Geode Crusher: "336 2 390 50 72 1/Home/182/true/null/Spacca-geodi" #!String
+    Solar Panel: "338 10 335 5 336 5/Home/231/true/null/Pannello solare" #!String
+    Bone Mill: "881 10 330 3 390 20/Home/90/true/null/Macina-ossa" #!String
+    Thorns Ring: "881 50 390 50 336 1/Home/839/Ring/Combat 7/Anello di spine" #!String
+    Glowstone Ring: "768 5 335 5/Home/888/Ring/Mining 4/Anello di pietralucente" #!String
+    Heavy Tapper: "709 30 910 1/Home/264/true/null/Estrattore pesante" #!String
+    Hopper: "709 10 337 1 910 1/Home/275/true/null/Tramoggia" #!String
+    Magic Bait: "909 1 684 3/Home/908 5/false/null/Esca magica" #!String
+

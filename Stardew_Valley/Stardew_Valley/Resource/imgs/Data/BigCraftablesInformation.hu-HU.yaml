@@ -1,0 +1,190 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    1: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    2: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    3: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    4: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    5: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    6: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    7: "House Plant/50/-300/Crafting -9/Kicsit feltupírozza az otthonodat vagy a farmodat./true/true/0/Szobanövény" #!String
+    8: "Scarecrow/50/-300/Crafting -9/A varjak nem támadják meg a terméseidet. Korlátozott hatásköre van (körülbelül 8 \"mezőnyi\")./true/true/0/Madárijesztő" #!String
+    9: "Lightning Rod/50/-300/Crafting -9/Energiát gyűjt a villámcsapásokból, és elemeket készít belőlük./true/true/0/Villámhárító" #!String
+    10: "Bee House/50/-300/Crafting -9/Rakd a szabadba, és várj a finom mézre! (Kivéve Télen)./true/true/0/Méhkaptár" #!String
+    12: "Keg/50/-300/Crafting -9/Rakj bele egy gyümölcsöt vagy zöldséget. Idővel ital lesz belőle./true/true/0/Keghordó" #!String
+    13: "Furnace/50/-300/Crafting -9/Az ércet és szenet fémrúddá formálja./true/true/0/Kemence" #!String
+    15: "Preserves Jar/50/-300/Crafting -9/A zöldségekből savanyúságot, a gyümölcsökből lekvárt készít./true/true/0/Tartósító tégely" #!String
+    16: "Cheese Press/50/-300/Crafting -9/A tejből sajtot készít./true/true/0/Sajtprés" #!String
+    17: "Loom/50/-300/Crafting -9/A nyers gyapjúból finom szövetet készít./true/true/0/Szövőszék" #!String
+    19: "Oil Maker/50/-300/Crafting -9/Ínyenc szarvasgomba olajat készít./true/true/0/Olajkészítő" #!String
+    20: "Recycling Machine/50/-300/Crafting -9/A kihorgászott szemétből nyersanyagot készít./true/true/0/Újrahasznosító gép" #!String
+    21: "Crystalarium/50/-300/Crafting -9/Rakj bele egy drágakövet, és idővel másolatot készít belőle./true/true/0/Kristalárium" #!String
+    22: "Table Piece L/50/-300/Crafting -9/Egy nagy asztal bal része./true/true/0/B. Asztal darab" #!String
+    23: "Table Piece R/50/-300/Crafting -9/Egy nagy asztal jobb része./true/true/0/J. Asztal darab" #!String
+    24: "Mayonnaise Machine/50/-300/Crafting -9/A tojásokból majonézt készít./true/true/0/Majonéz készítő gép" #!String
+    25: "Seed Maker/50/-300/Crafting -9/Egy termést belerakva magvakat készít belőle. Gyümölcsfák termésével nem működik./true/true/0/Magkészítő" #!String
+    26: "Wood Chair/50/-300/Crafting -9/Egy szék, amit négy irányba lehet forgatni./true/true/0/Fa szék" #!String
+    27: "Wood Chair/50/-300/Crafting -9/Egy szék, amit négy irányba lehet forgatni./true/true/0/Fa szék" #!String
+    28: "Skeleton Model/50/-300/Crafting -9/Egy csontváz modellje./true/true/0/Csontváz modell" #!String
+    29: "Obelisk/50/-300/Crafting -9/Egy ádáz kinézetű portál, ami gonosz energiától sugárzik./false/true/0/Obeliszk" #!String
+    31: "Chicken Statue/50/-300/Crafting -9/Egy csirke fából készült szobra./true/true/0/Csirke szobor" #!String
+    32: "Stone Cairn/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Kőhalom" #!String
+    33: "Suit Of Armor/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Páncélruha" #!String
+    34: "Sign Of The Vessel/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Az Edény Jele" #!String
+    35: "Basic Log/125/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Fatuskó" #!String
+    36: "Lawn Flamingo/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Kerti flamingó" #!String
+    37: "Wood Sign/5/-300/Crafting -9/Használj rajta egy tárgyat, hogy változzon a rajta lévő jel. A tárgy nem lesz elhasználva./true/true/0/Fatábla" #!String
+    38: "Stone Sign/5/-300/Crafting -9/Használj rajta egy tárgyat, hogy változzon a rajta lévő jel. A tárgy nem lesz elhasználva./true/true/0/Kőtábla" #!String
+    39: "Dark Sign/5/-300/Crafting -9/Használj rajta egy tárgyat, hogy változzon a rajta lévő jel. A tárgy nem lesz elhasználva./true/true/0/Sötét tábla" #!String
+    40: "Big Green Cane/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Nagy zöld cukorka" #!String
+    41: "Green Canes/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Zöld cukorkák" #!String
+    42: "Mixed Cane/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Kevert cukorkák" #!String
+    43: "Red Canes/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Vörös cukorka" #!String
+    44: "Big Red Cane/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Nagy vörös cukorkák" #!String
+    45: "Ornamental Hay Bale/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Díszes szalmabála" #!String
+    46: "Log Section/175/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Farönk szekció" #!String
+    47: "Grave Stone/50/-300/Crafting -9/Egy dekoráció a farmodra./true/true/0/Sírkő" #!String
+    48: "Seasonal Decor/50/-300/Crafting -9/Ez a dekoráció az évszakkal együtt változik./true/true/0/Szezonális dekoráció" #!String
+    52: "Stone Frog/50/-300/Crafting -9/Kerti művészet a farmodra./true/true/0/Kő béka" #!String
+    53: "Stone Parrot/50/-300/Crafting -9/Kerti művészet a farmodra./true/true/0/Kő papagáj" #!String
+    54: "Stone Owl/50/-300/Crafting -9/Kerti művészet a farmodra./true/true/0/Kő bagoly" #!String
+    55: "Stone Junimo/50/-300/Crafting -9/Kerti művészet a farmodra./true/true/0/Kő junimo" #!String
+    56: "Slime Ball/50/-300/Crafting -9/Ragaccsal van tele./true/true/2/Ragacs labda" #!String
+    62: "Garden Pot/1000/-300/Crafting -9/Bármilyen évszakú növényt termeszhetsz házon belül. Odakint csak az adott évszak növényeihez használható./true/false/0/Kerti cserép" #!String
+    64: "Bookcase/50/-300/Crafting -9/Könyvek otthona./true/false/1/Könyvespolc" #!String
+    65: "Fancy Table/50/-300/Crafting -9/Egy szépen megmunkált kerek asztal./true/false/1/Díszes asztal" #!String
+    66: "Ancient Table/50/-300/Crafting -9/A legvastagabb pókháló van rajta./true/false/1/Ősi asztal" #!String
+    67: "Ancient Stool/50/-300/Crafting -9/Olyan szaga van, mint a Nagymama otthonának./true/false/1/Ősi zsámoly" #!String
+    68: "Grandfather Clock/50/-300/Crafting -9/Annyira öreg... úgy látszik az ingája szétrothadt./true/false/1/Nagyapa óra" #!String
+    69: "Teddy Timer/50/-300/Crafting -9/Ez egy nagyapa óra, ami teddy formájú./true/false/1/Teddy időzítő" #!String
+    70: "Dead Tree/0/-300/Crafting -9/Réges-régen megkövesedett már, szegény pára./true/false/1/Holt fa" #!String
+    71: "Staircase/0/-300/Crafting -9/Ezzel egy szintet lejjebb lehet menni a bányákban./true/false/1/Lépcsősor" #!String
+    72: "Tall Torch/0/-300/Crafting -9/A törzse bambuszból készült./true/false/1/Magas fáklya" #!String
+    73: "Ritual Mask/0/-300/Crafting -9/Túlságosan nagy ahhoz, hogy viseljük./true/false/1/Rituális maszk" #!String
+    74: "Bonfire/0/-300/Crafting -9/A vörös parázs lágyan világít./true/false/1/Máglya" #!String
+    75: "Bongo/0/-300/Crafting -9/Egy dekoratív ütőhangszer, aminek jó hangja van./true/false/1/Bongó" #!String
+    76: "Decorative Spears/0/-300/Crafting -9/Nem túl biztonságos dekoráció./true/false/1/Dekoratív lándzsa" #!String
+    78: "Boulder/0/-300/Crafting -9/Egy extrém sűrű kődarab./true/false/1/Szikla" #!String
+    79: "Door/0/-300/Crafting -9/Egy rejtett mechanizmus által behúzódik a föld alá./true/false/1/Ajtó" #!String
+    80: "Door/0/-300/Crafting -9/Egy rejtett mechanizmus által behúzódik a föld alá./true/false/1/Ajtó" #!String
+    81: "Locked Door/0/-300/Crafting -9/Egy rejtett mechanizmus által behúzódik a föld alá./true/false/2/Zárt ajtó" #!String
+    82: "Locked Door/0/-300/Crafting -9/Egy rejtett mechanizmus által behúzódik a föld alá./true/false/2/Zárt ajtó" #!String
+    83: "Wicked Statue/0/-300/Crafting -9/Van valami nyugtalanító ennek a szobornak a kinézetével kapcsolatban./true/false/0/Gonosz szobor" #!String
+    84: "Wicked Statue/0/-300/Crafting -9/Valami nem stimmel ezzel a szoborral./true/false/2/Gonosz szobor" #!String
+    85: "Sloth Skeleton L/0/-300/Crafting -9/Ez a kihalt lajhár járta Stardew Valley gazdag, ősi erdejeit. Erős állkapcsával a legerősebb növényeket is szétrágta./true/false/0/B. Lajhár csontváz" #!String
+    86: "Sloth Skeleton M/0/-300/Crafting -9/Egy őskori lajhár bordái./true/false/0/K. Lajhár csontváz" #!String
+    87: "Sloth Skeleton R/0/-300/Crafting -9/Egy őskori lajhár hátsó lábai és farka./true/false/0/J. Lajhár csontváz" #!String
+    88: "Standing Geode/0/-300/Crafting -9/Egy hatalmas, kiállítható geóda. Több száz lila kristály csillog benne./true/false/0/Álló geóda" #!String
+    89: "Obsidian Vase/0/-300/Crafting -9/Egy gyönyörűen megmunkált díszváza, ami obszidiánból és aranyból készült./true/false/0/Obszidián váza" #!String
+    90: "Bone Mill/0/-300/Crafting -9/A csontos tárgyakból trágyát készít./true/true/0/Csont őrlő" #!String
+    94: "Singing Stone/0/-300/Crafting -9/Tiszta hanggal cseng, mikor megütik./true/false/0/Éneklő kő" #!String
+    95: "Stone Owl/0/-300/Crafting -9/Nem tudni, hogy ez honnét származik, de nagyon jól néz ki./true/false/0/Kő bagoly" #!String
+    96: "Strange Capsule/0/-300/Crafting -9/Van valami húsos izé, ami a folyadékban mozog.../true/false/0/Furcsa kapszula" #!String
+    98: "Empty Capsule/0/-300/Crafting -9/Az üveg egy része szét van törve./true/false/0/Üres kapszula" #!String
+    99: "Feed Hopper/0/-300/Crafting -9/Remek hozzáférést nyújt a siló takarmányához./true/false/0/Etető retesz" #!String
+    101: "Incubator/0/-300/Crafting -9/A tojásokból bébi csirkéket és kacsákat kelt ki./true/false/2/Inkubátor" #!String
+    104: "Heater/0/-300/Crafting -9/Az állataidat télen melegen és boldogan tartja./true/false/0/Radiátor" #!String
+    105: "Tapper/0/-300/Crafting -9/Rakd egy juhar, tölgy vagy fenyőfára, és várd meg, hogy a tárolója megteljen!/true/false/0/Csapoló" #!String
+    106: "Camera/0/-300/Crafting -9/Egy régi kamera, ami egy tripodra van rakva./true/false/0/Kamera" #!String
+    107: "Plush Bunny/0/-300/Crafting -9/Nagy, puha és cuki./false/true/0/Plüss nyúl" #!String
+    108: "Tub o' Flowers/0/-300/Crafting -9/Virágok, amik egy tölgyfa hordóba vannak ültetve. Tavasszal és nyáron virágzik./true/true/0/Hordós virágok" #!String
+    109: "Tub o' Flowers/0/-300/Crafting -9/Virágok, amik egy tölgyfa hordóba vannak ültetve. Tavasszal és nyáron virágzik./true/true/0/Hordós virágok" #!String
+    110: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (1. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    111: "Decorative Pitcher/0/-300/Crafting -9/Kézzel készült rézmű./true/true/0/Dekoratív korsó" #!String
+    112: "Dried Sunflowers/0/-300/Crafting -9/Egy élénk házi dekoráció./true/true/0/Száraz napraforgó" #!String
+    113: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (2. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    114: "Charcoal Kiln/0/-300/Crafting -9/10 fadarabból csinál egy szenet./true/true/0/Faszén kemence" #!String
+    116: "Stardew Hero Trophy/0/-300/Crafting -9/A legtiszteletreméltóbb díj, amit egy Stardew Valley lakos kaphat!/true/true/0/Stardew Hőse trófea" #!String
+    117: "Soda Machine/0/-300/Crafting -9/Folyton adagolja a jó cuccokat./true/true/0/Italautomata" #!String
+    118: "Barrel/0/-300/Crafting -9/.../true/true/0/Hordó" #!String
+    119: "Crate/0/-300/Crafting -9/.../true/true/0/Doboz" #!String
+    120: "Barrel/0/-300/Crafting -9/.../true/true/0/Hordó" #!String
+    121: "Crate/0/-300/Crafting -9/.../true/true/0/Doboz" #!String
+    122: "Barrel/0/-300/Crafting -9/.../true/true/0/Hordó" #!String
+    123: "Crate/0/-300/Crafting -9/.../true/true/0/Doboz" #!String
+    124: "Barrel/0/-300/Crafting -9/.../true/true/0/Hordó" #!String
+    125: "Crate/0/-300/Crafting -9/.../true/true/0/Doboz" #!String
+    126: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (3. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    127: "Statue Of Endless Fortune/0/-300/Crafting -9/Tömör aranyból készült. Vajon mire való?/true/true/0/A végtelen szerencse szobra" #!String
+    128: "Mushroom Box/0/-300/Crafting -9/Ebből pár naponta gombák nőnek ki./true/true/2/Gombás doboz" #!String
+    130: "Chest/0/-300/Crafting -9/Egy hely, ahová berakhatod a tárgyaidat./true/true/0/Láda" #!String
+    136: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (4. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    137: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (5. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    138: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (6. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    139: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (7. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    140: "Rarecrow/0/-300/Crafting -9/Gyűjtsd be mindet! (8. a 8-ból)/true/true/0/Ritka madárijesztő" #!String
+    141: "Prairie King Arcade System/0/-300/Crafting -9/Játssz otthon a Journey Of The Prairie King játékkal!/true/true/0/Prairie King játékrendszer" #!String
+    143: "Wooden Brazier/25/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Fa parázstartó" #!String
+    144: "Stone Brazier/40/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Kő parázstartó" #!String
+    145: "Gold Brazier/100/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Arany parázstartó" #!String
+    146: "Campfire/0/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Tábortűz" #!String
+    147: "Stump Brazier/80/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Farönk parázstartó" #!String
+    148: "Carved Brazier/200/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Faragott parázstartó" #!String
+    149: "Skull Brazier/300/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Koponya parázstartó" #!String
+    150: "Barrel Brazier/80/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Hordó parázstartó" #!String
+    151: "Marble Brazier/500/-300/Crafting -9/Közepes mennyiségű fényt bocsát ki./true/true/0/Márvány parázstartó" #!String
+    152: "Wood Lamp-post/50/-300/Crafting -9/Jó mennyiségű fényt bocsát ki./true/true/0/true/Fa lámpaoszlop" #!String
+    153: "Iron Lamp-post/100/-300/Crafting -9/Jó mennyiségű fényt bocsát ki./true/true/0/true/Vas lámpaoszlop" #!String
+    154: "Worm Bin/0/-300/Crafting -9/Időközönként csalit termel. A giliszták önellátóak./true/true/0/Gilisztás láda" #!String
+    155: "??HMTGF??/0/-300/Crafting -9/??HMTGF??/true/true/0/??HMTGF??" #!String
+    156: "Slime Incubator/0/-300/Crafting -9/A ragacs tojásokból ragacsokat kelt ki. Segítségével kint tenyészthetsz ragacsokat./true/false/0/Ragacs inkubátor" #!String
+    158: "Slime Egg-Press/0/-300/Crafting -9/100 ragacsot egy ragacs tojássá alakít át. Ez a tudomány csodája!/true/false/0/Ragacs tojásprés" #!String
+    159: "Junimo Kart Arcade System/0/-300/Crafting -9/Játssz otthon a Junimo Kart játékkal!/true/true/0/Junimo Kart játékrendszer" #!String
+    160: "Statue Of Perfection/0/-300/Crafting -9/Tiszta irídiumból készült./true/true/0/A tökéletesség szobra" #!String
+    161: "??Pinky Lemon??/0/-300/Crafting -9/??Pinky Lemon??/true/true/0/??Pinky Lemon??" #!String
+    162: "??Foroguemon??/0/-300/Crafting -9/??Foroguemon??/true/true/0/??Foroguemon??" #!String
+    163: "Cask/0/-300/Crafting -9/A pincében használva borokat vagy sajtokat érlelhetsz./true/true/0/Fahordó" #!String
+    164: "Solid Gold Lewis/0/-300/Crafting -9/A polgármester titkos projektje./true/true/0/Színarany Lewis" #!String
+    165: "Auto-Grabber/0/-300/Crafting -9/Automatikusan begyűjti az állataidtól a tárgyakat. Egy csűrbe vagy egy istállóba kell helyezni./true/true/0/Auto-gyűjtögető" #!String
+    167: "Deluxe Scarecrow/50/-300/Crafting -9/A varjak nem támadják meg a terméseidet. Korlátozott hatásköre van (körülbelül 16 \"mezőnyi\")./true/true/0/Luxus Madárijesztő" #!String
+    174: "Barrel/0/-300/Crafting -9/.../true/true/0/Hordó" #!String
+    175: "Crate/0/-300/Crafting -9/.../true/true/0/Doboz" #!String
+    182: "Geode Crusher/0/-300/Crafting -9/Automatikusan széttöri a geódákat. A működtetéséhez szén szükséges./true/true/0/Geóda zúzó" #!String
+    184: "Seasonal Plant/50/-300/Crafting -9/Egy dísznövény, ami minden évszakban változik. Nem szükséges öntözni./true/true/0/Szezonális növény" #!String
+    188: "Seasonal Plant/50/-300/Crafting -9/Egy dísznövény, ami minden évszakban változik. Nem szükséges öntözni./true/true/0/Szezonális növény" #!String
+    192: "Seasonal Plant/50/-300/Crafting -9/Egy dísznövény, ami minden évszakban változik. Nem szükséges öntözni./true/true/0/Szezonális növény" #!String
+    196: "Seasonal Plant/50/-300/Crafting -9/Egy dísznövény, ami minden évszakban változik. Nem szükséges öntözni./true/true/0/Szezonális növény" #!String
+    200: "Seasonal Plant/200/-300/Crafting -9/Egy dísznövény, ami minden évszakban változik. Nem szükséges öntözni./true/true/0/Szezonális növény" #!String
+    204: "Seasonal Plant/50/-300/Crafting -9/Egy dísznövény, ami minden évszakban változik. Nem szükséges öntözni./true/true/0/Szezonális növény" #!String
+    208: "Workbench/1000/-300/Crafting -9/Ha itt barkácsolsz, akkor hozzáférsz a környező ládákban lévő alapanyagokhoz./true/true/0/Munkaasztal" #!String
+    209: "Mini-Jukebox/1500/-300/Crafting -9/Segítségével lejátszhatod a kedvenc dalaidat./true/true/0/Mini-Zenegép" #!String
+    211: "Wood Chipper/500/-300/Crafting -9/Rakj bele egy keményfát, hogy egyszerű fává daráld le./true/true/0/Fadaráló" #!String
+    214: "Telephone/1000/-300/Crafting -9/Segítségével megtudhatod, hogy mikor vannak nyitva a boltok és mi a készletük./true/true/0/Telefon" #!String
+    216: "Mini-Fridge/1500/-300/Crafting -9/Segítségével a főzéshez több élelmiszert raktározhatsz el./true/true/0/Mini-Hűtő" #!String
+    219: "Cursed P.K. Arcade System/0/-300/Crafting -9/Valami nem stimmel ezzel a Prairie King Játékrendszerrel....../true/true/0/Átkozott P.K. Játékrendszer" #!String
+    231: "Solar Panel/0/-300/Crafting -9/Lassan elemeket generál, ha kint hagyod a Napon./true/true/0/Napelem" #!String
+    232: "Stone Chest/0/-300/Crafting -9/Egy hely, ahová berakhatod a tárgyaidat./true/true/0/Kőláda" #!String
+    238: "Mini-Obelisk/0/-300/Crafting -9/Helyezz kettőt a farmra, hogy teleportálj közöttük./true/true/0/Mini-Obeliszk" #!String
+    239: "Farm Computer/0/-300/Crafting -9/Átvizsgálja a farmot és hasznos információkat mutat róla./true/true/0/Farm számítógép" #!String
+    246: "Coffee Maker/0/-300/Crafting -9/Minden reggel automatikusan friss kávét főz./true/true/0/Kávéfőző" #!String
+    247: "Sewing Machine/0/-300/Crafting -9/Segítségével az otthonod kényelméből készíthetsz ruhákat!/true/true/0/Varrógép" #!String
+    248: "Mini-Shipping Bin/0/-300/Crafting -9/Az ebbe helyezett tárgyak az esti szállítmányba kerülnek./true/true/0/Mini-szállítós láda" #!String
+    254: "Ostrich Incubator/0/-300/Crafting -9/A strucctojásokból bébi struccokat kelt ki. Helyezd egy istállóba./true/true/0/Strucc inkubátor" #!String
+    256: "Junimo Chest/0/-300/Crafting -9/Az erdei mágiának hála minden Junimo láda össze van kapcsolva, így ugyanazt tartalmazza./true/true/0/Junimo láda" #!String
+    264: "Heavy Tapper/0/-300/Crafting -9/Rakd egy juhar, tölgy vagy fenyőfára, és várd meg, hogy a tárolója megteljen! Kétszer olyan gyors, mint a hagyományos csapoló./true/false/0/Nehéz csapoló" #!String
+    265: "Deconstructor/0/-300/Crafting -9/Megsemmisíti a barkácsolt tárgyakat, megtartva a legértékesebb alapanyagukat./true/true/0/Lebontó" #!String
+    272: "Auto-Petter/0/-300/Crafting -9/A Joja Co. által szabadalmaztatott technológia csűrökbe és istállókba. Megsimogatja az állataidat, de nem helyettesítheti egy emberi kéz melegségét. Kiegészítésképpen megsimogathatóak az állataid./true/true/0/Auto-Simogató" #!String
+    275: "Hopper/0/-300/Crafting -9/Az ebbe helyezett tárgyakat automatikusan betölti az előtte lévő eszközbe./true/true/0/Adagoló" #!String
+    278: "Campfire/0/-300/Crafting -9/Főzz út közben is!/true/true/1/Tábortűz" #!String
+    280: "Statue Of True Perfection/0/-300/Crafting -9/Tiszta irídiumból készült./true/true/0/Az igazi tökéletesség szobra" #!String
+

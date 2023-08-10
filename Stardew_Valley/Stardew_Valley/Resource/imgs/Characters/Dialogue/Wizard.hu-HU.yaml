@@ -1,0 +1,33 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Ah, igen. Már régen megjövendöltem eljöttedet, fiatal @.#$e#De a legvégén a sorsod a saját kezedben van." #!String
+    accept_868: "Áh... egy sarki töredék.#$b#Ez valóban egy erős anyag, és hatásosan beolvadt a jég elemébe.#$b#Elveszem, ha nem bánod.#$b#...#$b#...Öhm... Még mindig itt vagy. Ó. Szeretnél valamit?#$b#...Tessék." #!String
+    MovieInvitation: "Hmm... I suppose I could accompany you... yes. Once you've arrived, I shall appear. Farewell." #!String
+    Mon: "Ah, igen. Sok dolgot láttam a jövődből, fiatal @.#$e#Ha elmondanám neked, akkor annak súlyos következményei lennének." #!String
+    Tue: "Ha nincs számomra fontos információd, hagyj magamra. Sokat kell dolgoznom." #!String
+    Tue4: "Megbízok benned annyira, hogy lemehess az alagsorba. Tisztelettel bánj mindazzal, ami odalent van." #!String
+    Wed: "Több évnyi tanulásba telik megérteni az elementálok nyelvét.#$e#Az, hogy az ő nyelvükön beszéljünk, életreszóló munkát kell befektetnünk.#$e#És ha most megbocsájtasz..." #!String
+    Thu: "Rengeteg rejtély vesz minket körbe. Türelmesnek kell lenned, ha mindet fel akarod fedezni." #!String
+    Thu10: "Senkinek se szabad elmondanod... de van rá okom, hogy azt higyjem az egyik helybéli az én lányom...#$e#Lehet, hogy tévedek... Ritka dolog, de előfordulhat." #!String
+    Fri: "Úgy hiszem a városiak félnek tőlem.#$e#Ez sajnálatos dolog, de ugyanakkor úgy hiszem eléggé emberi viselkedés félni az ismeretlentől." #!String
+    Fri6: "Réges-régen volt egy feleségem. Miután szétváltunk, körberepülte a vidéket, és mindent megátkozott.#$e#Nem túl felnőttes viselkedésre vall így kifejezni a haragodat." #!String
+    Sat: "Vigyázz, egy hatalmas mágikus mező felett álldogálsz.#$e#Tudod, jó okkal építettem ide a házamat." #!String
+    Sat2: "Jutottál valamire az erdei lelkekkel?" #!String
+    Sun: "Néha titokban megfigyelem a helybélieket.#$e#Abban reménykedek, hogy találok egy tanoncot. Egy nap én is el fogom hagyni ezt a halandó síkot, de misztikus tudományaimnak folytatódnia kell." #!String
+

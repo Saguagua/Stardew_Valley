@@ -1,0 +1,725 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "Weeds/0/-1/Basic/Mato/Um punhado de mato detestável." #!String
+    2: "Stone/0/-300/Basic/Pedra/Material útil quando quebrado com uma picareta." #!String
+    4: "Stone/0/-300/Basic/Pedra/Material útil quando cortado com o machado." #!String
+    16: "Wild Horseradish/50/5/Basic -81/Raiz-forte/Uma raiz picante encontrada na primavera." #!String
+    18: "Daffodil/30/0/Basic -81/Narciso/Uma tradicional flor da primavera. Dá um ótimo presente." #!String
+    20: "Leek/60/16/Basic -81/Alho-poró/Um delicioso parente da cebola." #!String
+    22: "Dandelion/40/10/Basic -81/Dente-de-leão/Não é a flor mais bonita, mas as folhas dão uma ótima salada." #!String
+    24: "Parsnip/35/10/Basic -75/Chirívia/Um tubérculo que nasce na primavera e é parente da cenoura. Possui um leve gosto de terra e é cheio de nutrientes." #!String
+    25: "Stone/0/15/Basic/Pedra/Tem mariscos nesta pedra." #!String
+    30: "Lumber/2/10/Basic/Madeira/Um recurso versátil utilizado para construção e combustível." #!String
+    60: "Emerald/250/-300/Minerals -2/Esmeralda/Uma pedra preciosa com uma cor brilhante e verde." #!String
+    62: "Aquamarine/180/-300/Minerals -2/Água-marinha/Uma brilhante pedra cor de água." #!String
+    64: "Ruby/250/-300/Minerals -2/Rubi/Uma pedra preciosa cobiçada por sua cor e lustre maravilhosos." #!String
+    66: "Amethyst/100/-300/Minerals -2/Ametista/Uma variante roxa do quartzo." #!String
+    68: "Topaz/80/-300/Minerals -2/Topázio/Muito comum, mas ainda admirado por sua beleza." #!String
+    69: "Banana Sapling/850/-300/Basic -74/Muda de Bananeira/Leva 28 dias para produzir uma bananeira adulta. Dá frutos no verão, ou no ano todo quando for plantada na Ilha Gengibre." #!String
+    70: "Jade/200/-300/Minerals -2/Jade/Uma pedra ornamental de cor verde-pálida." #!String
+    71: "Trimmed Lucky Purple Shorts/0/-300/Quest/Shorts Roxos da Sorte/Shorts roxos de seda adornados com ouro luxuoso..." #!String
+    72: "Diamond/750/-300/Minerals -2/Diamante/Uma joia rara e valiosa." #!String
+    73: "Golden Walnut/250/-300/Basic/Noz Dourada/Para os papagaios da Ilha Gengibre, esta noz é uma incrível iguaria." #!String
+    74: "Prismatic Shard/2000/-300/Minerals -2/Fragmento prismático/Uma substância muito rara e poderosa de origem desconhecida. " #!String
+    75: "Stone/50/-300/Basic/Pedra/..." #!String
+    76: "Stone/50/-300/Basic/Pedra/..." #!String
+    77: "Stone/50/-300/Basic/Pedra/..." #!String
+    78: "Cave Carrot/25/12/Basic -81/Cenoura subterrânea/Uma cenoura rica em amido encontrada em cavernas. Ajuda os mineradores a trabalhar mais." #!String
+    79: "Secret Note/1/-300/asdf/Recado Secreto/Está velho e surrado, mas se você olhar com atenção será capaz de decifrar seus detalhes.../Town .0001/Note" #!String
+    80: "Quartz/25/-300/Minerals -2/Quartzo/Um cristal transparente encontrado em cavernas e minas." #!String
+    82: "Fire Quartz/100/-300/Minerals -2/Quartzo de fogo/Um cristal brilhante geralmente encontrado perto do magma." #!String
+    84: "Frozen Tear/75/-300/Minerals -2/Lágrima congelada/Um cristal que dizem ser as lágrimas congeladas de um ieti." #!String
+    86: "Earth Crystal/50/-300/Minerals -2/Cristal de terra/Substância resinosa encontrada perto da superfície." #!String
+    88: "Coconut/100/-300/Basic -79/Coco/Uma semente da palma do coco. Possui muitas aplicações culinárias." #!String
+    90: "Cactus Fruit/75/30/Basic -79/Fruto do cacto/O doce fruto da espinhosa pera do cacto." #!String
+    91: "Banana/150/30/Basic -79/Banana/Uma doce fruta tropical." #!String
+    92: "Sap/2/-1/Basic -81/Seiva/Um fluido obtido das árvores." #!String
+    93: "Torch/5/-300/Crafting/Tocha/Provê uma quantidade moderada de luz." #!String
+    94: "Spirit Torch/5/-300/Crafting/Tocha dos espíritos/Não se sabe de onde vem o fogo azul..." #!String
+    95: "Stone/50/-300/Basic/Pedra/Contém um minério radioativo." #!String
+    96: "Dwarf Scroll I/1/-300/Arch/Pergaminho dos anões/Um pergaminho amarelado escrito na linguagem dos anões. Este aqui possui um laço vermelho.//Set Dwarf 96 97 98 99" #!String
+    97: "Dwarf Scroll II/1/-300/Arch/Pergaminho dos anões II/Um pergaminho amarelado escrito na linguagem dos anões. Este aqui possui um laço verde.//Set Dwarf 96 97 98 99" #!String
+    98: "Dwarf Scroll III/1/-300/Arch/Pergaminho dos anões III/Um pergaminho amarelado escrito na linguagem dos anões. Este aqui está enrolado em um laço azul.//Set Dwarf 96 97 98 99" #!String
+    99: "Dwarf Scroll IV/1/-300/Arch/Pergaminho dos anões IV/Um pergaminho amarelado escrito na linguagem dos anões. Este aqui está enrolado com um laço dourado.//Set Dwarf 96 97 98 99" #!String
+    100: "Chipped Amphora/40/-300/Arch/Ânfora quebrada/Um vaso antigo feito de cerâmica. Utilizado para transportar bens secos e molhados./Town .04/Item 3 461" #!String
+    101: "Arrowhead/40/-300/Arch/Ponta de flecha/Uma ponta de flecha bruta utilizada para caça./Mountain .02 Forest .02 BusStop .02/Debris 2 30 14" #!String
+    102: "Lost Book/50/-300/asdf/Livro perdido/Escrituras de vários períodos./Town .05/Note" #!String
+    103: "Ancient Doll/60/-300/Arch/Boneco antigo/Um boneco antigo coberto de sujeira. Este boneco pode ter sido usado como brinquedo, decoração, ou escora em algum ritual./Mountain .04 Forest .03 BusStop .03 Town .01/Money 1 250" #!String
+    104: "Elvish Jewelry/200/-300/Arch/Joias Élficas/Sujas, mas ainda assim lindas. Do lado, há um manuscrito cursivo que alguns acham ser a língua dos elfos. Nenhum resto mortal élfico foi encontrado./Forest .01/Debris 1 20 6" #!String
+    105: "Chewing Stick/50/-300/Arch/Palha para mastigar/Os antigos mastigavam-nas para manter seus dentes limpos./Mountain .02 Town .01 Forest .02/Decor 10 28" #!String
+    106: "Ornamental Fan/300/-300/Arch/Leque ornamental/Este lindo leque provavelmente pertencia a uma nobre. Os historiadores acreditam que o vale era um local popular na sexta era para os abastados./Beach .02 Town .008 Forest .01/Money 1 300" #!String
+    107: "Dinosaur Egg/350/-300/Arch/Ovo de dinossauro/Um ovo de dinossauro gigante... O casco inteiro ainda está intacto!/Mine .01 Mountain .008/Item 1 107" #!String
+    108: "Rare Disc/300/-300/Arch/Disco raro/Um disco pesado e negro com pedras vermelhas e peculiares. Ao segurá-lo, você se enche com um sentimento de pavor./UndergroundMine .01/Decor 1 29" #!String
+    109: "Ancient Sword/100/-300/Arch/Espada antiga/São os restos de uma espada antiga. A maior parte da lâmina enferrujou, mas o punho é muito bem desenhado./Forest .01 Mountain .008/Debris 1 30 2" #!String
+    110: "Rusty Spoon/25/-300/Arch/Colher enferrujada/Uma colher comum que provavelmente tem mais de dez anos. Não é muito interessante./Town .05/Debris 5 30 2" #!String
+    111: "Rusty Spur/25/-300/Arch/Esporão enferrujado/Um esporão velho que ficava preso às botas de um vaqueiro. As pessoas devem criar animais nesta área há gerações./Farm .1/Money 1 100" #!String
+    112: "Rusty Cog/25/-300/Arch/Engrenagem velha/Uma engrenagem bem-preservada que deve ter sido parte de uma máquina antiga. Pode ser tecnologia dos anões./Mountain .05/Debris 1 20 4" #!String
+    113: "Chicken Statue/50/-300/Arch/Estátua de galinha/É uma estátua de galinha com base de bronze. Os antigos moradores deste lugar deviam adorar galinhas./Farm .1/Decor 5 31" #!String
+    114: "Ancient Seed/5/-300/Arch/Semente antiga/É uma velha semente ressecada de uma planta antiga. Aparenta ter morrido há muito tempo atrás.../Forest .01 Mountain .01/Seeds 9" #!String
+    115: "Prehistoric Tool/50/-300/Arch/Ferramenta pré-histórica/Uma ferramenta antiga e meio torta./Mountain .03 Forest .03 BusStop .04/Debris 1 30 12" #!String
+    116: "Dried Starfish/40/-300/Arch/Estrela-do-mar ressecada/Uma estrela-do-mar do oceano primordial. Parece estar incrivelmente bem conservada!/Beach .1/Money 1 200" #!String
+    117: "Anchor/100/-300/Arch/Âncora/Deve ter pertencido aos piratas de antigamente./Beach .05/Item 1 289" #!String
+    118: "Glass Shards/20/-300/Arch/Cacos de vidro/Uma mistura de cacos de vidro arredondados por séculos de ondas do mar. Podem ter pertencido a um mosaico ou colar./Beach .1/Item 1 462" #!String
+    119: "Bone Flute/100/-300/Arch/Flauta de ossos/Instrumento pré-histórico feito dos ossos de um animal. Sua música dá medo./Mountain .01 Forest .01 UndergroundMine .02 Town .005/Recipe 2 Flute_Block 150" #!String
+    120: "Prehistoric Handaxe/50/-300/Arch/Biface pré-histórico/Uma das mais antigas ferramentas utilizadas por seres humanos. Esta ferramenta \"primitiva\" foi criada ao bater uma pedra com outra para gerar uma lâmina afinada./Mountain .05 Forest .05 BusStop .05/Item 1 294" #!String
+    121: "Dwarvish Helm/100/-300/Arch/Elmo anão/Um dos elmos comumente utilizado por anões. A armadura de metal espessa protege dos detritos que caem das estalactites./UndergroundMine .01/Debris 1 50 0" #!String
+    122: "Dwarf Gadget/200/-300/Arch/Dispositivo de anão/Tecnologia avançada conhecida pelos anões há muito tempo. Ainda está brilhando e assobiando, você é incapaz de entender como funciona./UndergroundMine .001/Money 1 500" #!String
+    123: "Ancient Drum/100/-300/Arch/Tambor antigo/É um tambor feito de madeira e pele animal. Posso uma reverberação lenta e baixa./BusStop .01 Forest .01 UndergroundMine .02 Town .005/Recipe 2 Drum_Block 300" #!String
+    124: "Golden Mask/500/-300/Arch/Máscara dourada/Uma máscara dourada e assustadora utilizada em um ritual antigo de mágica. Um buraco na testa com contém uma joia grande e roxa./Desert .04/Money 1 1000" #!String
+    125: "Golden Relic/250/-300/Arch/Relíquia dourada/Uma placa dourada com hieroglifos e figuras gravadas na frente./Desert .08/Debris 1 40 6" #!String
+    126: "Strange Doll/1000/-300/Arch/Boneco estranho/???/Farm .001 Town .001 Mountain .001 Forest .001 BusStop .001 Beach .001 UndergroundMine .001/Item 1 126" #!String
+    127: "Strange Doll/1000/-300/Arch/Boneco estranho/???/Farm .001 Town .001 Mountain .001 Forest .001 BusStop .001 Beach .001 UndergroundMine .001/Item 1 127" #!String
+    128: "Pufferfish/200/-40/Fish -4/Baiacu/Infla quando ameaçado./Day^Summer" #!String
+    129: "Anchovy/30/5/Fish -4/Anchova/Um pequeno peixe prateado encontrado no oceano./Day Night^Spring Fall" #!String
+    130: "Tuna/100/15/Fish -4/Atum/Um grande peixe que vive no oceano./Day^Summer Winter" #!String
+    131: "Sardine/40/5/Fish -4/Sardinha/Um peixe comum do oceano./Day^Spring Summer Fall Winter" #!String
+    132: "Bream/45/5/Fish -4/Brema/Um peixe de água doce muito comum que fica ativo durante a noite./Night^Spring Summer Fall Winter" #!String
+    136: "Largemouth Bass/100/15/Fish -4/Achigã/Um peixe popular que vive em lagos./Day^Spring Summer Fall Winter" #!String
+    137: "Smallmouth Bass/50/10/Fish -4/Achigã-pequeno/Um peixe de água doce muito sensível à poluição./Day Night^Spring Fall" #!String
+    138: "Rainbow Trout/65/10/Fish -4/Truta arco-íris/Um peixe de água doce com marcas coloridas./Day^Summer" #!String
+    139: "Salmon/75/15/Fish -4/Salmão/Nada corrente acima para por seus ovos./Day^Fall" #!String
+    140: "Walleye/105/12/Fish -4/Picão-verde/Um peixe de água doce que pode ser capturado à noite./Night^Fall Winter" #!String
+    141: "Perch/55/10/Fish -4/Perca/Um peixe de água fresca do inverno./Day Night^Winter" #!String
+    142: "Carp/30/5/Fish -4/Carpa/Um peixe comum de lago./Day Night^Spring Summer Fall" #!String
+    143: "Catfish/200/20/Fish -4/Bagre/Um peixe incomum encontrado em correntes./Day^Spring Fall Winter" #!String
+    144: "Pike/100/15/Fish -4/Lúcio/Um peixe de água doce difícil de pegar./Day Night^Summer Winter" #!String
+    145: "Sunfish/30/5/Fish -4/Peixe-sol/Um peixe muito comum em rios./Day^Spring Summer" #!String
+    146: "Red Mullet/75/10/Fish -4/Salmonete/Há muito tempo, este peixe era mantido como animal de estimação./Day^Summer Winter" #!String
+    147: "Herring/30/5/Fish -4/Arenque/Um peixe comum de oceano./Day Night^Spring Winter" #!String
+    148: "Eel/85/12/Fish -4/Enguia/Um peixe alongado, escorregadio e pequeno./Night^Spring Fall" #!String
+    149: "Octopus/150/-300/Fish -4/Polvo/Uma criatura misteriosa e inteligente./Day^Summer" #!String
+    150: "Red Snapper/50/10/Fish -4/Cioba/Um peixe popular com uma bonita cor vermelha./Day^Summer Fall Winter" #!String
+    151: "Squid/80/10/Fish -4/Lula/Uma criatura das profundezas do mar que pode ficar enorme./Day^Winter" #!String
+    152: "Seaweed/20/5/Fish/Algas marinhas/Podem ser utilizadas na cozinha./Day Night^Spring Summer Fall Winter" #!String
+    153: "Green Algae/15/5/Fish/Algas verdes/São bem gosmentas./Day Night^Spring Summer Fall Winter" #!String
+    154: "Sea Cucumber/75/-10/Fish -4/Pepino-do-mar/Uma criatura escorregadia e gosmenta encontrada no fundo do oceano./Day^Fall Winter" #!String
+    155: "Super Cucumber/250/50/Fish -4/Superpepino/Uma variedade rara e púrpura de pepino-do-mar./Night^Summer Fall" #!String
+    156: "Ghostfish/45/15/Fish -4/Peixe-fantasma/Um peixe pálido e cego encontrado em lagos subterrâneos./Day Night^Spring Summer Fall Winter" #!String
+    157: "White Algae/25/8/Fish/Algas brancas/São supergosmentas./Day Night^Spring Summer Fall Winter" #!String
+    158: "Stonefish/300/-300/Fish -4/Peixe-pedra/Um peixe bizarro em forma de tijolo./Day Night^Spring Summer Fall Winter" #!String
+    159: "Crimsonfish/1500/15/Fish -4/Peixe-carmim/Vive nas profundezas do oceano, mas gosta de colocar seus ovos nas águas quentes de verão./Day^Winter" #!String
+    160: "Angler/900/10/Fish -4/Tamboril/Utiliza uma isca bioluminescente para atrair sua presa./Day Night^Spring Summer Fall Winter" #!String
+    161: "Ice Pip/500/15/Fish -4/Chione/Um peixe raro que prospera em condições extremamente frias./Day Night^Spring Summer Fall Winter" #!String
+    162: "Lava Eel/700/20/Fish -4/Enguia de lava/Por algum motivo, consegue sobreviver em piscinas de lava superquente./Day Night^Spring Summer Fall Winter" #!String
+    163: "Legend/5000/200/Fish -4/Lenda/O rei de todos os peixes! Disseram que jamais seria capturada./Day^Winter" #!String
+    164: "Sandfish/75/5/Fish -4/Areinha/Tenta se esconder se camuflando./Day Night^Spring Summer Fall Winter" #!String
+    165: "Scorpion Carp/150/-50/Fish -4/Carpa escorpiônica/Parece com uma carpa qualquer, mas tem um ferrão afiado./Day Night^Spring Summer Fall Winter" #!String
+    166: "Treasure Chest/5000/-300/Basic/Baú do tesouro/Nossa; está cheio de tesouros! Provavelmente vai vender por um bom preço./Day Night^Spring Summer Fall Winter" #!String
+    167: "Joja Cola/25/5/Fish -20/Joja-Cola/A marca registrada da Corporação Joja./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    168: "Trash/0/-300/Fish -20/Lixo/É lixo./Day Night^Spring Summer Fall Winter" #!String
+    169: "Driftwood/0/-300/Fish -20/Madeira/Um tronco de madeira do mar./Day Night^Spring Summer Fall Winter" #!String
+    170: "Broken Glasses/0/-300/Fish -20/Óculos quebrados/Parece que alguém perdeu os óculos. Essa pessoa está ferrada./Day Night^Spring Summer Fall Winter" #!String
+    171: "Broken CD/0/-300/Fish -20/CD quebrado/Um CD de avaliação do JojaNet 2.0Devem ter gravado um milhão deles./Day Night^Spring Summer Fall Winter" #!String
+    172: "Soggy Newspaper/0/-300/Fish -20/Jornal ensopado/É lixo./Day Night^Spring Summer Fall Winter" #!String
+    174: "Large Egg/95/15/Basic -5/Ovo grande/Um ovo muito maior que o normal!" #!String
+    176: "Egg/50/10/Basic -5/Ovo/Um ovo de galinha comum." #!String
+    178: "Hay/0/-300/Basic/Palha/Grama seca utilizada como comida de animais." #!String
+    180: "Egg/50/10/Basic -5/Ovo/Um ovo marrom de galinha, como qualquer outro." #!String
+    182: "Large Egg/95/15/Basic -5/Ovo grande/Que ovo marrom absurdamente grande!" #!String
+    184: "Milk/125/15/Basic -6/Leite/Um jarro de leite de vaca./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    186: "Large Milk/190/20/Basic -6/Leite grande/Um jarro grande de leite de vaca./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    188: "Green Bean/40/10/Basic -75/Vagem/Um feijão suculento e bem crocante." #!String
+    190: "Cauliflower/175/30/Basic -75/Couve-flor/Valiosa, mas de crescimento lento. Apesar de sua cor, as florzinhas estão cheias de nutrientes." #!String
+    191: "Ornate Necklace/0/-300/Quest/Colar Ornamentado/Um colar chique encontrado na água do lado de fora do spa. Ainda está molhado..." #!String
+    192: "Potato/80/10/Basic -75/Batata/Um tubérculo muito cultivado." #!String
+    194: "Fried Egg/35/20/Cooking -7/Ovo frito/Lado amarelinho para cima./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    195: "Omelet/125/40/Cooking -7/Omelete/Superfofinha./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    196: "Salad/110/45/Cooking -7/Salada/Uma saudável salada de jardim./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    197: "Cheese Cauliflower/300/55/Cooking -7/Couve-flor com queijo/Um cheiro maravilhoso!/food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    198: "Baked Fish/100/30/Cooking -7/Peixe cozido/Peixe cozido em uma cama de ervas./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    199: "Parsnip Soup/120/34/Cooking -7/Sopa de chirívia/Fresca e com um sabor forte./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    200: "Vegetable Medley/120/66/Cooking -7/Mexido de legumes/Muito nutritivo./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    201: "Complete Breakfast/350/80/Cooking -7/Café da manhã completo/Dá energia para conquistar o mundo!/food/2 0 0 0 0 0 0 50 0 0 0/600" #!String
+    202: "Fried Calamari/150/32/Cooking -7/Lula frita/Que puxenta!/food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    203: "Strange Bun/225/40/Cooking -7/Pão estranho/O que será que tem dentro?/food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    204: "Lucky Lunch/250/40/Cooking -7/Almoço da sorte/Uma pequena refeição./food/0 0 0 0 3 0 0 0 0 0 0/960" #!String
+    205: "Fried Mushroom/200/54/Cooking -7/Cogumelo frito/Terroso e aromático./food/0 0 0 0 0 0 0 0 0 0 0 2/600" #!String
+    206: "Pizza/300/60/Cooking -7/Pizza/Popular pelos motivos certos./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    207: "Bean Hotpot/100/50/Cooking -7/Pote de feijão/É bem saudável./food/0 0 0 0 0 0 0 30 32 0 0/600" #!String
+    208: "Glazed Yams/200/80/Cooking -7/Inhames com cobertura/Doces e saborosos... O açúcar dá um toque de caramelo./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    209: "Carp Surprise/150/36/Cooking -7/Carpa-surpresa/É insossa e oleosa./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    210: "Hashbrowns/120/36/Cooking -7/Batata-palha/Crocante e dourada!/food/1 0 0 0 0 0 0 0 0 0 0/480" #!String
+    211: "Pancakes/80/36/Cooking -7/Panquecas/Uma pilha dupla de panquecas fofinhas e macias./food/0 0 0 0 0 2 0 0 0 0 0/960" #!String
+    212: "Salmon Dinner/300/50/Cooking -7/Jantar de salmão/Os biscoitinhos de limão o tornam especial./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    213: "Fish Taco/500/66/Cooking -7/Taco de peixe/Tem um cheiro delicioso./food/0 2 0 0 0 0 0 0 0 0 0/600" #!String
+    214: "Crispy Bass/150/36/Cooking -7/Achigã Crocante/O acompanhamento com pão está perfeito!/food/0 0 0 0 0 0 0 0 64 0 0/600" #!String
+    215: "Pepper Poppers/200/52/Cooking -7/Enroladinhos de pimenta/Enroladinhos apimentados cheios de queijo./food/2 0 0 0 0 0 0 0 0 1 0/600" #!String
+    216: "Bread/60/20/Cooking -7/Pão/Uma baguete crocante./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    218: "Tom Kha Soup/250/70/Cooking -7/Sopa Tom Kha/Que sabores incríveis!/food/2 0 0 0 0 0 0 30 0 0 0/600" #!String
+    219: "Trout Soup/100/40/Cooking -7/Sopa de truta/Bem salgada./food/0 1 0 0 0 0 0 0 0 0 0/400" #!String
+    220: "Chocolate Cake/200/60/Cooking -7/Bolo de chocolate/Rico e úmido, com uma camada bem grossa de glacê./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    221: "Pink Cake/480/100/Cooking -7/Bolo rosa/Tem pequenos doces de coração em cima./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    222: "Rhubarb Pie/400/86/Cooking -7/Torta de ruibarbo/Huum... picante e doce!/food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    223: "Cookie/140/36/Cooking -7/Biscoitos/Bem puxento./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    224: "Spaghetti/120/30/Cooking -7/Espaguete/Um clássico./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    225: "Fried Eel/120/30/Cooking -7/Enguia frita/Oleosa, mas cheia de sabor./food/0 0 0 0 1 0 0 0 0 0 0/600" #!String
+    226: "Spicy Eel/175/46/Cooking -7/Enguia picante/Como é picante! Cuidado./food/0 0 0 0 1 0 0 0 0 1 0/600" #!String
+    227: "Sashimi/75/30/Cooking -7/Sashimi/Peixe cru fatiado em pedaços finos./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    228: "Maki Roll/220/40/Cooking -7/Rolinhos de arroz/Peixe e arroz enrolados em algas./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    229: "Tortilla/50/20/Cooking -7/Tortilha/Pode ser acompanhada de outras comidas ou comida por si só./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    230: "Red Plate/400/96/Cooking -7/Prato vermelho/Cheio de antioxidantes./food/0 0 0 0 0 0 0 50 0 0 0/300" #!String
+    231: "Eggplant Parmesan/200/70/Cooking -7/Parmesão com berinjela/Picante, cheia de queijo, e maravilhosa./food/0 0 1 0 0 0 0 0 0 0 3/400" #!String
+    232: "Rice Pudding/260/46/Cooking -7/Pudim de arroz/Cremoso, doce, e divertido de comer./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    233: "Ice Cream/120/40/Cooking -7/Sorvete/Difícil achar quem não gosta disso./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    234: "Blueberry Tart/150/50/Cooking -7/Torta de Mirtilo/Sutil e refrescante./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    235: "Autumn's Bounty/350/88/Cooking -7/Prato de outono/Uma amostra da estação./food/0 0 0 0 0 2 0 0 0 0 2/660" #!String
+    236: "Pumpkin Soup/300/80/Cooking -7/Sopa de abóbora/Favorita da estação./food/0 0 0 0 2 0 0 0 0 0 2/660" #!String
+    237: "Super Meal/220/64/Cooking -7/Superprato/Um prato muito energizante./food/0 0 0 0 0 0 0 40 0 1 0/300" #!String
+    238: "Cranberry Sauce/120/50/Cooking -7/Molho de oxicoco/Uma refeição festiva./food/0 0 2 0 0 0 0 0 0 0 0/300" #!String
+    239: "Stuffing/165/68/Cooking -7/Recheio/Ah... o doce de pão quente e salva./food/0 0 0 0 0 0 0 0 0 0 2/480" #!String
+    240: "Farmer's Lunch/150/80/Cooking -7/Almoço de fazendeiro/Isto vai dar bastante energia./food/3 0 0 0 0 0 0 0 0 0 0/480" #!String
+    241: "Survival Burger/180/50/Cooking -7/Hambúrguer de sobreviência/Uma refeição conveniente para o explorador./food/0 0 0 0 0 3 0 0 0 0 0/480" #!String
+    242: "Dish O' The Sea/220/60/Cooking -7/Prato do mar/Mantém você quente no vento frio do mar./food/0 3 0 0 0 0 0 0 0 0 0/480" #!String
+    243: "Miner's Treat/200/50/Cooking -7/Refeição de mineiro/Mantém você energizado./food/0 0 3 0 0 0 0 0 32 0 0/480" #!String
+    244: "Roots Platter/100/50/Cooking -7/Prato de raízes/Vai fazer você comer até terra./food/0 0 0 0 0 0 0 0 0 0 0 3/480" #!String
+    245: "Sugar/50/10/Basic/Açúcar/Deixa suas massas e doces mais doces. Comer demais não é saudável." #!String
+    246: "Wheat Flour/50/5/Basic/Farinha de trigo/Um ingrediente culinário comum feito de sementes de trigo trituradas." #!String
+    247: "Oil/100/5/Basic/Óleo/Óleo de cozinha multiuso./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    248: "Garlic/60/8/Basic -75/Alho/Deixa os pratos ainda mais picantes. O alho de alta qualidade pode ser bem picante." #!String
+    250: "Kale/110/20/Basic -75/Couve/Estas folhas ligeiramente enceradas são ótimas em sopas e refogados." #!String
+    251: "Tea Sapling/500/-300/Basic -74/Broto de Chá/Demora 20 dias para crescer. Produz folhas de chá durante a última semana de cada estação, exceto inverno. Sem precisar regar!" #!String
+    252: "Rhubarb/220/-300/Basic -79/Ruibarbo/O caule é extremamente ácido, mas é uma ótima sobremesa quando adoçado." #!String
+    253: "Triple Shot Espresso/450/3/Cooking -7/Café Expresso Triplo/É mais forte que café normal!/drink/0 0 0 0 0 0 0 0 0 1 0/360" #!String
+    254: "Melon/250/45/Basic -79/Melão/Uma delícia doce e fresca de verão." #!String
+    256: "Tomato/60/8/Basic -75/Tomate/Muito saboroso e ligeiramente picante, o Tomate possui uma variedade de utilizações culinárias." #!String
+    257: "Morel/150/8/Basic -81/Morel/Cobiçado por seu sabor único e que lembra nozes." #!String
+    258: "Blueberry/50/10/Basic -79/Mirtilo/Uma fruta bastante popular e que faz muito bem para a saúde. Sua casca azul possui a mais alta concentração de nutrientes." #!String
+    259: "Fiddlehead Fern/90/10/Basic -75/Broto de samambaia/Os brotinhos são uma especiaria deliciosa." #!String
+    260: "Hot Pepper/40/5/Basic -79/Pimenta quente/Incrivelmente quente com um toque de doçura." #!String
+    261: "Warp Totem: Desert/20/-300/Crafting/Totem de Teletransporte: Deserto/Teletransporte direto para o Deserto Calico. Consumido ao usar." #!String
+    262: "Wheat/25/-300/Basic -75/Trigo/Um dos grãos mais cultivados. Dá uma grande farinha para pães e bolos." #!String
+    264: "Radish/90/18/Basic -75/Rabanete/Uma raiz crocante e refrescante, com traços apimentados quando comida crua." #!String
+    265: "Seafoam Pudding/300/70/Cooking -7/Pudim de espuma do mar/Este pudim salgado vai realmente levar você à mentalidade marítima!/food/0 4 0 0 0 0 0 0 0 0 0/300" #!String
+    266: "Red Cabbage/260/30/Basic -75/Repolho roxo/Geralmente utilizado em saladas. A cor pode variar de roxa até verde amarelado dependendo do fertilizante." #!String
+    267: "Flounder/100/15/Fish -4/Linguado/Ele vive no fundo, então os dois olhos estão no topo da cabeça./Day^Spring Summer" #!String
+    268: "Starfruit/750/50/Basic -79/Carambola/Uma fruta extremamente suculenta que cresce em temperatura quente e úmida. Ligeiramente doce com tons azedos." #!String
+    269: "Midnight Carp/150/20/Fish -4/Carpa da meia-noite/Este peixe tímido só se sente à noite./Night^Fall Winter" #!String
+    270: "Corn/50/10/Basic -75/Milho/Um dos grãos mais populares. Os grãos doces e frescos são uma delícia de verão." #!String
+    271: "Unmilled Rice/30/1/Basic -75/Arroz não moído/Arroz na sua forma mais crua. Execute isso em um moinho para aumentar o valor." #!String
+    272: "Eggplant/60/8/Basic -75/Berinjela/Uma alternativa rica e saudável para o tomate. Deliciosa frita ou cozida." #!String
+    273: "Rice Shoot/20/-300/Seeds -74/Broto de arroz/Plante-as na primavera. Demoram 8 dias para crescer. Cresce mais rápido se plantado perto de um corpo de água. Colha com a foice." #!String
+    274: "Artichoke/160/12/Basic -75/Alcachofra/O broto de um cardo. O exterior espinhoso esconde um interior suculento e recheado." #!String
+    275: "Artifact Trove/0/-300/Basic/Tesouro de Artefato/Um ferreiro pode abrir isso para você. Estes tesouros contém relíquias antigas e raridades./100 101 103 104 105 106 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 166 373 797" #!String
+    276: "Pumpkin/320/-300/Basic -75/Abóbora/Uma delícia favorita do outono. Cultivada por suas sementes crocantes e polpa delicada e saborosa. De quebra, a casca oca pode ser utilizada como decoração festiva." #!String
+    277: "Wilted Bouquet/100/-300/Basic/Buquê Murcho/Um presente que significa a vontade de se separar de alguém." #!String
+    278: "Bok Choy/80/10/Basic -75/Couve chinesa/As folhas verdes e caule fibroso são deliciosos e saudáveis." #!String
+    279: "Magic Rock Candy/5000/200/Cooking -7/Doce-Pedra Mágico/Um doce raro e poderoso infundido com a essência de um fragmento prismático./food/0 0 2 0 5 0 0 0 0 1 5 5/720" #!String
+    280: "Yam/160/18/Basic -75/Inhame/Um tubérculo rico em amido e altamente versátil." #!String
+    281: "Chanterelle/160/30/Basic -81/Cantarelo/Um cogumelo delicioso com um cheiro de frutas e um sabor ligeiramente apimentado." #!String
+    282: "Cranberries/75/15/Basic -79/Oxicoco/Estes frutos vermelhos e ácidos são uma comida tradicional de inverno." #!String
+    283: "Holly/80/-15/Basic -81/Azevinho/As folhas e sementes vermelhas brilhantes são uma decoração de inverno popular." #!String
+    284: "Beet/100/12/Basic -75/Beterraba/Um legume doce e terroso. De quebra, as folhas dão uma ótima salada." #!String
+    286: "Cherry Bomb/50/-300/Crafting -8/Bombinha/Gera uma pequena explosão. Afaste-se!" #!String
+    287: "Bomb/50/-300/Crafting -8/Bomba/Gera uma explosão. Cuidado!" #!String
+    288: "Mega Bomb/50/-300/Crafting -8/Megabomba/Gera uma explosão poderosa. Utilize com o máximo de cuidado." #!String
+    289: "Ostrich Egg/600/15/Basic -5/Ovo de Avestruz/Talvez seja o maior ovo do mundo." #!String
+    290: "Stone/50/-300/Basic/Pedra/..." #!String
+    292: "Mahogany Seed/100/-300/Crafting -74/Semente de Mogno/Pode ser plantada para crescer uma árvore de mogno." #!String
+    293: "Brick Floor/1/-300/Crafting -24/Piso de tijolo/Ponha no chão para criar caminhos ou decorá-lo." #!String
+    294: "Twig/1/-300/Crafting/Galho/..." #!String
+    295: "Twig/1/-300/Crafting/Galho/..." #!String
+    296: "Salmonberry/5/10/Basic -79/Amora-silvestre/Uma cereja de primavera com o sabor da floresta." #!String
+    297: "Grass Starter/50/-300/Crafting/Mudas de grama/Ponha-o na sua fazenda para criar um novo pedaço de grama." #!String
+    298: "Hardwood Fence/10/-300/Crafting -8/Cerca de madeira de lei/A mais durável que existe." #!String
+    299: "Amaranth Seeds/35/-300/Seeds -74/Sementes de amaranto/Plante-as no outono. Demoram 7 dias para crescer. Colha com a foice." #!String
+    300: "Amaranth/150/20/Basic -75/Amaranto/Um grão roxo cultivado por uma civilização antiga." #!String
+    301: "Grape Starter/30/-300/Seeds -74/Mudas de uva/Plante-as no outono. Demoram 10 dias para crescer, mas continuam produzindo uvas depois. Cresce em uma treliça." #!String
+    302: "Hops Starter/30/-300/Seeds -74/Mudas de lúpulo/Plante-as no verão. Demoram 11 dias para crescer, mas continuam produzindo lúpulos depois. Cresce em uma treliça." #!String
+    303: "Pale Ale/300/20/Basic -26/Pale Ale/Beba com moderação./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    304: "Hops/25/18/Basic -75/Lúpulo/Uma flor amarga e azeda utilizada para dar sabor às cervejas." #!String
+    305: "Void Egg/65/15/Basic -5/Ovo nulo/Um ovo negro como a noite com pintas vermelhas. É quente ao toque." #!String
+    306: "Mayonnaise/190/-300/Basic -26/Maionese/Dá para espalhar." #!String
+    307: "Duck Mayonnaise/375/-300/Basic -26/Maionese de ovo de pato/Rica e amarelinha." #!String
+    308: "Void Mayonnaise/275/-30/Basic -26/Maionese nula/Uma pasta espessa e grossa com cheiro de cabelo queimado." #!String
+    309: "Acorn/20/-300/Crafting -74/Bolota/Pode ser plantada para crescer um carvalho." #!String
+    310: "Maple Seed/5/-300/Crafting -74/Semente de ácer/Pode ser plantada para crescer um ácer." #!String
+    311: "Pine Cone/5/-300/Crafting -74/Pinha/Pode ser plantada para crescer um pinheiro." #!String
+    313: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    314: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    315: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    316: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    317: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    318: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    319: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    320: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    321: "Weeds/50/-300/Crafting/Ervas daninhas/..." #!String
+    322: "Wood Fence/1/-300/Crafting -8/Cerca de madeira/Retém grama e animais!" #!String
+    323: "Stone Fence/2/-300/Crafting -8/Cerca de Pedra/Dura mais que uma cerca de madeira." #!String
+    324: "Iron Fence/6/-300/Crafting -8/Cerca de ferro/Dura mais que uma cerca de pedra." #!String
+    325: "Gate/4/-300/Crafting -8/Portão/Permite passar por uma cerca." #!String
+    326: "Dwarvish Translation Guide/50/-300/Crafting -8/Guia de pigmeu/Ensina a linguagem dos anões." #!String
+    328: "Wood Floor/1/-300/Crafting -24/Piso de madeira/Ponha no chão para criar caminhos ou decorá-lo." #!String
+    329: "Stone Floor/1/-300/Crafting -24/Piso de pedra/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    330: "Clay/20/-300/Basic -16/Argila/Utilizada em artesanato e construção." #!String
+    331: "Weathered Floor/1/-300/Crafting -24/Piso desgastado/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    333: "Crystal Floor/1/-300/Crafting -24/Piso de cristal/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    334: "Copper Bar/60/-300/Basic -15/Barra de cobre/Uma barra de cobre puro." #!String
+    335: "Iron Bar/120/-300/Basic -15/Barra de ferro/Uma barra de ferro puro." #!String
+    336: "Gold Bar/250/-300/Basic -15/Barra de ouro/Uma barra de ouro puro." #!String
+    337: "Iridium Bar/1000/-300/Basic -15/Barra de irídio/Uma barra de irídio puro." #!String
+    338: "Refined Quartz/50/-300/Basic -15/Quartzo refinado/Uma forma mais pura de quartzo." #!String
+    340: "Honey/100/-300/Basic -26/Mel/É um xarope doce produzido por abelhas." #!String
+    341: "Tea Set/200/-300/Basic -24/Conjunto de chá/Porcelana fina." #!String
+    342: "Pickles/100/-300/Basic -26/Picles/Uma jarra com seus picles caseiros." #!String
+    343: "Stone/100/-300/Basic/Pedra/Pedra." #!String
+    344: "Jelly/160/-300/Basic -26/Geléia/Gosmenta." #!String
+    346: "Beer/200/20/Basic -26/Cerveja/Beba com moderação./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    347: "Rare Seed/200/-300/Seeds -74/Semente rara/Colha no outono. Demora toda a estação para crescer." #!String
+    348: "Wine/400/20/Basic -26/Vinho/Beba com moderação./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    349: "Energy Tonic/500/200/Crafting/Tônico de energia/Restaura muita energia./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    350: "Juice/150/30/Basic -26/Suco/Uma bebida doce e nutritiva./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    351: "Muscle Remedy/500/20/Crafting/Relaxante muscular/Quando você tiver se esforçado demais, beba isto para remover \"Exaustão\"./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    368: "Basic Fertilizer/2/-300/Basic -19/Fertilizante básico/Melhora a qualidade do fertilizante um pouco, aumentando sua chance de criar plantações de qualidade. Misture no fertilizante arado." #!String
+    369: "Quality Fertilizer/10/-300/Basic -19/Fertilizante de qualidade/Melhora a qualidade do fertilizante, aumentando sua chance de plantar colheitas de qualidade. Misture no fertilizante arado." #!String
+    370: "Basic Retaining Soil/4/-300/Basic -19/Solo retentor/Possui uma chance de continuar úmido no próximo dia. Misture no fertilizante arado." #!String
+    371: "Quality Retaining Soil/5/-300/Basic -19/Solo retentor de qualid./Possui boa chance de continuar úmido no próximo dia. Misture no fertilizante arado." #!String
+    372: "Clam/50/-300/Basic -23/Concha/Alguém já viveu aqui." #!String
+    373: "Golden Pumpkin/2500/-300/Basic/Abóbora dourada/É valiosa, mas não possui propósito algum." #!String
+    376: "Poppy/140/18/Basic -80/Papoula/Além de ser colorida, a papoula possui aplicações culinárias e medicinais." #!String
+    378: "Copper Ore/5/-300/Basic -15/Minério de cobre/Um minério comum que pode ser derretido em barras." #!String
+    380: "Iron Ore/10/-300/Basic -15/Minério de ferro/Um minério comum que pode ser derretido em barras." #!String
+    382: "Coal/15/-300/Basic -15/Carvão/Pedra combustível usada para elaboração de materiais e fundição." #!String
+    384: "Gold Ore/25/-300/Basic -15/Minério de ouro/Um minério preciso que pode ser derretido em barras." #!String
+    386: "Iridium Ore/100/-300/Basic -15/Minério de irídio/Um minério exótico com muitas propriedades curiosas. Pode ser derretido em barras." #!String
+    388: "Wood/2/-300/Basic -16/Madeira/Um material ao mesmo tempo flexível e resistente com várias utilizações." #!String
+    390: "Stone/2/-300/Basic -16/Pedra/Um material comum com diversos usos em construções." #!String
+    392: "Nautilus Shell/120/-300/Basic -23/Concha de náutilo/Uma concha antiga." #!String
+    393: "Coral/80/-300/Basic -23/Coral/Uma colônia de pequenas criaturas que se aglomeram para formarem lindas estruturas." #!String
+    394: "Rainbow Shell/300/-300/Basic -23/Concha arco-íris/É uma concha muito bonita." #!String
+    395: "Coffee/150/1/Crafting/Café/Possui um cheiro delicioso. Com certeza vai lhe dar energia extra./drink/0 0 0 0 0 0 0 0 0 1 0/120" #!String
+    396: "Spice Berry/80/10/Basic -79/Café de jardim/Possui um cheiro bem forte." #!String
+    397: "Sea Urchin/160/-300/Basic -23/Ouriço-do-mar/Uma criatura lenta e espinhosa que alguns consideram uma iguaria." #!String
+    398: "Grape/80/15/Basic -79/Uva/Um doce cacho de uvas." #!String
+    399: "Spring Onion/8/5/Basic -81/Cebolinha/Cresce muito durante a primavera." #!String
+    400: "Strawberry/120/20/Basic -79/Morango/Uma fruta doce e suculenta com uma sedutora cor vermelha." #!String
+    401: "Straw Floor/1/-300/Crafting -24/Piso de palha/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    402: "Sweet Pea/50/0/Basic -80/Ervilha-de-cheiro/Uma fragrante flor de verão." #!String
+    403: "Field Snack/20/18/Crafting/Lanchinho/Um lanchinho rápido para o coletor faminto." #!String
+    404: "Common Mushroom/40/15/Basic -81/Cogumelo comum/Com ligeiro sabor de nozes e boa textura." #!String
+    405: "Wood Path/1/-300/Crafting -24/Caminho de madeira/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    406: "Wild Plum/80/10/Basic -79/Ameixa selvagem/Ácida e suculenta, com um expressivo aroma." #!String
+    407: "Gravel Path/1/-300/Crafting -24/Caminho de cascalho/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    408: "Hazelnut/90/12/Basic -81/Avelã/Que avelã grande!" #!String
+    409: "Crystal Path/1/-300/Crafting -24/Caminho de cristal/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    410: "Blackberry/20/10/Basic -79/Amora/Uma delícia do começo do outono." #!String
+    411: "Cobblestone Path/1/-300/Crafting -24/Caminho de pedra arredondada/Ponha no chão para criar caminhos ou incrementá-lo." #!String
+    412: "Winter Root/70/10/Basic -81/Raiz de inverno/Um tubérculo rico em amido." #!String
+    413: "Blue Slime Egg/1750/-300/Basic/Ovo de gosma azul/Pode ser chocado com uma chodadeira." #!String
+    414: "Crystal Fruit/150/25/Basic -79/Fruta de cristal/Uma fruta delicada que surge da neve." #!String
+    415: "Stepping Stone Path/1/-300/Crafting -24/Caminho de Pedras Polidas/Ponha no chão para criar caminhos e incrementá-lo." #!String
+    416: "Snow Yam/100/12/Basic -81/Inhame de neve/Este pequeno inhame estava se escondendo na neve." #!String
+    417: "Sweet Gem Berry/3000/-300/Basic -17/Cereja de Joia Doce/Tem o cheiro mais doce que você já sentiu." #!String
+    418: "Crocus/60/0/Basic -80/Flor de açafrão/Uma flor que pode desabrochar no inverno." #!String
+    419: "Vinegar/100/5/Basic/Vinagre/Um líquido fermentado usado em muitas receitas./drink" #!String
+    420: "Red Mushroom/75/-20/Basic -81/Cogumelo vermelho/Um cogumelo pintado geralmente achado em cavernas." #!String
+    421: "Sunflower/80/18/Basic -80/Girassol/Um erro muito comum é acreditar que a flor vira para onde o sol está." #!String
+    422: "Purple Mushroom/250/50/Basic -81/Cogumelo roxo/Um cogumelo raro encontrado nas profundezas das cavernas." #!String
+    423: "Rice/100/5/Basic/Arroz/Um grão básico geralmente servido com legumes." #!String
+    424: "Cheese/230/50/Basic -26/Queijo/Queijo comum." #!String
+    425: "Fairy Seeds/100/-300/Seeds -74/Sementes de fada/Plante no outono. Demora 12 dias para produzir uma flor misteriosa. Cores variadas." #!String
+    426: "Goat Cheese/400/50/Basic -26/Queijo de cabra/Queijo suave feito com leite de cabra." #!String
+    427: "Tulip Bulb/10/-300/Seeds -74/Bulbo de Tulipa/Plante na primavera. Demora até 6 dias para produzir uma flor colorida. Cores variadas." #!String
+    428: "Cloth/470/-300/Basic -26/Tecido/Feito com lã fina." #!String
+    429: "Jazz Seeds/15/-300/Seeds -74/Sementes de Jasmim-azul/Plante na primavera. Demora 7 dias para produzir uma flor redondinha azul." #!String
+    430: "Truffle/625/5/Basic -17/Trufa/Um tipo gourmet de cogumelo com um gosto único." #!String
+    431: "Sunflower Seeds/20/-300/Seeds -74/Sementes de Girassol/Plante-as no verão ou outono. Demora 8 dias para produzir um girassol grande. Dá mais sementes na colheita." #!String
+    432: "Truffle Oil/1065/15/Basic -26/Óleo de trufas/Um ingrediente gourmet./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    433: "Coffee Bean/15/-300/Seeds -74/Grão de café/Plante na primavera ou no verão para conseguir café. Ponha cinco grãos num barril para fazer café." #!String
+    434: "Stardrop/7777/100/Crafting/Fruta-estrela/Uma fruta misteriosa que dá poderes a quem a consume. ...O sabor é um só... uma experiência pessoal profunda, mas difícil de descrever para os outros." #!String
+    436: "Goat Milk/225/25/Basic -6/Leite de cabra/O leite de uma cabra./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    437: "Red Slime Egg/2500/-300/Basic/Ovo de gosma vermelha/Pode ser chocado com uma chocadeira de gosmas." #!String
+    438: "L. Goat Milk/345/35/Basic -6/Leite grande de cabra/Um galão de leite de cabra cremoso./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    439: "Purple Slime Egg/5000/-300/Basic/Ovo de gosma púrpura/Pode ser chocado em uma chocadeira de gosmas." #!String
+    440: "Wool/340/-300/Basic -18/Lã/Macia e fofinha." #!String
+    441: "Explosive Ammo/20/-300/Basic/Munição explosiva/Utilize-a com o estilingue." #!String
+    442: "Duck Egg/95/15/Basic -5/Ovo de pata/Ainda está quente." #!String
+    444: "Duck Feather/250/-300/Basic -18/Pena de pato/Que colorida!" #!String
+    445: "Caviar/500/70/Basic -26/Caviar/As ovas maturadas de um esturjão. Consideradas uma iguaria luxuosa!" #!String
+    446: "Rabbit's Foot/565/-300/Basic -18/Pé de coelho/Dizem que dá sorte." #!String
+    447: "Aged Roe/100/40/Basic -26/Ovas Maturadas/Ovas de peixe com sal para ressaltar o sabor." #!String
+    449: "Stone Base/0/-300/asdf/Base de pedra/Um bloco simples de pedra." #!String
+    450: "Stone/0/-300/asdf/Pedra/Pedra." #!String
+    452: "Weeds/0/-300/asdf/Ervas daninhas/Um grupo de arbustos velhos." #!String
+    453: "Poppy Seeds/50/-300/Seeds -74/Sementes de papoula/Plante no verão. Produz uma flor brilhante e vermelha em 7 dias." #!String
+    454: "Ancient Fruit/550/-300/Basic -79/Fruta antiga/Está dormente há eras." #!String
+    455: "Spangle Seeds/25/-300/Seeds -74/Sementes de Miçanga/Plante no verão. Demora 8 dias para produzir uma flor tropical vibrante. Cores variadas." #!String
+    456: "Algae Soup/100/30/Cooking -7/Sopa de alga/Um pouco gosmenta./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    457: "Pale Broth/150/50/Cooking -7/Caldo pálido/Um caldo delicado com um toque de enxofre./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    458: "Bouquet/100/-300/Basic/Buquê/Demonstre seu interesse romântico por aquela pessoa." #!String
+    459: "Mead/200/30/Basic -26/Hidromel/Uma bebida fermentada feita com mel. Beba com moderação./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    460: "Mermaid's Pendant/2500/-300/Basic/Pingente de sereia/Dê isto a quem você quer casar." #!String
+    461: "Decorative Pot/200/-300/Crafting/Panela decorativa/Uma réplica de uma panela decorativa." #!String
+    463: "Drum Block/100/-300/Crafting/Bloco de bateria/Toca um som de bateria ao passar por ele." #!String
+    464: "Flute Block/100/-300/Crafting/Bloco de flauta/Toca um som de flauta ao passar por ele." #!String
+    465: "Speed-Gro/20/-300/Basic -19/Solo Foliar/Estimula a produção de folhas. Garante um aumento de crescimento de pelo menos 10%. Misture no fertilizante arado." #!String
+    466: "Deluxe Speed-Gro/40/-300/Basic -19/Solo Foliar Premium/Estimula a produção de folhas. Garante um aumento de crescimento de pelo menos 25%. Misture no fertilizante arado." #!String
+    472: "Parsnip Seeds/10/-300/Seeds -74/Sementes de chirívia/Plante-as na primavera. Demoram 4 dias para crescer." #!String
+    473: "Bean Starter/30/-300/Seeds -74/Mudas de feijão/Plante-as na primavera. Demoram 10 dias para crescer, mas continuam crescendo logo após. Cresce em uma treliça." #!String
+    474: "Cauliflower Seeds/40/-300/Seeds -74/Sementes de Couve-flor/Plante-as na primavera. Demora 12 dias para produzir uma couve-flor grande." #!String
+    475: "Potato Seeds/25/-300/Seeds -74/Sementes de batata/Plante-as na primavera. Demoram 6 dias para crescer, e podem gerar várias batatas na colheita." #!String
+    476: "Garlic Seeds/20/-300/Seeds -74/Sementes de alho/Plante-as na primavera. Demoram 4 dias para crescer." #!String
+    477: "Kale Seeds/35/-300/Seeds -74/Sementes de couve/Plante-as na primavera. Demoram 6 dias para crescer. Colha com a foice." #!String
+    478: "Rhubarb Seeds/50/-300/Seeds -74/Sementes de ruibarbo/Plante-as na primavera. Demoram 13 dias para crescer." #!String
+    479: "Melon Seeds/40/-300/Seeds -74/Sementes de Melão/Plante-as no verão. Demoram 12 dias para crescer." #!String
+    480: "Tomato Seeds/25/-300/Seeds -74/Sementes de tomate/Plante-as no verão. Demoram 11 dias para crescerem, e continuam a produção após a primeira colheita." #!String
+    481: "Blueberry Seeds/40/-300/Seeds -74/Sementes de mirtilo/Plante-as no verão. Demoram 13 dias para crescerem, e continuam a produção após a primeira colheita." #!String
+    482: "Pepper Seeds/20/-300/Seeds -74/Sementes de pimenta/Plante-as no verão. Demoram 5 dias para crescerem, e continuam a produção após a primeira colheita." #!String
+    483: "Wheat Seeds/5/-300/Seeds -74/Sementes de trigo/Plante-as no verão ou outono. Demoram 4 dias para crescer. Colha com a foice." #!String
+    484: "Radish Seeds/20/-300/Seeds -74/Sementes de rabanete/Plante-as durante o verão. Demoram 6 dias para crescer." #!String
+    485: "Red Cabbage Seeds/50/-300/Seeds -74/Sementes de repolho vermelho/Plante-as no verão. Demoram 9 dias para crescer." #!String
+    486: "Starfruit Seeds/200/-300/Seeds -74/Sementes de carambola/Plante-as no verão. Demoram 13 dias para crescer." #!String
+    487: "Corn Seeds/75/-300/Seeds -74/Sementes de milho/Plante-as no verão ou outono. Demoram 14 dias para crescerem, e continuam a produção após a primeira colheita." #!String
+    488: "Eggplant Seeds/10/-300/Seeds -74/Sementes de berinjela/Plante-as no outono. Demoram 5 dias para crescerem, e continuam a produção após a primeira colheita." #!String
+    489: "Artichoke Seeds/15/-300/Seeds -74/Sementes de alcachofra/Plante-as no outono. Demoram 8 dias para crescer." #!String
+    490: "Pumpkin Seeds/50/-300/Seeds -74/Sementes de abóbora/Plante-as no outono. Demoram 13 dias para crescer." #!String
+    491: "Bok Choy Seeds/25/-300/Seeds -74/Sementes de couve chinesa/Plante-as no outono. Demoram 4 dias para crescer." #!String
+    492: "Yam Seeds/30/-300/Seeds -74/Sementes de inhame/Plante-as no outono. Demoram 10 dias para crescer." #!String
+    493: "Cranberry Seeds/120/-300/Seeds -74/Sementes de oxicoco/Plante-as no outono. Demoram 7 dias para crescerem, e continuam a produção após a primeira colheita." #!String
+    494: "Beet Seeds/10/-300/Seeds -74/Sementes de beterraba/Plante-as no outono. Demoram 6 dias para crescer." #!String
+    495: "Spring Seeds/35/-300/Seeds -74/Sementes de primavera/Uma combinação de sementes selvagens de primavera." #!String
+    496: "Summer Seeds/55/-300/Seeds -74/Sementes de verão/Várias sementes de verão." #!String
+    497: "Fall Seeds/45/-300/Seeds -74/Sementes de outono/Uma combinação de sementes selvagens de outono." #!String
+    498: "Winter Seeds/30/-300/Seeds -74/Sementes de inverno/Coleção de sementes de inverno selvagens." #!String
+    499: "Ancient Seeds/30/-300/Seeds -74/Sementes antigas/Elas ainda crescem?" #!String
+    516: "Small Glow Ring/100/-300/Ring/Anel de brilho pequeno/Emite uma luz pequena e constante." #!String
+    517: "Glow Ring/200/-300/Ring/Anel brilhante/Emite uma luz constante." #!String
+    518: "Small Magnet Ring/100/-300/Ring/Pequeno anel com ímã/Aumenta levemente o seu raio para coletar itens." #!String
+    519: "Magnet Ring/200/-300/Ring/Anel-ímã/Aumenta o seu raio para coletar itens." #!String
+    520: "Slime Charmer Ring/700/-300/Ring/Encantador de gosma/Protege contra danos das gosmas." #!String
+    521: "Warrior Ring/1500/-300/Ring/Anel de guerreiro/Ocasionalmente enche quem o usa de \"energia de guerreiro\" após matar um monstro." #!String
+    522: "Vampire Ring/1500/-300/Ring/Anel vampiro/Ganhe um pouco de saúde toda vez que matar um monstro." #!String
+    523: "Savage Ring/1500/-300/Ring/Anel selvagem/Ganhe um pouco de velocidade toda vez que matar um monstro." #!String
+    524: "Ring of Yoba/1500/-300/Ring/Anel de Ioba/Protege ocasionalmente quem o usa de dano." #!String
+    525: "Sturdy Ring/1500/-300/Ring/Anel duro/Corta a duração de efeitos negativos pela metade." #!String
+    526: "Burglar's Ring/1500/-300/Ring/Anel do ladrão/Monstros possuem uma chance maior de deixarem itens." #!String
+    527: "Iridium Band/2000/-300/Ring/Anel de irídio/Brilha, atrai itens, e aumenta dano de ataque em 10%." #!String
+    528: "Jukebox Ring/200/-300/Ring/Anel de música/Toca uma música aleatória que você já tenha ouvido." #!String
+    529: "Amethyst Ring/200/-300/Ring/Anel de ametista/Aumenta ricochete em 10%." #!String
+    530: "Topaz Ring/200/-300/Ring/Anel de topázio/Aumenta precisão de arma em 10%." #!String
+    531: "Aquamarine Ring/400/-300/Ring/Anel de água-marinha/Aumenta chance de dano crítico em 10%." #!String
+    532: "Jade Ring/400/-300/Ring/Anel de jade/Aumenta ataque crítico em 10%." #!String
+    533: "Emerald Ring/600/-300/Ring/Anel de esmeralda/Aumenta velocidade de arma em 10%." #!String
+    534: "Ruby Ring/600/-300/Ring/Anel de rubi/Aumenta ataque em 10%." #!String
+    535: "Geode/50/-300/Basic/Geodo/Um ferreiro pode quebrar isto para você./538 542 548 549 552 555 556 557 558 566 568 569 571 574 576 121" #!String
+    536: "Frozen Geode/100/-300/Basic/Geodo congelado/Um ferreiro pode quebrar isto para você./541 544 545 546 550 551 559 560 561 564 567 572 573 577 123" #!String
+    537: "Magma Geode/150/-300/Basic/Geodo de magma/Um ferreiro pode quebrar isto para você./539 540 543 547 553 554 562 563 565 570 575 578 122" #!String
+    538: "Alamite/150/-300/Minerals -12/Alamita/Sua distinta fluorescência torna este mineral um favorito dos colecionadores de minerais." #!String
+    539: "Bixite/300/-300/Minerals -12/Quatrônio/Uma estrutura metálica e escura procurada por sua estrutura cúbica." #!String
+    540: "Baryte/50/-300/Minerals -12/Barita/As melhores amostras lembram uma rosa no deserto." #!String
+    541: "Aerinite/125/-300/Minerals -12/Aerinita/Estes cristais são curiosamente leves." #!String
+    542: "Calcite/75/-300/Minerals -12/Calcita/Este cristal amarelo está salpicado de nódulos brilhantes." #!String
+    543: "Dolomite/300/-300/Minerals -12/Dolomita/Pode ocorrer em recifes, geralmente em um vulcão aquático." #!String
+    544: "Esperite/100/-300/Minerals -12/Esperita/Os cristais geram um brilho verde quando estimulados." #!String
+    545: "Fluorapatite/200/-300/Minerals -12/Fluorapatita/Pequenas quantidades podem ser encontradas em dentes humanos." #!String
+    546: "Geminite/150/-300/Minerals -12/Geminita/Ocorre em agrupamentos brilhantes." #!String
+    547: "Helvite/450/-300/Minerals -12/Helvita/Ocorre em colunas triangulares." #!String
+    548: "Jamborite/150/-300/Minerals -12/Jamborita/Os cristais estão tão juntos que chega a embaçar os olhos." #!String
+    549: "Jagoite/115/-300/Minerals -12/Jagoíta/A grande quantidade de cristais deixa a estrutura muito brilhante." #!String
+    550: "Kyanite/250/-300/Minerals -12/Cianita/As faces geométricas são lisas como vidro." #!String
+    551: "Lunarite/200/-300/Minerals -12/Lunarita/Os buracos brancos e redondos estão agrupados bem próximos." #!String
+    552: "Malachite/100/-300/Minerals -12/Malachita/Uma pedra ornamental muito popular e utilizada em escultura para fazer tinta verde." #!String
+    553: "Neptunite/400/-300/Minerals -12/Netunita/Um cristal muito preto. Reflete uma quantidade anormal de luz." #!String
+    554: "Lemon Stone/200/-300/Minerals -12/Pedra de limão/Dizem que o cristal em pó é uma delícia dos anões." #!String
+    555: "Nekoite/80/-300/Minerals -12/Necoíta/Os fragmentos delicados formam um pequeno plano rosa." #!String
+    556: "Orpiment/80/-300/Minerals -12/Auripigmento/Apesar de sua alta toxicidade, este mineral é amplamente usado em indústrias e em remédios populares." #!String
+    557: "Petrified Slime/120/-300/Minerals -12/Gosma petrificada/Este rapazinho deve ter mais de 100.000 anos." #!String
+    558: "Thunder Egg/100/-300/Minerals -12/Ovo-trovão/De acordo com a lenda, espíritos zangados lançavam pedras uns nos outros." #!String
+    559: "Pyrite/120/-300/Minerals -12/Pirita/Conhecida comumente como \"Ouro dos Tolos\"." #!String
+    560: "Ocean Stone/220/-300/Minerals -12/Pedra do Oceano/Uma velha lenda diz que estas pedras são mosaicos das antigas sereias." #!String
+    561: "Ghost Crystal/200/-300/Minerals -12/Cristal-fantasma/Há uma aura fria em volta deste cristal." #!String
+    562: "Tigerseye/275/-300/Minerals -12/Olho de tigre/Uma camada de ouro brilhante dá a esta joia um lustre brilhante." #!String
+    563: "Jasper/150/-300/Minerals -12/Jaspe/Quando polida, esta joia emite um brilho maravilhoso. Estimada por civilizações antigas por milhares de anos." #!String
+    564: "Opal/150/-300/Minerals -12/Opala/Sua estrutura interna faz com que emita um arco-íris." #!String
+    565: "Fire Opal/350/-300/Minerals -12/Opala de fogo/Uma variedade rara de opala, conhecida por seus pontos vermelhos." #!String
+    566: "Celestine/125/-300/Minerals -12/Celestina/Algumas formas de vida antiga eram feitas desta substância." #!String
+    567: "Marble/110/-300/Minerals -12/Mármore/Um material muito popular para esculturas e construções." #!String
+    568: "Sandstone/60/-300/Minerals -12/Arenito/Um tipo muito comum de pedra, com linhas vermelhas e marrons." #!String
+    569: "Granite/75/-300/Minerals -12/Granito/Um mineral salpicado e frequentemente usado em construções." #!String
+    570: "Basalt/175/-300/Minerals -12/Basalto/Se forma perto do magma quente." #!String
+    571: "Limestone/15/-300/Minerals -12/Calcário/Um tipo muito comum de pedra. Não é muito valioso." #!String
+    572: "Soapstone/120/-300/Minerals -12/Pedra-sabão/Por causa de sua consistência macia, esta pedra é popular para esculturas." #!String
+    573: "Hematite/150/-300/Minerals -12/Hematita/Um mineral de ferro com propriedades magnéticas interessantes." #!String
+    574: "Mudstone/25/-300/Minerals -12/Lamito/Uma pedra com poros pequenos feita de argila antiga ou lama." #!String
+    575: "Obsidian/200/-300/Minerals -12/Obsidiana/Vidro vulcânico que se forma quando o magma esfria rapidamente." #!String
+    576: "Slate/85/-300/Minerals -12/Ardósia/Extremamente resistente à água, tornando-o um excelente material para coberturas." #!String
+    577: "Fairy Stone/250/-300/Minerals -12/Pedra de fada/Um velho minerador sugere que estas pedras são feitas dos ossos fossilizados de fadas." #!String
+    578: "Star Shards/500/-300/Minerals -12/Fragmentos de estrela/Ninguém sabe de onde vieram. Alguns cientistas dizem que a estrutura microscópica mostra uma irregularidade fora do comum." #!String
+    579: "Prehistoric Scapula/100/-300/Arch/Escápula pré-histórica/Também conhecida como \"omoplata\"... Não se sabe a qual espécie ela pertenceu./Town .01" #!String
+    580: "Prehistoric Tibia/100/-300/Arch/Tíbia pré-histórica/Um osso da perna grosso e resistente./Forest .01" #!String
+    581: "Prehistoric Skull/100/-300/Arch/Caveira pré-histórica/Definitivamente o crânio de um mamífero./Mountain .01" #!String
+    582: "Skeletal Hand/100/-300/Arch/Mão de esqueleto/É maravilhoso como essas pecinhas duraram tanto./Beach .01" #!String
+    583: "Prehistoric Rib/100/-300/Arch/Costela pré-história/As pequenas marcas de uma goiva sugerem que esta costela já foi o jantar de alguém./Farm .01" #!String
+    584: "Prehistoric Vertebra/100/-300/Arch/Vértebra pré-histórica/Um segmento da espinha de alguma criatura pré-histórica./BusStop .01" #!String
+    585: "Skeletal Tail/100/-300/Arch/Esqueleto de cauda/É muito curta para uma cauda./UndergroundMine .01" #!String
+    586: "Nautilus Fossil/80/-300/Arch/Fóssil de náutilo/Deve ter desbotado décadas atrás de um recife de coral antigo./Beach .03" #!String
+    587: "Amphibian Fossil/150/-300/Arch/Fóssil de anfíbio/Suas pernas relativamente curtas sugerem uma espécie de sapo primordial./Forest .01 Mountain .01" #!String
+    588: "Palm Fossil/100/-300/Arch/Fóssil de Palma/Fósseis de palma são relativamente comuns, mas este é um espécime particularmente bem conservado./Desert .1 Beach .01 Forest .01" #!String
+    589: "Trilobite/50/-300/Arch/Trilobita/Um parente há muito tempo extinto do caranguejo./Beach .03 Mountain .03 Forest .03" #!String
+    590: "Artifact Spot/0/-300/asdf/Ponto de artefato/Hã... como isso foi parar em seu inventário? Macaco fez besteira./Beach .03 Mountain .03 Forest .03" #!String
+    591: "Tulip/30/18/Basic -80/Tulipa/A mais popular flor de primavera. Possui um cheiro bem delicado." #!String
+    593: "Summer Spangle/90/18/Basic -80/Flor-Miçanga/Uma flor tropical que vinga no ar quente e úmido de verão. Possui um aroma doce e picante." #!String
+    595: "Fairy Rose/290/18/Basic -80/Rosa-de-fada/Uma lenda popular antiga sugere que o cheiro doce desta flor atrai fadas." #!String
+    597: "Blue Jazz/50/18/Basic -80/Jasmim-azul/Cresce em uma esfera para convidar o máximo de borboletas possível." #!String
+    599: "Sprinkler/100/-300/Crafting -8/Aspersor/Rega os quatro espaços adjacentes toda manhã." #!String
+    604: "Plum Pudding/260/70/Cooking -7/Pudim de ameixa/Uma delícia de feriado tradicional./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    605: "Artichoke Dip/210/40/Cooking -7/Molho de alcachofra/Muito refrescante./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    606: "Stir Fry/335/80/Cooking -7/Refogado/Legumes à juliana em uma cama de arroz./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    607: "Roasted Hazelnuts/270/70/Cooking -7/Avelãs torradas/O processo de torra dá um rico sabor de floresta./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    608: "Pumpkin Pie/385/90/Cooking -7/Torta de abóbora/Sabor extremamente delicado, crosta seca e crocante./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    609: "Radish Salad/300/80/Cooking -7/Salada de rabanete/Os rabanetes são tão crocantes!/food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    610: "Fruit Salad/450/105/Cooking -7/Salada de frutas/Uma combinação deliciosa de frutas de verão./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    611: "Blackberry Cobbler/260/70/Cooking -7/Mexido de amoras/Não tem nada igual./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    612: "Cranberry Candy/175/50/Cooking -7/Doce de oxicoco/Doce o suficiente para mascarar o amargor da fruta./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    613: "Apple/100/15/Basic -79/Maçã/Fruta crocante utilizada para suco e sidra." #!String
+    614: "Green Tea/100/5/Basic -26/Chá Verde/Uma bebida relaxante e estimulante feita com folhas de chá processadas./drink/0 0 0 0 0 0 0 30 0 0 0/360" #!String
+    618: "Bruschetta/210/45/Cooking -7/Brusqueta/Tomates assados em pão branco crocante./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    621: "Quality Sprinkler/450/-300/Crafting -8/Aspersor de qualidade/Rega 8 espaços adjacentes toda manhã." #!String
+    628: "Cherry Sapling/850/-300/Basic -74/Muda de cerejeira/Demora até 28 dias para produzir uma cerejeira madura. Dá frutas na primavera. Só cresce se 8 espaços adjacentes estiverem vazios." #!String
+    629: "Apricot Sapling/500/-300/Basic -74/Muda de damasqueiro/Demora até 28 dias para produzir uma árvore. Dá frutas na primavera. Só cresce se 8 espaços adjacentes estiverem vazios." #!String
+    630: "Orange Sapling/1000/-300/Basic -74/Muda de laranjeira/Demora até 28 dias para produzir uma laranjeira. Dá frutos no verão. Só cresce se 8 espaços adjacentes estiverem vazios." #!String
+    631: "Peach Sapling/1500/-300/Basic -74/Muda de pessegueiro/Demora até 28 dias para produzir um pessegueiro. Dá frutos no verão. Só cresce se 8 espaços adjacentes estiverem vazios." #!String
+    632: "Pomegranate Sapling/1500/-300/Basic -74/Muda de romanzeira/Demora até 28 dias para produzir uma romanzeira. Dá frutos no outono. Só cresce se 8 espaços adjacentes estiverem vazios." #!String
+    633: "Apple Sapling/1000/-300/Basic -74/Muda de macieira/Demora até 28 dias para produzir uma macieira. Dá frutos no outono. Só cresce se 8 espaços adjacentes estiverem vazios." #!String
+    634: "Apricot/50/15/Basic -79/Damasco/Uma frutinha macia com uma semente muito dura." #!String
+    635: "Orange/100/15/Basic -79/Laranja/Suculenta, azedinha, e pulsando com um doce aroma de verão." #!String
+    636: "Peach/140/15/Basic -79/Pêssego/Possui uma textura de veludo." #!String
+    637: "Pomegranate/140/15/Basic -79/Romã/Dentro do fruto há grupos de sementes suculentas." #!String
+    638: "Cherry/80/15/Basic -79/Cereja/É popular, e amadurece mais cedo que a maioria das frutas." #!String
+    645: "Iridium Sprinkler/1000/-300/Crafting -8/Aspersor de irídio/Rega 24 espaços adjacentes toda manhã." #!String
+    648: "Coleslaw/345/85/Cooking -7/Salada de repolho/Leve, fresquinha e saudável./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    649: "Fiddlehead Risotto/350/90/Cooking -7/Risoto de samambaia/Um prato de arroz cremoso com samambaias salteadas. É meio insosso./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    651: "Poppyseed Muffin/250/60/Cooking -7/Bolinho de papoula/Possui efeito calmante./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    668: "Stone/0/15/Basic/Pedra/Tem minério de pedra neste mineral." #!String
+    670: "Stone/0/15/Basic/Pedra/Tem minério de pedra neste mineral." #!String
+    674: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    675: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    676: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    677: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    678: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    679: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    680: "Green Slime Egg/1000/-300/Basic/Ovo de gosma verde/Pode ser chocado em uma chocadeira de gosmas." #!String
+    681: "Rain Totem/20/-300/Crafting/Totem de chuva/Ative para aumentar grandemente a chance de chuva para amanhã. Consumido após utilização." #!String
+    682: "Mutant Carp/1000/10/Fish -4/Carpa mutante/As estranhas águas do esgoto transformaram esta carpa em uma monstruosidade./Day^Spring Summer" #!String
+    684: "Bug Meat/8/-300/Basic -28/Carne de inseto/É um pedaço suculento de carne de inseto." #!String
+    685: "Bait/1/-300/Basic -21/Isca/Faz o peixe morder mais rápido. Deve ser colocado em uma vara de pescar." #!String
+    686: "Spinner/250/-300/Basic -22/Anzol/Sua forma a faz girar na água. Aumenta levemente as chances de pegar um peixe." #!String
+    687: "Dressed Spinner/500/-300/Basic -22/Isca artificial/A aba de metal e a os feixes coloridos criam uma tentação fatal para os peixes. Aumenta a chance de mordida ao pescar." #!String
+    688: "Warp Totem: Farm/20/-300/Crafting/Totem de teletransporte: Fazenda/Transporta direto para a sua casa. Consumido após utilização." #!String
+    689: "Warp Totem: Mountains/20/-300/Crafting/Totem de teletransporte: Montanhas/Transporta direto para as montanhas. Consumido após utilização." #!String
+    690: "Warp Totem: Beach/20/-300/Crafting/Totem de teletransporte: Praia/Transporta direto para a praia. Consumido após utilização." #!String
+    691: "Barbed Hook/500/-300/Basic -22/Anzol farpado/Prende sua pesca melhor, fazendo com que a \"barra de pesca\" fique presa a ela. Funciona melhor em peixes lentos e fracos." #!String
+    692: "Lead Bobber/150/-300/Basic -22/Chumbo para isca/Deixa a sua \"barra de pesca\" mais pesada, evitando que ela pule para o fundo." #!String
+    693: "Treasure Hunter/250/-300/Basic -22/Caça ao tesouro/Peixes não escapam ao coletar tesouros. Também aumenta levemente as chances de encontrar um tesouro." #!String
+    694: "Trap Bobber/200/-300/Basic -22/Boia-armadilha/Faz com que os peixes escapem mais lentamente quando você não está içando a vara." #!String
+    695: "Cork Bobber/250/-300/Basic -22/Boia de cortiça/Aumenta levemente o tamanho da sua \"barra de pesca\"." #!String
+    698: "Sturgeon/200/10/Fish -4/Esturjão/Um antigo peixe de fundo com uma população em queda. As fêmeas podem viver até 150 anos./Day^Spring Summer" #!String
+    699: "Tiger Trout/150/10/Fish -4/Salmão híbrido/Um salmão híbrido raro e estéril./Day^Spring Summer" #!String
+    700: "Bullhead/75/10/Fish -4/Peixe-gato/Um parente do bagre que se alimenta do fundo de lagos./Day^Spring Summer" #!String
+    701: "Tilapia/75/10/Fish -4/Tilápia/Um peixe herbívoro que prefere água quente./Day^Spring Summer" #!String
+    702: "Chub/50/10/Fish -4/Esquálio/Um peixe de água doce conhecido por seu apetite./Day^Spring Summer" #!String
+    703: "Magnet/15/-300/Basic -21/Ímã/Aumenta as chances de achar tesouros ao pescar. Entretanto, os peixes não gostam muito do sabor." #!String
+    704: "Dorado/100/10/Fish -4/Dourado/Um carnívoro inclemente com escamas laranjas brilhantes./Day^Summer" #!String
+    705: "Albacore/75/10/Fish -4/Albacora/Prefere zonas de temperatura em que a água fria e quente se encontram./Day^Spring Fall" #!String
+    706: "Shad/60/10/Fish -4/Alocine/Vive em cardumes em água salgada, mas volta aos rios para se reproduzir./Day^Spring Summer Fall" #!String
+    707: "Lingcod/120/10/Fish -4/Ófis/Um terrível predador que come quase qualquer coisa que consegue colocar na boca./Day^Fall" #!String
+    708: "Halibut/80/10/Fish -4/Halibute/Um peixe chato que vive no fundo do oceano./Day^Spring Summer" #!String
+    709: "Hardwood/15/-300/Basic -16/Madeira de lei/Um tipo especial de madeira. Muito bonita e resistente." #!String
+    710: "Crab Pot/50/-300/Crafting/Covo/Ponha na água, com uma isca, e dê uma olhada no dia seguinte para ver se você pescou algo. Funciona em correntes, lagos, e no oceano." #!String
+    715: "Lobster/120/-300/Fish -4/Lagosta/Um crustáceo grande que vive no oceano. Possui uma grande cauda./Day^Spring Summer" #!String
+    716: "Crayfish/75/-300/Fish -4/Lagostim/Um pequeno peixe de água doce parente da lagosta./Day^Spring Summer" #!String
+    717: "Crab/100/-300/Fish -4/Caranguejo/Um crustáceo marinho com duas puãs poderosas./Day^Spring Summer" #!String
+    718: "Cockle/50/-300/Fish -4/Berbigão/Uma concha de água salgada muito comum./Day^Spring Summer" #!String
+    719: "Mussel/30/-300/Fish -4/Mexilhão/Um bivalve muito comum que geralmente vive em grupo./Day^Spring Summer" #!String
+    720: "Shrimp/60/-300/Fish -4/Camarão/Um necrófago que se alimenta do fundo do oceano. Sua carne é muito apreciada./Day^Spring Summer" #!String
+    721: "Snail/65/-300/Fish -4/Lesma/Um molusco amplo muito comum que vive numa casca em espiral./Day^Spring Summer" #!String
+    722: "Periwinkle/20/-300/Fish -4/Caramujo/Um molusco de água doce que vive em um casco azul./Day^Spring Summer" #!String
+    723: "Oyster/40/-300/Fish -4/Ostra/Filtra água constantemente para se alimentar. Durante o processo, remove toxinas perigosas para o meio ambiente./Day^Spring Summer" #!String
+    724: "Maple Syrup/200/20/Basic -27/Xarope de ácer/Um xarope doce com um sabor único./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    725: "Oak Resin/150/-300/Basic -27/Resina de carvalho./Uma resina pegajosa e perfumada extraída de seiva de carvalho." #!String
+    726: "Pine Tar/100/-300/Basic -27/Alcatrão de pinho/Uma substância malcheirosa vinda da seiva do pinho." #!String
+    727: "Chowder/135/90/Cooking -7/Sopa de peixe/Para se esquentar após uma noite fria no mar./food/0 1 0 0 0 0 0 0 0 0 0/1440" #!String
+    728: "Fish Stew/175/90/Cooking -7/Guisado de peixe/Tem cheiro de mar. Mas o gosto é melhor./food/0 3 0 0 0 0 0 0 0 0 0/1440" #!String
+    729: "Escargot/125/90/Cooking -7/Escargô/Lesmas cobertas de manteiga e cozidas com perfeição./food/0 2 0 0 0 0 0 0 0 0 0/1440" #!String
+    730: "Lobster Bisque/205/90/Cooking -7/Bisque de lagosta/Esta sopa delicada é uma receita secreta de família do Willy./food/0 3 0 0 0 0 0 50 0 0 0/1440" #!String
+    731: "Maple Bar/300/90/Cooking -7/Pão de ácer/Uma rosquinha doce coberta com ácer./food/1 1 1 0 0 0 0 0 0 0 0/1440" #!String
+    732: "Crab Cakes/275/90/Cooking -7/Bolinhos de caranguejo/Caranguejo, pão e ovo achatados e fritos até ficarem dourados./food/0 0 0 0 0 0 0 0 0 1 1/1440" #!String
+    733: "Shrimp Cocktail/160/90/Cooking -7/Coquetel de Camarão/Um aperitivo suntuoso feito com camarão fresco./food/0 1 0 0 1 0 0 0 0 0 0/860" #!String
+    734: "Woodskip/75/10/Fish -4/Madeirão/Um peixe muito sensível que só pode viver em lagos no meio da floresta./Day^Spring Summer" #!String
+    745: "Strawberry Seeds/0/-300/Seeds -74/Sementes de morango/Plante-as na primavera. Demoram 8 dias para crescerem e continuam produzindo morangos após este prazo." #!String
+    746: "Jack-O-Lantern/0/-300/Crafting -8/Cabeça de abóbora/Uma sofisticada decoração de outono." #!String
+    747: "Rotten Plant/0/-300/Basic -20/Planta estragada/Material orgânico em decomposição. Está gosmenta e com aspecto desagradável." #!String
+    748: "Rotten Plant/0/-300/Basic -20/Planta estragada/Material orgânico em decomposição. Está gosmenta e com aspecto desagradável." #!String
+    749: "Omni Geode/0/-300/Basic/Omnigeodo/Um ferreiro pode quebrar isto para você. Estes geodos contém vários minerais./538 542 548 549 552 555 556 557 558 566 568 569 571 574 576 541 544 545 546 550 551 559 560 561 564 567 572 573 577 539 540 543 547 553 554 562 563 565 570 575 578 121 122 123" #!String
+    750: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    751: "Stone/0/15/Basic/Pedra/Tem minério de cobre nesta pedra." #!String
+    760: "Stone/0/15/Basic/Pedra/..." #!String
+    762: "Stone/0/15/Basic/Pedra/..." #!String
+    764: "Stone/0/15/Basic/Pedra/Minério de ouro" #!String
+    765: "Stone/0/15/Basic/Pedra/Minério de irídio" #!String
+    766: "Slime/5/-300/Basic -28/Gosma/Um bolha brilhante, gelatinosa e inodora." #!String
+    767: "Bat Wing/15/-300/Basic -28/Asa de morcego/Surpreendentemente delicada." #!String
+    768: "Solar Essence/40/-300/Basic -28/Essência solar/O lado brilhante é quente ao toque." #!String
+    769: "Void Essence/50/-300/Basic -28/Essência nula/Treme de tanta energia negativa." #!String
+    770: "Mixed Seeds/0/-300/Seeds -74/Sementes mistas/Há de tudo um pouco aqui. Plante-as e veja o que cresce!" #!String
+    771: "Fiber/1/-300/Basic -16/Fibra/Matéria prima de origem vegetal." #!String
+    772: "Oil of Garlic/1000/80/Cooking -7/Óleo de alho/Beba isto e monstros mais fracos evitarão você./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    773: "Life Elixir/500/80/Cooking -7/Elixir da vida/Restaura sua saúde ao máximo./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    774: "Wild Bait/15/-300/Basic -21/Isca selvagem/Uma receita especial do Linus que te dá um chance de pescar dois peixes de uma vez." #!String
+    775: "Glacierfish/1000/10/Fish -4/Peixe-gelo/Constrói um ninho na parte inferior das geleiras./Day^Winter" #!String
+    784: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    785: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    786: "Weeds/0/15/Basic/Ervas daninhas/Plantas muito feias." #!String
+    787: "Battery Pack/500/-300/Basic -16/Conjunto de pilhas/Cheias de energia preciosa." #!String
+    788: "Lost Axe/0/-300/Quest/Machado perdido/Robin o procurou por toda a parte." #!String
+    789: "Lucky Purple Shorts/0/-300/Quest/Calções roxos da sorte/Melhor não examinar mais detalhadamente." #!String
+    790: "Berry Basket/0/-300/Quest/Cesto de cerejas/As fibras estão manchadas de suco de cereja." #!String
+    791: "Golden Coconut/0/-300/Quest/Coco Dourado/Esse é osso duro de roer, mas um profissional deve conseguir abrir." #!String
+    792: "Weeds/0/15/Basic/Mato/Plantas muito feias." #!String
+    793: "Weeds/0/15/Basic/Mato/Plantas muito feias." #!String
+    794: "Weeds/0/15/Basic/Mato/Plantas muito feias." #!String
+    795: "Void Salmon/150/25/Fish -4/Salmão nulo/Um salmão modificado por energia nula. A carne fresca é preta como carvão, mas fica rosa rapidamente quando exposta ao ar./Day^Spring Summer" #!String
+    796: "Slimejack/100/15/Fish -4/Salmão mutante/Ele está coberto em uma camada de gosma espessa. Ele fica saindo das suas mãos!/Day^Spring Summer" #!String
+    797: "Pearl/2500/-300/Basic/Pérola/Um tesouro raro que veio do mar." #!String
+    798: "Midnight Squid/100/15/Fish -4/Lula da Meia-noite/Um cidadão estranho e misterioso das profundezas do oceano./Day^Spring Summer" #!String
+    799: "Spook Fish/220/15/Fish -4/Peixe Assustador/Seus olhos enormes são capazes de detectar o contorno de suas presas./Day^Spring Summer" #!String
+    800: "Blobfish/500/15/Fish -4/Peixe-bolha/Esta estranha criatura flutua sobre o fundo do oceano, consumindo qualquer material comestível que estiver em seu caminho./Day^Spring Summer" #!String
+    801: "Wedding Ring/2000/-300/Ring/Anel de Casamento/Uma antiga tradição da Cidade de Zuzu... Use para pedir a mão de uma pessoa em casamento." #!String
+    802: "Cactus Seeds/0/-300/Seeds -74/Sementes de Cacto/Só podem ser criados em ambientes fechados. Levam 12 dias para amadurecer, depois produzem frutos a cada 3 dias." #!String
+    803: "Iridium Milk/0/-2/Basic/Leite de Irídio/Um 'leite' poderoso, de origem desconhecida.../drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    805: "Tree Fertilizer/10/-300/Basic -19/Fertilizante de Árvore/Use em um árvore para ter um crescimento rápido, até no inverno. Não funciona com árvores de frutos." #!String
+    807: "Dinosaur Mayonnaise/800/-300/Basic -26/Maionese de Dinossauro/É grossa e creomsa, com uma cor verde intensa. Tem cheiro de grama e couro." #!String
+    808: "Void Ghost Pendant/4500/-300/Basic/Pingente de Fantasma Nulo/É simbólico para o povo das sombras. Como um presente, significa o desejo de morar junto como amigos." #!String
+    809: "Movie Ticket/500/-300/Basic/Ingresso de Filme/Permite a entrada no cinema. Dar isso para um amigo é um convite para que ele veja o filme com você." #!String
+    810: "Crabshell Ring/2000/-300/Ring/Anel de Caraguejo/O topo do anel é feito de carapaça de caranguejo encantada." #!String
+    811: "Napalm Ring/2000/-300/Ring/Anel Napalm/Quando derrotar um inimigo, ele explode." #!String
+    812: "Roe/30/20/Basic -23/Ovas/Ovas de peixe frescas. Elas podem ser maturadas em potes de conserva para ressaltar o sabor." #!String
+    814: "Squid Ink/110/-300/Basic -23/Tinta de Lula/Lulas usam essa tinta para confundir predadores." #!String
+    815: "Tea Leaves/50/-300/Basic -75/Folhas de Chá/As jovens folhas de uma planta de chá. Podem ser usadas para fazer a bebida popular." #!String
+    816: "Stone/50/-300/Basic/Stone/..." #!String
+    817: "Stone/50/-300/Basic/Stone/..." #!String
+    818: "Stone/50/-300/Basic/Stone/..." #!String
+    819: "Stone/50/-300/Basic/Stone/..." #!String
+    820: "Fossilized Skull/100/-300/Basic/Caveira Fossilizada/É uma espécime perfeita!/Island_North .01" #!String
+    821: "Fossilized Spine/100/-300/Basic/Espinha Fossilizada/Uma coluna de vértebras conectadas./Island_North .01" #!String
+    822: "Fossilized Tail/100/-300/Basic/Cauda Fossilizada/Esta cauda tem uma espécie de maça na ponta./Island_North .01" #!String
+    823: "Fossilized Leg/100/-300/Basic/Perna Fossilizada/Um osso da perna grosso e resistente./Island_North .01" #!String
+    824: "Fossilized Ribs/100/-300/Basic/Costelas Fossilizadas/Há muito tempo, estas costelas protegeram o corpo de um animal grande./Island_North .01" #!String
+    825: "Snake Skull/100/-300/Basic/Crânio de Cobra/Um crânio preservado que já pertenceu a uma cobra./Island_North .01" #!String
+    826: "Snake Vertebrae/100/-300/Basic/Vértebra de Cobra/Parece que esta cobra era extremamente flexível./Island_North .01" #!String
+    827: "Mummified Bat/100/-300/Basic/Morcego Mumificado/As asas delicadas foram perfeitamente preservadas./Island_North .01" #!String
+    828: "Mummified Frog/100/-300/Basic/Sapo Mumificado/Este sapo antigo deve ter vivido sob o dossel da selva./Island_North .01" #!String
+    829: "Ginger/60/10/Basic -81/Gengibre/É dito que esta raíz forte e picante pode aumentar a vitalidade." #!String
+    830: "Taro Root/100/15/Basic -75/Inhame-coco/Esta raíz amilácea é um dos cultivos mais antigos." #!String
+    831: "Taro Tuber/20/-300/Seeds -74/Tubérculo de Inhame-coco/Plante-o no clima quente. Leva 10 dias para crescer. Cresce mais rápido se plantado perto de um corpo d'água." #!String
+    832: "Pineapple/300/55/Basic -79/Abacaxi/Uma fruta tropical doce e azeda." #!String
+    833: "Pineapple Seeds/240/-300/Seeds -74/Sementes de Abacaxi/Plante-as no clima quente. Levam 14 dias para crescer, e continuam produzindo frutos depois." #!String
+    834: "Mango/130/40/Basic -79/Manga/Uma grande e doce fruta tropical com um sabor único." #!String
+    835: "Mango Sapling/850/-300/Basic -74/Muda de Mangueira/Leva 28 dias para produzir uma árvore adulta de manga. Dá frutos no verão, ou no ano todo quando plantada na Ilha Gengibre." #!String
+    836: "Stingray/180/15/Fish -4/Arraia/Mesmo tendo um espinho venenoso, estes peixes são tímidos e preferem evitar humanos./Day^Spring Summer" #!String
+    837: "Lionfish/100/15/Fish -4/Peixe-Leão/Um peixe predatório e agressivo com espinhos venenosos./Day^Spring Summer" #!String
+    838: "Blue Discus/120/15/Fish -4/Acará-Disco Azul/Um peixe tropical de cor vibrante muito comum em aquários./Day^Spring Summer" #!String
+    839: "Thorns Ring/200/-300/Ring/Anel de Espinhos/Quando inimigos te machucarem, eles também receberão dano." #!String
+    840: "Rustic Plank Floor/1/-300/Crafting -24/Piso Rústico de Tábuas/Coloque no chão para criar caminhos ou para decorá-los." #!String
+    841: "Stone Walkway Floor/1/-300/Crafting -24/Piso Passarela de Pedra/Coloque no chão para criar caminhos ou para decorá-los." #!String
+    842: "Journal Scrap/1/-300/asdf/Pedaço de Diário/Uma página úmida e desgastada tirada de um diário antigo...//Note" #!String
+    843: "Stone/50/-300/Basic/Stone/..." #!String
+    844: "Stone/50/-300/Basic/Stone/..." #!String
+    845: "Stone/50/-300/Basic/Stone/..." #!String
+    846: "Stone/50/-300/Basic/Stone/..." #!String
+    847: "Stone/50/-300/Basic/Stone/..." #!String
+    848: "Cinder Shard/50/-300/Basic -15/Fragmento de Brasa/Você pode sentir um brilho quente vindo de dentro da pedra." #!String
+    849: "Stone/50/-300/Basic/Stone/..." #!String
+    850: "Stone/50/-300/Basic/Stone/..." #!String
+    851: "Magma Cap/400/70/Basic -81/Cogumelo de Magma/Um tipo muito raro de cogumelo que vive perto de lava." #!String
+    852: "Dragon Tooth/500/-300/Basic/Dente de Dragão/É dito que estes são os dentes de serpentes antigas. O esmalte é feito de irídio puro!" #!String
+    856: "Curiosity Lure/500/-300/Basic -22/Isca de Curiosidade/Aumenta suas chances de pegar peixes raros." #!String
+    857: "Tiger Slime Egg/8000/-300/Basic/Ovo de Gosma Tigre/Pode ser chocado em uma chocadeira de gosmas. Usar com extremo cuidado!" #!String
+    858: "Qi Gem/250/-300/Basic/Gema Qi/Uma moeda especial dada pelo Sr. Qi." #!String
+    859: "Lucky Ring/200/-300/Ring/Anel da Sorte/É dito que o emblema lunar traz sorte para quem o usa." #!String
+    860: "Hot Java Ring/200/-300/Ring/Anel Quente de Java/Aumenta consideravelmente suas chances de encontar café quando mata monstros." #!String
+    861: "Protection Ring/200/-300/Ring/Anel de Proteção/Fique invencível por mais tempo depois de tomar dano." #!String
+    862: "Soul Sapper Ring/200/-300/Ring/Anel Roubador de Alma/Ganhe um pouco de energia toda vez que matar um monstro." #!String
+    863: "Phoenix Ring/200/-300/Ring/Anel da Fênix/Uma vez por dia, recupera um pouco de vida após ser derrotado em combate." #!String
+    864: "War Memento/0/-300/Quest/Lembrança de Guerra/É uma foto desvanecida de um soldado..." #!String
+    865: "Gourmet Tomato Salt/0/-300/Quest/Sal Gourmet de Tomate/Um raro e delicioso sal." #!String
+    866: "Stardew Valley Rose/0/-300/Quest/Rosa do Vale do Orvalho/Uma rosa que te lembra o vale. O cheiro é divino." #!String
+    867: "Advanced TV Remote/0/-300/Quest/Controle de TV Avançado/Tem mais botões que um controle normal. Perfeito para um ávido assistidor de TV!" #!String
+    868: "Arctic Shard/0/-300/Quest/Estilhaço Ártico/Este estilhaço brilha com uma luz azul sobrenatural." #!String
+    869: "Wriggling Worm/0/-300/Quest/Minhoca Viva/É uma minhoca úmida se mexendo." #!String
+    870: "Pirate's Locket/0/-300/Quest/Medalhão de Pirata/É uma lembrança de um pirata velho." #!String
+    872: "Fairy Dust/500/-300/Basic/Pó de Fada/Jogue em barris, fornalhas, e outros equipamentos de refinamento para receber seus produtos instantaneamente." #!String
+    873: "Piña Colada/300/30/Cooking -7/Piña Colada/Beba com moderação./drink/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    874: "Bug Steak/50/18/Crafting/Filé de Inseto/A última opção de exploradores de caverna famintos." #!String
+    875: "Ectoplasm/0/-300/Quest/Ectoplasma/Uma gosma densa e pegajosa que o Feiticeiro quer por algum motivo." #!String
+    876: "Prismatic Jelly/0/-300/Quest/Gosma Prismática/Coletada da rara e elusiva gosma prismática." #!String
+    877: "Quality Bobber/300/-300/Basic -22/Boia de Qualidade/Aumenta a qualidade dos peixes que você pesca." #!String
+    879: "Monster Musk/50/-300/Crafting/Almíscar de Monstro/Use isto para atrair mais monstros." #!String
+    880: "Combined Ring/100/-300/Ring/Anel Combinado/..." #!String
+    881: "Bone Fragment/12/-300/Basic -15/Fragmento de Osso/Um pequeno pedaço de osso." #!String
+    882: "Weeds/50/-300/Crafting/Weeds/..." #!String
+    883: "Weeds/50/-300/Crafting/Weeds/..." #!String
+    884: "Weeds/50/-300/Crafting/Weeds/..." #!String
+    885: "Fiber Seeds/5/-300/Seeds -74/Sementes de Fibra/Plante-as em qualquer estação. Não precisam ser regadas. Colha com a foice. Levam 7 dias para crescer." #!String
+    886: "Warp Totem: Island/20/-300/Crafting/Totem de Teletransporte: Ilha/Teletransporta diretamente para Ilha Gengibre. Consumido ao usar." #!String
+    887: "Immunity Band/500/-300/Ring/Anel de Imunidade/A parte de cima do anel é feita de lã roxa encantada." #!String
+    888: "Glowstone Ring/200/-300/Ring/Anel de Pedra Luminosa/Emite uma luz constante, e também aumenta seu alcance de coleta de itens." #!String
+    889: "Qi Fruit/1/1/Basic -79/Fruta Qi/Sr. Qi te desafiou a entregar 500 destes melões estranhos." #!String
+    890: "Qi Bean/1/-300/Seeds -74/Grão Qi/Plante-os em qualquer estação. Regue todos os dias para produzir uma Fruta Qi. Demoram 4 dias para crescer." #!String
+    891: "Mushroom Tree Seed/100/-300/Crafting -74/Semente de Árvore de Cogumelo/Coloque isto na sua fazenda para plantar uma árvore de cogumelo." #!String
+    892: "Warp Totem: Qi's Arena/20/-300/Crafting/Totem de Teletransporte: Arena do Qi/Teletransporta para a Arena do Qi. Se prepare para um desafio!" #!String
+    893: "Fireworks (Red)/50/-300/Crafting -8/Fogos de Artifício (Vermelho)/Uma velha tradição para celebrações e festividades. Manusear com cuidado!" #!String
+    894: "Fireworks (Purple)/50/-300/Crafting -8/Fogos de Artifício (Roxo)/Uma velha tradição para celebrações e festividades. Manusear com cuidado!" #!String
+    895: "Fireworks (Green)/50/-300/Crafting -8/Fogos de Artifício (Verde)/Uma velha tradição para celebrações e festividades. Manusear com cuidado!" #!String
+    896: "Galaxy Soul/5000/-300/Crafting/Alma da Galáxia/Forje 3 dessas em uma arma da Galáxia para liberar sua forma final." #!String
+    897: "Pierre's Missing Stocklist/0/-300/Quest/Lista do Estoque Perdida de Pierre/Pierre pode estar interessado nisto." #!String
+    898: "Son of Crimsonfish/1500/15/Fish -4/Filho do Peixe-Carmim/Ele nasceu na água quente do verão, e seguiu os passos de seu pai./Day^Winter" #!String
+    899: "Ms. Angler/900/10/Fish -4/Srta. Tamboril/Utiliza uma isca bioluminescente para atrair sua presa./Day Night^Spring Summer Fall Winter" #!String
+    900: "Legend II/5000/200/Fish -4/Lenda II/O sucessor da Lenda original./Day^Winter" #!String
+    901: "Radioactive Carp/1000/10/Fish -4/Carpa Radioativa/Uma carpa que passou tempo demais nos esgotos./Day^Spring Summer" #!String
+    902: "Glacierfish Jr./1000/10/Fish -4/Peixe-Gelo Jr./O Peixe-Gelo original teve um filho.../Day^Winter" #!String
+    903: "Ginger Ale/200/25/Cooking -7/Ginger Ale/Um refrigerante picante conhecido por seus efeitos acalmantes no estomâgo./drink/0 0 0 0 1 0 0 0 0 0 0/430" #!String
+    904: "Banana Pudding/260/50/Cooking -7/Pudim de Banana /Uma sobremsa cremosa com um incrível sabor tropical./food/0 0 1 0 1 0 0 0 0 0 1/430" #!String
+    905: "Mango Sticky Rice/250/45/Cooking -7/Arroz Doce de Manga/Manga doce e coco tornam este arroz em algo muito especial./food/0 0 0 0 0 0 0 0 0 0 3/430" #!String
+    906: "Poi/400/30/Cooking -7/Poi/Uma comida tradicional com um sabor delicado e doce quando está fresca./food/0 0 0 0 0 0 0 0 0 0 0/0" #!String
+    907: "Tropical Curry/500/60/Cooking -7/Curry Tropical/Um exótico e aromático curry servido em uma tigela de abacaxi./food/0 0 0 0 0 4 0 0 0 0 0/430" #!String
+    908: "Magic Bait/1/-300/Basic -21/Isca Mágica/Permite que você pegue peixes de qualquer estação, tempo ou clima a partir de qualquer corpo d'água." #!String
+    909: "Radioactive Ore/300/-300/Basic -15/Minério Radioativo/Está brilhando com uma energia perigosa... Pode ser derretido em barras." #!String
+    910: "Radioactive Bar/3000/-300/Basic -15/Barra Radioativa/Conhecida pela Comissão de Segurança da Cidade Zuzu por causar dano irreversível ao corpo." #!String
+    911: "Horse Flute/3000/-300/Crafting/Flauta de Cavalo/Tocar esta flauta irá invocar o seu cavalo. Só funciona ao ar livre." #!String
+    913: "Enricher/200/-300/Basic/Enriquecedor/Coloque em um aspersor e encha com fertilizante para automaticamente aplicar quando plantar sementes próximas." #!String
+    915: "Pressure Nozzle/200/-300/Basic/Bocal de Pressão/Coloque em um aspersor para aumentar seu alcance." #!String
+    917: "Qi Seasoning/200/-300/Basic/Tempero Qi/Só uma pitada irá elevar qualquer prato à níveis extraordinarios. Aplicado automaticamente ao cozinhar." #!String
+    918: "Hyper Speed-Gro/70/-300/Basic -19/Hiper Solo Foliar/Estimula muito a produção de folhas. Garante um aumento de crescimento de pelo menos 33%. Misture no solo arado." #!String
+    919: "Deluxe Fertilizer/70/-300/Basic -19/Fertilizante Premium/Aumenta muito a qualidade do solo, aumentando sua chance de crescer plantas de qualidade. Misture no solo arado." #!String
+    920: "Deluxe Retaining Soil/30/-300/Basic -19/Solo Retentor Premium/Este solo tem 100% de chance de continuar úmido no próximo dia. Misture no solo arado." #!String
+    921: "Squid Ink Ravioli/150/50/Cooking -7/Ravioli de Tinta de Lula/Temporariamente protege de efeitos negativos./food/0 0 1 0 0 0 0 0 0 0 0/400" #!String
+    922: "SupplyCrate/1/-300/Crafting/SupplyCrate/..." #!String
+    923: "SupplyCrate/1/-300/Crafting/SupplyCrate/..." #!String
+    924: "SupplyCrate/1/-300/Crafting/SupplyCrate/..." #!String
+    925: "Slime Crate/3000/-300/Crafting/Caixa de Gosma/Use isso para transportar uma gosma domesticada para outros lugares." #!String
+    926: "Cookout Kit/80/-300/Crafting/Cozinha Portátil/Use isso para criar uma fogueira, permitindo que você cozinhe em qualquer lugar!" #!String
+    927: "Camping Stove/1/-300/Crafting/Fogão para Acampar/Isso permite que cozinhe em qualquer lugar, e não é consumido ao uso." #!String
+    928: "Golden Egg/500/10/Basic -5/Ovo Dourado/Um ovo muito raro e especial com uma casca de ouro maciço." #!String
+    929: "Hedge/10/-300/Crafting -8/Cerca-Viva/Uma moita podada que funciona como uma cerca." #!String
+    930: "???/0/-300/Basic/???/???" #!String
+

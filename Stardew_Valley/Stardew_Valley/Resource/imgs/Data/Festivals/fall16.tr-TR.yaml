@@ -1,0 +1,66 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    name: "Yıldızçiyi Vadisi Şöleni" #!String
+    conditions: "Town/900 1500" #!String
+    set-up: "fallFest/-1000 -1000/farmer 12 54 1/changeToTemporaryMap Town-Fair/viewport -1000 -1000/loadActors Set-Up/advancedMove Vincent true -3 0 2 5000 3 0 2 5000/advancedMove Jas true 2 0 4 5000 -2 0 4 5000/advancedMove Marnie true -2 0 4 5000 2 0 2 5000/advancedMove Abigail true 4 6000 5 0 0 3 2 6000 0 -3 -5 0/advancedMove Robin true 0 1 1 5000 0 -2 3 5000 0 1 1 5000/animate Sebastian false true 200 16 16 16 16 16 16 16 16 16 16 16 16 17 18 19 20 21 21 21 21 20 22 22 23/addTemporaryActor BabyPig 32 32 65 68 2 false Animal/addTemporaryActor Pig 32 32 65 70 3 false Animal/addTemporaryActor White_Chicken 16 16 59 67 2 false Animal/addTemporaryActor Brown_Chicken 16 16 61 67 2 false Animal/addTemporaryActor White_Cow 32 32 59 72 0 false Animal/addTemporaryActor BabyWhite_Cow 32 32 61 72 1 false Animal/advancedMove BabyPig true 0 1 3 5000 0 -1 0 7000/advancedMove Pig true 3 5000 0 1 1 5000 0 -1 3 5000/advancedMove White_Chicken true 1 0 2 7000 -1 0 2 10000/animate Brown_Chicken false true 500 16 17/viewport 22 22 true unfreeze/globalFadeToClear/pause 2000/playerControl fair" #!String
+    Abigail_spouse: "Geçen sene tüm oyunları kazanmıştım!$h" #!String
+    Leah_spouse: "Geçen sene Robin'in tekniklerini öğrenmeme rağmen hep benden bir adım önde olmayı başarmıştı!" #!String
+    Maru_spouse: "Ihım... Patlayana kadar barbekü sandviçi yemek için yıl boyunca elime bir tek bugün fırsat geçiyor." #!String
+    Penny_spouse: "Umarım çiftlik sergisini biz kazanırız!" #!String
+    Haley_spouse: "Çiftlik sergisi için güzel ürünler getirdin, değil mi? Umarım bu sene biz kazanırız." #!String
+    Sebastian_spouse: "Merhaba @. Sam ile takılıyorduk. Hadi sen de git ve eğlen." #!String
+    Sam_spouse: "Sebastian her zamanki gibi. Eğleniyor musun?" #!String
+    Alex_spouse: "Eski dostlarla arayı kapatıyordum... Hadi, sen de iyi vakit geçirmeye bak." #!String
+    Harvey_spouse: "Sen eve gitmeye hazır oluncaya dek burada bekleyeceğim..." #!String
+    Elliott_spouse: "Dumanın peşine takılıp geldim. Kaderimi lezzetli soslar mühürledi... *güler*$s" #!String
+    Abigail: "Tüm oyunları kazandım... Yapacak ne kaldı?" #!String
+    Robin: "Odun işçiliği gururla sürdürdüğüm bir gelenektir.$h" #!String
+    Demetrius: "Robin o marangozluk işlerine çok emek veriyor... ara sıra biraz fark edilmeyi hak ediyor." #!String
+    Maru: "*höpürdetir* Ihım... Bu barbekü sosu efsane.$h" #!String
+    Sebastian: "Bugün herkes telaş içinde... Ben biraz burada takılacağım." #!String
+    Pierre: "Benim dükkanım vadideki en iyi ürünleri içerir. Lütfen sergimi incele ve kararını ver!" #!String
+    Caroline: "Pierre sergisine çok özen gösterdi. Yıl boyunca en güzel görünen ürünleri haftalar öncesinden hazırladı.#$e#Hey, katılırsan şansın bol olsun!" #!String
+    Linus: "Hayvanlar insanları görünüşleriyle yargılamıyorlar. İnsanlar için aynısı söylenemez." #!String
+    Alex: "'Kuvvet' oyununu çok oynadım. Kolum lastik gibi oldu." #!String
+    George: "Hım... Tütsülenmiş hindi butu mu? Bu şölen o kadar da kötü değilmiş.$h" #!String
+    Evelyn: "Gus keşke bir de vejetaryen opsiyonu sunsaymış. Belki biraz kabak şiş..." #!String
+    Lewis: "Evet @. Bugün büyük gün... 'Yıldızçiyi Vadisi Şöleni' yılın en önemli etkinliğidir.#$b#Eğer çiftlik sergisi açmak istersen diye standlardan birini boş bıraktım. Sergiyi kurmayı bitirdiğinde bana haber ver ki puanlamaya geçelim." #!String
+    Clint: "Bazen işim hakkında söyleniyorum ama yaptıklarımla gurur duyuyorum.#$b#Bunlar en güzel çalışmalarımdan birkaçı. Umarım beğenirsin." #!String
+    Emily: "Benden iyi palyaço olurdu. Fırsatı kaçırdım galiba." #!String
+    Penny: "Şans çarkında on kez üst üste kazandım. Oradaki adam artık beni oynatmıyor...$s" #!String
+    Pam: "Acele et evlat... İhtiyar Pam çadırdaki tüm büyük balıkları tutar yoksa! Hehe.$h" #!String
+    Haley: "Falcıya gittin mi? Çadırı mezarlığın orada.#$e#Ben çoktan gittim... Bana çok... ilginç bir şeyler anlattı. *kıkırdar*$h" #!String
+    Jodi: "Çok mutlu görünmüyor... Sanırım Başkan Lewis bu sene ucuz bir palyaço ile masraftan kaçmak istedi." #!String
+    Kent: "Şu palyaçonun komik bir şeyler yapmasını bekliyorum.#$e#Hayal kırıklığına uğradım." #!String
+    Sam: "Selam @. İyi vakit geçiriyor musun?#$e#Sapan çadırı çok eğlenceli. Oyunu becerebilirsen bir sürü yıldız jetonu kazanabilirsin." #!String
+    Leah: "Robin'in marangozluk yeteneklerine hastayım. Ben de çalışmalarımda onun tekniklerinden faydalandım." #!String
+    Shane: "Buradaki hayvanlar çok cana yakın. Bir de masaja bayılıyorlar." #!String
+    Marnie: "Elimden geleni yaptım ama benim sergim Pierre'nin sergisine göre zayıf kaldı.$s#$e#Eh, belki jüri devasa peynirime ek puan verir." #!String
+    Elliott: "Gus'ı sosun tarifini vermesi için sıkıştırıyorum ama nafile." #!String
+    Gus: "İstediğin kadar ye! Bugün beleş... Başkan Lewis ısmarlıyor.$h#$e#Ah! Şuradaki gizli sosuma bandırmayı unutma!" #!String
+    Dwarf: "Yağmur mu yağıyor? *şaşırır*#$e#Yağmur... Bizim için neredeyse efsanevi bir şeydir. Kimimiz hayatları boyunca yağmuru göremeden ölür." #!String
+    Wizard: "Welwick'i bir süredir tanıyorum... Becerikli bir kahin ve iyi bir arkadaştır.#$e#...#$e#Şu palyaço... Onu bir yerden tanıyorum.#$e#İlüzyon okulundan mıydı? Yoksa Sırlar Karnavalı'ndan mıydı? Hım..." #!String
+    Harvey: "Birkaç adım ötede Gus bir yığın domuz budu mangallıyor. Of be.$s#$e#Benim ruhları bulmam gerekiyor...$11" #!String
+    Sandy: "Bizim orada yağmur yağdığını duydum. Sen bu yüzden mi buraya geldin?$h#$e#Aslında, yağmuru özlüyorum...$s" #!String
+    Jas: "Ah! Bir tavuk serçe parmağımı ısırdı.$u" #!String
+    Vincent: "Möööö!" #!String
+    Marlon: "Clint'in kılıçları her sene daha da keskinleşiyor.#$e#Fiyatları da öyle..." #!String
+    Willy: "Çiftlik sergisi açacak mısın, @? %farm Çiftliği'ndeki harika ürünleri sergilemek için fırsatın var!" #!String
+    Leo: "Haha! Daha önce böyle bir şey görmemiştim...$h" #!String
+

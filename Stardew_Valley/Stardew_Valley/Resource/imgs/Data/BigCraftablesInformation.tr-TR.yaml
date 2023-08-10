@@ -1,0 +1,190 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.Int32Reader"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<Int32,String>
+    0: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    1: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    2: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    3: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    4: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    5: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    6: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    7: "House Plant/50/-300/Crafting -9/Evine ya da çiftliğine biraz renk getirir./true/true/0/Ev Bitkisi" #!String
+    8: "Scarecrow/50/-300/Crafting -9/Ekinlerini kargalardan korur. Sınırlı menzili (8 \"kare\" kadar) vardır./true/true/0/Korkuluk" #!String
+    9: "Lightning Rod/50/-300/Crafting -9/Düşen yıldırımdan enerji toplar ve bu enerjiyle pil oluşmasını sağlar./true/true/0/Paratoner" #!String
+    10: "Bee House/50/-300/Crafting -9/Dışarıya yerleştir ve (kışları hariç) lezzetli balın oluşmasını bekle!/true/true/0/Arı Kovanı" #!String
+    12: "Keg/50/-300/Crafting -9/Meyve ya da sebze yerleştir. Eninde sonunda bir içeceğe dönüşecektir./true/true/0/Fıçı" #!String
+    13: "Furnace/50/-300/Crafting -9/Cevher ve kömürü metalik külçelere dönüştürür./true/true/0/Ocak" #!String
+    15: "Preserves Jar/50/-300/Crafting -9/Sebzeleri turşuya, meyveleri ise reçele dönüştürür./true/true/0/Kavanoz" #!String
+    16: "Cheese Press/50/-300/Crafting -9/Sütü peynire dönüştürür./true/true/0/Peynir Ezeceği" #!String
+    17: "Loom/50/-300/Crafting -9/Yünü kaliteli kumaşa dönüştürür./true/true/0/Dokuma Tezgahı" #!String
+    19: "Oil Maker/50/-300/Crafting -9/Yermantarı yağı üretir./true/true/0/Yağ Üreteci" #!String
+    20: "Recycling Machine/50/-300/Crafting -9/Balık tutarken bulunan çöpleri kullanışlı nesnelere dönüştürür./true/true/0/Geri Dönüşüm Makinesi" #!String
+    21: "Crystalarium/50/-300/Crafting -9/Çoğaltmak istediğin mücevheri koy ve bekle./true/true/0/Kristalaryum" #!String
+    22: "Table Piece L/50/-300/Crafting -9/Büyük bir masanın sol tarafı./true/true/0/Sl. Masa Parçası" #!String
+    23: "Table Piece R/50/-300/Crafting -9/Büyük bir masanın sağ tarafı./true/true/0/Sğ. Masa Parçası" #!String
+    24: "Mayonnaise Machine/50/-300/Crafting -9/Yumurtadan mayonez üretir./true/true/0/Mayonez Makinesi" #!String
+    25: "Seed Maker/50/-300/Crafting -9/Değişik miktarda tohum elde etmek için içine ekin yerleştirilir. Ağaçların verdiği meyvelerle çalışmaz./true/true/0/Tohum Üreteci" #!String
+    26: "Wood Chair/50/-300/Crafting -9/Bakış yönü değiştirilebilen sandalye./true/true/0/Ahşap Sandalye" #!String
+    27: "Wood Chair/50/-300/Crafting -9/Bakış yönü değiştirilebilen sandalye./true/true/0/Ahşap Sandalye" #!String
+    28: "Skeleton Model/50/-300/Crafting -9/Bir iskelet maketi./true/true/0/İskelet" #!String
+    29: "Obelisk/50/-300/Crafting -9/Kötü enerji yayan, uğursuz görünen bir portal./false/true/0/Dikilitaş" #!String
+    31: "Chicken Statue/50/-300/Crafting -9/Ahşaptan yapılmış tavuk heykelciği./true/true/0/Tavuk Heykelciği" #!String
+    32: "Stone Cairn/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Taş Yığını" #!String
+    33: "Suit Of Armor/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Zırh" #!String
+    34: "Sign Of The Vessel/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/İşaret Heykeli" #!String
+    35: "Basic Log/125/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Kütük" #!String
+    36: "Lawn Flamingo/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Flamingo" #!String
+    37: "Wood Sign/5/-300/Crafting -9/Yazıyı değiştirmek için üstünde eşya kullanılır. Eşya harcanmaz./true/true/0/Ahşap Tabela" #!String
+    38: "Stone Sign/5/-300/Crafting -9/Yazıyı değiştirmek için üstünde eşya kullanılır. Eşya harcanmaz./true/true/0/Taş Tabela" #!String
+    39: "Dark Sign/5/-300/Crafting -9/Görüntüleneni değiştirmek için bir nesne üzerinde kullanılır. Kullanılan nesne kaybolmaz./true/true/0/Kara İşaret" #!String
+    40: "Big Green Cane/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Büyük Yeşil Şekerkamışı" #!String
+    41: "Green Canes/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Yeşil Şekerkamışları" #!String
+    42: "Mixed Cane/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Renkli Şekerkamışları" #!String
+    43: "Red Canes/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Kırmızı Şekerkamışları" #!String
+    44: "Big Red Cane/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Büyük Kırmızı Şekerkamışı" #!String
+    45: "Ornamental Hay Bale/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Süslük Saman Balyası" #!String
+    46: "Log Section/175/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Ağaç Gövdesi" #!String
+    47: "Grave Stone/50/-300/Crafting -9/Çiftliğe yerleştirilebilen bir süs./true/true/0/Mezar Taşı" #!String
+    48: "Seasonal Decor/50/-300/Crafting -9/Bu süs mevsimle birlikte değişir./true/true/0/Mevsim Süsü" #!String
+    52: "Stone Frog/50/-300/Crafting -9/Bahçeye yerleştirilebilen sanat eseri./true/true/0/Taş Kurbağa" #!String
+    53: "Stone Parrot/50/-300/Crafting -9/Bahçeye yerleştirilebilen sanat eseri./true/true/0/Taş Papağan" #!String
+    54: "Stone Owl/50/-300/Crafting -9/Bahçeye yerleştirilebilen sanat eseri./true/true/0/Taş Baykuş" #!String
+    55: "Stone Junimo/50/-300/Crafting -9/Bahçeye yerleştirilebilen sanat eseri./true/true/0/Taş Junimo" #!String
+    56: "Slime Ball/50/-300/Crafting -9/Balçıkça dolu./true/true/2/Balçıkça Topu" #!String
+    62: "Garden Pot/1000/-300/Crafting -9/İçerdeyken her mevsimden bitkiyi, dışardayken sadece mevsimsel bitkileri yetiştirebilir./true/false/0/Saksı" #!String
+    64: "Bookcase/50/-300/Crafting -9/Kitapların koyulduğu raflar bütünü./true/false/1/Kitaplık" #!String
+    65: "Fancy Table/50/-300/Crafting -9/Güzelcene yapılmış bir masa./true/false/1/Süslü Masa" #!String
+    66: "Ancient Table/50/-300/Crafting -9/Kalın örümcek ağlarıyla kaplanmış./true/false/1/Eski Masa" #!String
+    67: "Ancient Stool/50/-300/Crafting -9/Büyükannenin evi gibi kokuyor./true/false/1/Eski Tabure" #!String
+    68: "Grandfather Clock/50/-300/Crafting -9/Aşırı eski... görünüşe göre sarkaç pasla sabitlenmiş./true/false/1/Büyükbaba Saati" #!String
+    69: "Teddy Timer/50/-300/Crafting -9/Büyükbaba saati gibi ama ayıcık şeklinde./true/false/1/Ayıcık Saati" #!String
+    70: "Dead Tree/0/-300/Crafting -9/Taşlaşmış, yazık./true/false/1/Ölü Ağaç" #!String
+    71: "Staircase/0/-300/Crafting -9/Madende bir seviye aşağıya inmede kullanılır./true/false/1/Merdiven" #!String
+    72: "Tall Torch/0/-300/Crafting -9/Sapı bambudan yapılmış./true/false/1/Uzun Meşale" #!String
+    73: "Ritual Mask/0/-300/Crafting -9/Takmak için fazlasıyla büyük./true/false/1/Tören Maskesi" #!String
+    74: "Bonfire/0/-300/Crafting -9/Korlar hafiften parıldıyor./true/false/1/Ateş" #!String
+    75: "Bongo/0/-300/Crafting -9/Zengin ses çıkaran, süs niyetine kullanılan vurmalı bir çalgı./true/false/1/Bongo" #!String
+    76: "Decorative Spears/0/-300/Crafting -9/Güvende hissettiren süsler değil./true/false/1/Süslük Mızraklar" #!String
+    78: "Boulder/0/-300/Crafting -9/Aşırı kalın bir taş parçası./true/false/1/Kaya" #!String
+    79: "Door/0/-300/Crafting -9/Gizli bir mekanizma, kapıyı gerisin geriye yere çeker./true/false/1/Kapı" #!String
+    80: "Door/0/-300/Crafting -9/Gizli bir mekanizma, kapıyı gerisin geriye yere çeker./true/false/1/Kapı" #!String
+    81: "Locked Door/0/-300/Crafting -9/Gizli bir mekanizma, kapıyı gerisin geriye yere çeker./true/false/2/Kilitli Kapı" #!String
+    82: "Locked Door/0/-300/Crafting -9/Gizli bir mekanizma, kapıyı gerisin geriye yere çeker./true/false/2/Kilitli Kapı" #!String
+    83: "Wicked Statue/0/-300/Crafting -9/Bu heykelin görüntüsünde insanı rahatsız eden bir şey var./true/false/0/Uğursuz Heykel" #!String
+    84: "Wicked Statue/0/-300/Crafting -9/Bu heykelde yanlış olan bir şey var./true/false/2/Uğursuz Heykel" #!String
+    85: "Sloth Skeleton L/0/-300/Crafting -9/Nesli tükenmiş bu tembel hayvan, bilinen tarihin öncesinde kalan zamanlarda Yıldızçiyi Vadisi'nin bereketli topraklarında dolaşmış. Güçlü çenesiyle en sert bitki liflerini bile parçalarmış./true/false/0/Tembel Hayvan İskeleti" #!String
+    86: "Sloth Skeleton M/0/-300/Crafting -9/Tarih öncesine ait bir tembel hayvan kaburgası./true/false/0/Tembel Hayvan İskeleti" #!String
+    87: "Sloth Skeleton R/0/-300/Crafting -9/Tarih öncesine ait bir tembel hayvanın arka ayakları ve kuyruğu./true/false/0/Tembel Hayvan İskeleti" #!String
+    88: "Standing Geode/0/-300/Crafting -9/Dikili duran koca bir jeot. İçinde bulunan yüzlerce mor kristalin parıltısı görülüyor./true/false/0/Dikili Jeot" #!String
+    89: "Obsidian Vase/0/-300/Crafting -9/Obsidyen ve altından yapılmış, harika işçiliğe sahip olan süs vazosu./true/false/0/Obsidyen Vazo" #!String
+    90: "Bone Mill/0/-300/Crafting -9/Kemikten yapılma nesneleri gübreye dönüştürür./true/true/0/Kemik Değirmeni" #!String
+    94: "Singing Stone/0/-300/Crafting -9/Vurulduğunda notaları en düzgün halleriyle çıkartır./true/false/0/Şarkıcı Taş" #!String
+    95: "Stone Owl/0/-300/Crafting -9/Nereden geldiği belli olmasa da harika görünüyor./true/false/0/Taş Baykuş" #!String
+    96: "Strange Capsule/0/-300/Crafting -9/Sıvının içinde büyük bir şey var.../true/false/0/Garip Kapsül" #!String
+    98: "Empty Capsule/0/-300/Crafting -9/Cam parçalanmış./true/false/0/Boş Kapsül" #!String
+    99: "Feed Hopper/0/-300/Crafting -9/Silodaki yeme doğrudan erişim sağlar./true/false/0/Yem Hunisi" #!String
+    101: "Incubator/0/-300/Crafting -9/Yumurtalardan civciv çıkmasını sağlar./true/false/2/Kuluçka Makinesi" #!String
+    104: "Heater/0/-300/Crafting -9/Hayvanlarını kışın mutlu ve sıcak tutar./true/false/0/Isıtıcı" #!String
+    105: "Tapper/0/-300/Crafting -9/Meşe, akçaağaç ya da çam ağacına takılır. Sonrasında ise ağaçların verdiği ürünlerle dolması beklenir!/true/false/0/Akıtaç" #!String
+    106: "Camera/0/-300/Crafting -9/Tripoda takılı eski bir kamera./true/false/0/Kamera" #!String
+    107: "Plush Bunny/0/-300/Crafting -9/Büyük, yumuşak ve tatlı./false/true/0/Peluş Tavşan" #!String
+    108: "Tub o' Flowers/0/-300/Crafting -9/Meşeden yapılma küvete konulmuş çiçekler. Yaz ve bahar mevsimlerinde açarlar./true/true/0/Çiçek Küveti" #!String
+    109: "Tub o' Flowers/0/-300/Crafting -9/Meşeden yapılma küvete konulmuş çiçekler. Yaz ve bahar mevsimlerinde açarlar./true/true/0/Çiçek Küveti" #!String
+    110: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (1/true/true/0/0/İlginç Korkuluk" #!String
+    111: "Decorative Pitcher/0/-300/Crafting -9/El emeği verilerek pirinçten yapılmış./true/true/0/Süslük Sürahi" #!String
+    112: "Dried Sunflowers/0/-300/Crafting -9/Canlı süslerden./true/true/0/Kurumuş Ayçicekleri" #!String
+    113: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (2/true/true/0/0/İlginç Korkuluk" #!String
+    114: "Charcoal Kiln/0/-300/Crafting -9/10 parça odunu bir parça kömüre dönüştürür./true/true/0/Kömür Fırını" #!String
+    116: "Stardew Hero Trophy/0/-300/Crafting -9/Bir Yıldızçiyi Vadisi sakininin alabileceği en prestijli ödül!/true/true/0/Yıldızçiyi Kahramanı Ödülü" #!String
+    117: "Soda Machine/0/-300/Crafting -9/Durmaksızın güzel ürünler verir./true/true/0/Otomat" #!String
+    118: "Barrel/0/-300/Crafting -9/.../true/true/0/Varil" #!String
+    119: "Crate/0/-300/Crafting -9/.../true/true/0/Kasa" #!String
+    120: "Barrel/0/-300/Crafting -9/.../true/true/0/Varil" #!String
+    121: "Crate/0/-300/Crafting -9/.../true/true/0/Kasa" #!String
+    122: "Barrel/0/-300/Crafting -9/.../true/true/0/Varil" #!String
+    123: "Crate/0/-300/Crafting -9/.../true/true/0/Kasa" #!String
+    124: "Barrel/0/-300/Crafting -9/.../true/true/0/Varil" #!String
+    125: "Crate/0/-300/Crafting -9/.../true/true/0/Kasa" #!String
+    126: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (3/true/true/0/0/İlginç Korkuluk" #!String
+    127: "Statue Of Endless Fortune/0/-300/Crafting -9/Som altından yapılmış. Ne işe yarar ki?/true/true/0/Sonsuz Talih Heykelciği" #!String
+    128: "Mushroom Box/0/-300/Crafting -9/Birkaç gün aralıklarla mantar yetişir./true/true/2/Mantar Kutusu" #!String
+    130: "Chest/0/-300/Crafting -9/Nesne koyulan bir saklama noktası./true/true/0/Sandık" #!String
+    136: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (4/true/true/0/0/İlginç Korkuluk" #!String
+    137: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (5/true/true/0/0/İlginç Korkuluk" #!String
+    138: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (6/true/true/0/0/İlginç Korkuluk" #!String
+    139: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (7/true/true/0/0/İlginç Korkuluk" #!String
+    140: "Rarecrow/0/-300/Crafting -9/Hepsini bul! (8/true/true/0/0/İlginç Korkuluk" #!String
+    141: "Prairie King Arcade System/0/-300/Crafting -9/'Çayır Kralı'nın Yolculuğu'nu evden oynamayı sağlar!/true/true/0/Çayır Kralı Atari Oyunu" #!String
+    143: "Wooden Brazier/25/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Ahşap Maltız" #!String
+    144: "Stone Brazier/40/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Taş Maltız" #!String
+    145: "Gold Brazier/100/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Altın Maltız" #!String
+    146: "Campfire/0/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Kamp Ateşi" #!String
+    147: "Stump Brazier/80/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Kütük Maltız" #!String
+    148: "Carved Brazier/200/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Oyma Maltız" #!String
+    149: "Skull Brazier/300/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Kemik Maltız" #!String
+    150: "Barrel Brazier/80/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Varil Maltız" #!String
+    151: "Marble Brazier/500/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/Mermer Maltız" #!String
+    152: "Wood Lamp-post/50/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/true/Ahşap Lamba Direği" #!String
+    153: "Iron Lamp-post/100/-300/Crafting -9/Orta düzeyde ışık sağlar./true/true/0/true/Demir Lamba Direği" #!String
+    154: "Worm Bin/0/-300/Crafting -9/Düzenli olarak yem üretir. Solucanlar kendi başlarına idare eder./true/true/0/Solucan Kutusu" #!String
+    155: "??HMTGF??/0/-300/Crafting -9/??HMTGF??/true/true/0/??HMTGF??" #!String
+    156: "Slime Incubator/0/-300/Crafting -9/Balçıkça yumurtalarını kulukçaya alır. Evin dışında balçıkça yetiştirmeyi mümkün kılar./true/false/0/Balçıkça Kuluçka Makinesi" #!String
+    158: "Slime Egg-Press/0/-300/Crafting -9/100 adet balçıkçayı sıkıştırarak balçıkça yumurtası oluşturur. Bilimsel bir mucize gerçekleştirir!/true/false/0/Balçıkça Yumurta Üreteci" #!String
+    159: "Junimo Kart Arcade System/0/-300/Crafting -9/'Junimo Kart' oyununu evden oynamayı sağlar!/true/true/0/Junimo Kart Atari Oyunu" #!String
+    160: "Statue Of Perfection/0/-300/Crafting -9/Saf iridyumdan yapılmıştır./true/true/0/Mükemmellik Heykeli" #!String
+    161: "??Pinky Lemon??/0/-300/Crafting -9/??Pembemsi Limon??/true/true/0/??Pembemsi Limon??" #!String
+    162: "??Foroguemon??/0/-300/Crafting -9/??Forokemon??/true/true/0/??Forokemon??" #!String
+    163: "Cask/0/-300/Crafting -9/Peynir ve şarap gibi gıdaları yıllandırmak için kilerde tutulur./true/true/0/Fıçı" #!String
+    164: "Solid Gold Lewis/0/-300/Crafting -9/Başkanın gizli projesi./true/true/0/Altın Lewis" #!String
+    165: "Auto-Grabber/0/-300/Crafting -9/Her sabah hayvanlarınının ürünlerini otomatik olarak toplar. İnekler, koyunlar ve keçiler için geçerlidir./true/true/0/Otomatik Toplayıcı" #!String
+    167: "Deluxe Scarecrow/50/-300/Crafting -9/Ekinlerini kargalardan korur. Sınırlı menzili (16 \"kare\" kadar) vardır./true/true/0/Büyük Korkuluk" #!String
+    174: "Barrel/0/-300/Crafting -9/.../true/true/0/Varil" #!String
+    175: "Crate/0/-300/Crafting -9/.../true/true/0/Kasa" #!String
+    182: "Geode Crusher/0/-300/Crafting -9/Jeotları otomatik olarak kırar. Kömürle çalışır./true/true/0/Jeotkırar" #!String
+    184: "Seasonal Plant/50/-300/Crafting -9/Mevsimden mevsime değişen bir süs bitkisi. Sulanması gerekmez./true/true/0/Mevsimsel Bitki" #!String
+    188: "Seasonal Plant/50/-300/Crafting -9/Mevsimden mevsime değişen bir süs bitkisi. Sulanması gerekmez./true/true/0/Mevsimsel Bitki" #!String
+    192: "Seasonal Plant/50/-300/Crafting -9/Mevsimden mevsime değişen bir süs bitkisi. Sulanması gerekmez./true/true/0/Mevsimsel Bitki" #!String
+    196: "Seasonal Plant/50/-300/Crafting -9/Mevsimden mevsime değişen bir süs bitkisi. Sulanması gerekmez./true/true/0/Mevsimsel Bitki" #!String
+    200: "Seasonal Plant/200/-300/Crafting -9/Mevsimden mevsime değişen bir süs bitkisi. Sulanması gerekmez./true/true/0/Mevsimsel Bitki" #!String
+    204: "Seasonal Plant/50/-300/Crafting -9/Mevsimden mevsime değişen bir süs bitkisi. Sulanması gerekmez./true/true/0/Mevsimsel Bitki" #!String
+    208: "Workbench/1000/-300/Crafting -9/Nesne oluştururken bitişiğindeki sandıklardaki malzemelere erişim sağlar./true/true/0/Çalışma Tezgahı" #!String
+    209: "Mini-Jukebox/1500/-300/Crafting -9/En sevdiğin parçaları çalmaya yarar./true/true/0/Küçük Müzik Kutusu" #!String
+    211: "Wood Chipper/500/-300/Crafting -9/Yerleştirilen keresteyi böler ve oduna dönüştürür./true/true/0/Ağaç Öğütücü" #!String
+    214: "Telephone/1000/-300/Crafting -9/Mevcut ürünleri ve açılış kapanış saatlerini öğrenmede kullanılır./true/true/0/Telefon" #!String
+    216: "Mini-Fridge/1500/-300/Crafting -9/Fazla gelen yemek malzemelerini saklamaya yarar./true/true/0/Küçük Buzdolabı" #!String
+    219: "Cursed P.K. Arcade System/0/-300/Crafting -9/Bu Çayır Kralı atari oyununda ters bir şeyler var.../true/true/0/Lanetli Ç.K. Atari Oyunu" #!String
+    231: "Solar Panel/0/-300/Crafting -9/Güneş ışığı vurduğunda yavaşça pil üretir./true/true/0/Güneş Paneli" #!String
+    232: "Stone Chest/0/-300/Crafting -9/Nesne koyulan bir saklama noktası./true/true/0/Taş Sandık" #!String
+    238: "Mini-Obelisk/0/-300/Crafting -9/Çiftlikteki iki nokta arasında ışınlanmayı sağlar./true/true/0/Küçük Dikilitaş" #!String
+    239: "Farm Computer/0/-300/Crafting -9/Çiftliği tarar ve önemli bilgiler sunar./true/true/0/Çiflik Bilgisayarı" #!String
+    246: "Coffee Maker/0/-300/Crafting -9/Her sabah otomatik olarak bir bardak kahve yapar./true/true/0/Kahve Makinesi" #!String
+    247: "Sewing Machine/0/-300/Crafting -9/Evde giysi dikmeye yarar!/true/true/0/Dikiş Makinesi" #!String
+    248: "Mini-Shipping Bin/0/-300/Crafting -9/Geceleri satılmasını istediğin malları kutuya koy./true/true/0/Küçük Gönderi Kutusu" #!String
+    254: "Ostrich Incubator/0/-300/Crafting -9/Yumurtalardan devekuşu çıkmasını sağlar. Ahıra yerleştirilir./true/true/0/Devekuşu Kuluçka Makinesi" #!String
+    256: "Junimo Chest/0/-300/Crafting -9/Orman büyüsünün gücünü kullanan her bir Junimo sandığı aynı zulaya bağlıdır./true/true/0/Junimo Sandığı" #!String
+    264: "Heavy Tapper/0/-300/Crafting -9/Meşe, akçaağaç ya da çam ağacına takılır. Sonrasında ise ağaçların verdiği ürünlerle dolması beklenir. Sıradan bir akıtaçın iki katı hızla çalışır!/true/false/0/Büyük Akıtaç" #!String
+    265: "Deconstructor/0/-300/Crafting -9/Oluşturulan nesneleri parçalarına ayırır ve değerli materyalleri geri kazandırır./true/true/0/Ayırıcı" #!String
+    272: "Auto-Petter/0/-300/Crafting -9/Kümes ve ahırda kullanılmak üzere Joja Co.'nun geliştirdiği bir teknoloji harikası. İnsan dokunuşunun yerini tamamen almasa da hayvanları mutlu eder. Hayvanlar hala daha elle sevilebilir./true/true/0/Hayvan Sevici" #!String
+    275: "Hopper/0/-300/Crafting -9/İçine konulan nesneleri doğrudan önündeki makineye aktarır./true/true/0/Huni" #!String
+    278: "Campfire/0/-300/Crafting -9/Evde değilken de yemek yapmayı sağlar!/true/true/1/Kamp Ateşi" #!String
+    280: "Statue Of True Perfection/0/-300/Crafting -9/Saf iridyumdan yapılmıştır./true/true/0/Gerçek Mükemmellik Heykeli" #!String
+

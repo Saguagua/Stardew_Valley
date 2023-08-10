@@ -1,0 +1,23 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    6: "Sáb" #!String
+    name: "Especial sabatino" #!String
+    intro: "0/Hola, queridos espectadores. Cada semana viajo por todo el mundo para conocer a personas de todos los ámbitos. Juntos ampliaremos nuestros horizontes y aprenderemos más sobre trabajos, estilos de vida y perspectivas únicas. Soy Tom Laminar, y esto es «Informe sabatino»." #!String
+    day: "Sáb" #!String
+

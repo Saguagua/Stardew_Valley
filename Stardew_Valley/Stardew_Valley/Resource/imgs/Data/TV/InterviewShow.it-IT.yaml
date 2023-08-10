@@ -1,0 +1,23 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    6: "Sab" #!String
+    name: "Sotto i fari del sabato" #!String
+    intro: "0/Ehilà, spettatori. Ogni settimana viaggio per la nazione per incontrare persone dalle vite più disparate. Insieme, allargheremo i nostri orizzonti e scopriremo carriere, prospettive e stili di vita unici. Io sono Tom Laminar, e voi state guardando 'Sotto i fari del sabato'." #!String
+    day: "Sab" #!String
+

@@ -1,0 +1,45 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Ah, Lewis polgármester szólt, hogy nemrég érkeztél. Marnie vagyok!#$e#A tanyámon haszonállatokat és állati termékeket adok el. Beugorhatnál valamikor.$h" #!String
+    Resort: "Hehe... végre bemutathatom, hogy mi lett az aerobik klubban végzett kemény munkám eredménye.$h" #!String
+    Resort_Leaving: "Melegséget érzek." #!String
+    Resort_Shore: "Hee hee... Érdekes mindenkit a fürdőruhájában látni." #!String
+    Resort_Chair: "Fúj... vizes a szék." #!String
+    Resort_Bar: "Huhhh... Forróság van!$s" #!String
+    reject_789: "Gyááá!$4#$b#...Öhm... Tessék? Heh.. Nem tudom, hogy mi az...$3" #!String
+    Mon: "Szeretem az állatokat, Mr. @. Ha jól bánsz a tieiddel, akkor jó barátok leszünk!^Szeretem az állatokat, Ms. @. Bánj jól a tieiddel és biztos, hogy jó barátok leszünk!" #!String
+    Mon4: "Az állatok olyan ártatlanok, oly édesek. És ha én nem vigyázok rájuk, akkor ki fog?$s#$e#Remélem azért a tyúkok nem mérgesek, mikor elveszem a tojásaikat.$s" #!String
+    Thu_2: "Egy ideje már itt vagy... hogy megy a farmod?#$e#Könnyű az állatokról gondoskodni, amíg nem feledkezel meg róluk!$h" #!String
+    Saloon: "Mivel itt vagyok, így végre van időm egy kicsit pihenni és szocializálódni." #!String
+    Saloon_Tue: "Ma nincsenek itt túl sokan...$s" #!String
+    Saloon_Wed: "#$1 marnieAnimalSal#Ma egy egész vödör tejet öntöttem ki a padlóra, szörnyű volt. Annyira elpazaroltam szegény Belindám kemény munkáját.$k$s#$e#Örülök, hogy felbukkantál! Most már kissé nyüzsgősebb a nap." #!String
+    Saloon_Thu: "Huhhh! Jó érzés egy kemény melós nap után kirúgni a hámból." #!String
+    Saloon_Fri: "%Marnie nem veszi észre, hogy itt vagy..." #!String
+    Saloon_Sun: "*sóhaj*... Ma nem voltam túlságosan eredményes." #!String
+    Saloon_Sat: "Mindig látom Clintet idebent, de senkihez se szól. Csak néha szétnéz és ennyi.$s" #!String
+    Tue: "Az unokaöcsém, Shane nálunk lakik már pár hónapja.#$e#Besegít nekem a csirkéknél, szóval nem panaszkodhatok." #!String
+    Wed: "A kaszával levághatod a füvet, hogy azzal etesd az állataidat.#$e#Vagy akár tőlem is vásárolhatsz párat, ha gondolod.$h#$e#Jól jönne egy kis pénz...$u#$e#Adios." #!String
+    Thu: "Üdv. Szükséged van valamire?#$e#A jövőben lehet, hogy másfajta állatokat is be fogok szerezni.#$e#Habár még nem tudom, hogy van-e rájuk kereslet, szóval előbb be kell bizonyítanod, hogy tudsz bánni az állatokkal.#$e#Csak tisztelettel gondozd az állataidat, és jó dolgok fognak történni." #!String
+    Fri: "A legtöbb éjszakán a szalonban találhatsz engem.#$e#Az állatok jó társaságnak bizonyulnak, de néhanapján emberekkel is kell időt töltenem." #!String
+    Fri4: "#$1 marnieLike#Azt hiszem valaki a városból megkedvelt engem. *Hihi*$k$h#$e#Olyan magányos lennék, ha Shane valamikor kiköltözne." #!String
+    Fri6: "Azon tűnődöm, hogy vajon Mr. Lewis nem magányos abban a nagy házban... $s#$e#Olyan üresnek tűnik ott, nem?" #!String
+    Sat: "Voltál már a házamtól nyugatra lévő furcsa toronyban?#$e#Egy alkalommal szörnyű, másvilági hangot hallottam onnét kiszűrődni.$s#$e#Én a helyedben elkerülném azt a helyet..." #!String
+    Sun: "Hé, jó téged itt látni!#$e#Nyugodtan nézz be hozzánk, amikor kedved tartja." #!String
+    Sun8: "Üdv @!$h#$e#Örülök, hogy összebarátkoztunk. Tudom, hogy jó gondját viseled a kedves állataimnak." #!String
+

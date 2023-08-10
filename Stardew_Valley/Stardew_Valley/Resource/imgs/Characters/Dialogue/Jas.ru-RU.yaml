@@ -1,0 +1,43 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "...$u#$b#Здравствуйте...$u" #!String
+    Resort_Entering: "Я вижу краба!" #!String
+    Resort_Leaving: "У меня песок в ботиночке...$s" #!String
+    Resort_Shore: "Я собираю ракушки... Ожерелье сделаю!" #!String
+    Resort: "Тетя Марни сказала, чтобы я не обгорела... Но если быстро идти, то тебя ветерок обдувает, так что все в порядке.$h" #!String
+    reject_869: "Фу, гадость!$s" #!String
+    Mon: "Ой... Вы ищете тeтю Марни?$u" #!String
+    Mon4: "Привет, мистер. @.^Привет, мисс @.#$e#На ферме жить весело.$h" #!String
+    Tue: "Что? *Хихикает*$h#$e#... Привет." #!String
+    Tue6: "Можешь поиграть с моими куклами, если хочешь. Только причеши их, когда наиграешься." #!String
+    Wed: "...$u" #!String
+    Wed2: "... Привет.$u" #!String
+    Wed4: "Тeтя Марни не пускает меня гулять после 6-ти часов вечера. Так нечестно!$s#$e#Я больше не боюсь темноты!" #!String
+    Thu: "Мне нельзя говорить с незнакомыми...$u" #!String
+    Thu2: "Мисс Пенни учит меня чистописанию.$h#$e#У неe такой красивый почерк." #!String
+    Fri: "... Я тебя не знаю.$u" #!String
+    Fri2: "Тебе нравится мой бантик?" #!String
+    Fri4: "Мне нравится жить на ферме... Больше всего мне нравится свежее мороженое из молока наших коровок." #!String
+    Sat: "От тебя пахнет травой.$u" #!String
+    Sat2: "Иногда я ищу в речке раков. Ты только не говори тeте Марни, но я как-то дала корове рака.#$e#Ей очень понравилось." #!String
+    Sat8: "Вы всегда такой добрый, мистер @$h^Вы всегда такая добрая, мисс @.$h#$e#Обычно взрослые скучные и злюки, а вы - нет." #!String
+    Sun: "Эм... В-вы что-то хотели?$u#$e#Мне нельзя говорить с незнакомыми.$u" #!String
+    Sun2: "Шейна часто нет дома, а тeтя Марни всегда занята... Приходится мне выдумывать себе игры.#$e#Я рада, что у меня столько игрушек.$h" #!String
+    Sun10: "А ты знаешь, что Шейн - мой крeстный? Он был другом моих родителей.$s#$e#... Они умерли. *Всхлипывает*$s" #!String
+

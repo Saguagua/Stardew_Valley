@@ -1,0 +1,49 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Selam, ben Clint.#$e#Kasabanın demircisiyim, ekipmanlarını geliştirmek istersen bana gelebilirsin." #!String
+    Resort_Entering: "Özel kırmızı mayomu giyeceğim. Herkesin gözü bir tek beni görecek." #!String
+    Resort_Leaving: "Hiç de düşündüğüm gibi olmadı ya..." #!String
+    Resort_Shore: "Olamaz... Tırnaklarımı kesmeyi unutmuşum.$s" #!String
+    Resort_Shore_2: "Ocağın başında çalışmak bu sıcakta işimi kolaylaştırır sanmıştım ama daha önce görmediğim bir şekilde terliyorum.$s#$e#Umarım kimse fark etmemiştir...#$e#%Clint'in vücudu yanıyor..." #!String
+    Resort_Chair: "Ah... Bedenim çıtır çıtır yanıyor.$s" #!String
+    Resort_Bar: "Karnım acıktı...$s" #!String
+    Resort: "*iç çeker*... Herkes sahilde ama kendimi çok yalnız hissediyorum...$s" #!String
+    reject_868: "Hım... İlginç bir taş. Daha önce böylesini görmemiştim.#$b#Tabii bu da bununla ne yapacağımı bilemeyeceğim anlamına geliyor. Ben büyülü taşlardan çok sıradan taşlarla ilgileniyorum." #!String
+    cc_Minecart: "Nasıl olduysa eski madenin vagon sistemi çalışmaya başladı. Madenlere gidip gelirken çok kullanışlı oluyor.#$b#Çok alışma ama... Bir anda çalışmaya başladıysa, aynı şekilde durabilir de." #!String
+    Mon: "Evet, ben demirciyim.#$e#Babam da demirciydi.#$e#Dedem de demirciydi.$u#$q 9/9 Mon_old#Dedemin babasının mesleğini tahmin et bakalım...#$r 9 30 Mon_9#Demirciydi.#$r 9 50 Mon_clown#Aptal soytarı.#$r 9 -50 Mon_rude#Alaycı pislik." #!String
+    Mon_old: "Evet, dedemin dedesi de demirciydi." #!String
+    Mon_9: "Nasılsın?$u" #!String
+    Mon_clown: "Hahahaha. Bu iyiydi.$h" #!String
+    Mon_rude: "Hop, bu kabacaydı. Komikliği abartma." #!String
+    Mon4: "Çiftçi olduğuna sevinmelisin, @. Dışarda çalışmak tüm gün boyunca sıcak fırının önünde çalışmaktan daha iyidir.#$e#Babam zorladığı için demirci oldum ben." #!String
+    Tue: "Eğer aletlerini geliştirmek istiyorsan bana doğru cevheri vermelisin.#$e#Ücretiyle beraber elbette." #!String
+    Wed: "Selam, ne lazımdı?" #!String
+    Wed6: "Ah, merhaba @. Kusura bakma, biraz dağınığım. Sabahtan beri fırının önündeyim.$h#$e#Bir şey mi lazım yoksa öylesine ziyarete mi geldin?" #!String
+    Thu: "İşler kötü gidiyor.#$e#Alet edevatını geliştirmelisin. Hem bana da para lazım." #!String
+    Fri: "Hava beni pek ilgilendirmiyor, yıl boyu dükkanın içindeyim.#$e#Çok sıkıcı, değil mi?" #!String
+    Sat: "Bazen bu şehre nasıl geldim merak ediyorum.$u" #!String
+    Sat6: "Kahretsin. Heyecan verici bir şeyler yapmak için çok yaşlıyım. Yıllar boyunca yapacağım tek şey, sıcak ateşin başında terlemek." #!String
+    Sun: "İşin yok mu senin?" #!String
+    Sun4: "Eşyaların nasıl?" #!String
+    event_advice1: "Tamam... Bunu aklımda bulunduracağım." #!String
+    event_advice2: "Sorun da bu... Hep doğal davranıyorum... ama hiç başarılı olamıyorum.$s" #!String
+    summer_Mon4: "Çiftçi olduğuna sevinmelisin, @. Dışarda çalışmak tüm gün boyunca sıcak fırının önünde çalışmaktan daha iyidir.#$e#Babam zorladığı için demirci oldum ben." #!String
+    summer_Wed6: "Ah, merhaba @. Kusura bakma, biraz dağınığım. Sabahtan beri fırının önündeyim.$h#$e#Bir şey mi lazım yoksa öylesine ziyarete mi geldin?" #!String
+    summer_Thu: "İşler kötü gidiyor.#$e#Alet edevatını geliştirmelisin. Hem bana da para lazım." #!String
+

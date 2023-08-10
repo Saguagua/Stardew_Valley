@@ -1,0 +1,33 @@
+
+xnbData: 
+    target: "w"
+    compressed: true
+    hiDef: true
+    readerData: 
+        - 
+            type: "Microsoft.Xna.Framework.Content.DictionaryReader`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+            version: 0
+
+        - 
+            type: "Microsoft.Xna.Framework.Content.StringReader"
+            version: 0
+
+
+    numSharedResources: 0
+
+content:  #!Dictionary<String,String>
+    Introduction: "Ah, ja. Ich habe deine Ankunft schon vor langer Zeit vorhergesehen, @.#$e#Allerdings liegt dein Schicksal ultimativ in deinen Händen." #!String
+    accept_868: "Ah... ein arktischer Splitter.#$b#Eine in der Tat äußerst kraftvolle Substanz und stark mit dem Element Eis durchdrungen.#$b#Ich nehme es, wenn es dir nichts ausmacht.#$b#...#$b#...Ähm...Du bist immer noch hier. Oh. Willst du etwas?#$b#...Nimm dies." #!String
+    MovieInvitation: "Hmm... I suppose I could accompany you... yes. Once you've arrived, I shall appear. Farewell." #!String
+    Mon: "Ich habe viele Dinge über deine Zukunft gesehen, @.#$e#Wenn ich sie dir sagen würde, könnte das ernste Konsequenzen nach sich ziehen." #!String
+    Tue: "Wenn du nichts Wichtiges zu sagen hast, lass mich in Frieden. Ich habe viel Arbeit vor mir." #!String
+    Tue4: "Ich vertraue dir genug, um mich in meinen Keller zu lassen. Behandle das, was du dort findest, mit Respekt." #!String
+    Wed: "Es benötigt viele Jahre intensiven Studiums, um die Sprache der Elementare zu verstehen.#$e#Um sie tatsächlich zu sprechen, musst du dich ihr dein Leben lang widmen.#$e#Wenn du mich jetzt entschuldigen würdest..." #!String
+    Thu: "Es ranken sich viele Mysterien um uns. Du musst geduldig sein, wenn du wünschst, sie alle zu entdecken." #!String
+    Thu10: "Du darfst es niemandem sagen... Aber ich habe den Grund zur Annahme, dass einer der Bewohner hier meine Tochter ist...#$e#Ich könnte mich irren... Es ist selten, passiert aber doch." #!String
+    Fri: "Ich glaube, die Leute hier haben Angst vor mir.#$e#Es ist schade, aber ich schätze es ist menschlich, Angst vor dem Unbekannten zu haben." #!String
+    Fri6: "Ich war vor langer Zeit verheiratet. Nachdem meine Frau und ich uns getrennt hatten, begann sie damit, durch die Gegend zu fliegen und jeden zu verfluchen den sie gesehen hat.#$e#Keine sehr erwachsene Art, um ihrer Wut Ausdruck zu verleihen." #!String
+    Sat: "Pass auf, du stehst auf einem sehr mächtigen magischen Feld.#$e#Ich habe meine Hütte hier aus einem bestimmten Grund aufgebaut, weißt du." #!String
+    Sat2: "Hast du irgendwelche Fortschritte mit den Waldgeistern gemacht?" #!String
+    Sun: "Manchmal beobachte ich insgeheim die Stadtbewohner.#$e#Ich würde gerne einen Lehrling finden. Irgendwann werde ich diese sterbliche Ebene verlassen, aber meine arkanen Nachforschungen müssen fortgesetzt werden." #!String
+
