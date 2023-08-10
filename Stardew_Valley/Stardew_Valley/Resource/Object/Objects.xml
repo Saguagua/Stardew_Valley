@@ -15,158 +15,158 @@ oW => original width
 oH => original height
 r => 'y' if sprite is rotated-->
 <TextureAtlas imagePath="Objects.png" width="542" height="528" scale="1" format="RGBA8888">
-  <sprite n="House.png" x="0" y="0" w="144" h="144" pX="0.5" pY="0.5"/>
-  <sprite n="DungeonCornerWall.png" x="144" y="0" w="48" h="174" pX="0.5" pY="0.5"/>
-  <sprite n="DungeonSideWall.png" x="128" y="144" w="16" h="128" pX="0.5" pY="0.5"/>
-  <sprite n="Ladder.png" x="120" y="272" w="16" h="64" pX="0.5" pY="0.5"/>
-  <sprite n="DungeonConer1.png" x="192" y="124" w="80" h="48" pX="0.5" pY="0.5"/>
-  <sprite n="DungeonCorner3.png" x="272" y="124" w="48" h="80" pX="0.5" pY="0.5"/>
-  <sprite n="TreeHead2.png" x="272" y="204" w="48" h="80" pX="0.5" pY="0.5"/>
-  <sprite n="DungeonCorner2.png" x="320" y="244" w="48" h="48" pX="0.5" pY="0.5"/>
-  <sprite n="CopperHoe.png" x="272" y="284" w="16" h="14" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBeanSeed.png" x="304" y="284" w="15" h="14" pX="0.5" pY="0.5"/>
-  <sprite n="Bed.png" x="368" y="244" w="32" h="49" pX="0.5" pY="0.5"/>
-  <sprite n="TreeHead1.png" x="399" y="293" w="47" h="76" pX="0.5" pY="0.5"/>
-  <sprite n="DungeonWall.png" x="444" y="160" w="80" h="64" pX="0.5" pY="0.5"/>
-  <sprite n="BedCover.png" x="480" y="0" w="32" h="22" pX="0.5" pY="0.5"/>
-  <sprite n="BlueTorch.png" x="503" y="85" w="5" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Copper.png" x="502" y="108" w="6" h="7" pX="0.5" pY="0.5"/>
-  <sprite n="Torch.png" x="503" y="96" w="5" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean.png" x="478" y="134" w="10" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="TreeBottom1.png" x="448" y="139" w="16" h="20" pX="0.5" pY="0.5"/>
-  <sprite n="Emerald.png" x="488" y="151" w="10" h="9" pX="0.5" pY="0.5"/>
-  <sprite n="CauliflowerSeed.png" x="430" y="244" w="14" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Dandelion.png" x="430" y="260" w="14" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="TreeBottom2.png" x="400" y="267" w="16" h="20" pX="0.5" pY="0.5"/>
-  <sprite n="StarFruit.png" x="416" y="267" w="14" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeetSeed.png" x="430" y="276" w="14" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Coral.png" x="399" y="385" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="DungeonGate.png" x="399" y="401" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="FishingRod.png" x="271" y="406" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Squid.png" x="120" y="368" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Sword_1.png" x="120" y="384" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Coal.png" x="136" y="318" w="7" h="7" pX="0.5" pY="0.5"/>
-  <sprite n="Tuna.png" x="152" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="CaveCarrot.png" x="200" y="418" w="15" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Daffodil.png" x="215" y="418" w="15" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Snail.png" x="230" y="418" w="15" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="PotatoSeed.png" x="287" y="406" w="12" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeet.png" x="299" y="406" w="12" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Axe.png" x="311" y="406" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="CopperAxe.png" x="343" y="406" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Ruby.png" x="391" y="406" w="8" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="Shell.png" x="399" y="417" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="SteelAxe.png" x="260" y="431" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Steel.png" x="271" y="422" w="10" h="9" pX="0.5" pY="0.5"/>
-  <sprite n="SteelHoe.png" x="120" y="434" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="WaterFertilizer.png" x="152" y="434" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="CopperPickAxe.png" x="183" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="PickAxe.png" x="213" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="SteelPickAxe.png" x="228" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="QualityFertilizer.png" x="243" y="434" w="14" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Hoe.png" x="331" y="421" w="15" h="13" pX="0.5" pY="0.5"/>
-  <sprite n="Anchovy.png" x="361" y="421" w="14" h="13" pX="0.5" pY="0.5"/>
-  <sprite n="AnglerFish.png" x="319" y="435" w="16" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="BatWing.png" x="120" y="449" w="14" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="Caulifower.png" x="134" y="449" w="12" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="SlimePiece.png" x="170" y="449" w="12" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="Lantern.png" x="182" y="449" w="11" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="CopperWateringCan.png" x="193" y="449" w="16" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="SteelWateringCan.png" x="209" y="449" w="16" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="WateringCan.png" x="225" y="449" w="16" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Diamond.png" x="300" y="456" w="12" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Potato.png" x="120" y="461" w="11" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Rock_Drop.png" x="131" y="461" w="11" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Wood_Drop.png" x="142" y="461" w="11" h="10" pX="0.5" pY="0.5"/>
-  <sprite n="LightRing.png" x="162" y="461" w="8" h="10" pX="0.5" pY="0.5"/>
-  <sprite n="Ring.png" x="170" y="461" w="8" h="10" pX="0.5" pY="0.5"/>
-  <sprite n="SteelFishingRod.png" x="120" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Wood1.png" x="168" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Wood2.png" x="184" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="DiamondStone_1.png" x="359" y="406" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Club_1.png" x="168" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="EmeraldStone_1.png" x="198" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Bait_1.png" x="444" y="286" w="9" h="7" pX="0.5" pY="0.5"/>
-  <sprite n="HorseRadish_1.png" x="120" y="336" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Radish_1.png" x="120" y="352" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean_1.png" x="136" y="272" w="8" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Stone1_1.png" x="288" y="284" w="16" h="14" pX="0.5" pY="0.5"/>
-  <sprite n="Potato_1.png" x="348" y="292" w="7" h="6" pX="0.5" pY="0.5"/>
-  <sprite n="WaterEffect_1.png" x="355" y="292" w="7" h="6" pX="0.5" pY="0.5"/>
-  <sprite n="BigStone_1.png" x="448" y="31" w="30" h="31" pX="0.5" pY="0.5"/>
-  <sprite n="Shoose_1.png" x="480" y="22" w="14" h="9" pX="0.5" pY="0.5"/>
-  <sprite n="Stub_1.png" x="448" y="0" w="32" h="31" pX="0.5" pY="0.5"/>
-  <sprite n="Box_1.png" x="508" y="87" w="30" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Treasure_1.png" x="488" y="130" w="16" h="21" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeet_1.png" x="281" y="422" w="10" h="8" pX="0.5" pY="0.5"/>
-  <sprite n="Stone2_1.png" x="290" y="430" w="14" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="RubyStone_1.png" x="304" y="430" w="15" h="14" pX="0.5" pY="0.5"/>
-  <sprite n="Dagger_1.png" x="389" y="432" w="10" h="10" pX="0.5" pY="0.5"/>
-  <sprite n="Cauliflower_1.png" x="153" y="461" w="9" h="10" pX="0.5" pY="0.5"/>
-  <sprite n="Stub_2.png" x="0" y="144" w="128" h="128" pX="0.5" pY="0.5"/>
-  <sprite n="BigStone_2.png" x="144" y="174" w="128" h="124" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean_2.png" x="136" y="295" w="7" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Bait_2.png" x="330" y="292" w="9" h="6" pX="0.5" pY="0.5"/>
-  <sprite n="Cauliflower_2.png" x="339" y="292" w="9" h="6" pX="0.5" pY="0.5"/>
-  <sprite n="Potato_2.png" x="362" y="292" w="6" h="6" pX="0.5" pY="0.5"/>
-  <sprite n="Treasure_2.png" x="490" y="61" w="16" h="24" pX="0.5" pY="0.5"/>
-  <sprite n="Box_2.png" x="448" y="116" w="30" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Shoose_2.png" x="477" y="146" w="11" h="14" pX="0.5" pY="0.5"/>
-  <sprite n="Club_2.png" x="444" y="270" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="WaterEffect_2.png" x="416" y="283" w="12" h="10" pX="0.5" pY="0.5"/>
-  <sprite n="Sword_2.png" x="120" y="400" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="DiamondStone_2.png" x="260" y="418" w="11" h="13" pX="0.5" pY="0.5"/>
-  <sprite n="HorseRadish_2.png" x="375" y="406" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Radish_2.png" x="276" y="431" w="14" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeet_2.png" x="300" y="422" w="9" h="8" pX="0.5" pY="0.5"/>
-  <sprite n="RubyStone_2.png" x="346" y="421" w="15" h="13" pX="0.5" pY="0.5"/>
-  <sprite n="Dagger_2.png" x="146" y="449" w="12" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="EmeraldStone_2.png" x="272" y="446" w="14" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Stone1_2.png" x="286" y="446" w="14" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Stone2_2.png" x="286" y="446" w="14" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Stub_3.png" x="192" y="0" w="128" h="124" pX="0.5" pY="0.5" oX="0" oY="4" oW="128" oH="128"/>
-  <sprite n="BigStone_3.png" x="271" y="298" w="128" h="108" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeet_3.png" x="319" y="292" w="11" h="6" pX="0.5" pY="0.5"/>
-  <sprite n="Cauliflower_3.png" x="368" y="293" w="6" h="4" pX="0.5" pY="0.5"/>
-  <sprite n="Potato_3.png" x="507" y="22" w="4" h="6" pX="0.5" pY="0.5"/>
-  <sprite n="Treasure_3.png" x="448" y="62" w="16" h="29" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean_3.png" x="478" y="112" w="10" h="22" pX="0.5" pY="0.5"/>
-  <sprite n="Box_3.png" x="508" y="110" w="30" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Club_3.png" x="399" y="369" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Sword_3.png" x="136" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="WaterEffect_3.png" x="136" y="434" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Dagger_3.png" x="158" y="449" w="12" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="Cauliflower_4.png" x="291" y="422" w="9" h="8" pX="0.5" pY="0.5"/>
-  <sprite n="Potato_4.png" x="311" y="421" w="8" h="8" pX="0.5" pY="0.5"/>
-  <sprite n="WaterEffect_4.png" x="300" y="445" w="14" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Stub_4.png" x="143" y="298" w="128" h="120" pX="0.5" pY="0.5" oX="0" oY="8" oW="128" oH="128"/>
-  <sprite n="BigStone_4.png" x="320" y="0" w="128" h="96" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean_4.png" x="490" y="108" w="12" h="22" pX="0.5" pY="0.5"/>
-  <sprite n="Box_4.png" x="504" y="133" w="30" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeet_4.png" x="494" y="22" w="13" h="7" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeet_5.png" x="375" y="421" w="14" h="13" pX="0.5" pY="0.5"/>
-  <sprite n="Potato_5.png" x="389" y="421" w="10" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Cauliflower_5.png" x="241" y="449" w="14" h="11" pX="0.5" pY="0.5"/>
-  <sprite n="Stub_5.png" x="0" y="272" w="120" h="128" pX="0.5" pY="0.5" oX="4" oY="0" oW="128" oH="128"/>
-  <sprite n="BigStone_5.png" x="320" y="160" w="124" h="84" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean_5.png" x="478" y="89" w="12" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Box_5.png" x="444" y="224" w="30" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Potato_6.png" x="319" y="421" w="12" h="14" pX="0.5" pY="0.5"/>
-  <sprite n="Cauliflower_6.png" x="257" y="446" w="15" h="12" pX="0.5" pY="0.5"/>
-  <sprite n="Stub_6.png" x="0" y="400" w="120" h="128" pX="0.5" pY="0.5" oX="4" oY="0" oW="128" oH="128"/>
-  <sprite n="KidneyBean_6.png" x="490" y="85" w="13" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="Box_6.png" x="400" y="244" w="30" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="SugarBeet_6.png" x="245" y="418" w="15" h="16" pX="0.5" pY="0.5"/>
-  <sprite n="Cauliflower_7.png" x="327" y="406" w="16" h="15" pX="0.5" pY="0.5"/>
-  <sprite n="Potato_7.png" x="464" y="139" w="13" h="18" pX="0.5" pY="0.5"/>
-  <sprite n="BigStone_7.png" x="320" y="96" w="128" h="64" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean_7.png" x="464" y="62" w="13" h="27" pX="0.5" pY="0.5"/>
-  <sprite n="Box_7.png" x="444" y="247" w="30" h="23" pX="0.5" pY="0.5"/>
-  <sprite n="KidneyBean_8.png" x="477" y="62" w="13" h="27" pX="0.5" pY="0.5"/>
-  <sprite n="Box_8.png" x="448" y="91" w="30" h="25" pX="0.5" pY="0.5"/>
-  <sprite n="Box_9.png" x="508" y="60" w="30" h="27" pX="0.5" pY="0.5"/>
-  <sprite n="Box_10.png" x="508" y="32" w="30" h="28" pX="0.5" pY="0.5"/>
-  <sprite n="Box_11.png" x="478" y="31" w="30" h="30" pX="0.5" pY="0.5"/>
-  <sprite n="Box_12.png" x="512" y="0" w="30" h="32" pX="0.5" pY="0.5"/>
-  <sprite n="Box_13.png" x="512" y="0" w="30" h="32" pX="0.5" pY="0.5"/>
+  <sprite n="House" x="0" y="0" w="144" h="144" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonCornerWall" x="144" y="0" w="48" h="174" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonSideWall" x="128" y="144" w="16" h="128" pX="0.5" pY="0.5"/>
+  <sprite n="Ladder" x="120" y="272" w="16" h="64" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonConer1" x="192" y="124" w="80" h="48" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonCorner3" x="272" y="124" w="48" h="80" pX="0.5" pY="0.5"/>
+  <sprite n="TreeHead2" x="272" y="204" w="48" h="80" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonCorner2" x="320" y="244" w="48" h="48" pX="0.5" pY="0.5"/>
+  <sprite n="CopperHoe" x="272" y="284" w="16" h="14" pX="0.5" pY="0.5"/>
+  <sprite n="KidneyBeanSeed" x="304" y="284" w="15" h="14" pX="0.5" pY="0.5"/>
+  <sprite n="Bed" x="368" y="244" w="32" h="49" pX="0.5" pY="0.5"/>
+  <sprite n="TreeHead1" x="399" y="293" w="47" h="76" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonWall" x="444" y="160" w="80" h="64" pX="0.5" pY="0.5"/>
+  <sprite n="BedCover" x="480" y="0" w="32" h="22" pX="0.5" pY="0.5"/>
+  <sprite n="BlueTorch" x="503" y="85" w="5" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="Copper" x="502" y="108" w="6" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Torch" x="503" y="96" w="5" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="KidneyBean" x="478" y="134" w="10" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="TreeBottom1" x="448" y="139" w="16" h="20" pX="0.5" pY="0.5"/>
+  <sprite n="Emerald" x="488" y="151" w="10" h="9" pX="0.5" pY="0.5"/>
+  <sprite n="CauliflowerSeed" x="430" y="244" w="14" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Dandelion" x="430" y="260" w="14" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="TreeBottom2" x="400" y="267" w="16" h="20" pX="0.5" pY="0.5"/>
+  <sprite n="StarFruit" x="416" y="267" w="14" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="SugarBeetSeed" x="430" y="276" w="14" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Coral" x="399" y="385" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonGate" x="399" y="401" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="FishingRod" x="271" y="406" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Squid" x="120" y="368" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Sword" x="120" y="384" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Coal" x="136" y="318" w="7" h="7" pX="0.5" pY="0.5"/>
+  <sprite n="Tuna" x="152" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="CaveCarrot" x="200" y="418" w="15" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Daffodil" x="215" y="418" w="15" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Snail" x="230" y="418" w="15" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="PotatoSeed" x="287" y="406" w="12" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="SugarBeet" x="299" y="406" w="12" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Axe" x="311" y="406" w="16" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="CopperAxe" x="343" y="406" w="16" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="Ruby" x="391" y="406" w="8" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="Shell" x="399" y="417" w="16" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="SteelAxe" x="260" y="431" w="16" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="Steel" x="271" y="422" w="10" h="9" pX="0.5" pY="0.5"/>
+  <sprite n="SteelHoe" x="120" y="434" w="16" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="WaterFertilizer" x="152" y="434" w="16" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="CopperPickAxe" x="183" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="PickAxe" x="213" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="SteelPickAxe" x="228" y="434" w="15" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="QualityFertilizer" x="243" y="434" w="14" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="Hoe" x="331" y="421" w="15" h="13" pX="0.5" pY="0.5"/>
+  <sprite n="Anchovy" x="361" y="421" w="14" h="13" pX="0.5" pY="0.5"/>
+  <sprite n="AnglerFish" x="319" y="435" w="16" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="BatWing" x="120" y="449" w="14" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="Caulifower" x="134" y="449" w="12" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="SlimePiece" x="170" y="449" w="12" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="Lantern" x="182" y="449" w="11" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="CopperWateringCan" x="193" y="449" w="16" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="SteelWateringCan" x="209" y="449" w="16" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="WateringCan" x="225" y="449" w="16" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="Diamond" x="300" y="456" w="12" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="Potato" x="120" y="461" w="11" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="Rock_Drop" x="131" y="461" w="11" h="11" pX="0.5" pY="0.5"/>
+  <sprite n="Wood_Drop" x="142" y="461" w="11" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="LightRing" x="162" y="461" w="8" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="Ring" x="170" y="461" w="8" h="10" pX="0.5" pY="0.5"/>
+  <sprite n="SteelFishingRod" x="120" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Wood1" x="168" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Wood2" x="184" y="418" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="DiamondStone" x="359" y="406" w="16" h="15" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Club" x="168" y="434" w="15" h="15" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="EmeraldStone" x="198" y="434" w="15" h="15" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Bait" x="444" y="286" w="9" h="7" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="HorseRadish" x="120" y="336" w="16" h="16" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Radish" x="120" y="352" w="16" h="16" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="CropKidneyBean" x="136" y="272" w="8" h="23" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Stone1" x="288" y="284" w="16" h="14" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="CropPotato" x="348" y="292" w="7" h="6" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="WaterEffect" x="355" y="292" w="7" h="6" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="BigStone" x="448" y="31" w="30" h="31" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Shoose_1" x="480" y="22" w="14" h="9" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Stub" x="448" y="0" w="32" h="31" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Box" x="508" y="87" w="30" h="23" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Treasure" x="488" y="130" w="16" h="21" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="CropSugarBeet" x="281" y="422" w="10" h="8" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Stone2" x="290" y="430" w="14" h="15" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="RubyStone" x="304" y="430" w="15" h="14" pX="0.5" pY="0.5" a="0"/>
+  <sprite n="Dagger" x="389" y="432" w="10" h="10" pX="0.5" pY="0.5" a ="0"/>
+  <sprite n="CropCauliflower" x="153" y="461" w="9" h="10" pX="0.5" pY="0.5" a ="0"/>
+  <sprite n="Stub" x="0" y="144" w="128" h="128" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="BigStone" x="144" y="174" w="128" h="124" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="CropKidneyBean" x="136" y="295" w="7" h="23" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Bait" x="330" y="292" w="9" h="6" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="CropCauliflower" x="339" y="292" w="9" h="6" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="CropPotato" x="362" y="292" w="6" h="6" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Treasure" x="490" y="61" w="16" h="24" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Box" x="448" y="116" w="30" h="23" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Shoose_2" x="477" y="146" w="11" h="14" pX="0.5" pY="0.5"/>
+  <sprite n="CopperClub" x="444" y="270" w="16" h="16" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="WaterEffect" x="416" y="283" w="12" h="10" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="CopperSword" x="120" y="400" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="DiamondStone" x="260" y="418" w="11" h="13" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="HorseRadish" x="375" y="406" w="16" h="15" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Radish" x="276" y="431" w="14" h="15" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="SugarBeet" x="300" y="422" w="9" h="8" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="RubyStone" x="346" y="421" w="15" h="13" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="CopperDagger" x="146" y="449" w="12" h="12" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="EmeraldStone" x="272" y="446" w="14" h="11" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Stone1" x="286" y="446" w="14" h="11" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Stone2" x="286" y="446" w="14" h="11" pX="0.5" pY="0.5" a ="1"/>
+  <sprite n="Stub" x="192" y="0" w="128" h="124" pX="0.5" pY="0.5" oX="0" oY="4" oW="128" oH="128" a="2"/>
+  <sprite n="BigStone" x="271" y="298" w="128" h="108" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="CropSugarBeet" x="319" y="292" w="11" h="6" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="CropCauliflower" x="368" y="293" w="6" h="4" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="CropPotato" x="507" y="22" w="4" h="6" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="Treasure" x="448" y="62" w="16" h="29" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="CropKidneyBean" x="478" y="112" w="10" h="22" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="Box" x="508" y="110" w="30" h="23" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="SteelClub" x="399" y="369" w="16" h="16" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="SteelSword" x="136" y="418" w="16" h="16" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="WaterEffect" x="136" y="434" w="16" h="15" pX="0.5" pY="0.5" a="2"/>
+  <sprite n="SteelDagger" x="158" y="449" w="12" h="12" pX="0.5" pY="0.5"/>
+  <sprite n="CropCauliflower" x="291" y="422" w="9" h="8" pX="0.5" pY="0.5" a="3"/>
+  <sprite n="CropPotato" x="311" y="421" w="8" h="8" pX="0.5" pY="0.5" a="3"/>
+  <sprite n="WaterEffect" x="300" y="445" w="14" h="11" pX="0.5" pY="0.5" a="3"/>
+  <sprite n="Stub" x="143" y="298" w="128" h="120" pX="0.5" pY="0.5" oX="0" oY="8" oW="128" oH="128" a="3"/>
+  <sprite n="BigStone" x="320" y="0" w="128" h="96" pX="0.5" pY="0.5" a="3"/>
+  <sprite n="CropKidneyBean" x="490" y="108" w="12" h="22" pX="0.5" pY="0.5" a="3"/>
+  <sprite n="Box" x="504" y="133" w="30" h="23" pX="0.5" pY="0.5" a="3"/>
+  <sprite n="CropSugarBeet" x="494" y="22" w="13" h="7" pX="0.5" pY="0.5" a="3"/>
+  <sprite n="CropSugarBeet" x="375" y="421" w="14" h="13" pX="0.5" pY="0.5" a="4"/>
+  <sprite n="CropPotato" x="389" y="421" w="10" h="11" pX="0.5" pY="0.5" a="4"/>
+  <sprite n="CropCauliflower" x="241" y="449" w="14" h="11" pX="0.5" pY="0.5" a="4"/>
+  <sprite n="Stub" x="0" y="272" w="120" h="128" pX="0.5" pY="0.5" oX="4" oY="0" oW="128" oH="128" a="4"/>
+  <sprite n="BigStone" x="320" y="160" w="124" h="84" pX="0.5" pY="0.5" a="4"/>
+  <sprite n="CropKidneyBean" x="478" y="89" w="12" h="23" pX="0.5" pY="0.5" a="4"/>
+  <sprite n="Box" x="444" y="224" w="30" h="23" pX="0.5" pY="0.5" a="4"/>
+  <sprite n="CropPotato" x="319" y="421" w="12" h="14" pX="0.5" pY="0.5" a="5"/>
+  <sprite n="CropCauliflower" x="257" y="446" w="15" h="12" pX="0.5" pY="0.5" a="5"/>
+  <sprite n="Stub" x="0" y="400" w="120" h="128" pX="0.5" pY="0.5" oX="4" oY="0" oW="128" oH="128" a="5"/>
+  <sprite n="CropKidneyBean" x="490" y="85" w="13" h="23" pX="0.5" pY="0.5" a="5"/>
+  <sprite n="Box" x="400" y="244" w="30" h="23" pX="0.5" pY="0.5" a="5"/>
+  <sprite n="CropSugarBeet" x="245" y="418" w="15" h="16" pX="0.5" pY="0.5" a="5"/>
+  <sprite n="CropCauliflower" x="327" y="406" w="16" h="15" pX="0.5" pY="0.5" a="6"/>
+  <sprite n="CropPotato" x="464" y="139" w="13" h="18" pX="0.5" pY="0.5" a="6"/>
+  <sprite n="BigStone" x="320" y="96" w="128" h="64" pX="0.5" pY="0.5" a="6"/>
+  <sprite n="CropKidneyBean" x="464" y="62" w="13" h="27" pX="0.5" pY="0.5" a="6"/>
+  <sprite n="Box" x="444" y="247" w="30" h="23" pX="0.5" pY="0.5" a="6"/>
+  <sprite n="CropKidneyBean" x="477" y="62" w="13" h="27" pX="0.5" pY="0.5" a="7"/>
+  <sprite n="Box" x="448" y="91" w="30" h="25" pX="0.5" pY="0.5" a="7"/>
+  <sprite n="Box" x="508" y="60" w="30" h="27" pX="0.5" pY="0.5" a="8"/>
+  <sprite n="Box" x="508" y="32" w="30" h="28" pX="0.5" pY="0.5" a="9"/>
+  <sprite n="Box" x="478" y="31" w="30" h="30" pX="0.5" pY="0.5" a="10"/>
+  <sprite n="Box" x="512" y="0" w="30" h="32" pX="0.5" pY="0.5" a="11"/>
+  <sprite n="Box" x="512" y="0" w="30" h="32" pX="0.5" pY="0.5" a="12"/>
 </TextureAtlas>

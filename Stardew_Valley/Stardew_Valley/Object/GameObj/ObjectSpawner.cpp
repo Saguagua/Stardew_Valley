@@ -24,55 +24,70 @@ ObjectSpawner::ObjectSpawner()
 	}
 }
 
-shared_ptr<GameObject> ObjectSpawner::CreateObj(int objCode, short count)
+void ObjectSpawner::CreateObj(string objName, int type, Vector2 pos)
 {
-	//vector<short> vals = DATA->GetObjectInfo(objCode)->GetVals();
+	vector<int> vals = _objTable[objName]->GetVals();
 
-	//switch (vals[0])
-	//{
-	//case ObjectInfo::BREAKABLE: //pos
-	//{
-	//	return make_shared<BreakableItem>(objCode, vals[1], vals[2], vals[3], vals[4], vals[5], vals[6]);
-	//}
-	//case ObjectInfo::EATABLE:
-	//{
-	//	return make_shared<EatableItem>(objCode, vals);
-	//}
-	//case ObjectInfo::PICKABLE:
-	//{
-	//	return make_shared<PickableItem>(objCode, vals[1], vals[2], vals[7]);
-	//}
-	//case ObjectInfo::AXE:
-	//{
-	//	//return make_shared<Axe>(itemCode);
-	//}
-	//case ObjectInfo::PICKAXE:
-	//{
-	//	return make_shared<PickAxe>(objCode, vals[1], vals[2], vals[3]);
-	//}
-	//case ObjectInfo::HOE:
-	//{
-	//	//return make_shared<Hoe>(itemCode);
-	//}
-	//case ObjectInfo::WATERINGCAN:
-	//{
-	//	//return make_shared<WateringCan>(itemCode);
-	//}
-	//case ObjectInfo::FISHINGROD:
-	//{
-	//	//return make_shared<FishingRod>(itemCode);
-	//}
-	//case ObjectInfo::BLANK:
-	//{
-	//	return make_shared<GameObject>(objCode, vals[1]);
-	//}
+	switch (type)
+	{
+	case ObjectInfo::BREAKABLE: //pos
+	{
+		//return make_shared<BreakableItem>(objName, vals[1], vals[2], vals[3], vals[4], vals[5], vals[6]);
+	}
+	case ObjectInfo::PICKABLE:
+	{
+		//return make_shared<PickableItem>(objName, vals[1], vals[2], vals[7]);
+	}
 
-	//default:
-	//	break;
-	//}
+	default:
+		break;
+	}
+}
 
- //   return make_shared<GameObject>(objCode, vals[1], vals[7], count);
-	return nullptr;
+shared_ptr<GameObject> ObjectSpawner::CreateItem(string objName, int type, short count)
+{
+	vector<int> vals = _objTable[objName]->GetVals();
+
+	switch (type)
+	{
+	case ObjectInfo::NONE:
+	{
+
+		break;
+	}
+	case ObjectInfo::EATABLE:
+	{
+
+		break;
+	}
+	case ObjectInfo::AXE: 
+	{
+		break;
+	}
+	case ObjectInfo::PICKAXE:
+	{
+		break;
+	}
+	case ObjectInfo::HOE:
+		{
+
+			break; 
+		}
+	case ObjectInfo::WATERINGCAN:
+		break;
+	case ObjectInfo::FISHINGROD:
+		break;
+	case ObjectInfo::WEAPON:
+		break;
+	case ObjectInfo::SEED:
+		break;
+	case ObjectInfo::FARMMING:
+		break;
+	default:
+		break;
+	}
+
+	return shared_ptr<GameObject>();
 }
 
 void ObjectSpawner::Update()

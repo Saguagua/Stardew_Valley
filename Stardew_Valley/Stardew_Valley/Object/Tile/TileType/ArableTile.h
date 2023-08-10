@@ -3,10 +3,13 @@
 class ArableTile : public Tile
 {
 public:
-	ArableTile(Vector2 pos, int tileCode, int bitFlag, int objCode)
-		:Tile(pos, tileCode, bitFlag, objCode) {}
+	ArableTile(string name, Vector2 pos)
+		:Tile(name, pos) {}
 	virtual ~ArableTile() {}
 
 	virtual void Interaction() override;
+
+private:
+
 };
 

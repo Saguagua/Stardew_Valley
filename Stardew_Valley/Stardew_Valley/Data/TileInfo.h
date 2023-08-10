@@ -20,15 +20,16 @@ public:
 		int h;
 	};
 
-	TileInfo(int bitFlag)
-		:_bitFlag(bitFlag) {}
+	TileInfo(string name)
+		:_name(name) {}
 	~TileInfo() {}
 
 	int GetBitFlag() { return _bitFlag; }
-
+	vector<Position>& GetPoses() { return _positions; }
 	void SetBitFlag(int bitFlag) { _bitFlag = bitFlag; }
 	void AddPosition(Position pos) { _positions.push_back(pos); }
 private:
+	string _name;
 	int _bitFlag = 0;
-	vector<Position> _positions;
+	vector<Position> _positions; //xml 위치임 명칭 수정 필요
 };

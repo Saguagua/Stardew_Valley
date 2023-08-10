@@ -8,8 +8,8 @@ public:
 	{
 		int x;
 		int y;
-		int width;
-		int height;
+		int w;
+		int h;
 	};
 	enum Type
 	{
@@ -29,13 +29,14 @@ public:
 		BLANK
 	};
 
-	ObjectInfo(string name, vector<int> vals)
-		:_name(name), _vals(vals) {}
+	ObjectInfo(string name)
+		:_name(name) {}
 	~ObjectInfo() {}
 
 	string GetName() { return _name; }
 	vector<int>& GetVals() { return _vals; }
 
+	void SetVals(vector<int> vals) { _vals = vals; }
 	void AddPosition(Position pos) { _positions.push_back(pos); }
 
 private:

@@ -23,7 +23,6 @@ public:
 	int GetFrameIndex() { return _frameIndex; }
 	short GetCount() { return _count; }
 	
-	
 	virtual void Interaction() {};
 	virtual void KeyInput() {};
 

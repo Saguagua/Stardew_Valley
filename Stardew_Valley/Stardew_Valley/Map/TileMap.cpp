@@ -27,9 +27,9 @@ TileMap::TileMap()
 		{
 			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i) + TILE_SIZE * 0.5f;
 			int tileIndex = tileMaxFrame.x - 1 + (tileMaxFrame.y - 1) * tileMaxFrame.x;
-			shared_ptr<Tile> tile = make_shared<Tile>(pos, tileIndex, 139);
+			//shared_ptr<Tile> tile = make_shared<Tile>(pos, tileIndex, 139);
 
-			_tiles.push_back(tile);
+			//_tiles.push_back(tile);
 		}
 	}
 
@@ -71,10 +71,10 @@ void TileMap::Blocking()
 		if (index < 0 || index >= _curMapSize.x * _curMapSize.y)
 			continue;
 
-		int bitFlag = _tiles[index]->GetBitFlag();
+		//int bitFlag = _tiles[index]->GetBitFlag();
 
-		if (!(bitFlag & TileInfo::Type::BLOCK) && _tiles[index]->GetObj()->GetType() == ObjectInfo::Type::BLANK)
-			continue;
+		/*if (!(bitFlag & TileInfo::Type::BLOCK) && _tiles[index]->GetObj()->GetType() == ObjectInfo::Type::BLANK)
+			continue;*/
 
 		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
 		_colliders[i]->GetTransform()->Update_SRT();
@@ -106,14 +106,14 @@ void TileMap::ChangeTile()
 				return;
 
 			int index = GetWorldIndex(W_MOUSE_POS);
-			_tiles[index]->SetTileCode(code);
+			//_tiles[index]->SetTileCode(code);
 		}
 		else if (chartIndex == 1)
 		{
 			int code = PALETTE->GetCurObjectCode();
 
 			int index = GetWorldIndex(W_MOUSE_POS);
-			_tiles[index]->SetObject(code);
+			//_tiles[index]->SetObject(code);
 		}
 	}
 }
@@ -133,13 +133,13 @@ void TileMap::Render()
 		_colliders[0]->SetPos(_tiles[i]->GetCenterPos());
 		_colliders[0]->Update();
 		_colliders[0]->Render();
-		_tileRenderer->SetCurFrame(_tiles[i]->GetTileCode());
+		//_tileRenderer->SetCurFrame(_tiles[i]->GetTileCode());
 		_tileRenderer->Render();
-		int objIndex = _tiles[i]->GetObjectFrameIndex();
-		if (objIndex == 127)
+		//int objIndex = _tiles[i]->GetObjectFrameIndex();
+		/*if (objIndex == 127)
 			continue;
 		_objectRenderer->SetCurFrame(objIndex);
-		_objectRenderer->Render();
+		_objectRenderer->Render();*/
 	}
 }
 

@@ -2,8 +2,8 @@
 class FishableTile : public Tile
 {
 public:
-	FishableTile(Vector2 pos, int tileCode, int bitFlag, int objCode)
-		:Tile(pos, tileCode, bitFlag, objCode) {}
+	FishableTile(string name, Vector2 pos)
+		:Tile(name, pos) {}
 	virtual ~FishableTile() {}
 
 	virtual void Interaction() override;

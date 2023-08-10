@@ -6,7 +6,7 @@
 #include "TileInfo.h"
 #include "../Object/Tile/TileType/ArableTile.h"
 #include "../Object/Tile/TileType/FishableTile.h"
-#include "../../Framework/Utility/tinyxml2.h"
+#include "../Framework/Utility/tinyxml2.h"
 #include "PlayerSubscribe.h"
 #include "DataManager.h"
 
@@ -15,9 +15,8 @@ DataManager* DataManager::_instance = nullptr;
 DataManager::DataManager()
 {
 	ReadMaps();
-	ReadTileTypes();
-	ReadObjectFile();
 	ReadXML();
+	ReadTypes();
 	ReadPlayers();
 }
 
@@ -113,20 +112,12 @@ bool DataManager::AddItem(int objCode)
 			}
 		}
 	}
-	for (int i = 0; i < items.size(); i++)
+
+	/*for (int i = 0; i < items.size(); i++)
 	{
 		if (items[i]->GetCode() == 139)
 		{
-			items[i] = ObjectSpawner::CreateObj(objCode);
-			PlayerNotification(PlayerSubscribe::Type::ITEMS);
-			return true;
-		}
-	}
-	/*for (auto item : items)
-	{
-		if (item->GetCode() == 139)
-		{
-			item = ObjectSpawner::CreateObj(objCode);
+			items[i] = ObjectSpawner::GetInstance()->CreateItem(objCode);
 			PlayerNotification(PlayerSubscribe::Type::ITEMS);
 			return true;
 		}
@@ -196,8 +187,8 @@ void DataManager::SaveMaps()
 
 		for (int i = 0; i < tileInfo.size(); i++)
 		{
-			fout << tileInfo[i]->GetTileCode() << " ";
-			fout << tileInfo[i]->GetObjectCode();;
+			/*fout << tileInfo[i]->GetTileCode() << " ";
+			fout << tileInfo[i]->GetObjectCode();;*/
 
 			if ((i + 1) % (int)size.x == 0)
 				fout << endl;
@@ -236,7 +227,8 @@ void DataManager::SavePlayerInfo()
 
 void DataManager::LoadPlayerInfo(string playerName)
 {
-	int itemCode;
+	string itemName;
+	int itemType;
 	int itemCount;
 	short maxHp;
 	short hp;
@@ -261,8 +253,8 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	while (!fin.eof())
 	{
-		fin >> itemCode >> itemCount;
-		items.push_back(ObjectSpawner::CreateObj(itemCode, itemCount));
+		fin >> itemName >> itemType >> itemCount;
+		items.push_back(ObjectSpawner::GetInstance()->CreateItem(itemName, itemType, itemCount));
 	}
 
 	fin.close();
@@ -282,32 +274,31 @@ void DataManager::LoadMap(string playerName, string mapName)
 
 	vector<shared_ptr<Tile>> infos;
 
+	string name;
 	int x = 0;
 	int y = 0;
-	int tileCode;
-	int objectCode;
 
-	/*while (!fin.eof())
+	while (!fin.eof())
 	{
-		fin >> tileCode;
-		fin >> objectCode;
+		fin >> name;
 
 		Vector2 pos = Vector2(TILE_SIZE.x * x, TILE_SIZE.y * y) + TILE_SIZE * 0.5f;
 
 		shared_ptr<Tile> info;
-		int bitFlag = _tileInfos[tileCode]->GetBitFlag();
+		
+		int bitFlag = _tileTable[name]->GetBitFlag();
 
 		if (bitFlag & TileInfo::Type::FARMING)
 		{
-			info = make_shared<ArableTile>(pos, tileCode, bitFlag, objectCode);
+			info = make_shared<ArableTile>(name, pos);
 		}
 		else if (bitFlag & TileInfo::Type::FISHING)
 		{
-			info = make_shared<FishableTile>(pos, tileCode, bitFlag, objectCode);
+			info = make_shared<FishableTile>(name, pos);
 		}
 		else
 		{
-			info = make_shared<Tile>(pos, tileCode, bitFlag, objectCode);
+			info = make_shared<Tile>(name, pos);
 		}
 		
 		infos.push_back(info);
@@ -318,7 +309,7 @@ void DataManager::LoadMap(string playerName, string mapName)
 			x = 0;
 			y++;
 		}
-	}*/
+	}
 
 	fin.close();
 
@@ -327,6 +318,22 @@ void DataManager::LoadMap(string playerName, string mapName)
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
 	_mapInfos.push_back(mapInfo);
+
+	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + "Objects" + ".txt");
+
+	vector<shared_ptr<GameObject>> items;
+	int type;
+	while (!fin.eof())
+	{
+		fin >> name;
+		fin >> type;
+		fin >> x;
+		fin >> y;
+
+		ObjectSpawner::GetInstance()->CreateObj(name, type, Vector2(x,y));
+	}
+
+	fin.close();
 }
 
 void DataManager::ReadMaps()
@@ -362,15 +369,20 @@ void DataManager::ReadXML()
 
 		name = row->FindAttribute("n")->Value();
 
+		if (_tileTable.count(name) == 0)
+		{
+			_tileTable[name] = make_shared<TileInfo>(name);
+		}
+
 		TileInfo::Position pos;
 
 		pos.x = row->FindAttribute("x")->IntValue();
 		pos.y = row->FindAttribute("y")->IntValue();
-		pos.x = row->FindAttribute("w")->IntValue();
-		pos.y = row->FindAttribute("h")->IntValue();
+		pos.w = row->FindAttribute("w")->IntValue();
+		pos.h = row->FindAttribute("h")->IntValue();
 
 		_tileTable[name]->AddPosition(pos);
-
+	
 		row = row->NextSiblingElement();
 	}
 
@@ -388,12 +400,17 @@ void DataManager::ReadXML()
 
 		name = row->FindAttribute("n")->Value();
 
+		if (_objTable.count(name) == 0)
+		{
+			_objTable[name] = make_shared<ObjectInfo>(name);
+		}
+
 		ObjectInfo::Position pos;
 
 		pos.x = row->FindAttribute("x")->IntValue();
 		pos.y = row->FindAttribute("y")->IntValue();
-		pos.x = row->FindAttribute("w")->IntValue();
-		pos.y = row->FindAttribute("h")->IntValue();
+		pos.w = row->FindAttribute("w")->IntValue();
+		pos.h = row->FindAttribute("h")->IntValue();
 
 		_objTable[name]->AddPosition(pos);
 		
@@ -401,7 +418,7 @@ void DataManager::ReadXML()
 	}
 }
 
-void DataManager::ReadTileTypes()
+void DataManager::ReadTypes()
 {
 	ifstream fin;
 	fin.open("Data/Contents/TileProperty.txt");
@@ -410,18 +427,14 @@ void DataManager::ReadTileTypes()
 	{
 		string name;
 		fin >> name;
-		int type;
-		fin >> type;
+		int bitFlag;
+		fin >> bitFlag;
 		
-		_tileTable[name] = make_shared<TileInfo>(type);
+		_tileTable[name]->SetBitFlag(bitFlag);
 	}
 
 	fin.close();
-}
 
-void DataManager::ReadObjectFile()
-{
-	ifstream fin;
 	fin.open("Data/Contents/ItemProperty.txt");
 
 	while (!fin.eof())
@@ -437,10 +450,11 @@ void DataManager::ReadObjectFile()
 			vals.push_back(tmp);
 		}
 
-		_objTable[name] = make_shared<ObjectInfo>(name, vals);
+		_objTable[name]->SetVals(vals);
 	}
 
 	fin.close();
+
 }
 
 void DataManager::ReadPlayers()

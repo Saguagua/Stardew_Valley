@@ -23,8 +23,9 @@ public:
 		return nullptr;
 	}
 
-	static shared_ptr<GameObject> CreateObj(int objCode, short count = 1);
-	
+	void CreateObj(string objName, int type, Vector2 pos);
+	shared_ptr<GameObject> CreateItem(string objName, int type, short count = 1);
+
 	void Update();
 	void Render();
 
@@ -33,6 +34,9 @@ public:
 	void ActiveDropItem(Vector2 pos, int objCode, int count);
 private:
 	static ObjectSpawner* _instance;
+	unordered_map<string, shared_ptr<class ObjectInfo>>& _objTable;
+
+	vector<shared_ptr<class GameObject>> _objects;
 	vector<shared_ptr<class DropItem>> _dropItems;
 	shared_ptr<class PlayerInfo> _playerInfo;
 	shared_ptr<LightTextureRect> _renderer;

@@ -17,7 +17,7 @@ public:
 		DEAD = (1 << 6)
 	};
 
-	PlayerInfo(string name, short maxHp, short hp, short maxStamina, short stamina, vector<shared_ptr<class GameObject>>& items)
+	PlayerInfo(string name, short maxHp, short hp, short maxStamina, short stamina, vector<shared_ptr<class GameObject>> items)
 		:_name(name), _maxHp(maxHp), _hp(hp), _maxStamina(maxStamina), _stamina(stamina), _items(items)
 	{
 		_collider = make_shared<CircleCollider>(15);
