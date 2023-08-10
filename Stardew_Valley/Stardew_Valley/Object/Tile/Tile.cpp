@@ -13,7 +13,7 @@ Tile::Tile(Vector2 pos, int tileCode, int objCode)
 	if (_obj->GetType() == ObjectInfo::Type::BREAKABLE)
 		dynamic_pointer_cast<BreakableItem>(_obj)->SetPos(pos);
 	
-	_bitFlag = DATA->GetTileInfo(tileCode)->GetBitFlag();
+	//_bitFlag = DATA->GetTileInfo(tileCode)->GetBitFlag();
 }
 
 Tile::Tile(Vector2 pos, int tileCode, int bitFlag, int objCode)

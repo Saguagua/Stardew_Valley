@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Scene\TestScene\DataScene.h" />
     <ClInclude Include="Object\GameObj\Crop\Crop.h" />
     <ClInclude Include="Data\PlayerInfoSubscriber.h" />
     <ClInclude Include="Data\PlayerSubscribe.h" />
@@ -236,6 +237,7 @@
     <ClInclude Include="Object\BasicObj\XMLRect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scene\TestScene\DataScene.cpp" />
     <ClCompile Include="Object\GameObj\Crop\Crop.cpp" />
     <ClCompile Include="Object\UI\BagUI.cpp" />
     <ClCompile Include="Framework\Light\LightManager.cpp" />
@@ -428,6 +430,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Data\Contents\ItemProperty.txt" />
+    <Text Include="Data\Contents\TileProperty.txt" />
     <Text Include="Map\Save\Dungeon.txt" />
     <Text Include="Map\Save\Fishing.txt" />
   </ItemGroup>

@@ -6,6 +6,7 @@
 #include "TileInfo.h"
 #include "../Object/Tile/TileType/ArableTile.h"
 #include "../Object/Tile/TileType/FishableTile.h"
+#include "../../Framework/Utility/tinyxml2.h"
 #include "PlayerSubscribe.h"
 #include "DataManager.h"
 
@@ -16,6 +17,7 @@ DataManager::DataManager()
 	ReadMaps();
 	ReadTileTypes();
 	ReadObjectFile();
+	ReadXML();
 	ReadPlayers();
 }
 
@@ -285,7 +287,7 @@ void DataManager::LoadMap(string playerName, string mapName)
 	int tileCode;
 	int objectCode;
 
-	while (!fin.eof())
+	/*while (!fin.eof())
 	{
 		fin >> tileCode;
 		fin >> objectCode;
@@ -316,7 +318,7 @@ void DataManager::LoadMap(string playerName, string mapName)
 			x = 0;
 			y++;
 		}
-	}
+	}*/
 
 	fin.close();
 
@@ -342,21 +344,76 @@ void DataManager::ReadMaps()
 	fin.close();
 }
 
+void DataManager::ReadXML()
+{
+	string xmlPath = "Resource/Tile/Tiles.xml";
+	shared_ptr<tinyxml2::XMLDocument> document = make_shared<tinyxml2::XMLDocument>();
+	document->LoadFile(xmlPath.c_str());
+
+	tinyxml2::XMLElement* textureAtlas = document->FirstChildElement();
+	tinyxml2::XMLElement* row = textureAtlas->FirstChildElement();
+
+	string name;
+
+	while (true)
+	{
+		if (row == nullptr)
+			break;
+
+		name = row->FindAttribute("n")->Value();
+
+		TileInfo::Position pos;
+
+		pos.x = row->FindAttribute("x")->IntValue();
+		pos.y = row->FindAttribute("y")->IntValue();
+		pos.x = row->FindAttribute("w")->IntValue();
+		pos.y = row->FindAttribute("h")->IntValue();
+
+		_tileTable[name]->AddPosition(pos);
+
+		row = row->NextSiblingElement();
+	}
+
+	xmlPath = "Resource/Object/Objects.xml";
+	document->LoadFile(xmlPath.c_str());
+
+	textureAtlas = document->FirstChildElement();
+	row = textureAtlas->FirstChildElement();
+
+
+	while (true)
+	{
+		if (row == nullptr)
+			break;
+
+		name = row->FindAttribute("n")->Value();
+
+		ObjectInfo::Position pos;
+
+		pos.x = row->FindAttribute("x")->IntValue();
+		pos.y = row->FindAttribute("y")->IntValue();
+		pos.x = row->FindAttribute("w")->IntValue();
+		pos.y = row->FindAttribute("h")->IntValue();
+
+		_objTable[name]->AddPosition(pos);
+		
+		row = row->NextSiblingElement();
+	}
+}
+
 void DataManager::ReadTileTypes()
 {
 	ifstream fin;
-	fin.open("Data/Contents/TileTypes.txt");
-
-	fin >> _tileMaxFrame.x;
-	fin >> _tileMaxFrame.y;
+	fin.open("Data/Contents/TileProperty.txt");
 
 	while (!fin.eof())
 	{
+		string name;
+		fin >> name;
 		int type;
 		fin >> type;
-
-		shared_ptr<TileInfo> info = make_shared<TileInfo>(type);
-		_tileInfos.push_back(info);
+		
+		_tileTable[name] = make_shared<TileInfo>(type);
 	}
 
 	fin.close();
@@ -365,25 +422,22 @@ void DataManager::ReadTileTypes()
 void DataManager::ReadObjectFile()
 {
 	ifstream fin;
-	fin.open("Data/Contents/Object.txt");
-
-	fin >> _objectMaxFrame.x;
-	fin >> _objectMaxFrame.y;
+	fin.open("Data/Contents/ItemProperty.txt");
 
 	while (!fin.eof())
 	{
 		string name;
-		vector<short> vals;
+		vector<int> vals;
 
 		fin >> name;
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < 5; i++)
 		{
-			short tmp;
+			int tmp;
 			fin >> tmp;
 			vals.push_back(tmp);
 		}
-		shared_ptr<ObjectInfo> obj = make_shared<ObjectInfo>(name, vals);
-		_objInfos.push_back(obj);
+
+		_objTable[name] = make_shared<ObjectInfo>(name, vals);
 	}
 
 	fin.close();

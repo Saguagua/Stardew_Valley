@@ -4,6 +4,13 @@
 class ObjectInfo
 {
 public:
+	struct Position
+	{
+		int x;
+		int y;
+		int width;
+		int height;
+	};
 	enum Type
 	{
 		NONE,
@@ -22,14 +29,17 @@ public:
 		BLANK
 	};
 
-	ObjectInfo(string name, vector<short> vals)
+	ObjectInfo(string name, vector<int> vals)
 		:_name(name), _vals(vals) {}
 	~ObjectInfo() {}
 
 	string GetName() { return _name; }
-	vector<short>& GetVals() { return _vals; }
+	vector<int>& GetVals() { return _vals; }
+
+	void AddPosition(Position pos) { _positions.push_back(pos); }
 
 private:
 	string _name;
-	vector<short> _vals;
+	vector<int> _vals;
+	vector<Position> _positions;
 };

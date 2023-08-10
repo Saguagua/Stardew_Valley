@@ -26,52 +26,53 @@ ObjectSpawner::ObjectSpawner()
 
 shared_ptr<GameObject> ObjectSpawner::CreateObj(int objCode, short count)
 {
-	vector<short> vals = DATA->GetObjectInfo(objCode)->GetVals();
+	//vector<short> vals = DATA->GetObjectInfo(objCode)->GetVals();
 
-	switch (vals[0])
-	{
-	case ObjectInfo::BREAKABLE: //pos
-	{
-		return make_shared<BreakableItem>(objCode, vals[1], vals[2], vals[3], vals[4], vals[5], vals[6]);
-	}
-	case ObjectInfo::EATABLE:
-	{
-		return make_shared<EatableItem>(objCode, vals);
-	}
-	case ObjectInfo::PICKABLE:
-	{
-		return make_shared<PickableItem>(objCode, vals[1], vals[2], vals[7]);
-	}
-	case ObjectInfo::AXE:
-	{
-		//return make_shared<Axe>(itemCode);
-	}
-	case ObjectInfo::PICKAXE:
-	{
-		return make_shared<PickAxe>(objCode, vals[1], vals[2], vals[3]);
-	}
-	case ObjectInfo::HOE:
-	{
-		//return make_shared<Hoe>(itemCode);
-	}
-	case ObjectInfo::WATERINGCAN:
-	{
-		//return make_shared<WateringCan>(itemCode);
-	}
-	case ObjectInfo::FISHINGROD:
-	{
-		//return make_shared<FishingRod>(itemCode);
-	}
-	case ObjectInfo::BLANK:
-	{
-		return make_shared<GameObject>(objCode, vals[1]);
-	}
+	//switch (vals[0])
+	//{
+	//case ObjectInfo::BREAKABLE: //pos
+	//{
+	//	return make_shared<BreakableItem>(objCode, vals[1], vals[2], vals[3], vals[4], vals[5], vals[6]);
+	//}
+	//case ObjectInfo::EATABLE:
+	//{
+	//	return make_shared<EatableItem>(objCode, vals);
+	//}
+	//case ObjectInfo::PICKABLE:
+	//{
+	//	return make_shared<PickableItem>(objCode, vals[1], vals[2], vals[7]);
+	//}
+	//case ObjectInfo::AXE:
+	//{
+	//	//return make_shared<Axe>(itemCode);
+	//}
+	//case ObjectInfo::PICKAXE:
+	//{
+	//	return make_shared<PickAxe>(objCode, vals[1], vals[2], vals[3]);
+	//}
+	//case ObjectInfo::HOE:
+	//{
+	//	//return make_shared<Hoe>(itemCode);
+	//}
+	//case ObjectInfo::WATERINGCAN:
+	//{
+	//	//return make_shared<WateringCan>(itemCode);
+	//}
+	//case ObjectInfo::FISHINGROD:
+	//{
+	//	//return make_shared<FishingRod>(itemCode);
+	//}
+	//case ObjectInfo::BLANK:
+	//{
+	//	return make_shared<GameObject>(objCode, vals[1]);
+	//}
 
-	default:
-		break;
-	}
+	//default:
+	//	break;
+	//}
 
-    return make_shared<GameObject>(objCode, vals[1], vals[7], count);
+ //   return make_shared<GameObject>(objCode, vals[1], vals[7], count);
+	return nullptr;
 }
 
 void ObjectSpawner::Update()
@@ -112,8 +113,8 @@ void ObjectSpawner::ActiveDropItem(Vector2 pos, int objCode, int count)
 		{
 			if (!_dropItems[i]->IsActive())
 			{
-				vector<short> vals = DATA->GetObjectInfo(objCode)->GetVals();
-				_dropItems[i]->Spawn(pos, objCode, vals[1], vals[2]);
+				/*vector<short> vals = DATA->GetObjectInfo(objCode)->GetVals();
+				_dropItems[i]->Spawn(pos, objCode, vals[1], vals[2]);*/
 				break;
 			}
 		}

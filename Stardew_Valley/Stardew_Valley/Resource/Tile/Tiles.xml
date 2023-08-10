@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated-->
+<TextureAtlas imagePath="Tiles.png" width="145" height="112" scale="1" format="RGBA8888">
+  <sprite n="WoodFloor.png" x="0" y="0" w="48" h="48" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_R.png" x="0" y="48" w="17" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_TLB.png" x="17" y="48" w="17" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_TL.png" x="34" y="48" w="17" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="17" oH="16"/>
+  <sprite n="WHoeDirt_TL.png" x="48" y="0" w="17" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="Dirt.png" x="48" y="15" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonTile1.png" x="48" y="31" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonTile2.png" x="51" y="47" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonTile3.png" x="65" y="0" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="DungeonTile4.png" x="65" y="16" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Grass.png" x="67" y="47" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="GrassFlower.png" x="81" y="0" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_B.png" x="81" y="16" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_R.png" x="80" y="32" w="16" h="15" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_BR.png" x="83" y="47" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_L.png" x="97" y="0" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_LB.png" x="97" y="16" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_LBR.png" x="99" y="46" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_LR.png" x="113" y="0" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_T.png" x="113" y="16" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_TB.png" x="99" y="62" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_TBR.png" x="0" y="64" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_TLB.png" x="16" y="64" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_TLBR.png" x="32" y="64" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_TLR.png" x="48" y="63" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Sand.png" x="48" y="79" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_B.png" x="0" y="80" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_BR.png" x="0" y="96" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_L.png" x="16" y="80" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_LB.png" x="32" y="80" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_LBR.png" x="64" y="78" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_LR.png" x="80" y="78" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="HoeDirt_Single.png" x="80" y="63" w="15" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+  <sprite n="WHoeDirt_T.png" x="96" y="78" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_TB.png" x="96" y="94" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_TBR.png" x="16" y="96" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_TLBR.png" x="32" y="96" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_TLR.png" x="48" y="95" w="16" h="16" pX="0.5" pY="0.5"/>
+
+  <sprite n="HoeDirt_TR.png" x="115" y="61" w="15" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_TR.png" x="112" y="94" w="15" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="WHoeDirt_Single.png" x="127" y="94" w="15" h="15" pX="0.5" pY="0.5"/>
+  
+  <sprite n="Water_1.png" x="64" y="94" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Ocean_1.png" x="64" y="32" w="16" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+  
+  <sprite n="Water_2.png" x="80" y="94" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Ocean_2.png" x="112" y="32" w="16" h="13" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+  
+  <sprite n="Water_3.png" x="112" y="78" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Ocean_3.png" x="129" y="16" w="16" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+  
+  <sprite n="Water_4.png" x="115" y="45" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Ocean_4.png" x="128" y="36" w="16" h="9" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+  
+  <sprite n="Water_5.png" x="129" y="0" w="16" h="16" pX="0.5" pY="0.5"/>
+  <sprite n="Ocean_5.png" x="129" y="26" w="16" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+
+  <sprite n="Ocean_6.png" x="64" y="63" w="16" h="13" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+
+  <sprite n="Ocean_7.png" x="96" y="32" w="16" h="14" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+</TextureAtlas>

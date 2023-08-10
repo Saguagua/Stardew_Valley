@@ -45,14 +45,15 @@ public:
 	bool AddItem(int objCode);
 	void SwapItems(int index1, int index2);
 
-	vector<shared_ptr<class TileInfo>>& GetTileInfos() { return _tileInfos; }
+	/*vector<shared_ptr<class TileInfo>>& GetTileInfos() { return _tileInfos; }
 	shared_ptr<class TileInfo> GetTileInfo(int tileCode) { return _tileInfos[tileCode]; }
 	vector<shared_ptr<class ObjectInfo>> GetObjectInfos() { return _objInfos; }
-	shared_ptr<ObjectInfo> GetObjectInfo(int index) { return _objInfos[index]; }
+	shared_ptr<ObjectInfo> GetObjectInfo(int index) { return _objInfos[index]; }*/
 
 	void Save();
 	void Load(string name);
 private:
+	void ReadXML();
 	void ReadTileTypes();
 	void ReadObjectFile();
 	void ReadPlayers();
@@ -72,9 +73,8 @@ private:
 	vector<shared_ptr<MapInfo>> _mapInfos;
 	unordered_map<string, bool> _mapTable;
 	
-	vector<shared_ptr<ObjectInfo>> _objInfos;
-	
-	vector<shared_ptr<TileInfo>> _tileInfos;
+	unordered_map<string, shared_ptr<class TileInfo>> _tileTable;
+	unordered_map<string, shared_ptr<class ObjectInfo>> _objTable;
 
 	Vector2 _tileMaxFrame;
 	Vector2 _objectMaxFrame;

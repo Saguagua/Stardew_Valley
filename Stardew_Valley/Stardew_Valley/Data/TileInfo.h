@@ -12,6 +12,14 @@ public:
 		FISHING = (1 << 2)
 	};
 
+	struct Position
+	{
+		int x;
+		int y;
+		int w;
+		int h;
+	};
+
 	TileInfo(int bitFlag)
 		:_bitFlag(bitFlag) {}
 	~TileInfo() {}
@@ -19,7 +27,8 @@ public:
 	int GetBitFlag() { return _bitFlag; }
 
 	void SetBitFlag(int bitFlag) { _bitFlag = bitFlag; }
-
+	void AddPosition(Position pos) { _positions.push_back(pos); }
 private:
 	int _bitFlag = 0;
+	vector<Position> _positions;
 };

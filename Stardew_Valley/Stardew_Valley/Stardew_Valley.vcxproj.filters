@@ -264,6 +264,9 @@
     <ClInclude Include="Object\GameObj\Crop\Crop.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Scene\TestScene\DataScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -473,6 +476,9 @@
     <ClCompile Include="Object\GameObj\Crop\Crop.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Scene\TestScene\DataScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -554,6 +560,8 @@
   <ItemGroup>
     <Text Include="Map\Save\Fishing.txt" />
     <Text Include="Map\Save\Dungeon.txt" />
+    <Text Include="Data\Contents\ItemProperty.txt" />
+    <Text Include="Data\Contents\TileProperty.txt" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Resource\UI\UI.xml" />
