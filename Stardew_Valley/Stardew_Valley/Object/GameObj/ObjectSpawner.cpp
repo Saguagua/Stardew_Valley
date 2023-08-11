@@ -1,13 +1,14 @@
 #include "framework.h"
-#include "ObjType/BreakableItem.h"
-#include "ObjType/EatableItem.h"
-#include "ObjType/PickableItem.h"
-#include "ObjType/DropItem.h"
-#include "ObjType/Axe.h"
-#include "ObjType/PickAxe.h"
-#include "ObjType/Hoe.h"
-#include "ObjType/WateringCan.h"
-#include "ObjType/FishingRod.h"
+#include "ObjType/DeployableObj/DeployableObject.h"
+#include "ObjType/DeployableObj/BreakableItem.h"
+#include "ObjType/DeployableObj/PickableItem.h"
+#include "ObjType/DeployableObj/DropItem.h"
+#include "ObjType/Items/EatableItem.h"
+#include "ObjType/Items/Axe.h"
+#include "ObjType/Items/PickAxe.h"
+#include "ObjType/Items/Hoe.h"
+#include "ObjType/Items/WateringCan.h"
+#include "ObjType/Items/FishingRod.h"
 #include "../../Data/ObjectInfo.h"
 #include "ObjectSpawner.h"
 
@@ -16,11 +17,27 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 ObjectSpawner::ObjectSpawner()
 {
 	_renderer = make_shared<LightTextureRect>(L"Resource/Object/Objects.png", DATA->GetObjectMaxFrame(), Vector2(40, 40));
-	
+	_objTable = (DATA->GetObjectInfos());
+
 	for (int i = 0; i < 60; i++)
 	{
 		shared_ptr<DropItem> item = make_shared<DropItem>();
 		_dropItems.push_back(item);
+	}
+
+	for (int i = 0; i < 30; i++)
+	{
+		_breakObjs.push_back(make_shared<BreakableItem>());
+	}
+
+	for (int i = 0; i < 30; i++)
+	{
+		_pickObjs.push_back(make_shared<PickableItem>());
+	}
+
+	for (int i = 0; i < 30; i++)
+	{
+		_crops.push_back(make_shared<Crop>());
 	}
 }
 
@@ -30,18 +47,29 @@ void ObjectSpawner::CreateObj(string objName, int type, Vector2 pos)
 
 	switch (type)
 	{
-	case ObjectInfo::BREAKABLE: //pos
+	case ObjectInfo::BREAKABLE:
 	{
-		//return make_shared<BreakableItem>(objName, vals[1], vals[2], vals[3], vals[4], vals[5], vals[6]);
+		for (int i = 0; i < _breakObjs.size(); i++)
+		{
+			if (!_breakObjs[i]->IsActive())
+			{
+				_breakObjs[i]->S
+			}
+		}
 	}
 	case ObjectInfo::PICKABLE:
 	{
-		//return make_shared<PickableItem>(objName, vals[1], vals[2], vals[7]);
+		//_objects.push_back(make_shared<PickableItem>(objName, vals[1], vals[2], vals[7]));
 	}
 
 	default:
 		break;
 	}
+}
+
+shared_ptr<class Crop> ObjectSpawner::CreateCrop(string name, int progress, int quality)
+{
+	return shared_ptr<class Crop>();
 }
 
 shared_ptr<GameObject> ObjectSpawner::CreateItem(string objName, int type, short count)

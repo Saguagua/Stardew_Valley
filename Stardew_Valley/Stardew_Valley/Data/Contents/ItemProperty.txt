@@ -1,6 +1,6 @@
 CopperHoe 		500 1 0 0 0
 KidneyBeanSeed 		30 2 0 0 0
-BlueTorch			5 0 0 0 0
+BlueTorch		5 0 0 0 0
 Copper			15 0 0 0 0
 Torch			15 0 0 0 0
 KidneyBean		25 0 0 0 0
@@ -63,9 +63,9 @@ Stone2			0 1 0 1 0
 RubyStone		0 5  0 1 0
 Dagger			100 1 1 5 0
 Shoose_2			100 10 10 1 0
-CopperClub			500 2 6 12 0
-CopperSword			500 0 5 10 0
-CopperDagger			500 1 4 5 0
+CopperClub		500 2 6 12 0
+CopperSword		500 0 5 10 0
+CopperDagger		500 1 4 5 0
 SteelClub			1000 2 10 12 0
-SteelSword			1000 0 8 10 0
-SteelDagger			1000 1 7 5 0
+SteelSword		1000 0 8 10 0
+SteelDagger		1000 1 7 5 0

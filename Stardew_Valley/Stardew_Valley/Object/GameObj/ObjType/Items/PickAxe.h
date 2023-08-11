@@ -1,9 +1,9 @@
 #pragma once
-class PickAxe: public GameObject
+class PickAxe: public Item
 {
 public:
-	PickAxe(int objCode, int frameIndex,  short cost, short damage)
-		:GameObject(objCode, frameIndex, 1, 1), _cost(cost), _damage(damage)
+	PickAxe(string name)
+		:Item(ObjectInfo::Type::PICKAXE, 1), _cost(0), _damage(0)
 	{
 		_type = ObjectInfo::Type::PICKAXE;
 	}

@@ -23,7 +23,8 @@ public:
 	virtual bool IsCollision(shared_ptr<class RectCollider> other) override;
 	virtual bool IsCollision(shared_ptr<class CircleCollider> other) override;
 
-	bool Block(shared_ptr<CircleCollider>);
+	bool Block(shared_ptr<CircleCollider> other);
+	bool Block(shared_ptr<RectCollider> other);
 	
 private:
 	friend CircleCollider;

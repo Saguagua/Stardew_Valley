@@ -115,6 +115,37 @@ bool RectCollider::Block(shared_ptr<CircleCollider> other)
 	return true;
 }
 
+bool RectCollider::Block(shared_ptr<RectCollider> other)
+{
+	if (!IsCollision(other))
+		return false;
+
+	Vector2 myCenter = GetWorldPos();
+	Vector2 otherCenter = other->GetWorldPos();
+	/*Vector2 myAtoB = otherC
+
+
+	float yDistance = _size.y / 2 + otherRadius - abs(otherCenter.y - myCenter.y);
+	float xDistance = _size.x / 2 + otherRadius - abs(otherCenter.x - myCenter.x);
+
+	if (xDistance > yDistance)
+	{
+		AtoB.x = 0;
+		Vector2 normal = AtoB.Normalize();
+		Vector2 power = normal * yDistance;
+		other->SetPos(other->GetTransform()->GetWorldPos() + power);
+	}
+	else
+	{
+		AtoB.y = 0;
+		Vector2 normal = AtoB.Normalize();
+		Vector2 power = normal * xDistance;
+		other->SetPos(other->GetTransform()->GetWorldPos() + power);
+	}*/
+
+	return true;
+}
+
 RectCollider::AABB_Info RectCollider::GetAABB_Info()
 {
 	AABB_Info info = {};

@@ -3,13 +3,17 @@
 class ArableTile : public Tile
 {
 public:
-	ArableTile(string name, Vector2 pos)
-		:Tile(name, pos) {}
+	ArableTile(string name, Vector2 pos, string cropName, int progress, int quality)
+		:Tile(name, pos) 
+	{
+		ObjectSpawner::GetInstance()->CreateCrop(cropName, progress, quality);
+	}
+
 	virtual ~ArableTile() {}
 
 	virtual void Interaction() override;
 
 private:
-
+	weak_ptr<class Crop> _crop;
 };
 

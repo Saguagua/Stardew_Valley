@@ -1,7 +1,5 @@
 #include "framework.h"
-#include "../../../Data/ObjectInfo.h"
-#include "BreakableItem.h"
-#include "../../Tile/Tile.h"
+#include "Item.h"
 #include "PickAxe.h"
 
 void PickAxe::KeyInput()

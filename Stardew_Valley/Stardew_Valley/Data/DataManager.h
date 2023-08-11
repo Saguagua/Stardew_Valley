@@ -46,7 +46,7 @@ public:
 	void SwapItems(int index1, int index2);
 
 	unordered_map<string, shared_ptr<class TileInfo>>& GetTileInfos() { return _tileTable; }
-	unordered_map<string, shared_ptr<class ObjectInfo>> GetObjectInfos() { return _objTable; }
+	unordered_map<string, shared_ptr<class ObjectInfo>>& GetObjectInfos() { return _objTable; }
 	shared_ptr<class TileInfo> GetTileInfo(string tileName) { return _tileTable[tileName]; }
 	shared_ptr<ObjectInfo> GetObjectInfo(string objName) { return _objTable[objName]; }
 

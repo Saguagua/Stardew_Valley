@@ -151,8 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\SpawnInfo.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\Item.h" />
+    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.h" />
     <ClInclude Include="Scene\TestScene\DataScene.h" />
-    <ClInclude Include="Object\GameObj\Crop\Crop.h" />
+    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\Crop.h" />
     <ClInclude Include="Data\PlayerInfoSubscriber.h" />
     <ClInclude Include="Data\PlayerSubscribe.h" />
     <ClInclude Include="Object\UI\BagUI.h" />
@@ -166,19 +169,19 @@
     <ClInclude Include="Object\Tile\TileType\ArableTile.h" />
     <ClInclude Include="Data\ObjectInfo.h" />
     <ClInclude Include="Object\Tile\TileType\FishableTile.h" />
-    <ClInclude Include="Object\GameObj\ObjType\DropItem.h" />
+    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DropItem.h" />
     <ClInclude Include="Object\GameObj\ObjectSpawner.h" />
-    <ClInclude Include="Object\GameObj\ObjType\EatableItem.h" />
-    <ClInclude Include="Object\GameObj\ObjType\FishingRod.h" />
-    <ClInclude Include="Object\GameObj\ObjType\Axe.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\EatableItem.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\FishingRod.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\Axe.h" />
     <ClInclude Include="Framework\Animation\Action.h" />
-    <ClInclude Include="Object\GameObj\ObjType\Hoe.h" />
-    <ClInclude Include="Object\GameObj\ObjType\BreakableItem.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\Hoe.h" />
+    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\BreakableItem.h" />
     <ClInclude Include="Object\GameObj\GameObject.h" />
     <ClInclude Include="Object\GameObj\ItemInfo.h" />
-    <ClInclude Include="Object\GameObj\ObjType\WateringCan.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\WateringCan.h" />
     <ClInclude Include="Object\Player\Player.h" />
-    <ClInclude Include="Object\GameObj\ObjType\PickAxe.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\PickAxe.h" />
     <ClInclude Include="Data\MapInfo.h" />
     <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
@@ -187,7 +190,7 @@
     <ClInclude Include="Object\UI\Palette.h" />
     <ClInclude Include="Data\PlayerInfo.h" />
     <ClInclude Include="Data\DataManager.h" />
-    <ClInclude Include="Object\GameObj\ObjType\PickableItem.h" />
+    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\PickableItem.h" />
     <ClInclude Include="Object\UI\PlayerUI.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
@@ -235,10 +238,13 @@
     <ClInclude Include="Types.h" />
     <ClInclude Include="Object\UI\Window.h" />
     <ClInclude Include="Object\BasicObj\XMLRect.h" />
+    <ClInclude Include="Object\GameObj\ObjType\Items\Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\GameObj\ObjType\Items\Item.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.cpp" />
     <ClCompile Include="Scene\TestScene\DataScene.cpp" />
-    <ClCompile Include="Object\GameObj\Crop\Crop.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\Crop.cpp" />
     <ClCompile Include="Object\UI\BagUI.cpp" />
     <ClCompile Include="Framework\Light\LightManager.cpp" />
     <ClCompile Include="Scene\TestScene\LightTestScene.cpp" />
@@ -248,25 +254,25 @@
     <ClCompile Include="Object\UI\ItemSlot.cpp" />
     <ClCompile Include="Object\Tile\TileType\ArableTile.cpp" />
     <ClCompile Include="Object\Tile\TileType\FishableTile.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\DropItem.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\DropItem.cpp" />
     <ClCompile Include="Object\GameObj\ObjectSpawner.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\EatableItem.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\FishingRod.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\Axe.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Items\EatableItem.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Items\FishingRod.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Items\Axe.cpp" />
     <ClCompile Include="Framework\Animation\Action.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\Hoe.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\BreakableItem.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Items\Hoe.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\BreakableItem.cpp" />
     <ClCompile Include="Object\GameObj\GameObject.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\WateringCan.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Items\WateringCan.cpp" />
     <ClCompile Include="Object\UI\List.cpp" />
     <ClCompile Include="Object\UI\ColorButton.cpp" />
     <ClCompile Include="Object\UI\Button.cpp" />
     <ClCompile Include="Object\BasicObj\SingleColorRect.cpp" />
     <ClCompile Include="Object\UI\Palette.cpp" />
     <ClCompile Include="Object\Player\Player.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\PickAxe.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Items\PickAxe.cpp" />
     <ClCompile Include="Data\DataManager.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\PickableItem.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\PickableItem.cpp" />
     <ClCompile Include="Object\UI\PlayerUI.cpp" />
     <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
@@ -313,6 +319,7 @@
     <ClCompile Include="Object\Tile\Tile.cpp" />
     <ClCompile Include="Object\BasicObj\XMLRect.cpp" />
     <ClCompile Include="Object\UI\TimeUI.cpp" />
+    <ClCompile Include="Object\GameObj\ObjType\Items\Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />

@@ -228,12 +228,13 @@ void DataManager::SavePlayerInfo()
 void DataManager::LoadPlayerInfo(string playerName)
 {
 	string itemName;
-	int itemType;
-	int itemCount;
+	short itemType;
+	short itemCount;
 	short maxHp;
 	short hp;
 	short maxStamina;
 	short stamina;
+
 	Vector2 pos;
 	vector<shared_ptr<GameObject>> items;
 	
@@ -275,8 +276,21 @@ void DataManager::LoadMap(string playerName, string mapName)
 	vector<shared_ptr<Tile>> infos;
 
 	string name;
+	string cropName;
+
+	int progress;
+	int quality;
+
 	int x = 0;
 	int y = 0;
+
+	//타일 저장 방식
+	//name val ()
+	//arable -> type, progress, quality
+	// fishing
+	//map framming
+	//map dungeon
+	//map ocean
 
 	while (!fin.eof())
 	{
@@ -290,7 +304,8 @@ void DataManager::LoadMap(string playerName, string mapName)
 
 		if (bitFlag & TileInfo::Type::FARMING)
 		{
-			info = make_shared<ArableTile>(name, pos);
+			fin >> cropName >> progress >> quality;
+			info = make_shared<ArableTile>(name, pos, cropName, progress);
 		}
 		else if (bitFlag & TileInfo::Type::FISHING)
 		{
@@ -319,10 +334,10 @@ void DataManager::LoadMap(string playerName, string mapName)
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
 	_mapInfos.push_back(mapInfo);
 
-	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + "Objects" + ".txt");
+	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + "Objects.txt");
 
-	vector<shared_ptr<GameObject>> items;
 	int type;
+
 	while (!fin.eof())
 	{
 		fin >> name;

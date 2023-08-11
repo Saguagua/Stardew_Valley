@@ -17,6 +17,7 @@ public:
 		BREAKABLE,
 		PICKABLE,
 		EATABLE,
+		CROP,
 		DROP,
 		AXE,
 		PICKAXE,
