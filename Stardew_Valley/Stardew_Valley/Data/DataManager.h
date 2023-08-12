@@ -41,14 +41,16 @@ public:
 	bool AddStamina(short amount);
 	void SetState(int state);
 
-	shared_ptr<class GameObject> GetSelectedItem();
-	bool AddItem(int objCode);
+	shared_ptr<class Item> GetSelectedItem();
+	bool AddItem(int type, string name);
 	void SwapItems(int index1, int index2);
 
 	unordered_map<string, shared_ptr<class TileInfo>>& GetTileInfos() { return _tileTable; }
-	unordered_map<string, shared_ptr<class ObjectInfo>>& GetObjectInfos() { return _objTable; }
 	shared_ptr<class TileInfo> GetTileInfo(string tileName) { return _tileTable[tileName]; }
-	shared_ptr<ObjectInfo> GetObjectInfo(string objName) { return _objTable[objName]; }
+
+	unordered_map<string, shared_ptr<class DropInfo>>& GetDropInfos() { return _dropTable; }
+	unordered_map<string, shared_ptr<class DeployInfo>>& GetDeployInfos() { return _deployTable; }
+	unordered_map<string, shared_ptr<class ItemInfo>>& GetItemInfos() { return _itemTable; }
 
 	void Save();
 	void Load(string name);
@@ -73,7 +75,10 @@ private:
 	unordered_map<string, bool> _mapTable;
 	
 	unordered_map<string, shared_ptr<class TileInfo>> _tileTable;
-	unordered_map<string, shared_ptr<class ObjectInfo>> _objTable;
+	unordered_map<string, shared_ptr<class XMLInfo>> _xmlTable;
+	unordered_map<string, shared_ptr<class DropInfo>> _dropTable;
+	unordered_map<string, shared_ptr<class DeployInfo>> _deployTable;
+	unordered_map<string, shared_ptr<class ItemInfo>> _itemTable;
 
 	Vector2 _tileMaxFrame;
 	Vector2 _objectMaxFrame;

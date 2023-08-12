@@ -92,18 +92,18 @@ void DataManager::SetState(int state)
 		PlayerDeadNotification();
 }
 
-shared_ptr<GameObject> DataManager::GetSelectedItem()
+shared_ptr<Item> DataManager::GetSelectedItem()
 {
 	return _playerInfo->GetItem(_playerInfo->GetSelectedIndex());
 }
 
-bool DataManager::AddItem(int objCode)
+bool DataManager::AddItem(int type, string name)
 {
-	vector<shared_ptr<GameObject>>& items = _playerInfo->GetItems();
+	vector<shared_ptr<Item>>& items = _playerInfo->GetItems();
 
 	for (auto item : items)
 	{
-		if (item->GetCode() == objCode)
+		if (item->GetName() == name)
 		{
 			if (item->AddCount())
 			{
@@ -113,23 +113,23 @@ bool DataManager::AddItem(int objCode)
 		}
 	}
 
-	/*for (int i = 0; i < items.size(); i++)
+	for (int i = 0; i < items.size(); i++)
 	{
-		if (items[i]->GetCode() == 139)
+		if (!items[i]->IsActive())
 		{
-			items[i] = ObjectSpawner::GetInstance()->CreateItem(objCode);
+			items[i] = ObjectSpawner::GetInstance()->CreateItem(name, type);
 			PlayerNotification(PlayerSubscribe::Type::ITEMS);
 			return true;
 		}
-	}*/
+	}
 
 	return false;
 }
 
 void DataManager::SwapItems(int index1, int index2)
 {
-	vector<shared_ptr<GameObject>>& items = _playerInfo->GetItems();
-	shared_ptr<GameObject> tmp = items[index1];
+	vector<shared_ptr<Item>>& items = _playerInfo->GetItems();
+	shared_ptr<Item> tmp = items[index1];
 	items[index1] = items[index2];
 	items[index2] = tmp;
 
@@ -202,7 +202,7 @@ void DataManager::SaveMaps()
 
 void DataManager::SavePlayerInfo()
 {
-	ofstream fout;
+	/*ofstream fout;
 	fout.open("Data/SaveFiles/" + _playerInfo->GetName() + "/PlayerInfo.txt");
 
 	fout << _playerInfo->GetName() << endl;
@@ -222,13 +222,12 @@ void DataManager::SavePlayerInfo()
 		fout << items[i]->GetCode() << " " << items[i]->GetCount() << endl;
 	}
 
-	fout.close();
+	fout.close();*/
 }
 
 void DataManager::LoadPlayerInfo(string playerName)
 {
 	string itemName;
-	short itemType;
 	short itemCount;
 	short maxHp;
 	short hp;
@@ -236,7 +235,7 @@ void DataManager::LoadPlayerInfo(string playerName)
 	short stamina;
 
 	Vector2 pos;
-	vector<shared_ptr<GameObject>> items;
+	vector<shared_ptr<Item>> items;
 	
 	ifstream fin;
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerInfo.txt");
@@ -254,8 +253,8 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	while (!fin.eof())
 	{
-		fin >> itemName >> itemType >> itemCount;
-		items.push_back(ObjectSpawner::GetInstance()->CreateItem(itemName, itemType, itemCount));
+		fin >> itemName >> itemCount;
+		items.push_back(ObjectSpawner::GetInstance()->CreateItem(itemName, itemCount));
 	}
 
 	fin.close();
@@ -276,21 +275,13 @@ void DataManager::LoadMap(string playerName, string mapName)
 	vector<shared_ptr<Tile>> infos;
 
 	string name;
-	string cropName;
+	string objName;
 
 	int progress;
 	int quality;
 
 	int x = 0;
 	int y = 0;
-
-	//타일 저장 방식
-	//name val ()
-	//arable -> type, progress, quality
-	// fishing
-	//map framming
-	//map dungeon
-	//map ocean
 
 	while (!fin.eof())
 	{
@@ -302,18 +293,19 @@ void DataManager::LoadMap(string playerName, string mapName)
 		
 		int bitFlag = _tileTable[name]->GetBitFlag();
 
+		fin >> objName;
 		if (bitFlag & TileInfo::Type::FARMING)
 		{
-			fin >> cropName >> progress >> quality;
-			info = make_shared<ArableTile>(name, pos, cropName, progress);
+			fin >> progress >> quality;
+			info = make_shared<ArableTile>(name, pos, objName, progress, quality);
 		}
 		else if (bitFlag & TileInfo::Type::FISHING)
 		{
-			info = make_shared<FishableTile>(name, pos);
+			info = make_shared<FishableTile>(name, pos, objName);
 		}
 		else
 		{
-			info = make_shared<Tile>(name, pos);
+			info = make_shared<Tile>(name, pos, objName);
 		}
 		
 		infos.push_back(info);
@@ -333,22 +325,6 @@ void DataManager::LoadMap(string playerName, string mapName)
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
 	_mapInfos.push_back(mapInfo);
-
-	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + "Objects.txt");
-
-	int type;
-
-	while (!fin.eof())
-	{
-		fin >> name;
-		fin >> type;
-		fin >> x;
-		fin >> y;
-
-		ObjectSpawner::GetInstance()->CreateObj(name, type, Vector2(x,y));
-	}
-
-	fin.close();
 }
 
 void DataManager::ReadMaps()
@@ -415,19 +391,19 @@ void DataManager::ReadXML()
 
 		name = row->FindAttribute("n")->Value();
 
-		if (_objTable.count(name) == 0)
+		if (_xmlTable.count(name) == 0)
 		{
-			_objTable[name] = make_shared<ObjectInfo>(name);
+			_xmlTable[name] = make_shared<XMLInfo>(name);
 		}
 
-		ObjectInfo::Position pos;
+		XMLInfo::Position pos;
 
 		pos.x = row->FindAttribute("x")->IntValue();
 		pos.y = row->FindAttribute("y")->IntValue();
 		pos.w = row->FindAttribute("w")->IntValue();
 		pos.h = row->FindAttribute("h")->IntValue();
 
-		_objTable[name]->AddPosition(pos);
+		_xmlTable[name]->AddPosition(pos);
 		
 		row = row->NextSiblingElement();
 	}
@@ -450,26 +426,80 @@ void DataManager::ReadTypes()
 
 	fin.close();
 
-	fin.open("Data/Contents/ItemProperty.txt");
+	fin.open("Data/Contents/DeployableTable.txt");
+
+	string name;
+	short type;
+	short tmp;
 
 	while (!fin.eof())
 	{
-		string name;
-		vector<int> vals;
+		vector<short> vals;
 
 		fin >> name;
-		for (int i = 0; i < 5; i++)
+		fin >> type;
+
+		for (int i = 0; i < 3; i++)
 		{
-			int tmp;
 			fin >> tmp;
 			vals.push_back(tmp);
 		}
 
-		_objTable[name]->SetVals(vals);
+		_deployTable[name] = make_shared<DeployInfo>(type, vals);
 	}
 
 	fin.close();
 
+	fin.open("Data/Contents/ItemTable.txt");
+	short price;
+
+	while (!fin.eof())
+	{
+		vector<short> vals;
+
+		fin >> name;
+		fin >> type;
+		fin >> price;
+
+		for (int i = 0; i < 4; i++)
+		{
+			fin >> tmp;
+			vals.push_back(tmp);
+		}
+
+		_itemTable[name] = make_shared<ItemInfo>(type, price, vals);
+	}
+
+	fin.close();
+
+	fin.open("Data/Contents/DropTable.txt");
+	string dropItem;
+
+	while (!fin.eof())
+	{
+		vector<short> vals;
+
+		fin >> name;
+		fin >> dropItem;
+		fin >> tmp;
+
+		_dropTable[name] = make_shared<DropInfo>();
+		_dropTable[name]->AddDatas(dropItem, tmp);
+
+		while (true)
+		{
+			fin >> dropItem;
+
+			if (dropItem == "/")
+				break;
+
+			fin >> tmp;
+
+			_dropTable[name]->AddDatas(dropItem, tmp);
+		}
+	}
+
+	fin.close();
 }
 
 void DataManager::ReadPlayers()

@@ -54,20 +54,20 @@ void ItemSlot::CreateButtons(wstring path, int count)
 void ItemSlot::SetButtons(Vector2 startPos, Vector2 space)
 {
 	List::SetButtons(startPos, space);
-	vector<shared_ptr<GameObject>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
 	for (int i = 0; i < _buttons.size(); i++)
 	{
-		_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
 	}
 }
 
 void ItemSlot::UpdateInfo()
 {
-	vector<shared_ptr<GameObject>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
 
 	for (int i = 0; i < _buttons.size(); i++)
 	{
-		_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
 	}
 }
 

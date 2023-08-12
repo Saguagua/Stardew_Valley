@@ -1,0 +1,8 @@
+BREAK 	0 체력 0 0
+PICK 	1 0 0 0
+LIGHT 	2 r g b 
+BOX 	3 0 0 0
+HOUSE 	4 0 0 0
+CROP 	5 pro date qual
+DROP	6
+

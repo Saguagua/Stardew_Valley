@@ -55,12 +55,12 @@ void BagUI::Render()
 
 void BagUI::CreateButtons()
 {
-	vector<shared_ptr<GameObject>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
 
 	for (int i = 0; i < 30; i++)
 	{
 		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/Object/Objects.png", _objMaxFrame, Vector2(40, 50));
-		btn->SetFrame(items[i]->GetFrameIndex());
+		//btn->SetFrame(items[i]->GetFrameIndex());
 		CallBackInt cb = std::bind(&BagUI::ClickItem, this, i);
 		btn->AddPushEvent(cb);
 		_buttons.push_back(btn);
@@ -85,11 +85,11 @@ void BagUI::ClickItem(int index)
 
 void BagUI::UpdateInfo()
 {
-	vector<shared_ptr<GameObject>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
 
 	for (int i = 0; i < _buttons.size(); i++)
 	{
-		_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
 	}
 }
 

@@ -1,0 +1,15 @@
+BlueTorch 	BlueTorch 100 /
+Torch 		Torch 100 /
+TreeBottom1	Wood_Drop 100 Wood_Drop 80 /
+TreeBottom2	Wood_Drop 100 Wood_Drop 80 /
+Lantern		Lantern 100 /
+Wood1		Wood_Drop 100 Wood_Drop 80 /
+Wood2		Wood_Drop 100 Wood_Drop 80 /
+DiamondStone	Diamond 100 Rock_Drop 80 /
+EmeraldStone	Emerald 100 Rock_Drop 80 /
+Stone1		Rock_Drop 100 Rock_Drop 80 /
+BigStone		Rock_Drop 100 Rock_Drop 100 Rock_Drop 100 Rock_Drop 100 Rock_Drop 100 /
+Stub		Wood_Drop 100 Wood_Drop 100 Wood_Drop 100 Wood_Drop 100 Wood_Drop 100 /
+Box		Box 100 /
+Stone2		Rock_Drop 100 Rock_Drop 80 /
+RubyStone	Ruby 100 Rock_Drop 80 /

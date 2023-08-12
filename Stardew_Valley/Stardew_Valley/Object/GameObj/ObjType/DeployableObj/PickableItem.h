@@ -2,12 +2,14 @@
 class PickableItem :public DeployableObject
 {
 public:
-	PickableItem() :DeployableObject(ObjectInfo::Type::PICKABLE) {}
+	PickableItem(string name) :DeployableObject(DeployableObject::Type::PICK, name) {}
 
 	virtual ~PickableItem() {}
 	virtual void Interaction() override;
+	virtual void Spawn(string name, shared_ptr<SpawnInfo> data) override;
 
 private:
 	string _pickItemName;
+
 };
 

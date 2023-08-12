@@ -11,3 +11,7 @@ void PickableItem::Interaction()
 		_type = ObjectInfo::Type::BLANK;
 	}*/
 }
+
+void PickableItem::Spawn(string name, shared_ptr<SpawnInfo> data)
+{
+}

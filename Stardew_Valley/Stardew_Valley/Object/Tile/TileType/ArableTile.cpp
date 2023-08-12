@@ -1,30 +1,30 @@
 #include "framework.h"
 #include "../Tile.h"
-#include "../../GameObj/Crop/Crop.h"
+#include "../../GameObj/ObjType/DeployableObj/Crop.h"
 #include "ArableTile.h"
 
 void ArableTile::Interaction()
 {
-	shared_ptr<GameObject> obj = DATA->GetSelectedItem();
+	shared_ptr<Item> obj = DATA->GetSelectedItem();
 
 	switch (obj->GetType())
 	{
-	case ObjectInfo::Type::HOE:
+	case Item::Type::HOE:
 	{
 		
 		break;
 	}
-	case ObjectInfo::Type::WATERINGCAN:
+	case Item::Type::WATERINGCAN:
 	{
 		
 		break;
 	}
-	case ObjectInfo::Type::SEED:
+	case Item::Type::SEED:
 	{
 
 		break;
 	}
-	case ObjectInfo::Type::FARMMING:
+	case Item::Type::FRTI:
 	{
 
 		break;

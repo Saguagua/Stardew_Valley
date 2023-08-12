@@ -10,10 +10,8 @@ void BreakableItem::Interaction()
 	//if ()
 }
 
-void BreakableItem::Spawn(string name, )
+void BreakableItem::Spawn(string name, shared_ptr<SpawnInfo> info)
 {
 	_isActive = true;
 	_name = name;
-	_hp = vals[1];
-	_countMax = vals[3];
 }

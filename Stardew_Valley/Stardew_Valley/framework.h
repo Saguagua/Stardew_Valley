@@ -93,6 +93,8 @@ using namespace Microsoft::WRL;
 
 //GameObject
 #include "Object/GameObj/GameObject.h"
+#include "Object/GameObj/ObjType/DeployableObj/DeployableObject.h"
+#include "Object/GameObj/ObjType/Items/Item.h"
 #include "Object/GameObj/ObjectSpawner.h"
 
 //Map

@@ -58,7 +58,7 @@ void Player::SetSelectedItemIndex(int index)
 	int type = _playerInfo.lock()->GetItem(index)->GetType();
 	int playerState = _playerInfo.lock()->GetState();
 
-	if (type == ObjectInfo::Type::NONE ||
+	/*if (type == ObjectInfo::Type::NONE ||
 		type == ObjectInfo::Type::EATABLE ||
 		type == ObjectInfo::Type::FARMMING ||
 		type == ObjectInfo::Type::SEED)
@@ -68,7 +68,7 @@ void Player::SetSelectedItemIndex(int index)
 	else
 	{
 		playerState &= ~(PlayerInfo::PlayerState::HOLDING);
-	}
+	}*/
 
 	_playerInfo.lock()->SetState(playerState);
 

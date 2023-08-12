@@ -1,5 +1,5 @@
 #pragma once
-class DropItem :public DeployableObject
+class DropItem
 {
 public:
 	DropItem();
@@ -8,18 +8,19 @@ public:
 	void Update();
 	void Render();
 
-	virtual void Interaction() override;
-	virtual void Spawn(string name, vector<short> vals) override;
-	void AddPos(Vector2 pos) { _col->AddPos(pos); }
+	void Interaction();
+	void AddPos(Vector2 pos) { _collider->AddPos(pos); }
+	void Spawn(string name, shared_ptr<SpawnInfo> data);
 
-	shared_ptr<CircleCollider> GetCollider() { return _col; }
+	shared_ptr<CircleCollider> GetCollider() { return _collider; }
 	shared_ptr<CircleCollider> GetArea() { return _dragArea; }
-	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
+	Vector2 GetWorldPos() { return _collider->GetWorldPos(); }
+	bool IsActive() { return _isActive; }
 
 private:
-	shared_ptr<CircleCollider> _col;
+	shared_ptr<CircleCollider> _collider;
 	shared_ptr<CircleCollider> _dragArea;
 	string _itemName;
-
+	bool _isActive = false;
 };
 

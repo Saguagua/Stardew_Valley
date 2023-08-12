@@ -2,14 +2,14 @@
 class Crop : public DeployableObject
 {
 public:
-	Crop() :DeployableObject(ObjectInfo::Type::CROP) {}
+	Crop(string name, Vector2 size) :DeployableObject(DeployableObject::Type::CROP, name, size) {}
 	~Crop() {}
 
 
 	void Update();
 
 	virtual void Interaction() override;
-	virtual void Spawn(string name, vector<short> vals) override;
+	virtual void Spawn(string name, shared_ptr<SpawnInfo> data) override;
 
 	void Watering() {}
 	
@@ -21,5 +21,6 @@ private:
 	short _period;
 	short _progress;
 	short _quality;
+
 };
 

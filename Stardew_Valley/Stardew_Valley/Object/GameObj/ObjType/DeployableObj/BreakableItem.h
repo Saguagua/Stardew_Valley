@@ -2,18 +2,16 @@
 class BreakableItem : public DeployableObject
 {
 public:
-	BreakableItem() 
-		:DeployableObject(ObjectInfo::Type::BREAKABLE) 
+	BreakableItem(string name, Vector2 size)
+		:DeployableObject(DeployableObject::Type::BREAK, name, size)
 	{}
 
 	virtual ~BreakableItem() {}
 
-	virtual void Spawn(string name, SpawnInfo data) override;
+	virtual void Spawn(string name, shared_ptr<SpawnInfo> data) override;
 	virtual void Interaction() override;
 
 private:
-	short _hp;
-	vector<string> _dropTable; //수정 필요
-	short _countMax;
+	short _hp = 1;
 };
 

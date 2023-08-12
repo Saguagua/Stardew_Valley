@@ -4,22 +4,16 @@
 class GameObject
 {
 public:
-	GameObject(ObjectInfo::Type type)
-		:_type(type)
-	{}
+	GameObject(string name):_name(name){}
 	
-	~GameObject() {}
+	virtual ~GameObject() {}
 
-	bool AddCount();
-
-	ObjectInfo::Type GetType() { return _type; }
-	short GetCount() { return _count; }
+	string GetName() { return _name; }
 
 	void SetName(string name) { _name = name; }
-
+	bool IsActive() { return _isActive; }
 protected:
-	ObjectInfo::Type _type = ObjectInfo::Type::NONE;
 	string _name;
-	short _count;
+	bool _isActive = true;
 };
 

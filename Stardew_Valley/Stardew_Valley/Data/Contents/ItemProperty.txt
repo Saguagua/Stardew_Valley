@@ -1,12 +1,12 @@
 CopperHoe 		500 1 0 0 0
 KidneyBeanSeed 		30 2 0 0 0
-BlueTorch		5 0 0 0 0
+BlueTorch			5 0 0 0 0
 Copper			15 0 0 0 0
 Torch			15 0 0 0 0
 KidneyBean		25 0 0 0 0
 Emerald			70 0 0 0 0
 CauliflowerSeed		40 3 0 0 0
-Dandelion		10 0 0 0 0
+Dandelion			10 0 0 0 0
 StarFruit			1000 10 10 0 0
 SugarBeetSeed		15 0 0 0 0
 Coral			15 0 0 0 0
@@ -18,7 +18,7 @@ CaveCarrot		10 0 0 10 10
 Daffodil			10 0 0 0 0
 Snail			15 0 0 0 0
 PotatoSeed		10 2 0 0 0
-SugarBeet		25 0 0 0 0
+SugarBeet			25 0 0 0 0
 Axe			100 1 0 0 0
 CopperAxe		500 3 0 0 0
 Ruby	 		80 0 0 0 0
@@ -37,7 +37,7 @@ AnglerFish		50 0 0 0 0
 BatWing			15 0 0 0 0
 Caulifower		60 0 0 0 0
 SlimePiece		15 0 0 0 0
-CopperWateringCan	500 1 0 0 0
+CopperWateringCan		500 1 0 0 0
 SteelWateringCan		1000 2 0 0 0
 WateringCan		100 0 0 0 0
 Diamond			100 0 0 0 0

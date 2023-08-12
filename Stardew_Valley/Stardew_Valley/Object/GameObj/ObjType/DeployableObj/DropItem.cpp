@@ -1,25 +1,25 @@
 #include "framework.h"
 #include "DeployableObject.h"
+#include "SpawnInfo.h"
 #include "DropItem.h"
 
 DropItem::DropItem()
-    :DeployableObject(ObjectInfo::Type::DROP)
 {
-    _col = make_shared<CircleCollider>(20);
+    _collider = make_shared<CircleCollider>(20);
     _dragArea = make_shared<CircleCollider>(100);
     _dragArea->SetDebug(true);
-    _dragArea->SetParent(_col->GetTransform());
+    _dragArea->SetParent(_collider->GetTransform());
 }
 
 void DropItem::Update()
 {
-    _col->Update();
+    _collider ->Update();
     _dragArea->Update();
 }
 
 void DropItem::Render()
 {
-    _col->Render();
+    _collider->Render();
     _dragArea->Render();
 }
 
@@ -30,11 +30,9 @@ void DropItem::Interaction()
     _isActive = false;
 }
 
-
-void DropItem::Spawn(string name, vector<short> vals)
+void DropItem::Spawn(string name, shared_ptr<SpawnInfo> data)
 {
     _isActive = true;
-    _name = name;
-    //_itemName = itemName;
+    _itemName = name;
     //_collider->SetPos(pos);
 }

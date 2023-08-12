@@ -23,24 +23,24 @@ public:
 		return nullptr;
 	}
 
-	void CreateObj(string objName, int type, Vector2 pos);
+	shared_ptr<DeployableObject> CreateObj(string objName);
 	shared_ptr<class Crop> CreateCrop(string name, int progress, int quality);
-	shared_ptr<GameObject> CreateItem(string objName, int type, short count = 1);
+	shared_ptr<Item> CreateItem(string objName, short count = 1);
 
 	void Update();
 	void Render();
 
 	void SetPlayerInfo() { _playerInfo = DATA->GetPlayerInfo(); }
 
-	void ActiveDropItem(Vector2 pos, int objCode, int count);
+	void ActiveDropItem(string dropName, string itemName, Vector2 pos, int count);
 private:
 
 	static ObjectSpawner* _instance;
-	unordered_map<string, shared_ptr<class ObjectInfo>> _objTable;
+	unordered_map<string, shared_ptr<class DropInfo>> _dropTable;
+	unordered_map<string, shared_ptr<class DeployInfo>> _deployTable;
+	unordered_map<string, shared_ptr<class ItemInfo>> _itemTable;
 
-	vector<shared_ptr<class Crop>> _crops;
-	vector<shared_ptr<PickableItem>> _pickObjs;
-	vector<shared_ptr<BreakableItem>> _breakObjs;
+
 	vector<shared_ptr<class DropItem>> _dropItems;
 
 	shared_ptr<class PlayerInfo> _playerInfo;

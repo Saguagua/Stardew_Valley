@@ -2,8 +2,8 @@
 class Axe :public Item
 {
 public:
-	Axe()
-		:Item(ObjectInfo::Type::AXE, 0), _cost(0), _damage(0)
+	Axe(string name)
+		:Item(Item::Type::AXE, name, 0), _cost(0), _damage(0)
 	{
 	}
 

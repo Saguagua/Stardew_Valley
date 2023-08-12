@@ -3,10 +3,13 @@
 
 DataScene::DataScene()
 {
+	ObjectSpawner::Create();
+	DATA->Load("Test");
 }
 
 DataScene::~DataScene()
 {
+	ObjectSpawner::Delete();
 }
 
 void DataScene::Update()

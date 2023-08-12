@@ -3,9 +3,8 @@ class PickAxe: public Item
 {
 public:
 	PickAxe(string name)
-		:Item(ObjectInfo::Type::PICKAXE, 1), _cost(0), _damage(0)
+		:Item(Item::Type::PICKAXE, name, 1), _cost(0), _damage(0)
 	{
-		_type = ObjectInfo::Type::PICKAXE;
 	}
 	virtual ~PickAxe() {}
 
