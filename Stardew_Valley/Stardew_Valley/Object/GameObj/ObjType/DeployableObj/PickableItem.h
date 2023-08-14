@@ -7,9 +7,5 @@ public:
 	virtual ~PickableItem() {}
 	virtual void Interaction() override;
 	virtual void Spawn(string name, shared_ptr<SpawnInfo> data) override;
-
-private:
-	string _pickItemName;
-
 };
 

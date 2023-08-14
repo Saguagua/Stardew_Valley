@@ -324,6 +324,12 @@ void DataManager::LoadMap(string playerName, string mapName)
 		infos.pop_back();
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
+	
+	for (int i = 0; i < infos.size(); i++)
+	{
+		ObjectSpawner::GetInstance()->CreateObj(mapInfo, i, infos[i]->GetObjName());
+	}
+
 	_mapInfos.push_back(mapInfo);
 }
 

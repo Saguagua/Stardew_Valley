@@ -2,8 +2,8 @@
 class BreakableItem : public DeployableObject
 {
 public:
-	BreakableItem(string name, Vector2 size)
-		:DeployableObject(DeployableObject::Type::BREAK, name, size)
+	BreakableItem(string name, Vector2 size, short hp = 1)
+		:DeployableObject(DeployableObject::Type::BREAK, name, size), _hp(hp)
 	{}
 
 	virtual ~BreakableItem() {}
@@ -12,6 +12,6 @@ public:
 	virtual void Interaction() override;
 
 private:
-	short _hp = 1;
+	short _hp;
 };
 

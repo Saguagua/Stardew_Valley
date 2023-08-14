@@ -8,7 +8,6 @@
 Tile::Tile(string name, Vector2 pos, string objName)
 :_tileName(name), _centerPos(pos)
 {
-	_obj = ObjectSpawner::GetInstance()->CreateObj(objName);
 }
 
 void Tile::Interaction()

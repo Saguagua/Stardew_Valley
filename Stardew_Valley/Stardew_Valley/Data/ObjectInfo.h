@@ -18,12 +18,14 @@ public:
 
 	string GetName() { return _name; }
 	Position& GetPos(int index) { return _positions[index]; }
+	Vector2 GetSize() { return _size; }
 
 	void AddPosition(Position pos) { _positions.push_back(pos); }
 
 private:
 	string _name;
 	vector<Position> _positions;
+	Vector2 _size;
 };
 
 struct DropInfo
@@ -61,10 +63,11 @@ public:
 
 	short GetType() { return _type; }
 	vector<short>& GetVals() { return _vals; }
-
+	Vector2 GetSize() { return _size; }
 private:
 	short _type;
 	vector<short> _vals;
+	Vector2 _size;
 };
 
 struct ItemInfo

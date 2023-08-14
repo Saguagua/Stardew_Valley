@@ -2,7 +2,10 @@
 class Crop : public DeployableObject
 {
 public:
-	Crop(string name, Vector2 size) :DeployableObject(DeployableObject::Type::CROP, name, size) {}
+	Crop(string name, Vector2 size, short progress, short quality) 
+		:DeployableObject(DeployableObject::Type::CROP, name, size),
+		_progress(progress), _quality(quality)
+	{}
 	~Crop() {}
 
 

@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "../../Data/MapInfo.h"
 #include "ObjType\DeployableObj\SpawnInfo.h"
 #include "ObjType/DeployableObj/DeployableObject.h"
 #include "ObjType/DeployableObj/BreakableItem.h"
@@ -54,6 +55,40 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 
 	default:
 		break;
+	}
+}
+
+void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName, short val1, short val2)
+{
+	vector<shared_ptr<Tile>>& tiles = map->GetInfos();
+	Vector2 mapSize = map->GetSize();
+	Vector2 size = _deployTable[objName]->GetSize();
+	shared_ptr<DeployableObject> obj;
+
+	switch (_deployTable[objName]->GetType())
+	{
+	case DeployableObject::BREAK:
+	{
+		obj = make_shared<BreakableItem>(objName, Vector2(1, 1), val1);
+	}
+	case DeployableObject::PICK:
+	{
+		obj = make_shared<PickableItem>(objName);
+	}
+	case DeployableObject::CROP:
+	{
+		obj = make_shared<Crop>(objName, size);
+	}
+	default:
+		break;
+	}
+
+	for (int i = 0; i < size.y; i++)
+	{
+		for (int j = index; j < size.x; j++)
+		{
+			tiles[j + i * mapSize.x]->SetObj(obj);
+		}
 	}
 }
 

@@ -24,6 +24,7 @@ public:
 	}
 
 	shared_ptr<DeployableObject> CreateObj(string objName);
+	void CreateObj(shared_ptr<class MapInfo> map, int index, string objName, short val1, short val2);
 	shared_ptr<class Crop> CreateCrop(string name, int progress, int quality);
 	shared_ptr<Item> CreateItem(string objName, short count = 1);
 
@@ -34,8 +35,8 @@ public:
 
 	void ActiveDropItem(string dropName, string itemName, Vector2 pos, int count);
 private:
-
 	static ObjectSpawner* _instance;
+
 	unordered_map<string, shared_ptr<class DropInfo>> _dropTable;
 	unordered_map<string, shared_ptr<class DeployInfo>> _deployTable;
 	unordered_map<string, shared_ptr<class ItemInfo>> _itemTable;
