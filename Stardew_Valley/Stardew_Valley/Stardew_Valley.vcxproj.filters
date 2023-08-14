@@ -577,6 +577,7 @@
     <FxCompile Include="Shader\SingleColorVS.hlsl" />
     <FxCompile Include="Shader\LightVS.hlsl" />
     <FxCompile Include="Shader\LightPS.hlsl" />
+    <FxCompile Include="Shader\LightXMLPS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Map\Save\Fishing.txt" />

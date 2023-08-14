@@ -17,6 +17,7 @@ public:
 	~XMLInfo() {}
 
 	string GetName() { return _name; }
+	Position& GetPos(int index) { return _positions[index]; }
 
 	void AddPosition(Position pos) { _positions.push_back(pos); }
 

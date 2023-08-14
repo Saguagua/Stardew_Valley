@@ -7,7 +7,7 @@ public:
 
 	void Render();
 	void SetRatio(Vector2 ratio);
-private:
+protected:
 	void GetInfo(string path, string name);
 	void CreateVertices();
 	void CreateData();

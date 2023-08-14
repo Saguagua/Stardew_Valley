@@ -4,13 +4,14 @@ class Tile
 public:
 	Tile(string name, Vector2 pos, string objName);
 
-	Tile(string name, Vector2 pos)
-		:_tileName(name), _centerPos(pos)
-	{}
 	~Tile() {}
 
+	string GetName() { return _tileName; }
 	Vector2 GetCenterPos() { return _centerPos; }
+	shared_ptr<DeployableObject> GetObj() { return _obj; }
+	string GetObjName() { return _obj->GetName(); }
 
+	void SetName(string name) { _tileName = name; }
 	void SetCenterPos(Vector2 pos) { _centerPos = pos; }
 	
 	virtual void Interaction();

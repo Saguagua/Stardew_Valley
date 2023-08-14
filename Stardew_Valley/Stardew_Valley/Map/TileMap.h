@@ -14,7 +14,7 @@ public:
 
 	int GetWorldIndex(Vector2 pos);
 	shared_ptr<class Tile> GetMouseToPlayerIndex();
-	vector<shared_ptr<MapInfo>>& GetMapInfos() { return _mapInfos; }
+	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);
 
@@ -29,12 +29,14 @@ private:
 	void ChangeTile();
 
 
-	shared_ptr<LightTextureRect> _tileRenderer;
-	shared_ptr<LightTextureRect> _objectRenderer;
+	//shared_ptr<LightTextureRect> _tileRenderer;
+	//shared_ptr<LightTextureRect> _objectRenderer;
+	shared_ptr<class Sprite> _tileRenderer;
+	shared_ptr<class Sprite> _objectRenderer;
 
 	vector<shared_ptr<RectCollider>> _colliders;
 
-	vector<shared_ptr<class MapInfo>> _mapInfos;
+	vector<shared_ptr<MapInfo>> _mapInfos;
 	vector<shared_ptr<class Tile>> _tiles;
 
 	string _curMapName;

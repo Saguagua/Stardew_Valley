@@ -31,9 +31,10 @@ ObjectSpawner::ObjectSpawner()
 
 shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 {
+	if (objName == "BLANK")
+		return nullptr;
 	vector<short> vals = _deployTable[objName]->GetVals();
 	shared_ptr<DeployableObject> obj;
-
 	switch (_deployTable[objName]->GetType())
 	{
 	case DeployableObject::BREAK:

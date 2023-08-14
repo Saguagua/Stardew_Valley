@@ -360,19 +360,19 @@ void DataManager::ReadXML()
 
 		name = row->FindAttribute("n")->Value();
 
-		if (_tileTable.count(name) == 0)
+		if (_xmlTable.count(name) == 0)
 		{
-			_tileTable[name] = make_shared<TileInfo>(name);
+			_xmlTable[name] = make_shared<XMLInfo>(name);
 		}
 
-		TileInfo::Position pos;
+		XMLInfo::Position pos;
 
 		pos.x = row->FindAttribute("x")->IntValue();
 		pos.y = row->FindAttribute("y")->IntValue();
 		pos.w = row->FindAttribute("w")->IntValue();
 		pos.h = row->FindAttribute("h")->IntValue();
 
-		_tileTable[name]->AddPosition(pos);
+		_xmlTable[name]->AddPosition(pos);
 	
 		row = row->NextSiblingElement();
 	}
@@ -420,8 +420,7 @@ void DataManager::ReadTypes()
 		fin >> name;
 		int bitFlag;
 		fin >> bitFlag;
-		
-		_tileTable[name]->SetBitFlag(bitFlag);
+		_tileTable[name] = make_shared<TileInfo>(bitFlag);
 	}
 
 	fin.close();

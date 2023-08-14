@@ -4,6 +4,7 @@
 #include "../Object/UI/Palette.h"
 #include "../Object/Player/Player.h"
 #include "../Object/Tile/Tile.h"
+#include "../Object/BasicObj/Sprite.h"
 #include "TileMap.h"
 
 TileMap::TileMap()
@@ -14,26 +15,13 @@ TileMap::TileMap()
 		_colliders.push_back(col);
 	}
 
-	Vector2 tileMaxFrame = DATA->GetTileMaxFrame();
-	Vector2 objectMaxFrame = DATA->GetObjectMaxFrame();
 	_mapInfos = DATA->GetMapInfos();
 	
-	_tileRenderer = make_shared<LightTextureRect>(L"Resource/Tile/Tile.png", tileMaxFrame, TILE_SIZE);
-	_objectRenderer = make_shared<LightTextureRect>(L"Resource/Object/Objects.png", objectMaxFrame, TILE_SIZE);
+	_tileRenderer = make_shared<Sprite>(L"Resource/Tile/Tiles.png", "Dirt", TILE_SIZE);
+	_objectRenderer = make_shared<Sprite>(L"Resource/Tile/Tiles.png", "Potato", TILE_SIZE);
 
-	for (int i = 0; i < MAP_SIZE.y; i++)
-	{
-		for (int j = 0; j < MAP_SIZE.x; j++)
-		{
-			Vector2 pos = Vector2(TILE_SIZE.x * j, TILE_SIZE.y * i) + TILE_SIZE * 0.5f;
-			int tileIndex = tileMaxFrame.x - 1 + (tileMaxFrame.y - 1) * tileMaxFrame.x;
-			//shared_ptr<Tile> tile = make_shared<Tile>(pos, tileIndex, 139);
-
-			//_tiles.push_back(tile);
-		}
-	}
-
-	SetCameraRange();
+	_mapInfos = DATA->GetMapInfos();
+	ChangeMap(0);
 }
 
 void TileMap::Update()
@@ -133,13 +121,10 @@ void TileMap::Render()
 		_colliders[0]->SetPos(_tiles[i]->GetCenterPos());
 		_colliders[0]->Update();
 		_colliders[0]->Render();
-		//_tileRenderer->SetCurFrame(_tiles[i]->GetTileCode());
+		_tileRenderer->ChangePicture(0, _tiles[i]->GetName());
 		_tileRenderer->Render();
-		//int objIndex = _tiles[i]->GetObjectFrameIndex();
-		/*if (objIndex == 127)
-			continue;
-		_objectRenderer->SetCurFrame(objIndex);
-		_objectRenderer->Render();*/
+		if (_tiles[i]->GetObj() != nullptr)
+			_objectRenderer->ChangePicture(0, _tiles[i]->GetObjName());
 	}
 }
 

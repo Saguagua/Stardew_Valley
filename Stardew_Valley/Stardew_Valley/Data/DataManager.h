@@ -45,6 +45,8 @@ public:
 	bool AddItem(int type, string name);
 	void SwapItems(int index1, int index2);
 
+	unordered_map<string, shared_ptr<class XMLInfo>>& GetXMLInfos() { return _xmlTable; }
+
 	unordered_map<string, shared_ptr<class TileInfo>>& GetTileInfos() { return _tileTable; }
 	shared_ptr<class TileInfo> GetTileInfo(string tileName) { return _tileTable[tileName]; }
 
@@ -74,8 +76,8 @@ private:
 	vector<shared_ptr<MapInfo>> _mapInfos;
 	unordered_map<string, bool> _mapTable;
 	
-	unordered_map<string, shared_ptr<class TileInfo>> _tileTable;
 	unordered_map<string, shared_ptr<class XMLInfo>> _xmlTable;
+	unordered_map<string, shared_ptr<class TileInfo>> _tileTable;
 	unordered_map<string, shared_ptr<class DropInfo>> _dropTable;
 	unordered_map<string, shared_ptr<class DeployInfo>> _deployTable;
 	unordered_map<string, shared_ptr<class ItemInfo>> _itemTable;
