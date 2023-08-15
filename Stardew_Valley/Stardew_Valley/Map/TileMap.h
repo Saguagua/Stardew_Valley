@@ -24,13 +24,9 @@ private:
 	void SetCameraRange();
 	void Play();
 	void Blocking();
-	void Mouse();
 
 	void ChangeTile();
 
-
-	//shared_ptr<LightTextureRect> _tileRenderer;
-	//shared_ptr<LightTextureRect> _objectRenderer;
 	shared_ptr<class Sprite> _tileRenderer;
 	shared_ptr<class Sprite> _objectRenderer;
 
@@ -38,6 +34,7 @@ private:
 
 	vector<shared_ptr<MapInfo>> _mapInfos;
 	vector<shared_ptr<class Tile>> _tiles;
+	unordered_map<string, shared_ptr<TileInfo>>& _tileInfos = DATA->GetTileInfos();
 
 	string _curMapName;
 	Vector2 _curMapSize;

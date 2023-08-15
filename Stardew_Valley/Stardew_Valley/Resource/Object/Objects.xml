@@ -169,4 +169,5 @@ r => 'y' if sprite is rotated-->
   <sprite n="Box" x="478" y="31" w="30" h="30" pX="0.5" pY="0.5" a="10"/>
   <sprite n="Box" x="512" y="0" w="30" h="32" pX="0.5" pY="0.5" a="11"/>
   <sprite n="Box" x="512" y="0" w="30" h="32" pX="0.5" pY="0.5" a="12"/>
+  <sprite n="BLANK" x="0" y="0" w="0" h="0" pX="0" pY="0" a="0"/>
 </TextureAtlas>

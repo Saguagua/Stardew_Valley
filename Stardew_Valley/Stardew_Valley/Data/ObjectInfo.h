@@ -67,7 +67,7 @@ public:
 private:
 	short _type;
 	vector<short> _vals;
-	Vector2 _size;
+	Vector2 _size = {1,1};
 };
 
 struct ItemInfo

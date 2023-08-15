@@ -60,24 +60,30 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 
 void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName, short val1, short val2)
 {
+	if (objName == "BLANK") return;
+
 	vector<shared_ptr<Tile>>& tiles = map->GetInfos();
 	Vector2 mapSize = map->GetSize();
 	Vector2 size = _deployTable[objName]->GetSize();
 	shared_ptr<DeployableObject> obj;
+	tiles[index]->SetObjName(objName);
 
 	switch (_deployTable[objName]->GetType())
 	{
 	case DeployableObject::BREAK:
 	{
-		obj = make_shared<BreakableItem>(objName, Vector2(1, 1), val1);
+		obj = make_shared<BreakableItem>(objName, size, val1);
+		break;
 	}
 	case DeployableObject::PICK:
 	{
 		obj = make_shared<PickableItem>(objName);
+		break;
 	}
 	case DeployableObject::CROP:
 	{
-		obj = make_shared<Crop>(objName, size);
+		obj = make_shared<Crop>(objName, size, val1, val2);
+		break;
 	}
 	default:
 		break;
@@ -90,11 +96,12 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 			tiles[j + i * mapSize.x]->SetObj(obj);
 		}
 	}
+
 }
 
 shared_ptr<Crop> ObjectSpawner::CreateCrop(string name, int progress, int quality)
 {
-	return make_shared<Crop>(name, Vector2(1,1));
+	return make_shared<Crop>(name, Vector2(1,1), progress, quality);
 }
 
 shared_ptr<Item> ObjectSpawner::CreateItem(string objName, short count)

@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "XMLRect.h"
 #include "Sprite.h"
 
 Sprite::Sprite(wstring path, string name, Vector2 size)
@@ -31,16 +30,27 @@ void Sprite::Render()
 	DC->DrawIndexed(_indices.size(), 0, 0);
 }
 
-
-
 void Sprite::ChangePicture(int index, string name)
 {
-	if (name != "")
+	if (name != "BLNAK")
 		_curName = name;
 	XMLInfo::Position pos = _map[_curName]->GetPos(index);
 	_xBuffer->SetStart(Vector2(pos.x, pos.y));
 	_xBuffer->SetSize(Vector2(pos.w, pos.h));
 	_xBuffer->Update();
+}
+
+void Sprite::SetName(string name)
+{
+	_curName = name;
+	XMLInfo::Position pos = _map[_curName]->GetPos(_index);
+	_xBuffer->SetStart(Vector2(pos.x, pos.y));
+	_xBuffer->SetSize(Vector2(pos.w, pos.h));
+	_xBuffer->Update();
+}
+
+void Sprite::SetIndex(int index)
+{
 }
 
 void Sprite::CreateVertices()

@@ -6,6 +6,7 @@ public:
 	~XMLRect() {}
 
 	void Render();
+
 	void SetRatio(Vector2 ratio);
 protected:
 	void GetInfo(string path, string name);

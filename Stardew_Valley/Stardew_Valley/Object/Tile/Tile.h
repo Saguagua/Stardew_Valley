@@ -2,7 +2,7 @@
 class Tile
 {
 public:
-	Tile(string name, Vector2 pos, string objName = "BLANK");
+	Tile(string name, Vector2 pos);
 
 	~Tile() {}
 
@@ -13,6 +13,7 @@ public:
 
 	void SetName(string name) { _tileName = name; }
 	void SetCenterPos(Vector2 pos) { _centerPos = pos; }
+	void SetObjName(string name) { _objName = name; }
 	void SetObj(shared_ptr<DeployableObject> obj) { _obj = obj; }
 	
 	virtual void Interaction();

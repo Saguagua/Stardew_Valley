@@ -6,8 +6,7 @@
 
 void BreakableItem::Interaction()
 {
-	//shared_ptr<PickAxe> item = DATA->GetSelectedItem();
-	//if ()
+	shared_ptr<Item> item = DATA->GetSelectedItem();
 }
 
 void BreakableItem::Spawn(string name, shared_ptr<SpawnInfo> info)

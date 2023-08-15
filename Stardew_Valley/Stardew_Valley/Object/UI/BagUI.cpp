@@ -1,7 +1,6 @@
 #include "framework.h"
 #include "List.h"
 #include "../../Data/PlayerInfo.h"
-//#include "../../Data/PlayerInfoSubscriber.h"
 #include "../BasicObj/XMLRect.h"
 #include "BagUI.h"
 
@@ -15,7 +14,7 @@ BagUI::BagUI()
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
 	_body = make_shared<XMLRect>("Resource/UI/UI", "BagUI.png", Vector2(700, 300));
-	_obj = make_shared<TextureRect>(L"Resource/Object/Objects.png", _objMaxFrame, Vector2(40, 50));
+	//_obj = make_shared<TextureRect>(L"Resource/Object/Objects.png", _objMaxFrame, Vector2(40, 50));
 
 	CreateButtons();
 
@@ -59,7 +58,7 @@ void BagUI::CreateButtons()
 
 	for (int i = 0; i < 30; i++)
 	{
-		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/Object/Objects.png", _objMaxFrame, Vector2(40, 50));
+		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/Object/Objects.png", items[i]->GetName(), Vector2(40, 50));
 		//btn->SetFrame(items[i]->GetFrameIndex());
 		CallBackInt cb = std::bind(&BagUI::ClickItem, this, i);
 		btn->AddPushEvent(cb);
@@ -69,7 +68,7 @@ void BagUI::CreateButtons()
 
 void BagUI::ClickItem(int index)
 {
-	if (_selectedIndex == -1 
+	/*if (_selectedIndex == -1 
 		&& _buttons[index]->GetCurFrame() != _objMaxFrame)
 	{
 		_selectedIndex = index;
@@ -80,7 +79,7 @@ void BagUI::ClickItem(int index)
 		DATA->SwapItems(_selectedIndex, index);
 
 		_selectedIndex = -1;
-	}
+	}*/
 }
 
 void BagUI::UpdateInfo()

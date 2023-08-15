@@ -61,3 +61,4 @@ Lantern		12 15 0 0 0 0
 Box		12 15 0 0 0 0
 Snail		0 15 0 0 0 0
 Shell		0 15 0 0 0 0
+BLANK		0 0 0 0 0 0

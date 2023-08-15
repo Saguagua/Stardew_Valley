@@ -24,6 +24,8 @@ public:
 	void Update();
 	void Render();
 
+	
+	
 	void SetSelectedItemIndex(int index);
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;

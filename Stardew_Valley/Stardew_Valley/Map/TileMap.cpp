@@ -18,7 +18,7 @@ TileMap::TileMap()
 	_mapInfos = DATA->GetMapInfos();
 	
 	_tileRenderer = make_shared<Sprite>(L"Resource/Tile/Tiles.png", "Dirt", TILE_SIZE);
-	_objectRenderer = make_shared<Sprite>(L"Resource/Tile/Tiles.png", "Potato", TILE_SIZE);
+	_objectRenderer = make_shared<Sprite>(L"Resource/Object/Objects.png", "Potato", TILE_SIZE);
 
 	_mapInfos = DATA->GetMapInfos();
 	ChangeMap(0);
@@ -35,7 +35,6 @@ void TileMap::Update()
 void TileMap::Play()
 {
 	Blocking();
-	Mouse();
 }
 
 void TileMap::Blocking()
@@ -59,24 +58,16 @@ void TileMap::Blocking()
 		if (index < 0 || index >= _curMapSize.x * _curMapSize.y)
 			continue;
 
-		//int bitFlag = _tiles[index]->GetBitFlag();
-
-		/*if (!(bitFlag & TileInfo::Type::BLOCK) && _tiles[index]->GetObj()->GetType() == ObjectInfo::Type::BLANK)
-			continue;*/
+		bool isBlock = _tileInfos[_tiles[index]->GetName()]->GetBitFlag() & TileInfo::Type::BLOCK;
+		bool objBlock = (_tiles[index]->GetObj() != nullptr &&
+			_tiles[index]->GetObj()->GetType() != DeployableObject::Type::CROP);
+		
+		if (!isBlock && !objBlock)
+			continue;
 
 		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
 		_colliders[i]->GetTransform()->Update_SRT();
 		_colliders[i]->Block(_playerInfo.lock()->GetCollider());
-	}
-}
-
-void TileMap::Mouse()
-{
-	if (KEY_DOWN(VK_LBUTTON))
-	{
-		shared_ptr<Tile> tile = GetMouseToPlayerIndex();
-
-		tile->Interaction();
 	}
 }
 
@@ -124,7 +115,10 @@ void TileMap::Render()
 		_tileRenderer->ChangePicture(0, _tiles[i]->GetName());
 		_tileRenderer->Render();
 		if (_tiles[i]->GetObj() != nullptr)
+		{
 			_objectRenderer->ChangePicture(0, _tiles[i]->GetObjName());
+			_objectRenderer->Render();
+		}
 	}
 }
 

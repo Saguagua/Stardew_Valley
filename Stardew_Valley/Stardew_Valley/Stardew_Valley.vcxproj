@@ -447,6 +447,9 @@
   <ItemGroup>
     <Text Include="Data\Contents\ItemProperty.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
+    <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
+    <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
+    <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
     <Text Include="Map\Save\Dungeon.txt" />
     <Text Include="Map\Save\Fishing.txt" />
   </ItemGroup>

@@ -5,11 +5,14 @@ public:
 	Sprite(wstring path, string name, Vector2 size);
 	~Sprite() {}
 
-	string GetName() { return _curName; }
-	void SetName(string name) { _curName = name; }
-
 	void Render();
-	void ChangePicture(int index, string name = "");
+	void ChangePicture(int index, string name = "BLANK");
+	
+	string GetName() { return _curName; }
+	int GetIndex() { return _index; }
+
+	void SetName(string name);
+	void SetIndex(int index);
 
 private:
 	void CreateVertices();

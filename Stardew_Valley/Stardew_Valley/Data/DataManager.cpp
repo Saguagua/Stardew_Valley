@@ -259,14 +259,20 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	fin.close();
 
+	while (items.size() < 30)
+	{
+		items.push_back(ObjectSpawner::GetInstance()->CreateItem("BLANK", 0));
+	}
+
 	_playerInfo = make_shared<PlayerInfo>(playerName, maxHp, hp, maxStamina, stamina, items);
 	_playerInfo->SetPos(pos);
+	_playerInfo->GetCollider()->Update();
 }
 
 void DataManager::LoadMap(string playerName, string mapName)
 {
 	ifstream fin;
-	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + ".txt");
+	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + "Tile.txt");
 
 	Vector2 size;
 	fin >> size.x;
@@ -275,10 +281,6 @@ void DataManager::LoadMap(string playerName, string mapName)
 	vector<shared_ptr<Tile>> infos;
 
 	string name;
-	string objName;
-
-	int progress;
-	int quality;
 
 	int x = 0;
 	int y = 0;
@@ -293,19 +295,17 @@ void DataManager::LoadMap(string playerName, string mapName)
 		
 		int bitFlag = _tileTable[name]->GetBitFlag();
 
-		fin >> objName;
 		if (bitFlag & TileInfo::Type::FARMING)
 		{
-			fin >> progress >> quality;
-			info = make_shared<ArableTile>(name, pos, objName, progress, quality);
+			info = make_shared<ArableTile>(name, pos);
 		}
 		else if (bitFlag & TileInfo::Type::FISHING)
 		{
-			info = make_shared<FishableTile>(name, pos, objName);
+			info = make_shared<FishableTile>(name, pos);
 		}
 		else
 		{
-			info = make_shared<Tile>(name, pos, objName);
+			info = make_shared<Tile>(name, pos);
 		}
 		
 		infos.push_back(info);
@@ -324,11 +324,25 @@ void DataManager::LoadMap(string playerName, string mapName)
 		infos.pop_back();
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
-	
-	for (int i = 0; i < infos.size(); i++)
+
+	fin.open("Data/SaveFiles/" + playerName + "/" + mapName + "Obj.txt");
+
+	int index = 0;
+
+	while (!fin.eof())
 	{
-		ObjectSpawner::GetInstance()->CreateObj(mapInfo, i, infos[i]->GetObjName());
+		fin >> name;
+
+		if (name != "BLANK")
+		{
+			fin >> x >> y;
+
+			ObjectSpawner::GetInstance()->CreateObj(mapInfo, index, name, x, y);
+		}
+		index++;
 	}
+
+	fin.close();
 
 	_mapInfos.push_back(mapInfo);
 }

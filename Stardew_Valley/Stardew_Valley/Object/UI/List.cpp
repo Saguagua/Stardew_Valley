@@ -65,7 +65,7 @@ void List::CreateButtons(wstring path, int count)
 
 	for (int i = 0; i < count; i++)
 	{
-		shared_ptr<TextureButton> button = make_shared<TextureButton>(path, _matrix, _buttonSize);
+		shared_ptr<TextureButton> button = make_shared<TextureButton>(path, "BLANK", _buttonSize);
 		_buttons.push_back(button);
 	}
 }
@@ -77,7 +77,6 @@ void List::SetButtons(Vector2 startPos, Vector2 space)
 
 	for (int i = 0; i < _buttons.size(); i++)
 	{
-		//_buttons[i]->SetFrame(Vector2(x,y));
 		Vector2 pos;
 		pos.x = startPos.x + x * (_buttonSize.x + space.x);
 		pos.y = startPos.y - y * (_buttonSize.y + space.y);
@@ -124,10 +123,10 @@ void List::Scroll()
 			{
 				tmp.y = -_size.y / 2 - _buttonSize.y / 2;
 
-				Vector2 curFrame = _buttons[i]->GetCurFrame();
+				/*Vector2 curFrame = _buttons[i]->GetCurFrame();
 				curFrame.y -= 5;
 
-				_buttons[i]->SetFrame(curFrame);
+				_buttons[i]->SetFrame(curFrame);*/
 			}
 
 			_buttons[i]->GetTransform()->SetPos(tmp);
@@ -146,10 +145,10 @@ void List::Scroll()
 			{
 				tmp.y = _size.y / 2 + _buttonSize.y / 2;
 
-				Vector2 curFrame = _buttons[i]->GetCurFrame();
+				/*Vector2 curFrame = _buttons[i]->GetCurFrame();
 				curFrame.y += 5;
 
-				_buttons[i]->SetFrame(curFrame);
+				_buttons[i]->SetFrame(curFrame);*/
 			}
 
 			_buttons[i]->GetTransform()->SetPos(tmp);

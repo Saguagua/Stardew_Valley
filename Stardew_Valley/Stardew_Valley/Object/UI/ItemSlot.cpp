@@ -40,12 +40,13 @@ void ItemSlot::PushButtonEvent(int index)
 
 void ItemSlot::CreateButtons(wstring path, int count)
 {
-	Vector2 maxFrame = DATA->GetObjectMaxFrame();
+	//Vector2 maxFrame = DATA->GetObjectMaxFrame();
 	//vector<CallBackInt> callbacks = PLAYER->GetSelectedIndexCallback();
+	auto items = _playerInfo.lock()->GetItems();
 
 	for (int i = 0; i < count; i++)
 	{
-		shared_ptr<TextureButton> button = make_shared<TextureButton>(path, maxFrame, Vector2(40, 40));
+		shared_ptr<TextureButton> button = make_shared<TextureButton>(path, items[i]->GetName(), Vector2(40, 40));
 		//button->AddPushEvent(callbacks[i]);
 		_buttons.push_back(button);
 	}

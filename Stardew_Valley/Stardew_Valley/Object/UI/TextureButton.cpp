@@ -1,17 +1,11 @@
 #include "framework.h"
+#include "../BasicObj/Sprite.h"
 #include "TextureButton.h"
 
-TextureButton::TextureButton(wstring path, Vector2 size)
+TextureButton::TextureButton(wstring path, string name, Vector2 size)
 	:Button(size)
 {
-	_renderer = make_shared<TextureRect>(path, Vector2(1, 1), size);
-	_renderer->SetCurFrame(0);
-}
-
-TextureButton::TextureButton(wstring path, Vector2 clip, Vector2 size)
-	: Button(size)
-{
-	_renderer = make_shared<TextureRect>(path, clip, size);
+	_renderer = make_shared<Sprite>(path, name, size);
 }
 
 void TextureButton::Render()
@@ -26,12 +20,12 @@ void TextureButton::Update()
 	Button::Update();
 }
 
-void TextureButton::SetFrame(Vector2 frame)
+string TextureButton::GetName()
 {
-	_renderer->SetCurFrame(frame);
+	return _renderer->GetName();
 }
 
-void TextureButton::SetFrame(int index)
+void TextureButton::SetName(string name)
 {
-	_renderer->SetCurFrame(index);
+	_renderer->SetName(name);
 }

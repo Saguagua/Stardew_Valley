@@ -584,6 +584,9 @@
     <Text Include="Map\Save\Dungeon.txt" />
     <Text Include="Data\Contents\ItemProperty.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
+    <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
+    <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
+    <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Resource\UI\UI.xml" />
