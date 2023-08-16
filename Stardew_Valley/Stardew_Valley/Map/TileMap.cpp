@@ -114,12 +114,11 @@ void TileMap::Render()
 		_colliders[0]->SetPos(_tiles[i]->GetCenterPos());
 		_colliders[0]->Update();
 		_colliders[0]->Render();
-		_tileRenderer->ChangePicture(0, _tiles[i]->GetName());
-		_tileRenderer->Render();
+		_tiles[i]->Render(_tileRenderer);
+
 		if (_tiles[i]->GetObj() != nullptr)
 		{
-			_objectRenderer->ChangePicture(0, _tiles[i]->GetObjName());
-			_objectRenderer->Render();
+			_tiles[i]->GetObj()->Render(_objectRenderer);
 		}
 	}
 }
@@ -153,7 +152,7 @@ int TileMap::GetWorldIndex(Vector2 pos)
 	return sum;
 }
 
-shared_ptr<Tile> TileMap::GetMouseToPlayerIndex() //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
+int TileMap::GetFocusedIndex()
 {
 	Vector2 target = W_MOUSE_POS - _playerInfo.lock()->GetWorldPos();
 	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
@@ -196,7 +195,75 @@ shared_ptr<Tile> TileMap::GetMouseToPlayerIndex() //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
 	else if (worldIndex > _curMapSize.x * _curMapSize.y)
 		worldIndex = _curMapSize.x * _curMapSize.y - 1;
 
+	return worldIndex;
+}
+
+shared_ptr<Tile> TileMap::GetFocusedBlock()
+{
+	int worldIndex = GetFocusedIndex();
+
 	return _tiles[worldIndex];
+}
+
+vector<shared_ptr<Tile>> TileMap::GetFocusedBlocks(short level) //µµ³¢³ª °î±ªÀÌ ¾µ ¶§ ½á¶ó
+{
+	Vector2 target = W_MOUSE_POS - _playerInfo.lock()->GetWorldPos();
+	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
+	float angle = target.Angle() * 57.2958f;
+	int dir;
+
+	if (angle > -70.0f && angle <= 70.0f)
+	{
+		dir = 1;
+	}
+	else if (angle > 70.0f && angle <= 160.0f)
+	{
+		dir = _curMapSize.x;
+	}
+	else if (angle > -115.0f && angle <= -70.0f)
+	{
+		dir = -_curMapSize.x;
+	}
+	else
+	{
+		dir = -1;
+	}
+	worldIndex += dir;
+
+	vector<shared_ptr<Tile>> tiles;
+
+	switch (level)
+	{
+	case 0:
+	{
+		tiles.push_back(_tiles[worldIndex]);
+	}
+	case 1:
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (worldIndex + i * dir >= 0 && worldIndex + i * dir < _curMapSize.x * _curMapSize.y)
+				tiles.push_back(_tiles[worldIndex + i * dir]);
+		}
+		break;
+	}
+	case 2:
+	{
+		tiles.push_back(_tiles[worldIndex]);
+
+		for (int i = -1; i < 2; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				if (worldIndex + j * (dir + i) >= 0 && worldIndex + j * (dir + i) < _curMapSize.x * _curMapSize.y)
+					tiles.push_back(_tiles[worldIndex + j * (dir + i)]);
+			}
+		}
+		break;
+	}
+	}
+	
+	return tiles;
 }
 
 

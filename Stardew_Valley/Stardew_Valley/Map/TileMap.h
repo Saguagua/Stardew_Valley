@@ -31,7 +31,9 @@ public:
 	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
-	shared_ptr<class Tile> GetMouseToPlayerIndex();
+	int GetFocusedIndex();
+	shared_ptr<class Tile> GetFocusedBlock();
+	vector<shared_ptr<Tile>> GetFocusedBlocks(short level);
 	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);

@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "../BasicObj/Sprite.h"
 #include "TileType/ArableTile.h"
 #include "TileType/FishableTile.h"
 #include "../GameObj/ObjType/DeployableObj/DeployableObject.h"
@@ -10,8 +11,8 @@ Tile::Tile(string name, Vector2 pos)
 {
 }
 
-void Tile::Interaction()
+void Tile::Render(shared_ptr<class Sprite> renderer)
 {
-	if (_obj != nullptr)
-		_obj->Interaction();
+	renderer->ChangePicture(0,_tileName);
+	renderer->Render();
 }

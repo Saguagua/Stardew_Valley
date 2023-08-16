@@ -6,6 +6,5 @@ public:
 		:Tile(name, pos) {}
 	virtual ~FishableTile() {}
 
-	virtual void Interaction() override;
 };
 

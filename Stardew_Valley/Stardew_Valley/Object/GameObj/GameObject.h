@@ -9,6 +9,7 @@ public:
 	virtual ~GameObject() {}
 
 	string GetName() { return _name; }
+	void Render(shared_ptr<class Sprite> renderer);
 
 	void SetName(string name) { _name = name; }
 	bool IsActive() { return _isActive; }

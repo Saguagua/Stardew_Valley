@@ -9,5 +9,7 @@ public:
 private:
 	short _cost = -5;
 	short _level;
+	float _chargeTime = 0;
+	int _chargeCount = 0;
 };
 
