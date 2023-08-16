@@ -68,18 +68,18 @@ void BagUI::CreateButtons()
 
 void BagUI::ClickItem(int index)
 {
-	/*if (_selectedIndex == -1 
-		&& _buttons[index]->GetCurFrame() != _objMaxFrame)
+	if (_selectedIndex == -1 
+		&& _buttons[index]->GetName() != "BLANK")
 	{
 		_selectedIndex = index;
-		_obj->SetCurFrame(_buttons[index]->GetCurFrame());
+		
 	}
 	else
 	{
 		DATA->SwapItems(_selectedIndex, index);
 
 		_selectedIndex = -1;
-	}*/
+	}
 }
 
 void BagUI::UpdateInfo()
@@ -88,18 +88,10 @@ void BagUI::UpdateInfo()
 
 	for (int i = 0; i < _buttons.size(); i++)
 	{
-		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+		_buttons[i]->SetName(items[i]->GetName());
 	}
 }
 
 void BagUI::Dead()
 {
 }
-
-//void BagUI::UpdatePlayerInfo()
-//{
-//	vector<shared_ptr<GameObject>>& items = _playerInfo->GetItems();
-//
-//	for (int i = 0; i < _buttons.size(); i++)
-//		_buttons[i]->SetFrame(items[i]->GetFrameIndex());
-//}

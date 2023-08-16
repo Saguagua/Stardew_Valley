@@ -2,10 +2,28 @@
 
 class TileMap: public PlayerSubscribe
 {
-	
-public:
 	TileMap();
 	~TileMap() {}
+
+public:
+	static void Create()
+	{
+		if (_instance == nullptr)
+			_instance = new TileMap();
+	}
+
+	static void Delete()
+	{
+		if (_instance != nullptr)
+			delete _instance;
+	}
+
+	static TileMap* GetInstance()
+	{
+		if (_instance != nullptr)
+			return _instance;
+		return nullptr;
+	}
 
 	void Update();
 	void Render();
@@ -21,6 +39,8 @@ public:
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
 private:
+	static TileMap* _instance;
+
 	void SetCameraRange();
 	void Play();
 	void Blocking();

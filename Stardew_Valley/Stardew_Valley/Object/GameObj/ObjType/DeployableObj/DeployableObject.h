@@ -20,8 +20,6 @@ public:
 
 	virtual void Interaction() abstract;
 
-	virtual void Spawn(string name, shared_ptr<class SpawnInfo> data) abstract;
-
 	void SetPos(Vector2 pos) { _collider->SetPos(pos); }
 	void SetScale(Vector2 scale) { _collider->SetScale(scale); }
 	void SetActive(bool active) { _isActive = active; }

@@ -2,9 +2,12 @@
 class Hoe :public Item
 {
 public:
-	Hoe(string name)
-		:Item(Item::Type::HOE, name, 1)
+	Hoe(string name, short price, short level)
+		:Item(Item::Type::HOE, name, price), _level(level)
 	{}
 	virtual void KeyInput() override;
+private:
+	short _cost = -5;
+	short _level;
 };
 

@@ -13,7 +13,7 @@ FishingRod	3 100 0 0 0 0
 Squid		0 50 0 0 0 0 		
 Sword		9 100 0 5 10 0	
 Coal		0 15 0 0 0 0	
-SugarBeet		0 25 0 0 0 0
+SugarBeet	0 25 0 0 0 0
 Axe		1 100 1 0 0 0	
 Tuna		0 30 0 0 0 0	
 CopperAxe	1 500 3 0 0 0	

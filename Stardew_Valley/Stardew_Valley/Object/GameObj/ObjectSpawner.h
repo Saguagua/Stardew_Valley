@@ -43,6 +43,7 @@ private:
 
 
 	vector<shared_ptr<class DropItem>> _dropItems;
+	vector<shared_ptr<class Crop>> _crops;
 
 	shared_ptr<class PlayerInfo> _playerInfo;
 	shared_ptr<LightTextureRect> _renderer;

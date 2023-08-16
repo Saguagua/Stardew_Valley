@@ -2,7 +2,7 @@
 class Axe :public Item
 {
 public:
-	Axe(string name)
+	Axe(string name, short price)
 		:Item(Item::Type::AXE, name, 0), _cost(0), _damage(0)
 	{
 	}

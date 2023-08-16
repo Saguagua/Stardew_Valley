@@ -20,6 +20,8 @@ DataManager::DataManager()
 	ReadPlayers();
 }
 
+
+
 shared_ptr<PlayerInfo> DataManager::RequestPlayerSubScribe(PlayerSubscribe* subscriber)
 {
 	_playerSubscribers.push_back(subscriber);

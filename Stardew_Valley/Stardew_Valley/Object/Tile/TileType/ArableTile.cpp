@@ -11,22 +11,25 @@ void ArableTile::Interaction()
 	{
 	case Item::Type::HOE:
 	{
-		
+		if (_obj == nullptr && _crop.expired())
+			_plantable = true;
 		break;
 	}
 	case Item::Type::WATERINGCAN:
 	{
-		
+		if (!_crop.expired())
+			_crop.lock()->Watering();
 		break;
 	}
 	case Item::Type::SEED:
 	{
-
+		if (!_crop.expired())
+			_crop = ObjectSpawner::GetInstance()->CreateCrop(obj->GetName(), 0, 2);
 		break;
 	}
 	case Item::Type::FRTI:
 	{
-
+		
 		break;
 	}
 	}

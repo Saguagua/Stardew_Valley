@@ -500,6 +500,9 @@
     <ClCompile Include="Object\GameObj\ObjType\Items\Weapon.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Data\ObjectInfo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">

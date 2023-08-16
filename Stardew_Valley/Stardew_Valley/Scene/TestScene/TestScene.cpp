@@ -10,13 +10,12 @@ TestScene::TestScene()
 	DATA->Load("Test");
 	ObjectSpawner::GetInstance()->SetPlayerInfo(); // 구조 바뀌면 삭제
 	LightManager::Create();
+	TileMap::Create();
 	
 	PlayerUI::Create();
-
 	_player = make_shared<Player>();
-	_map = make_shared<TileMap>();
 
-	_map->ChangeMap(0);
+	TileMap::GetInstance()->ChangeMap(0);
 
 	_player->Update();
 	CAMERA->SetTarget(DATA->GetPlayerInfo()->GetTransform());
@@ -36,15 +35,17 @@ void TestScene::Update()
 	ObjectSpawner::GetInstance()->Update();
 	PlayerUI::GetInstance()->Update();
 
-	_map->Update();
+	TileMap::GetInstance()->Update();
 	_player->Update();
 
+
+	auto item = DATA->GetSelectedItem();
 	DATA->GetSelectedItem()->KeyInput();
 }
 
 void TestScene::Render()
 {
-	_map->Render();
+	TileMap::GetInstance()->Render();
 	ObjectSpawner::GetInstance()->Render();
 	_player->Render();
 }

@@ -12,6 +12,3 @@ void PickableItem::Interaction()
 	}*/
 }
 
-void PickableItem::Spawn(string name, shared_ptr<SpawnInfo> data)
-{
-}

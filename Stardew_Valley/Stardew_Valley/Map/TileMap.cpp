@@ -7,6 +7,8 @@
 #include "../Object/BasicObj/Sprite.h"
 #include "TileMap.h"
 
+TileMap* TileMap::_instance = nullptr;
+
 TileMap::TileMap()
 {
 	for (int i = 0; i < 9; i++)

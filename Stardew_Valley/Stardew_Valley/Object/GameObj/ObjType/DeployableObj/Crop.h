@@ -12,7 +12,6 @@ public:
 	void Update();
 
 	virtual void Interaction() override;
-	virtual void Spawn(string name, shared_ptr<SpawnInfo> data) override;
 
 	void Watering() {}
 	

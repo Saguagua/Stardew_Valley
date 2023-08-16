@@ -32,21 +32,25 @@ ObjectSpawner::ObjectSpawner()
 
 shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 {
-	if (objName == "BLANK")
-		return nullptr;
 	vector<short> vals = _deployTable[objName]->GetVals();
 	shared_ptr<DeployableObject> obj;
+
 	switch (_deployTable[objName]->GetType())
 	{
 	case DeployableObject::BREAK:
 	{
 		 obj = make_shared<BreakableItem>(objName, Vector2(1,1));
-		return obj;
+		 break;
 	}
 	case DeployableObject::PICK:
 	{
 		obj = make_shared<PickableItem>(objName);
-		return obj;
+		break;
+	}
+	case DeployableObject::CROP:
+	{
+		_crops.push_back(make_shared<Crop>(objName, Vector2(1,1), 0, 2));
+		break;
 	}
 	case DeployableObject::BLANK:
 	{
@@ -56,12 +60,12 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 	default:
 		break;
 	}
+	// ªÁ¿Ã¡Ó ππΩ√≤§
+	return obj;
 }
 
 void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName, short val1, short val2)
 {
-	if (objName == "BLANK") return;
-
 	vector<shared_ptr<Tile>>& tiles = map->GetInfos();
 	Vector2 mapSize = map->GetSize();
 	Vector2 size = _deployTable[objName]->GetSize();
@@ -80,10 +84,9 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 		obj = make_shared<PickableItem>(objName);
 		break;
 	}
-	case DeployableObject::CROP:
+	case DeployableObject::BLANK:
 	{
-		obj = make_shared<Crop>(objName, size, val1, val2);
-		break;
+		return;
 	}
 	default:
 		break;
@@ -106,32 +109,30 @@ shared_ptr<Crop> ObjectSpawner::CreateCrop(string name, int progress, int qualit
 
 shared_ptr<Item> ObjectSpawner::CreateItem(string objName, short count)
 {
-	vector<short> vals = _itemTable[objName]->GetVals();
+	shared_ptr<ItemInfo> item = _itemTable[objName];
 
-	switch (vals[0])
+	switch (item->GetType())
 	{
 	case Item::NONE:
 	{
-		return make_shared<Item>(Item::Type::NONE, objName, vals[1]);
+		return make_shared<Item>(Item::Type::NONE, objName, item->GetPrice());
 	}
 	case Item::EATABLE:
 	{
-		return make_shared<EatableItem>(objName, vals);
+		return make_shared<EatableItem>(objName, item->GetPrice(), item->GetVals());
 	}
 	case Item::AXE:
 	{
-		return make_shared<Axe>(objName);
+		return make_shared<Axe>(objName, item->GetPrice());
 	}
 	case Item::PICKAXE:
 	{
 		return make_shared<PickAxe>(objName);
-		break;
 	}
 	case Item::HOE:
-		{
-
-			break; 
-		}
+	{
+		return make_shared<Hoe>(objName, item->GetPrice(), item->GetVals()[0]);
+	}
 	case Item::WATERINGCAN:
 		break;
 	case Item::FISHINGROD:
@@ -146,7 +147,7 @@ shared_ptr<Item> ObjectSpawner::CreateItem(string objName, short count)
 		break;
 	}
 
-	return make_shared<Item>(Item::Type::NONE, objName, vals[0]);
+	return make_shared<Item>(Item::Type::NONE, objName, item->GetPrice());
 }
 
 void ObjectSpawner::Update()

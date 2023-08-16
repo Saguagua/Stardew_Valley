@@ -241,6 +241,7 @@
     <ClInclude Include="Object\GameObj\ObjType\Items\Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Data\ObjectInfo.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\Items\Item.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.cpp" />
     <ClCompile Include="Scene\TestScene\DataScene.cpp" />

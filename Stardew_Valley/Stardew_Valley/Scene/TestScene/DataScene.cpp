@@ -10,7 +10,6 @@ DataScene::DataScene()
 	DATA->Load("Test");
 	PlayerUI::Create();
 	_player = make_shared<Player>();
-	_map = make_shared<TileMap>();
 	CAMERA->SetTarget(DATA->GetPlayerInfo()->GetTransform());
 }
 
@@ -25,14 +24,12 @@ void DataScene::Update()
 {
 	LightManager::GetInstance()->Update();
 	_player->Update();
-	_map->Update();
 	PlayerUI::GetInstance()->Update();
 	DATA->GetSelectedItem()->KeyInput();
 }
 
 void DataScene::Render()
 {
-	_map->Render();
 	_player->Render();
 }
 

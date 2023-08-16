@@ -2,9 +2,9 @@
 class EatableItem : public Item
 {
 public:
-	EatableItem(string name, vector<short> vals)
-		: Item(Item::Type::EATABLE, name, vals[6]),
-		_maxHpCost(vals[2]), _maxStaminaCost(vals[3]), _hpCost(vals[4]), _staminaCost(vals[5])
+	EatableItem(string name, short price, vector<short> vals)
+		: Item(Item::Type::EATABLE, name, price),
+		_maxHpCost(vals[0]), _maxStaminaCost(vals[1]), _hpCost(vals[2]), _staminaCost(vals[3])
 	{}
 	~EatableItem() {}
 	

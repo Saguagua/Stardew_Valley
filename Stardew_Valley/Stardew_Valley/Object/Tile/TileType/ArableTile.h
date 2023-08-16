@@ -1,5 +1,6 @@
 #pragma once
-#include "../Tile.h"
+class Crop;
+
 class ArableTile : public Tile
 {
 public:
@@ -10,9 +11,12 @@ public:
 
 	virtual ~ArableTile() {}
 
+	void SetPlantable(bool val) { _plantable = val; }
+	weak_ptr<Crop> GetCrop() { return _crop; }
 	virtual void Interaction() override;
 
 private:
-	weak_ptr<class Crop> _crop;
+	weak_ptr<Crop> _crop;
+	bool _plantable;
 };
 
