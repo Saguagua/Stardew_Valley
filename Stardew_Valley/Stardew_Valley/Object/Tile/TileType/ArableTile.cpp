@@ -7,8 +7,26 @@
 void ArableTile::Render(shared_ptr<Sprite> renderer)
 {
 	Tile::Render(renderer);
-	if (_hoeDirtName == "BLANK")
+	if (!_plantable)
 		return;
-	renderer->ChangePicture(0, _hoeDirtName);
+
+	string name;
+	if (_water)
+		name = "W";
+	name += "HoeDirt";
+
+	if (_connect._down)
+		name += "T";
+	if (_connect._right)
+		name += "L";
+	if (_connect._up)
+		name += "B";
+	if (_connect._left)
+		name += "R";
+
+	renderer->ChangePicture(0, name);
+
 	renderer->Render();
 }
+
+

@@ -11,6 +11,9 @@ class Player: public PlayerSubscribe
 		FRONTRUN,
 		SIDERUN,
 		BACKRUN,
+		FRONTTOOL,
+		SIDETOOL,
+		BACKTOOL,
 		FRONTHOLD,
 		SIDEHOLD,
 		BACKHOLD
@@ -23,8 +26,6 @@ public:
 
 	void Update();
 	void Render();
-
-	
 	
 	void SetSelectedItemIndex(int index);
 	virtual void UpdateInfo() override;
@@ -38,6 +39,7 @@ private:
 	void KeyInput();
 	void Move();
 	void Items();
+	void Mouse();
 
 	shared_ptr<Transform> _bodySlot;
 	shared_ptr<Transform> _itemSlot;

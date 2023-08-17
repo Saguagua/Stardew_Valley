@@ -17,37 +17,37 @@ r => 'y' if sprite is rotated-->
 <TextureAtlas imagePath="Tiles.png" width="145" height="112" scale="1" format="RGBA8888">
   <sprite n="WoodFloor" x="0" y="0" w="48" h="48" pX="0.5" pY="0.5"/>
   <sprite n="HoeDirt" x="80" y="63" w="15" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16" R="Single"/>
-  <sprite n="HoeDirt" x="113" y="16" w="16" h="16" pX="0.5" pY="0.5" R="T"/>
-  <sprite n="HoeDirt" x="97" y="0" w="16" h="16" pX="0.5" pY="0.5" R="L"/>
-  <sprite n="HoeDirt" x="81" y="16" w="16" h="16" pX="0.5" pY="0.5" R="B"/>
-  <sprite n="HoeDirt" x="0" y="48" w="17" h="16" pX="0.5" pY="0.5" R="R"/>
-  <sprite n="HoeDirt" x="34" y="48" w="17" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="17" oH="16" R="TL"/>
-  <sprite n="HoeDirt" x="99" y="62" w="16" h="16" pX="0.5" pY="0.5" R="TB"/>
-  <sprite n="HoeDirt" x="115" y="61" w="15" h="16" pX="0.5" pY="0.5" R="TR"/>
-  <sprite n="HoeDirt" x="97" y="16" w="16" h="16" pX="0.5" pY="0.5" R="LB"/>
-  <sprite n="HoeDirt" x="113" y="0" w="16" h="16" pX="0.5" pY="0.5" R="LR"/>
-  <sprite n="HoeDirt" x="83" y="47" w="16" h="16" pX="0.5" pY="0.5" R="BR"/>
-  <sprite n="HoeDirt" x="16" y="64" w="16" h="16" pX="0.5" pY="0.5" R="TBL"/>
-  <sprite n="HoeDirt" x="48" y="63" w="16" h="16" pX="0.5" pY="0.5" R="TLR"/>
-  <sprite n="HoeDirt" x="0" y="64" w="16" h="16" pX="0.5" pY="0.5" R="TBR"/>
-  <sprite n="HoeDirt" x="99" y="46" w="16" h="16" pX="0.5" pY="0.5" R="LBR"/>
-  <sprite n="HoeDirt" x="32" y="64" w="16" h="16" pX="0.5" pY="0.5" R="TLBR"/>
+  <sprite n="HoeDirtT" x="113" y="16" w="16" h="16" pX="0.5" pY="0.5" R="T"/>
+  <sprite n="HoeDirtL" x="97" y="0" w="16" h="16" pX="0.5" pY="0.5" R="L"/>
+  <sprite n="HoeDirtB" x="81" y="16" w="16" h="16" pX="0.5" pY="0.5" R="B"/>
+  <sprite n="HoeDirtR" x="0" y="48" w="17" h="16" pX="0.5" pY="0.5" R="R"/>
+  <sprite n="HoeDirtTL" x="34" y="48" w="17" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="17" oH="16" R="TL"/>
+  <sprite n="HoeDirtTB" x="99" y="62" w="16" h="16" pX="0.5" pY="0.5" R="TB"/>
+  <sprite n="HoeDirtTR" x="115" y="61" w="15" h="16" pX="0.5" pY="0.5" R="TR"/>
+  <sprite n="HoeDirtLB" x="97" y="16" w="16" h="16" pX="0.5" pY="0.5" R="LB"/>
+  <sprite n="HoeDirtLR" x="113" y="0" w="16" h="16" pX="0.5" pY="0.5" R="LR"/>
+  <sprite n="HoeDirtBR" x="83" y="47" w="16" h="16" pX="0.5" pY="0.5" R="BR"/>
+  <sprite n="HoeDirtTLB" x="16" y="64" w="16" h="16" pX="0.5" pY="0.5" R="TLB"/>
+  <sprite n="HoeDirtTLR" x="48" y="63" w="16" h="16" pX="0.5" pY="0.5" R="TLR"/>
+  <sprite n="HoeDirtTBR" x="0" y="64" w="16" h="16" pX="0.5" pY="0.5" R="TBR"/>
+  <sprite n="HoeDirtLBR" x="99" y="46" w="16" h="16" pX="0.5" pY="0.5" R="LBR"/>
+  <sprite n="HoeDirtTLBR" x="32" y="64" w="16" h="16" pX="0.5" pY="0.5" R="TLBR"/>
   <sprite n="WHoeDirt" x="127" y="94" w="15" h="15" pX="0.5" pY="0.5" R="Single"/>
-  <sprite n="WHoeDirt" x="96" y="78" w="16" h="16" pX="0.5" pY="0.5" R="T"/>
-  <sprite n="WHoeDirt" x="16" y="80" w="16" h="16" pX="0.5" pY="0.5" R="L"/>
-  <sprite n="WHoeDirt" x="0" y="80" w="16" h="16" pX="0.5" pY="0.5" R="B"/>
-  <sprite n="WHoeDirt" x="80" y="32" w="16" h="15" pX="0.5" pY="0.5" R="R"/>
-  <sprite n="WHoeDirt" x="48" y="0" w="17" h="15" pX="0.5" pY="0.5" R="TL"/>
-  <sprite n="WHoeDirt" x="96" y="94" w="16" h="16" pX="0.5" pY="0.5" R="TB"/>
-  <sprite n="WHoeDirt" x="112" y="94" w="15" h="16" pX="0.5" pY="0.5" R="TR"/>
-  <sprite n="WHoeDirt" x="32" y="80" w="16" h="16" pX="0.5" pY="0.5" R="LB"/>
-  <sprite n="WHoeDirt" x="80" y="78" w="16" h="16" pX="0.5" pY="0.5" R="LR"/>
-  <sprite n="WHoeDirt" x="0" y="96" w="16" h="16" pX="0.5" pY="0.5" R="BR"/>
-  <sprite n="WHoeDirt" x="17" y="48" w="17" h="16" pX="0.5" pY="0.5" R="TLB"/>
-  <sprite n="WHoeDirt" x="48" y="95" w="16" h="16" pX="0.5" pY="0.5" R="TLR"/>
-  <sprite n="WHoeDirt" x="16" y="96" w="16" h="16" pX="0.5" pY="0.5" R="TBR"/>
-  <sprite n="WHoeDirt" x="64" y="78" w="16" h="16" pX="0.5" pY="0.5" R="LBR"/>
-  <sprite n="WHoeDirt" x="32" y="96" w="16" h="16" pX="0.5" pY="0.5" R="TLBR"/>
+  <sprite n="WHoeDirtT" x="96" y="78" w="16" h="16" pX="0.5" pY="0.5" R="T"/>
+  <sprite n="WHoeDirtL" x="16" y="80" w="16" h="16" pX="0.5" pY="0.5" R="L"/>
+  <sprite n="WHoeDirtB" x="0" y="80" w="16" h="16" pX="0.5" pY="0.5" R="B"/>
+  <sprite n="WHoeDirtR" x="80" y="32" w="16" h="15" pX="0.5" pY="0.5" R="R"/>
+  <sprite n="WHoeDirtTL" x="48" y="0" w="17" h="15" pX="0.5" pY="0.5" R="TL"/>
+  <sprite n="WHoeDirtTB" x="96" y="94" w="16" h="16" pX="0.5" pY="0.5" R="TB"/>
+  <sprite n="WHoeDirtTR" x="112" y="94" w="15" h="16" pX="0.5" pY="0.5" R="TR"/>
+  <sprite n="WHoeDirtLB" x="32" y="80" w="16" h="16" pX="0.5" pY="0.5" R="LB"/>
+  <sprite n="WHoeDirtLR" x="80" y="78" w="16" h="16" pX="0.5" pY="0.5" R="LR"/>
+  <sprite n="WHoeDirtBR" x="0" y="96" w="16" h="16" pX="0.5" pY="0.5" R="BR"/>
+  <sprite n="WHoeDirtTLB" x="17" y="48" w="17" h="16" pX="0.5" pY="0.5" R="TLB"/>
+  <sprite n="WHoeDirtTLR" x="48" y="95" w="16" h="16" pX="0.5" pY="0.5" R="TLR"/>
+  <sprite n="WHoeDirtTBR" x="16" y="96" w="16" h="16" pX="0.5" pY="0.5" R="TBR"/>
+  <sprite n="WHoeDirtLBR" x="64" y="78" w="16" h="16" pX="0.5" pY="0.5" R="LBR"/>
+  <sprite n="WHoeDirtTLBR" x="32" y="96" w="16" h="16" pX="0.5" pY="0.5" R="TLBR"/>
   <sprite n="Dirt" x="48" y="15" w="16" h="16" pX="0.5" pY="0.5"/>
   <sprite n="DungeonTile1" x="48" y="31" w="16" h="16" pX="0.5" pY="0.5"/>
   <sprite n="DungeonTile2" x="51" y="47" w="16" h="16" pX="0.5" pY="0.5"/>

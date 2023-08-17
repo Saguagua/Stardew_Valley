@@ -49,6 +49,7 @@ void Player::KeyInput()
 
 	Move();
 	Items();
+	Mouse();
 }
 
 void Player::SetSelectedItemIndex(int index)
@@ -77,121 +78,202 @@ void Player::SetSelectedItemIndex(int index)
 
 void Player::CreateAction()
 {
-	vector<Vector2> frontIdleBody;
-	frontIdleBody.push_back(Vector2(0, 0));
+	//Idle
+	{
+		vector<Vector2> frontIdleBody;
+		frontIdleBody.push_back(Vector2(0, 0));
 
-	vector<Vector2> sideIdleBody;
-	sideIdleBody.push_back(Vector2(0, 1));
+		vector<Vector2> sideIdleBody;
+		sideIdleBody.push_back(Vector2(0, 1));
 
-	vector<Vector2> backIdleBody;
-	backIdleBody.push_back(Vector2(0, 2));
+		vector<Vector2> backIdleBody;
+		backIdleBody.push_back(Vector2(0, 2));
 
-	shared_ptr<Action> frontIdleB = make_shared<Action>(frontIdleBody, Action::Type::LOOP);
-	shared_ptr<Action> sideIdleB = make_shared<Action>(sideIdleBody, Action::Type::LOOP);
-	shared_ptr<Action> backIdleB = make_shared<Action>(backIdleBody, Action::Type::LOOP);
+		shared_ptr<Action> frontIdleB = make_shared<Action>(frontIdleBody, Action::Type::LOOP);
+		shared_ptr<Action> sideIdleB = make_shared<Action>(sideIdleBody, Action::Type::LOOP);
+		shared_ptr<Action> backIdleB = make_shared<Action>(backIdleBody, Action::Type::LOOP);
 
-	_bodyActions.push_back(frontIdleB);
-	_bodyActions.push_back(sideIdleB);
-	_bodyActions.push_back(backIdleB);
+		_bodyActions.push_back(frontIdleB);
+		_bodyActions.push_back(sideIdleB);
+		_bodyActions.push_back(backIdleB);
 
-	vector<Vector2> frontIdleArm;
-	frontIdleArm.push_back(Vector2(6, 0));
+		vector<Vector2> frontIdleArm;
+		frontIdleArm.push_back(Vector2(6, 0));
 
-	vector<Vector2> sideIdleArm;
-	sideIdleArm.push_back(Vector2(6, 1));
+		vector<Vector2> sideIdleArm;
+		sideIdleArm.push_back(Vector2(6, 1));
 
-	vector<Vector2> backIdleArm;
-	backIdleArm.push_back(Vector2(6, 2));
+		vector<Vector2> backIdleArm;
+		backIdleArm.push_back(Vector2(6, 2));
 
 
-	shared_ptr<Action> frontIdleA = make_shared<Action>(frontIdleArm, Action::Type::LOOP, 0.1f);
-	shared_ptr<Action> sideIdleA = make_shared<Action>(sideIdleArm, Action::Type::LOOP, 0.1f);
-	shared_ptr<Action> backIdleA = make_shared<Action>(backIdleArm, Action::Type::LOOP, 0.1f);
+		shared_ptr<Action> frontIdleA = make_shared<Action>(frontIdleArm, Action::Type::LOOP, 0.1f);
+		shared_ptr<Action> sideIdleA = make_shared<Action>(sideIdleArm, Action::Type::LOOP, 0.1f);
+		shared_ptr<Action> backIdleA = make_shared<Action>(backIdleArm, Action::Type::LOOP, 0.1f);
 
-	_armActions.push_back(frontIdleA);
-	_armActions.push_back(sideIdleA);
-	_armActions.push_back(backIdleA);
-
-	vector<Vector2> frontRunIndex;
-	frontRunIndex.push_back(Vector2(1, 0));
-	frontRunIndex.push_back(Vector2(0, 3));
-	frontRunIndex.push_back(Vector2(2, 0));
-	frontRunIndex.push_back(Vector2(1, 3));
-
-	shared_ptr<Action> frontRunBody = make_shared<Action>(frontRunIndex, Action::Type::LOOP, 0.1f);
-
-	vector<Vector2> sideRunIndex;
-	sideRunIndex.push_back(Vector2(2, 3));
-	sideRunIndex.push_back(Vector2(5, 1));
-	sideRunIndex.push_back(Vector2(3, 3));
-	sideRunIndex.push_back(Vector2(5, 2));
-
-	shared_ptr<Action> sideRunBody = make_shared<Action>(sideRunIndex, Action::Type::LOOP, 0.1f);
-
-	vector<Vector2> backRunIndex;
-	backRunIndex.push_back(Vector2(4, 3));
-	backRunIndex.push_back(Vector2(1, 2));
-	backRunIndex.push_back(Vector2(5, 3));
-	backRunIndex.push_back(Vector2(2, 2));
-
-	shared_ptr<Action> backRunBody = make_shared<Action>(backRunIndex, Action::Type::LOOP, 0.1f);
-
-	vector<Vector2> frontArmIndex;
-	frontArmIndex.push_back(Vector2(7, 0));
-	frontArmIndex.push_back(Vector2(6, 3));
-	frontArmIndex.push_back(Vector2(8, 0));
-	frontArmIndex.push_back(Vector2(7, 3));
-
-	shared_ptr<Action> frontRunArm = make_shared<Action>(frontArmIndex, Action::Type::LOOP, 0.1f);
-
-	vector<Vector2> sideArmIndex;
-	sideArmIndex.push_back(Vector2(11, 1));
-	sideArmIndex.push_back(Vector2(8, 3));
-	sideArmIndex.push_back(Vector2(11, 2));
-	sideArmIndex.push_back(Vector2(9, 3));
-
-	shared_ptr<Action> sideRunArm = make_shared<Action>(sideArmIndex, Action::Type::LOOP, 0.1f);
-
-	vector<Vector2> backArmIndex;
-	backArmIndex.push_back(Vector2(7, 2));
-	backArmIndex.push_back(Vector2(10, 3));
-	backArmIndex.push_back(Vector2(8, 2));
-	backArmIndex.push_back(Vector2(11, 3));
-
-	shared_ptr<Action> backRunArm = make_shared<Action>(backArmIndex, Action::Type::LOOP, 0.1f);
-
-	_bodyActions.push_back(frontRunBody);
-	_bodyActions.push_back(sideRunBody);
-	_bodyActions.push_back(backRunBody);
-
-	_armActions.push_back(frontRunArm);
-	_armActions.push_back(sideRunArm);
-	_armActions.push_back(backRunArm);
-
-	vector<Vector2> frontHolding;
-	frontHolding.push_back(Vector2(12, 0));
-	frontHolding.push_back(Vector2(13, 0));
-	frontHolding.push_back(Vector2(14, 0));
-
-	shared_ptr<Action> frontHAction = make_shared<Action>(frontHolding, Action::Type::LOOP, 0.1f);
-
-	vector<Vector2> sideHolding;
-	sideHolding.push_back(Vector2(12, 1));
-	sideHolding.push_back(Vector2(13, 1));
-	sideHolding.push_back(Vector2(14, 1));
+		_armActions.push_back(frontIdleA);
+		_armActions.push_back(sideIdleA);
+		_armActions.push_back(backIdleA);
+	}
 	
-	shared_ptr<Action> sideHAction = make_shared<Action>(sideHolding, Action::Type::LOOP, 0.1f);
+	//Run
+	{
+		vector<Vector2> frontIndex;
+		frontIndex.push_back(Vector2(1, 0));
+		frontIndex.push_back(Vector2(0, 3));
+		frontIndex.push_back(Vector2(2, 0));
+		frontIndex.push_back(Vector2(1, 3));
 
-	vector<Vector2> backHolding;
-	backHolding.push_back(Vector2(12, 2));
-	backHolding.push_back(Vector2(13, 2));
-	backHolding.push_back(Vector2(14, 2));
+		shared_ptr<Action> frontBody = make_shared<Action>(frontIndex, Action::Type::LOOP, 0.1f);
 
-	shared_ptr<Action> backHAction = make_shared<Action>(backHolding, Action::Type::LOOP, 0.1f);
+		vector<Vector2> sideIndex;
+		sideIndex.push_back(Vector2(2, 3));
+		sideIndex.push_back(Vector2(5, 1));
+		sideIndex.push_back(Vector2(3, 3));
+		sideIndex.push_back(Vector2(5, 2));
 
-	_armActions.push_back(frontHAction);
-	_armActions.push_back(sideHAction);
-	_armActions.push_back(backHAction);
+		shared_ptr<Action> sideBody = make_shared<Action>(sideIndex, Action::Type::LOOP, 0.1f);
+
+		vector<Vector2> backIndex;
+		backIndex.push_back(Vector2(4, 3));
+		backIndex.push_back(Vector2(1, 2));
+		backIndex.push_back(Vector2(5, 3));
+		backIndex.push_back(Vector2(2, 2));
+
+		shared_ptr<Action> backBody = make_shared<Action>(backIndex, Action::Type::LOOP, 0.1f);
+
+		vector<Vector2> frontArmIndex;
+		frontArmIndex.push_back(Vector2(7, 0));
+		frontArmIndex.push_back(Vector2(6, 3));
+		frontArmIndex.push_back(Vector2(8, 0));
+		frontArmIndex.push_back(Vector2(7, 3));
+
+		shared_ptr<Action> frontArm = make_shared<Action>(frontArmIndex, Action::Type::LOOP, 0.1f);
+
+		vector<Vector2> sideArmIndex;
+		sideArmIndex.push_back(Vector2(11, 1));
+		sideArmIndex.push_back(Vector2(8, 3));
+		sideArmIndex.push_back(Vector2(11, 2));
+		sideArmIndex.push_back(Vector2(9, 3));
+
+		shared_ptr<Action> sideArm = make_shared<Action>(sideArmIndex, Action::Type::LOOP, 0.1f);
+
+		vector<Vector2> backArmIndex;
+		backArmIndex.push_back(Vector2(7, 2));
+		backArmIndex.push_back(Vector2(10, 3));
+		backArmIndex.push_back(Vector2(8, 2));
+		backArmIndex.push_back(Vector2(11, 3));
+
+		shared_ptr<Action> backArm = make_shared<Action>(backArmIndex, Action::Type::LOOP, 0.1f);
+
+		_bodyActions.push_back(frontBody);
+		_bodyActions.push_back(sideBody);
+		_bodyActions.push_back(backBody);
+
+		_armActions.push_back(frontArm);
+		_armActions.push_back(sideArm);
+		_armActions.push_back(backArm);
+	}
+	
+	//Tool
+	{
+		vector<Vector2> frontBody;
+
+		frontBody.push_back(Vector2(0, 11));
+		frontBody.push_back(Vector2(1, 11));
+		frontBody.push_back(Vector2(2, 11));
+		frontBody.push_back(Vector2(3, 11));
+		frontBody.push_back(Vector2(4, 11));
+
+		vector<Vector2> sideBody;
+
+		sideBody.push_back(Vector2(0, 8));
+		sideBody.push_back(Vector2(1, 8));
+		sideBody.push_back(Vector2(2, 8));
+		sideBody.push_back(Vector2(3, 8));
+		sideBody.push_back(Vector2(4, 8));
+
+
+		vector<Vector2> backBody;
+
+		backBody.push_back(Vector2(0, 6));
+		backBody.push_back(Vector2(1, 6));
+		backBody.push_back(Vector2(2, 6));
+		backBody.push_back(Vector2(3, 6));
+		backBody.push_back(Vector2(4, 6));
+
+		vector<Vector2> frontArm;
+
+		frontArm.push_back(Vector2(6, 11));
+		frontArm.push_back(Vector2(7, 11));
+		frontArm.push_back(Vector2(8, 11));
+		frontArm.push_back(Vector2(9, 11));
+		frontArm.push_back(Vector2(10, 11));
+
+		vector<Vector2> sideArm;
+
+		sideArm.push_back(Vector2(6, 8));
+		sideArm.push_back(Vector2(7, 8));
+		sideArm.push_back(Vector2(8, 8));
+		sideArm.push_back(Vector2(9, 8));
+		sideArm.push_back(Vector2(10, 8));
+
+		vector<Vector2> backArm;
+
+		backArm.push_back(Vector2(6, 6));
+		backArm.push_back(Vector2(7, 6));
+		backArm.push_back(Vector2(8, 6));
+		backArm.push_back(Vector2(9, 6));
+		backArm.push_back(Vector2(10, 6));
+
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
+
+		_bodyActions.push_back(FrontBody);
+		_bodyActions.push_back(SideBody);
+		_bodyActions.push_back(BackBody);
+
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END);
+
+		_armActions.push_back(FrontArm);
+		_armActions.push_back(SideArm);
+		_armActions.push_back(BackArm);
+	}
+
+	//Holding
+	{
+		vector<Vector2> frontHolding;
+		frontHolding.push_back(Vector2(12, 0));
+		frontHolding.push_back(Vector2(13, 0));
+		frontHolding.push_back(Vector2(14, 0));
+
+		shared_ptr<Action> frontHAction = make_shared<Action>(frontHolding, Action::Type::LOOP, 0.1f);
+
+		vector<Vector2> sideHolding;
+		sideHolding.push_back(Vector2(12, 1));
+		sideHolding.push_back(Vector2(13, 1));
+		sideHolding.push_back(Vector2(14, 1));
+
+		shared_ptr<Action> sideHAction = make_shared<Action>(sideHolding, Action::Type::LOOP, 0.1f);
+
+		vector<Vector2> backHolding;
+		backHolding.push_back(Vector2(12, 2));
+		backHolding.push_back(Vector2(13, 2));
+		backHolding.push_back(Vector2(14, 2));
+
+		shared_ptr<Action> backHAction = make_shared<Action>(backHolding, Action::Type::LOOP, 0.1f);
+
+		_armActions.push_back(frontHAction);
+		_armActions.push_back(sideHAction);
+		_armActions.push_back(backHAction);
+	}
+
+	
+
+	
 }
 
 void Player::SetAction(int state)
@@ -350,9 +432,14 @@ void Player::Items()
 	}
 }
 
+void Player::Mouse()
+{
+	if (KEY_UP(VK_LBUTTON))
+		SetAction(PlayerAction::BACKTOOL);
+}
+
 void Player::UpdateInfo()
 {
-
 }
 
 void Player::Dead()

@@ -29,7 +29,7 @@ public:
 	Vector2 GetTileMaxFrame() { return _tileMaxFrame; }
 	Vector2 GetObjectMaxFrame() { return _objectMaxFrame; }
 
-	vector<shared_ptr<class MapInfo>> GetMapInfos() { return _mapInfos; }
+	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
 	shared_ptr<PlayerInfo> RequestPlayerSubScribe(class PlayerSubscribe* subscriber);

@@ -33,13 +33,17 @@ public:
 	int GetWorldIndex(Vector2 pos);
 	int GetFocusedIndex();
 	shared_ptr<class Tile> GetFocusedBlock();
-	vector<shared_ptr<Tile>> GetFocusedBlocks(short level);
+	vector<shared_ptr<Tile>> GetFocusedBlocks(Vector2 point, short level);
+	vector<int> GetFocusedIndices(Vector2 point, short level);
 	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);
 
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
+
+	void Hoeing(Vector2 point, short level);
+	void Watering(Vector2 point, short level);
 private:
 	static TileMap* _instance;
 
@@ -49,12 +53,15 @@ private:
 
 	void ChangeTile();
 
+	void SetHoeDirt(int index);
+
 	shared_ptr<class Sprite> _tileRenderer;
 	shared_ptr<class Sprite> _objectRenderer;
+	shared_ptr<SingleColorRect> _focusRenderer;
 
 	vector<shared_ptr<RectCollider>> _colliders;
 
-	vector<shared_ptr<MapInfo>> _mapInfos;
+	vector<shared_ptr<MapInfo>>& _mapInfos = DATA->GetMapInfos();
 	vector<shared_ptr<class Tile>> _tiles;
 	unordered_map<string, shared_ptr<TileInfo>>& _tileInfos = DATA->GetTileInfos();
 

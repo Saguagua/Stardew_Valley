@@ -15,7 +15,8 @@ public:
 		RUNR = (1 << 3),
 		ACTION = (1 << 4),
 		HOLDING = (1 << 5),
-		DEAD = (1 << 6)
+		IMMOVEABLE = (1 << 6),
+		DEAD = (1 << 7)
 	};
 
 	PlayerInfo(string name, short maxHp, short hp, short maxStamina, short stamina, vector<shared_ptr<class Item>> items)

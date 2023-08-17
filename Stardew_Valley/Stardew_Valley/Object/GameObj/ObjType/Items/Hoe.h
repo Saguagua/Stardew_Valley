@@ -11,5 +11,8 @@ private:
 	short _level;
 	float _chargeTime = 0;
 	int _chargeCount = 0;
+
+	vector<shared_ptr<Tile>> _tiles;
+	Vector2 _point;
 };
 
