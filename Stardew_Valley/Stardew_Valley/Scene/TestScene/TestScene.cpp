@@ -1,30 +1,27 @@
 #include "framework.h"
-#include "../../Data/MapInfo.h"
-#include "../../Object/Player/Player.h"
-#include "../../Object/BasicObj/XMLRect.h"
 #include "TestScene.h"
 
 TestScene::TestScene()
 {
 	ObjectSpawner::Create();
 	DATA->Load("Test");
-	ObjectSpawner::GetInstance()->SetPlayerInfo(); // 구조 바뀌면 삭제
 	LightManager::Create();
 	TileMap::Create();
-	
+	Player::Create();
 	PlayerUI::Create();
-	_player = make_shared<Player>();
+	
 
 	TileMap::GetInstance()->ChangeMap(0);
 
-	_player->Update();
-	CAMERA->SetTarget(DATA->GetPlayerInfo()->GetTransform());
+	CAMERA->SetTarget(Player::GetInstance()->GetTransform());
 	CAMERA->Update();
 }
 
 TestScene::~TestScene()
 {
 	PlayerUI::Delete();
+	Player::Delete();
+	TileMap::Delete();
 	LightManager::Delete();
 	ObjectSpawner::Delete();
 }
@@ -36,21 +33,20 @@ void TestScene::Update()
 	PlayerUI::GetInstance()->Update();
 
 	TileMap::GetInstance()->Update();
-	_player->Update();
+	Player::GetInstance()->Update();
 
 
-	auto item = DATA->GetSelectedItem();
-	DATA->GetSelectedItem()->KeyInput();
+	//DATA->GetSelectedItem()->KeyInput();
 }
 
 void TestScene::Render()
 {
 	TileMap::GetInstance()->Render();
 	ObjectSpawner::GetInstance()->Render();
-	_player->Render();
+	Player::GetInstance()->Render();
 }
 
 void TestScene::PostRender()
 {
-	PlayerUI::GetInstance()->PostRender();
+	//PlayerUI::GetInstance()->PostRender();
 }

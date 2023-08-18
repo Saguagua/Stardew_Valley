@@ -9,5 +9,4 @@ public:
 	virtual void Render() override;
 	virtual void PostRender() override;
 private:
-	shared_ptr<Player> _player;
 };

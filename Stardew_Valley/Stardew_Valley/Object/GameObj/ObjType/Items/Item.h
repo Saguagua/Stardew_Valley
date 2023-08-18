@@ -27,7 +27,6 @@ public:
 
 	virtual void KeyInput() {}
 
-
 	bool AddCount();
 
 	void SetCount(short count) { _count = count; }
@@ -37,7 +36,6 @@ public:
 	short GetCount() { return _count; }
 	short GetPrice() { return _price; }
 	Item::Type GetType() { return _type; }
-
 
 protected:
 	Item::Type _type;

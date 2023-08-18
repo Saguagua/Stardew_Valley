@@ -37,15 +37,14 @@ public:
 private:
 	static ObjectSpawner* _instance;
 
-	unordered_map<string, shared_ptr<class DropInfo>> _dropTable;
-	unordered_map<string, shared_ptr<class DeployInfo>> _deployTable;
-	unordered_map<string, shared_ptr<class ItemInfo>> _itemTable;
-
+	unordered_map<string, shared_ptr<class DropInfo>>& _dropTable     =	DATA->GetDropInfos();
+	unordered_map<string, shared_ptr<class DeployInfo>>& _deployTable =	DATA->GetDeployInfos();
+	unordered_map<string, shared_ptr<class ItemInfo>>& _itemTable	 =	DATA->GetItemInfos();
 
 	vector<shared_ptr<class DropItem>> _dropItems;
 	vector<shared_ptr<class Crop>> _crops;
 
-	shared_ptr<class PlayerInfo> _playerInfo;
-	shared_ptr<LightTextureRect> _renderer;
+	shared_ptr<class PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
+	shared_ptr<class Sprite> _renderer;
 };
 

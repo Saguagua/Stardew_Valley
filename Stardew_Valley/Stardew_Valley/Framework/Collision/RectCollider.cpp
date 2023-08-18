@@ -122,10 +122,10 @@ bool RectCollider::Block(shared_ptr<RectCollider> other)
 
 	Vector2 myCenter = GetWorldPos();
 	Vector2 otherCenter = other->GetWorldPos();
-	/*Vector2 myAtoB = otherC
+	AABB_Info myAB = GetAABB_Info();
+	AABB_Info otherAB = other->GetAABB_Info();
 
-
-	float yDistance = _size.y / 2 + otherRadius - abs(otherCenter.y - myCenter.y);
+	/*float yDistance = _size.y / 2 + otherRadius - abs(otherCenter.y - myCenter.y);
 	float xDistance = _size.x / 2 + otherRadius - abs(otherCenter.x - myCenter.x);
 
 	if (xDistance > yDistance)

@@ -43,6 +43,9 @@ using namespace std;
 using namespace DirectX;
 using namespace Microsoft::WRL;
 
+#include "Defines.h"
+#include "Enums.h"
+
 //Math
 #include "Framework/Math/Vector2.h"
 #include "Framework/Math/Transform.h"
@@ -68,6 +71,11 @@ using namespace Microsoft::WRL;
 #include "Framework/TextureMapping/SRVManager.h"
 #include "Framework/TextureMapping/StateManager.h"
 
+//Informations
+#include "Data/DataInfos.h"
+//Save
+#include "Data/DataManager.h"
+
 //BasicObject
 #include "Object/BasicObj/ShapeLine.h"
 #include "Object/BasicObj/CircleLine.h"
@@ -75,20 +83,13 @@ using namespace Microsoft::WRL;
 #include "Object/BasicObj/SingleColorRect.h"
 #include "Object/BasicObj/TextureRect.h"
 #include "Object/BasicObj/LightTextureRect.h"
+#include "Object/BasicObj/XMLRect.h"
+#include "Object/BasicObj/Sprite.h"
 
 //Collider
 #include "Framework/Collision/Collider.h"
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/RectCollider.h"
-
-
-
-//Animation
-#include "Framework/Animation/Action.h"
-
-//Save
-#include "Data/PlayerSubscribe.h"
-#include "Data/DataManager.h"
 
 //GameObject
 #include "Object/GameObj/GameObject.h"
@@ -97,6 +98,9 @@ using namespace Microsoft::WRL;
 #include "Object/GameObj/ObjectSpawner.h"
 
 #include "Object/Tile/Tile.h"
+
+//Animation
+#include "Framework/Animation/Action.h"
 
 //Player
 #include "Object/Player/Player.h"
@@ -125,6 +129,5 @@ using namespace Microsoft::WRL;
 //Program
 #include "Program/Program.h"
 
-#include "Types.h"
 
 extern HWND hWnd;

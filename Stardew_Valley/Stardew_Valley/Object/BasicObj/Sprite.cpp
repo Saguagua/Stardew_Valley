@@ -34,6 +34,7 @@ void Sprite::ChangePicture(int index, string name)
 {
 	if (name != "BLNAK")
 		_curName = name;
+
 	XMLInfo::Position pos = _map[_curName]->GetPos(index);
 	_xBuffer->SetStart(Vector2(pos.x, pos.y));
 	_xBuffer->SetSize(Vector2(pos.w, pos.h));

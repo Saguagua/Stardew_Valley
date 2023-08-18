@@ -6,5 +6,4 @@
 
 void BreakableItem::Interaction()
 {
-	shared_ptr<Item> item = DATA->GetSelectedItem();
 }

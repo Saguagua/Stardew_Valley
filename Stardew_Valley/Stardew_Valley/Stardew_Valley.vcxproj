@@ -151,23 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Data\DataInfos.h" />
+    <ClInclude Include="Enums.h" />
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\SpawnInfo.h" />
     <ClInclude Include="Object\GameObj\ObjType\Items\Item.h" />
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.h" />
-    <ClInclude Include="Scene\TestScene\DataScene.h" />
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\Crop.h" />
     <ClInclude Include="Data\PlayerInfoSubscriber.h" />
-    <ClInclude Include="Data\PlayerSubscribe.h" />
     <ClInclude Include="Object\UI\BagUI.h" />
-    <ClInclude Include="Data\LightInfo.h" />
     <ClInclude Include="Framework\Light\LightManager.h" />
-    <ClInclude Include="Scene\TestScene\LightTestScene.h" />
     <ClInclude Include="Object\BasicObj\LightTextureRect.h" />
     <ClInclude Include="Object\UI\Bar.h" />
     <ClInclude Include="Framework\Utility\tinyxml2.h" />
     <ClInclude Include="Object\UI\ItemSlot.h" />
     <ClInclude Include="Object\Tile\TileType\ArableTile.h" />
-    <ClInclude Include="Data\ObjectInfo.h" />
     <ClInclude Include="Object\Tile\TileType\FishableTile.h" />
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DropItem.h" />
     <ClInclude Include="Object\GameObj\ObjectSpawner.h" />
@@ -182,13 +179,11 @@
     <ClInclude Include="Object\GameObj\ObjType\Items\WateringCan.h" />
     <ClInclude Include="Object\Player\Player.h" />
     <ClInclude Include="Object\GameObj\ObjType\Items\PickAxe.h" />
-    <ClInclude Include="Data\MapInfo.h" />
     <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
     <ClInclude Include="Object\UI\Button.h" />
     <ClInclude Include="Object\BasicObj\SingleColorRect.h" />
     <ClInclude Include="Object\UI\Palette.h" />
-    <ClInclude Include="Data\PlayerInfo.h" />
     <ClInclude Include="Data\DataManager.h" />
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\PickableItem.h" />
     <ClInclude Include="Object\UI\PlayerUI.h" />
@@ -232,23 +227,19 @@
     <ClInclude Include="Object\BasicObj\RectLine.h" />
     <ClInclude Include="Map\TileMap.h" />
     <ClInclude Include="Object\UI\TextureButton.h" />
-    <ClInclude Include="Data\TileInfo.h" />
     <ClInclude Include="Object\Tile\Tile.h" />
     <ClInclude Include="Object\UI\TimeUI.h" />
-    <ClInclude Include="Types.h" />
+    <ClInclude Include="Defines.h" />
     <ClInclude Include="Object\UI\Window.h" />
     <ClInclude Include="Object\BasicObj\XMLRect.h" />
     <ClInclude Include="Object\GameObj\ObjType\Items\Weapon.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Data\ObjectInfo.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\Items\Item.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.cpp" />
-    <ClCompile Include="Scene\TestScene\DataScene.cpp" />
     <ClCompile Include="Object\GameObj\ObjType\DeployableObj\Crop.cpp" />
     <ClCompile Include="Object\UI\BagUI.cpp" />
     <ClCompile Include="Framework\Light\LightManager.cpp" />
-    <ClCompile Include="Scene\TestScene\LightTestScene.cpp" />
     <ClCompile Include="Object\BasicObj\LightTextureRect.cpp" />
     <ClCompile Include="Object\UI\Bar.cpp" />
     <ClCompile Include="Framework\Utility\tinyxml2.cpp" />

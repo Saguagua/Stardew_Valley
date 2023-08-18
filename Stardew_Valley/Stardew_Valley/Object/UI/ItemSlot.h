@@ -1,5 +1,4 @@
 #pragma once
-#include "../../Data/PlayerSubscribe.h"
 class ItemSlot : public List, PlayerSubscribe
 {
 public:
