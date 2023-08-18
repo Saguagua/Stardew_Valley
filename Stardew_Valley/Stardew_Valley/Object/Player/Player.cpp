@@ -59,17 +59,17 @@ void Player::SetSelectedItemIndex(int index)
 	int type = _playerInfo.lock()->GetItem(index)->GetType();
 	int playerState = _playerInfo.lock()->GetState();
 
-	/*if (type == ObjectInfo::Type::NONE ||
-		type == ObjectInfo::Type::EATABLE ||
-		type == ObjectInfo::Type::FARMMING ||
-		type == ObjectInfo::Type::SEED)
+	if (type == Item::Type::NONE ||
+		type == Item::Type::EATABLE ||
+		type == Item::Type::FRTI ||
+		type == Item::Type::SEED)
 	{
 		playerState |= PlayerInfo::PlayerState::HOLDING;
 	}
 	else
 	{
 		playerState &= ~(PlayerInfo::PlayerState::HOLDING);
-	}*/
+	}
 
 	_playerInfo.lock()->SetState(playerState);
 
@@ -284,15 +284,11 @@ void Player::SetAction(int state)
 	int playerState = _playerInfo.lock()->GetState();
 
 	if (!(playerState & PlayerInfo::PlayerState::HOLDING))
-		_armIndex = state;
-	else if (state % 3 == 0)
-		_armIndex = PlayerAction::FRONTHOLD;
-	else if (state % 3 == 1)
-		_armIndex = PlayerAction::SIDEHOLD;
+		_armIndex = state + _dir;
 	else
-		_armIndex = PlayerAction::BACKHOLD;
+		_armIndex = PlayerAction::HOLD + _dir;
 
-	_bodyIndex = state;
+	_bodyIndex = state + _dir;
 
 	_armActions[_armIndex]->Play();
 	_bodyActions[_bodyIndex]->Play();
@@ -302,7 +298,7 @@ void Player::SetRun(int state)
 {
 	int playerState = _playerInfo.lock()->GetState();
 
-	if (playerState == PlayerInfo::PlayerState::IDLE || playerState == PlayerInfo::PlayerState::HOLDING)
+	/*if (playerState == PlayerInfo::PlayerState::IDLE || playerState == PlayerInfo::PlayerState::HOLDING)
 		SetAction(state);
 	else if (playerState & (PlayerInfo::PlayerState::RUNL | PlayerInfo::PlayerState::RUNR))
 		SetAction(PlayerAction::SIDERUN);
@@ -314,7 +310,7 @@ void Player::SetRun(int state)
 			SetAction(PlayerAction::FRONTRUN);
 		else if (playerState & PlayerInfo::PlayerState::RUNB)
 			SetAction(PlayerAction::BACKRUN);
-	}
+	}*/
 		
 }
 
@@ -325,7 +321,8 @@ void Player::Move()
 
 	if (KEY_DOWN('W'))
 	{
-		SetRun(PlayerAction::BACKRUN);
+		SetRun(PlayerAction::RUN);
+		_dir = Direction::BACK;
 		playerState |= PlayerInfo::PlayerState::RUNB;
 	}
 	else if (KEY_PRESS('W'))
@@ -335,12 +332,13 @@ void Player::Move()
 	else if (KEY_UP('W'))
 	{
 		playerState ^= PlayerInfo::PlayerState::RUNB;
-		SetRun(PlayerAction::BACKIDLE);
+		SetRun(PlayerAction::IDLE);
 	}
 
 	if (KEY_DOWN('S'))
 	{
-		SetRun(PlayerAction::FRONTRUN);
+		_dir = Direction::FRONT;
+		SetRun(PlayerAction::RUN);
 		playerState |= PlayerInfo::PlayerState::RUNF;
 	}
 	else if (KEY_PRESS('S'))
@@ -350,12 +348,13 @@ void Player::Move()
 	else if (KEY_UP('S'))
 	{
 		playerState ^= PlayerInfo::PlayerState::RUNF;
-		SetRun(PlayerAction::FRONTIDLE);
+		SetRun(PlayerAction::IDLE);
 	}
 
 	if (KEY_DOWN('A'))
 	{
-		SetRun(PlayerAction::SIDERUN);
+		_dir = Direction::SIDE;
+		SetRun(PlayerAction::RUN);
 		
 		playerState |= PlayerInfo::PlayerState::RUNL;
 		collider->SetScale(Vector2(-1, 1));
@@ -367,12 +366,13 @@ void Player::Move()
 	else if (KEY_UP('A'))
 	{
 		playerState ^= PlayerInfo::PlayerState::RUNL;
-		SetRun(PlayerAction::SIDEIDLE);
+		SetRun(PlayerAction::IDLE);
 	}
 
 	if (KEY_DOWN('D'))
 	{
-		SetRun(PlayerAction::SIDERUN);
+		_dir = Direction::SIDE;
+		SetRun(PlayerAction::RUN);
 
 		playerState |= PlayerInfo::PlayerState::RUNR;
 		collider->SetScale(Vector2(1, 1));
@@ -384,7 +384,7 @@ void Player::Move()
 	else if (KEY_UP('D'))
 	{
 		playerState ^= PlayerInfo::PlayerState::RUNR;
-		SetRun(PlayerAction::SIDEIDLE);
+		SetRun(PlayerAction::IDLE);
 	}
 }
 
@@ -434,8 +434,43 @@ void Player::Items()
 
 void Player::Mouse()
 {
-	if (KEY_UP(VK_LBUTTON))
-		SetAction(PlayerAction::BACKTOOL);
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		Vector2 target = W_MOUSE_POS - _playerInfo.lock()->GetWorldPos();
+		float angle = target.Angle() * 57.2958f;
+
+		if (angle > -35.0f && angle <= 35.0f)
+		{
+			_dir = Direction::SIDE;
+			_playerInfo.lock()->SetScale(Vector2(1, 1));
+		}
+		else if (angle > 35.0f && angle <= 105.0f)
+		{
+			_dir = Direction::BACK;
+		}
+		else if (angle > -105.0f && angle <= -35.0f)
+		{
+			_dir = Direction::FRONT;
+			
+		}
+		else
+		{
+			_dir = Direction::SIDE;
+			_playerInfo.lock()->SetScale(Vector2(-1, 1));
+		}
+	}
+	else if (KEY_UP(VK_LBUTTON))
+	{
+		auto item = DATA->GetSelectedItem();
+
+		if (item->GetType() == Item::Type::PICKAXE ||
+			item->GetType() == Item::Type::AXE ||
+			item->GetType() == Item::Type::HOE)
+		{
+			SetAction(PlayerAction::TOOL);
+		}
+	}
+	
 }
 
 void Player::UpdateInfo()

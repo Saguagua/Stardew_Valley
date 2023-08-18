@@ -5,20 +5,18 @@ class Player: public PlayerSubscribe
 {
 	enum PlayerAction
 	{
-		FRONTIDLE,
-		SIDEIDLE,
-		BACKIDLE,
-		FRONTRUN,
-		SIDERUN,
-		BACKRUN,
-		FRONTTOOL,
-		SIDETOOL,
-		BACKTOOL,
-		FRONTHOLD,
-		SIDEHOLD,
-		BACKHOLD
+		IDLE = 0,
+		RUN = 3,
+		TOOL = 6,
+		HOLD = 9,
 	};
 
+	enum Direction
+	{
+		FRONT = 0,
+		SIDE = 1,
+		BACK = 2
+	};
 
 public:
 	Player();
@@ -50,7 +48,7 @@ private:
 	vector<shared_ptr<Action>> _bodyActions;
 	vector<shared_ptr<Action>> _armActions;
 
-	int _bodyIndex = PlayerAction::FRONTIDLE;
-	int _armIndex = PlayerAction::FRONTIDLE;
-
+	int _bodyIndex = PlayerAction::IDLE;
+	int _armIndex = PlayerAction::IDLE;
+	Direction _dir = Direction::FRONT;
 };
