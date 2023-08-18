@@ -90,7 +90,7 @@
     <ClInclude Include="Map\TileMap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Types.h">
+    <ClInclude Include="Defines.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\TextureMapping\SamplerState.h">
@@ -159,9 +159,6 @@
     <ClInclude Include="Data\DataManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Data\MapInfo.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\GameObj\GameObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -172,12 +169,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Animation\Action.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Data\TileInfo.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Data\PlayerInfo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Player\Player.h">
@@ -210,9 +201,6 @@
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DropItem.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Data\ObjectInfo.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\Tile\Tile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -240,13 +228,7 @@
     <ClInclude Include="Object\BasicObj\LightTextureRect.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TestScene\LightTestScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Framework\Light\LightManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Data\LightInfo.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\UI\BagUI.h">
@@ -255,16 +237,10 @@
     <ClInclude Include="Data\PlayerInfoSubscriber.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Data\PlayerSubscribe.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\UI\TimeUI.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\Crop.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\TestScene\DataScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.h">
@@ -277,6 +253,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\SpawnInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\DataInfos.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -473,9 +455,6 @@
     <ClCompile Include="Object\BasicObj\LightTextureRect.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TestScene\LightTestScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Framework\Light\LightManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -488,9 +467,6 @@
     <ClCompile Include="Object\GameObj\ObjType\DeployableObj\Crop.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TestScene\DataScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -498,9 +474,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\GameObj\ObjType\Items\Weapon.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\ObjectInfo.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

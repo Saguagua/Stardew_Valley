@@ -1,4 +1,6 @@
 #pragma once
+class DeployableObject;
+
 class Tile
 {
 public:
@@ -24,6 +26,8 @@ protected:
 	string _tileName;
 	string _objName;
 	Vector2 _centerPos;
+
+
 	bool _onFocus = false;
 
 	shared_ptr<DeployableObject> _obj;

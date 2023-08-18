@@ -1,13 +1,8 @@
 #include <atlstr.h>
 #include "framework.h"
-#include "MapInfo.h"
-#include "ObjectInfo.h"
-#include "PlayerInfo.h"
-#include "TileInfo.h"
 #include "../Object/Tile/TileType/ArableTile.h"
 #include "../Object/Tile/TileType/FishableTile.h"
 #include "../Framework/Utility/tinyxml2.h"
-#include "PlayerSubscribe.h"
 #include "DataManager.h"
 
 DataManager* DataManager::_instance = nullptr;
@@ -18,124 +13,6 @@ DataManager::DataManager()
 	ReadXML();
 	ReadTypes();
 	ReadPlayers();
-}
-
-
-
-shared_ptr<PlayerInfo> DataManager::RequestPlayerSubScribe(PlayerSubscribe* subscriber)
-{
-	_playerSubscribers.push_back(subscriber);
-
-	return _playerInfo;
-}
-
-void DataManager::PlayerNotification(int type)
-{
-	for (int i = 0; i < _playerSubscribers.size(); i++)
-	{
-		if (_playerSubscribers[i]->_type == type)
-			_playerSubscribers[i]->UpdateInfo();
-	}
-}
-
-void DataManager::PlayerDeadNotification()
-{
-	for (int i = 0; i < _playerSubscribers.size(); i++)
-		_playerSubscribers[i]->Dead();
-}
-
-void DataManager::AddMaxHP(short amount)
-{
-}
-
-bool DataManager::AddHP(short amount)
-{
-	float maxHP = _playerInfo->GetMaxHP();
-	float hp = _playerInfo->GetHP();
-
-	hp += amount;
-
-	if (hp <= 0)
-		SetState(PlayerInfo::PlayerState::DEAD);
-
-	float ratio = hp / maxHP;
-	PlayerUI::GetInstance()->SetHP(ratio);
-	_playerInfo->SetHP(hp);
-
-	return !(_playerInfo->GetState() & PlayerInfo::PlayerState::DEAD);
-}
-
-void DataManager::AddMaxStamina(short amount)
-{
-}
-
-bool DataManager::AddStamina(short amount)
-{
-	float maxStamina = _playerInfo->GetMaxStamina();
-	float stamina = _playerInfo->GetStamina();
-
-	stamina += amount;
-
-	if (stamina <= 0)
-		SetState(PlayerInfo::PlayerState::DEAD);
-
-	float ratio = stamina / maxStamina;
-	PlayerUI::GetInstance()->SetStamina(ratio);
-	_playerInfo->SetStamina(stamina);
-
-	return !(_playerInfo->GetState() & PlayerInfo::PlayerState::DEAD);
-}
-
-void DataManager::SetState(int state)
-{
-	_playerInfo->SetState(state);
-
-	if (state & PlayerInfo::PlayerState::DEAD)
-		PlayerDeadNotification();
-}
-
-shared_ptr<Item> DataManager::GetSelectedItem()
-{
-	return _playerInfo->GetItem(_playerInfo->GetSelectedIndex());
-}
-
-bool DataManager::AddItem(int type, string name)
-{
-	vector<shared_ptr<Item>>& items = _playerInfo->GetItems();
-
-	for (auto item : items)
-	{
-		if (item->GetName() == name)
-		{
-			if (item->AddCount())
-			{
-				PlayerNotification(PlayerSubscribe::Type::ITEMS);
-				return true;
-			}
-		}
-	}
-
-	for (int i = 0; i < items.size(); i++)
-	{
-		if (!items[i]->IsActive())
-		{
-			items[i] = ObjectSpawner::GetInstance()->CreateItem(name, type);
-			PlayerNotification(PlayerSubscribe::Type::ITEMS);
-			return true;
-		}
-	}
-
-	return false;
-}
-
-void DataManager::SwapItems(int index1, int index2)
-{
-	vector<shared_ptr<Item>>& items = _playerInfo->GetItems();
-	shared_ptr<Item> tmp = items[index1];
-	items[index1] = items[index2];
-	items[index2] = tmp;
-
-	PlayerNotification(PlayerSubscribe::Type::ITEMS);
 }
 
 void DataManager::Save()
@@ -230,11 +107,9 @@ void DataManager::SavePlayerInfo()
 void DataManager::LoadPlayerInfo(string playerName)
 {
 	string itemName;
-	short itemCount;
-	short maxHp;
-	short hp;
-	short maxStamina;
-	short stamina;
+	vector<short> vals;
+	short tmp;
+	short tmp2;
 
 	Vector2 pos;
 	vector<shared_ptr<Item>> items;
@@ -242,12 +117,26 @@ void DataManager::LoadPlayerInfo(string playerName)
 	ifstream fin;
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerInfo.txt");
 
-	fin >> maxHp;
-	fin >> hp;
-	fin >> maxStamina;
-	fin >> stamina;
-	fin >> pos.x;
-	fin >> pos.y;
+	fin >> tmp; //maxHp
+	vals.push_back(tmp);
+
+	fin >> tmp; //hp
+	vals.push_back(tmp);
+
+
+	fin >> tmp; //maxStamina
+	vals.push_back(tmp);
+
+
+	fin >> tmp; //stamina
+	vals.push_back(tmp);
+
+
+	fin >> tmp; //pos.x
+	fin >> tmp2; //pos.y
+
+	pos.x = tmp;
+	pos.y = tmp2;
 
 	fin.close();
 
@@ -255,8 +144,8 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	while (!fin.eof())
 	{
-		fin >> itemName >> itemCount;
-		items.push_back(ObjectSpawner::GetInstance()->CreateItem(itemName, itemCount));
+		fin >> itemName >> tmp;
+		items.push_back(ObjectSpawner::GetInstance()->CreateItem(itemName, tmp));
 	}
 
 	fin.close();
@@ -266,9 +155,7 @@ void DataManager::LoadPlayerInfo(string playerName)
 		items.push_back(ObjectSpawner::GetInstance()->CreateItem("BLANK", 0));
 	}
 
-	_playerInfo = make_shared<PlayerInfo>(playerName, maxHp, hp, maxStamina, stamina, items);
-	_playerInfo->SetPos(pos);
-	_playerInfo->GetCollider()->Update();
+	_playerInfo = make_shared<PlayerInfo>(playerName, vals, pos, items);
 }
 
 void DataManager::LoadMap(string playerName, string mapName)
@@ -295,13 +182,13 @@ void DataManager::LoadMap(string playerName, string mapName)
 
 		shared_ptr<Tile> info;
 		
-		int bitFlag = _tileTable[name]->GetBitFlag();
+		int bitFlag = _tileTable[name];
 
-		if (bitFlag & TileInfo::Type::FARMING)
+		if (bitFlag & TileType::FARMING)
 		{
 			info = make_shared<ArableTile>(name, pos);
 		}
-		else if (bitFlag & TileInfo::Type::FISHING)
+		else if (bitFlag & TileType::FISHING)
 		{
 			info = make_shared<FishableTile>(name, pos);
 		}
@@ -442,7 +329,7 @@ void DataManager::ReadTypes()
 		fin >> name;
 		int bitFlag;
 		fin >> bitFlag;
-		_tileTable[name] = make_shared<TileInfo>(bitFlag);
+		_tileTable[name] = bitFlag;
 	}
 
 	fin.close();

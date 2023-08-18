@@ -1,6 +1,6 @@
 #include "framework.h"
-#include "../../Data/MapInfo.h"
 #include "ObjType\DeployableObj\SpawnInfo.h"
+#include "../BasicObj/Sprite.h"
 #include "ObjType/DeployableObj/DeployableObject.h"
 #include "ObjType/DeployableObj/BreakableItem.h"
 #include "ObjType/DeployableObj/PickableItem.h"
@@ -12,17 +12,13 @@
 #include "ObjType/Items/Hoe.h"
 #include "ObjType/Items/WateringCan.h"
 #include "ObjType/Items/FishingRod.h"
-#include "../../Data/ObjectInfo.h"
 #include "ObjectSpawner.h"
 
 ObjectSpawner* ObjectSpawner::_instance = nullptr;
 
 ObjectSpawner::ObjectSpawner()
 {
-	_renderer = make_shared<LightTextureRect>(L"Resource/Object/Objects.png", DATA->GetObjectMaxFrame(), Vector2(40, 40));
-	_deployTable = DATA->GetDeployInfos();
-	_dropTable = DATA->GetDropInfos();
-	_itemTable = DATA->GetItemInfos();
+	_renderer = make_shared<Sprite>(L"Resource/Object/Objects.png", "Potato", TILE_SIZE);
 
 	for (int i = 0; i < 60; i++)
 	{
@@ -157,11 +153,11 @@ void ObjectSpawner::Update()
 		if (!dropItem->IsActive())
 			continue;
 		dropItem->Update();
-		if (dropItem->GetCollider()->IsCollision(_playerInfo->GetCollider()))
+		if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetCollider()))
 			dropItem->Interaction();
-		else if (dropItem->GetArea()->IsCollision(_playerInfo->GetCollider()))
+		else if (dropItem->GetArea()->IsCollision(Player::GetInstance()->GetCollider()))
 		{
-			Vector2 dir = _playerInfo->GetWorldPos() - dropItem->GetWorldPos();
+			Vector2 dir = Player::GetInstance()->GetWorldPos() - dropItem->GetWorldPos();
 			dir = dir.Normalize();
 			dropItem->AddPos(dir * 100 * DELTA_TIME);
 		}

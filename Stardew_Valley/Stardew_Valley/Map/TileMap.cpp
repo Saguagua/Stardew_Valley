@@ -1,9 +1,6 @@
 #include "framework.h"
-#include "../Data/MapInfo.h"
-#include "../Data/TileInfo.h"
 #include "../Object/UI/Palette.h"
 #include "../Object/Player/Player.h"
-#include "../Object/Tile/Tile.h"
 #include "../Object/Tile/TileType/ArableTile.h"
 #include "../Object/BasicObj/Sprite.h"
 #include "TileMap.h"
@@ -42,7 +39,7 @@ void TileMap::Play()
 
 void TileMap::Blocking()
 {
-	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
+	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
 	int x = -2;
 	int y = -1;
 
@@ -61,7 +58,8 @@ void TileMap::Blocking()
 		if (index < 0 || index >= _curMapSize.x * _curMapSize.y)
 			continue;
 
-		bool isBlock = _tileInfos[_tiles[index]->GetName()]->GetBitFlag() & TileInfo::Type::BLOCK;
+		bool isBlock = _tileInfos[_tiles[index]->GetName()] & TileType::BLOCK;
+
 		bool objBlock = (_tiles[index]->GetObj() != nullptr &&
 			_tiles[index]->GetObj()->GetType() != DeployableObject::Type::CROP);
 		
@@ -70,7 +68,7 @@ void TileMap::Blocking()
 
 		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
 		_colliders[i]->GetTransform()->Update_SRT();
-		_colliders[i]->Block(_playerInfo.lock()->GetCollider());
+		_colliders[i]->Block(Player::GetInstance()->GetCollider());
 	}
 }
 
@@ -266,8 +264,8 @@ int TileMap::GetWorldIndex(Vector2 pos)
 
 int TileMap::GetFocusedIndex()
 {
-	Vector2 target = W_MOUSE_POS - _playerInfo.lock()->GetWorldPos();
-	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
+	Vector2 target = W_MOUSE_POS - Player::GetInstance()->GetWorldPos();
+	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
 	float angle = target.Angle() * 57.2958f;
 
 	if (angle > -25.0f && angle <= 25.0f)
@@ -317,8 +315,8 @@ shared_ptr<Tile> TileMap::GetFocusedBlock()
 
 vector<shared_ptr<Tile>> TileMap::GetFocusedBlocks(Vector2 point, short level)
 {
-	Vector2 target = point - _playerInfo.lock()->GetWorldPos();
-	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
+	Vector2 target = point - Player::GetInstance()->GetWorldPos();
+	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
 	float angle = target.Angle() * 57.2958f;
 	int dir, dir2;
 
@@ -383,8 +381,8 @@ vector<shared_ptr<Tile>> TileMap::GetFocusedBlocks(Vector2 point, short level)
 
 vector<int> TileMap::GetFocusedIndices(Vector2 point, short level)
 {
-	Vector2 target = point - _playerInfo.lock()->GetWorldPos();
-	int worldIndex = GetWorldIndex(_playerInfo.lock()->GetWorldPos());
+	Vector2 target = point - Player::GetInstance()->GetWorldPos();
+	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
 	float angle = target.Angle() * 57.2958f;
 	int dir, dir2;
 

@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "../../Data/MapInfo.h"
 #include "List.h"
 #include "Palette.h"
 
@@ -153,7 +152,7 @@ void Palette::CreateChartButtons()
 
 void Palette::CreateTileList()
 {
-	Vector2 maxFrame = DATA->GetTileMaxFrame();
+	
 
 	_tileList = make_shared<List>(L"Resource/Tile/Tile.png", _size * 0.9f, Vector2(5, 3), 10);
 	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
@@ -162,7 +161,6 @@ void Palette::CreateTileList()
 
 void Palette::CreateObjectList()
 {
-	Vector2 maxFrame = DATA->GetObjectMaxFrame();
 	
 	_objectList = make_shared<List>(L"Resource/Object/Objects.png", _size * 0.9f, Vector2(5, 3), 10);
 	_objectList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));

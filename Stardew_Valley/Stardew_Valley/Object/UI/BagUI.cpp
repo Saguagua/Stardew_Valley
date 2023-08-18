@@ -1,6 +1,5 @@
 #include "framework.h"
 #include "List.h"
-#include "../../Data/PlayerInfo.h"
 #include "../BasicObj/XMLRect.h"
 #include "BagUI.h"
 
@@ -8,8 +7,6 @@ BagUI::BagUI()
 	:List(Vector2(10, 3))
 {
 	_type = PlayerSubscribe::Type::ITEMS;
-
-	_objMaxFrame = DATA->GetObjectMaxFrame();
 
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
@@ -76,7 +73,7 @@ void BagUI::ClickItem(int index)
 	}
 	else
 	{
-		DATA->SwapItems(_selectedIndex, index);
+		//DATA->SwapItems(_selectedIndex, index);
 
 		_selectedIndex = -1;
 	}

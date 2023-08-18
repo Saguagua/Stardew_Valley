@@ -1,5 +1,4 @@
 #pragma once
-#include "../../Data/ObjectInfo.h"
 
 class GameObject
 {

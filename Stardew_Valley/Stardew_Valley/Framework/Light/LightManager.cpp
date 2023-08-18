@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "../../Data/LightInfo.h"
 #include "LightManager.h"
 
 LightManager* LightManager::_instance = nullptr;

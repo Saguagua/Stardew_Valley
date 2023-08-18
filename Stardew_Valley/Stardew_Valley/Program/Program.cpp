@@ -3,8 +3,6 @@
 #include "../Scene/TestScene/TestScene.h"
 #include "../Scene/TestScene/ColliderScene.h"
 #include "../Scene/MapTool/MapToolScene.h"
-#include "../Scene/TestScene/LightTestScene.h"
-#include "../Scene/TestScene/DataScene.h"
 
 Program::Program()
 {

@@ -1,5 +1,4 @@
 #pragma once
-#include "../../Data/PlayerSubscribe.h"
 
 class BagUI :public List, PlayerSubscribe
 {
@@ -21,7 +20,6 @@ private:
 	shared_ptr<Transform> _objSlot;
 	shared_ptr<TextureRect> _obj;
 
-	Vector2 _objMaxFrame;
 	int _selectedIndex = -1;
 
 };

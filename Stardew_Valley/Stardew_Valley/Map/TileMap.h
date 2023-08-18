@@ -63,7 +63,7 @@ private:
 
 	vector<shared_ptr<MapInfo>>& _mapInfos = DATA->GetMapInfos();
 	vector<shared_ptr<class Tile>> _tiles;
-	unordered_map<string, shared_ptr<TileInfo>>& _tileInfos = DATA->GetTileInfos();
+	unordered_map<string, int>& _tileInfos = DATA->GetTileInfos();
 
 	string _curMapName;
 	Vector2 _curMapSize;

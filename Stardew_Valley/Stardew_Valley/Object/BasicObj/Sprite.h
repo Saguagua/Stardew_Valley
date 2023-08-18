@@ -1,4 +1,6 @@
 #pragma once
+class DataManager;
+
 class Sprite
 {
 public:
