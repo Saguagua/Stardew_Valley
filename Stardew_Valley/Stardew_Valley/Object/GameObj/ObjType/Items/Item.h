@@ -1,5 +1,7 @@
 #pragma once
 #include "../../GameObject.h"
+#define LEVEL 0
+#define COST 1
 
 class Item : public GameObject
 {
@@ -14,31 +16,45 @@ public:
 		PICKAXE,
 		WATERINGCAN,
 		SEED,
-		FRTI,
+		FERTILIZER,
 		WEAPON,
 		RING,
 		SHOOSE,
 		FACILITY
 	};
 
-	Item(Item::Type type, string name, short price, short count = 1)
-		:GameObject(name), _type(type), _price(price), _count(count)
+	Item()
+		:GameObject("BLANK")
 	{}
 
-	virtual void KeyInput() {}
+	void KeyInput();
+
+	void SetItem(string name, short count);
 
 	bool AddCount();
 
-	void SetCount(short count) { _count = count; }
-	void SetPrice(short price) { _price = price; }
-	void SetType(Item::Type type) { _type = type; }
-
 	short GetCount() { return _count; }
 	short GetPrice() { return _price; }
-	Item::Type GetType() { return _type; }
+	short GetType() { return _type; }
 
 protected:
-	Item::Type _type;
-	short _count;
+	void Hoe();
+	void Water();
+	void Axe();
+	void PickAxe();
+	void Fishing();
+	void Weapon();
+	void Eat();
+	void Seed();
+	void Fertilizer();
+
+	string _subName;
+
+	short _type;
 	short _price;
+	short _count;
+	vector<short> _vals;
+	float _chargeTime;
+	float _chargeCount;
+	Vector2 _point;
 };

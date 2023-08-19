@@ -1,17 +1,18 @@
 #include "framework.h"
+#include "../Player/PlayerSubscribe.h"
 #include "List.h"
-#include "../BasicObj/XMLRect.h"
 #include "BagUI.h"
 
 BagUI::BagUI()
-	:List(Vector2(10, 3))
+	:List(Vector2(10, 3)), PlayerSubscribe(Type::ITEMS)
 {
-	_type = PlayerSubscribe::Type::ITEMS;
+	_playerInfo = Player::GetInstance()->RequestSubscribe(this);
 
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
+
 	_body = make_shared<XMLRect>("Resource/UI/UI", "BagUI.png", Vector2(700, 300));
-	//_obj = make_shared<TextureRect>(L"Resource/Object/Objects.png", _objMaxFrame, Vector2(40, 50));
+	_obj = make_shared<Sprite>(L"Resource/Object/Objects.png", "BLANK", Vector2(40, 50));
 
 	CreateButtons();
 
@@ -56,7 +57,6 @@ void BagUI::CreateButtons()
 	for (int i = 0; i < 30; i++)
 	{
 		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/Object/Objects.png", items[i]->GetName(), Vector2(40, 50));
-		//btn->SetFrame(items[i]->GetFrameIndex());
 		CallBackInt cb = std::bind(&BagUI::ClickItem, this, i);
 		btn->AddPushEvent(cb);
 		_buttons.push_back(btn);
@@ -65,8 +65,8 @@ void BagUI::CreateButtons()
 
 void BagUI::ClickItem(int index)
 {
-	if (_selectedIndex == -1 
-		&& _buttons[index]->GetName() != "BLANK")
+	if (_selectedIndex == -1 &&
+		_buttons[index]->GetName() != "BLANK")
 	{
 		_selectedIndex = index;
 		

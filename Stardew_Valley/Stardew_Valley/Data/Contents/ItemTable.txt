@@ -1,64 +1,64 @@
-StarFruit		2 1000 10 10 0 0
-CaveCarrot	2 10 0 0 15 15
-HorseRadish	2 10 0 0 15 15
-Radish		2 10 0 0 15 15
-CopperHoe	4 100 0 0 0 0
-KidneyBeanSeed	7 20 2 0 0 0
-Copper		0 15 0 0 0 0		
-KidneyBean	7 20 0 0 0 0		
-Emerald		0 50 0 0 0 0	
-CauliflowerSeed	7 40 0 0 0 0
-SugarBeetSeed	7 15 0 0 0 0
-FishingRod	3 100 0 0 0 0		
-Squid		0 50 0 0 0 0 		
-Sword		9 100 0 5 10 0	
-Coal		0 15 0 0 0 0	
-SugarBeet	0 25 0 0 0 0
-Axe		1 100 1 0 0 0	
-Tuna		0 30 0 0 0 0	
-CopperAxe	1 500 3 0 0 0	
-PotatoSeed	7 20 1 0 0 0		
-Ruby		0 80 0 0 0 0	
-SteelAxe		1 1000 5 0 0 0
-Steel		0 50 0 0 0 0
-SteelHoe		4 1000 2 0 0 0
-WaterFertilizer	8 5 3 0 0 0
-CopperPickAxe	5 500 3 0 0 0
-PickAxe		5 100 1 0 0 0	
-SteelPickAxe	5 1000 5 0 0 0
-QualityFertilizer	8 5 0 5 0 0
-Hoe		4 100 0 0 0 0		
-BatWing		0 15 0 0 0 0		
-Anchovy		0 15 0 0 0 0		
-AnglerFish	0 50 0 0 0 0		
-Caulifower	0 80 0 0 0 0		
-SlimePiece	0 15 0 0 0 0		
-CopperWateringCan	6 500 1 0 0 0
-SteelWateringCan	6 1000 2 0 0 0
-WateringCan	6 100 0 0 0 0		
-Diamond		0 100 0 0 0 0		
-Potato		0 15 0 0 0 0		
-Rock_Drop	0 0 0 0 0 0		
-Wood_Drop	0 0 0 0 0 0			
-LightRing		10 500 0 0 0 0	
-Ring		10 100 10 0 0 0		
-SteelFishingRod	3 1000 2 0 0 0
-Club		9 100 2 5 15 0		
-Shoose_1		11 100 50 0 0 0	
-Dagger		9 100 2 5 0 0		
-Shoose_2		11 100 50 0 0 0	
-CopperClub	9 500 2 10 15 0	
-CopperSword	9 500 0 5 10 0
-CopperDagger	9 500 1 4 5 0
-SteelClub		9 1000 2 10 12 0
-SteelSword	9 1000 0 8 10 0
-SteelDagger	9 1000 1 7 5 0
-Torch		12 15 1 1 0 0
-BlueTorch		12 20 1 1 0 0
-Treasure		12 0 1 1 0 0
-Daffodil		0 10 0 0 0 0
-Lantern		12 15 0 0 0 0
-Box		12 15 0 0 0 0
-Snail		0 15 0 0 0 0
-Shell		0 15 0 0 0 0
-BLANK		0 0 0 0 0 0
+Copper				0	15		0	0	 0	 0	BLANK	
+Emerald				0	50		0	0	 0	 0	BLANK
+Squid				0	50		0	0	 0	 0 	BLANK	
+Coal				0	15		0	0	 0	 0	BLANK
+SugarBeet			0	25		0	0	 0	 0	BLANK
+Tuna				0	30		0	0	 0	 0	BLANK
+Ruby				0	80		0	0	 0	 0	BLANK
+Steel				0	50		0	0	 0	 0	BLANK
+BatWing				0	15		0	0	 0	 0	BLANK	
+Anchovy				0	15		0	0	 0	 0	BLANK	
+AnglerFish			0	50		0	0	 0	 0	BLANK	
+Caulifower			0	80		0	0	 0	 0	BLANK	
+SlimePiece			0	15		0	0	 0	 0	BLANK	
+Diamond				0	100		0	0	 0	 0	BLANK	
+Potato				0	15		0	0	 0	 0	BLANK	
+Rock_Drop			0	0		0	0	 0	 0	BLANK	
+Wood_Drop			0	0		0	0	 0	 0	BLANK		
+Daffodil			0	10		0	0	 0	 0	BLANK
+Snail				0	15		0	0	 0	 0	BLANK
+Shell				0	15		0	0	 0	 0	BLANK
+BLANK				0	0		0	0	 0	 0	BLANK
+Axe					1	100		1	0	 0	 0	BLANK
+CopperAxe			1	500		3	0	 0	 0	BLANK
+SteelAxe			1	1000	5	0	 0	 0	BLANK
+StarFruit			2	1000	10	10	 0	 0	BLANK
+CaveCarrot			2	10		0	0	 15	 15	BLANK
+HorseRadish			2	10		0	0	 15	 15	BLANK
+Radish				2	10		0	0	 15	 15	BLANK
+FishingRod			3	100		0	0	 0	 0	BLANK	
+SteelFishingRod		3	1000	2	0	 0	 0	BLANK
+CopperHoe			4	100		0	0	 0	 0	BLANK
+SteelHoe			4	1000	2	0	 0	 0	BLANK
+Hoe					4	100		0	0	 0	 0	BLANK	
+CopperPickAxe		5	500		3	0	 0	 0	BLANK
+PickAxe				5	100		1	0	 0	 0	BLANK
+SteelPickAxe		5	1000	5	0	 0	 0	BLANK
+CopperWateringCan	6	500		1	0	 0	 0	BLANK
+SteelWateringCan	6	1000	2	0	 0	 0	BLANK
+WateringCan			6	100		0	0	 0	 0	BLANK	
+KidneyBeanSeed		7	20		2	0	 0	 0	CropKidneyBean
+KidneyBean			7	20		0	0	 0	 0	BLANK	
+CauliflowerSeed		7	40		0	0	 0	 0	CropCauliflower
+SugarBeetSeed		7	15		0	0	 0	 0	CropSugarBeet
+PotatoSeed			7	20		1	0	 0	 0	CropPotato
+WaterFertilizer		8	5		3	0	 0	 0	BLANK
+QualityFertilizer	8	5		0	5	 0	 0	BLANK
+Sword				9	100		0	5	 10	 0	BLANK
+Club				9	100		2	5	 15	 0	BLANK	
+Dagger				9	100		2	5	 0	 0	BLANK	
+CopperClub			9	500		2	10	 15	 0	BLANK
+CopperSword			9	500		0	5	 10	 0	BLANK
+CopperDagger		9	500		1	4	 5	 0	BLANK
+SteelClub			9	1000	2	10	 12	 0	BLANK
+SteelSword			9	1000	0	8	 10	 0	BLANK
+SteelDagger			9	1000	1	7	 5	 0	BLANK
+LightRing			10	500		0	0	 0	 0	BLANK
+Ring				10	100		10	0	 0	 0	BLANK	
+Shoose_1			11	100		50	0	 0	 0	BLANK
+Shoose_2			11	100		50	0	 0	 0	BLANK
+Torch				12	15		1	1	 0	 0	Torch
+BlueTorch			12	20		1	1	 0	 0	BlueTorch
+Treasure			12	0		1	1	 0	 0	BLANK
+Lantern				12	15		0	0	 0	 0	Lantern
+Box					12	15		0	0	 0	 0	Box

@@ -1,17 +1,9 @@
 #include "framework.h"
-#include "ObjType\DeployableObj\SpawnInfo.h"
-#include "../BasicObj/Sprite.h"
 #include "ObjType/DeployableObj/DeployableObject.h"
 #include "ObjType/DeployableObj/BreakableItem.h"
 #include "ObjType/DeployableObj/PickableItem.h"
 #include "ObjType/DeployableObj/DropItem.h"
 #include "ObjType/DeployableObj/Crop.h"
-#include "ObjType/Items/EatableItem.h"
-#include "ObjType/Items/Axe.h"
-#include "ObjType/Items/PickAxe.h"
-#include "ObjType/Items/Hoe.h"
-#include "ObjType/Items/WateringCan.h"
-#include "ObjType/Items/FishingRod.h"
 #include "ObjectSpawner.h"
 
 ObjectSpawner* ObjectSpawner::_instance = nullptr;
@@ -45,7 +37,7 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 	}
 	case DeployableObject::CROP:
 	{
-		_crops.push_back(make_shared<Crop>(objName, Vector2(1,1), 0, 2));
+		//_crops.push_back(make_shared<Crop>(objName, Vector2(1,1), 0, 2));
 		break;
 	}
 	case DeployableObject::BLANK:
@@ -98,52 +90,18 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 
 }
 
-shared_ptr<Crop> ObjectSpawner::CreateCrop(string name, int progress, int quality)
+shared_ptr<Crop> ObjectSpawner::CreateCrop(string name, short progress, short quality, short level)
 {
-	return make_shared<Crop>(name, Vector2(1,1), progress, quality);
-}
+	short period = 15;
+	vector<short> vals;
 
-shared_ptr<Item> ObjectSpawner::CreateItem(string objName, short count)
-{
-	shared_ptr<ItemInfo> item = _itemTable[objName];
-
-	switch (item->GetType())
-	{
-	case Item::NONE:
-	{
-		return make_shared<Item>(Item::Type::NONE, objName, item->GetPrice());
-	}
-	case Item::EATABLE:
-	{
-		return make_shared<EatableItem>(objName, item->GetPrice(), item->GetVals());
-	}
-	case Item::AXE:
-	{
-		return make_shared<Axe>(objName, item->GetPrice());
-	}
-	case Item::PICKAXE:
-	{
-		return make_shared<PickAxe>(objName);
-	}
-	case Item::HOE:
-	{
-		return make_shared<Hoe>(objName, item->GetPrice(), item->GetVals()[0]);
-	}
-	case Item::WATERINGCAN:
-		break;
-	case Item::FISHINGROD:
-		break;
-	case Item::WEAPON:
-		break;
-	case Item::SEED:
-		break;
-	case Item::FRTI:
-		break;
-	default:
-		break;
-	}
-
-	return make_shared<Item>(Item::Type::NONE, objName, item->GetPrice());
+	vals.push_back(period);
+	vals.push_back(progress);
+	vals.push_back(quality);
+	vals.push_back(level);
+	shared_ptr<Crop> crop = make_shared<Crop>(name, Vector2(1, 1), vals);
+	_crops.push_back(crop);
+	return crop;
 }
 
 void ObjectSpawner::Update()
@@ -178,17 +136,6 @@ void ObjectSpawner::Render()
 
 void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos, int count)
 {
-	struct Info
-	{
-		Info(string name, Vector2 pos)
-			:_itemName(name), _pos(pos)
-		{}
-		Vector2 _pos;
-		string _itemName;
-	};
-
-	Info* info = new Info(itemName, pos);
-	shared_ptr<SpawnInfo> spawnInfo = make_shared<SpawnInfo>(info);
 
 	for (int i = 0; i < count; i++)
 	{
@@ -196,7 +143,7 @@ void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos
 		{
 			if (!_dropItems[i]->IsActive())
 			{
-				_dropItems[i]->Spawn(dropName, spawnInfo);
+				_dropItems[i]->Spawn(dropName, itemName, pos);
 				break;
 			}
 		}

@@ -1,6 +1,6 @@
 #pragma once
 
-class TileMap: public PlayerSubscribe
+class TileMap
 {
 	TileMap();
 	~TileMap() {}
@@ -32,15 +32,12 @@ public:
 
 	int GetWorldIndex(Vector2 pos);
 	int GetFocusedIndex();
-	shared_ptr<class Tile> GetFocusedBlock();
-	vector<shared_ptr<Tile>> GetFocusedBlocks(Vector2 point, short level);
+	shared_ptr<class Tile> GetFocusedTile();
+	vector<shared_ptr<Tile>> GetFocusedTiles(Vector2 point, short level);
 	vector<int> GetFocusedIndices(Vector2 point, short level);
 	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);
-
-	virtual void UpdateInfo() override;
-	virtual void Dead() override;
 
 	void Hoeing(Vector2 point, short level);
 	void Watering(Vector2 point, short level);

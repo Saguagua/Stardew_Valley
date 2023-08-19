@@ -174,24 +174,6 @@
     <ClInclude Include="Object\Player\Player.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\Items\PickAxe.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\Items\Hoe.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\Items\Axe.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\Items\FishingRod.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\Items\EatableItem.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\Items\WateringCan.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\GameObj\ObjectSpawner.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -249,16 +231,13 @@
     <ClInclude Include="Object\GameObj\ObjType\Items\Item.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\Items\Weapon.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\SpawnInfo.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Enums.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Data\DataInfos.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player\PlayerSubscribe.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -401,24 +380,6 @@
     <ClCompile Include="Object\Player\Player.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\GameObj\ObjType\Items\PickAxe.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\GameObj\ObjType\Items\Hoe.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\GameObj\ObjType\Items\Axe.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\GameObj\ObjType\Items\FishingRod.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\GameObj\ObjType\Items\EatableItem.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\GameObj\ObjType\Items\WateringCan.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Object\GameObj\ObjectSpawner.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -471,9 +432,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\GameObj\ObjType\Items\Item.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\GameObj\ObjType\Items\Weapon.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

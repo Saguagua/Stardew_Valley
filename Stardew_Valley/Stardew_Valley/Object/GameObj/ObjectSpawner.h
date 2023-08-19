@@ -25,9 +25,8 @@ public:
 
 	shared_ptr<DeployableObject> CreateObj(string objName);
 	void CreateObj(shared_ptr<class MapInfo> map, int index, string objName, short val1, short val2);
-	shared_ptr<class Crop> CreateCrop(string name, int progress, int quality);
-	shared_ptr<Item> CreateItem(string objName, short count = 1);
-
+	shared_ptr<class Crop> CreateCrop(string name, short progress = 0, short quality = 2, short level = 0);
+	
 	void Update();
 	void Render();
 
@@ -40,6 +39,7 @@ private:
 	unordered_map<string, shared_ptr<class DropInfo>>& _dropTable     =	DATA->GetDropInfos();
 	unordered_map<string, shared_ptr<class DeployInfo>>& _deployTable =	DATA->GetDeployInfos();
 	unordered_map<string, shared_ptr<class ItemInfo>>& _itemTable	 =	DATA->GetItemInfos();
+	unordered_map<string, shared_ptr<class CropInfo>>& _cropTable = DATA->GetCropInfos();
 
 	vector<shared_ptr<class DropItem>> _dropItems;
 	vector<shared_ptr<class Crop>> _crops;

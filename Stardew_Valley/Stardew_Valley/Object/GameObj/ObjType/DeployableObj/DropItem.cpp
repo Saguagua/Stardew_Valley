@@ -1,6 +1,5 @@
 #include "framework.h"
 #include "DeployableObject.h"
-#include "SpawnInfo.h"
 #include "DropItem.h"
 
 DropItem::DropItem()
@@ -30,9 +29,9 @@ void DropItem::Interaction()
     _isActive = false;
 }
 
-void DropItem::Spawn(string name, shared_ptr<SpawnInfo> data)
+void DropItem::Spawn(string name, string itemName, Vector2 pos)
 {
     _isActive = true;
     _itemName = name;
-    //_collider->SetPos(pos);
+    _collider->SetPos(pos);
 }

@@ -27,6 +27,17 @@ void ArableTile::Render(shared_ptr<Sprite> renderer)
 	renderer->ChangePicture(0, name);
 
 	renderer->Render();
+
+	/*if (!_crop.expired())
+	{
+		renderer->ChangePicture(_crop.lock()->GetLevel(), _crop.lock()->GetName());
+		renderer->Render();
+	}*/
+}
+
+void ArableTile::Plant(string cropName)
+{
+	_crop = ObjectSpawner::GetInstance()->CreateCrop(cropName);
 }
 
 

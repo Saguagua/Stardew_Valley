@@ -9,9 +9,6 @@ TestScene::TestScene()
 	TileMap::Create();
 	Player::Create();
 	PlayerUI::Create();
-	
-
-	TileMap::GetInstance()->ChangeMap(0);
 
 	CAMERA->SetTarget(Player::GetInstance()->GetTransform());
 	CAMERA->Update();
@@ -36,7 +33,6 @@ void TestScene::Update()
 	Player::GetInstance()->Update();
 
 
-	//DATA->GetSelectedItem()->KeyInput();
 }
 
 void TestScene::Render()
@@ -48,5 +44,5 @@ void TestScene::Render()
 
 void TestScene::PostRender()
 {
-	//PlayerUI::GetInstance()->PostRender();
+	PlayerUI::GetInstance()->PostRender();
 }

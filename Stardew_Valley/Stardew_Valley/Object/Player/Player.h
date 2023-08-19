@@ -1,11 +1,25 @@
 #pragma once
+
+class PlayerSubscribe;
+#define FRONT 0
+#define SIDE 1
+#define BACK 2
+
 class Player
 {
 	Player();
 	~Player() {}
 
-public:
+	enum PlayerAction
+	{
+		IDLE = 0,
+		RUN = 3,
+		TOOL = 6,
+		//WATER,
+		HOLD = 9,
+	};
 
+public:
 	static void Create()
 	{
 		if (_instance == nullptr)
@@ -22,31 +36,36 @@ public:
 	{
 		if (_instance != nullptr)
 			return _instance;
-
-		return _instance;
+		return nullptr;
 	}
 
 	void Update();
 	void Render();
 	
-	void SetSelectedItemIndex(int index);
+	shared_ptr<PlayerInfo> RequestSubscribe(PlayerSubscribe* subscriber);
+	void CancelSubscribe(PlayerSubscribe* subscriber);
+	void SendToSubscribers(int type);
 
 	shared_ptr<RectCollider> GetCollider() { return _col; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
-	shared_ptr<PlayerInfo> GetPlayerInfo() { return _playerInfo; }
 	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
 
+	bool AddMaxHP(short cost);
+	bool AddMaxStamina(short cost);
+	bool AddHP(short cost);
+	bool AddStamina(short cost);
 private:
 	static Player* _instance;
 
 	void CreateAction();
-	void SetAction(int index);
-	void SetRun(int index);
+	void SetBodyAction(int index);
+	void SetArmAction(int index);
 
 	void KeyInput();
 	void Move();
 	void Items();
 	void Mouse();
+	void SetSelectedItemIndex(int index);
 
 	shared_ptr<Transform> _bodySlot;
 	shared_ptr<Transform> _itemSlot;
@@ -61,8 +80,10 @@ private:
 	shared_ptr<Sprite> _obj;
 
 	shared_ptr<PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
-	vector<PlayerSubscribe*> _playerSubscribers;
+	list<PlayerSubscribe*> _subscribers;
 
-	int _bodyIndex = PlayerAction::FRONTIDLE;
-	int _armIndex = PlayerAction::FRONTIDLE;
+	int _bodyIndex = PlayerAction::IDLE;
+	int _armIndex = PlayerAction::IDLE;
+
+	int _dir = FRONT;
 };

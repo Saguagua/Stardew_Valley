@@ -1,12 +1,12 @@
 #include "framework.h"
-#include "../BasicObj/XMLRect.h"
+#include "../Player/PlayerSubscribe.h"
 #include "List.h"
 #include "ItemSlot.h"
 
 ItemSlot::ItemSlot()
-	:List(Vector2(10,1))
+	:List(Vector2(10,1)), PlayerSubscribe(Type::ITEMS)
 {	
-	_type = PlayerSubscribe::Type::ITEMS;
+	_playerInfo = Player::GetInstance()->RequestSubscribe(this);
 
 	_transform = make_shared<Transform>();
 
@@ -38,6 +38,16 @@ void ItemSlot::PushButtonEvent(int index)
 	List::PushButtonEvent(index);
 }
 
+void ItemSlot::UpdateInfo()
+{
+	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
+
+	for (int i = 0; i < _buttons.size(); i++)
+	{
+		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+	}
+}
+
 void ItemSlot::CreateButtons(wstring path, int count)
 {
 	//Vector2 maxFrame = DATA->GetObjectMaxFrame();
@@ -56,16 +66,6 @@ void ItemSlot::SetButtons(Vector2 startPos, Vector2 space)
 {
 	List::SetButtons(startPos, space);
 	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
-	for (int i = 0; i < _buttons.size(); i++)
-	{
-		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
-	}
-}
-
-void ItemSlot::UpdateInfo()
-{
-	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
-
 	for (int i = 0; i < _buttons.size(); i++)
 	{
 		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());

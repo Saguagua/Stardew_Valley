@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "SpawnInfo.h"
 #include "DeployableObject.h"
 
 DeployableObject::DeployableObject(DeployableObject::Type type, string name, Vector2 size)

@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "PlayerSubscribe.h"
 #include "Player.h"
 
 Player* Player::_instance = nullptr;
@@ -49,9 +50,78 @@ void Player::Render()
 	_col->Render();
 }
 
+shared_ptr<PlayerInfo> Player::RequestSubscribe(PlayerSubscribe* subscriber)
+{
+	_subscribers.push_back(subscriber);
+
+	return _playerInfo;
+}
+
+void Player::SendToSubscribers(int type)
+{
+	for (auto subscriber : _subscribers)
+	{
+		if (subscriber->_type == type)
+			subscriber->UpdateInfo();
+	}
+}
+
+bool Player::AddMaxHP(short cost)
+{
+	return false;
+}
+
+bool Player::AddMaxStamina(short cost)
+{
+	return false;
+}
+
+bool Player::AddHP(short cost)
+{
+	float maxHP = _playerInfo->GetMaxHP();
+	float hp = _playerInfo->GetHP();
+
+	hp += cost;
+
+	if (hp <= 0)
+		_playerInfo->SetState(PlayerState::DEAD);
+
+	float ratio = hp / maxHP;
+	PlayerUI::GetInstance()->SetHP(ratio);
+	_playerInfo->SetHP(hp);
+
+	return !(_playerInfo->GetState() & PlayerState::DEAD);
+}
+
+bool Player::AddStamina(short cost)
+{
+	float maxStamina = _playerInfo->GetMaxStamina();
+	float stamina = _playerInfo->GetStamina();
+
+	stamina += cost;
+
+	if (stamina <= 0)
+		_playerInfo->SetState(PlayerState::DEAD);
+
+	float ratio = stamina / maxStamina;
+	PlayerUI::GetInstance()->SetStamina(ratio);
+	_playerInfo->SetStamina(stamina);
+
+	return !(_playerInfo->GetState() & PlayerState::DEAD);
+}
+
+void Player::CancelSubscribe(PlayerSubscribe* sub)
+{
+	for (auto subscriber : _subscribers)
+	{
+		if (subscriber == sub)
+			_subscribers.remove(sub);
+	}
+}
+
 void Player::KeyInput()
 {
-	if (_playerInfo->GetState() & PlayerState::DEAD)
+	if (_playerInfo->GetState() & (PlayerState::DEAD | PlayerState::IMMOVEABLE))
 		return;
 
 	Move();
@@ -61,27 +131,32 @@ void Player::KeyInput()
 
 void Player::SetSelectedItemIndex(int index)
 {
-	auto item = _playerInfo->GetItems()[index];
+	_playerInfo->SetSelectedIndex(index);
+	auto item = _playerInfo->GetSelectedItem();
 	int type = item->GetType();
-	int state = _playerInfo->GetState();
+	int& state = _playerInfo->GetStateRef();
+	int armIndex = _armIndex;
 
 	if (type == Item::Type::NONE ||
 		type == Item::Type::EATABLE ||
-		type == Item::Type::FRTI ||
+		type == Item::Type::FERTILIZER ||
 		type == Item::Type::SEED)
 	{
 		state |= PlayerState::HOLDING;
 		_obj->ChangePicture(0, item->GetName());
+		armIndex = PlayerAction::HOLD;
 	}
 	else
 	{
 		state &= ~(PlayerState::HOLDING);
 		_obj->ChangePicture(0, "BLANK");
+		if (state != PlayerState::RUN)
+			armIndex = PlayerAction::RUN;
+		else
+			armIndex = PlayerAction::IDLE;
 	}
-
-	_playerInfo->SetState(state);
-
-	SetAction(_bodyIndex);
+	
+	SetArmAction(armIndex);
 }
 
 void Player::CreateAction()
@@ -284,48 +359,51 @@ void Player::CreateAction()
 #pragma endregion
 }
 
-void Player::SetAction(int state)
+void Player::SetBodyAction(int state)
 {
-	_armActions[_armIndex]->Stop();
+	state += _dir;
+	if (_bodyIndex == state)
+		return;
+
 	_bodyActions[_bodyIndex]->Stop();
-
-	int curState = _playerInfo->GetState();
-
-	if (!(curState & PlayerState::HOLDING))
-		_armIndex = state;
 
 	_bodyIndex = state;
 
-	_armActions[_armIndex]->Play();
 	_bodyActions[_bodyIndex]->Play();
 }
 
-void Player::SetRun(int state)
+void Player::SetArmAction(int state)
 {
-	/*int playerState = _playerInfo->GetState();
+	state += _dir;
+	if (_armIndex == state) 
+		return;
 
-	if (playerState == PlayerInfo::PlayerState::IDLE || playerState == PlayerInfo::PlayerState::HOLDING)
-		SetAction(state);
-	else if (playerState & (PlayerInfo::PlayerState::RUNL | PlayerInfo::PlayerState::RUNR))
-		SetAction(PlayerAction::SIDERUN);
-	else 
-	{
-		if (state == PlayerInfo::PlayerState::RUNL || state == PlayerInfo::PlayerState::RUNR)
-			SetAction(PlayerAction::SIDERUN);
-		else if(playerState & PlayerInfo::PlayerState::RUNF)
-			SetAction(PlayerAction::FRONTRUN);
-		else if (playerState & PlayerInfo::PlayerState::RUNB)
-			SetAction(PlayerAction::BACKRUN);
-	}*/
+	_armActions[_armIndex]->Stop();
+
+	bool isHolding = (_playerInfo->GetState() & PlayerState::HOLDING);
+
+	if (!isHolding) {
+		_armIndex = state;
+	}
+	else {
+		_armIndex = PlayerAction::HOLD + _dir;
+	}
+
+	_armActions[_armIndex]->Play();
 }
 
 void Player::Move()
 {
-	int state = _playerInfo->GetStateRef();
+	int& state = _playerInfo->GetStateRef();
 
 	if (KEY_DOWN('W'))
 	{
-		SetRun(PlayerAction::BACKRUN);
+		if (!(state & (PlayerState::RUNL | PlayerState::RUNR)))
+		{
+			_dir = BACK;
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
+		}
 		state |= PlayerState::RUNB;
 	}
 	else if (KEY_PRESS('W'))
@@ -335,12 +413,27 @@ void Player::Move()
 	else if (KEY_UP('W'))
 	{
 		state ^= PlayerState::RUNB;
-		SetRun(PlayerAction::BACKIDLE);
+
+		if (state & PlayerState::RUN)
+		{
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
+		}
+		else
+		{
+			SetBodyAction(PlayerAction::IDLE);
+			SetArmAction(PlayerAction::IDLE);
+		}
 	}
 
 	if (KEY_DOWN('S'))
 	{
-		SetRun(PlayerAction::FRONTRUN);
+		if (!(state & (PlayerState::RUNL | PlayerState::RUNR)))
+		{
+			_dir = FRONT;
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
+		}
 		state |= PlayerState::RUNF;
 	}
 	else if (KEY_PRESS('S'))
@@ -350,41 +443,106 @@ void Player::Move()
 	else if (KEY_UP('S'))
 	{
 		state ^= PlayerState::RUNF;
-		SetRun(PlayerAction::FRONTIDLE);
+
+		if (state & PlayerState::RUN)
+		{
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
+		}
+		else
+		{
+			SetBodyAction(PlayerAction::IDLE);
+			SetArmAction(PlayerAction::IDLE);
+		}
 	}
 
-	if (KEY_DOWN('A'))
+	if (!(state & PlayerState::RUNR))
 	{
-		SetRun(PlayerAction::SIDERUN);
-		
-		state |= PlayerState::RUNL;
-		_col->SetScale(Vector2(-1, 1));
-	}
-	else if (KEY_PRESS('A'))
-	{
-		_col->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
-	}
-	else if (KEY_UP('A'))
-	{
-		state ^= PlayerState::RUNL;
-		SetRun(PlayerAction::SIDEIDLE);
-	}
+		if (KEY_DOWN('A'))
+		{
+			_dir = SIDE;
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
 
-	if (KEY_DOWN('D'))
-	{
-		SetRun(PlayerAction::SIDERUN);
+			state |= PlayerState::RUNL;
+			_col->SetScale(Vector2(-1, 1));
+		}
+		else if (KEY_PRESS('A'))
+		{
+			state |= PlayerState::RUNL;
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
 
-		state |= PlayerState::RUNR;
-		_col->SetScale(Vector2(1, 1));
+			_col->SetScale(Vector2(-1, 1));
+			_col->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
+		}
+		else if (KEY_UP('A'))
+		{
+			state ^= PlayerState::RUNL;
+
+			if (state & PlayerState::RUNF)
+			{
+				_dir = FRONT;
+				SetBodyAction(PlayerAction::RUN);
+				SetArmAction(PlayerAction::RUN);
+			}
+			else if (state & PlayerState::RUNB)
+			{
+				_dir = BACK;
+				SetBodyAction(PlayerAction::RUN);
+				SetArmAction(PlayerAction::RUN);
+			}
+			else
+			{
+				SetBodyAction(PlayerAction::IDLE);
+				SetArmAction(PlayerAction::IDLE);
+			}
+		}
 	}
-	if (KEY_PRESS('D'))
+	
+	if (!(state & PlayerState::RUNL))
 	{
-		_col->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
-	}
-	else if (KEY_UP('D'))
-	{
-		state ^= PlayerState::RUNR;
-		SetRun(PlayerAction::SIDEIDLE);
+		if (KEY_DOWN('D'))
+		{
+			_dir = SIDE;
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
+
+			state |= PlayerState::RUNR;
+			_col->SetScale(Vector2(1, 1));
+		}
+		if (KEY_PRESS('D'))
+		{
+			state |= PlayerState::RUNR;
+
+			SetBodyAction(PlayerAction::RUN);
+			SetArmAction(PlayerAction::RUN);
+
+			_col->SetScale(Vector2(1, 1));
+			_col->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
+		}
+		else if (KEY_UP('D'))
+		{
+			state ^= PlayerState::RUNR;
+
+			if (state & PlayerState::RUNF)
+			{
+				_dir = FRONT;
+				SetBodyAction(PlayerAction::RUN);
+				SetArmAction(PlayerAction::RUN);
+			}
+			else if (state & PlayerState::RUNB)
+			{
+				_dir = BACK;
+				SetBodyAction(PlayerAction::RUN);
+				SetArmAction(PlayerAction::RUN);
+			}
+			else
+			{
+				SetBodyAction(PlayerAction::IDLE);
+				SetArmAction(PlayerAction::IDLE);
+			}
+		}
 	}
 }
 
@@ -434,17 +592,6 @@ void Player::Items()
 
 void Player::Mouse()
 {
-
-	if (KEY_DOWN(VK_LEFT))
-	{
-		SetAction(PlayerAction::BACKTOOL);
-	}
-	else if (KEY_PRESS(VK_LEFT))
-	{
-		
-	}
-	else if (KEY_UP(VK_LBUTTON))
-	{
-		
-	}
+	auto item = _playerInfo->GetSelectedItem();
+	item->KeyInput();
 }

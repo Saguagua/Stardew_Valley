@@ -1,8 +1,6 @@
 #include "framework.h"
-#include "../Object/UI/Palette.h"
-#include "../Object/Player/Player.h"
 #include "../Object/Tile/TileType/ArableTile.h"
-#include "../Object/BasicObj/Sprite.h"
+#include "../Object/GameObj/ObjType/DeployableObj/Crop.h"
 #include "TileMap.h"
 
 TileMap* TileMap::_instance = nullptr;
@@ -164,14 +162,6 @@ void TileMap::SetHoeDirt(int index) //algorithm
 	}
 }
 
-void TileMap::UpdateInfo()
-{
-}
-
-void TileMap::Dead()
-{
-}
-
 void TileMap::Hoeing(Vector2 point, short level)
 {
 	if (KEY_UP(VK_LBUTTON))
@@ -229,6 +219,16 @@ void TileMap::Render()
 		if (_tiles[i]->GetObj() != nullptr)
 		{
 			_tiles[i]->GetObj()->Render(_objectRenderer);
+		}
+		auto tile = dynamic_pointer_cast<ArableTile>(_tiles[i]);
+		if (tile != nullptr)
+		{
+			auto crop = tile->GetCrop();
+			if (!crop.expired())
+			{
+				_objectRenderer->ChangePicture(0, crop.lock()->GetName());
+				_objectRenderer->Render();
+			}
 		}
 	}
 }
@@ -308,12 +308,12 @@ int TileMap::GetFocusedIndex()
 	return worldIndex;
 }
 
-shared_ptr<Tile> TileMap::GetFocusedBlock()
+shared_ptr<Tile> TileMap::GetFocusedTile()
 {
 	return _tiles[GetFocusedIndex()];
 }
 
-vector<shared_ptr<Tile>> TileMap::GetFocusedBlocks(Vector2 point, short level)
+vector<shared_ptr<Tile>> TileMap::GetFocusedTiles(Vector2 point, short level)
 {
 	Vector2 target = point - Player::GetInstance()->GetWorldPos();
 	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());

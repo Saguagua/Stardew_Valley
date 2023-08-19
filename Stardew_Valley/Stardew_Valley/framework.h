@@ -104,15 +104,19 @@ using namespace Microsoft::WRL;
 
 //Player
 #include "Object/Player/Player.h"
+#include "Object/Player/PlayerSubscribe.h"
 
-//Map
-#include "Map/TileMap.h"
 
 //UI
 #include "Object/UI/Button.h"
 #include "Object/UI/ColorButton.h"
 #include "Object/UI/TextureButton.h"
 #include "Object/UI/PlayerUI.h"
+#include "Object/UI/Palette.h"
+
+//Map
+#include "Map/TileMap.h"
+
 
 //Camera
 #include"Framework/Camera/Camera.h"

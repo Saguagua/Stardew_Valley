@@ -18,7 +18,7 @@ private:
 	void ClickItem(int index);
 
 	shared_ptr<Transform> _objSlot;
-	shared_ptr<TextureRect> _obj;
+	shared_ptr<Sprite> _obj;
 
 	int _selectedIndex = -1;
 

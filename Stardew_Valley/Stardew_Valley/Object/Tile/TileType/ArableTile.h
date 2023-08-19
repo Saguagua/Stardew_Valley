@@ -21,12 +21,13 @@ public:
 
 	virtual void Render(shared_ptr<class Sprite> renderer) override;
 
-	void SetWater(bool val) { _water = val; }
+	void Plant(string cropName);
 
 	void SetPlantable(bool val) { _plantable = val; }
+	void SetWater(bool val) { _water = val; }
 
-	weak_ptr<Crop> GetCrop() { return _crop; }
 	bool GetPlantable() { return _plantable; }
+	weak_ptr<Crop> GetCrop() { return _crop; }
 	Connect& GetConnect() { return _connect; }
 
 private:

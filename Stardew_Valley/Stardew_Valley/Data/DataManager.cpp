@@ -107,6 +107,7 @@ void DataManager::SavePlayerInfo()
 void DataManager::LoadPlayerInfo(string playerName)
 {
 	string itemName;
+	string subName;
 	vector<short> vals;
 	short tmp;
 	short tmp2;
@@ -114,6 +115,11 @@ void DataManager::LoadPlayerInfo(string playerName)
 	Vector2 pos;
 	vector<shared_ptr<Item>> items;
 	
+	for (int i = 0; i < 30; i++)
+	{
+		items.push_back(make_shared<Item>());
+	}
+
 	ifstream fin;
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerInfo.txt");
 
@@ -142,18 +148,17 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerItems.txt");
 
+	int index = 0;
 	while (!fin.eof())
 	{
 		fin >> itemName >> tmp;
-		items.push_back(ObjectSpawner::GetInstance()->CreateItem(itemName, tmp));
+		items[index]->SetItem(itemName, tmp);
+		index++;
 	}
 
 	fin.close();
 
-	while (items.size() < 30)
-	{
-		items.push_back(ObjectSpawner::GetInstance()->CreateItem("BLANK", 0));
-	}
+	
 
 	_playerInfo = make_shared<PlayerInfo>(playerName, vals, pos, items);
 }
@@ -320,7 +325,14 @@ void DataManager::ReadXML()
 
 void DataManager::ReadTypes()
 {
+	string name;
+	string subName;
+	short type;
+	short tmp;
+	short price;
+
 	ifstream fin;
+
 	fin.open("Data/Contents/TileProperty.txt");
 
 	while (!fin.eof())
@@ -336,9 +348,6 @@ void DataManager::ReadTypes()
 
 	fin.open("Data/Contents/DeployableTable.txt");
 
-	string name;
-	short type;
-	short tmp;
 
 	while (!fin.eof())
 	{
@@ -359,7 +368,6 @@ void DataManager::ReadTypes()
 	fin.close();
 
 	fin.open("Data/Contents/ItemTable.txt");
-	short price;
 
 	while (!fin.eof())
 	{
@@ -375,7 +383,9 @@ void DataManager::ReadTypes()
 			vals.push_back(tmp);
 		}
 
-		_itemTable[name] = make_shared<ItemInfo>(type, price, vals);
+		fin >> subName;
+
+		_itemTable[name] = make_shared<ItemInfo>(subName, type, price, vals);
 	}
 
 	fin.close();

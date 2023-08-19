@@ -25,7 +25,6 @@ public:
 		return nullptr;
 	}
 
-
 	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
@@ -35,9 +34,10 @@ public:
 	unordered_map<string, int>& GetTileInfos() { return _tileTable; }
 	int GetTileInfo(string tileName) { return _tileTable[tileName]; }
 
-	unordered_map<string, shared_ptr<class DropInfo>>& GetDropInfos() { return _dropTable; }
-	unordered_map<string, shared_ptr<class DeployInfo>>& GetDeployInfos() { return _deployTable; }
-	unordered_map<string, shared_ptr<class ItemInfo>>& GetItemInfos() { return _itemTable; }
+	unordered_map<string, shared_ptr<DropInfo>>& GetDropInfos() { return _dropTable; }
+	unordered_map<string, shared_ptr<DeployInfo>>& GetDeployInfos() { return _deployTable; }
+	unordered_map<string, shared_ptr<ItemInfo>>& GetItemInfos() { return _itemTable; }
+	unordered_map<string, shared_ptr<CropInfo>>& GetCropInfos() { return _cropTable; }
 
 	void Save();
 	void Load(string name);
@@ -61,9 +61,10 @@ private:
 	vector<shared_ptr<MapInfo>> _mapInfos;
 	unordered_map<string, bool> _mapTable;
 	
-	unordered_map<string, shared_ptr<class XMLInfo>> _xmlTable;
+	unordered_map<string, shared_ptr<XMLInfo>> _xmlTable;
 					unordered_map<string, int> _tileTable;
-	unordered_map<string, shared_ptr<class DropInfo>> _dropTable;
-	unordered_map<string, shared_ptr<class DeployInfo>> _deployTable;
-		unordered_map<string, shared_ptr<class ItemInfo>> _itemTable;
+	unordered_map<string, shared_ptr<DropInfo>> _dropTable;
+	unordered_map<string, shared_ptr<DeployInfo>> _deployTable;
+		unordered_map<string, shared_ptr<ItemInfo>> _itemTable;
+		unordered_map<string, shared_ptr<CropInfo>> _cropTable;
 };
