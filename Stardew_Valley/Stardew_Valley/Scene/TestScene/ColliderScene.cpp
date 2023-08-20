@@ -14,7 +14,7 @@ ColliderScene::ColliderScene()
 	_rect2->SetDebug(true);
 
 	_circle->SetPos(Vector2(-100, -100));
-	_circle2->SetPos(CENTER);
+	_rect2->SetPos(CENTER);
 }
 
 void ColliderScene::Update()
@@ -24,7 +24,7 @@ void ColliderScene::Update()
 
 	_circle->SetPos(CAMERA->GetWorldMousePos());
 
-	if (_circle->IsCollision(_circle2))
+	if (_circle->IsCollision(_rect2))
 	{
 		_circle->SetColor(XMFLOAT4(1,0,0,1));
 	}

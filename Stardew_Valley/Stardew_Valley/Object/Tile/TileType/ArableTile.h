@@ -19,21 +19,21 @@ public:
 
 	virtual ~ArableTile() {}
 
-	virtual void Render(shared_ptr<class Sprite> renderer) override;
+	virtual void Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col) override;
 
 	void Plant(string cropName);
 
 	void SetPlantable(bool val) { _plantable = val; }
-	void SetWater(bool val) { _water = val; }
 
 	bool GetPlantable() { return _plantable; }
 	weak_ptr<Crop> GetCrop() { return _crop; }
 	Connect& GetConnect() { return _connect; }
 
+	virtual void Interaction() override;
+
 private:
 	weak_ptr<Crop> _crop;
 	Connect _connect;
 	bool _plantable = false;
-	bool _water = false;
 };
 

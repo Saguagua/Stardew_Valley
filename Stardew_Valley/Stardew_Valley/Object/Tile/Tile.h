@@ -8,7 +8,7 @@ public:
 
 	virtual ~Tile() {}
 
-	virtual void Render(shared_ptr<class Sprite> renderer);
+	virtual void Render(shared_ptr<class Sprite> renderer, shared_ptr<class RectCollider> transform);
 
 	string GetName() { return _tileName; }
 	Vector2 GetCenterPos() { return _centerPos; }
@@ -22,11 +22,12 @@ public:
 	void SetObjName(string name) { _objName = name; }
 	void SetObj(shared_ptr<DeployableObject> obj) { _obj = obj; }
 
+	virtual void Interaction();
 protected:
 	string _tileName;
 	string _objName;
 	Vector2 _centerPos;
-
+	int _index;
 
 	bool _onFocus = false;
 

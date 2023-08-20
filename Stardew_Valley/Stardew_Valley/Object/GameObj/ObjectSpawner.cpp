@@ -10,7 +10,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 
 ObjectSpawner::ObjectSpawner()
 {
-	_renderer = make_shared<Sprite>(L"Resource/Object/Objects.png", "Potato", TILE_SIZE);
+	_renderer = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", TILE_SIZE);
 
 	for (int i = 0; i < 60; i++)
 	{
@@ -27,17 +27,12 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 	{
 	case DeployableObject::BREAK:
 	{
-		 obj = make_shared<BreakableItem>(objName, Vector2(1,1));
+		 obj = make_shared<BreakableItem>(objName, Vector2(0,0));
 		 break;
 	}
 	case DeployableObject::PICK:
 	{
-		obj = make_shared<PickableItem>(objName);
-		break;
-	}
-	case DeployableObject::CROP:
-	{
-		//_crops.push_back(make_shared<Crop>(objName, Vector2(1,1), 0, 2));
+		obj = make_shared<PickableItem>(objName, Vector2(0, 0));
 		break;
 	}
 	case DeployableObject::BLANK:
@@ -48,28 +43,33 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 	default:
 		break;
 	}
-	// ªÁ¿Ã¡Ó ππΩ√≤§
+
 	return obj;
 }
 
 void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName, short val1, short val2)
 {
 	vector<shared_ptr<Tile>>& tiles = map->GetInfos();
-	Vector2 mapSize = map->GetSize();
+
 	Vector2 size = _deployTable[objName]->GetSize();
+	Vector2 tmp;
+	tmp.x = TILE_SIZE.x * (size.x - 1);
+	tmp.y = TILE_SIZE.y * (size.y - 1);
+
+	Vector2 centerPos = tiles[index]->GetCenterPos() + tmp;
+
 	shared_ptr<DeployableObject> obj;
-	tiles[index]->SetObjName(objName);
 
 	switch (_deployTable[objName]->GetType())
 	{
 	case DeployableObject::BREAK:
 	{
-		obj = make_shared<BreakableItem>(objName, size, val1);
+		obj = make_shared<BreakableItem>(objName, centerPos, val1);
 		break;
 	}
 	case DeployableObject::PICK:
 	{
-		obj = make_shared<PickableItem>(objName);
+		obj = make_shared<PickableItem>(objName, centerPos);
 		break;
 	}
 	case DeployableObject::BLANK:
@@ -79,6 +79,10 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	default:
 		break;
 	}
+
+	tiles[index]->SetObjName(objName);
+
+	Vector2 mapSize = map->GetSize();
 
 	for (int i = 0; i < size.y; i++)
 	{
@@ -92,16 +96,22 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 
 shared_ptr<Crop> ObjectSpawner::CreateCrop(string name, short progress, short quality, short level)
 {
-	short period = 15;
+	short period = 12;
 	vector<short> vals;
 
 	vals.push_back(period);
 	vals.push_back(progress);
 	vals.push_back(quality);
 	vals.push_back(level);
-	shared_ptr<Crop> crop = make_shared<Crop>(name, Vector2(1, 1), vals);
+	shared_ptr<Crop> crop = make_shared<Crop>(name, Vector2(0, 0), vals);
 	_crops.push_back(crop);
 	return crop;
+}
+
+void ObjectSpawner::Update_Crops()
+{
+	for (auto crop : _crops)
+		crop->Update();
 }
 
 void ObjectSpawner::Update()
@@ -110,10 +120,13 @@ void ObjectSpawner::Update()
 	{
 		if (!dropItem->IsActive())
 			continue;
+
 		dropItem->Update();
+
 		if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetCollider()))
 			dropItem->Interaction();
-		else if (dropItem->GetArea()->IsCollision(Player::GetInstance()->GetCollider()))
+
+		else if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetMagnatic()))
 		{
 			Vector2 dir = Player::GetInstance()->GetWorldPos() - dropItem->GetWorldPos();
 			dir = dir.Normalize();
@@ -128,9 +141,7 @@ void ObjectSpawner::Render()
 	{
 		if (!dropItem->IsActive())
 			continue;
-		dropItem->Render();
-		//_renderer->SetCurFrame(dropItem->GetCode());
-		_renderer->Render();
+		dropItem->Render(_renderer);
 	}
 }
 

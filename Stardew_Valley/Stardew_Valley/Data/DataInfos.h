@@ -105,15 +105,15 @@ public:
 	~XMLInfo() {}
 
 	string GetName() { return _name; }
-	Position& GetPos(int index) { return _positions[index]; }
-	Vector2 GetSize() { return _size; }
+	const Position& GetPos(int index) { return _positions[index]; }
+	const Vector2& GetSize(int index) { return _sizes[index]; }
 
 	void AddPosition(Position pos) { _positions.push_back(pos); }
-
+	void AddSize(Vector2 size) { _sizes.push_back(size); }
 private:
 	string _name;
 	vector<Position> _positions;
-	Vector2 _size;
+	vector<Vector2> _sizes;
 };
 
 struct DropInfo

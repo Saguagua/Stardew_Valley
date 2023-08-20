@@ -53,7 +53,7 @@
 #define ADD_TILE(path, frame, size)		TileManager::GetInstance()->GetTile(path, frame, size);
 
 #define MAP_SIZE		Vector2(50, 50)
-#define TILE_SIZE		Vector2(35, 35)
+#define TILE_SIZE		Vector2(40, 40)
 #define SPEED			200.0f
 
 #define CallBack		function<void()>

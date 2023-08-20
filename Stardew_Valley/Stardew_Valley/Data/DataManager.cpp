@@ -113,12 +113,7 @@ void DataManager::LoadPlayerInfo(string playerName)
 	short tmp2;
 
 	Vector2 pos;
-	vector<shared_ptr<Item>> items;
 	
-	for (int i = 0; i < 30; i++)
-	{
-		items.push_back(make_shared<Item>());
-	}
 
 	ifstream fin;
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerInfo.txt");
@@ -148,13 +143,24 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerItems.txt");
 
+
+	vector<shared_ptr<Item>> items;
+
+	for (int i = 0; i < 30; i++)
+	{
+		items.push_back(make_shared<Item>());
+	}
+
 	int index = 0;
+
 	while (!fin.eof())
 	{
 		fin >> itemName >> tmp;
 		items[index]->SetItem(itemName, tmp);
 		index++;
 	}
+
+	
 
 	fin.close();
 
@@ -258,7 +264,7 @@ void DataManager::ReadMaps()
 
 void DataManager::ReadXML()
 {
-	string xmlPath = "Resource/Tile/Tiles.xml";
+	string xmlPath = "Resource/XMLResource.xml";
 	shared_ptr<tinyxml2::XMLDocument> document = make_shared<tinyxml2::XMLDocument>();
 	document->LoadFile(xmlPath.c_str());
 
@@ -280,45 +286,16 @@ void DataManager::ReadXML()
 		}
 
 		XMLInfo::Position pos;
-
+		Vector2 size;
 		pos.x = row->FindAttribute("x")->IntValue();
 		pos.y = row->FindAttribute("y")->IntValue();
 		pos.w = row->FindAttribute("w")->IntValue();
 		pos.h = row->FindAttribute("h")->IntValue();
+		size.x = row->FindAttribute("s1")->FloatValue();
+		size.y = row->FindAttribute("s2")->FloatValue();
 
 		_xmlTable[name]->AddPosition(pos);
-	
-		row = row->NextSiblingElement();
-	}
-
-	xmlPath = "Resource/Object/Objects.xml";
-	document->LoadFile(xmlPath.c_str());
-
-	textureAtlas = document->FirstChildElement();
-	row = textureAtlas->FirstChildElement();
-
-
-	while (true)
-	{
-		if (row == nullptr)
-			break;
-
-		name = row->FindAttribute("n")->Value();
-
-		if (_xmlTable.count(name) == 0)
-		{
-			_xmlTable[name] = make_shared<XMLInfo>(name);
-		}
-
-		XMLInfo::Position pos;
-
-		pos.x = row->FindAttribute("x")->IntValue();
-		pos.y = row->FindAttribute("y")->IntValue();
-		pos.w = row->FindAttribute("w")->IntValue();
-		pos.h = row->FindAttribute("h")->IntValue();
-
-		_xmlTable[name]->AddPosition(pos);
-		
+		_xmlTable[name]->AddSize(size);
 		row = row->NextSiblingElement();
 	}
 }

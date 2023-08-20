@@ -1,9 +1,21 @@
 #include "framework.h"
 #include "DeployableObject.h"
 
-DeployableObject::DeployableObject(DeployableObject::Type type, string name, Vector2 size)
-	:GameObject(name), _type(type)
+DeployableObject::DeployableObject(DeployableObject::Type type, string name, Vector2 pos)
+	:GameObject(name), _type(type), _centerPos(pos)
 {
-	Vector2 objSize(size.x * TILE_SIZE.x, size.y * TILE_SIZE.y);
-	_collider = make_shared<RectCollider>(objSize);
+}
+
+void DeployableObject::Render(shared_ptr<class Sprite> renderer, shared_ptr<RectCollider> col)
+{
+	col->SetPos(_centerPos);
+	col->SetScale(DATA->GetXMLInfo(_name)->GetSize(_index));
+	col->Update();
+
+	col->GetTransform()->Set_World(0);
+
+	renderer->ChangePicture(_name, _index);
+	renderer->Render();
+
+	col->Render();
 }

@@ -102,16 +102,43 @@ void Item::Hoe()
 	}
 	else if (KEY_UP(VK_LBUTTON))
 	{
-		Player::GetInstance()->AddHP(_vals[1]);
+		Player::GetInstance()->AddStamina(_vals[1]);
 
 		TileMap::GetInstance()->Hoeing(_point, _chargeCount);
 
-		//Player::GetInstance()->
 	}
 }
 
 void Item::Water()
 {
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		_chargeCount = 0;
+		_chargeTime = 0;
+		_point = W_MOUSE_POS;
+	}
+	else if (KEY_PRESS(VK_LBUTTON))
+	{
+		_chargeTime += DELTA_TIME;
+
+		if (_chargeTime > 1)
+		{
+			_chargeTime = 0;
+			if (_chargeCount < _vals[0])
+				_chargeCount++;
+
+			TileMap::GetInstance()->Hoeing(_point, _chargeCount);
+		}
+	}
+	else if (KEY_UP(VK_LBUTTON))
+	{
+		Player::GetInstance()->AddStamina(_vals[1]);
+
+		TileMap::GetInstance()->Watering(_point, _chargeCount);
+
+		//Player::GetInstance()->
+	}
+	
 }
 
 void Item::Axe()

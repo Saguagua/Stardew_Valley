@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "RectCollider.h"
 #include "CircleCollider.h"
 
 CircleCollider::CircleCollider(float radius)
@@ -25,12 +26,12 @@ bool CircleCollider::IsCollision(Vector2 other)
 	return length < worldRadius * worldRadius;
 }
 
-bool CircleCollider::IsCollision(shared_ptr<class RectCollider> other)
+bool CircleCollider::IsCollision(shared_ptr<RectCollider> other)
 {
 	return other->IsCollision(shared_from_this());
 }
 
-bool CircleCollider::IsCollision(shared_ptr<class CircleCollider> other)
+bool CircleCollider::IsCollision(shared_ptr<CircleCollider> other)
 {
 	float len1 = GetWorldRadius();
 	float len2 = other->GetWorldRadius();

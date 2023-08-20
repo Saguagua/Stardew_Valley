@@ -8,7 +8,7 @@ public:
 	~Sprite() {}
 
 	void Render();
-	void ChangePicture(int index, string name = "BLANK");
+	void ChangePicture(string name, int index = 0);
 	
 	string GetName() { return _curName; }
 	int GetIndex() { return _index; }

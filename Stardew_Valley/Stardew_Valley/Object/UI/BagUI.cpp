@@ -11,13 +11,13 @@ BagUI::BagUI()
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
 
-	_body = make_shared<XMLRect>("Resource/UI/UI", "BagUI.png", Vector2(700, 300));
-	_obj = make_shared<Sprite>(L"Resource/Object/Objects.png", "BLANK", Vector2(40, 50));
+	_body = make_shared<Sprite>(L"Resource/XMLResource.png", "BagUI", Vector2(700, 300));
+	_obj = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", Vector2(40, 50));
 
 	CreateButtons();
 
-	Vector2 startPos = Vector2(-300, 70);
-	Vector2 space = Vector2(57, 75);
+	Vector2 startPos = Vector2(-305, 70);
+	Vector2 space = Vector2(50, 75);
 	SetButtons(startPos, space);
 }
 
@@ -56,7 +56,7 @@ void BagUI::CreateButtons()
 
 	for (int i = 0; i < 30; i++)
 	{
-		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/Object/Objects.png", items[i]->GetName(), Vector2(40, 50));
+		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/XMLResource.png", items[i]->GetName(), Vector2(35, 55));
 		CallBackInt cb = std::bind(&BagUI::ClickItem, this, i);
 		btn->AddPushEvent(cb);
 		_buttons.push_back(btn);

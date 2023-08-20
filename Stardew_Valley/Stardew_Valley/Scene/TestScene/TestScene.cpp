@@ -31,8 +31,6 @@ void TestScene::Update()
 
 	TileMap::GetInstance()->Update();
 	Player::GetInstance()->Update();
-
-
 }
 
 void TestScene::Render()

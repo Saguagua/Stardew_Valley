@@ -39,13 +39,14 @@ void Timer::Update()
 		_frameCount = 0;
 
 		_minute++;
-		if (_minute == 10)
+		if (_minute == 1) //10
 		{
 			_hour++;
 			_minute = 0;
 
-			if (_hour > 24)
+			if (_hour > 6) //24
 			{
+				ObjectSpawner::GetInstance()->Update_Crops();
 				_hour = 6;
 			}
 		}

@@ -52,8 +52,7 @@ private:
 
 	void SetHoeDirt(int index);
 
-	shared_ptr<class Sprite> _tileRenderer;
-	shared_ptr<class Sprite> _objectRenderer;
+	shared_ptr<class Sprite> _renderer;
 	shared_ptr<SingleColorRect> _focusRenderer;
 
 	vector<shared_ptr<RectCollider>> _colliders;

@@ -6,7 +6,7 @@ List::List(wstring path, Vector2 size, Vector2 matrix, int count)
 	:_size(size), _matrix(matrix)
 {
 	_transform = make_shared<Transform>();
-	_body = make_shared<XMLRect>("Resource/UI/UI", "ItemBar.png", _size);
+	_body = make_shared<Sprite>(L"Resource/XMLResource.png", "ItemBar", _size);
 	CreateButtons(path, count);
 
 	Vector2 space;

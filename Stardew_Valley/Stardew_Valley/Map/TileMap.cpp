@@ -13,8 +13,7 @@ TileMap::TileMap()
 		_colliders.push_back(col);
 	}
 	
-	_tileRenderer = make_shared<Sprite>(L"Resource/Tile/Tiles.png", "Dirt", TILE_SIZE);
-	_objectRenderer = make_shared<Sprite>(L"Resource/Object/Objects.png", "Potato", TILE_SIZE);
+	_renderer = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", TILE_SIZE);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
 	_focusRenderer->SetColor(XMFLOAT4(0, 1, 0, 0.5));
 
@@ -201,7 +200,7 @@ void TileMap::Watering(Vector2 point, short level)
 
 		if (aTile != nullptr)
 		{
-			aTile->SetWater(true);
+			aTile->GetCrop().lock()->SetWater(true);
 		}
 	}
 }
@@ -213,23 +212,10 @@ void TileMap::Render()
 		_colliders[0]->SetPos(_tiles[i]->GetCenterPos());
 		_colliders[0]->Update();
 		_colliders[0]->Render();
-		_tiles[i]->Render(_tileRenderer);
+		_tiles[i]->Render(_renderer, _colliders[0]);
+
 		if (_tiles[i]->IsFocus())
 			_focusRenderer->Render();
-		if (_tiles[i]->GetObj() != nullptr)
-		{
-			_tiles[i]->GetObj()->Render(_objectRenderer);
-		}
-		auto tile = dynamic_pointer_cast<ArableTile>(_tiles[i]);
-		if (tile != nullptr)
-		{
-			auto crop = tile->GetCrop();
-			if (!crop.expired())
-			{
-				_objectRenderer->ChangePicture(0, crop.lock()->GetName());
-				_objectRenderer->Render();
-			}
-		}
 	}
 }
 

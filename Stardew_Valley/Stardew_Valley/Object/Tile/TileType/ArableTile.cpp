@@ -4,15 +4,31 @@
 #include "../../GameObj/ObjType/DeployableObj/Crop.h"
 #include "ArableTile.h"
 
-void ArableTile::Render(shared_ptr<Sprite> renderer)
+void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 {
-	Tile::Render(renderer);
+	col->SetPos(_centerPos);
+	col->SetScale(Vector2(1,1));
+	col->Update();
+
+	col->GetTransform()->Set_World(0);
+
+	renderer->ChangePicture(_tileName);
+	renderer->Render();
+
+	col->Render();
+
+	if (_obj != nullptr)
+	{
+		_obj->Render(renderer, col);
+	}
+	
 	if (!_plantable)
 		return;
 
 	string name;
-	if (_water)
+	if (!_crop.expired() && _crop.lock()->GetWater())
 		name = "W";
+
 	name += "HoeDirt";
 
 	if (_connect._down)
@@ -24,20 +40,26 @@ void ArableTile::Render(shared_ptr<Sprite> renderer)
 	if (_connect._left)
 		name += "R";
 
-	renderer->ChangePicture(0, name);
-
+	renderer->ChangePicture(name);
 	renderer->Render();
 
-	/*if (!_crop.expired())
+	if (!_crop.expired())
 	{
-		renderer->ChangePicture(_crop.lock()->GetLevel(), _crop.lock()->GetName());
-		renderer->Render();
-	}*/
+		_crop.lock()->Render(renderer, col);
+	}
 }
 
 void ArableTile::Plant(string cropName)
 {
 	_crop = ObjectSpawner::GetInstance()->CreateCrop(cropName);
+	_crop.lock()->SetPos(_centerPos);
+}
+
+void ArableTile::Interaction()
+{
+	Tile::Interaction();
+	if (!_crop.expired())
+		_crop.lock()->Interaction();
 }
 
 

@@ -8,7 +8,7 @@ Sprite::Sprite(wstring path, string name, Vector2 size)
 	CreateVertices();
 	CreateData();
 	_xBuffer->SetImgSize(_srv.lock()->GetImageSize());
-	ChangePicture(0, _curName);
+	ChangePicture(_curName);
 }
 
 void Sprite::Render()
@@ -30,11 +30,11 @@ void Sprite::Render()
 	DC->DrawIndexed(_indices.size(), 0, 0);
 }
 
-void Sprite::ChangePicture(int index, string name)
+void Sprite::ChangePicture(string name, int index)
 {
 	if (name != "BLNAK")
 		_curName = name;
-
+	
 	XMLInfo::Position pos = _map[_curName]->GetPos(index);
 	_xBuffer->SetStart(Vector2(pos.x, pos.y));
 	_xBuffer->SetSize(Vector2(pos.w, pos.h));

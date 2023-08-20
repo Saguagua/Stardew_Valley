@@ -2,8 +2,8 @@
 class BreakableItem : public DeployableObject
 {
 public:
-	BreakableItem(string name, Vector2 size, short hp = 1)
-		:DeployableObject(DeployableObject::Type::BREAK, name, size), _hp(hp)
+	BreakableItem(string name, Vector2 pos, short hp = 1)
+		:DeployableObject(DeployableObject::Type::BREAK, name, pos), _hp(hp)
 	{}
 
 	virtual ~BreakableItem() {}

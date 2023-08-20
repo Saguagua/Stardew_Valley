@@ -30,6 +30,7 @@ public:
 	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
 
 	unordered_map<string, shared_ptr<class XMLInfo>>& GetXMLInfos() { return _xmlTable; }
+	shared_ptr<XMLInfo> GetXMLInfo(string key) { return _xmlTable[key]; }
 
 	unordered_map<string, int>& GetTileInfos() { return _tileTable; }
 	int GetTileInfo(string tileName) { return _tileTable[tileName]; }

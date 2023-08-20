@@ -30,7 +30,7 @@ protected:
 	Vector2 _matrix;
 
 	shared_ptr<Transform> _transform;
-	shared_ptr <class  XMLRect > _body;
+	shared_ptr <Sprite> _body;
 	vector<shared_ptr<TextureButton>> _buttons;
 
 	int _curIndex = -1;

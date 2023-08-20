@@ -5,21 +5,20 @@
 DropItem::DropItem()
 {
     _collider = make_shared<CircleCollider>(20);
-    _dragArea = make_shared<CircleCollider>(100);
-    _dragArea->SetDebug(true);
-    _dragArea->SetParent(_collider->GetTransform());
+    _collider->SetDebug(true);
 }
 
 void DropItem::Update()
 {
     _collider ->Update();
-    _dragArea->Update();
 }
 
-void DropItem::Render()
+void DropItem::Render(shared_ptr<Sprite> renderer)
 {
+    _collider->GetTransform()->Set_World(0);
+    renderer->ChangePicture(_name, 0);
+    renderer->Render();
     _collider->Render();
-    _dragArea->Render();
 }
 
 
@@ -32,6 +31,7 @@ void DropItem::Interaction()
 void DropItem::Spawn(string name, string itemName, Vector2 pos)
 {
     _isActive = true;
-    _itemName = name;
+    _name = name;
+    _itemName = itemName;
     _collider->SetPos(pos);
 }

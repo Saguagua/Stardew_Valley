@@ -27,6 +27,7 @@ public:
 	void CreateObj(shared_ptr<class MapInfo> map, int index, string objName, short val1, short val2);
 	shared_ptr<class Crop> CreateCrop(string name, short progress = 0, short quality = 2, short level = 0);
 	
+	void Update_Crops();
 	void Update();
 	void Render();
 

@@ -47,6 +47,7 @@ public:
 	void SendToSubscribers(int type);
 
 	shared_ptr<RectCollider> GetCollider() { return _col; }
+	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
 
@@ -74,6 +75,7 @@ private:
 	vector<shared_ptr<Action>> _armActions;
 
 	shared_ptr<RectCollider> _col;
+	shared_ptr<CircleCollider> _magnatic;
 
 	shared_ptr<LightTextureRect> _body;
 	shared_ptr<LightTextureRect> _arm;

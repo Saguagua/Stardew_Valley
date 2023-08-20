@@ -50,7 +50,7 @@ protected:
 
 	string _subName;
 
-	short _type;
+	short _type = Type::NONE;
 	short _price;
 	short _count;
 	vector<short> _vals;

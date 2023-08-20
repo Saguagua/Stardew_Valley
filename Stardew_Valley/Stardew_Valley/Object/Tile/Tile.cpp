@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "../BasicObj/Sprite.h"
 #include "TileType/ArableTile.h"
 #include "TileType/FishableTile.h"
 #include "../GameObj/ObjType/DeployableObj/DeployableObject.h"
@@ -10,8 +9,23 @@ Tile::Tile(string name, Vector2 pos)
 {
 }
 
-void Tile::Render(shared_ptr<class Sprite> renderer)
+void Tile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 {
-	renderer->ChangePicture(0,_tileName);
+	col->GetTransform()->Set_World(0);
+
+	renderer->ChangePicture(_tileName);
 	renderer->Render();
+
+	if (_obj != nullptr)
+	{
+		_obj->Render(renderer, col);
+	}
+
+	col->Render(); // 여기 수정 필요
+}
+
+void Tile::Interaction()
+{
+	if (_obj != nullptr)
+		_obj->Interaction();
 }

@@ -7,17 +7,22 @@ Player* Player::_instance = nullptr;
 Player::Player()
 {
 	_col = make_shared<RectCollider>(Vector2(20, 20));
+	_magnatic = make_shared<CircleCollider>(50);
+	_col->SetDebug(true);
+	_magnatic->SetDebug(true);
+
 	_bodySlot = make_shared<Transform>();
 	_itemSlot = make_shared<Transform>();
 
 	_body = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
 	_arm = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
-	_obj = make_shared<Sprite>(L"Resource/Object/Objects.png", "BLANK", Vector2(30, 30));
+	_obj = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", Vector2(30, 30));
 
 	_body->SetCurFrame(Vector2(3, 0));
 	_arm->SetCurFrame(Vector2(0, 0));
 
-	_bodySlot->AddPos(Vector2(0, 15));
+	_magnatic->SetParent(_col->GetTransform());
+	_bodySlot->AddPos(Vector2(0, 20));
 	_bodySlot->SetParent(_col->GetTransform());
 	_itemSlot->AddPos(Vector2(0, 30));
 	_itemSlot->SetParent(_bodySlot);
@@ -31,6 +36,7 @@ void Player::Update()
 {
 	KeyInput();
 	_col->Update();
+	_magnatic->Update();
 	_bodySlot->Update();
 	_itemSlot->Update();
 	_bodyActions[_bodyIndex]->Update();
@@ -48,6 +54,7 @@ void Player::Render()
 	_itemSlot->Set_World(0);
 	_obj->Render();
 	_col->Render();
+	_magnatic->Render();
 }
 
 shared_ptr<PlayerInfo> Player::RequestSubscribe(PlayerSubscribe* subscriber)
@@ -143,17 +150,17 @@ void Player::SetSelectedItemIndex(int index)
 		type == Item::Type::SEED)
 	{
 		state |= PlayerState::HOLDING;
-		_obj->ChangePicture(0, item->GetName());
+		_obj->ChangePicture(item->GetName(), item->GetIndex());
 		armIndex = PlayerAction::HOLD;
 	}
 	else
 	{
 		state &= ~(PlayerState::HOLDING);
-		_obj->ChangePicture(0, "BLANK");
+		_obj->ChangePicture("BLANK");
 		if (state != PlayerState::RUN)
-			armIndex = PlayerAction::RUN;
-		else
 			armIndex = PlayerAction::IDLE;
+		else
+			armIndex = PlayerAction::RUN;
 	}
 	
 	SetArmAction(armIndex);
@@ -594,4 +601,12 @@ void Player::Mouse()
 {
 	auto item = _playerInfo->GetSelectedItem();
 	item->KeyInput();
+
+	if (item->GetType() == Item::Type::NONE)
+	{
+		if (KEY_DOWN(VK_LBUTTON))
+		{
+			TileMap::GetInstance()->GetFocusedTile()->Interaction();
+		}
+	}
 }

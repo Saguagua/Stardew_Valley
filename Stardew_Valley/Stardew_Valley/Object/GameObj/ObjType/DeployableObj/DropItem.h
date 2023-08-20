@@ -6,20 +6,18 @@ public:
 	virtual ~DropItem() {}
 
 	void Update();
-	void Render();
+	void Render(shared_ptr<Sprite> sprite);
 
 	void Interaction();
 	void AddPos(Vector2 pos) { _collider->AddPos(pos); }
 	void Spawn(string name, string itemName, Vector2 pos);
 
 	shared_ptr<CircleCollider> GetCollider() { return _collider; }
-	shared_ptr<CircleCollider> GetArea() { return _dragArea; }
 	Vector2 GetWorldPos() { return _collider->GetWorldPos(); }
 	bool IsActive() { return _isActive; }
 
 private:
 	shared_ptr<CircleCollider> _collider;
-	shared_ptr<CircleCollider> _dragArea;
 	string _name;
 	string _itemName;
 	bool _isActive = false;

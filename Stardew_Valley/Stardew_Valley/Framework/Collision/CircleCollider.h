@@ -1,5 +1,5 @@
 #pragma once
-class CircleCollider : public Collider, enable_shared_from_this<CircleCollider>
+class CircleCollider : public enable_shared_from_this<CircleCollider>, public Collider
 {
 public:
 	CircleCollider(float radius);
@@ -19,8 +19,6 @@ public:
 	float GetWorldRadius();
 
 private:
-	friend RectCollider;
-
 	shared_ptr<CircleLine> _renderer;
 	float _radius;
 };

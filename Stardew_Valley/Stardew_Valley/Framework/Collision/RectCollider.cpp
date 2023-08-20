@@ -28,7 +28,7 @@ bool RectCollider::IsCollision(Vector2 other)
 	return false;
 }
 
-bool RectCollider::IsCollision(shared_ptr<class RectCollider> other)
+bool RectCollider::IsCollision(shared_ptr<RectCollider> other)
 {
 	AABB_Info otherInfo = other->GetAABB_Info();
 	AABB_Info myInfo = GetAABB_Info();
@@ -45,7 +45,7 @@ bool RectCollider::IsCollision(shared_ptr<class RectCollider> other)
 	return true;
 }
 
-bool RectCollider::IsCollision(shared_ptr<class CircleCollider> other)
+bool RectCollider::IsCollision(shared_ptr<CircleCollider> other)
 {
 	AABB_Info myInfo = GetAABB_Info();
 	Vector2 otherWorldCenter = other->GetWorldPos();

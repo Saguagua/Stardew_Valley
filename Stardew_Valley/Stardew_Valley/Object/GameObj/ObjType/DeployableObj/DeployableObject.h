@@ -15,24 +15,21 @@ public:
 		BLANK = 8
 	};
 
-	DeployableObject(DeployableObject::Type type, string name, Vector2 size = TILE_SIZE);
+	DeployableObject(DeployableObject::Type type, string name, Vector2 pos);
 	virtual ~DeployableObject() {}
 
+	void Render(shared_ptr<class Sprite> renderer, shared_ptr<RectCollider> col);
+	
 	virtual void Interaction() abstract;
 
-	void SetPos(Vector2 pos) { _collider->SetPos(pos); }
-	void SetScale(Vector2 scale) { _collider->SetScale(scale); }
 	void SetActive(bool active) { _isActive = active; }
 	void SetType(DeployableObject::Type type) { _type = type; }
+	void SetPos(Vector2 pos) { _centerPos = pos; }
 
-	bool Block(shared_ptr<RectCollider> collider) { return _collider->Block(collider); }
-
-	shared_ptr<RectCollider> GetCollider() { return _collider; }
 	Type GetType() { return _type; }
-	bool IsCollision(shared_ptr<CircleCollider> collider) { return _collider->IsCollision(collider); }
-
+	
 protected:
 	DeployableObject::Type _type;
-	shared_ptr<RectCollider> _collider;
+	Vector2 _centerPos;
 };
 

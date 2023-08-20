@@ -2,10 +2,12 @@
 class Crop : public DeployableObject
 {
 public:
-	Crop(string name, Vector2 size, vector<short> vals) 
-		:DeployableObject(DeployableObject::Type::CROP, name, size),
-		_period(vals[0]), _progress(vals[1]), _quality(vals[2]), _level(vals[3])
-	{}
+	Crop(string name, Vector2 pos, vector<short> vals) 
+		:DeployableObject(DeployableObject::Type::CROP, name, pos),
+		_period(vals[0]), _progress(vals[1]), _quality(vals[2])
+	{
+		_index = vals[3];
+	}
 	~Crop() {}
 
 	void Update();
@@ -15,17 +17,20 @@ public:
 	void SetPeriod(short period) { _period = period; }
 	void SetProgress(short progress) { _progress = progress; }
 	void SetQuality(short quality) { _quality = quality; }
+	void SetWater(bool val) { _water = val; }
 
 	short GetPeriod() { return _period; }
 	short GetProgress() {return _progress; }
 	short GetQuality()	{return _quality; }
-	short GetLevel() { return _level; }
+	bool GetWater() { return _water; }
 
 private:
 	short _period;
 	short _progress;
 	short _quality;
-	short _level;
 
+	bool _water;
+	short _waterSave = 0;
+	bool _ferti;
 };
 
