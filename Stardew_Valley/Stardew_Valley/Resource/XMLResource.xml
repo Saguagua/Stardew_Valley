@@ -74,12 +74,12 @@ r => 'y' if sprite is rotated-->
   <sprite n="CropCauliflower" x="299" y="602" w="14" h="11" pX="0.5" pY="0.5" i="4" s1="0.3" s2="0.3"/>
   <sprite n="CropCauliflower" x="247" y="539" w="15" h="12" pX="0.5" pY="0.5" i="5" s1="0.3" s2="0.3"/>
   <sprite n="CropCauliflower" x="551" y="439" w="16" h="15" pX="0.5" pY="0.5" i="6" s1="0.3" s2="0.3"/>
-  <sprite n="CropPotato" x="622" y="411" w="7" h="6" pX="0.5" pY="0.5" i="0" s1="0.7" s2="0.7"/>
-  <sprite n="CropPotato" x="287" y="207" w="6" h="6" pX="0.5" pY="0.5" i="1" s1="0.7" s2="0.7"/>
-  <sprite n="CropPotato" x="525" y="612" w="4" h="6" pX="0.5" pY="0.5" i="2" s1="0.7" s2="0.7"/>
-  <sprite n="CropPotato" x="402" y="624" w="8" h="8" pX="0.5" pY="0.5" i="3" s1="0.7" s2="0.7"/>
-  <sprite n="CropPotato" x="137" y="453" w="10" h="11" pX="0.5" pY="0.5" i="4" s1="0.7" s2="0.7"/>
-  <sprite n="CropPotato" x="619" y="423" w="12" h="14" pX="0.5" pY="0.5" i="5" s1="0.7" s2="0.7"/>
+  <sprite n="CropPotato" x="622" y="411" w="7" h="6" pX="0.5" pY="0.5" i="0" s1="0.5" s2="0.5"/>
+  <sprite n="CropPotato" x="287" y="207" w="6" h="6" pX="0.5" pY="0.5" i="1" s1="0.5" s2="0.5"/>
+  <sprite n="CropPotato" x="525" y="612" w="4" h="6" pX="0.5" pY="0.5" i="2" s1="0.5" s2="0.5"/>
+  <sprite n="CropPotato" x="402" y="624" w="8" h="8" pX="0.5" pY="0.5" i="3" s1="0.6" s2="0.6"/>
+  <sprite n="CropPotato" x="137" y="453" w="10" h="11" pX="0.5" pY="0.5" i="4" s1="0.7" s2="0.6"/>
+  <sprite n="CropPotato" x="619" y="423" w="12" h="14" pX="0.5" pY="0.5" i="5" s1="0.7" s2="0.6"/>
   <sprite n="CropPotato" x="255" y="159" w="13" h="18" pX="0.5" pY="0.5" i="6" s1="0.7" s2="0.7"/>
   <sprite n="Caulifower" x="619" y="532" w="12" h="12" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Club" x="25" y="581" w="15" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>

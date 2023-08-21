@@ -44,14 +44,13 @@ void ItemSlot::UpdateInfo()
 
 	for (int i = 0; i < _buttons.size(); i++)
 	{
-		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
+		_buttons[i]->SetName(items[i]->GetName());
 	}
 }
 
 void ItemSlot::CreateButtons(wstring path, int count)
 {
-	//Vector2 maxFrame = DATA->GetObjectMaxFrame();
-	//vector<CallBackInt> callbacks = PLAYER->GetSelectedIndexCallback();
+	vector<CallBackInt> callbacks = Player::GetInstance()->GetSelectedIndexCallback();
 	auto items = _playerInfo.lock()->GetItems();
 
 	for (int i = 0; i < count; i++)
@@ -62,15 +61,6 @@ void ItemSlot::CreateButtons(wstring path, int count)
 	}
 }
 
-void ItemSlot::SetButtons(Vector2 startPos, Vector2 space)
-{
-	List::SetButtons(startPos, space);
-	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
-	for (int i = 0; i < _buttons.size(); i++)
-	{
-		//_buttons[i]->SetFrame(items[i]->GetFrameIndex());
-	}
-}
 
 void ItemSlot::Dead()
 {

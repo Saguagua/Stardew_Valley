@@ -150,9 +150,6 @@
     <ClInclude Include="Object\UI\TextureButton.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\UI\Window.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\UI\List.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -359,9 +356,6 @@
     <ClCompile Include="Object\UI\TextureButton.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\UI\Window.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Object\UI\List.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -516,7 +510,6 @@
   <ItemGroup>
     <Text Include="Map\Save\Fishing.txt" />
     <Text Include="Map\Save\Dungeon.txt" />
-    <Text Include="Data\Contents\ItemProperty.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
     <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />

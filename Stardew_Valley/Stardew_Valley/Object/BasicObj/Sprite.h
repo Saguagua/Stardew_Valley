@@ -8,13 +8,11 @@ public:
 	~Sprite() {}
 
 	void Render();
+	
 	void ChangePicture(string name, int index = 0);
 	
 	string GetName() { return _curName; }
 	int GetIndex() { return _index; }
-
-	void SetName(string name);
-	void SetIndex(int index);
 
 private:
 	void CreateVertices();

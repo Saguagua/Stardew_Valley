@@ -31,5 +31,5 @@ void TimeUI::Update()
 	_bodySlot->Update();
 	_rotateSlot->Update();
 	_hourHandSlot->Update();
-	_rotateSlot->AddAngle(-3.14 / 180 * DELTA_TIME);
+	_rotateSlot->AddAngle(-3.14 / 180 * DELTA_TIME * 35); //-3.14 / 180
 }

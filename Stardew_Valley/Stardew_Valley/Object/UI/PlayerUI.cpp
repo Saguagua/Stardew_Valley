@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "Window.h"
 #include "List.h"
 #include "ItemSlot.h"
 #include "Palette.h"
@@ -19,14 +18,13 @@ PlayerUI::PlayerUI()
 	_hpBar = make_shared<Bar>("Resource/UI/UI", "HPBar.png", Vector2(35, 200));
 	_staminaBar = make_shared<Bar>("Resource/UI/UI", "StaminaBar.png", Vector2(35, 200));
 
-	_bagUI->SetActive(false);
-	_itemSlot->SetActive(true);
-
 	_itemSlot->SetPos(Vector2(0, -300));
 	_hpBar->SetPos(Vector2(500, -250));
 	_staminaBar->SetPos(Vector2(545, -250));
-	_bagUI->SetPos(Vector2(0,0));
 	_timeUI->SetPos(Vector2(500, 250));
+
+	_bagUI->SetActive(false);
+	_itemSlot->SetActive(true);
 }
 
 void PlayerUI::PostRender()
@@ -44,6 +42,11 @@ void PlayerUI::Update()
 	_itemSlot->Update();
 	_timeUI->Update();
 	Key();
+}
+
+void PlayerUI::NextDay()
+{
+	_timeUI->SetRotate(3.14159);
 }
 
 void PlayerUI::SetHP(float hp)
@@ -102,6 +105,8 @@ void PlayerUI::Key()
 	{
 		_bagActive = !_bagActive;
 		_itemSlot->SetActive(!_bagActive);
-		_bagUI->SetActive(_bagActive);
+		_bagUI->SetActive(_bagActive); 
+		_bagUI->Update();
+		_itemSlot->Update();
 	}
 }

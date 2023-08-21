@@ -7,6 +7,7 @@ LightManager::LightManager()
 {
 	_colorBuffer = make_shared<LightColorBuffer>();
 	_posBuffer = make_shared<LightPosBuffer>();
+
 	XMFLOAT4* poses = _posBuffer->GetPoses();
 	XMFLOAT4* colors = _colorBuffer->GetColors();
 	poses[0] = { 60, 60, 0, 0 };
@@ -31,11 +32,11 @@ void LightManager::Update()
 	//-0.15
 	if (hour == 6)
 		_colorBuffer->GetSun() = { 0.8f, 0.8f, 0.8f, 1.0f };
-	else if (hour < 14)
-		_colorBuffer->GetBrighter({ 0.0114f * DELTA_TIME, 0.0114f * DELTA_TIME, 0.0114f * DELTA_TIME, 0 });
-	else
+	else if (hour < 8) //14, 0.0114
+		_colorBuffer->GetBrighter({ 0.1f * DELTA_TIME, 0.1f * DELTA_TIME, 0.1f * DELTA_TIME, 0 });
+	else //0.045
 	{
-		_colorBuffer->GetDarker({ 0.045f * DELTA_TIME, 0.045f * DELTA_TIME, 0.045f * DELTA_TIME, 0 });
+		_colorBuffer->GetDarker({ 0.4f * DELTA_TIME, 0.4f * DELTA_TIME, 0.4f * DELTA_TIME, 0 });
 	}
 
 	_colorBuffer->Update();

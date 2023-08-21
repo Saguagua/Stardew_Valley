@@ -18,14 +18,13 @@ public:
 	void Update();
 
 	void Play();
-	void Pause();
+	void Pause(bool val);
 	void Stop();
 	void Reset();
 
 	Vector2 GetCurFrame() { return _indices[_curAnimationIndex]; }
 
 	void SetEndEvent(CallBack cb) { _endEvent = cb; }
-
 private:
 	string _name;
 	

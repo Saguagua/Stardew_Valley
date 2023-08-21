@@ -14,7 +14,7 @@ void Crop::Update()
 	{
 		_progress++;
 
-		if (_progress % 2 == 0)
+		//if (_progress % 2 == 0)
 			_index++;
 	}
 
@@ -33,7 +33,16 @@ void Crop::Interaction()
 {
 	if (_progress < _period)
 		return;
+	if (_name == "CropKidneyBean")
+	{
+		_index = 7;
+	}
+	else
+	{
+		_name = "BLANK";
+	}
 
 	ObjectSpawner::GetInstance()->ActiveDropItem("Potato", "Potato", _centerPos, 2);
+
 }
 

@@ -58,9 +58,9 @@ void Action::Play()
 	_time = 0.0f;
 }
 
-void Action::Pause()
+void Action::Pause(bool val)
 {
-	_isPlay = false;
+	_isPlay = val;
 }
 
 void Action::Stop()

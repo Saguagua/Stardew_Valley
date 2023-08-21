@@ -200,7 +200,8 @@ void TileMap::Watering(Vector2 point, short level)
 
 		if (aTile != nullptr)
 		{
-			aTile->GetCrop().lock()->SetWater(true);
+			if (aTile->GetCrop() != nullptr)
+				aTile->GetCrop()->SetWater(true);
 		}
 	}
 }
@@ -369,28 +370,23 @@ vector<int> TileMap::GetFocusedIndices(Vector2 point, short level)
 {
 	Vector2 target = point - Player::GetInstance()->GetWorldPos();
 	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
-	float angle = target.Angle() * 57.2958f;
 	int dir, dir2;
 
-	if (angle > -35.0f && angle <= 35.0f)
+	if (abs(target.x) > abs(target.y))
 	{
-		dir = 1;
+		if (target.x < 0)
+			dir = -1;
+		else
+			dir = 1;
 		dir2 = _curMapSize.x;
-	}
-	else if (angle > 35.0f && angle <= 105.0f)
-	{
-		dir = _curMapSize.x;
-		dir2 = 1;
-	}
-	else if (angle > -105.0f && angle <= -35.0f)
-	{
-		dir = -_curMapSize.x;
-		dir2 = -1;
 	}
 	else
 	{
-		dir = -1;
-		dir2 = -_curMapSize.x;
+		if (target.y < 0)
+			dir = -_curMapSize.x;
+		else
+			dir = _curMapSize.x;
+		dir2 = 1;
 	}
 
 	worldIndex += dir;
@@ -408,7 +404,8 @@ vector<int> TileMap::GetFocusedIndices(Vector2 point, short level)
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			if (worldIndex + i * dir >= 0 && worldIndex + i * dir < _curMapSize.x * _curMapSize.y)
+			if (worldIndex + i * dir >= 0 &&
+				worldIndex + i * dir < _curMapSize.x * _curMapSize.y)
 				indices.push_back(worldIndex + i * dir);
 		}
 		break;
@@ -420,7 +417,8 @@ vector<int> TileMap::GetFocusedIndices(Vector2 point, short level)
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				if (worldIndex + j * dir + (dir2 + i * dir2) >= 0 && worldIndex + j * dir + (dir2 + i * dir2) < _curMapSize.x * _curMapSize.y)
+				if (worldIndex + j * dir + (dir2 + i * dir2) >= 0 &&
+					worldIndex + j * dir + (dir2 + i * dir2) < _curMapSize.x * _curMapSize.y)
 					indices.push_back(worldIndex + j * dir + (dir2 + i * dir2));
 			}
 		}

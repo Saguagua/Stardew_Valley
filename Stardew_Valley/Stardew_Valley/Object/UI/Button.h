@@ -4,7 +4,7 @@ class Button
 public:
 	
 	Button(Vector2 size);
-	~Button() {}
+	virtual ~Button() {}
 
 	virtual void Render() abstract;
 	virtual void Update();

@@ -11,6 +11,7 @@ struct PlayerSubscribe
 	};
 
 	PlayerSubscribe(Type type) { _type = type; }
+	virtual ~PlayerSubscribe() {}
 
 	virtual void UpdateInfo() abstract;
 	virtual void Dead() abstract;

@@ -26,13 +26,13 @@ public:
 	void SetPlantable(bool val) { _plantable = val; }
 
 	bool GetPlantable() { return _plantable; }
-	weak_ptr<Crop> GetCrop() { return _crop; }
+	Crop* GetCrop() { return _crop; }
 	Connect& GetConnect() { return _connect; }
 
 	virtual void Interaction() override;
 
 private:
-	weak_ptr<Crop> _crop;
+	Crop* _crop = nullptr;
 	Connect _connect;
 	bool _plantable = false;
 };

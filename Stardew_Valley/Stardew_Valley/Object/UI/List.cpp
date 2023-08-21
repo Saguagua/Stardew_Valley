@@ -23,12 +23,13 @@ void List::Render()
 {
 	if (!_isActive)
 		return;
+
 	_transform->Set_World(0);
 	_body->Render();
 
 	for (auto button : _buttons)
 	{
-		button->Render();
+		button->PostRender();
 	}
 }
 

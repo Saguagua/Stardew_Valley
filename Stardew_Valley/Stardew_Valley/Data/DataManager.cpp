@@ -160,11 +160,7 @@ void DataManager::LoadPlayerInfo(string playerName)
 		index++;
 	}
 
-	
-
 	fin.close();
-
-	
 
 	_playerInfo = make_shared<PlayerInfo>(playerName, vals, pos, items);
 }

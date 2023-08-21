@@ -10,7 +10,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 
 ObjectSpawner::ObjectSpawner()
 {
-	_renderer = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", TILE_SIZE);
+	_renderer = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", Vector2(20, 20));
 
 	for (int i = 0; i < 60; i++)
 	{
@@ -94,24 +94,36 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 
 }
 
-shared_ptr<Crop> ObjectSpawner::CreateCrop(string name, short progress, short quality, short level)
+Crop* ObjectSpawner::CreateCrop(string name, short progress, short quality, short level)
 {
-	short period = 12;
+	short period = 6;
 	vector<short> vals;
 
 	vals.push_back(period);
 	vals.push_back(progress);
 	vals.push_back(quality);
 	vals.push_back(level);
-	shared_ptr<Crop> crop = make_shared<Crop>(name, Vector2(0, 0), vals);
+
+	Crop* crop = new Crop(name, Vector2(0, 0), vals);
 	_crops.push_back(crop);
+
 	return crop;
 }
 
 void ObjectSpawner::Update_Crops()
 {
-	for (auto crop : _crops)
-		crop->Update();
+	for (std::list<Crop*>::iterator iter = _crops.begin(); iter != _crops.end(); )
+	{
+		if ((*iter)->GetName() == "BLANK")
+		{
+			iter = _crops.erase(iter);
+		}
+		else
+		{
+			(*iter)->Update();
+			++iter;
+		}
+	}
 }
 
 void ObjectSpawner::Update()
@@ -121,17 +133,30 @@ void ObjectSpawner::Update()
 		if (!dropItem->IsActive())
 			continue;
 
-		dropItem->Update();
-
-		if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetCollider()))
-			dropItem->Interaction();
-
-		else if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetMagnatic()))
+		if (!dropItem->IsPoping())
 		{
-			Vector2 dir = Player::GetInstance()->GetWorldPos() - dropItem->GetWorldPos();
-			dir = dir.Normalize();
-			dropItem->AddPos(dir * 100 * DELTA_TIME);
+			for (auto other : _dropItems)
+			{
+				if (!other->IsActive())
+					continue;
+				if (other == dropItem)
+					continue;
+
+				dropItem->GetCollider()->Block(other->GetCollider());
+			}
+			if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetCollider()))
+			{
+				dropItem->Interaction();
+			}
+			else if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetMagnatic()))
+			{
+				Vector2 dir = Player::GetInstance()->GetWorldPos() - dropItem->GetWorldPos();
+				dir = dir.Normalize();
+				dropItem->AddPos(dir * 100 * DELTA_TIME);
+			}
 		}
+
+		dropItem->Update();
 	}
 }
 

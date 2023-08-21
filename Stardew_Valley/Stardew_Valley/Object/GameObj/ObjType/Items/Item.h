@@ -20,7 +20,8 @@ public:
 		WEAPON,
 		RING,
 		SHOOSE,
-		FACILITY
+		FACILITY,
+		BLANK
 	};
 
 	Item()
@@ -50,7 +51,7 @@ protected:
 
 	string _subName;
 
-	short _type = Type::NONE;
+	short _type = Type::BLANK;
 	short _price;
 	short _count;
 	vector<short> _vals;

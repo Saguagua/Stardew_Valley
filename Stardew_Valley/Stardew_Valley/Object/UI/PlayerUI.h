@@ -27,6 +27,8 @@ public:
 	void PostRender();
 	void Update();
 
+	void NextDay();
+
 	void SetHP(float hp);
 	void SetStamina(float stamina);
 	

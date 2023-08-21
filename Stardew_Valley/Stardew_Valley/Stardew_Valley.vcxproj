@@ -224,7 +224,6 @@
     <ClInclude Include="Object\Tile\Tile.h" />
     <ClInclude Include="Object\UI\TimeUI.h" />
     <ClInclude Include="Defines.h" />
-    <ClInclude Include="Object\UI\Window.h" />
     <ClInclude Include="Object\BasicObj\XMLRect.h" />
   </ItemGroup>
   <ItemGroup>
@@ -294,7 +293,6 @@
     <ClCompile Include="Object\BasicObj\RectLine.cpp" />
     <ClCompile Include="Map\TileMap.cpp" />
     <ClCompile Include="Object\UI\TextureButton.cpp" />
-    <ClCompile Include="Object\UI\Window.cpp" />
     <ClCompile Include="Object\Tile\Tile.cpp" />
     <ClCompile Include="Object\BasicObj\XMLRect.cpp" />
     <ClCompile Include="Object\UI\TimeUI.cpp" />
@@ -423,7 +421,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Data\Contents\ItemProperty.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
     <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />

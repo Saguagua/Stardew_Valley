@@ -41,19 +41,6 @@ void Sprite::ChangePicture(string name, int index)
 	_xBuffer->Update();
 }
 
-void Sprite::SetName(string name)
-{
-	_curName = name;
-	XMLInfo::Position pos = _map[_curName]->GetPos(_index);
-	_xBuffer->SetStart(Vector2(pos.x, pos.y));
-	_xBuffer->SetSize(Vector2(pos.w, pos.h));
-	_xBuffer->Update();
-}
-
-void Sprite::SetIndex(int index)
-{
-}
-
 void Sprite::CreateVertices()
 {
 	VertexTexture v;

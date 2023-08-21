@@ -3,9 +3,10 @@ class TextureButton :public Button
 {
 public:
 	TextureButton(wstring path, string name, Vector2 size);
-	virtual ~TextureButton() {}
+	~TextureButton() {}
 
 	virtual void Render() override;
+	void PostRender();
 	virtual void Update() override;
 
 	string GetName();

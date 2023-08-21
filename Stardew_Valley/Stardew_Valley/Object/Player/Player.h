@@ -7,6 +7,8 @@ class PlayerSubscribe;
 
 class Player
 {
+	friend class Item;
+
 	Player();
 	~Player() {}
 
@@ -44,29 +46,37 @@ public:
 	
 	shared_ptr<PlayerInfo> RequestSubscribe(PlayerSubscribe* subscriber);
 	void CancelSubscribe(PlayerSubscribe* subscriber);
-	void SendToSubscribers(int type);
 
 	shared_ptr<RectCollider> GetCollider() { return _col; }
 	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
+	vector<CallBackInt> GetSelectedIndexCallback();
 
 	bool AddMaxHP(short cost);
 	bool AddMaxStamina(short cost);
 	bool AddHP(short cost);
 	bool AddStamina(short cost);
+	bool AddItem(string name);
+
+	
 private:
 	static Player* _instance;
 
 	void CreateAction();
 	void SetBodyAction(int index);
 	void SetArmAction(int index);
+	void SetPause(bool val);
 
 	void KeyInput();
 	void Move();
 	void Items();
 	void Mouse();
 	void SetSelectedItemIndex(int index);
+	void SetDirection(Vector2 pos);
+
+
+	void SendToSubscribers(int type);
 
 	shared_ptr<Transform> _bodySlot;
 	shared_ptr<Transform> _itemSlot;

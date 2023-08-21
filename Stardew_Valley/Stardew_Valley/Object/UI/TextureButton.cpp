@@ -14,6 +14,12 @@ void TextureButton::Render()
 	_renderer->Render();
 }
 
+void TextureButton::PostRender()
+{
+	_col->Render();
+	_renderer->Render();
+}
+
 void TextureButton::Update()
 {
 	_col->Update();
@@ -27,5 +33,5 @@ string TextureButton::GetName()
 
 void TextureButton::SetName(string name)
 {
-	_renderer->SetName(name);
+	_renderer->ChangePicture(name);
 }

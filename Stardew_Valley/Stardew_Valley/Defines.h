@@ -59,3 +59,5 @@
 #define CallBack		function<void()>
 #define CallBackInt		function<void(int)>
 #define CallBackBool	function<void(bool)>
+
+#define GRAVITY			9.8f

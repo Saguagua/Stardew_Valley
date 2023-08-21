@@ -44,8 +44,9 @@ void Timer::Update()
 			_hour++;
 			_minute = 0;
 
-			if (_hour > 6) //24
+			if (_hour > 10) //24
 			{
+				PlayerUI::GetInstance()->NextDay();
 				ObjectSpawner::GetInstance()->Update_Crops();
 				_hour = 6;
 			}

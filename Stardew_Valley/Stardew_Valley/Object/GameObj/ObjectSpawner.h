@@ -1,4 +1,6 @@
 #pragma once
+class Crop;
+
 class ObjectSpawner
 {
 	ObjectSpawner();
@@ -25,7 +27,7 @@ public:
 
 	shared_ptr<DeployableObject> CreateObj(string objName);
 	void CreateObj(shared_ptr<class MapInfo> map, int index, string objName, short val1, short val2);
-	shared_ptr<class Crop> CreateCrop(string name, short progress = 0, short quality = 2, short level = 0);
+	Crop* CreateCrop(string name, short progress = 0, short quality = 2, short level = 0);
 	
 	void Update_Crops();
 	void Update();
@@ -37,13 +39,13 @@ public:
 private:
 	static ObjectSpawner* _instance;
 
-	unordered_map<string, shared_ptr<class DropInfo>>& _dropTable     =	DATA->GetDropInfos();
-	unordered_map<string, shared_ptr<class DeployInfo>>& _deployTable =	DATA->GetDeployInfos();
-	unordered_map<string, shared_ptr<class ItemInfo>>& _itemTable	 =	DATA->GetItemInfos();
-	unordered_map<string, shared_ptr<class CropInfo>>& _cropTable = DATA->GetCropInfos();
+	unordered_map<string, shared_ptr<DropInfo>>& _dropTable     =	DATA->GetDropInfos();
+	unordered_map<string, shared_ptr<DeployInfo>>& _deployTable =	DATA->GetDeployInfos();
+	unordered_map<string, shared_ptr<ItemInfo>>& _itemTable	 =	DATA->GetItemInfos();
+	unordered_map<string, shared_ptr<CropInfo>>& _cropTable = DATA->GetCropInfos();
 
 	vector<shared_ptr<class DropItem>> _dropItems;
-	vector<shared_ptr<class Crop>> _crops;
+	list<Crop*> _crops;
 
 	shared_ptr<class PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
 	shared_ptr<class Sprite> _renderer;

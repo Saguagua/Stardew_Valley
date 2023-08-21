@@ -40,7 +40,6 @@ void BagUI::Render()
 	if (!_isActive)
 		return;
 
-
 	List::Render();
 
 	if (_selectedIndex != -1)
@@ -69,11 +68,10 @@ void BagUI::ClickItem(int index)
 		_buttons[index]->GetName() != "BLANK")
 	{
 		_selectedIndex = index;
-		
 	}
 	else
 	{
-		//DATA->SwapItems(_selectedIndex, index);
+		//Player::GetInstance()->SwapItems(_selectedIndex, index);
 
 		_selectedIndex = -1;
 	}
@@ -83,7 +81,7 @@ void BagUI::UpdateInfo()
 {
 	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
 
-	for (int i = 0; i < _buttons.size(); i++)
+	for (int i = 0; i < items.size(); i++)
 	{
 		_buttons[i]->SetName(items[i]->GetName());
 	}

@@ -73,6 +73,18 @@ void Player::SendToSubscribers(int type)
 	}
 }
 
+vector<CallBackInt> Player::GetSelectedIndexCallback()
+{
+	vector<CallBackInt> v;
+
+	for (int i = 0; i < 10; i++)
+	{
+		CallBackInt cb = std::bind(&Player::SetSelectedItemIndex, this, i);
+	}
+
+	return v;
+}
+
 bool Player::AddMaxHP(short cost)
 {
 	return false;
@@ -116,6 +128,37 @@ bool Player::AddStamina(short cost)
 
 	return !(_playerInfo->GetState() & PlayerState::DEAD);
 }
+
+bool Player::AddItem(string name)
+{
+	int empty = -1;
+	auto items = _playerInfo->GetItems();
+
+	for (int i = 0; i < items.size(); i++)
+	{
+		if (items[i]->GetName() == name)
+		{
+			if (items[i]->AddCount())
+			{
+				SendToSubscribers(PlayerSubscribe::Type::ITEMS);
+				return true;
+			}
+		}
+		else if (empty == -1 && items[i]->GetName() == "BLANK")
+		{
+			empty = i;
+		}
+	}
+	if (empty != -1)
+	{
+		items[empty]->SetItem(name, 1);
+		SendToSubscribers(PlayerSubscribe::Type::ITEMS);
+		return true;
+	}
+
+	return false;
+}
+
 
 void Player::CancelSubscribe(PlayerSubscribe* sub)
 {
@@ -164,6 +207,30 @@ void Player::SetSelectedItemIndex(int index)
 	}
 	
 	SetArmAction(armIndex);
+}
+
+void Player::SetDirection(Vector2 pos)
+{
+	Vector2 dir = pos - _col->GetWorldPos();
+
+	if (abs(dir.x) > abs(dir.y))
+	{
+		if (dir.x < 0)
+			_col->SetScale(Vector2(-1, 1));
+		else
+			_col->SetScale(Vector2(1, 1));
+
+		_dir = SIDE;
+	}
+	else
+	{
+		if (dir.y < 0)
+			_dir = FRONT;
+		else
+			_dir = BACK;
+	}
+	
+
 }
 
 void Player::CreateAction()
@@ -399,6 +466,12 @@ void Player::SetArmAction(int state)
 	_armActions[_armIndex]->Play();
 }
 
+void Player::SetPause(bool val)
+{
+	_armActions[_armIndex]->Pause(val);
+	_bodyActions[_bodyIndex]->Pause(val);
+}
+
 void Player::Move()
 {
 	int& state = _playerInfo->GetStateRef();
@@ -600,13 +673,22 @@ void Player::Items()
 void Player::Mouse()
 {
 	auto item = _playerInfo->GetSelectedItem();
-	item->KeyInput();
-
-	if (item->GetType() == Item::Type::NONE)
+	
+	if (item->GetType() == Item::Type::NONE || item->GetType() == Item::Type::BLANK)
 	{
 		if (KEY_DOWN(VK_LBUTTON))
 		{
 			TileMap::GetInstance()->GetFocusedTile()->Interaction();
+		}
+	}
+	else
+	{
+		item->KeyInput();
+
+		if (item->GetName() == "BLANK")
+		{
+			SendToSubscribers(PlayerSubscribe::Type::ITEMS);
+			SetSelectedItemIndex(_playerInfo->GetSelectedIndex());
 		}
 	}
 }

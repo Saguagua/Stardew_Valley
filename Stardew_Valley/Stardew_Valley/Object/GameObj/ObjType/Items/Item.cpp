@@ -73,6 +73,11 @@ void Item::SetItem(string name, short count)
 
 bool Item::AddCount()
 {
+	if (_count < 64)
+	{
+		_count++;
+		return true;
+	}
 	return false;
 }
 
@@ -86,11 +91,14 @@ void Item::Hoe()
 		_chargeCount = 0;
 		_chargeTime = 0;
 		_point = W_MOUSE_POS;
+		Player::GetInstance()->SetDirection(_point);
+		Player::GetInstance()->SetArmAction(Player::PlayerAction::TOOL);
+		Player::GetInstance()->SetBodyAction(Player::PlayerAction::TOOL);
 	}
 	else if (KEY_PRESS(VK_LBUTTON))
 	{
 		_chargeTime += DELTA_TIME;
-
+		Player::GetInstance()->SetPause(false);
 		if (_chargeTime > 1)
 		{
 			_chargeTime = 0;
@@ -103,6 +111,7 @@ void Item::Hoe()
 	else if (KEY_UP(VK_LBUTTON))
 	{
 		Player::GetInstance()->AddStamina(_vals[1]);
+		Player::GetInstance()->SetPause(true);
 
 		TileMap::GetInstance()->Hoeing(_point, _chargeCount);
 
@@ -159,6 +168,20 @@ void Item::Weapon()
 
 void Item::Eat()
 {
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		Player::GetInstance()->AddMaxHP(_vals[0]);
+		Player::GetInstance()->AddMaxStamina(_vals[1]);
+		Player::GetInstance()->AddHP(_vals[2]);
+		Player::GetInstance()->AddStamina(_vals[3]);
+		
+		_count--;
+
+		if (_count >= 0)
+		{
+			SetItem("BLANK", 0);
+		}
+	}
 }
 
 void Item::Seed()

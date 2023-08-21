@@ -3,7 +3,7 @@ class ItemSlot : public List, PlayerSubscribe
 {
 public:
 	ItemSlot();
-	virtual ~ItemSlot() {}
+	~ItemSlot() {}
 
 	void Update();
 
@@ -13,7 +13,6 @@ public:
 
 private:
 	void CreateButtons(wstring path, int count);
-	void SetButtons(Vector2 startPos, Vector2 space);
 
 };
 

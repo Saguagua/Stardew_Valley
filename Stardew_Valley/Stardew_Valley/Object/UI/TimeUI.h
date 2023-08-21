@@ -9,7 +9,7 @@ public:
 	void Update();
 
 	void SetPos(Vector2 pos) { _bodySlot->SetPos(pos); }
-
+	void SetRotate(float angle) { _rotateSlot->SetAngle(angle); }
 private:
 	shared_ptr<Transform> _bodySlot;
 	shared_ptr<Transform> _rotateSlot;
