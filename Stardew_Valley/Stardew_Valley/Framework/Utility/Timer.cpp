@@ -39,12 +39,12 @@ void Timer::Update()
 		_frameCount = 0;
 
 		_minute++;
-		if (_minute == 1) //10
+		if (_minute == MAXMINUTE) //10
 		{
 			_hour++;
 			_minute = 0;
 
-			if (_hour > 10) //24
+			if (_hour > MAXHOUR) //24
 			{
 				PlayerUI::GetInstance()->NextDay();
 				ObjectSpawner::GetInstance()->Update_Crops();

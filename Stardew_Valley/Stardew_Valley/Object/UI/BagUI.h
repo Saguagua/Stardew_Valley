@@ -21,6 +21,5 @@ private:
 	shared_ptr<Sprite> _obj;
 
 	int _selectedIndex = -1;
-
 };
 

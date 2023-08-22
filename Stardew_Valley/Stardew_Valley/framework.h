@@ -28,12 +28,14 @@
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"d3dcompiler.lib")
 
-#include "../DXTex/DirectXTex.h"
+#include "DirectXTex.h"
+#pragma comment(lib, "DirectXTex/DirectXTex.lib")
 
-#include "../ImGui/imgui.h"
-#include "../ImGui/imgui_impl_dx11.h"
-#include "../ImGuI/imgui_impl_win32.h"
+#include "ImGui/imgui.h"
+#include "ImGui/imgui_impl_dx11.h"
+#include "ImGuI/imgui_impl_win32.h"
 
+#pragma comment(lib, "ImGui/ImGui.lib")
 
 // FMOD
 #include "Library/FMOD/inc/fmod.hpp"
@@ -42,6 +44,8 @@
 using namespace std;
 using namespace DirectX;
 using namespace Microsoft::WRL;
+
+
 
 #include "Defines.h"
 #include "Enums.h"
@@ -134,4 +138,4 @@ using namespace Microsoft::WRL;
 #include "Program/Program.h"
 
 
-extern HWND hWnd;
+extern HWND _hWnd;

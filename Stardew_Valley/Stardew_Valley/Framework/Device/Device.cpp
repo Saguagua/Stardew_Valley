@@ -28,7 +28,7 @@ void Device::Present()
 void Device::CreateDeviceAndSwapChain()
 {
     RECT rc;
-    GetClientRect(hWnd, &rc);
+    GetClientRect(_hWnd, &rc);
     clientSize.x = rc.right - rc.left;
     clientSize.y = rc.bottom - rc.top;
 
@@ -49,7 +49,7 @@ void Device::CreateDeviceAndSwapChain()
     sd.BufferDesc.RefreshRate.Numerator = 60;
     sd.BufferDesc.RefreshRate.Denominator = 1;
     sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-    sd.OutputWindow = hWnd;
+    sd.OutputWindow = _hWnd;
     sd.SampleDesc.Count = 1;
     sd.SampleDesc.Quality = 0;
     sd.Windowed = true;

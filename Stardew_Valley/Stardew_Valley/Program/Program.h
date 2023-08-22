@@ -3,11 +3,13 @@ class Program
 {
 public:
 	Program();
-	~Program() {}
+	~Program();
 
 	void Update();
 	void Render();
 
 private:
+	void Initialize();
+
 	shared_ptr<Scene> _scene;
 };

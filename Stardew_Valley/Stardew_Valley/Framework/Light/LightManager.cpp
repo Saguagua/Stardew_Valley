@@ -29,14 +29,21 @@ LightManager::LightManager()
 void LightManager::Update()
 {
 	int hour = TIMER->GetHour();
-	//-0.15
+	
+
 	if (hour == 6)
 		_colorBuffer->GetSun() = { 0.8f, 0.8f, 0.8f, 1.0f };
-	else if (hour < 8) //14, 0.0114
-		_colorBuffer->GetBrighter({ 0.1f * DELTA_TIME, 0.1f * DELTA_TIME, 0.1f * DELTA_TIME, 0 });
-	else //0.045
+	else if (hour < SUNSET)
 	{
-		_colorBuffer->GetDarker({ 0.4f * DELTA_TIME, 0.4f * DELTA_TIME, 0.4f * DELTA_TIME, 0 });
+		int tmp = SUNSET - 6;
+		float val = 0.2f / tmp;
+		_colorBuffer->GetBrighter({ 0.0114f * DELTA_TIME, 0.0114f * DELTA_TIME, 0.0114f * DELTA_TIME, 0 });
+	}
+	else
+	{
+		int tmp = 24 - SUNSET;
+		float val = 0.5f / tmp;
+		_colorBuffer->GetDarker({ 0.045f * DELTA_TIME, 0.045f * DELTA_TIME, 0.045f * DELTA_TIME, 0 });
 	}
 
 	_colorBuffer->Update();

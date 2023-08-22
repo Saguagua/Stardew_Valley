@@ -1,13 +1,13 @@
-NONE		0 가격
-AXE		1 가격 데미지
+NONE			0 가격
+AXE				1 가격 데미지
 EATABLE,		2 가격 mh ms h s
-FISHINGROD,	3 가격 레벨
-HOE,		4 가격 레벨
+FISHINGROD,		3 가격 레벨
+HOE,			4 가격 레벨
 PICKAXE,		5 가격 데미지
 WATERINGCAN,	6 가격 레벨
-SEED		7 가격 타입
-FERTI		8 가격 물 성능
-WEAPON		9 가격 타입 데미지 속도
-RING		10 가격 체력
-SHOOSE		11 가격 속도
+SEED			7 가격 타입
+FERTI			8 가격 물 성능
+WEAPON			9 가격 타입 데미지 속도
+RING			10 가격 체력
+SHOOSE			11 가격 속도
 FACILITY		12 이름 크기

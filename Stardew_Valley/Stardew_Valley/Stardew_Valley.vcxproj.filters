@@ -514,14 +514,22 @@
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
     <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
     <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
+    <Text Include="Data\SaveFiles\Dungeon.txt" />
+    <Text Include="Data\SaveFiles\Farming.txt" />
+    <Text Include="Data\SaveFiles\Fishing.txt" />
+    <Text Include="Data\SaveFiles\Test.txt" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Resource\UI\UI.xml" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Library\FMOD\fmod_vc.lib" />
+    <Library Include="Library\DirectXTex\DirectXTex.lib" />
+    <Library Include="Library\ImGui\ImGUI.lib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fmod.dll" />
+    <None Include="Library\ImGui\ImGUI.idb" />
+    <None Include="Library\ImGui\ImGUI.pdb" />
   </ItemGroup>
 </Project>

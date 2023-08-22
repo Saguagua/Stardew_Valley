@@ -21,12 +21,24 @@
 
 #define CAMERA			Camera::GetInstance()
 
+#define DATA			DataManager::GetInstance()
+
 #define TIMER			Timer::GetInstance()
 #define DELTA_TIME		Timer::GetInstance()->GetDeltaTime()
 #define FPS				Timer::GetInstance()->GetFPS()
 #define RUNTIME			Timer::GetInstance()->GetRunTime()
+#define MAXHOUR			24
+#define MAXMINUTE		10
+#define SUNSET			14
 
-#define DATA			DataManager::GetInstance()
+#define TILEMAP			TileMap::GetInstance()
+#define MAP_SIZE		Vector2(50, 50)
+#define TILE_SIZE		Vector2(40, 40)
+
+#define PLAYER			Player::GetInstance()
+#define SPEED			200.0f
+
+#define OBSPAWNER		ObjectSpawner::GetInstance()
 
 #define PALETTE			Palette::GetInstance()
 
@@ -47,14 +59,10 @@
 #define BLEND			StateManager::GetInstance()->GetBlend()
 #define SAMPLER			StateManager::GetInstance()->GetSampler()
 
-#define ADD_SRV(k)		SRVManager::GetInstance()->AddSRV(k);
-#define ADD_SRV_SIZE(p, s)		SRVManager::GetInstance()->AddSRV(p, s);
+#define ADD_SRV(k)		SRVManager::GetInstance()->AddSRV(k)
+#define ADD_SRV_SIZE(p, s)		SRVManager::GetInstance()->AddSRV(p, s)
 
 #define ADD_TILE(path, frame, size)		TileManager::GetInstance()->GetTile(path, frame, size);
-
-#define MAP_SIZE		Vector2(50, 50)
-#define TILE_SIZE		Vector2(40, 40)
-#define SPEED			200.0f
 
 #define CallBack		function<void()>
 #define CallBackInt		function<void(int)>
