@@ -1,6 +1,7 @@
 #include "framework.h"
 #include "../../../Tile/TileType/ArableTile.h"
 #include "../../../Tile/TileType/FishableTile.h"
+#include "Object\GameObj\ObjType\DeployableObj\BreakableItem.h"
 #include "../../../Player/Player.h"
 #include "Item.h"
 
@@ -8,11 +9,6 @@ void Item::KeyInput()
 {
 	switch (_type)
 	{
-	case Item::AXE:
-	{
-		Axe();
-		break;
-	}
 	case Item::EATABLE:
 	{
 		Eat();
@@ -28,6 +24,7 @@ void Item::KeyInput()
 		Hoe();
 		break;
 	}
+	case Item::AXE:
 	case Item::PICKAXE:
 	{
 		PickAxe();
@@ -62,7 +59,8 @@ void Item::KeyInput()
 
 void Item::SetItem(string name, short count)
 {
-	shared_ptr<ItemInfo> info = DATA->GetItemInfos()[name];
+	shared_ptr<ItemInfo> info = DATA->GetItemInfo(name);
+
 	_name = name;
 	_count = count;
 	_subName = info->GetSubName();
@@ -150,16 +148,60 @@ void Item::Water()
 	
 }
 
-void Item::Axe()
-{
-}
-
 void Item::PickAxe()
 {
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		_point = W_MOUSE_POS;
+
+		PLAYER->SetDirection(_point);
+		PLAYER->SetArmAction(Player::PlayerAction::TOOL);
+		PLAYER->SetBodyAction(Player::PlayerAction::TOOL);
+
+		PLAYER->AddStamina(_vals[1]);
+
+		shared_ptr<DeployableObject> obj = TILEMAP->GetFocusedTile()->GetObj();
+		auto breakObj = dynamic_pointer_cast<BreakableItem>(obj);
+
+		if (obj != nullptr)
+		{
+			obj->Interaction();
+		}
+	}
 }
 
 void Item::Fishing()
 {
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		_chargeCount = 0;
+		_chargeTime = 0;
+		_point = W_MOUSE_POS;
+		Player::GetInstance()->SetDirection(_point);
+		Player::GetInstance()->SetArmAction(Player::PlayerAction::TOOL);
+		Player::GetInstance()->SetBodyAction(Player::PlayerAction::TOOL);
+	}
+	else if (KEY_PRESS(VK_LBUTTON))
+	{
+		_chargeTime += DELTA_TIME;
+		Player::GetInstance()->SetPause(false);
+		if (_chargeTime > 1)
+		{
+			_chargeTime = 0;
+			if (_chargeCount < _vals[0])
+				_chargeCount++;
+
+			TileMap::GetInstance()->Hoeing(_point, _chargeCount);
+		}
+	}
+	else if (KEY_UP(VK_LBUTTON))
+	{
+		Player::GetInstance()->AddStamina(_vals[1]);
+		Player::GetInstance()->SetPause(true);
+
+		TileMap::GetInstance()->Hoeing(_point, _chargeCount);
+
+	}
 }
 
 void Item::Weapon()
@@ -190,7 +232,7 @@ void Item::Seed()
 	{
 		_point = W_MOUSE_POS;
 		auto tile = dynamic_pointer_cast<ArableTile>(TileMap::GetInstance()->GetFocusedTile());
-		if (tile->GetPlantable())
+		if (tile->GetPlantable() && tile->GetCrop() != nullptr)
 			tile->Plant(_subName);
 	}
 }

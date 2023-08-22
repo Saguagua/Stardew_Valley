@@ -1,6 +1,7 @@
 #pragma once
 class DeployableObject : public GameObject
 {
+
 public:
 	enum Type
 	{

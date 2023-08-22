@@ -3,7 +3,7 @@ class CircleCollider : public enable_shared_from_this<CircleCollider>, public Co
 {
 public:
 	CircleCollider(float radius);
-	virtual ~CircleCollider() {}
+	~CircleCollider() {}
 
 	virtual void Render() override;
 

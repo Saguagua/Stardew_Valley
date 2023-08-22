@@ -1,4 +1,4 @@
-BREAK 	0 체력 0 0
+BREAK 	0 hp breakType 0 // 1=>Axe 5=> PickAxe
 PICK 	1 0 0 0
 LIGHT 	2 r g b 
 BOX 	3 0 0 0

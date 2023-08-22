@@ -3,6 +3,7 @@ class Shader
 {
 public:
 	Shader(wstring path):_path(path) {}
+	virtual ~Shader() {}
 
 protected:
 	virtual void CreateBlob(wstring path) abstract;

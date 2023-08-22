@@ -114,7 +114,6 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	Vector2 pos;
 	
-
 	ifstream fin;
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerInfo.txt");
 

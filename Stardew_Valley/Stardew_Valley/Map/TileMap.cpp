@@ -7,12 +7,15 @@ TileMap* TileMap::_instance = nullptr;
 
 TileMap::TileMap()
 {
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE);
+		col->SetDebug(true);
 		_colliders.push_back(col);
 	}
-	
+
+	_colliders[0]->SetDebug(false);
+
 	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", TILE_SIZE, SpriteType::OBJECT);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
 	_focusRenderer->SetColor(XMFLOAT4(0, 1, 0, 0.5));
@@ -39,6 +42,7 @@ void TileMap::Blocking()
 	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
 	int x = -2;
 	int y = -1;
+	vector<shared_ptr<RectCollider>> cols;
 
 	for (int i = 1; i < _colliders.size(); i++)
 	{
@@ -55,18 +59,16 @@ void TileMap::Blocking()
 		if (index < 0 || index >= _curMapSize.x * _curMapSize.y)
 			continue;
 
-		bool isBlock = _tileInfos[_tiles[index]->GetName()] & TileType::BLOCK;
-
-		bool objBlock = (_tiles[index]->GetObj() != nullptr &&
-			_tiles[index]->GetObj()->GetType() != DeployableObject::Type::CROP);
 		
-		if (!isBlock && !objBlock)
+		if (!_tiles[index]->IsBlock())
 			continue;
 
+		
 		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
 		_colliders[i]->GetTransform()->Update_SRT();
 		_colliders[i]->Block(Player::GetInstance()->GetCollider());
 	}
+
 }
 
 void TileMap::ChangeTile()
@@ -217,6 +219,12 @@ void TileMap::Render()
 
 		if (_tiles[i]->IsFocus())
 			_focusRenderer->Render();
+	}
+
+	for (int i = 1; i < _colliders.size(); i++)
+	{
+		_colliders[i]->Update();
+		_colliders[i]->Render();
 	}
 }
 

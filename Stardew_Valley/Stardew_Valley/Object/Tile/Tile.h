@@ -15,6 +15,7 @@ public:
 	bool IsFocus() { return _onFocus; }
 	shared_ptr<DeployableObject> GetObj() { return _obj; }
 	string GetObjName() { return _objName; }
+	bool IsBlock();
 
 	void SetName(string name) { _tileName = name; }
 	void SetCenterPos(Vector2 pos) { _centerPos = pos; }

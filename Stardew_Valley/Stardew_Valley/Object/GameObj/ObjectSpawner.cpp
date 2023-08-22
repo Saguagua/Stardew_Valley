@@ -27,7 +27,7 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 	{
 	case DeployableObject::BREAK:
 	{
-		 obj = make_shared<BreakableItem>(objName, Vector2(0,0));
+		 obj = make_shared<BreakableItem>(objName, Vector2(0,0), vals[0], vals[1]);
 		 break;
 	}
 	case DeployableObject::PICK:

@@ -3,7 +3,7 @@ class PixelShader :public Shader
 {
 public:
 	PixelShader(wstring path);
-	virtual ~PixelShader() {}
+	~PixelShader() {}
 
 	virtual void SetShader() override;
 	

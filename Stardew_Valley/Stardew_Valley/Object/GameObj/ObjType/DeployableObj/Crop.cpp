@@ -43,6 +43,5 @@ void Crop::Interaction()
 	}
 
 	ObjectSpawner::GetInstance()->ActiveDropItem("Potato", "Potato", _centerPos, 2);
-
 }
 

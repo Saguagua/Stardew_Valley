@@ -3,7 +3,7 @@ class ColliderScene : public Scene
 {
 public:
 	ColliderScene();
-	virtual ~ColliderScene() {}
+	~ColliderScene() {}
 
 	virtual void Update() override;
 	virtual void Render() override;

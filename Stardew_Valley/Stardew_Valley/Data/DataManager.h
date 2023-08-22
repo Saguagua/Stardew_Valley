@@ -35,10 +35,15 @@ public:
 	unordered_map<string, int>& GetTileInfos() { return _tileTable; }
 	int GetTileInfo(string tileName) { return _tileTable[tileName]; }
 
-	unordered_map<string, shared_ptr<DropInfo>>& GetDropInfos() { return _dropTable; }
-	unordered_map<string, shared_ptr<DeployInfo>>& GetDeployInfos() { return _deployTable; }
-	unordered_map<string, shared_ptr<ItemInfo>>& GetItemInfos() { return _itemTable; }
-	unordered_map<string, shared_ptr<CropInfo>>& GetCropInfos() { return _cropTable; }
+	unordered_map<string, shared_ptr<DropInfo>>&	GetDropInfos()	{ return _dropTable; }
+	unordered_map<string, shared_ptr<DeployInfo>>&	GetDeployInfos(){ return _deployTable; }
+	unordered_map<string, shared_ptr<ItemInfo>>&	GetItemInfos()	{ return _itemTable; }
+	unordered_map<string, shared_ptr<CropInfo>>&	GetCropInfos()	{ return _cropTable; }
+
+	shared_ptr<DropInfo>	GetDropInfo(string key)		{ return _dropTable[key]; }
+	shared_ptr<DeployInfo>	GetDeployInfo(string key)	{ return _deployTable[key]; }
+	shared_ptr<ItemInfo>	GetItemInfo(string key)		{ return _itemTable[key]; }
+	shared_ptr<CropInfo>	GetCropInfo(string key)		{ return _cropTable[key]; }
 
 	void Save();
 	void Load(string name);

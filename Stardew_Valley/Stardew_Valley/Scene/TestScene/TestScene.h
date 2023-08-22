@@ -3,7 +3,7 @@ class TestScene :public Scene
 {
 public:
 	TestScene();
-	virtual ~TestScene();
+	~TestScene();
 
 	virtual void Update() override;
 	virtual void Render() override;

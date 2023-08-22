@@ -39,10 +39,10 @@ public:
 private:
 	static ObjectSpawner* _instance;
 
-	unordered_map<string, shared_ptr<DropInfo>>& _dropTable     =	DATA->GetDropInfos();
-	unordered_map<string, shared_ptr<DeployInfo>>& _deployTable =	DATA->GetDeployInfos();
-	unordered_map<string, shared_ptr<ItemInfo>>& _itemTable	 =	DATA->GetItemInfos();
-	unordered_map<string, shared_ptr<CropInfo>>& _cropTable = DATA->GetCropInfos();
+	unordered_map<string, shared_ptr<DropInfo>>& _dropTable		= DATA->GetDropInfos();
+	unordered_map<string, shared_ptr<DeployInfo>>& _deployTable	= DATA->GetDeployInfos();
+	unordered_map<string, shared_ptr<ItemInfo>>& _itemTable		= DATA->GetItemInfos();
+	unordered_map<string, shared_ptr<CropInfo>>& _cropTable		= DATA->GetCropInfos();
 
 	vector<shared_ptr<class DropItem>> _dropItems;
 	list<Crop*> _crops;
@@ -50,4 +50,3 @@ private:
 	shared_ptr<class PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
 	shared_ptr<Sprite> _renderer;
 };
-

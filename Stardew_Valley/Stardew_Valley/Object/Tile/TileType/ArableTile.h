@@ -17,7 +17,7 @@ public:
 	{
 	}
 
-	virtual ~ArableTile() {}
+	~ArableTile() {}
 
 	virtual void Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col) override;
 

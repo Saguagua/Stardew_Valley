@@ -3,7 +3,7 @@ class Collider
 {
 public:
 	Collider() {}
-	~Collider() {}
+	virtual ~Collider() {}
 
 	void Update();
 	virtual void Render() abstract;

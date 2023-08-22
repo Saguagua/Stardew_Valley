@@ -4,7 +4,7 @@ class PickableItem :public DeployableObject
 public:
 	PickableItem(string name, Vector2 pos) :DeployableObject(DeployableObject::Type::PICK, name, pos) {}
 
-	virtual ~PickableItem() {}
+	~PickableItem() {}
 	virtual void Interaction() override;
 };
 

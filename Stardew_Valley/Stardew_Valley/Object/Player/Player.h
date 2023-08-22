@@ -53,6 +53,8 @@ public:
 	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
 	vector<CallBackInt> GetSelectedIndexCallback();
 
+	const shared_ptr<Item> GetSelectedItem() { return _playerInfo->GetSelectedItem(); }
+
 	bool AddMaxHP(short cost);
 	bool AddMaxStamina(short cost);
 	bool AddHP(short cost);
@@ -74,7 +76,6 @@ private:
 	void Mouse();
 	void SetSelectedItemIndex(int index);
 	void SetDirection(Vector2 pos);
-
 
 	void SendToSubscribers(int type);
 

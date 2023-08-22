@@ -29,8 +29,8 @@ void TestScene::Update()
 	ObjectSpawner::GetInstance()->Update();
 	PlayerUI::GetInstance()->Update();
 
-	TileMap::GetInstance()->Update();
 	Player::GetInstance()->Update();
+	TileMap::GetInstance()->Update();
 }
 
 void TestScene::Render()

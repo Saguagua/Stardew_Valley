@@ -82,6 +82,7 @@ struct Vector2 : public XMFLOAT2
 
 		result.x = x * x / length;
 		result.y = y * y / length;
+
 		if (x < 0)
 			result.x *= -1;
 		if (y < 0)

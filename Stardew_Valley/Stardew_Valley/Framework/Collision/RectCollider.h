@@ -11,7 +11,7 @@ public:
 	};
 
 	RectCollider(Vector2 size);
-	virtual ~RectCollider() {}
+	~RectCollider() {}
 
 	AABB_Info GetAABB_Info();
 
@@ -26,6 +26,7 @@ public:
 	bool Block(shared_ptr<CircleCollider> other);
 	bool Block(shared_ptr<RectCollider> other);
 	
+	void SetSize(Vector2 size);
 private:
 	friend CircleCollider;
 	friend RectCollider;

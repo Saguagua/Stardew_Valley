@@ -3,7 +3,7 @@ class VertexShader :public Shader
 {
 public:
 	VertexShader(wstring path);
-	virtual ~VertexShader() {}
+	~VertexShader() {}
 
 	void SetIA_InputLayout();
 	virtual void SetShader() override;

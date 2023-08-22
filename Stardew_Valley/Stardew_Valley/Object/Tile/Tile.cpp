@@ -24,6 +24,14 @@ void Tile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 	col->Render(); // 여기 수정 필요
 }
 
+bool Tile::IsBlock()
+{
+	bool isBlock = DATA->GetTileInfo(_tileName) & TileType::BLOCK;
+	bool objBlock = (_obj != nullptr && _obj->GetType() != DeployableObject::Type::CROP);
+
+	return isBlock || objBlock;
+}
+
 void Tile::Interaction()
 {
 	if (_obj != nullptr)

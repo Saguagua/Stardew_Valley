@@ -4,7 +4,7 @@ class BagUI :public List, PlayerSubscribe
 {
 public:
 	BagUI();
-	virtual ~BagUI() {}
+	~BagUI() {}
 
 	void Update();
 	void Render();

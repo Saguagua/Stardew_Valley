@@ -125,25 +125,47 @@ bool RectCollider::Block(shared_ptr<RectCollider> other)
 	AABB_Info myAB = GetAABB_Info();
 	AABB_Info otherAB = other->GetAABB_Info();
 
-	/*float yDistance = _size.y / 2 + otherRadius - abs(otherCenter.y - myCenter.y);
-	float xDistance = _size.x / 2 + otherRadius - abs(otherCenter.x - myCenter.x);
+	AABB_Info infoA = GetAABB_Info();
+	AABB_Info infoB = other->GetAABB_Info();
 
-	if (xDistance > yDistance)
+	Vector2 halfSizeA = Vector2(infoA.right - infoA.left, infoA.Up - infoA.Down) * 0.5f;
+	Vector2 halfSizeB = Vector2(infoB.right - infoB.left, infoB.Up - infoB.Down) * 0.5f;
+
+	Vector2 dir = other->GetWorldPos() - GetWorldPos();
+
+	Vector2 overlap;
+	overlap.x = (halfSizeA.x + halfSizeB.x) - abs(dir.x);
+	overlap.y = (halfSizeA.y + halfSizeB.y) - abs(dir.y);
+
+	if (overlap.y > overlap.x)
 	{
-		AtoB.x = 0;
-		Vector2 normal = AtoB.Normalize();
-		Vector2 power = normal * yDistance;
-		other->SetPos(other->GetTransform()->GetWorldPos() + power);
+		Vector2 temp = other->GetWorldPos();
+		dir.y = 0;
+		Vector2 normal = dir.Normalize();
+		temp.x += normal.x * overlap.x;
+
+		other->GetTransform()->SetPos(temp);
 	}
 	else
 	{
-		AtoB.y = 0;
-		Vector2 normal = AtoB.Normalize();
-		Vector2 power = normal * xDistance;
-		other->SetPos(other->GetTransform()->GetWorldPos() + power);
-	}*/
+		Vector2 temp = other->GetWorldPos();
+		dir.x = 0;
+		Vector2 normal = dir.Normalize();
+		temp.y += normal.y * overlap.y;
+		other->GetTransform()->SetPos(temp);
+	}
 
 	return true;
+}
+
+void RectCollider::SetSize(Vector2 size)
+{
+	Vector2 scale;
+	scale.x = size.x / _size.x;
+	scale.y = size.y / _size.y;
+	_size = size;
+
+	_transform->SetScale(scale);
 }
 
 RectCollider::AABB_Info RectCollider::GetAABB_Info()

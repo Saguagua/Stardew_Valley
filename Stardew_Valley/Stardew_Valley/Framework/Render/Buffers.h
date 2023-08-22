@@ -9,7 +9,7 @@ struct MatrixBuffer :public ConstantBuffer
 		_data.matrix = XMMatrixIdentity();
 	}
 
-	virtual ~MatrixBuffer() {}
+	~MatrixBuffer() {}
 
 	void SetMatrix(XMMATRIX matrix)
 	{
@@ -39,7 +39,7 @@ struct ColorBuffer :public ConstantBuffer
 		_data.ratio = Vector2(1, 1);
 	}
 
-	virtual ~ColorBuffer() {}
+	~ColorBuffer() {}
 
 	void SetColor(XMFLOAT4 color)
 	{
@@ -82,7 +82,7 @@ struct FrameBuffer : public ConstantBuffer
 	FrameBuffer() :ConstantBuffer(&_data, sizeof(_data))
 	{}
 
-	virtual ~FrameBuffer() {}
+	~FrameBuffer() {}
 
 	void SetMaxFrame(Vector2 max) { _data.maxFrame = max; }
 	void SetStart(Vector2 start) { _data.startPos = start; }
@@ -105,7 +105,7 @@ struct XMLBuffer : public ConstantBuffer
 	XMLBuffer() :ConstantBuffer(&_data, sizeof(_data))
 	{}
 
-	virtual ~XMLBuffer() {}
+	~XMLBuffer() {}
 
 	void SetSize(Vector2 size) { _data.size = size; }
 	void SetStart(Vector2 start) { _data.startPos = start; }
@@ -137,7 +137,7 @@ struct LightPosBuffer : public ConstantBuffer
 			_data.poses[i] = { -1,-1,-1,-1 };
 	}
 
-	virtual ~LightPosBuffer() {}
+	~LightPosBuffer() {}
 
 	XMFLOAT4* GetPoses()
 	{
@@ -161,7 +161,7 @@ struct LightColorBuffer : public ConstantBuffer
 			_data.colors[i] = { 0,0,0,1 };
 	}
 
-	virtual ~LightColorBuffer() {}
+	~LightColorBuffer() {}
 
 	XMFLOAT4* GetColors()
 	{

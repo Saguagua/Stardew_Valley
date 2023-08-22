@@ -38,6 +38,7 @@ public:
 	short GetPrice() { return _price; }
 	short GetType() { return _type; }
 
+	const vector<short>& GetVals() { return _vals; }
 protected:
 	void Hoe();
 	void Water();

@@ -3,7 +3,7 @@ class ColorButton :public Button
 {
 public:
 	ColorButton(XMFLOAT4 color, Vector2 size);
-	virtual ~ColorButton() {}
+	~ColorButton() {}
 
 	virtual void Render() override;
 	virtual void Update() override;

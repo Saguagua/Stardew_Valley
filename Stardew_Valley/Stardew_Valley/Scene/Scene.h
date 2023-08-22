@@ -3,7 +3,7 @@ class Scene
 {
 public:
 	Scene() {}
-	~Scene() {}
+	virtual ~Scene() {}
 
 	virtual void Update() abstract;
 	virtual void Render() abstract;

@@ -5,7 +5,7 @@ class CircleLine :public ShapeLine
 {
 public:
 	CircleLine(float radius);
-	virtual ~CircleLine() {}
+	~CircleLine() {}
 
 
 private:

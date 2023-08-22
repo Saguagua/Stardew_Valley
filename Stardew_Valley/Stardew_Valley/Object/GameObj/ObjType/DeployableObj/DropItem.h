@@ -3,7 +3,7 @@ class DropItem
 {
 public:
 	DropItem();
-	virtual ~DropItem() {}
+	~DropItem() {}
 
 	void Update();
 	void Render(shared_ptr<Sprite> sprite);
