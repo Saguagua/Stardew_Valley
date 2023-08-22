@@ -1,12 +1,11 @@
 #include "framework.h"
-#include "../BasicObj/XMLRect.h"
 #include "List.h"
 
 List::List(wstring path, Vector2 size, Vector2 matrix, int count)
 	:_size(size), _matrix(matrix)
 {
 	_transform = make_shared<Transform>();
-	_body = make_shared<Sprite>(L"Resource/XMLResource.png", "ItemBar", _size);
+	_body = make_shared<Sprite>(XMLPATH, "ItemBar", _size, SpriteType::UI);
 	CreateButtons(path, count);
 
 	Vector2 space;

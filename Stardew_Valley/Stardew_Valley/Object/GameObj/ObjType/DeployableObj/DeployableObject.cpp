@@ -6,7 +6,7 @@ DeployableObject::DeployableObject(DeployableObject::Type type, string name, Vec
 {
 }
 
-void DeployableObject::Render(shared_ptr<class Sprite> renderer, shared_ptr<RectCollider> col)
+void DeployableObject::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 {
 	col->SetPos(_centerPos);
 	col->SetScale(DATA->GetXMLInfo(_name)->GetSize(_index));

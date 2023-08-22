@@ -31,9 +31,9 @@
 #include "DirectXTex.h"
 #pragma comment(lib, "DirectXTex/DirectXTex.lib")
 
-#include "ImGui/imgui.h"
-#include "ImGui/imgui_impl_dx11.h"
-#include "ImGuI/imgui_impl_win32.h"
+#include "imgui.h"
+#include "imgui_impl_dx11.h"
+#include "imgui_impl_win32.h"
 
 #pragma comment(lib, "ImGui/ImGui.lib")
 
@@ -87,7 +87,6 @@ using namespace Microsoft::WRL;
 #include "Object/BasicObj/SingleColorRect.h"
 #include "Object/BasicObj/TextureRect.h"
 #include "Object/BasicObj/LightTextureRect.h"
-#include "Object/BasicObj/XMLRect.h"
 #include "Object/BasicObj/Sprite.h"
 
 //Collider

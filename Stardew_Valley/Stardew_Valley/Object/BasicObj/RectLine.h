@@ -5,7 +5,7 @@ class RectLine :public ShapeLine
 {
 
 public:
-	RectLine(Vector2 size);
+	RectLine(Vector2 size, );// 타입 만들기
 	virtual ~RectLine() {}
 
 private:

@@ -162,9 +162,6 @@
     <ClInclude Include="Object\GameObj\ObjType\DeployableObj\BreakableItem.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\GameObj\ItemInfo.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Framework\Animation\Action.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -193,9 +190,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\UI\ItemSlot.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\BasicObj\XMLRect.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Utility\tinyxml2.h">
@@ -235,6 +229,30 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Player\PlayerSubscribe.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imconfig.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imgui.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imgui_impl_dx11.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imgui_impl_win32.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imgui_internal.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imstb_rectpack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imstb_textedit.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\imstb_truetype.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -398,9 +416,6 @@
     <ClCompile Include="Object\UI\ItemSlot.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\BasicObj\XMLRect.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Framework\Utility\tinyxml2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -499,13 +514,13 @@
   <ItemGroup>
     <FxCompile Include="Shader\VertexVS.hlsl" />
     <FxCompile Include="Shader\SingleColorPS.hlsl" />
-    <FxCompile Include="Shader\ClipFilterPS.hlsl" />
     <FxCompile Include="Shader\TextureVS.hlsl" />
     <FxCompile Include="Shader\XMLPS.hlsl" />
     <FxCompile Include="Shader\SingleColorVS.hlsl" />
     <FxCompile Include="Shader\LightVS.hlsl" />
     <FxCompile Include="Shader\LightPS.hlsl" />
     <FxCompile Include="Shader\LightXMLPS.hlsl" />
+    <FxCompile Include="Shader\RatioSingleColorPS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Map\Save\Fishing.txt" />

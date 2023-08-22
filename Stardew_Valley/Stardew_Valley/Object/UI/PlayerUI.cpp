@@ -15,8 +15,8 @@ PlayerUI::PlayerUI()
 	_bagUI = make_shared<BagUI>();
 	_itemSlot = make_shared<ItemSlot>();
 	_timeUI = make_shared<TimeUI>();
-	_hpBar = make_shared<Bar>("Resource/UI/UI", "HPBar.png", Vector2(35, 200));
-	_staminaBar = make_shared<Bar>("Resource/UI/UI", "StaminaBar.png", Vector2(35, 200));
+	_hpBar = make_shared<Bar>(XMLPATH, "HPBar", Vector2(35, 200));
+	_staminaBar = make_shared<Bar>(XMLPATH, "StaminaBar", Vector2(35, 200));
 
 	_itemSlot->SetPos(Vector2(0, -300));
 	_hpBar->SetPos(Vector2(500, -250));

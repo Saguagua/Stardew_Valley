@@ -2,7 +2,7 @@
 class Bar
 {
 public:
-	Bar(string path, string name, Vector2 size);
+	Bar(wstring path, string name, Vector2 size);
 	~Bar() {}
 
 	void Render();
@@ -14,7 +14,7 @@ public:
 private:
 	shared_ptr<Transform> _bodyTransform;
 	shared_ptr<Transform> _guageTransform;
-	shared_ptr<class XMLRect> _body;
-	shared_ptr<class SingleColorRect> _gauge;
+	shared_ptr<Sprite> _body;
+	shared_ptr<SingleColorRect> _gauge;
 };
 

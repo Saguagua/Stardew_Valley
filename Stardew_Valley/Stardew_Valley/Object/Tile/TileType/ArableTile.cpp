@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "../../BasicObj/Sprite.h"
 #include "../Tile.h"
 #include "../../GameObj/ObjType/DeployableObj/Crop.h"
 #include "ArableTile.h"

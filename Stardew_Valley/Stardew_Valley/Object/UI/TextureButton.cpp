@@ -1,11 +1,10 @@
 #include "framework.h"
-#include "../BasicObj/Sprite.h"
 #include "TextureButton.h"
 
 TextureButton::TextureButton(wstring path, string name, Vector2 size)
 	:Button(size)
 {
-	_renderer = make_shared<Sprite>(path, name, size);
+	_renderer = make_shared<Sprite>(path, name, size, SpriteType::UI);
 }
 
 void TextureButton::Render()

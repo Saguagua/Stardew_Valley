@@ -69,3 +69,5 @@
 #define CallBackBool	function<void(bool)>
 
 #define GRAVITY			9.8f
+
+#define XMLPATH			L"Resource/XMLResource.png"

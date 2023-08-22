@@ -1,12 +1,11 @@
 #include "framework.h"
-#include "../BasicObj/XMLRect.h"
 #include "Bar.h"
 
-Bar::Bar(string path, string name, Vector2 size)
+Bar::Bar(wstring path, string name, Vector2 size)
 {
 	_bodyTransform = make_shared<Transform>();
 	_guageTransform = make_shared<Transform>();
-	_body = make_shared<XMLRect>(path, name, size);
+	_body = make_shared<Sprite>(path, name, size, SpriteType::UI);
 	_gauge = make_shared<SingleColorRect>(size - Vector2(20, 55));
 
 	_guageTransform->SetPos(Vector2(0, -20));

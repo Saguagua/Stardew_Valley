@@ -14,7 +14,7 @@ private:
 	shared_ptr<Transform> _bodySlot;
 	shared_ptr<Transform> _rotateSlot;
 	shared_ptr<Transform> _hourHandSlot;
-	shared_ptr<class XMLRect> _body;
-	shared_ptr<class XMLRect> _hourHand;
+	shared_ptr<Sprite> _body;
+	shared_ptr<Sprite> _hourHand;
 };
 

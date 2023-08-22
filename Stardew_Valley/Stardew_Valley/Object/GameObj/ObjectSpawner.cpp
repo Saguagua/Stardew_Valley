@@ -10,7 +10,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 
 ObjectSpawner::ObjectSpawner()
 {
-	_renderer = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", Vector2(20, 20));
+	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
 
 	for (int i = 0; i < 60; i++)
 	{

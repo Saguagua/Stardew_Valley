@@ -13,7 +13,7 @@ TileMap::TileMap()
 		_colliders.push_back(col);
 	}
 	
-	_renderer = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", TILE_SIZE);
+	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", TILE_SIZE, SpriteType::OBJECT);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
 	_focusRenderer->SetColor(XMFLOAT4(0, 1, 0, 0.5));
 

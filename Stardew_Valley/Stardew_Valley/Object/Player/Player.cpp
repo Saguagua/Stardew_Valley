@@ -16,7 +16,7 @@ Player::Player()
 
 	_body = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
 	_arm = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
-	_obj = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", Vector2(30, 30));
+	_obj = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(30, 30), SpriteType::OBJECT);
 
 	_body->SetCurFrame(Vector2(3, 0));
 	_arm->SetCurFrame(Vector2(0, 0));

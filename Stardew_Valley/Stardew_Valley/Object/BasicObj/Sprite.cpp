@@ -1,12 +1,17 @@
 #include "framework.h"
 #include "Sprite.h"
 
-Sprite::Sprite(wstring path, string name, Vector2 size)
+
+Sprite::Sprite(wstring path, string name, Vector2 size, SpriteType type)
 	:_curName(name), _size(size)
 {
 	_srv = ADD_SRV(path);
 	CreateVertices();
-	CreateData();
+	if (type == SpriteType::OBJECT)
+		CreateObjData();
+	else if (type == SpriteType::UI)
+		CreateUIData();
+	
 	_xBuffer->SetImgSize(_srv.lock()->GetImageSize());
 	ChangePicture(_curName);
 }
@@ -71,7 +76,7 @@ void Sprite::CreateVertices()
 	_indices.push_back(3);
 }
 
-void Sprite::CreateData()
+void Sprite::CreateObjData()
 {
 	_vBuffer = make_shared<VertexBuffer>(_vertices.data(), sizeof(VertexTexture), _vertices.size());
 	_iBuffer = make_shared<IndexBuffer>(_indices.data(), _indices.size());
@@ -79,3 +84,14 @@ void Sprite::CreateData()
 	_vShader = ADD_VS(L"Shader/LightVS.hlsl");
 	_pShader = ADD_PS(L"Shader/LightXMLPS.hlsl");
 }
+
+void Sprite::CreateUIData()
+{
+	_vBuffer = make_shared<VertexBuffer>(_vertices.data(), sizeof(VertexTexture), _vertices.size());
+	_iBuffer = make_shared<IndexBuffer>(_indices.data(), _indices.size());
+	_xBuffer = make_shared<XMLBuffer>();
+	_vShader = ADD_VS(L"Shader/TextureVS.hlsl");
+	_pShader = ADD_PS(L"Shader/XMLPS.hlsl");
+}
+
+

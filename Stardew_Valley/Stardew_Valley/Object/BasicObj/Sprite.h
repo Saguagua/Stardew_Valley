@@ -4,7 +4,7 @@ class DataManager;
 class Sprite
 {
 public:
-	Sprite(wstring path, string name, Vector2 size);
+	Sprite(wstring path, string name, Vector2 size, SpriteType type);
 	~Sprite() {}
 
 	void Render();
@@ -16,7 +16,8 @@ public:
 
 private:
 	void CreateVertices();
-	void CreateData();
+	void CreateObjData();
+	void CreateUIData();
 
 	string _curName;
 	Vector2 _size;

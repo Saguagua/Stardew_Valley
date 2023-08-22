@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "../BasicObj/XMLRect.h"
 #include "TimeUI.h"
 
 TimeUI::TimeUI()
@@ -8,8 +7,8 @@ TimeUI::TimeUI()
 	_hourHandSlot = make_shared<Transform>();
 	_rotateSlot = make_shared<Transform>();
 
-	_body = make_shared<XMLRect>("Resource/UI/UI", "DateTime.png", Vector2(150, 150));
-	_hourHand = make_shared<XMLRect>("Resource/UI/UI", "TimePicker.png", Vector2(25,35));
+	_body = make_shared<Sprite>(XMLPATH, "DateTime", Vector2(150, 150), SpriteType::UI);
+	_hourHand = make_shared<Sprite>(XMLPATH, "TimePicker", Vector2(25,35), SpriteType::UI);
 
 	_rotateSlot->SetParent(_bodySlot);
 	_rotateSlot->SetPos(Vector2(-27, 25));

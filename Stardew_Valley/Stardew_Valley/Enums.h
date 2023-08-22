@@ -22,3 +22,8 @@ enum PlayerState
 	DEAD = (1 << 7)
 };
 
+enum SpriteType
+{
+	OBJECT,
+	UI
+};

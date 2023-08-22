@@ -13,6 +13,6 @@ public:
 	void SetName(string name);
 
 private:
-	shared_ptr<class Sprite> _renderer;
+	shared_ptr<Sprite> _renderer;
 };
 

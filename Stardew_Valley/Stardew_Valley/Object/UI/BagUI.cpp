@@ -11,8 +11,8 @@ BagUI::BagUI()
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
 
-	_body = make_shared<Sprite>(L"Resource/XMLResource.png", "BagUI", Vector2(700, 300));
-	_obj = make_shared<Sprite>(L"Resource/XMLResource.png", "BLANK", Vector2(40, 50));
+	_body = make_shared<Sprite>(XMLPATH, "BagUI", Vector2(700, 300), SpriteType::UI);
+	_obj = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(40, 50), SpriteType::UI);
 
 	CreateButtons();
 

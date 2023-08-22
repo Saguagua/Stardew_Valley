@@ -48,6 +48,6 @@ private:
 	list<Crop*> _crops;
 
 	shared_ptr<class PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
-	shared_ptr<class Sprite> _renderer;
+	shared_ptr<Sprite> _renderer;
 };
 

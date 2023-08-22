@@ -3,7 +3,7 @@ class ShapeLine
 {
 public:
 	ShapeLine() {}
-	~ShapeLine() {}
+	virtual ~ShapeLine() {}
 
 	void Render();
 	void SetColor(XMFLOAT4 color) {_cBuffer->SetColor(color);}
