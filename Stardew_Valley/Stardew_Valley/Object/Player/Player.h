@@ -8,6 +8,8 @@ class PlayerSubscribe;
 class Player
 {
 	friend class Item;
+	friend class BagUI;
+	friend class ItemSlot;
 
 	Player();
 	~Player() {}
@@ -61,7 +63,6 @@ public:
 	bool AddStamina(short cost);
 	bool AddItem(string name);
 
-	
 private:
 	static Player* _instance;
 
@@ -69,13 +70,17 @@ private:
 	void SetBodyAction(int index);
 	void SetArmAction(int index);
 	void SetPause(bool val);
+	void EndAction();
 
 	void KeyInput();
 	void Move();
-	void Items();
 	void Mouse();
+	void Items();
+
 	void SetSelectedItemIndex(int index);
+	
 	void SetDirection(Vector2 pos);
+	void SwapItems(int index1, int index2);
 
 	void SendToSubscribers(int type);
 
@@ -99,4 +104,6 @@ private:
 	int _armIndex = PlayerAction::IDLE;
 
 	int _dir = FRONT;
+
+	bool _froze = false;
 };

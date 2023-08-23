@@ -28,7 +28,7 @@ public:
 	void Update();
 	void Render();
 
-	void SetDebug(bool debug) { _colliders[0]->SetDebug(debug); }
+	void SetDebug(bool debug) { _collider->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
 	int GetFocusedIndex();
@@ -55,7 +55,7 @@ private:
 	shared_ptr<class Sprite> _renderer;
 	shared_ptr<SingleColorRect> _focusRenderer;
 
-	vector<shared_ptr<RectCollider>> _colliders;
+	shared_ptr<RectCollider> _collider;
 
 	vector<shared_ptr<MapInfo>>& _mapInfos = DATA->GetMapInfos();
 	vector<shared_ptr<class Tile>> _tiles;

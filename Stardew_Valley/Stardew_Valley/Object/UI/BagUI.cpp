@@ -4,7 +4,7 @@
 #include "BagUI.h"
 
 BagUI::BagUI()
-	:List(Vector2(10, 3)), PlayerSubscribe(Type::ITEMS)
+	:List(Vector2(12, 3)), PlayerSubscribe(Type::ITEMS)
 {
 	_playerInfo = Player::GetInstance()->RequestSubscribe(this);
 
@@ -53,7 +53,7 @@ void BagUI::CreateButtons()
 {
 	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
 
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 36; i++)
 	{
 		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/XMLResource.png", items[i]->GetName(), Vector2(35, 55));
 		CallBackInt cb = std::bind(&BagUI::ClickItem, this, i);
@@ -68,11 +68,11 @@ void BagUI::ClickItem(int index)
 		_buttons[index]->GetName() != "BLANK")
 	{
 		_selectedIndex = index;
+		_obj->ChangePicture(_playerInfo.lock()->GetItem(_selectedIndex)->GetName(),0);
 	}
-	else
+	else if (_selectedIndex != -1)
 	{
-		//Player::GetInstance()->SwapItems(_selectedIndex, index);
-
+		PLAYER->SwapItems(_selectedIndex, index);
 		_selectedIndex = -1;
 	}
 }

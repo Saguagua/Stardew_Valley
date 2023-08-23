@@ -6,3 +6,4 @@ Axe 1
 PickAxe 1
 PotatoSeed 1
 Radish 1
+FishingRod 1

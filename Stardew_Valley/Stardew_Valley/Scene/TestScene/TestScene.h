@@ -8,5 +8,7 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void PostRender() override;
+
+	static bool _bagMode;
 private:
 };

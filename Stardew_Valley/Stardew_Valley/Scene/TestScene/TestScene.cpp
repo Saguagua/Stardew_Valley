@@ -1,6 +1,8 @@
 #include "framework.h"
 #include "TestScene.h"
 
+bool TestScene::_bagMode = false; // 위치 이동할 것
+
 TestScene::TestScene()
 {
 	ObjectSpawner::Create();

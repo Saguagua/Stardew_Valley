@@ -92,11 +92,11 @@ void Item::Hoe()
 		Player::GetInstance()->SetDirection(_point);
 		Player::GetInstance()->SetArmAction(Player::PlayerAction::TOOL);
 		Player::GetInstance()->SetBodyAction(Player::PlayerAction::TOOL);
+		Player::GetInstance()->SetPause(true);
 	}
 	else if (KEY_PRESS(VK_LBUTTON))
 	{
 		_chargeTime += DELTA_TIME;
-		Player::GetInstance()->SetPause(false);
 		if (_chargeTime > 1)
 		{
 			_chargeTime = 0;
@@ -109,7 +109,7 @@ void Item::Hoe()
 	else if (KEY_UP(VK_LBUTTON))
 	{
 		Player::GetInstance()->AddStamina(_vals[1]);
-		Player::GetInstance()->SetPause(true);
+		Player::GetInstance()->SetPause(false);
 
 		TileMap::GetInstance()->Hoeing(_point, _chargeCount);
 
@@ -180,11 +180,11 @@ void Item::Fishing()
 		Player::GetInstance()->SetDirection(_point);
 		Player::GetInstance()->SetArmAction(Player::PlayerAction::TOOL);
 		Player::GetInstance()->SetBodyAction(Player::PlayerAction::TOOL);
+		Player::GetInstance()->SetPause(true);
 	}
 	else if (KEY_PRESS(VK_LBUTTON))
 	{
 		_chargeTime += DELTA_TIME;
-		Player::GetInstance()->SetPause(false);
 		if (_chargeTime > 1)
 		{
 			_chargeTime = 0;
@@ -197,10 +197,9 @@ void Item::Fishing()
 	else if (KEY_UP(VK_LBUTTON))
 	{
 		Player::GetInstance()->AddStamina(_vals[1]);
-		Player::GetInstance()->SetPause(true);
+		Player::GetInstance()->SetPause(false);
 
 		TileMap::GetInstance()->Hoeing(_point, _chargeCount);
-
 	}
 }
 

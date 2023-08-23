@@ -5,6 +5,7 @@
 #include "BagUI.h"
 #include "Bar.h"
 #include "TimeUI.h"
+#include "../Scene/TestScene/TestScene.h"
 #include "PlayerUI.h"
 
 PlayerUI* PlayerUI::_instance = nullptr;
@@ -38,15 +39,15 @@ void PlayerUI::PostRender()
 
 void PlayerUI::Update()
 {
+	Key();
 	_bagUI->Update();
 	_itemSlot->Update();
 	_timeUI->Update();
-	Key();
 }
 
 void PlayerUI::NextDay()
 {
-	_timeUI->SetRotate(3.14159);
+	_timeUI->SetRotate(3.14159f);
 }
 
 void PlayerUI::SetHP(float hp)
@@ -105,8 +106,7 @@ void PlayerUI::Key()
 	{
 		_bagActive = !_bagActive;
 		_itemSlot->SetActive(!_bagActive);
-		_bagUI->SetActive(_bagActive); 
-		_bagUI->Update();
-		_itemSlot->Update();
+		_bagUI->SetActive(_bagActive);
+		TestScene::_bagMode = _bagActive;
 	}
 }

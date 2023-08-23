@@ -60,7 +60,7 @@ void Action::Play()
 
 void Action::Pause(bool val)
 {
-	_isPlay = val;
+	_isPlay = !val;
 }
 
 void Action::Stop()

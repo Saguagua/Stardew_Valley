@@ -8,6 +8,8 @@ public:
 	void Update();
 	void Render();
 
+
+	static bool _debug;
 private:
 	void Initialize();
 

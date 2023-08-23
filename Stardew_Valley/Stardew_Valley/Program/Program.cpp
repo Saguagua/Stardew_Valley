@@ -4,6 +4,8 @@
 #include "../Scene/TestScene/ColliderScene.h"
 #include "../Scene/MapTool/MapToolScene.h"
 
+bool Program::_debug = false;
+
 Program::Program()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));

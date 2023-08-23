@@ -145,7 +145,7 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	vector<shared_ptr<Item>> items;
 
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 36; i++)
 	{
 		items.push_back(make_shared<Item>());
 	}

@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "PlayerSubscribe.h"
+#include "../../Scene/TestScene/TestScene.h"
 #include "Player.h"
 
 Player* Player::_instance = nullptr;
@@ -71,6 +72,17 @@ void Player::SendToSubscribers(int type)
 		if (subscriber->_type == type)
 			subscriber->UpdateInfo();
 	}
+}
+
+void Player::SwapItems(int index1, int index2)
+{
+	vector<shared_ptr<Item>>& items = _playerInfo->GetItems();
+
+	shared_ptr<Item> tmp = items[index1];
+	items[index1] = items[index2];
+	items[index2] = tmp;
+
+	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
 }
 
 vector<CallBackInt> Player::GetSelectedIndexCallback()
@@ -173,10 +185,15 @@ void Player::KeyInput()
 {
 	if (_playerInfo->GetState() & (PlayerState::DEAD | PlayerState::IMMOVEABLE))
 		return;
+	if (TestScene::_bagMode)
+		return;
 
-	Move();
-	Items();
 	Mouse();
+	if (!_froze)
+	{
+		Items();
+		Move();
+	}
 }
 
 void Player::SetSelectedItemIndex(int index)
@@ -470,6 +487,7 @@ void Player::SetPause(bool val)
 {
 	_armActions[_armIndex]->Pause(val);
 	_bodyActions[_bodyIndex]->Pause(val);
+	_froze = val;
 }
 
 void Player::Move()

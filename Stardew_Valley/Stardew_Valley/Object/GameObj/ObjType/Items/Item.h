@@ -42,7 +42,6 @@ public:
 protected:
 	void Hoe();
 	void Water();
-	void Axe();
 	void PickAxe();
 	void Fishing();
 	void Weapon();

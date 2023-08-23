@@ -7,14 +7,7 @@ TileMap* TileMap::_instance = nullptr;
 
 TileMap::TileMap()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		shared_ptr<RectCollider> col = make_shared<RectCollider>(TILE_SIZE);
-		col->SetDebug(true);
-		_colliders.push_back(col);
-	}
-
-	_colliders[0]->SetDebug(false);
+	_collider = make_shared<RectCollider>(TILE_SIZE);
 
 	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", TILE_SIZE, SpriteType::OBJECT);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
@@ -39,36 +32,43 @@ void TileMap::Play()
 
 void TileMap::Blocking()
 {
-	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
-	int x = -2;
-	int y = -1;
-	vector<shared_ptr<RectCollider>> cols;
+	shared_ptr<RectCollider> playerCol = PLAYER->GetCollider();
+	int worldIndex = GetWorldIndex(playerCol->GetWorldPos());
 
-	for (int i = 1; i < _colliders.size(); i++)
+	int proximateTileIndex = -1;
+	float proximateTileDistance = 100000.0f;
+
+	for (int i = -1; i < 2; i++)
 	{
-		x += 1;
-
-		if (x == 2)
 		{
-			x = -1;
-			y += 1;
+			for (int j = -1; j < 2; j++)
+			{
+				int index = worldIndex + i + j * _curMapSize.x;
+
+				if (index < 0 || index >= _curMapSize.x * _curMapSize.y)
+					continue;
+
+				if (!_tiles[index]->IsBlock())
+					continue;
+
+				float length = (_tiles[index]->GetCenterPos() - playerCol->GetWorldPos()).Length();
+
+				if (length < proximateTileDistance)
+				{
+					proximateTileIndex = index;
+					proximateTileDistance = length;
+				}
+
+			}
 		}
-
-		int index = worldIndex + x + y * _curMapSize.x;
-
-		if (index < 0 || index >= _curMapSize.x * _curMapSize.y)
-			continue;
-
-		
-		if (!_tiles[index]->IsBlock())
-			continue;
-
-		
-		_colliders[i]->SetPos(_tiles[index]->GetCenterPos());
-		_colliders[i]->GetTransform()->Update_SRT();
-		_colliders[i]->Block(Player::GetInstance()->GetCollider());
 	}
 
+	if (proximateTileIndex != -1)
+	{
+		_collider->SetPos(_tiles[proximateTileIndex]->GetCenterPos());
+		_collider->Update();
+		_collider->Block(playerCol);
+	}
 }
 
 void TileMap::ChangeTile()
@@ -212,19 +212,13 @@ void TileMap::Render()
 {
 	for (int i = 0; i < _tiles.size(); i++)
 	{
-		_colliders[0]->SetPos(_tiles[i]->GetCenterPos());
-		_colliders[0]->Update();
-		_colliders[0]->Render();
-		_tiles[i]->Render(_renderer, _colliders[0]);
+		_collider->SetPos(_tiles[i]->GetCenterPos());
+		_collider->Update();
+		_collider->Render();
+		_tiles[i]->Render(_renderer, _collider);
 
 		if (_tiles[i]->IsFocus())
 			_focusRenderer->Render();
-	}
-
-	for (int i = 1; i < _colliders.size(); i++)
-	{
-		_colliders[i]->Update();
-		_colliders[i]->Render();
 	}
 }
 
