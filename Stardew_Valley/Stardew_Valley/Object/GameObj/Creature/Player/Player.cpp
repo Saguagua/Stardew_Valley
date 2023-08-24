@@ -3,8 +3,9 @@
 #include "Player.h"
 
 Player::Player()
+	:Creature("", Vector2(20, 20))
 {
-	_col = make_shared<RectCollider>(Vector2(20, 20));
+	GetDatas();
 	_magnatic = make_shared<CircleCollider>(50);
 	_col->SetDebug(true);
 	_magnatic->SetDebug(true);
@@ -27,19 +28,18 @@ Player::Player()
 	CreateAction();
 
 	_armActions[_armIndex]->Play();
-	_bodyActions[_bodyIndex]->Play();
+	_actions[_actionIndex]->Play();
 }
 
 void Player::Update()
 {
-	KeyInput();
 	_col->Update();
 	_magnatic->Update();
 	_bodySlot->Update();
 	_itemSlot->Update();
-	_bodyActions[_bodyIndex]->Update();
+	_actions[_actionIndex]->Update();
 	_armActions[_armIndex]->Update();
-	_body->SetCurFrame(_bodyActions[_bodyIndex]->GetCurFrame());
+	_body->SetCurFrame(_actions[_actionIndex]->GetCurFrame());
 	_arm->SetCurFrame(_armActions[_armIndex]->GetCurFrame());
 }
 
@@ -55,171 +55,29 @@ void Player::Render()
 	_magnatic->Render();
 }
 
-shared_ptr<PlayerInfo> Player::RequestSubscribe(PlayerSubscribe* subscriber)
-{
-	_subscribers.push_back(subscriber);
-
-	return _playerInfo;
-}
-
-void Player::SendToSubscribers(int type)
-{
-	for (auto subscriber : _subscribers)
-	{
-		if (subscriber->_type == type)
-			subscriber->UpdateInfo();
-	}
-}
-
-void Player::SwapItems(int index1, int index2)
-{
-	vector<shared_ptr<Item>>& items = _playerInfo->GetItems();
-
-	shared_ptr<Item> tmp = items[index1];
-	items[index1] = items[index2];
-	items[index2] = tmp;
-
-	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
-}
-
-vector<CallBackInt> Player::GetSelectedIndexCallback()
+vector<CallBackInt> Player::GetCurIndexCallback()
 {
 	vector<CallBackInt> v;
 
-	for (int i = 0; i < 10; i++)
+	/*for (int i = 0; i < 10; i++)
 	{
 		CallBackInt cb = std::bind(&Player::SetSelectedItemIndex, this, i);
-	}
+	}*/
 
 	return v;
 }
 
-bool Player::AddMaxHP(short cost)
+void Player::GetDatas()
 {
-	return false;
-}
-
-bool Player::AddMaxStamina(short cost)
-{
-	return false;
-}
-
-bool Player::AddHP(short cost)
-{
-	float maxHP = _playerInfo->GetMaxHP();
-	float hp = _playerInfo->GetHP();
-
-	hp += cost;
-
-	if (hp <= 0)
-		_playerInfo->SetState(PlayerState::DEAD);
-
-	float ratio = hp / maxHP;
-	PlayerUI::GetInstance()->SetHP(ratio);
-	_playerInfo->SetHP(hp);
-
-	return !(_playerInfo->GetState() & PlayerState::DEAD);
-}
-
-bool Player::AddStamina(short cost)
-{
-	float maxStamina = _playerInfo->GetMaxStamina();
-	float stamina = _playerInfo->GetStamina();
-
-	stamina += cost;
-
-	if (stamina <= 0)
-		_playerInfo->SetState(PlayerState::DEAD);
-
-	float ratio = stamina / maxStamina;
-	PlayerUI::GetInstance()->SetStamina(ratio);
-	_playerInfo->SetStamina(stamina);
-
-	return !(_playerInfo->GetState() & PlayerState::DEAD);
-}
-
-bool Player::AddItem(string name)
-{
-	int empty = -1;
-	auto items = _playerInfo->GetItems();
-
-	for (int i = 0; i < items.size(); i++)
-	{
-		if (items[i]->GetName() == name)
-		{
-			if (items[i]->AddCount())
-			{
-				SendToSubscribers(PlayerSubscribe::Type::ITEMS);
-				return true;
-			}
-		}
-		else if (empty == -1 && items[i]->GetName() == "BLANK")
-		{
-			empty = i;
-		}
-	}
-	if (empty != -1)
-	{
-		items[empty]->SetItem(name, 1);
-		SendToSubscribers(PlayerSubscribe::Type::ITEMS);
-		return true;
-	}
-
-	return false;
-}
-
-
-void Player::CancelSubscribe(PlayerSubscribe* sub)
-{
-	for (auto subscriber : _subscribers)
-	{
-		if (subscriber == sub)
-			_subscribers.remove(sub);
-	}
-}
-
-void Player::KeyInput()
-{
-	if (_playerInfo->GetState() & (PlayerState::DEAD | PlayerState::IMMOVEABLE))
-		return;
+	auto info	= DATA->GetPlayerInfo();
+	_maxHp		= info->GetMaxHP();
+	_hp			= info->GetHP();
+	_maxStamina = info->GetMaxStamina();
+	_stamina	= info->GetStamina();
+	_items		= info->GetItems();
+	_state		= info->GetState();
 	
-
-	Mouse();
-	if (!_froze)
-	{
-		Items();
-		Move();
-	}
-}
-
-void Player::SetSelectedItemIndex(int index)
-{
-	_playerInfo->SetSelectedIndex(index);
-	auto item = _playerInfo->GetSelectedItem();
-	int type = item->GetType();
-	int& state = _playerInfo->GetStateRef();
-	int armIndex = _armIndex;
-
-	if (type == Item::Type::NONE ||
-		type == Item::Type::EATABLE ||
-		type == Item::Type::FERTILIZER ||
-		type == Item::Type::SEED)
-	{
-		state |= PlayerState::HOLDING;
-		_obj->ChangePicture(item->GetName(), item->GetIndex());
-		armIndex = PlayerAction::HOLD;
-	}
-	else
-	{
-		state &= ~(PlayerState::HOLDING);
-		_obj->ChangePicture("BLANK");
-		if (state != PlayerState::RUN)
-			armIndex = PlayerAction::IDLE;
-		else
-			armIndex = PlayerAction::RUN;
-	}
-	
-	SetArmAction(armIndex);
+	_col->SetPos(info->GetPos());
 }
 
 void Player::CreateAction()
@@ -239,9 +97,9 @@ void Player::CreateAction()
 		shared_ptr<Action> sideIdleB = make_shared<Action>(sideIdleBody, Action::Type::LOOP);
 		shared_ptr<Action> backIdleB = make_shared<Action>(backIdleBody, Action::Type::LOOP);
 
-		_bodyActions.push_back(frontIdleB);
-		_bodyActions.push_back(sideIdleB);
-		_bodyActions.push_back(backIdleB);
+		_actions.push_back(frontIdleB);
+		_actions.push_back(sideIdleB);
+		_actions.push_back(backIdleB);
 
 		vector<Vector2> frontIdleArm;
 		frontIdleArm.push_back(Vector2(6, 0));
@@ -313,9 +171,9 @@ void Player::CreateAction()
 
 		shared_ptr<Action> backArm = make_shared<Action>(backArmIndex, Action::Type::LOOP, 0.1f);
 
-		_bodyActions.push_back(frontBody);
-		_bodyActions.push_back(sideBody);
-		_bodyActions.push_back(backBody);
+		_actions.push_back(frontBody);
+		_actions.push_back(sideBody);
+		_actions.push_back(backBody);
 
 		_armActions.push_back(frontArm);
 		_armActions.push_back(sideArm);
@@ -378,9 +236,9 @@ void Player::CreateAction()
 		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
 		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
 
-		_bodyActions.push_back(FrontBody);
-		_bodyActions.push_back(SideBody);
-		_bodyActions.push_back(BackBody);
+		_actions.push_back(FrontBody);
+		_actions.push_back(SideBody);
+		_actions.push_back(BackBody);
 
 		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END);
 		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END);
@@ -430,7 +288,7 @@ void Player::SetArmAction(int state)
 
 	_armActions[_armIndex]->Stop();
 
-	bool isHolding = (_playerInfo->GetState() & PlayerState::HOLDING);
+	bool isHolding = (_state & PlayerState::HOLDING);
 
 	if (!isHolding) {
 		_armIndex = state;
@@ -442,36 +300,27 @@ void Player::SetArmAction(int state)
 	_armActions[_armIndex]->Play();
 }
 
-void Player::SetPause(bool val)
-{
-	_armActions[_armIndex]->Pause(val);
-	_bodyActions[_bodyIndex]->Pause(val);
-	_froze = val;
-}
-
 void Player::Move()
 {
-	int& state = _playerInfo->GetStateRef();
-
 	if (KEY_DOWN('W'))
 	{
-		if (!(state & (PlayerState::RUNL | PlayerState::RUNR)))
+		if (!(_state & (PlayerState::RUNL | PlayerState::RUNR)))
 		{
 			_dir = BACK;
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
-		state |= PlayerState::RUNB;
+		_state |= PlayerState::RUNB;
 	}
 	else if (KEY_PRESS('W'))
 	{
-		_col->AddPos(Vector2(0, 1) * DELTA_TIME * SPEED);
+		_col->AddPos(Vector2(0, 1) * DELTA_TIME * 200);
 	}
 	else if (KEY_UP('W'))
 	{
-		state ^= PlayerState::RUNB;
+		_state ^= PlayerState::RUNB;
 
-		if (state & PlayerState::RUN)
+		if (_state & PlayerState::RUN)
 		{
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
@@ -485,23 +334,23 @@ void Player::Move()
 
 	if (KEY_DOWN('S'))
 	{
-		if (!(state & (PlayerState::RUNL | PlayerState::RUNR)))
+		if (!(_state & (PlayerState::RUNL | PlayerState::RUNR)))
 		{
 			_dir = FRONT;
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
-		state |= PlayerState::RUNF;
+		_state |= PlayerState::RUNF;
 	}
 	else if (KEY_PRESS('S'))
 	{
-		_col->AddPos(Vector2(0, -1) * DELTA_TIME * SPEED);
+		_col->AddPos(Vector2(0, -1) * DELTA_TIME * 200);
 	}
 	else if (KEY_UP('S'))
 	{
-		state ^= PlayerState::RUNF;
+		_state ^= PlayerState::RUNF;
 
-		if (state & PlayerState::RUN)
+		if (_state & PlayerState::RUN)
 		{
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
@@ -513,185 +362,92 @@ void Player::Move()
 		}
 	}
 
-	if (!(state & PlayerState::RUNR))
+	if (!(_state & PlayerState::RUNR))
 	{
 		if (KEY_DOWN('A'))
 		{
 			_dir = SIDE;
-			SetBodyAction(PlayerAction::RUN);
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 
-			state |= PlayerState::RUNL;
+			_state |= PlayerState::RUNL;
 			_col->SetScale(Vector2(-1, 1));
 		}
 		else if (KEY_PRESS('A'))
 		{
-			state |= PlayerState::RUNL;
-			SetBodyAction(PlayerAction::RUN);
+			_state |= PlayerState::RUNL;
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 
 			_col->SetScale(Vector2(-1, 1));
-			_col->AddPos(Vector2(-1, 0) * DELTA_TIME * SPEED);
+			_col->AddPos(Vector2(-1, 0) * DELTA_TIME * 200);
 		}
 		else if (KEY_UP('A'))
 		{
-			state ^= PlayerState::RUNL;
+			_state ^= PlayerState::RUNL;
 
-			if (state & PlayerState::RUNF)
+			if (_state & PlayerState::RUNF)
 			{
 				_dir = FRONT;
-				SetBodyAction(PlayerAction::RUN);
+				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}
-			else if (state & PlayerState::RUNB)
+			else if (_state & PlayerState::RUNB)
 			{
 				_dir = BACK;
-				SetBodyAction(PlayerAction::RUN);
+				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}
 			else
 			{
-				SetBodyAction(PlayerAction::IDLE);
+				SetAction(PlayerAction::IDLE);
 				SetArmAction(PlayerAction::IDLE);
 			}
 		}
 	}
 	
-	if (!(state & PlayerState::RUNL))
+	if (!(_state & PlayerState::RUNL))
 	{
 		if (KEY_DOWN('D'))
 		{
 			_dir = SIDE;
-			SetBodyAction(PlayerAction::RUN);
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 
-			state |= PlayerState::RUNR;
+			_state |= PlayerState::RUNR;
 			_col->SetScale(Vector2(1, 1));
 		}
 		if (KEY_PRESS('D'))
 		{
-			state |= PlayerState::RUNR;
+			_state |= PlayerState::RUNR;
 
-			SetBodyAction(PlayerAction::RUN);
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 
 			_col->SetScale(Vector2(1, 1));
-			_col->AddPos(Vector2(1, 0) * DELTA_TIME * SPEED);
+			_col->AddPos(Vector2(1, 0) * DELTA_TIME * 200);
 		}
 		else if (KEY_UP('D'))
 		{
-			state ^= PlayerState::RUNR;
+			_state ^= PlayerState::RUNR;
 
-			if (state & PlayerState::RUNF)
+			if (_state & PlayerState::RUNF)
 			{
 				_dir = FRONT;
-				SetBodyAction(PlayerAction::RUN);
+				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}
-			else if (state & PlayerState::RUNB)
+			else if (_state & PlayerState::RUNB)
 			{
 				_dir = BACK;
-				SetBodyAction(PlayerAction::RUN);
+				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}
 			else
 			{
-				SetBodyAction(PlayerAction::IDLE);
+				SetAction(PlayerAction::IDLE);
 				SetArmAction(PlayerAction::IDLE);
 			}
-		}
-	}
-}
-
-void Player::Items()
-{
-	if (KEY_DOWN('1'))
-	{
-		SetSelectedItemIndex(0);
-	}
-	else if (KEY_DOWN('2'))
-	{
-		SetSelectedItemIndex(1);
-	}
-	else if (KEY_DOWN('3'))
-	{
-		SetSelectedItemIndex(2);
-	}
-	else if (KEY_DOWN('4'))
-	{
-		SetSelectedItemIndex(3);
-	}
-	else if (KEY_DOWN('5'))
-	{
-		SetSelectedItemIndex(4);
-	}
-	else if (KEY_DOWN('6'))
-	{
-		SetSelectedItemIndex(5);
-	}
-	else if (KEY_DOWN('7'))
-	{
-		SetSelectedItemIndex(6);
-	}
-	else if (KEY_DOWN('8'))
-	{
-		SetSelectedItemIndex(7);
-	}
-	else if (KEY_DOWN('9'))
-	{
-		SetSelectedItemIndex(8);
-	}
-	else if (KEY_DOWN('0'))
-	{
-		SetSelectedItemIndex(9);
-	}
-}
-
-void Player::Mouse()
-{
-	auto item = _playerInfo->GetSelectedItem();
-	
-	auto type = item->GetType();
-
-	switch (type)
-	{
-	case Item::Type::AXE:
-	case Item::Type::PICKAXE:
-	{
-
-		break;
-	}
-	case Item::Type::EATABLE:
-	{
-
-	}
-	case Item::Type::HOE:
-	{
-
-	}
-	case Item::Type::WATERINGCAN:
-	{
-
-	}
-	default:
-		break;
-	}
-
-	if (item->GetType() == Item::Type::NONE || item->GetType() == Item::Type::BLANK)
-	{
-		if (KEY_DOWN(VK_LBUTTON))
-		{
-			TileMap::GetInstance()->GetFocusedTile()->Interaction();
-		}
-	}
-	else
-	{
-		item->KeyInput();
-
-		if (item->GetName() == "BLANK")
-		{
-			SendToSubscribers(PlayerSubscribe::Type::ITEMS);
-			SetSelectedItemIndex(_playerInfo->GetSelectedIndex());
 		}
 	}
 }

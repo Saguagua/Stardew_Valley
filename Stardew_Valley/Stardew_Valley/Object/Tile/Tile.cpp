@@ -1,7 +1,6 @@
 #include "framework.h"
 #include "TileType/ArableTile.h"
 #include "TileType/FishableTile.h"
-#include "../GameObj/ObjType/DeployableObj/DeployableObject.h"
 #include "Tile.h"
 
 Tile::Tile(string name, Vector2 pos)

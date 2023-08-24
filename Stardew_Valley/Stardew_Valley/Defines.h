@@ -31,14 +31,11 @@
 #define MAXMINUTE		10
 #define SUNSET			14
 
-#define TILEMAP			TileMap::GetInstance()
 #define MAP_SIZE		Vector2(50, 50)
 #define TILE_SIZE		Vector2(40, 40)
 
-#define PLAYER			Player::GetInstance()
-#define SPEED			200.0f
-
-#define OBSPAWNER		ObjectSpawner::GetInstance()
+#define PLAYERUI		PlayerUI::GetInstance()
+#define OBJECT_SPAWNER		ObjectSpawner::GetInstance()
 
 #define PALETTE			Palette::GetInstance()
 

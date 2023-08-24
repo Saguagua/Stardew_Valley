@@ -2,51 +2,33 @@
 
 class TileMap
 {
-	TileMap();
-	~TileMap() {}
 
 public:
-	static void Create()
-	{
-		if (_instance == nullptr)
-			_instance = new TileMap();
-	}
-
-	static void Delete()
-	{
-		if (_instance != nullptr)
-			delete _instance;
-	}
-
-	static TileMap* GetInstance()
-	{
-		if (_instance != nullptr)
-			return _instance;
-		return nullptr;
-	}
-
+	TileMap();
+	~TileMap() {}
+	
 	void Update();
 	void Render();
 
 	void SetDebug(bool debug) { _collider->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
-	int GetFocusedIndex();
-	shared_ptr<class Tile> GetFocusedTile();
+	int GetFocusedIndex(Vector2 orginPos, Vector2 targetPos);
+	shared_ptr<class Tile> GetFocusedTile(Vector2 orginPos, Vector2 targetPos);
 	vector<shared_ptr<Tile>> GetFocusedTiles(Vector2 point, short level);
-	vector<int> GetFocusedIndices(Vector2 point, short level);
+	vector<int> GetFocusedIndices(Vector2 originPos, Vector2 targetPos, short level);
 	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
 
 	void ChangeMap(int index);
 
-	void Hoeing(Vector2 point, short level);
-	void Watering(Vector2 point, short level);
+	void Hoeing(Vector2 originPos, Vector2 targetPos, short level);
+	void Watering(Vector2 originPos, Vector2 targetPos, short level);
+	void Charging(Vector2 originPos, Vector2 tragetPos, short level);
+	void Blocking(shared_ptr<RectCollider> col);
 private:
-	static TileMap* _instance;
 
 	void SetCameraRange();
 	void Play();
-	void Blocking();
 
 	void ChangeTile();
 

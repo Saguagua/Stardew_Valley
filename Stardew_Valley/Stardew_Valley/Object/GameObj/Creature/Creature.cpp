@@ -19,8 +19,6 @@ void Creature::Render()
 {
 	if (!_isActive)
 		return;
-
-	
 }
 
 void Creature::AddHP(short cost)
@@ -31,6 +29,7 @@ void Creature::AddHP(short cost)
 void Creature::SetAction(int state)
 {
 	state += _dir;
+
 	if (_actionIndex == state)
 		return;
 

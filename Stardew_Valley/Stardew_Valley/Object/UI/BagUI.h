@@ -3,7 +3,7 @@
 class BagUI :public List, PlayerSubscribe
 {
 public:
-	BagUI();
+	BagUI(shared_ptr<PlayerImproved> player);
 	~BagUI() {}
 
 	void Update();
@@ -11,7 +11,6 @@ public:
 
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
-
 private:
 	void CreateButtons();
 

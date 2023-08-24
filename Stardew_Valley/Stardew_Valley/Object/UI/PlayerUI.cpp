@@ -10,14 +10,14 @@
 
 PlayerUI* PlayerUI::_instance = nullptr;
 
-PlayerUI::PlayerUI()
+PlayerUI::PlayerUI(shared_ptr<PlayerImproved> player)
 {
 	_transform = make_shared<Transform>();
-	_bagUI = make_shared<BagUI>();
-	_itemSlot = make_shared<ItemSlot>();
+	_bagUI = make_shared<BagUI>(player);
+	_itemSlot = make_shared<ItemSlot>(player);
 	_timeUI = make_shared<TimeUI>();
-	_hpBar = make_shared<Bar>(XMLPATH, "HPBar", Vector2(35, 200));
-	_staminaBar = make_shared<Bar>(XMLPATH, "StaminaBar", Vector2(35, 200));
+	_hpBar = make_shared<Bar>(player, XMLPATH, "HPBar", Vector2(35, 200));
+	_staminaBar = make_shared<Bar>(player, XMLPATH, "StaminaBar", Vector2(35, 200));
 
 	_itemSlot->SetPos(Vector2(0, -300));
 	_hpBar->SetPos(Vector2(500, -250));
@@ -107,6 +107,5 @@ void PlayerUI::Key()
 		_bagActive = !_bagActive;
 		_itemSlot->SetActive(!_bagActive);
 		_bagUI->SetActive(_bagActive);
-		TestScene::_bagMode = _bagActive;
 	}
 }

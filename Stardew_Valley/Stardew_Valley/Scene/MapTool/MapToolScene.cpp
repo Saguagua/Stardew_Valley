@@ -5,7 +5,7 @@
 MapToolScene::MapToolScene()
 {
 	ObjectSpawner::Create();
-	DATA->Load("Test");
+	//DATA->Load("Test");
 	Palette::Create();
 	//_map->SetDebug(true);
 	PALETTE->SetPos(CENTER - PALETTE->GetSize());

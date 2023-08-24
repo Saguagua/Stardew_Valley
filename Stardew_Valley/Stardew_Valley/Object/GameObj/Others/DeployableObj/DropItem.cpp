@@ -53,7 +53,7 @@ void DropItem::Render(shared_ptr<Sprite> renderer)
 
 void DropItem::Interaction()
 {
-   Player::GetInstance()->AddItem(_itemName);
+   //Player::GetInstance()->AddItem(_itemName);
    _isActive = false;
 }
 

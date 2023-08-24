@@ -1,13 +1,12 @@
 #include "framework.h"
-#include "../Player/PlayerSubscribe.h"
+#include "../GameObj/Creature/Player/Player.h"
+#include "../GameObj/Creature/Player/PlayerSubscribe.h"
 #include "List.h"
 #include "BagUI.h"
 
-BagUI::BagUI()
-	:List(Vector2(12, 3)), PlayerSubscribe(Type::ITEMS)
+BagUI::BagUI(shared_ptr<PlayerImproved> player)
+	:List(Vector2(12, 3)), PlayerSubscribe(player, Type::ITEMS)
 {
-	_playerInfo = Player::GetInstance()->RequestSubscribe(this);
-
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
 
@@ -51,7 +50,7 @@ void BagUI::Render()
 
 void BagUI::CreateButtons()
 {
-	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<Item>> items = _player.lock()->GetItems();
 
 	for (int i = 0; i < 36; i++)
 	{
@@ -68,18 +67,18 @@ void BagUI::ClickItem(int index)
 		_buttons[index]->GetName() != "BLANK")
 	{
 		_selectedIndex = index;
-		_obj->ChangePicture(_playerInfo.lock()->GetItem(_selectedIndex)->GetName(),0);
+		_obj->ChangePicture(_player.lock()->GetItems()[_selectedIndex]->GetName(),0);
 	}
 	else if (_selectedIndex != -1)
 	{
-		PLAYER->SwapItems(_selectedIndex, index);
+		_player.lock()->SwapItems(_selectedIndex, index);
 		_selectedIndex = -1;
 	}
 }
 
 void BagUI::UpdateInfo()
 {
-	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<Item>> items = _player.lock()->GetItems();
 
 	for (int i = 0; i < items.size(); i++)
 	{

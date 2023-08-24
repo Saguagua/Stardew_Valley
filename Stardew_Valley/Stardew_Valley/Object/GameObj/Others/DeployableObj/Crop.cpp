@@ -42,6 +42,6 @@ void Crop::Interaction()
 		_name = "BLANK";
 	}
 
-	ObjectSpawner::GetInstance()->ActiveDropItem("Potato", "Potato", _centerPos, 2);
+	OBJECT_SPAWNER->ActiveDropItem("Potato", "Potato", _centerPos, 2);
 }
 

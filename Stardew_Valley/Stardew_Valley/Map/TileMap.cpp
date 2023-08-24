@@ -1,9 +1,6 @@
 #include "framework.h"
 #include "../Object/Tile/TileType/ArableTile.h"
-#include "../Object/GameObj/ObjType/DeployableObj/Crop.h"
 #include "TileMap.h"
-
-TileMap* TileMap::_instance = nullptr;
 
 TileMap::TileMap()
 {
@@ -19,21 +16,13 @@ TileMap::TileMap()
 
 void TileMap::Update()
 {
-	if (PALETTE != nullptr && !PALETTE->GetFocus())
-		ChangeTile();
-	else
-		Play();
+
 }
 
-void TileMap::Play()
-{
-	Blocking();
-}
 
-void TileMap::Blocking()
+void TileMap::Blocking(shared_ptr<RectCollider> col)
 {
-	shared_ptr<RectCollider> playerCol = PLAYER->GetCollider();
-	int worldIndex = GetWorldIndex(playerCol->GetWorldPos());
+	int worldIndex = GetWorldIndex(col->GetWorldPos());
 
 	int proximateTileIndex = -1;
 	float proximateTileDistance = 100000.0f;
@@ -51,7 +40,7 @@ void TileMap::Blocking()
 				if (!_tiles[index]->IsBlock())
 					continue;
 
-				float length = (_tiles[index]->GetCenterPos() - playerCol->GetWorldPos()).Length();
+				float length = (_tiles[index]->GetCenterPos() - col->GetWorldPos()).Length();
 
 				if (length < proximateTileDistance)
 				{
@@ -67,7 +56,7 @@ void TileMap::Blocking()
 	{
 		_collider->SetPos(_tiles[proximateTileIndex]->GetCenterPos());
 		_collider->Update();
-		_collider->Block(playerCol);
+		_collider->Block(col);
 	}
 }
 
@@ -163,38 +152,26 @@ void TileMap::SetHoeDirt(int index) //algorithm
 	}
 }
 
-void TileMap::Hoeing(Vector2 point, short level)
+void TileMap::Hoeing(Vector2 originPos, Vector2 targetPos, short level)
 {
-	if (KEY_UP(VK_LBUTTON))
+	auto indices = GetFocusedIndices(originPos, targetPos, level);
+
+	for (auto index : indices)
 	{
-		auto indices = GetFocusedIndices(point, level);
+		auto tile = dynamic_pointer_cast<ArableTile>(_tiles[index]);
 
-		for (auto index : indices)
-		{
-			auto tile = dynamic_pointer_cast<ArableTile>(_tiles[index]);
+		if (tile != nullptr)
+			tile->SetPlantable(true);
 
-			if (tile != nullptr)
-				tile->SetPlantable(true);
+		_tiles[index]->SetFocus(false);
 
-			_tiles[index]->SetFocus(false);
-
-			SetHoeDirt(index);
-		}
-	}
-	else
-	{
-		auto indices = GetFocusedIndices(point, level);
-
-		for (auto index : indices)
-		{
-			_tiles[index]->SetFocus(true);
-		}
+		SetHoeDirt(index);
 	}
 }
 
-void TileMap::Watering(Vector2 point, short level)
+void TileMap::Watering(Vector2 originPos, Vector2 targetPos, short level)
 {
-	auto indices = GetFocusedIndices(point, level);
+	auto indices = GetFocusedIndices(originPos, targetPos, level);
 
 	for (auto index : indices)
 	{
@@ -205,6 +182,18 @@ void TileMap::Watering(Vector2 point, short level)
 			if (aTile->GetCrop() != nullptr)
 				aTile->GetCrop()->SetWater(true);
 		}
+
+		_tiles[index]->SetFocus(false);
+	}
+}
+
+void TileMap::Charging(Vector2 originPos, Vector2 targetPos, short level)
+{
+	auto indices = GetFocusedIndices(originPos, targetPos, level);
+
+	for (auto index : indices)
+	{
+		_tiles[index]->SetFocus(true);
 	}
 }
 
@@ -251,10 +240,10 @@ int TileMap::GetWorldIndex(Vector2 pos)
 	return sum;
 }
 
-int TileMap::GetFocusedIndex()
+int TileMap::GetFocusedIndex(Vector2 orginPos, Vector2 targetPos)
 {
-	Vector2 target = W_MOUSE_POS - Player::GetInstance()->GetWorldPos();
-	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
+	Vector2 target = targetPos - orginPos;
+	int worldIndex = GetWorldIndex(orginPos);
 	float angle = target.Angle() * 57.2958f;
 
 	if (angle > -25.0f && angle <= 25.0f)
@@ -297,14 +286,14 @@ int TileMap::GetFocusedIndex()
 	return worldIndex;
 }
 
-shared_ptr<Tile> TileMap::GetFocusedTile()
+shared_ptr<Tile> TileMap::GetFocusedTile(Vector2 orginPos, Vector2 targetPos)
 {
-	return _tiles[GetFocusedIndex()];
+	return _tiles[GetFocusedIndex(orginPos, targetPos)];
 }
 
 vector<shared_ptr<Tile>> TileMap::GetFocusedTiles(Vector2 point, short level)
 {
-	Vector2 target = point - Player::GetInstance()->GetWorldPos();
+	/*Vector2 target = point - Player::GetInstance()->GetWorldPos();
 	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
 	float angle = target.Angle() * 57.2958f;
 	int dir, dir2;
@@ -365,13 +354,15 @@ vector<shared_ptr<Tile>> TileMap::GetFocusedTiles(Vector2 point, short level)
 	}
 	}
 
+	return tiles;*/
+	vector<shared_ptr<Tile>> tiles;
 	return tiles;
 }
 
-vector<int> TileMap::GetFocusedIndices(Vector2 point, short level)
+vector<int> TileMap::GetFocusedIndices(Vector2 originPos, Vector2 targetPos, short level)
 {
-	Vector2 target = point - Player::GetInstance()->GetWorldPos();
-	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
+	Vector2 target = targetPos - originPos;
+	int worldIndex = GetWorldIndex(originPos);
 	int dir, dir2;
 
 	if (abs(target.x) > abs(target.y))

@@ -62,7 +62,7 @@ bool CircleCollider::Block(shared_ptr<CircleCollider> other)
 	Vector2 power = (pos2 - pos1).Normalize();
 	
 			
-	other->AddPos(power * DELTA_TIME * SPEED);
+	other->AddPos(power * DELTA_TIME * 200);
 
 	return true;
 }

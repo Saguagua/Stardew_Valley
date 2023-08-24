@@ -1,4 +1,6 @@
 #pragma once
+class PlayerSubscribe;
+
 class PlayerImproved: public Player
 {
 public:
@@ -7,11 +9,26 @@ public:
 
 	void PlayAction();
 
-private:
-	list<PlayerSubscribe*> _subscribers;
+	void RequestSubscribe(PlayerSubscribe* subscriber);
+	void CancelSubscribe(PlayerSubscribe* subscriber);
 
-	float _chargeTime;
-	float _chargeCount;
-	Vector2 _chargePoint;
+	void KeyInput();
+
+	void AddMaxHP(short cost);
+	void AddMaxStamina(short cost);
+	virtual void AddHP(short cost) override;
+	void AddStamina(short cost);
+	bool AddItem(string name);
+
+	void SetCurItem(int index);
+	void SwapItems(int index1, int index2);
+private:
+	void ItemAction();
+	virtual void SetPause(bool val) override;
+
+	void SendToSubscribers(int type);
+
+
+	list<PlayerSubscribe*> _subscribers;
 };
 

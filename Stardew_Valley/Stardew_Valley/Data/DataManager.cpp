@@ -30,14 +30,13 @@ void DataManager::Save()
 	SavePlayerInfo();
 }
 
-void DataManager::Load(string name)
+
+void DataManager::LoadMaps(string name)
 {
 	for (pair<string, bool> iter : _mapTable)
 	{
 		LoadMap(name, iter.first);
 	}
-
-	LoadPlayerInfo(name);
 }
 
 void DataManager::SaveMaps()
@@ -232,7 +231,7 @@ void DataManager::LoadMap(string playerName, string mapName)
 		{
 			fin >> x >> y;
 
-			ObjectSpawner::GetInstance()->CreateObj(mapInfo, index, name, x, y);
+			OBJECT_SPAWNER->CreateObj(mapInfo, index, name, x, y);
 		}
 		index++;
 	}

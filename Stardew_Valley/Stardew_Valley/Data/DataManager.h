@@ -46,7 +46,8 @@ public:
 	shared_ptr<CropInfo>	GetCropInfo(string key)		{ return _cropTable[key]; }
 
 	void Save();
-	void Load(string name);
+	void LoadMaps(string name);
+	void LoadPlayerInfo(string playerName);
 private:
 	void ReadXML();
 	void ReadTypes();
@@ -56,7 +57,6 @@ private:
 	void SaveMaps();
 	void SavePlayerInfo();
 	void LoadMap(string playerName, string mapName);
-	void LoadPlayerInfo(string playerName);
 
 	static DataManager* _instance;
 

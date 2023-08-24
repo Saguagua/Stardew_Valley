@@ -1,9 +1,6 @@
 #include "framework.h"
-#include "ObjType/DeployableObj/DeployableObject.h"
-#include "ObjType/DeployableObj/BreakableItem.h"
-#include "ObjType/DeployableObj/PickableItem.h"
-#include "ObjType/DeployableObj/DropItem.h"
-#include "ObjType/DeployableObj/Crop.h"
+#include "Object\GameObj\Others\DeployableObj\FishingHook.h"
+#include "Object\GameObj\Creature\Player\PlayerImproved.h"
 #include "ObjectSpawner.h"
 
 ObjectSpawner* ObjectSpawner::_instance = nullptr;
@@ -11,7 +8,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 ObjectSpawner::ObjectSpawner()
 {
 	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
-	_fishingHook = make_shared<Transform>();
+	_fishingHook = make_shared<FishingHook>();
 	for (int i = 0; i < 60; i++)
 	{
 		_dropItems.push_back(make_shared<DropItem>());
@@ -144,27 +141,27 @@ void ObjectSpawner::Update()
 
 				dropItem->GetCollider()->Block(other->GetCollider());
 			}
-			if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetCollider()))
+			if (!_player.expired())
 			{
-				dropItem->Interaction();
-			}
-			else if (dropItem->GetCollider()->IsCollision(Player::GetInstance()->GetMagnatic()))
-			{
-				Vector2 dir = Player::GetInstance()->GetWorldPos() - dropItem->GetWorldPos();
-				dir = dir.Normalize();
-				dropItem->AddPos(dir * 100 * DELTA_TIME);
+				if (dropItem->GetCollider()->IsCollision(_player.lock()->GetCollider()))
+				{
+					dropItem->Interaction();
+				}
+				else if (dropItem->GetCollider()->IsCollision(_player.lock()->GetMagnatic()))
+				{
+					Vector2 dir = _player.lock()->GetWorldPos() - dropItem->GetWorldPos();
+					dir = dir.Normalize();
+					dropItem->AddPos(dir * 100 * DELTA_TIME);
+				}
 			}
 		}
 
 		dropItem->Update();
 
 	}
-	if (_hookPower > 1)
-	{
-		_fishingHook->AddPos(_hookDirection * DELTA_TIME * _hookPower * 100);
-		_hookPower /= 1.1f;
-		_fishingHook->Update();
-	}
+	
+		
+	_fishingHook->Update();
 }
 
 void ObjectSpawner::Render()
@@ -175,12 +172,13 @@ void ObjectSpawner::Render()
 			continue;
 		dropItem->Render(_renderer);
 	}
-	if (_hookActivate)
-	{
-		_fishingHook->Set_World(0);
-		_renderer->ChangePicture("Potato", 0);
-		_renderer->Render();
-	}
+	
+	_fishingHook->Render(_renderer);
+}
+
+void ObjectSpawner::SetPlayer(shared_ptr<PlayerImproved> player)
+{
+	_player = player;
 }
 
 void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos, int count)
@@ -201,8 +199,5 @@ void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos
 
 void ObjectSpawner::ActiveFishingHook(Vector2 pos, Vector2 direction, float power)
 {
-	_fishingHook->SetPos(pos);
-	_hookDirection = direction;
-	_hookPower = 5;
-	_hookActivate = true;
+	_fishingHook->SetActive(pos, direction, power, 45);
 }

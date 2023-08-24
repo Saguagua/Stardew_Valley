@@ -1,13 +1,10 @@
 #include "framework.h"
-#include "../Player/PlayerSubscribe.h"
 #include "List.h"
 #include "ItemSlot.h"
 
-ItemSlot::ItemSlot()
-	:List(Vector2(10,1)), PlayerSubscribe(Type::ITEMS)
+ItemSlot::ItemSlot(shared_ptr<PlayerImproved> player)
+	:List(Vector2(10,1)), PlayerSubscribe(player, Type::ITEMS)
 {	
-	_playerInfo = Player::GetInstance()->RequestSubscribe(this);
-
 	_transform = make_shared<Transform>();
 
 	CreateButtons(XMLPATH, 10);
@@ -40,7 +37,7 @@ void ItemSlot::PushButtonEvent(int index)
 
 void ItemSlot::UpdateInfo()
 {
-	vector<shared_ptr<Item>> items = _playerInfo.lock()->GetItems();
+	vector<shared_ptr<Item>> items = _player.lock()->GetItems();
 
 	for (int i = 0; i < _buttons.size(); i++)
 	{
@@ -50,8 +47,8 @@ void ItemSlot::UpdateInfo()
 
 void ItemSlot::CreateButtons(wstring path, int count)
 {
-	vector<CallBackInt> callbacks = Player::GetInstance()->GetSelectedIndexCallback();
-	auto items = _playerInfo.lock()->GetItems();
+	//vector<CallBackInt> callbacks = _player.lock()->GetSelectedIndexCallback();
+	auto items = _player.lock()->GetItems();
 
 	for (int i = 0; i < count; i++)
 	{
@@ -60,7 +57,6 @@ void ItemSlot::CreateButtons(wstring path, int count)
 		_buttons.push_back(button);
 	}
 }
-
 
 void ItemSlot::Dead()
 {

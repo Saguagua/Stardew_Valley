@@ -4,7 +4,7 @@
 
 void BreakableItem::Interaction()
 {
-	auto item = PLAYER->GetSelectedItem();
+	/*auto item = PLAYER->GetSelectedItem();
 
 	if (item->GetType() == _breakType)
 	{
@@ -19,12 +19,12 @@ void BreakableItem::Interaction()
 				int random = rand() % 100 + 1;
 				if (dropDatas[i]._percent >= random)
 				{
-					OBSPAWNER->ActiveDropItem(dropDatas[i]._name, dropDatas[i]._name, _centerPos, 1);
+					OBJECT_SPAWNER->ActiveDropItem(dropDatas[i]._name, dropDatas[i]._name, _centerPos, 1);
 				}
 			}
 
 			_name = "BLANK";
 			_isActive = false;
 		}
-	}
+	}*/
 }

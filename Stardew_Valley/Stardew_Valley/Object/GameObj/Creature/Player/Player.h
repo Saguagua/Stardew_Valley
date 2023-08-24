@@ -3,6 +3,7 @@
 
 class Player :public Creature
 {
+protected:
 	enum PlayerAction
 	{
 		IDLE = 0,
@@ -18,40 +19,30 @@ public:
 	
 	void Update();
 	void Render();
-	
-	shared_ptr<PlayerInfo> RequestSubscribe(PlayerSubscribe* subscriber);
-	void CancelSubscribe(PlayerSubscribe* subscriber);
 
 	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
-	vector<CallBackInt> GetSelectedIndexCallback();
+	vector<CallBackInt> GetCurIndexCallback();
 
-	bool AddMaxHP(short cost);
-	bool AddMaxStamina(short cost);
-	bool AddStamina(short cost);
-	bool AddItem(string name);
+	short GetMaxHp() { return _maxHp; }
+	short GetMaxStamina() { return _maxStamina; }
+	short GetHp() { return _hp; }
+	short GetStamina() { return _stamina; }
+	int GetCurIndex() { return _curIndex; }
+	vector<shared_ptr<Item>>& GetItems() { return _items; }
 
 protected:
+	void GetDatas();
+
 	//Actions
 	virtual void CreateAction() override;
-	virtual void SetAction(int index) override;
 	void SetArmAction(int index);
 	
 	//Inputs
 	void Move();
-	void Mouse();
-	void Items();;
-
-	//Misc
-	void SetSelectedItemIndex(int index);
-	void SwapItems(int index1, int index2);
-
-	//Send
-	void SendToSubscribers(int type);
 
 	//Colliders
-	shared_ptr<RectCollider> _col;
 	shared_ptr<CircleCollider> _magnatic;
 
 	//Slots

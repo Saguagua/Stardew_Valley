@@ -96,9 +96,9 @@ using namespace Microsoft::WRL;
 
 //GameObject
 #include "Object\GameObj\Others\GameObject.h"
+#include "Object\GameObj\Others\DeployableObj/DeployableObject.h"
 #include "Object\GameObj\Others\DeployableObj\BreakableItem.h"
 #include "Object\GameObj\Others\DeployableObj/Crop.h"
-#include "Object\GameObj\Others\DeployableObj/DeployableObject.h"
 #include "Object\GameObj\Others\DeployableObj/PickableItem.h"
 
 #include "Object/Tile/Tile.h"
@@ -123,6 +123,7 @@ using namespace Microsoft::WRL;
 #include "Object/UI/Button.h"
 #include "Object/UI/ColorButton.h"
 #include "Object/UI/TextureButton.h"
+#include "Object\UI\List.h"
 #include "Object/UI/PlayerUI.h"
 #include "Object/UI/Palette.h"
 

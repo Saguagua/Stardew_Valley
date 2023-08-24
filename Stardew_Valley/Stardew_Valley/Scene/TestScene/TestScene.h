@@ -9,8 +9,11 @@ public:
 	virtual void Render() override;
 	virtual void PostRender() override;
 
-	static bool _bagMode;
 private:
-	shared_ptr<Player> _player;
+	void KeyInput();
+
+	bool _bagMode;
+	shared_ptr<PlayerImproved> _player;
 	shared_ptr<TileMap> _map;
+	vector<shared_ptr<Item>> _items;
 };

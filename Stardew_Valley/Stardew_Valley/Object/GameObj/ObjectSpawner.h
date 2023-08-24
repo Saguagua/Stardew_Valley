@@ -1,5 +1,7 @@
 #pragma once
 class Crop;
+class PlayerImproved;
+class FishingHook;
 
 class ObjectSpawner
 {
@@ -33,11 +35,11 @@ public:
 	void Update();
 	void Render();
 
-	void SetPlayerInfo() { _playerInfo = DATA->GetPlayerInfo(); }
+	void SetPlayer(shared_ptr<PlayerImproved> player);
 
 	void ActiveDropItem(string dropName, string itemName, Vector2 pos, int count);
-
 	void ActiveFishingHook(Vector2 pos, Vector2 direction, float power);
+
 private:
 	static ObjectSpawner* _instance;
 
@@ -48,12 +50,10 @@ private:
 
 	vector<shared_ptr<class DropItem>> _dropItems;
 	list<Crop*> _crops;
-	
-	shared_ptr<Transform> _fishingHook;
-	Vector2 _hookDirection;
-	float _hookPower;
-	bool _hookActivate = false;
+	shared_ptr<FishingHook> _fishingHook;
 
 	shared_ptr<class PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
 	shared_ptr<Sprite> _renderer;
+
+	weak_ptr<PlayerImproved> _player;
 };

@@ -1,61 +1,8 @@
 #include "framework.h"
 #include "../../../Tile/TileType/ArableTile.h"
 #include "../../../Tile/TileType/FishableTile.h"
-#include "Object\GameObj\ObjType\DeployableObj\BreakableItem.h"
-#include "../../../Player/Player.h"
 #include "Item.h"
 
-void Item::KeyInput()
-{
-	switch (_type)
-	{
-	case Item::EATABLE:
-	{
-		Eat();
-		break;
-	}
-	case Item::FISHINGROD:
-	{
-		Fishing();
-		break;
-	}
-	case Item::HOE:
-	{
-		Hoe();
-		break;
-	}
-	case Item::AXE:
-	case Item::PICKAXE:
-	{
-		PickAxe();
-		break;
-	}
-	case Item::WATERINGCAN:
-	{
-		Water();
-		break;
-	}
-	case Item::SEED:
-	{
-		Seed();
-		break;
-	}
-	case Item::FERTILIZER:
-	{
-		Fertilizer();
-		break;
-	}
-	case Item::WEAPON:
-	{
-		
-		break;
-	}
-	case Item::FACILITY:
-		break;
-	default:
-		break;
-	}
-}
 
 void Item::SetItem(string name, short count)
 {
@@ -79,20 +26,13 @@ bool Item::AddCount()
 	return false;
 }
 
-void Item::Hoe()
+void Item::Hoe(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 {
-	//0 : level
-	//1 : cost
-
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		_chargeCount = 0;
 		_chargeTime = 0;
 		_point = W_MOUSE_POS;
-		Player::GetInstance()->SetDirection(_point);
-		Player::GetInstance()->SetArmAction(Player::PlayerAction::TOOL);
-		Player::GetInstance()->SetBodyAction(Player::PlayerAction::TOOL);
-		Player::GetInstance()->SetPause(true);
 	}
 	else if (KEY_PRESS(VK_LBUTTON))
 	{
@@ -103,20 +43,17 @@ void Item::Hoe()
 			if (_chargeCount < _vals[0])
 				_chargeCount++;
 
-			TileMap::GetInstance()->Hoeing(_point, _chargeCount);
+			m->Charging(p->GetWorldPos(), _point, _chargeCount);
 		}
 	}
 	else if (KEY_UP(VK_LBUTTON))
 	{
-		Player::GetInstance()->AddStamina(_vals[1]);
-		Player::GetInstance()->SetPause(false);
-
-		TileMap::GetInstance()->Hoeing(_point, _chargeCount);
-
+		p->AddStamina(_vals[1]);
+		m->Hoeing(p->GetWorldPos(), _point, _chargeCount);
 	}
 }
 
-void Item::Water()
+void Item::Water(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
@@ -134,33 +71,25 @@ void Item::Water()
 			if (_chargeCount < _vals[0])
 				_chargeCount++;
 
-			TileMap::GetInstance()->Hoeing(_point, _chargeCount);
+			m->Charging(p->GetWorldPos(), _point, _chargeCount);
 		}
 	}
 	else if (KEY_UP(VK_LBUTTON))
 	{
-		Player::GetInstance()->AddStamina(_vals[1]);
-
-		TileMap::GetInstance()->Watering(_point, _chargeCount);
-
-		//Player::GetInstance()->
+		p->AddStamina(_vals[1]);
+		m->Watering(p->GetWorldPos(), _point, _chargeCount);
 	}
-	
 }
 
-void Item::PickAxe()
+void Item::Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		_point = W_MOUSE_POS;
 
-		PLAYER->SetDirection(_point);
-		PLAYER->SetArmAction(Player::PlayerAction::TOOL);
-		PLAYER->SetBodyAction(Player::PlayerAction::TOOL);
+		p->AddStamina(_vals[1]);
 
-		PLAYER->AddStamina(_vals[1]);
-
-		shared_ptr<DeployableObject> obj = TILEMAP->GetFocusedTile()->GetObj();
+		shared_ptr<DeployableObject> obj = m->GetFocusedTile(p->GetWorldPos(), _point)->GetObj();
 		auto breakObj = dynamic_pointer_cast<BreakableItem>(obj);
 
 		if (obj != nullptr)
@@ -170,17 +99,13 @@ void Item::PickAxe()
 	}
 }
 
-void Item::Fishing()
+void Item::Fishing(shared_ptr<PlayerImproved> p)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		_chargeCount = 0;
 		_chargeTime = 0;
 		_point = W_MOUSE_POS;
-		Player::GetInstance()->SetDirection(_point);
-		Player::GetInstance()->SetArmAction(Player::PlayerAction::TOOL);
-		Player::GetInstance()->SetBodyAction(Player::PlayerAction::TOOL);
-		Player::GetInstance()->SetPause(true);
 	}
 	else if (KEY_PRESS(VK_LBUTTON))
 	{
@@ -195,25 +120,24 @@ void Item::Fishing()
 	}
 	else if (KEY_UP(VK_LBUTTON))
 	{
-		Player::GetInstance()->AddStamina(_vals[1]);
-		Player::GetInstance()->SetPause(false);
+		p->AddStamina(_vals[1]);
 
-		OBSPAWNER->ActiveFishingHook(PLAYER->GetCollider()->GetWorldPos(), Vector2(1,0), 5);
+		OBJECT_SPAWNER->ActiveFishingHook(p->GetWorldPos(), Vector2(1,1), 100);
 	}
 }
 
-void Item::Weapon()
+void Item::Weapon(shared_ptr<PlayerImproved> p)
 {
 }
 
-void Item::Eat()
+void Item::Eat(shared_ptr<PlayerImproved> p)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		Player::GetInstance()->AddMaxHP(_vals[0]);
-		Player::GetInstance()->AddMaxStamina(_vals[1]);
-		Player::GetInstance()->AddHP(_vals[2]);
-		Player::GetInstance()->AddStamina(_vals[3]);
+		p->AddMaxHP(_vals[0]);
+		p->AddMaxStamina(_vals[1]);
+		p->AddHP(_vals[2]);
+		p->AddStamina(_vals[3]);
 		
 		_count--;
 
@@ -224,17 +148,17 @@ void Item::Eat()
 	}
 }
 
-void Item::Seed()
+void Item::Seed(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		_point = W_MOUSE_POS;
-		auto tile = dynamic_pointer_cast<ArableTile>(TileMap::GetInstance()->GetFocusedTile());
+		auto tile = dynamic_pointer_cast<ArableTile>(m->GetFocusedTile(p->GetWorldPos(), _point));
 		if (tile->GetPlantable() && tile->GetCrop() != nullptr)
 			tile->Plant(_subName);
 	}
 }
 
-void Item::Fertilizer()
+void Item::Fertilizer(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 {
 }

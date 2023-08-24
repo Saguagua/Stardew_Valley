@@ -1,6 +1,5 @@
 #include "framework.h"
 #include "../Tile.h"
-#include "../../GameObj/ObjType/DeployableObj/Crop.h"
 #include "ArableTile.h"
 
 void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)

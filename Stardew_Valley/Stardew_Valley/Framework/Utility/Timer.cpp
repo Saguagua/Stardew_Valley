@@ -26,7 +26,6 @@ void Timer::Update()
 		}
 	}
 
-	
 	_lastTime = _curTime;
 
 	_frameCount++;
@@ -47,7 +46,7 @@ void Timer::Update()
 			if (_hour > MAXHOUR) //24
 			{
 				PlayerUI::GetInstance()->NextDay();
-				ObjectSpawner::GetInstance()->Update_Crops();
+				OBJECT_SPAWNER->Update_Crops();
 				_hour = 6;
 			}
 		}

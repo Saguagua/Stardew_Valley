@@ -2,7 +2,7 @@
 class ItemSlot : public List, PlayerSubscribe
 {
 public:
-	ItemSlot();
+	ItemSlot(shared_ptr<PlayerImproved> player);
 	~ItemSlot() {}
 
 	void Update();
@@ -10,7 +10,6 @@ public:
 	void PushButtonEvent(int index);
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
-
 private:
 	void CreateButtons(wstring path, int count);
 

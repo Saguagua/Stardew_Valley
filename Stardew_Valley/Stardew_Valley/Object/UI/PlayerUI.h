@@ -1,14 +1,14 @@
 #pragma once
 class PlayerUI
 {
-	PlayerUI();
+	PlayerUI(shared_ptr<PlayerImproved> player);
 	~PlayerUI() {}
 
 public:
-	static void Create()
+	static void Create(shared_ptr<PlayerImproved> player)
 	{
 		if (_instance == nullptr)
-			_instance = new PlayerUI();
+			_instance = new PlayerUI(player);
 	}
 
 	static void Delete()
@@ -32,11 +32,14 @@ public:
 	void SetHP(float hp);
 	void SetStamina(float stamina);
 	
+	bool GetBagMode() { return _bagActive; }
 private:
 	void Key();
 	
 	static PlayerUI* _instance;
+
 	shared_ptr<Transform> _transform;
+
 	shared_ptr<class BagUI> _bagUI;
 	shared_ptr<class ItemSlot> _itemSlot;
 	shared_ptr<class Bar> _hpBar;

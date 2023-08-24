@@ -261,6 +261,9 @@
     <ClInclude Include="Object\GameObj\Creature\Player\PlayerImproved.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\FishingHook.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -453,6 +456,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\GameObj\Creature\Player\PlayerImproved.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\FishingHook.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

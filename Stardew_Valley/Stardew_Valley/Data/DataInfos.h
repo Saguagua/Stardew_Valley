@@ -20,18 +20,11 @@ public:
 	short	  GetStamina() { return _stamina; }
 	short  GetMaxStamina() { return _maxStamina; }
 	int		    GetState() { return _playerState; }
-	int&	 GetStateRef() { return _playerState; }
-	int GetSelectedIndex() { return _selectedIndex; }
-	shared_ptr<Item> GetSelectedItem() { return _items[_selectedIndex]; }
+	int& GetStateRef() { return _playerState; }
+	int GetCurIndex() { return _curIndex; }
+	shared_ptr<Item> GetCurItem() { return _items[_curIndex]; }
 	shared_ptr<Item> GetItem(int index) { return _items[index]; }
 	vector<shared_ptr<Item>>& GetItems() { return _items; }
-
-	void  	         SetHP(short val) { _hp = val; }
-	void  	      SetMaxHP(short val) { _maxHp = val; }
-	void  	    SetStamina(short val) { _stamina = val; }
-	void     SetMaxStamina(short val) { _maxStamina = val; }
-	void 	      SetState(int state) { _playerState = state; }
-	void SetSelectedIndex(int index) { _selectedIndex = index; }
 
 private:
 	string _name;
@@ -43,10 +36,8 @@ private:
 	Vector2 _pos;
 
 	int _playerState = PlayerState::IDLE;
-	int _selectedIndex = 0;
+	int _curIndex = 0;
 };
-
-
 
 class MapInfo
 {

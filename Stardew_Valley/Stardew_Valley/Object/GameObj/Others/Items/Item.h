@@ -1,7 +1,9 @@
 #pragma once
-#include "../../GameObject.h"
 #define LEVEL 0
 #define COST 1
+
+class PlayerImproved;
+class TileMap;
 
 class Item : public GameObject
 {
@@ -28,7 +30,7 @@ public:
 		:GameObject("BLANK")
 	{}
 
-	void KeyInput();
+	virtual ~Item() {}
 
 	void SetItem(string name, short count);
 
@@ -39,15 +41,17 @@ public:
 	short GetType() { return _type; }
 
 	const vector<short>& GetVals() { return _vals; }
+
+	void Hoe(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Water(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Fishing(shared_ptr<PlayerImproved> p);
+	void Weapon(shared_ptr<PlayerImproved> p);
+	void Eat(shared_ptr<PlayerImproved> p);
+	void Seed(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Fertilizer(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
 protected:
-	void Hoe();
-	void Water();
-	void PickAxe();
-	void Fishing();
-	void Weapon();
-	void Eat();
-	void Seed();
-	void Fertilizer();
+	
 
 	string _subName;
 

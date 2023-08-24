@@ -1,8 +1,8 @@
 #pragma once
-class Bar
+class Bar :public PlayerSubscribe
 {
 public:
-	Bar(wstring path, string name, Vector2 size);
+	Bar(shared_ptr<PlayerImproved> player, wstring path, string name, Vector2 size);
 	~Bar() {}
 
 	void Render();
@@ -11,10 +11,16 @@ public:
 	void SetPos(Vector2 pos);
 
 	Vector2 GetPos() { return _bodyTransform->GetPos(); }
+
+	virtual void UpdateInfo() override;
+	virtual void Dead() override;
 private:
 	shared_ptr<Transform> _bodyTransform;
 	shared_ptr<Transform> _guageTransform;
 	shared_ptr<Sprite> _body;
 	shared_ptr<SingleColorRect> _gauge;
+
+	weak_ptr<PlayerImproved> _player;
+
 };
 

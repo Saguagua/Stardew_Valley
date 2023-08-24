@@ -1,8 +1,17 @@
 #include "framework.h"
 #include "Bar.h"
 
-Bar::Bar(wstring path, string name, Vector2 size)
+Bar::Bar(shared_ptr<PlayerImproved> player, wstring path, string name, Vector2 size)
+	:PlayerSubscribe(player, PlayerSubscribe::Type::ALL)
 {
+	if (name == "HPBar")
+		SetType(Type::HP);
+	else
+		SetType(Type::STAMINA);
+
+	_player = player;
+	_player.lock()->RequestSubscribe(this);
+
 	_bodyTransform = make_shared<Transform>();
 	_guageTransform = make_shared<Transform>();
 	_body = make_shared<Sprite>(path, name, size, SpriteType::UI);
@@ -50,4 +59,16 @@ void Bar::SetPos(Vector2 pos)
 	_bodyTransform->SetPos(pos);
 	_bodyTransform->Update();
 	_guageTransform->Update();
+}
+
+void Bar::UpdateInfo()
+{
+	if (_type == Type::HP)
+		SetRatio(Vector2(1.0f, (float)_player.lock()->GetHp()));
+	else
+		SetRatio(Vector2(1.0f, (float)_player.lock()->GetStamina()));
+}
+
+void Bar::Dead()
+{
 }
