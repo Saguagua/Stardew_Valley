@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\GameObj\Creature\Creature.h" />
     <ClInclude Include="Data\DataInfos.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Include\imconfig.h" />
@@ -163,11 +164,11 @@
     <ClInclude Include="Include\imstb_rectpack.h" />
     <ClInclude Include="Include\imstb_textedit.h" />
     <ClInclude Include="Include\imstb_truetype.h" />
-    <ClInclude Include="Object\GameObj\ObjType\Items\Item.h" />
-    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.h" />
-    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\Crop.h" />
+    <ClInclude Include="Object\GameObj\Others\Items\Item.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\DeployableObject.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Crop.h" />
     <ClInclude Include="Data\PlayerInfoSubscriber.h" />
-    <ClInclude Include="Object\Player\PlayerSubscribe.h" />
+    <ClInclude Include="Object\GameObj\Creature\Player\PlayerSubscribe.h" />
     <ClInclude Include="Object\UI\BagUI.h" />
     <ClInclude Include="Framework\Light\LightManager.h" />
     <ClInclude Include="Object\BasicObj\LightTextureRect.h" />
@@ -176,20 +177,21 @@
     <ClInclude Include="Object\UI\ItemSlot.h" />
     <ClInclude Include="Object\Tile\TileType\ArableTile.h" />
     <ClInclude Include="Object\Tile\TileType\FishableTile.h" />
-    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\DropItem.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\DropItem.h" />
     <ClInclude Include="Object\GameObj\ObjectSpawner.h" />
     <ClInclude Include="Framework\Animation\Action.h" />
-    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\BreakableItem.h" />
-    <ClInclude Include="Object\GameObj\GameObject.h" />
-    <ClInclude Include="Object\Player\Player.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\BreakableItem.h" />
+    <ClInclude Include="Object\GameObj\Others\GameObject.h" />
+    <ClInclude Include="Object\GameObj\Creature\Player\Player.h" />
     <ClInclude Include="Object\UI\List.h" />
     <ClInclude Include="Object\UI\ColorButton.h" />
     <ClInclude Include="Object\UI\Button.h" />
     <ClInclude Include="Object\BasicObj\SingleColorRect.h" />
     <ClInclude Include="Object\UI\Palette.h" />
     <ClInclude Include="Data\DataManager.h" />
-    <ClInclude Include="Object\GameObj\ObjType\DeployableObj\PickableItem.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\PickableItem.h" />
     <ClInclude Include="Object\UI\PlayerUI.h" />
+    <ClInclude Include="Object\GameObj\Creature\Player\PlayerImproved.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
     <ClInclude Include="Framework\Utility\MathUtility.h" />
@@ -235,9 +237,10 @@
     <ClInclude Include="Defines.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Object\GameObj\ObjType\Items\Item.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\DeployableObject.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\Crop.cpp" />
+    <ClCompile Include="Object\GameObj\Creature\Creature.cpp" />
+    <ClCompile Include="Object\GameObj\Others\Items\Item.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\DeployableObject.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Crop.cpp" />
     <ClCompile Include="Object\UI\BagUI.cpp" />
     <ClCompile Include="Framework\Light\LightManager.cpp" />
     <ClCompile Include="Object\BasicObj\LightTextureRect.cpp" />
@@ -246,20 +249,21 @@
     <ClCompile Include="Object\UI\ItemSlot.cpp" />
     <ClCompile Include="Object\Tile\TileType\ArableTile.cpp" />
     <ClCompile Include="Object\Tile\TileType\FishableTile.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\DropItem.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\DropItem.cpp" />
     <ClCompile Include="Object\GameObj\ObjectSpawner.cpp" />
     <ClCompile Include="Framework\Animation\Action.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\BreakableItem.cpp" />
-    <ClCompile Include="Object\GameObj\GameObject.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\BreakableItem.cpp" />
+    <ClCompile Include="Object\GameObj\Others\GameObject.cpp" />
     <ClCompile Include="Object\UI\List.cpp" />
     <ClCompile Include="Object\UI\ColorButton.cpp" />
     <ClCompile Include="Object\UI\Button.cpp" />
     <ClCompile Include="Object\BasicObj\SingleColorRect.cpp" />
     <ClCompile Include="Object\UI\Palette.cpp" />
-    <ClCompile Include="Object\Player\Player.cpp" />
+    <ClCompile Include="Object\GameObj\Creature\Player\Player.cpp" />
     <ClCompile Include="Data\DataManager.cpp" />
-    <ClCompile Include="Object\GameObj\ObjType\DeployableObj\PickableItem.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\PickableItem.cpp" />
     <ClCompile Include="Object\UI\PlayerUI.cpp" />
+    <ClCompile Include="Object\GameObj\Creature\Player\PlayerImproved.cpp" />
     <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
     <ClCompile Include="Object\BasicObj\CircleLine.cpp" />

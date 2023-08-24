@@ -191,7 +191,6 @@ void Item::Fishing()
 			if (_chargeCount < _vals[0])
 				_chargeCount++;
 
-			TileMap::GetInstance()->Hoeing(_point, _chargeCount);
 		}
 	}
 	else if (KEY_UP(VK_LBUTTON))
@@ -199,7 +198,7 @@ void Item::Fishing()
 		Player::GetInstance()->AddStamina(_vals[1]);
 		Player::GetInstance()->SetPause(false);
 
-		TileMap::GetInstance()->Hoeing(_point, _chargeCount);
+		OBSPAWNER->ActiveFishingHook(PLAYER->GetCollider()->GetWorldPos(), Vector2(1,0), 5);
 	}
 }
 

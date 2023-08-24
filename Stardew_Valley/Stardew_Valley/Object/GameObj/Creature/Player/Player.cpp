@@ -1,9 +1,6 @@
 #include "framework.h"
 #include "PlayerSubscribe.h"
-#include "../../Scene/TestScene/TestScene.h"
 #include "Player.h"
-
-Player* Player::_instance = nullptr;
 
 Player::Player()
 {
@@ -185,8 +182,7 @@ void Player::KeyInput()
 {
 	if (_playerInfo->GetState() & (PlayerState::DEAD | PlayerState::IMMOVEABLE))
 		return;
-	if (TestScene::_bagMode)
-		return;
+	
 
 	Mouse();
 	if (!_froze)
@@ -224,30 +220,6 @@ void Player::SetSelectedItemIndex(int index)
 	}
 	
 	SetArmAction(armIndex);
-}
-
-void Player::SetDirection(Vector2 pos)
-{
-	Vector2 dir = pos - _col->GetWorldPos();
-
-	if (abs(dir.x) > abs(dir.y))
-	{
-		if (dir.x < 0)
-			_col->SetScale(Vector2(-1, 1));
-		else
-			_col->SetScale(Vector2(1, 1));
-
-		_dir = SIDE;
-	}
-	else
-	{
-		if (dir.y < 0)
-			_dir = FRONT;
-		else
-			_dir = BACK;
-	}
-	
-
 }
 
 void Player::CreateAction()
@@ -450,19 +422,6 @@ void Player::CreateAction()
 #pragma endregion
 }
 
-void Player::SetBodyAction(int state)
-{
-	state += _dir;
-	if (_bodyIndex == state)
-		return;
-
-	_bodyActions[_bodyIndex]->Stop();
-
-	_bodyIndex = state;
-
-	_bodyActions[_bodyIndex]->Play();
-}
-
 void Player::SetArmAction(int state)
 {
 	state += _dir;
@@ -499,7 +458,7 @@ void Player::Move()
 		if (!(state & (PlayerState::RUNL | PlayerState::RUNR)))
 		{
 			_dir = BACK;
-			SetBodyAction(PlayerAction::RUN);
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
 		state |= PlayerState::RUNB;
@@ -514,12 +473,12 @@ void Player::Move()
 
 		if (state & PlayerState::RUN)
 		{
-			SetBodyAction(PlayerAction::RUN);
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
 		else
 		{
-			SetBodyAction(PlayerAction::IDLE);
+			SetAction(PlayerAction::IDLE);
 			SetArmAction(PlayerAction::IDLE);
 		}
 	}
@@ -529,7 +488,7 @@ void Player::Move()
 		if (!(state & (PlayerState::RUNL | PlayerState::RUNR)))
 		{
 			_dir = FRONT;
-			SetBodyAction(PlayerAction::RUN);
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
 		state |= PlayerState::RUNF;
@@ -544,12 +503,12 @@ void Player::Move()
 
 		if (state & PlayerState::RUN)
 		{
-			SetBodyAction(PlayerAction::RUN);
+			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
 		else
 		{
-			SetBodyAction(PlayerAction::IDLE);
+			SetAction(PlayerAction::IDLE);
 			SetArmAction(PlayerAction::IDLE);
 		}
 	}

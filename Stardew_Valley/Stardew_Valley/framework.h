@@ -95,19 +95,28 @@ using namespace Microsoft::WRL;
 #include "Framework/Collision/RectCollider.h"
 
 //GameObject
-#include "Object/GameObj/GameObject.h"
-#include "Object/GameObj/ObjType/DeployableObj/DeployableObject.h"
-#include "Object/GameObj/ObjType/Items/Item.h"
-#include "Object/GameObj/ObjectSpawner.h"
+#include "Object\GameObj\Others\GameObject.h"
+#include "Object\GameObj\Others\DeployableObj\BreakableItem.h"
+#include "Object\GameObj\Others\DeployableObj/Crop.h"
+#include "Object\GameObj\Others\DeployableObj/DeployableObject.h"
+#include "Object\GameObj\Others\DeployableObj/PickableItem.h"
 
 #include "Object/Tile/Tile.h"
+
+#include "Object\GameObj\Others\DeployableObj\DropItem.h"
+#include "Object/GameObj/ObjectSpawner.h"
+
+#include "Object\GameObj\Others\Items\Item.h"
+
 
 //Animation
 #include "Framework/Animation/Action.h"
 
+#include "Object\GameObj\Creature\Creature.h"
 //Player
-#include "Object/Player/Player.h"
-#include "Object/Player/PlayerSubscribe.h"
+#include "Object/GameObj/Creature/Player/Player.h"
+#include "Object/GameObj/Creature/Player/PlayerSubscribe.h"
+#include "Object/GameObj/Creature/Player/PlayerImproved.h"
 
 
 //UI

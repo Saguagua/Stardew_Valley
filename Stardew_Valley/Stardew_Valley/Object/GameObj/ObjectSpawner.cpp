@@ -11,7 +11,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 ObjectSpawner::ObjectSpawner()
 {
 	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
-
+	_fishingHook = make_shared<Transform>();
 	for (int i = 0; i < 60; i++)
 	{
 		_dropItems.push_back(make_shared<DropItem>());
@@ -157,6 +157,13 @@ void ObjectSpawner::Update()
 		}
 
 		dropItem->Update();
+
+	}
+	if (_hookPower > 1)
+	{
+		_fishingHook->AddPos(_hookDirection * DELTA_TIME * _hookPower * 100);
+		_hookPower /= 1.1f;
+		_fishingHook->Update();
 	}
 }
 
@@ -167,6 +174,12 @@ void ObjectSpawner::Render()
 		if (!dropItem->IsActive())
 			continue;
 		dropItem->Render(_renderer);
+	}
+	if (_hookActivate)
+	{
+		_fishingHook->Set_World(0);
+		_renderer->ChangePicture("Potato", 0);
+		_renderer->Render();
 	}
 }
 
@@ -184,4 +197,12 @@ void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos
 			}
 		}
 	}
+}
+
+void ObjectSpawner::ActiveFishingHook(Vector2 pos, Vector2 direction, float power)
+{
+	_fishingHook->SetPos(pos);
+	_hookDirection = direction;
+	_hookPower = 5;
+	_hookActivate = true;
 }

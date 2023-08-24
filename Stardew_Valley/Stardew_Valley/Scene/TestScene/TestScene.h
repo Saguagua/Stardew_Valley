@@ -11,4 +11,6 @@ public:
 
 	static bool _bagMode;
 private:
+	shared_ptr<Player> _player;
+	shared_ptr<TileMap> _map;
 };
