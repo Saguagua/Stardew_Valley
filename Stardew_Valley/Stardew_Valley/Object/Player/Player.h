@@ -70,7 +70,7 @@ private:
 	void SetBodyAction(int index);
 	void SetArmAction(int index);
 	void SetPause(bool val);
-	void EndAction();
+	
 
 	void KeyInput();
 	void Move();

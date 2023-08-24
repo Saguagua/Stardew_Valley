@@ -692,6 +692,32 @@ void Player::Mouse()
 {
 	auto item = _playerInfo->GetSelectedItem();
 	
+	auto type = item->GetType();
+
+	switch (type)
+	{
+	case Item::Type::AXE:
+	case Item::Type::PICKAXE:
+	{
+
+		break;
+	}
+	case Item::Type::EATABLE:
+	{
+
+	}
+	case Item::Type::HOE:
+	{
+
+	}
+	case Item::Type::WATERINGCAN:
+	{
+
+	}
+	default:
+		break;
+	}
+
 	if (item->GetType() == Item::Type::NONE || item->GetType() == Item::Type::BLANK)
 	{
 		if (KEY_DOWN(VK_LBUTTON))

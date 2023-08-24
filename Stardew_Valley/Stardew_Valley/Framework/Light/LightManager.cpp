@@ -36,14 +36,14 @@ void LightManager::Update()
 	else if (hour < SUNSET)
 	{
 		int tmp = SUNSET - 6;
-		float val = 0.2f / tmp;
-		_colorBuffer->GetBrighter({ 0.0114f * DELTA_TIME, 0.0114f * DELTA_TIME, 0.0114f * DELTA_TIME, 0 });
+		float val = 0.2f / tmp; //0.0114
+		_colorBuffer->GetBrighter({ val * DELTA_TIME, val * DELTA_TIME, val * DELTA_TIME, 0 });
 	}
 	else
 	{
-		int tmp = 24 - SUNSET;
-		float val = 0.5f / tmp;
-		_colorBuffer->GetDarker({ 0.045f * DELTA_TIME, 0.045f * DELTA_TIME, 0.045f * DELTA_TIME, 0 });
+		int tmp = MAXHOUR - SUNSET;
+		float val = 0.5f / tmp; //0.045
+		_colorBuffer->GetDarker({ val * DELTA_TIME, val * DELTA_TIME, val * DELTA_TIME, 0 });
 	}
 
 	_colorBuffer->Update();
