@@ -109,20 +109,38 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 	}
 	else if (KEY_PRESS(VK_LBUTTON))
 	{
-		_chargeTime += DELTA_TIME;
-		if (_chargeTime > 1)
-		{
-			_chargeTime = 0;
-			if (_chargeCount < _vals[0])
-				_chargeCount++;
-
-		}
+		if (_chargeCount < 150)
+			_chargeCount+=5;
 	}
 	else if (KEY_UP(VK_LBUTTON))
 	{
 		p->AddStamina(_vals[1]);
+		int dir = p->GetDirection();
+		Vector2 direction;
+		Vector2 originPos = p->GetWorldPos();
+		Vector2 targetPos = originPos;
 
-		OBJECT_SPAWNER->ActiveFishingHook(p->GetWorldPos(), Vector2(1,1), 100);
+		if (dir == SIDE)
+		{
+			float lr = p->GetCollider()->GetWorldScale().x;
+			direction.x = 1 * lr;
+			direction.y = 0;
+			targetPos.x += (_chargeCount * lr);
+		}
+		else if (dir == FRONT)
+		{
+			direction.x = 0;
+			direction.y = -1;
+			targetPos.y -= _chargeCount;
+		}
+		else if (dir == BACK)
+		{
+			direction.x = 0;
+			direction.y = 1;
+			targetPos.y += _chargeCount;
+		}
+
+		OBJECT_SPAWNER->ActiveFishingHook(originPos, targetPos , direction, 200);
 	}
 }
 

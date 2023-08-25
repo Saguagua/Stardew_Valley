@@ -50,16 +50,18 @@ public:
 	void Eat(shared_ptr<PlayerImproved> p);
 	void Seed(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
 	void Fertilizer(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-protected:
-	
 
+protected:
 	string _subName;
 
 	short _type = Type::BLANK;
 	short _price;
 	short _count;
+
 	vector<short> _vals;
+
 	float _chargeTime;
 	float _chargeCount;
+
 	Vector2 _point;
 };

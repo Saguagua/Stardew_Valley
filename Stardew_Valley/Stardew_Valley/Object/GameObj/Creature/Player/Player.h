@@ -60,7 +60,8 @@ protected:
 	short _stamina;
 	vector<shared_ptr<Item>> _items;
 
-	int _curIndex = 0;
 
+	int _curIndex = 0;
 	int _armIndex = PlayerAction::IDLE;
+
 };

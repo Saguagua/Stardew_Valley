@@ -35,10 +35,13 @@ void Player::Update()
 {
 	_col->Update();
 	_magnatic->Update();
+
 	_bodySlot->Update();
 	_itemSlot->Update();
+
 	_actions[_actionIndex]->Update();
 	_armActions[_armIndex]->Update();
+
 	_body->SetCurFrame(_actions[_actionIndex]->GetCurFrame());
 	_arm->SetCurFrame(_armActions[_armIndex]->GetCurFrame());
 }
@@ -51,6 +54,7 @@ void Player::Render()
 
 	_itemSlot->Set_World(0);
 	_obj->Render();
+
 	_col->Render();
 	_magnatic->Render();
 }

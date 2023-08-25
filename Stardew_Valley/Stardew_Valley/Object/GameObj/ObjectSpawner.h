@@ -38,7 +38,7 @@ public:
 	void SetPlayer(shared_ptr<PlayerImproved> player);
 
 	void ActiveDropItem(string dropName, string itemName, Vector2 pos, int count);
-	void ActiveFishingHook(Vector2 pos, Vector2 direction, float power);
+	void ActiveFishingHook(Vector2 originPos, Vector2 targetPos, Vector2 direction, float power);
 
 private:
 	static ObjectSpawner* _instance;
