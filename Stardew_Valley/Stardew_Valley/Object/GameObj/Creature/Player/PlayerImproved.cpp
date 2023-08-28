@@ -5,6 +5,22 @@
 PlayerImproved::PlayerImproved()
 	:Player()
 {
+	_fishing = make_shared<FishingMinigame>();
+	_fishing->GetTransform()->SetParent(_col->GetTransform());
+	_fishing->SetPos(Vector2(-70, 100));
+	_fishing->SetActive(true);
+}
+
+void PlayerImproved::Update()
+{
+	Player::Update();
+	_fishing->Update();
+}
+
+void PlayerImproved::Render()
+{
+	Player::Render();
+	_fishing->Render();
 }
 
 void PlayerImproved::PlayAction()
@@ -171,15 +187,12 @@ void PlayerImproved::ItemAction()
 	{
 		if (KEY_DOWN(VK_LBUTTON))
 		{
-
-		}
-		else if (KEY_PRESS(VK_LBUTTON))
-		{
-
+			SetDirection(W_MOUSE_POS);
+			SetPause(true);
 		}
 		else if (KEY_UP(VK_LBUTTON))
 		{
-
+			SetPause(false);
 		}
 	}
 	else if (type == Item::Type::WEAPON)

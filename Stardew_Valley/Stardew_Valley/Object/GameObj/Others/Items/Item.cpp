@@ -103,13 +103,13 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		_chargeCount = 0;
+		_chargeCount = 300;
 		_chargeTime = 0;
 		_point = W_MOUSE_POS;
 	}
 	else if (KEY_PRESS(VK_LBUTTON))
 	{
-		if (_chargeCount < 150)
+		if (_chargeCount < 700)
 			_chargeCount+=5;
 	}
 	else if (KEY_UP(VK_LBUTTON))
@@ -140,7 +140,7 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 			targetPos.y += _chargeCount;
 		}
 
-		OBJECT_SPAWNER->ActiveFishingHook(originPos, targetPos , direction, 200);
+		OBJECT_SPAWNER->ActiveFishingHook(originPos , direction, _chargeCount);
 	}
 }
 

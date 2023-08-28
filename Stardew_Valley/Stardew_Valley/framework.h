@@ -116,6 +116,7 @@ using namespace Microsoft::WRL;
 //Player
 #include "Object/GameObj/Creature/Player/Player.h"
 #include "Object/GameObj/Creature/Player/PlayerSubscribe.h"
+#include "Object\UI\FishingMinigame.h"
 #include "Object/GameObj/Creature/Player/PlayerImproved.h"
 
 

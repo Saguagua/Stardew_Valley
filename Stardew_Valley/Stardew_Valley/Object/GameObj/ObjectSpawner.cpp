@@ -197,7 +197,7 @@ void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos
 	}
 }
 
-void ObjectSpawner::ActiveFishingHook(Vector2 originPos, Vector2 targetPos, Vector2 direction, float power)
+void ObjectSpawner::ActiveFishingHook(Vector2 originPos, Vector2 direction, float power)
 {
-	_fishingHook->SetActive(originPos, targetPos, direction, power, 45);
+	_fishingHook->SetActive(originPos, direction, power);
 }

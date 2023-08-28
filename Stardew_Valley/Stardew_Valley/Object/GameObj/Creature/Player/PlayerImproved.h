@@ -1,11 +1,15 @@
 #pragma once
 class PlayerSubscribe;
+class FishingMinigame;
 
 class PlayerImproved: public Player
 {
 public:
 	PlayerImproved();
 	~PlayerImproved() {}
+
+	virtual void Update() override;
+	virtual void Render() override;
 
 	void PlayAction();
 
@@ -30,5 +34,6 @@ private:
 
 
 	list<PlayerSubscribe*> _subscribers;
+	shared_ptr<FishingMinigame> _fishing;
 };
 

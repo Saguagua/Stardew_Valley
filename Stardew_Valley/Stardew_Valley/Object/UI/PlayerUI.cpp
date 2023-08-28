@@ -23,7 +23,7 @@ PlayerUI::PlayerUI(shared_ptr<PlayerImproved> player)
 	_hpBar->SetPos(Vector2(500, -250));
 	_staminaBar->SetPos(Vector2(545, -250));
 	_timeUI->SetPos(Vector2(500, 250));
-
+	
 	_bagUI->SetActive(false);
 	_itemSlot->SetActive(true);
 }

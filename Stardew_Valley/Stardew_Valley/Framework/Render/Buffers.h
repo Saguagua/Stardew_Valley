@@ -52,8 +52,16 @@ struct ColorBuffer :public ConstantBuffer
 	void AddColor(XMFLOAT4 color)
 	{
 		_data.color.x += color.x;
+		if (_data.color.x > 1) _data.color.x = 1;
+		else if (_data.color.x < 0) _data.color.x = 0;
+
 		_data.color.y += color.y;
+		if (_data.color.y > 1) _data.color.y = 1;
+		else if (_data.color.y < 0) _data.color.y = 0;
+
 		_data.color.z += color.z;
+		if (_data.color.z > 1) _data.color.z = 1;
+		else if (_data.color.z < 0) _data.color.z = 0;
 	}
 
 	XMFLOAT4 GetColor()

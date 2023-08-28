@@ -17,8 +17,8 @@ public:
 	Player();
 	~Player() {}
 	
-	void Update();
-	void Render();
+	virtual void Update() override;
+	virtual void Render() override;
 
 	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }

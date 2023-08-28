@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\UI\FishingMinigame.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\FishingHook.h" />
     <ClInclude Include="Object\GameObj\Creature\Creature.h" />
     <ClInclude Include="Data\DataInfos.h" />
@@ -238,6 +239,7 @@
     <ClInclude Include="Defines.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\UI\FishingMinigame.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\FishingHook.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Creature.cpp" />
     <ClCompile Include="Object\GameObj\Others\Items\Item.cpp" />

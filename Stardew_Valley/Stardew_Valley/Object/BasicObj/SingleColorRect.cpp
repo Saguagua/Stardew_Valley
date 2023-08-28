@@ -7,6 +7,7 @@ SingleColorRect::SingleColorRect(Vector2 size, XMFLOAT4 color)
 	CreateVertices();
 	CreateData();
 	_cBuffer->SetColor(color);
+	_cBuffer->SetRatio(Vector2(1,1));
 	_cBuffer->Update();
 }
 
@@ -33,6 +34,25 @@ void SingleColorRect::SetColor(XMFLOAT4 color)
 
 void SingleColorRect::SetRatio(Vector2 ratio)
 {
+	Vector2 curRatio = _cBuffer->GetRatio();
+	XMFLOAT4 color = _cBuffer->GetColor();
+	float del = curRatio.y - ratio.y;
+
+	if (curRatio.y < ratio.y)
+	{
+		if (color.x == 1.0f)
+			AddColor(XMFLOAT4(0.0f, -del * 2, 0.0f, 0.0f));
+		else
+			AddColor(XMFLOAT4(del * 2, 0.0f, 0.0f, 0.0f));
+	}
+	else if (curRatio.y > ratio.y)
+	{
+		if (color.y == 1.0f)
+			AddColor(XMFLOAT4(-del * 2, 0.0f, 0.0f, 0.0f));
+		else
+			AddColor(XMFLOAT4(0.0f, -del * 2, 0.0f, 0.0f));
+	}
+
 	_cBuffer->SetRatio(ratio);
 	_cBuffer->Update();
 }

@@ -4,7 +4,6 @@
 FishingHook::FishingHook()
 {
 	_transform = make_shared<Transform>();
-	
 }
 
 void FishingHook::Render(shared_ptr<Sprite> renderer)
@@ -13,7 +12,7 @@ void FishingHook::Render(shared_ptr<Sprite> renderer)
 		return;
 
 	_transform->Set_World();
-	renderer->ChangePicture("Potato", 0);
+	renderer->ChangePicture(_name, 0);
 	renderer->Render();
 }
 
@@ -22,38 +21,38 @@ void FishingHook::Update()
 	if (!_isActive)
 		return;
 
-	if (_timeCount <= _timeMax)
+	if (_timeCount < _timeMax)
 	{
 		_timeCount += DELTA_TIME;
 		CalculateProjectile();
+		if (_timeCount >= _timeMax)
+			_name = "Bait";
 	}
 }
 
-void FishingHook::SetActive(Vector2 originPos, Vector2 targetPos, Vector2 dir, float power, float angle)
+void FishingHook::SetActive(Vector2 originPos, Vector2 dir, float power)
 {
 	_isActive = true;
-
+	_dir = dir;
+	_originPos = originPos;
 	_transform->SetPos(originPos);
 	_transform->Update();
-
-	_originPos = originPos;
-	_targetPos = targetPos;
-
-	_dir = dir;
 	_timeCount = 0;
-	_timeMax = 1;
-
-	float timeToGround = 1.0f;
-	float horizontalDistance = targetPos.x - originPos.x;
-	_power = horizontalDistance / timeToGround;
-	_angle = atan((_power * timeToGround) / (GRAVITY * timeToGround * timeToGround * 0.5f));
-
-	_horizontalVelocity = _power * cos(_angle);
-	_verticalVelocity = _power * sin(_angle);
-
-	/*_power = (targetPos.x - originPos.x) / cos(_angle) + GRAVITY / (2 * sin(_angle));
-	_horizontalVelocity = _power * cos(_angle);
-	_verticalVelocity = _power * sin(_angle);*/
+	_power = power; // ÃÊ±â ¼Óµµ 700 ~ 300
+	_angle = 60.0 * 3.141592 / 180.0; // °¢µµ (µµ ´ÜÀ§)
+	_name = "Potato";
+	if (_dir.x != 0)
+	{
+		_horizontalVelocity = _power * cos(_angle);
+		_verticalVelocity = _power * sin(_angle);
+		_timeMax = (2 * _verticalVelocity) / (GRAVITY * 100); // ¶¥¿¡ ´ê´Â ½Ã°£
+	}
+	else
+	{
+		_horizontalVelocity = _power * sin(_angle);
+		_verticalVelocity = _power * cos(_angle);
+		_timeMax = (2 * _horizontalVelocity) / (GRAVITY * 100); // ¶¥¿¡ ´ê´Â ½Ã°£
+	}
 }
 
 void FishingHook::CalculateProjectile()
@@ -62,15 +61,14 @@ void FishingHook::CalculateProjectile()
 
 	if (_dir.x != 0)
 	{
-		pos.x = _originPos.x + _horizontalVelocity * _timeCount;
-		pos.y = _originPos.y + _verticalVelocity * _timeCount - 0.5f * _timeCount * _timeCount * GRAVITY;
+		pos.x = _originPos.x + (_horizontalVelocity * _timeCount) * _dir.x;
+		pos.y = _originPos.y + _verticalVelocity * _timeCount - 0.5 * GRAVITY * 100 * _timeCount * _timeCount;
 	}
 	else
 	{
-		pos.x = _originPos.x + _horizontalVelocity * _timeCount;
-		pos.y = _originPos.y + _verticalVelocity * _timeCount - 0.5f * _timeCount * _timeCount * GRAVITY;
+		pos.y = _originPos.y + (_verticalVelocity * _timeCount * _dir.y);
+		pos.x = _originPos.x + _horizontalVelocity * _timeCount - 0.5 * GRAVITY * 100 * _timeCount * _timeCount;
 	}
-
 	_transform->SetPos(pos);
 	_transform->Update();
 }
