@@ -25,14 +25,20 @@ void FishingHook::Update()
 	{
 		_timeCount += DELTA_TIME;
 		CalculateProjectile();
+
 		if (_timeCount >= _timeMax)
+		{
 			_name = "Bait";
+			_isLand = true;
+		}
+			
 	}
 }
 
 void FishingHook::SetActive(Vector2 originPos, Vector2 dir, float power)
 {
 	_isActive = true;
+	_isLand = false;
 	_dir = dir;
 	_originPos = originPos;
 	_transform->SetPos(originPos);
@@ -41,6 +47,7 @@ void FishingHook::SetActive(Vector2 originPos, Vector2 dir, float power)
 	_power = power; // 초기 속도 700 ~ 300
 	_angle = 60.0 * 3.141592 / 180.0; // 각도 (도 단위)
 	_name = "Potato";
+
 	if (_dir.x != 0)
 	{
 		_horizontalVelocity = _power * cos(_angle);
@@ -51,7 +58,7 @@ void FishingHook::SetActive(Vector2 originPos, Vector2 dir, float power)
 	{
 		_horizontalVelocity = _power * sin(_angle);
 		_verticalVelocity = _power * cos(_angle);
-		_timeMax = (2 * _horizontalVelocity) / (GRAVITY * 100); // 땅에 닿는 시간
+		_timeMax = (2 * _horizontalVelocity) / (GRAVITY * 100);
 	}
 }
 

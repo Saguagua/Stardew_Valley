@@ -236,6 +236,145 @@ void Player::CreateAction()
 		backArm.push_back(Vector2(9, 6));
 		backArm.push_back(Vector2(10, 6));
 
+
+		CallBack cb = std::bind(&Player::SetIdle, this);
+
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
+
+		FrontBody->SetEndEvent(cb);
+		SideBody->SetEndEvent(cb);
+		BackBody->SetEndEvent(cb);
+
+		_actions.push_back(FrontBody);
+		_actions.push_back(SideBody);
+		_actions.push_back(BackBody);
+
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END);
+
+		FrontArm->SetEndEvent(cb);
+		SideArm->SetEndEvent(cb);
+		BackArm->SetEndEvent(cb);
+
+		_armActions.push_back(FrontArm);
+		_armActions.push_back(SideArm);
+		_armActions.push_back(BackArm);
+	}
+#pragma endregion
+
+#pragma region Tool2
+	{
+		CallBack cb = std::bind(&Player::SetIdle, this);
+
+		vector<Vector2> frontBody;
+
+		frontBody.push_back(Vector2(0, 9));
+		frontBody.push_back(Vector2(1, 9));
+
+		vector<Vector2> frontArm;
+
+		frontArm.push_back(Vector2(6, 9));
+		frontArm.push_back(Vector2(7 ,9));
+
+		vector<Vector2> sideBody;
+
+		sideBody.push_back(Vector2(4, 9));
+		sideBody.push_back(Vector2(5, 9));
+
+		vector<Vector2> sideArm;
+
+		sideArm.push_back(Vector2(10, 9));
+		sideArm.push_back(Vector2(11, 9));
+
+		vector<Vector2> backBody;
+
+		backBody.push_back(Vector2(2, 10));
+		backBody.push_back(Vector2(3, 10));
+
+		vector<Vector2> backArm;
+
+		backArm.push_back(Vector2(8, 10));
+		backArm.push_back(Vector2(9, 10));
+
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END, 0.2f);
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END, 0.2f);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END, 0.2f);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END, 0.2f);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END, 0.2f);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END, 0.2f);
+		
+		FrontBody->SetEndEvent(cb);
+		SideBody->SetEndEvent(cb);
+		BackBody->SetEndEvent(cb);
+
+		_actions.push_back(FrontBody);
+		_actions.push_back(SideBody);
+		_actions.push_back(BackBody);
+
+		_armActions.push_back(FrontArm);
+		_armActions.push_back(SideArm);
+		_armActions.push_back(BackArm);
+
+	}
+#pragma endregion
+
+#pragma region FishingStart
+	{
+		vector<Vector2> frontBody;
+
+		frontBody.push_back(Vector2(0, 11));
+		frontBody.push_back(Vector2(1, 11));
+		frontBody.push_back(Vector2(2, 11));
+		frontBody.push_back(Vector2(3, 11));
+		frontBody.push_back(Vector2(4, 11));
+		frontBody.push_back(Vector2(1, 11));
+
+		vector<Vector2> sideBody;
+
+		sideBody.push_back(Vector2(0, 8));
+		sideBody.push_back(Vector2(1, 8));
+		sideBody.push_back(Vector2(2, 8));
+		sideBody.push_back(Vector2(3, 8));
+		sideBody.push_back(Vector2(4, 8));
+		sideBody.push_back(Vector2(1, 10));
+
+
+		vector<Vector2> backBody;
+
+		backBody.push_back(Vector2(0, 6));
+		backBody.push_back(Vector2(1, 6));
+		backBody.push_back(Vector2(2, 6));
+		backBody.push_back(Vector2(3, 6));
+		backBody.push_back(Vector2(4, 6));
+		backBody.push_back(Vector2(5, 13));
+
+		vector<Vector2> frontArm;
+
+		frontArm.push_back(Vector2(6, 11));
+		frontArm.push_back(Vector2(7, 11));
+		frontArm.push_back(Vector2(8, 11));
+		frontArm.push_back(Vector2(9, 11));
+		frontArm.push_back(Vector2(10, 11));
+
+		vector<Vector2> sideArm;
+
+		sideArm.push_back(Vector2(6, 8));
+		sideArm.push_back(Vector2(7, 8));
+		sideArm.push_back(Vector2(8, 8));
+		sideArm.push_back(Vector2(9, 8));
+		sideArm.push_back(Vector2(10, 8));
+
+		vector<Vector2> backArm;
+
+		backArm.push_back(Vector2(6, 6));
+		backArm.push_back(Vector2(7, 6));
+		backArm.push_back(Vector2(8, 6));
+		backArm.push_back(Vector2(9, 6));
+		backArm.push_back(Vector2(10, 6));
+
 		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END);
 		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
 		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
@@ -247,6 +386,128 @@ void Player::CreateAction()
 		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END);
 		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END);
 		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END);
+
+		_armActions.push_back(FrontArm);
+		_armActions.push_back(SideArm);
+		_armActions.push_back(BackArm);
+	}
+#pragma endregion
+
+#pragma region FishingGame
+	{
+		vector<Vector2> frontBody;
+
+		frontBody.push_back(Vector2(3, 12));
+		frontBody.push_back(Vector2(4, 12));
+
+		vector<Vector2> frontArm;
+		
+		frontArm.push_back(Vector2(8, 12));
+		frontArm.push_back(Vector2(9, 12));
+
+		vector<Vector2> sideBody;
+
+		sideBody.push_back(Vector2(0, 12));
+		sideBody.push_back(Vector2(1, 12));
+
+		vector<Vector2> sideArm;
+
+		sideArm.push_back(Vector2(6, 12));
+		sideArm.push_back(Vector2(7, 12));
+
+		vector<Vector2> backBody;
+
+		backBody.push_back(Vector2(5, 12));
+		backBody.push_back(Vector2(6, 12));
+
+		vector<Vector2> backArm;
+
+		backArm.push_back(Vector2(10, 12));
+		backArm.push_back(Vector2(11, 12));
+
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::LOOP);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::LOOP);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::LOOP);
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::LOOP);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::LOOP);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::LOOP);
+
+		CallBackInt cb = std::bind(&Player::SetNextAction, this, PlayerAction::FISHING3);
+
+		FrontBody->SetEndIntEvent(cb);
+		SideBody->SetEndIntEvent(cb);
+		BackBody->SetEndIntEvent(cb);
+
+		_actions.push_back(FrontBody);
+		_actions.push_back(SideBody);
+		_actions.push_back(BackBody);
+
+		_armActions.push_back(FrontArm);
+		_armActions.push_back(SideArm);
+		_armActions.push_back(BackArm);
+	}
+#pragma endregion
+
+#pragma region FishingEnd
+	{
+		vector<Vector2> frontBody;
+
+		frontBody.push_back(Vector2(0, 9));
+		frontBody.push_back(Vector2(1, 9));
+		frontBody.push_back(Vector2(2, 9));
+		frontBody.push_back(Vector2(3, 9));
+
+		vector<Vector2> frontArm;
+
+		frontArm.push_back(Vector2(6, 9));
+		frontArm.push_back(Vector2(7, 9));
+		frontArm.push_back(Vector2(8, 9));
+		frontArm.push_back(Vector2(9, 9));
+
+		vector<Vector2> sideBody;
+
+		sideBody.push_back(Vector2(4, 9));
+		sideBody.push_back(Vector2(5, 9));
+		sideBody.push_back(Vector2(0, 10));
+		sideBody.push_back(Vector2(1, 10));
+
+		vector<Vector2> sideArm;
+
+		sideArm.push_back(Vector2(3, 10));
+		sideArm.push_back(Vector2(4, 10));
+		sideArm.push_back(Vector2(5, 10));
+		sideArm.push_back(Vector2(6, 10));
+
+		vector<Vector2> backBody;
+
+		backBody.push_back(Vector2(2, 10));
+		backBody.push_back(Vector2(3, 10));
+		backBody.push_back(Vector2(4, 11));
+		backBody.push_back(Vector2(5, 11));
+
+		vector<Vector2> backArm;
+
+		backArm.push_back(Vector2(8, 10));
+		backArm.push_back(Vector2(9, 10));
+		backArm.push_back(Vector2(10, 10));
+		backArm.push_back(Vector2(11, 10));
+
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END);
+
+		CallBack cb = std::bind(&Player::SetIdle, this);
+
+		FrontBody->SetEndEvent(cb);
+		SideBody->SetEndEvent(cb);
+		BackBody->SetEndEvent(cb);
+
+		_actions.push_back(FrontBody);
+		_actions.push_back(SideBody);
+		_actions.push_back(BackBody);
 
 		_armActions.push_back(FrontArm);
 		_armActions.push_back(SideArm);
@@ -290,7 +551,7 @@ void Player::SetArmAction(int state)
 	if (_armIndex == state) 
 		return;
 
-	_armActions[_armIndex]->Stop();
+	_armActions[_armIndex]->Reset();
 
 	bool isHolding = (_state & PlayerState::HOLDING);
 
@@ -302,6 +563,18 @@ void Player::SetArmAction(int state)
 	}
 
 	_armActions[_armIndex]->Play();
+}
+
+void Player::SetIdle()
+{
+	SetAction(PlayerAction::IDLE);
+	SetArmAction(PlayerAction::IDLE);
+}
+
+void Player::SetNextAction(int index)
+{
+	SetAction(index);
+	SetArmAction(index);
 }
 
 void Player::Move()

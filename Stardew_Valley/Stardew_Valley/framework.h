@@ -108,15 +108,16 @@ using namespace Microsoft::WRL;
 
 #include "Object\GameObj\Others\Items\Item.h"
 
-
 //Animation
 #include "Framework/Animation/Action.h"
+
+#include "Object\GameObj\Others\DeployableObj\FishingHook.h"
+#include "Object\UI\FishingMinigame.h"
 
 #include "Object\GameObj\Creature\Creature.h"
 //Player
 #include "Object/GameObj/Creature/Player/Player.h"
 #include "Object/GameObj/Creature/Player/PlayerSubscribe.h"
-#include "Object\UI\FishingMinigame.h"
 #include "Object/GameObj/Creature/Player/PlayerImproved.h"
 
 

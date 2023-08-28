@@ -33,7 +33,7 @@ void Creature::SetAction(int state)
 	if (_actionIndex == state)
 		return;
 
-	_actions[_actionIndex]->Stop();
+	_actions[_actionIndex]->Reset();
 
 	_actionIndex = state;
 

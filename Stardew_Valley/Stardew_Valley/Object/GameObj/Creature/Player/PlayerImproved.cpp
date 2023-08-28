@@ -8,12 +8,13 @@ PlayerImproved::PlayerImproved()
 	_fishing = make_shared<FishingMinigame>();
 	_fishing->GetTransform()->SetParent(_col->GetTransform());
 	_fishing->SetPos(Vector2(-70, 100));
-	_fishing->SetActive(true);
+	_fishing->SetActive(false);
 }
 
 void PlayerImproved::Update()
 {
 	Player::Update();
+	
 	_fishing->Update();
 }
 
@@ -25,6 +26,7 @@ void PlayerImproved::Render()
 
 void PlayerImproved::PlayAction()
 {
+
 }
 
 void PlayerImproved::RequestSubscribe(PlayerSubscribe* subscriber)
@@ -146,6 +148,7 @@ void PlayerImproved::SetCurItem(int index)
 void PlayerImproved::ItemAction()
 {
 	int type = _items[_curIndex]->GetType();
+
 	if (type == Item::Type::AXE ||
 		type == Item::Type::PICKAXE ||
 		type == Item::Type::HOE)
@@ -167,8 +170,8 @@ void PlayerImproved::ItemAction()
 		if (KEY_DOWN(VK_LBUTTON))
 		{
 			SetDirection(W_MOUSE_POS);
-			SetAction(PlayerAction::TOOL);
-			SetArmAction(PlayerAction::TOOL);
+			SetAction(PlayerAction::TOOL2);
+			SetArmAction(PlayerAction::TOOL2);
 			SetPause(true);
 		}
 		else if (KEY_UP(VK_LBUTTON))
@@ -188,6 +191,8 @@ void PlayerImproved::ItemAction()
 		if (KEY_DOWN(VK_LBUTTON))
 		{
 			SetDirection(W_MOUSE_POS);
+			SetAction(PlayerAction::FISHING1);
+			SetArmAction(PlayerAction::FISHING1);
 			SetPause(true);
 		}
 		else if (KEY_UP(VK_LBUTTON))
@@ -226,4 +231,9 @@ void PlayerImproved::SwapItems(int index1, int index2)
 	_items[index2] = tmp;
 
 	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
+}
+
+void PlayerImproved::ActiveFishingHook(Vector2 originPos, Vector2 direction, float power)
+{
+	_hook->SetActive(originPos, direction, power);
 }

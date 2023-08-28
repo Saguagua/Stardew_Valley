@@ -38,8 +38,6 @@ public:
 	void SetPlayer(shared_ptr<PlayerImproved> player);
 
 	void ActiveDropItem(string dropName, string itemName, Vector2 pos, int count);
-	void ActiveFishingHook(Vector2 originPos, Vector2 direction, float power);
-
 private:
 	static ObjectSpawner* _instance;
 
@@ -50,7 +48,6 @@ private:
 
 	vector<shared_ptr<class DropItem>> _dropItems;
 	list<Crop*> _crops;
-	shared_ptr<FishingHook> _fishingHook;
 
 	shared_ptr<class PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
 	shared_ptr<Sprite> _renderer;

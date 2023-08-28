@@ -35,7 +35,14 @@ void TestScene::Update()
 	_map->Update();
 
 	_map->Blocking(_player->GetCollider());
-
+	if (_player->IsHookLanded())
+	{
+		if (_map->CanFishing(_player->GetHookPos()))
+		{
+			_player->SetFishing(true);
+		}
+	}
+	
 	KeyInput();
 }
 

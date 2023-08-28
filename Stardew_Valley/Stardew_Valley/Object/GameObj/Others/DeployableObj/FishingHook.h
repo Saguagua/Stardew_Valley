@@ -10,6 +10,9 @@ public:
 
 	void SetActive(Vector2 originPos, Vector2 dir, float power);
 
+	
+	Vector2 GetWorldPos() { return _transform->GetWorldPos(); }
+	bool IsLanded() { return _isLand; }
 private:
 	void CalculateProjectile();
 
@@ -17,6 +20,7 @@ private:
 	Vector2 _originPos;
 	Vector2 _dir;
 	string _name;
+
 	float _horizontalVelocity = 0.0f;
 	float _verticalVelocity = 0.0f;
 	float _timeMax;
@@ -25,5 +29,6 @@ private:
 	float _angle;
 
 	bool _isActive = false;
+	bool _isLand = false;
 };
 

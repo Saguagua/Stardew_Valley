@@ -9,8 +9,11 @@ protected:
 		IDLE = 0,
 		RUN = 3,
 		TOOL = 6,
-		//WATER,
-		HOLD = 9,
+		TOOL2 = 9,
+		FISHING1 = 12,
+		FISHING2 = 15,
+		FISHING3 = 18,
+		HOLD = 21
 	};
 
 public:
@@ -38,7 +41,9 @@ protected:
 	//Actions
 	virtual void CreateAction() override;
 	void SetArmAction(int index);
-	
+	void SetIdle();
+	void SetNextAction(int index);
+
 	//Inputs
 	void Move();
 

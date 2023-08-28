@@ -60,6 +60,16 @@ void TileMap::Blocking(shared_ptr<RectCollider> col)
 	}
 }
 
+bool TileMap::CanFishing(Vector2 pos)
+{
+	int index = GetWorldIndex(pos);
+	int type = DATA->GetTileInfo(_tiles[index]->GetName());
+	if (type & TileType::FISHING)
+		return true;
+
+	return false;
+}
+
 void TileMap::ChangeTile()
 {
 	if (KEY_PRESS(VK_LBUTTON))

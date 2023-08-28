@@ -17,8 +17,9 @@ void Action::Update()
 		{
 		case Action::END:
 		{
-			_curAnimationIndex++;
-			if (_curAnimationIndex >= _indices.size() - 1)
+			if (_curAnimationIndex < _indices.size() - 1)
+				_curAnimationIndex++;
+			if (_curAnimationIndex > _indices.size() - 1)
 				Stop();
 		}
 		break;
@@ -67,10 +68,11 @@ void Action::Stop()
 {
 	_isPlay = false;
 	_time = 0.0f;
-	_curAnimationIndex = 0;
 
 	if (_endEvent != nullptr)
 		_endEvent();
+	if (_endIntEvent != nullptr)
+		_endIntEvent(0);
 }
 
 void Action::Reset()

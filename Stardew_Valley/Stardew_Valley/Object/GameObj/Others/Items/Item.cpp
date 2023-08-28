@@ -140,7 +140,7 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 			targetPos.y += _chargeCount;
 		}
 
-		OBJECT_SPAWNER->ActiveFishingHook(originPos , direction, _chargeCount);
+		p->ActiveFishingHook(originPos , direction, _chargeCount);
 	}
 }
 

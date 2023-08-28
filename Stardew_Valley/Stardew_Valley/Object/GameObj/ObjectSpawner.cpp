@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "Object\GameObj\Others\DeployableObj\FishingHook.h"
 #include "Object\GameObj\Creature\Player\PlayerImproved.h"
 #include "ObjectSpawner.h"
 
@@ -8,7 +7,6 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 ObjectSpawner::ObjectSpawner()
 {
 	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
-	_fishingHook = make_shared<FishingHook>();
 	for (int i = 0; i < 60; i++)
 	{
 		_dropItems.push_back(make_shared<DropItem>());
@@ -159,9 +157,6 @@ void ObjectSpawner::Update()
 		dropItem->Update();
 
 	}
-	
-		
-	_fishingHook->Update();
 }
 
 void ObjectSpawner::Render()
@@ -173,7 +168,6 @@ void ObjectSpawner::Render()
 		dropItem->Render(_renderer);
 	}
 	
-	_fishingHook->Render(_renderer);
 }
 
 void ObjectSpawner::SetPlayer(shared_ptr<PlayerImproved> player)
@@ -195,9 +189,4 @@ void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos
 			}
 		}
 	}
-}
-
-void ObjectSpawner::ActiveFishingHook(Vector2 originPos, Vector2 direction, float power)
-{
-	_fishingHook->SetActive(originPos, direction, power);
 }

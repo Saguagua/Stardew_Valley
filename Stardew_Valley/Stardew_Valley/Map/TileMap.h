@@ -25,10 +25,9 @@ public:
 	void Watering(Vector2 originPos, Vector2 targetPos, short level);
 	void Charging(Vector2 originPos, Vector2 tragetPos, short level);
 	void Blocking(shared_ptr<RectCollider> col);
+	bool CanFishing(Vector2 pos);
 private:
-
 	void SetCameraRange();
-	void Play();
 
 	void ChangeTile();
 
