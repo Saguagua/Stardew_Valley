@@ -19,7 +19,7 @@ void Action::Update()
 		{
 			if (_curAnimationIndex < _indices.size() - 1)
 				_curAnimationIndex++;
-			if (_curAnimationIndex > _indices.size() - 1)
+			if (_curAnimationIndex >= _indices.size() - 1)
 				Stop();
 		}
 		break;

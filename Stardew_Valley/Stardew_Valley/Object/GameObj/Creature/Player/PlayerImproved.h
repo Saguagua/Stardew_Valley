@@ -12,7 +12,7 @@ public:
 	void Update();
 	virtual void Render() override;
 
-	void PlayAction();
+	void PlayAction(int action);
 
 	void RequestSubscribe(PlayerSubscribe* subscriber);
 	void CancelSubscribe(PlayerSubscribe* subscriber);
@@ -30,6 +30,7 @@ public:
 
 	void SetFreeze(bool val) { _freeze = val; }
 private:
+	void ChangeIndex();
 	void ItemAction();
 	virtual void SetPause(bool val) override;
 

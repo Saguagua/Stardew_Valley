@@ -27,3 +27,9 @@ enum SpriteType
 	OBJECT,
 	UI
 };
+
+enum FishType
+{
+	DAY,
+	NIGHT
+};

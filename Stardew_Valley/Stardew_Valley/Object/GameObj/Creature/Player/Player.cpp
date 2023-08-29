@@ -379,6 +379,12 @@ void Player::CreateAction()
 		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
 		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
 
+		CallBack cb = std::bind(&FishingSystem::ActiveFishingHook, FishingSystem::GetInstance());
+		
+		FrontBody->SetEndEvent(cb);
+		SideBody->SetEndEvent(cb);
+		BackBody->SetEndEvent(cb);
+
 		_actions.push_back(FrontBody);
 		_actions.push_back(SideBody);
 		_actions.push_back(BackBody);
@@ -397,8 +403,8 @@ void Player::CreateAction()
 	{
 		vector<Vector2> frontBody;
 
+		frontBody.push_back(Vector2(2, 12));
 		frontBody.push_back(Vector2(3, 12));
-		frontBody.push_back(Vector2(4, 12));
 
 		vector<Vector2> frontArm;
 		
@@ -417,26 +423,20 @@ void Player::CreateAction()
 
 		vector<Vector2> backBody;
 
+		backBody.push_back(Vector2(4, 12));
 		backBody.push_back(Vector2(5, 12));
-		backBody.push_back(Vector2(6, 12));
 
 		vector<Vector2> backArm;
 
 		backArm.push_back(Vector2(10, 12));
 		backArm.push_back(Vector2(11, 12));
 
-		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::LOOP);
-		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::LOOP);
-		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::LOOP);
-		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::LOOP);
-		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::LOOP);
-		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::LOOP);
-
-		CallBackInt cb = std::bind(&Player::SetNextAction, this, PlayerAction::FISHING3);
-
-		FrontBody->SetEndIntEvent(cb);
-		SideBody->SetEndIntEvent(cb);
-		BackBody->SetEndIntEvent(cb);
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::LOOP, 0.5f);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::LOOP, 0.5f);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::LOOP, 0.5f);
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::LOOP, 0.5f);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::LOOP, 0.5f);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::LOOP, 0.5f);
 
 		_actions.push_back(FrontBody);
 		_actions.push_back(SideBody);
@@ -473,17 +473,17 @@ void Player::CreateAction()
 
 		vector<Vector2> sideArm;
 
-		sideArm.push_back(Vector2(3, 10));
-		sideArm.push_back(Vector2(4, 10));
-		sideArm.push_back(Vector2(5, 10));
+		sideArm.push_back(Vector2(10, 9));
+		sideArm.push_back(Vector2(11, 9));
 		sideArm.push_back(Vector2(6, 10));
+		sideArm.push_back(Vector2(7, 10));
 
 		vector<Vector2> backBody;
 
 		backBody.push_back(Vector2(2, 10));
 		backBody.push_back(Vector2(3, 10));
-		backBody.push_back(Vector2(4, 11));
-		backBody.push_back(Vector2(5, 11));
+		backBody.push_back(Vector2(4, 10));
+		backBody.push_back(Vector2(5, 10));
 
 		vector<Vector2> backArm;
 
@@ -492,12 +492,12 @@ void Player::CreateAction()
 		backArm.push_back(Vector2(10, 10));
 		backArm.push_back(Vector2(11, 10));
 
-		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END);
-		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
-		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
-		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END);
-		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END);
-		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END);
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END, 0.15f);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END, 0.15f);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END, 0.15f);
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END, 0.15f);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END, 0.15f);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END, 0.15f);
 
 		CallBack cb = std::bind(&Player::SetIdle, this);
 
@@ -569,6 +569,7 @@ void Player::SetIdle()
 {
 	SetAction(PlayerAction::IDLE);
 	SetArmAction(PlayerAction::IDLE);
+	_freeze = false;
 }
 
 void Player::SetNextAction(int index)

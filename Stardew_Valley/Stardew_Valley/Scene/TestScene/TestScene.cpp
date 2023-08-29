@@ -7,6 +7,8 @@ TestScene::TestScene()
 	ObjectSpawner::Create();
 	DATA->LoadPlayerInfo("Test");
 	LightManager::Create();
+
+	FishingSystem::Create();
 	
 	_player = make_shared<PlayerImproved>();
 	PlayerUI::Create(_player);
@@ -16,7 +18,6 @@ TestScene::TestScene()
 	_map = make_shared<TileMap>();
 	_items = _player->GetItems();
 
-	FishingSystem::Create();
 	FishingSystem::GetInstance()->SetPlayer(_player);
 	FishingSystem::GetInstance()->SetMap(_map);
 
@@ -28,6 +29,8 @@ TestScene::~TestScene()
 {
 	LightManager::Delete();
 	ObjectSpawner::Delete();
+	FishingSystem::Delete();
+	PlayerUI::Delete();
 }
 
 void TestScene::Update()
@@ -63,46 +66,6 @@ void TestScene::KeyInput()
 	{
 		_player->KeyInput();
 
-		if (KEY_DOWN('1'))
-		{
-			_player->SetCurItem(0);
-		}
-		else if (KEY_DOWN('2'))
-		{
-			_player->SetCurItem(1);
-		}
-		else if (KEY_DOWN('3'))
-		{
-			_player->SetCurItem(2);
-		}
-		else if (KEY_DOWN('4'))
-		{
-			_player->SetCurItem(3);
-		}
-		else if (KEY_DOWN('5'))
-		{
-			_player->SetCurItem(4);
-		}
-		else if (KEY_DOWN('6'))
-		{
-			_player->SetCurItem(5);
-		}
-		else if (KEY_DOWN('7'))
-		{
-			_player->SetCurItem(6);
-		}
-		else if (KEY_DOWN('8'))
-		{
-			_player->SetCurItem(7);
-		}
-		else if (KEY_DOWN('9'))
-		{
-			_player->SetCurItem(8);
-		}
-		else if (KEY_DOWN('0'))
-		{
-			_player->SetCurItem(9);
-		}
 
 		shared_ptr<Item> item = _items[_player->GetCurIndex()];
 		int type = item->GetType();
@@ -159,5 +122,4 @@ void TestScene::KeyInput()
 		break;
 		}
 	}
-	
 }

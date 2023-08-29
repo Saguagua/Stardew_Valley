@@ -65,12 +65,13 @@ private:
 	unordered_map<string, bool> _playerTable;
 	
 	vector<shared_ptr<MapInfo>> _mapInfos;
-	unordered_map<string, bool> _mapTable;
-	
-	unordered_map<string, shared_ptr<XMLInfo>> _xmlTable;
-					unordered_map<string, int> _tileTable;
-	unordered_map<string, shared_ptr<DropInfo>> _dropTable;
+
+					  unordered_map<string, bool> _mapTable;
+					   unordered_map<string, int> _tileTable;
+	   unordered_map<string, shared_ptr<XMLInfo>> _xmlTable;
+	  unordered_map<string, shared_ptr<DropInfo>> _dropTable;
+	  unordered_map<string, shared_ptr<ItemInfo>> _itemTable;
+	  unordered_map<string, shared_ptr<CropInfo>> _cropTable;
+	unordered_map<FishType, shared_ptr<FishInfo>> _fishTable;
 	unordered_map<string, shared_ptr<DeployInfo>> _deployTable;
-		unordered_map<string, shared_ptr<ItemInfo>> _itemTable;
-		unordered_map<string, shared_ptr<CropInfo>> _cropTable;
 };

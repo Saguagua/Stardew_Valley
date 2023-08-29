@@ -17,6 +17,8 @@ public:
 	virtual void AddHP(short cost);
 
 	int GetDirection() { return _dir; }
+	bool IsFreeze() { return _freeze; }
+
 protected:
 	virtual void CreateAction() abstract;
 	virtual void SetAction(int index);

@@ -5,6 +5,12 @@ FishingHook::FishingHook()
 {
 	_transform = make_shared<Transform>();
 	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
+	
+	vector<Vector2> indices;
+	indices.push_back(Vector2(0,0));
+	indices.push_back(Vector2(1,0));
+
+	_action = make_shared<Action>(indices, Action::LOOP, 0.2f);
 }
 
 void FishingHook::Render()
@@ -13,7 +19,12 @@ void FishingHook::Render()
 		return;
 
 	_transform->Set_World();
-	_renderer->ChangePicture(_name, 0);
+
+	if (_reversing)
+		_renderer->ChangePicture(_resultName, 0);
+	else
+		_renderer->ChangePicture(_name, _action->GetCurFrame().x);
+	
 	_renderer->Render();
 }
 
@@ -21,31 +32,55 @@ void FishingHook::Update()
 {
 	if (!_isActive)
 		return;
-
-	if (_timeCount < _timeMax)
+	if (!_reversing)
 	{
-		_timeCount += DELTA_TIME;
-		CalculateProjectile();
-
-		if (_timeCount >= _timeMax)
+		if (_timeCount < _timeMax)
 		{
-			_name = "Bait";
-			_isFlying = false;
-			FishingSystem::GetInstance()->CheckTile();
+			_timeCount += DELTA_TIME;
+			CalculateProjectile();
+
+			if (_timeCount >= _timeMax)
+			{
+				_timeCount = _timeMax;
+				_name = "Bait";
+				_isFlying = false;
+				FishingSystem::GetInstance()->EndThrowing();
+			}
+		}
+		else
+			_action->Update();
+	}
+	else
+	{
+		if (_timeCount > 0)
+		{
+			_timeCount -= DELTA_TIME;
+			CalculateProjectile();
+
+			if (_timeCount <= 0)
+			{
+				_isActive = false;
+				FishingSystem::GetInstance()->EndFishing(_resultName);
+			}
+			
 		}
 	}
 }
 
-void FishingHook::Spawn(Vector2 dir, float power)
+void FishingHook::Spawn()
 {
 	_isActive = true;
-	_dir = dir;
+	_reversing = false;
+	_action->Reset();
+	_action->Play();
+
+	_resultName = "BLANK";
+	_name = "Potato";
+
 	_transform->Update();
 	_originPos = _transform->GetWorldPos();
+
 	_timeCount = 0;
-	_power = power; // 초기 속도 700 ~ 300
-	_angle = 60.0 * 3.141592 / 180.0; // 각도 (도 단위)
-	_name = "Potato";
 
 	if (_dir.x != 0)
 	{

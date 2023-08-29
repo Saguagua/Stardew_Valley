@@ -40,14 +40,17 @@ public:
 
 	void SetPlayer(shared_ptr<PlayerImproved> player);
 	void SetMap(shared_ptr<TileMap> map) { _map = map; }
-	void ActiveFishingHook(Vector2 direction, float power);
-	void CheckTile();
-	void EndMinigame(string name);
+
+	void HookSetting(Vector2 direction, float power);
+	void ActiveFishingHook();
 
 	Step GetStep() { return _step; }
+
+	void EndThrowing();
+	void EndMinigame(bool result);
+	void EndFishing(string itemName);
 private:
 	static FishingSystem* _instance;
-
 
 	shared_ptr<FishingMinigame> _minigame;
 	shared_ptr<FishingHook> _hook;
@@ -56,6 +59,8 @@ private:
 	weak_ptr<TileMap> _map;
 	bool _isActive = false;
 	string _fishName = "BLANK";
+
+	float _waitCount = 0.0f;
 
 	Step _step = Step::THROW;
 };

@@ -3,7 +3,7 @@
 
 class Player :public Creature
 {
-protected:
+public:
 	enum PlayerAction
 	{
 		IDLE = 0,
@@ -16,7 +16,6 @@ protected:
 		HOLD = 21
 	};
 
-public:
 	Player();
 	~Player() {}
 	

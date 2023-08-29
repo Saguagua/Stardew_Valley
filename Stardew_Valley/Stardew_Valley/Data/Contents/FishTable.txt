@@ -1,0 +1,4 @@
+   Anchovy 70 0
+AnglerFish 20 1
+      Tuna 70 0
+     Squid 20 1

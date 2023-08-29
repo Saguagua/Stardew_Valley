@@ -304,7 +304,7 @@ void DataManager::ReadTypes()
 
 	ifstream fin;
 
-	fin.open("Data/Contents/TileProperty.txt");
+	fin.open("Data/Contents/TileTable.txt");
 
 	while (!fin.eof())
 	{
@@ -389,6 +389,35 @@ void DataManager::ReadTypes()
 	}
 
 	fin.close();
+
+	fin.open("Data/Contents/FishTable.txt");
+
+	while (!fin.eof())
+	{
+		vector<short> vals;
+
+		fin >> name;
+		fin >> dropItem;
+		fin >> tmp;
+
+		_dropTable[name] = make_shared<DropInfo>();
+		_dropTable[name]->AddDatas(dropItem, tmp);
+
+		while (true)
+		{
+			fin >> dropItem;
+
+			if (dropItem == "/")
+				break;
+
+			fin >> tmp;
+
+			_dropTable[name]->AddDatas(dropItem, tmp);
+		}
+	}
+
+	fin.close();
+
 }
 
 void DataManager::ReadPlayers()

@@ -11,7 +11,6 @@ PlayerImproved::PlayerImproved()
 void PlayerImproved::Update()
 {
 	Player::Update();
-	
 }
 
 void PlayerImproved::Render()
@@ -19,9 +18,10 @@ void PlayerImproved::Render()
 	Player::Render();
 }
 
-void PlayerImproved::PlayAction()
+void PlayerImproved::PlayAction(int action)
 {
-
+	SetAction(action);
+	SetArmAction(action);
 }
 
 void PlayerImproved::RequestSubscribe(PlayerSubscribe* subscriber)
@@ -41,8 +41,12 @@ void PlayerImproved::CancelSubscribe(PlayerSubscribe* subscriber)
 void PlayerImproved::KeyInput()
 {
 	ItemAction();
+
 	if (!_freeze)
+	{
 		Player::Move();
+		ChangeIndex();
+	}
 }
 
 void PlayerImproved::AddMaxHP(short cost)
@@ -141,6 +145,50 @@ void PlayerImproved::SetCurItem(int index)
 	SetArmAction(armIndex);
 }
 
+void PlayerImproved::ChangeIndex()
+{
+	if (KEY_DOWN('1'))
+	{
+		SetCurItem(0);
+	}
+	else if (KEY_DOWN('2'))
+	{
+		SetCurItem(1);
+	}
+	else if (KEY_DOWN('3'))
+	{
+		SetCurItem(2);
+	}
+	else if (KEY_DOWN('4'))
+	{
+		SetCurItem(3);
+	}
+	else if (KEY_DOWN('5'))
+	{
+		SetCurItem(4);
+	}
+	else if (KEY_DOWN('6'))
+	{
+		SetCurItem(5);
+	}
+	else if (KEY_DOWN('7'))
+	{
+		SetCurItem(6);
+	}
+	else if (KEY_DOWN('8'))
+	{
+		SetCurItem(7);
+	}
+	else if (KEY_DOWN('9'))
+	{
+		SetCurItem(8);
+	}
+	else if (KEY_DOWN('0'))
+	{
+		SetCurItem(9);
+	}
+}
+
 void PlayerImproved::ItemAction()
 {
 	int type = _items[_curIndex]->GetType();
@@ -182,7 +230,7 @@ void PlayerImproved::ItemAction()
 
 		}
 	}
-	else if (type == Item::Type::FISHINGROD)
+	else if (type == Item::Type::FISHINGROD && FishingSystem::GetInstance()->GetStep() == FishingSystem::Step::THROW)
 	{
 		if (KEY_DOWN(VK_LBUTTON))
 		{

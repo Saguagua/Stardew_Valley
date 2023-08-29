@@ -6,22 +6,19 @@ FishingMinigame::FishingMinigame()
 	_bodySlot = make_shared<Transform>();
 	_guageSlot = make_shared<Transform>();
 	_fishSlot = make_shared<RectCollider>(Vector2(25, 30));
-	_cursorSlot = make_shared<RectCollider>(Vector2(20, 40));
+	_cursorSlot = make_shared<RectCollider>(Vector2(20, 60));
 
 	_fishSlot->SetParent(_bodySlot);
-	_fishSlot->SetPos(Vector2(8,0));
 
 	_guageSlot->SetParent(_bodySlot);
-	_guageSlot->SetPos(Vector2(40, 0));
 
 	_cursorSlot->SetParent(_bodySlot);
-	_cursorSlot->SetPos(Vector2(6,0));
 
 	_body = make_shared<Sprite>(XMLPATH, "FishingGame", Vector2(100, 300), SpriteType::UI);
 	_fish = make_shared<Sprite>(XMLPATH, "FishingGameFish", Vector2(25, 30), SpriteType::UI);
 
 	_guage = make_shared<SingleColorRect>(Vector2(10, 290));
-	_cursor = make_shared<SingleColorRect>(Vector2(20, 40));
+	_cursor = make_shared<SingleColorRect>(Vector2(20, 60));
 
 	_guageSlot->SetAngle(3.141592f);
 }
@@ -36,9 +33,9 @@ void FishingMinigame::Update()
 		return;
 
 	if (_percent >= 100.0f)
-		FishingSystem::GetInstance()->EndMinigame("Anchovy");
+		FishingSystem::GetInstance()->EndMinigame(true);
 	else if (_percent <= 0.0f)
-		FishingSystem::GetInstance()->EndMinigame("BLANK");
+		FishingSystem::GetInstance()->EndMinigame(false);
 
 	_bodySlot->Update();
 	_fishSlot->Update();
@@ -137,6 +134,11 @@ void FishingMinigame::Render()
 void FishingMinigame::SetActive(bool val)
 {
 	_isActive = val;
+	_cursorSlot->SetPos(Vector2());
+	_percent = 50.0f;
+	_fishSlot->SetPos(Vector2(8, 0));
+	_guageSlot->SetPos(Vector2(40, 0));
+	_cursorSlot->SetPos(Vector2(6, 0));
 }
 
 void FishingMinigame::KeyInput()

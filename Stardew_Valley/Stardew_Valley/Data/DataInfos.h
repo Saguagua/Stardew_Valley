@@ -175,3 +175,23 @@ public:
 private:
 	short _period;
 };
+
+struct CropInfo
+{
+
+};
+
+struct FishInfo
+{
+public:
+
+	void AddFishInfo(string name, float percent)
+	{
+		_fishNames.push_back(name);
+		_percents.push_back(percent);
+	}
+
+private:
+	vector<string> _fishNames;
+	vector<float> _percents;
+};

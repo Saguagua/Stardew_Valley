@@ -143,7 +143,7 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 			targetPos.y += _chargeCount;
 		}
 
-		FishingSystem::GetInstance()->ActiveFishingHook(direction, _chargeCount);
+		FishingSystem::GetInstance()->HookSetting(direction, _chargeCount);
 	}
 }
 
