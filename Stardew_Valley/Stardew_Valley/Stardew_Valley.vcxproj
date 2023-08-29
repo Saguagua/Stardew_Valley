@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Framework\System\FishingSystem.h" />
     <ClInclude Include="Object\UI\FishingMinigame.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\FishingHook.h" />
     <ClInclude Include="Object\GameObj\Creature\Creature.h" />
@@ -239,6 +240,7 @@
     <ClInclude Include="Defines.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Framework\System\FishingSystem.cpp" />
     <ClCompile Include="Object\UI\FishingMinigame.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\FishingHook.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Creature.cpp" />
@@ -361,6 +363,14 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="Shader\RatioColorPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">PS</EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
     </FxCompile>
     <FxCompile Include="Shader\SingleColorPS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>

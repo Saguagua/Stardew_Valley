@@ -6,20 +6,23 @@ public:
 	~FishingHook() {}
 
 	void Update();
-	void Render(shared_ptr<Sprite> renderer);
+	void Render();
 
-	void SetActive(Vector2 originPos, Vector2 dir, float power);
-
+	void Spawn(Vector2 dir, float power);
 	
 	Vector2 GetWorldPos() { return _transform->GetWorldPos(); }
-	bool IsLanded() { return _isLand; }
+	void SetPos(Vector2 pos) { _transform->SetPos(pos); }
+	void SetActive(bool val) { _isActive = val; }
 private:
 	void CalculateProjectile();
 
 	shared_ptr<Transform> _transform;
+	shared_ptr<Sprite> _renderer;
 	Vector2 _originPos;
 	Vector2 _dir;
 	string _name;
+
+	shared_ptr<Tile> _curTile;
 
 	float _horizontalVelocity = 0.0f;
 	float _verticalVelocity = 0.0f;
@@ -29,6 +32,6 @@ private:
 	float _angle;
 
 	bool _isActive = false;
-	bool _isLand = false;
+	bool _isFlying = false;
 };
 

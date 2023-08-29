@@ -65,5 +65,5 @@ void Creature::SetDirection(Vector2 pos)
 void Creature::SetPause(bool val)
 {
 	_actions[_actionIndex]->Pause(val);
-	_froze = val;
+	_freeze = val;
 }

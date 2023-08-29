@@ -5,23 +5,18 @@
 PlayerImproved::PlayerImproved()
 	:Player()
 {
-	_fishing = make_shared<FishingMinigame>();
-	_fishing->GetTransform()->SetParent(_col->GetTransform());
-	_fishing->SetPos(Vector2(-70, 100));
-	_fishing->SetActive(false);
+	
 }
 
 void PlayerImproved::Update()
 {
 	Player::Update();
 	
-	_fishing->Update();
 }
 
 void PlayerImproved::Render()
 {
 	Player::Render();
-	_fishing->Render();
 }
 
 void PlayerImproved::PlayAction()
@@ -45,8 +40,9 @@ void PlayerImproved::CancelSubscribe(PlayerSubscribe* subscriber)
 
 void PlayerImproved::KeyInput()
 {
-	Player::Move();
 	ItemAction();
+	if (!_freeze)
+		Player::Move();
 }
 
 void PlayerImproved::AddMaxHP(short cost)
@@ -221,7 +217,7 @@ void PlayerImproved::SetPause(bool val)
 {
 	_actions[_actionIndex]->Pause(val);
 	_armActions[_armIndex]->Pause(val);
-	_froze = val;
+	_freeze = val;
 }
 
 void PlayerImproved::SwapItems(int index1, int index2)
@@ -231,9 +227,4 @@ void PlayerImproved::SwapItems(int index1, int index2)
 	_items[index2] = tmp;
 
 	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
-}
-
-void PlayerImproved::ActiveFishingHook(Vector2 originPos, Vector2 direction, float power)
-{
-	_hook->SetActive(originPos, direction, power);
 }

@@ -267,6 +267,9 @@
     <ClInclude Include="Object\UI\FishingMinigame.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\System\FishingSystem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -467,6 +470,9 @@
     <ClCompile Include="Object\UI\FishingMinigame.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Framework\System\FishingSystem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -544,6 +550,7 @@
     <FxCompile Include="Shader\LightVS.hlsl" />
     <FxCompile Include="Shader\LightPS.hlsl" />
     <FxCompile Include="Shader\LightXMLPS.hlsl" />
+    <FxCompile Include="Shader\RatioColorPS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Map\Save\Fishing.txt" />

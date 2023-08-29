@@ -37,6 +37,6 @@ protected:
 	int _actionIndex = 0;
 	int _dir = FRONT;
 	bool _isActive = false;
-	bool _froze = false;
+	bool _freeze = false;
 };
 

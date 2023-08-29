@@ -132,6 +132,8 @@ using namespace Microsoft::WRL;
 //Map
 #include "Map/TileMap.h"
 
+//System
+#include "Framework/System/FishingSystem.h"
 
 //Camera
 #include"Framework/Camera/Camera.h"

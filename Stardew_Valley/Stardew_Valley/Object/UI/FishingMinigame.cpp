@@ -35,6 +35,11 @@ void FishingMinigame::Update()
 	if (!_isActive)
 		return;
 
+	if (_percent >= 100.0f)
+		FishingSystem::GetInstance()->EndMinigame("Anchovy");
+	else if (_percent <= 0.0f)
+		FishingSystem::GetInstance()->EndMinigame("BLANK");
+
 	_bodySlot->Update();
 	_fishSlot->Update();
 	_guageSlot->Update();

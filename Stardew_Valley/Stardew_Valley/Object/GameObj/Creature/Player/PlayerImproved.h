@@ -9,7 +9,7 @@ public:
 	PlayerImproved();
 	~PlayerImproved() {}
 
-	virtual void Update() override;
+	void Update();
 	virtual void Render() override;
 
 	void PlayAction();
@@ -28,11 +28,7 @@ public:
 	void SetCurItem(int index);
 	void SwapItems(int index1, int index2);
 
-	void SetFishing(bool val) { _isFishing = val; }
-
-	void ActiveFishingHook(Vector2 originPos, Vector2 direction, float power);
-	bool IsHookLanded() { return _hook->IsLanded(); }
-	Vector2 GetHookPos() { return _hook->GetWorldPos(); }
+	void SetFreeze(bool val) { _freeze = val; }
 private:
 	void ItemAction();
 	virtual void SetPause(bool val) override;
@@ -40,8 +36,5 @@ private:
 	void SendToSubscribers(int type);
 
 	list<PlayerSubscribe*> _subscribers;
-	shared_ptr<FishingHook> _hook;
-	shared_ptr<FishingMinigame> _fishing;
-	bool _isFishing = false;
 };
 

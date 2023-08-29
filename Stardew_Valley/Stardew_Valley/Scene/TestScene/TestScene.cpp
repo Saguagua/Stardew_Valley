@@ -16,6 +16,10 @@ TestScene::TestScene()
 	_map = make_shared<TileMap>();
 	_items = _player->GetItems();
 
+	FishingSystem::Create();
+	FishingSystem::GetInstance()->SetPlayer(_player);
+	FishingSystem::GetInstance()->SetMap(_map);
+
 	CAMERA->SetTarget(_player->GetTransform());
 	CAMERA->Update();
 }
@@ -31,17 +35,11 @@ void TestScene::Update()
 	LightManager::GetInstance()->Update();
 	OBJECT_SPAWNER->Update();
 	PLAYERUI->Update();
-	_player->Update();
 	_map->Update();
+	_player->Update();
+	FishingSystem::GetInstance()->Update();
 
 	_map->Blocking(_player->GetCollider());
-	if (_player->IsHookLanded())
-	{
-		if (_map->CanFishing(_player->GetHookPos()))
-		{
-			_player->SetFishing(true);
-		}
-	}
 	
 	KeyInput();
 }
@@ -51,6 +49,7 @@ void TestScene::Render()
 	_map->Render();
 	OBJECT_SPAWNER->Render();
 	_player->Render();
+	FishingSystem::GetInstance()->Render();
 }
 
 void TestScene::PostRender()

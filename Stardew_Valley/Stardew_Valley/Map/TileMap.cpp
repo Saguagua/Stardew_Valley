@@ -250,6 +250,11 @@ int TileMap::GetWorldIndex(Vector2 pos)
 	return sum;
 }
 
+shared_ptr<Tile> TileMap::GetWorldTile(Vector2 pos)
+{
+	return _tiles[GetWorldIndex(pos)];
+}
+
 int TileMap::GetFocusedIndex(Vector2 orginPos, Vector2 targetPos)
 {
 	Vector2 target = targetPos - orginPos;

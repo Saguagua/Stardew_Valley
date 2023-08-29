@@ -101,6 +101,9 @@ void Item::Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 
 void Item::Fishing(shared_ptr<PlayerImproved> p)
 {
+	if (FishingSystem::GetInstance()->GetStep() != FishingSystem::Step::THROW)
+		return;
+
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		_chargeCount = 300;
@@ -140,7 +143,7 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 			targetPos.y += _chargeCount;
 		}
 
-		p->ActiveFishingHook(originPos , direction, _chargeCount);
+		FishingSystem::GetInstance()->ActiveFishingHook(direction, _chargeCount);
 	}
 }
 

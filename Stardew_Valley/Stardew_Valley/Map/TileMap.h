@@ -13,6 +13,7 @@ public:
 	void SetDebug(bool debug) { _collider->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
+	shared_ptr<Tile> GetWorldTile(Vector2 pos);
 	int GetFocusedIndex(Vector2 orginPos, Vector2 targetPos);
 	shared_ptr<class Tile> GetFocusedTile(Vector2 orginPos, Vector2 targetPos);
 	vector<shared_ptr<Tile>> GetFocusedTiles(Vector2 point, short level);

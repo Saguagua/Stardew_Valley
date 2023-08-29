@@ -110,5 +110,5 @@ void SingleColorRect::CreateData()
 	_cBuffer = make_shared<ColorBuffer>();
 
 	_vShader = ADD_VS(L"Shader/TextureVS.hlsl");
-	_pShader = ADD_PS(L"Shader/SingleColorPS.hlsl");
+	_pShader = ADD_PS(L"Shader/RatioColorPS.hlsl");
 }
