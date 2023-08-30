@@ -5,4 +5,3 @@ BOX 	3 0 0 0
 HOUSE 	4 0 0 0
 CROP 	5 pro date qual
 DROP	6
-

@@ -56,7 +56,14 @@ void DataManager::MapToolSave()
 
 		for (int i = 0; i < tileInfo.size(); i++)
 		{
-			fout << tileInfo[i]->GetObjName();
+			string name = tileInfo[i]->GetObjName();
+			fout << name;
+
+			if (name != "BLANK")
+			{
+				tileInfo[i]->GetObj()->GetIndex;
+				
+			}
 
 			if (i + 1 == size.x * size.y)
 				break;
@@ -307,7 +314,7 @@ void DataManager::LoadMap(string path, string mapName)
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
 
-	fin.open(path + "Obj.txt");
+	fin.open(path + mapName + "Obj.txt");
 
 	int index = 0;
 
@@ -321,6 +328,7 @@ void DataManager::LoadMap(string path, string mapName)
 
 			OBJECT_SPAWNER->CreateObj(mapInfo, index, name, x, y);
 		}
+
 		index++;
 	}
 
