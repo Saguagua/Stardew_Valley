@@ -10,17 +10,18 @@ LightManager::LightManager()
 
 	XMFLOAT4* poses = _posBuffer->GetPoses();
 	XMFLOAT4* colors = _colorBuffer->GetColors();
-	poses[0] = { 60, 60, 0, 0 };
+	_colorBuffer->GetSun() = { 0.8f, 0.8f, 0.8f, 1.0f };
+
+	/*poses[0] = { 60, 60, 0, 0 };
 	poses[1] = { WIN_WIDTH - 60, 60, 0, 0 };
 	poses[2] = { WIN_WIDTH - 60, WIN_HEIGHT - 60, 0, 0 };
 	poses[3] = { 60, WIN_HEIGHT - 60, 0, 0 };
 	poses[4] = { 60, 60, 0, 0 };
 
-	colors[0] = { 0.1, 0.1, 0.1, 1 };
 	colors[1] = { 10000, 0, 0, 1 };
 	colors[2] = { 0, 10000, 0, 1 };
 	colors[3] = { 0, 0, 10000, 1 };
-	colors[4] = { 1000, 1000, 1000, 1 };
+	colors[4] = { 1000, 1000, 1000, 1 };*/
 
 	_colorBuffer->Update();
 	_posBuffer->Update();

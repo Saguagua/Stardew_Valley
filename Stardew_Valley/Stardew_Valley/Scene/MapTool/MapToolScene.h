@@ -10,6 +10,5 @@ public:
 	virtual void PostRender() override;
 
 private:
-	shared_ptr<TileMap> _map;
 
 };

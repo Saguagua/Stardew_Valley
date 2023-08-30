@@ -34,6 +34,8 @@ void List::Render()
 
 void List::Update()
 {
+	if (!_isActive)
+		return;
 	_transform->Update();
 
 	for (shared_ptr<TextureButton> button : _buttons)

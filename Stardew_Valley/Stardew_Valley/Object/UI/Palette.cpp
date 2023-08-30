@@ -1,5 +1,4 @@
 #include "framework.h"
-#include "List.h"
 #include "Palette.h"
 
 Palette* Palette::_instance = nullptr;
@@ -7,6 +6,9 @@ Palette* Palette::_instance = nullptr;
 Palette::Palette(Vector2 size)
 	:_size(size)
 {
+	_map = make_shared<TileMap>();
+	_map->SetDebug(true);
+
 	_mainRect = make_shared<ColorButton>(PURPLE, _size);
 	_mainRect->SetDebug(true);
 	CallBack onEvent = std::bind(&Palette::Move, this);
@@ -18,9 +20,14 @@ Palette::Palette(Vector2 size)
 	CreateChartButtons();
 	CreateTileList();
 	CreateObjectList();
-	CreateSaveList();
+	CreateLoadList();
 
-	_tileList->SetActive(true);
+	_lists[TILE]->SetActive(true);
+}
+
+void Palette::Render()
+{
+	_map->Render();
 }
 
 void Palette::PostRender()
@@ -30,9 +37,8 @@ void Palette::PostRender()
 	for (auto button : _chartButtons)
 		button->Render();
 
-	_tileList->Render();
-	_objectList->Render();
-	_saveList->Render();
+	for (auto list : _lists)
+		list->Render();
 }
 
 void Palette::Update()
@@ -42,19 +48,12 @@ void Palette::Update()
 	for (auto button : _chartButtons)
 		button->Update();
 
-	_tileList->Update();
-	_objectList->Update();
-	_saveList->Update();
-}
+	for (auto list : _lists)
+		list->Update();
 
-int Palette::GetCurTileCode()
-{
-	return _tileList->GetCurIndex();;
-}
+	_map->Update();
 
-int Palette::GetCurObjectCode()
-{
-	return _objectList->GetCurIndex();
+	KeyInput();
 }
 
 void Palette::Move()
@@ -75,32 +74,32 @@ void Palette::ChartButtonEvent(int index)
 
 	switch (_chartIndex)
 	{
-	case 0:
+	case ChartType::TILE:
 	{
-		_tileList->SetActive(true);
-		_objectList->SetActive(false);
-		_saveList->SetActive(false);
+		_lists[TILE]->SetActive(true);
+		_lists[OBJECT]->SetActive(false);
+		_lists[LOAD]->SetActive(false);
 		break;
 	}
-	case 1:
+	case ChartType::OBJECT:
 	{
-		_tileList->SetActive(false);
-		_objectList->SetActive(true);
-		_saveList->SetActive(false);
+		_lists[TILE]->SetActive(false);
+		_lists[OBJECT]->SetActive(true);
+		_lists[LOAD]->SetActive(false);
 
 		break;
 	}
-	case 2:
+	case ChartType::LOAD:
 	{
-		_tileList->SetActive(false);
-		_objectList->SetActive(false);
-		_saveList->SetActive(true);
+		_lists[TILE]->SetActive(false);
+		_lists[OBJECT]->SetActive(false);
+		_lists[LOAD]->SetActive(true);
 		
 		break;
 	}
-	case 3:
+	case ChartType::SAVE:
 	{
-		DATA->Save();
+		DATA->MapToolSave();
 		break;
 	}
 	default:
@@ -110,10 +109,10 @@ void Palette::ChartButtonEvent(int index)
 
 void Palette::ChangeMap(int index)
 {
-	if (_saveList->GetCurIndex() == index)
+	if (_lists[LOAD]->GetCurIndex() == index)
 		return;
 
-	//TILEMAP->ChangeMap(index);
+	_map->ChangeMap(index);
 }
 
 void Palette::CreateChartButtons()
@@ -162,9 +161,11 @@ void Palette::CreateTileList()
 		names.push_back(tile.first);
 	}
 
-	_tileList = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 3), names);
-	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
-	_tileList->SetParent(_mainRect->GetTransform());
+	shared_ptr<List> list = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 3), names);
+	list->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	list->SetParent(_mainRect->GetTransform());
+
+	_lists.push_back(list);
 }
 
 void Palette::CreateObjectList()
@@ -177,13 +178,15 @@ void Palette::CreateObjectList()
 		names.push_back(info.first);
 	}
 
-	_objectList = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 5), names);
-	_objectList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
-	_objectList->SetParent(_mainRect->GetTransform());
-	_objectList->SetActive(false);
+	shared_ptr<List> list = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 5), names);
+	list->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	list->SetParent(_mainRect->GetTransform());
+	list->SetActive(false);
+
+	_lists.push_back(list);
 }
 
-void Palette::CreateSaveList()
+void Palette::CreateLoadList()
 {
 	_mapInfos = DATA->GetMapInfos();
 	vector<string> names;
@@ -193,7 +196,7 @@ void Palette::CreateSaveList()
 		names.push_back(to_string(i));
 	}
 
-	_saveList = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(_mapInfos.size(), 5), names);
+	shared_ptr<List> list = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(_mapInfos.size(), 5), names);
 
 	vector<CallBackInt> cbs;
 
@@ -203,8 +206,21 @@ void Palette::CreateSaveList()
 		cbs.push_back(cb);
 	}
 
-	_saveList->AddCallBackInt(cbs);
-	_saveList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
-	_saveList->SetParent(_mainRect->GetTransform());
-	_saveList->SetActive(false);
+	list->AddCallBackInt(cbs);
+	list->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
+	list->SetParent(_mainRect->GetTransform());
+	list->SetActive(false);
+
+	_lists.push_back(list);
+}
+
+void Palette::KeyInput()
+{
+	if (_mainRect->GetFocus())
+		return;
+
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		_map->ChangeTile(W_MOUSE_POS, _chartIndex, _lists[_chartIndex]->GetCurBotton()->GetName());
+	}
 }

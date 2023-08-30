@@ -31,23 +31,22 @@ public:
 	void Watering(Vector2 originPos, Vector2 targetPos, short level);
 	void Charging(Vector2 originPos, Vector2 tragetPos, short level);
 	void Blocking(shared_ptr<RectCollider> col);
+	void ChangeTile(Vector2 pos, int paletteIndex, string name);
 private:
 	void SetCameraRange();
-
-	void ChangeTile();
-
 	void SetHoeDirt(int index);
 
-	shared_ptr<class Sprite> _renderer;
+	shared_ptr<Sprite> _renderer;
 	shared_ptr<SingleColorRect> _focusRenderer;
 
 	shared_ptr<RectCollider> _collider;
 
 	vector<shared_ptr<MapInfo>>& _mapInfos = DATA->GetMapInfos();
-	vector<shared_ptr<class Tile>> _tiles;
+	vector<shared_ptr<Tile>> _tiles;
 	unordered_map<string, int>& _tileInfos = DATA->GetTileInfos();
 
 	string _curMapName;
 	Vector2 _curMapSize;
+	int _curMapIndex;
 };
 

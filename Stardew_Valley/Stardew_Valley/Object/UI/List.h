@@ -12,10 +12,12 @@ public:
 	void SetActive(bool val) { _isActive = val; }
 	void SetParent(shared_ptr<Transform> trans) { _transform->SetParent(trans); }
 	void SetPos(Vector2 pos) { _transform->SetPos(pos); }
+
 	void AddCallBack(vector<CallBack> cbs);
 	void AddCallBackInt(vector<CallBackInt> cbs);
 
 	int GetCurIndex() { return _curIndex; }
+	shared_ptr<TextureButton> GetCurBotton() { return _buttons[_curIndex]; }
 	shared_ptr<Transform> GetTransform() { return _transform; }
 
 protected:

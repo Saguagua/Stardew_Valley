@@ -7,11 +7,8 @@ MapToolScene::MapToolScene()
 	ObjectSpawner::Create();
 	LightManager::Create();
 	DATA->LoadPlayerInfo("Test");
-	DATA->LoadMaps("Test");
+	DATA->LoadInitialMaps();
 	Palette::Create();
-
-	_map = make_shared<TileMap>();
-	_map->SetDebug(true);
 
 	PALETTE->SetPos(CENTER - PALETTE->GetSize());
 }
@@ -26,12 +23,11 @@ MapToolScene::~MapToolScene()
 void MapToolScene::Update()
 {
 	PALETTE->Update();
-	//_map->Update();
 }
 
 void MapToolScene::Render()
 {
-	_map->Render();
+	PALETTE->Render();
 }
 
 void MapToolScene::PostRender()

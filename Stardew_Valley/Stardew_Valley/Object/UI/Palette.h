@@ -3,6 +3,14 @@ class MapInfo;
 
 class Palette
 {
+	enum ChartType
+	{
+		TILE,
+		OBJECT,
+		LOAD,
+		SAVE
+	};
+
 	Palette(Vector2 size);
 	~Palette() {}
 public:
@@ -25,14 +33,13 @@ public:
 		return nullptr;
 	}
 
+	void Render();
 	void PostRender();
 	void Update();
 
 	void SetPos(Vector2 pos) { _mainRect->SetPos(pos); }
 
 	Vector2 GetSize() { return _size; }
-	int GetCurTileCode();
-	int GetCurObjectCode();
 	int GetIndex() { return _chartIndex; }
 	bool GetFocus() { return _onFocus; }
 
@@ -40,7 +47,9 @@ private:
 	void CreateChartButtons();
 	void CreateTileList();
 	void CreateObjectList();
-	void CreateSaveList();
+	void CreateLoadList();
+
+	void KeyInput();
 
 	//CallBack
 	void OnFocus(bool val) { _onFocus = val; }
@@ -50,18 +59,18 @@ private:
 
 	static Palette* _instance;
 
+	shared_ptr<TileMap> _map;
+
 	vector<shared_ptr<MapInfo>> _mapInfos;
 	shared_ptr<ColorButton> _mainRect;
-	shared_ptr<List> _tileList;
-	shared_ptr<List> _objectList;
-	shared_ptr<List> _saveList;
+	vector<shared_ptr<List>> _lists;
 
 	vector<shared_ptr<TextureButton>> _chartButtons;
 
 	Vector2 _size;
 	Vector2 _centerToMouse;
 
-	int _chartIndex = 0;
+	int _chartIndex = ChartType::TILE;
 	bool _onFocus = false;
 };
 

@@ -26,7 +26,7 @@ public:
 	virtual void Interaction();
 protected:
 	string _tileName;
-	string _objName;
+	string _objName = "BLANK";
 	Vector2 _centerPos;
 	int _index;
 

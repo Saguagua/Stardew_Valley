@@ -60,30 +60,22 @@ void TileMap::Blocking(shared_ptr<RectCollider> col)
 	}
 }
 
-void TileMap::ChangeTile()
+void TileMap::ChangeTile(Vector2 pos, int paletteIndex, string name)
 {
-	if (KEY_PRESS(VK_LBUTTON))
+	
+	
+	if (paletteIndex == 0)
 	{
-		int chartIndex = PALETTE->GetIndex();
-		
-		if (chartIndex == 0)
-		{
-			int code = PALETTE->GetCurTileCode();
-
-			if (code == -1)
-				return;
-
-			int index = GetWorldIndex(W_MOUSE_POS);
-			//_tiles[index]->SetTileCode(code);
-		}
-		else if (chartIndex == 1)
-		{
-			int code = PALETTE->GetCurObjectCode();
-
-			int index = GetWorldIndex(W_MOUSE_POS);
-			//_tiles[index]->SetObject(code);
-		}
+		int index = GetWorldIndex(pos);
+		_tiles[index]->SetName(name);
 	}
+	else if (paletteIndex == 1)
+	{
+		int index = GetWorldIndex(pos);
+		//shared_ptr<MapInfo> map, int index, string objName, short val1, short val2
+		OBJECT_SPAWNER->CreateObj(_mapInfos[_curMapIndex], index, name, 0, 0);
+	}
+	
 }
 
 void TileMap::SetHoeDirt(int index) //algorithm
@@ -213,6 +205,7 @@ void TileMap::Render()
 
 void TileMap::ChangeMap(int index)
 {
+	_curMapIndex = index;
 	_curMapName = _mapInfos[index]->GetName();
 	_curMapSize = _mapInfos[index]->GetSize();
 	_tiles = _mapInfos[index]->GetInfos();

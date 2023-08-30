@@ -37,17 +37,20 @@ void Timer::Update()
 		_oneSecCount = 0;
 		_frameCount = 0;
 
-		_minute++;
-		if (_minute == MAXMINUTE) //10
+		if (!PALETTE)
 		{
-			_hour++;
-			_minute = 0;
-
-			if (_hour > MAXHOUR) //24
+			_minute++;
+			if (_minute == MAXMINUTE) //10
 			{
-				PlayerUI::GetInstance()->NextDay();
-				OBJECT_SPAWNER->Update_Crops();
-				_hour = 6;
+				_hour++;
+				_minute = 0;
+
+				if (_hour > MAXHOUR) //24
+				{
+					PlayerUI::GetInstance()->NextDay();
+					OBJECT_SPAWNER->Update_Crops();
+					_hour = 6;
+				}
 			}
 		}
 	}

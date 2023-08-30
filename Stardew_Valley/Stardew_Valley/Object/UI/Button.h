@@ -25,6 +25,7 @@ public:
 	void SetMouseOnEvent(CallBackInt cb) { _onIntEvent = cb; }
 	void SetMouseOnEvent(CallBackBool cb) { _onBoolEvent = cb; }
 
+	bool GetFocus() { return _onFocus; }
 	Vector2 GetSize() { return _size; }
 	shared_ptr<RectCollider> GetCollider() { return _col; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
@@ -44,5 +45,7 @@ protected:
 	vector<CallBack> _pushEvents;
 	CallBackBool _pushBoolEvent;
 	vector<CallBackInt> _pushIntEvents;
+
+	bool _onFocus = false;
 };
 

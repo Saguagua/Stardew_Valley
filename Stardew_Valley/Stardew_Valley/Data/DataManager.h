@@ -46,7 +46,10 @@ public:
 	shared_ptr<ItemInfo>	GetItemInfo(string key)		{ return _itemTable[key]; }
 	shared_ptr<CropInfo>	GetCropInfo(string key)		{ return _cropTable[key]; }
 
-	void Save();
+	void MapToolSave();
+	void PlaySave();
+
+	void LoadInitialMaps();
 	void LoadMaps(string name);
 	void LoadPlayerInfo(string playerName);
 private:
@@ -57,15 +60,15 @@ private:
 
 	void SaveMaps();
 	void SavePlayerInfo();
-	void LoadMap(string playerName, string mapName);
+	void LoadMap(string path, string mapName);
 
 	static DataManager* _instance;
 
-	shared_ptr<PlayerInfo> _playerInfo;
+						  shared_ptr<PlayerInfo> _playerInfo;
 	
-	unordered_map<string, bool> _playerTable;
+					  unordered_map<string, bool> _playerTable;
 	
-	vector<shared_ptr<MapInfo>> _mapInfos;
+					  vector<shared_ptr<MapInfo>> _mapInfos;
 
 					 vector<shared_ptr<FishInfo>> _fishTable;
 					  unordered_map<string, bool> _mapTable;

@@ -11,6 +11,8 @@ void Button::Update()
 {
 	if (_col->IsCollision(S_MOUSE_POS))
 	{
+		_onFocus = true;
+
 		if (_onEvent != nullptr)
 			_onEvent();
 		if (_onIntEvent != nullptr)
@@ -42,5 +44,6 @@ void Button::Update()
 	{
 		if (_onBoolEvent != nullptr)
 			_onBoolEvent(false);
+		_onFocus = false;
 	}
 }

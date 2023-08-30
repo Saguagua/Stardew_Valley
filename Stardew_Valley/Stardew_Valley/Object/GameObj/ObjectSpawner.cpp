@@ -81,7 +81,7 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 
 	for (int i = 0; i < size.y; i++)
 	{
-		for (int j = index; j < size.x; j++)
+		for (int j = index; j < index + size.x; j++)
 		{
 			tiles[j + i * mapSize.x]->SetObj(obj);
 		}
