@@ -1,4 +1,6 @@
 #pragma once
+class MapInfo;
+
 class Palette
 {
 	Palette(Vector2 size);
@@ -7,7 +9,7 @@ public:
 	static void Create()
 	{
 		if (_instance == nullptr)
-			_instance = new Palette(Vector2(450, 600));
+			_instance = new Palette(Vector2(350, 500));
 	}
 
 	static void Delete()
@@ -48,13 +50,13 @@ private:
 
 	static Palette* _instance;
 
-	vector<shared_ptr<class MapInfo>> _mapInfos;
-	shared_ptr<class ColorButton> _mainRect;
-	shared_ptr<class List> _tileList;
+	vector<shared_ptr<MapInfo>> _mapInfos;
+	shared_ptr<ColorButton> _mainRect;
+	shared_ptr<List> _tileList;
 	shared_ptr<List> _objectList;
 	shared_ptr<List> _saveList;
 
-	vector<shared_ptr<class TextureButton>> _chartButtons;
+	vector<shared_ptr<TextureButton>> _chartButtons;
 
 	Vector2 _size;
 	Vector2 _centerToMouse;

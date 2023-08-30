@@ -5,15 +5,21 @@
 MapToolScene::MapToolScene()
 {
 	ObjectSpawner::Create();
-	//DATA->Load("Test");
+	LightManager::Create();
+	DATA->LoadPlayerInfo("Test");
+	DATA->LoadMaps("Test");
 	Palette::Create();
-	//_map->SetDebug(true);
+
+	_map = make_shared<TileMap>();
+	_map->SetDebug(true);
+
 	PALETTE->SetPos(CENTER - PALETTE->GetSize());
 }
 
 MapToolScene::~MapToolScene()
 {
 	Palette::Delete();
+	LightManager::Delete();
 	ObjectSpawner::Delete();
 }
 
@@ -25,7 +31,7 @@ void MapToolScene::Update()
 
 void MapToolScene::Render()
 {
-	//_map->Render();
+	_map->Render();
 }
 
 void MapToolScene::PostRender()

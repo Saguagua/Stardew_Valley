@@ -10,7 +10,7 @@ Program::Program()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));
 	Initialize();
-	_scene = make_shared<TestScene>();
+	_scene = make_shared<MapToolScene>();
 	TIMER->LockRunTime(60);
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
 }

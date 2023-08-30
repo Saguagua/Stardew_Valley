@@ -5,7 +5,6 @@
 PlayerImproved::PlayerImproved()
 	:Player()
 {
-	
 }
 
 void PlayerImproved::Update()
@@ -76,7 +75,7 @@ void PlayerImproved::AddStamina(short cost)
 		_state = (PlayerState::DEAD);
 
 	float ratio = _stamina / _maxHp;
-	//PlayerUI::GetInstance()->SetStamina(ratio);
+	PlayerUI::GetInstance()->SetStamina(ratio);
 }
 
 bool PlayerImproved::AddItem(string name)

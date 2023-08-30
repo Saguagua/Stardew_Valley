@@ -15,8 +15,9 @@ void TextureButton::Render()
 
 void TextureButton::PostRender()
 {
-	_col->Render();
+	_col->GetTransform()->Set_World();
 	_renderer->Render();
+	_col->Render();
 }
 
 void TextureButton::Update()

@@ -6,8 +6,9 @@ SingleColorRect::SingleColorRect(Vector2 size, XMFLOAT4 color)
 {
 	CreateVertices();
 	CreateData();
-	_cBuffer->SetColor(color);
+
 	_cBuffer->SetRatio(Vector2(1,1));
+	_cBuffer->SetColor(color);
 	_cBuffer->Update();
 }
 

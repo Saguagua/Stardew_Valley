@@ -2,7 +2,7 @@
 class List
 {
 public:
-	List(wstring path, Vector2 size, Vector2 matrix, int count);
+	List(wstring path, Vector2 size, Vector2 matrix, vector<string> names);
 	List(Vector2 matrix) : _matrix(matrix) {}
 	virtual ~List() {}
 
@@ -19,7 +19,8 @@ public:
 	shared_ptr<Transform> GetTransform() { return _transform; }
 
 protected:
-	void CreateButtons(wstring path, int count);
+	void CreateButtons(wstring path, vector<string> names);
+
 	void SetButtons(Vector2 startPos, Vector2 space);
 	void PushButtonEvent(int index);
 
@@ -35,5 +36,6 @@ protected:
 
 	int _curIndex = -1;
 	bool _isActive = false;
+
 };
 

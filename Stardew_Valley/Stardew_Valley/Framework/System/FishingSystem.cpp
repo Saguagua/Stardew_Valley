@@ -27,18 +27,25 @@ void FishingSystem::Update()
 		if (_waitCount >= 1.0f)
 		{
 			_waitCount = 0.0f;
-
+			
 			int random = rand() % 100;
 
-			if (random > 50)
+			UINT size = _fishInfos[_dayNightIndex]->_size;
+			
+			for (int i = 0; i < size; i++)
 			{
-				_fishName = "Anchovy";
-				_step = Step::HOLD;
-				_minigame->SetActive(true);
-				_minigame->Update();
-				_player.lock()->PlayAction(Player::PlayerAction::FISHING2);
+				if (random < _fishInfos[_dayNightIndex]->_percents[i])
+				{
+					_fishName = _fishInfos[_dayNightIndex]->_fishNames[i];
+					_step = Step::HOLD;
+					_minigame->SetActive(true);
+					_minigame->Update();
+					_player.lock()->PlayAction(Player::PlayerAction::FISHING2);
+					break;
+				}
 			}
 		}
+
 		break;
 	}
 	case FishingSystem::HOLD:
@@ -101,6 +108,7 @@ void FishingSystem::EndThrowing()
 	{
 		_step = Step::WAIT;
 		_waitCount = 0.0f;
+		_dayNightIndex = TIMER->GetDayTime();
 	}
 }
 

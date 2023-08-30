@@ -174,24 +174,24 @@ public:
 
 private:
 	short _period;
+	short _spawnCount;
 };
 
-struct CropInfo
-{
-
-};
 
 struct FishInfo
 {
 public:
 
-	void AddFishInfo(string name, float percent)
+
+	void AddFishInfo(string name, short percent)
 	{
 		_fishNames.push_back(name);
 		_percents.push_back(percent);
+		_size++;
 	}
 
-private:
+
 	vector<string> _fishNames;
-	vector<float> _percents;
+	vector<short> _percents;
+	UINT _size = 0;
 };

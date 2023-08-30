@@ -118,6 +118,7 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 	else if (KEY_UP(VK_LBUTTON))
 	{
 		p->AddStamina(_vals[1]);
+
 		int dir = p->GetDirection();
 		Vector2 direction;
 		Vector2 originPos = p->GetWorldPos();

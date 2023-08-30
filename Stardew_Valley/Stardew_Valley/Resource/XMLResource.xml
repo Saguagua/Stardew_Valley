@@ -110,7 +110,7 @@ r => 'y' if sprite is rotated-->
   <sprite n="DungeonSideWall" x="287" y="289" w="16" h="128" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Dagger" x="3" y="624" w="10" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Elevator" x="421" y="513" w="16" h="39" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Eight" x="539" y="223" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="8" x="539" y="223" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Emerald" x="137" y="470" w="10" h="9" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="EmeraldStone" x="67" y="581" w="15" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="EmeraldStone" x="319" y="602" w="14" h="11" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
@@ -121,8 +121,8 @@ r => 'y' if sprite is rotated-->
   <sprite n="FishingRod" x="47" y="559" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Fall" x="589" y="192" w="12" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="FishingGameCursor" x="35" y="624" w="9" h="9" pX="0.5" pY="0.5" i="0" s1="1" s2="2"/>
-  <sprite n="Five" x="287" y="181" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Four" x="577" y="155" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="5" x="287" y="181" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="4" x="577" y="155" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="FishingGame" x="255" y="3" w="38" h="150" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="Grass" x="91" y="559" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="GrassFlower" x="113" y="559" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
@@ -153,9 +153,9 @@ r => 'y' if sprite is rotated-->
   <sprite n="Ladder2" x="612" y="136" w="16" h="64" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Lantern" x="508" y="598" w="11" h="12" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="LightRing" x="421" y="270" w="8" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Nine" x="625" y="219" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="9" x="625" y="219" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="NormalCursor" x="374" y="624" w="8" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="One" x="539" y="236" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="1" x="539" y="236" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Ocean" x="464" y="556" w="16" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16" i="0" s1="1" s2="1"/>
   <sprite n="Ocean" x="159" y="539" w="16" h="13" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16" i="1" s1="1" s2="1"/>
   <sprite n="Ocean" x="512" y="405" w="16" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16" i="2" s1="1" s2="1"/>
@@ -175,19 +175,19 @@ r => 'y' if sprite is rotated-->
   <sprite n="TimePicker" x="562" y="384" w="7" h="19" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Tuna" x="266" y="580" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Torch" x="196" y="623" w="5" h="11" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TEight" x="50" y="624" w="8" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TFive" x="416" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TFour" x="429" y="620" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TNine" x="64" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TOne" x="577" y="141" w="6" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TSeven" x="442" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TSix" x="77" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TThree" x="455" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TTwo" x="90" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="TZero" x="468" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T8" x="50" y="624" w="8" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T5" x="416" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T4" x="429" y="620" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T9" x="64" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T1" x="577" y="141" w="6" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T7" x="442" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T6" x="77" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T3" x="455" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T2" x="90" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="T0" x="468" y="624" w="7" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="T_" x="541" y="199" w="4" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Three" x="116" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Two" x="492" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="3" x="116" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="2" x="492" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="SteelClub" x="551" y="460" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="StaminaBar" x="559" y="141" w="12" h="56" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Stub" x="243" y="237" w="32" h="31" pX="0.5" pY="0.5" i="0" s1="4" s2="4"/>
@@ -222,8 +222,8 @@ r => 'y' if sprite is rotated-->
   <sprite n="Spring" x="610" y="607" w="12" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Summer" x="525" y="598" w="12" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Steel" x="137" y="485" w="10" h="9" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Six" x="481" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Seven" x="287" y="194" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="6" x="481" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="7" x="287" y="194" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Rainny" x="605" y="251" w="26" h="11" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Radish" x="508" y="554" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Radish" x="151" y="581" w="14" h="15" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
@@ -270,6 +270,6 @@ r => 'y' if sprite is rotated-->
   <sprite n="House" x="3" y="275" w="144" h="144" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Winter" x="339" y="617" w="12" h="8" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Wood_Drop" x="357" y="624" w="11" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Zero" x="516" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="0" x="516" y="624" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="BLANK" x="0" y="0" w="0" h="0" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
 </TextureAtlas>

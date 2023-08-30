@@ -60,8 +60,11 @@ private:
 	bool _isActive = false;
 	string _fishName = "BLANK";
 
+	UINT _dayNightIndex;
 	float _waitCount = 0.0f;
 
 	Step _step = Step::THROW;
+
+	vector<shared_ptr<FishInfo>> _fishInfos = DATA->GetFishInfos();
 };
 

@@ -504,22 +504,10 @@
     <Image Include="Resource\Tile\TileBright.png">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="Resource\Icons\file.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\Icons\save.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\Icons\Tiles.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
     <Image Include="Resource\Tile\Objects.png">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\Object\house.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\UI\Border.png">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\UI\DialogBoxGreen.png">
@@ -529,15 +517,6 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\Object\Objects.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\UI\ListBox.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\UI\ItemListBox.png">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="Resource\UI\UI.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
@@ -563,9 +542,6 @@
     <Text Include="Data\SaveFiles\Farming.txt" />
     <Text Include="Data\SaveFiles\Fishing.txt" />
     <Text Include="Data\SaveFiles\Test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="Resource\UI\UI.xml" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Library\FMOD\fmod_vc.lib" />

@@ -281,6 +281,7 @@ void DataManager::ReadXML()
 
 		XMLInfo::Position pos;
 		Vector2 size;
+
 		pos.x = row->FindAttribute("x")->IntValue();
 		pos.y = row->FindAttribute("y")->IntValue();
 		pos.w = row->FindAttribute("w")->IntValue();
@@ -296,128 +297,132 @@ void DataManager::ReadXML()
 
 void DataManager::ReadTypes()
 {
-	string name;
-	string subName;
-	short type;
-	short tmp;
-	short price;
-
 	ifstream fin;
 
-	fin.open("Data/Contents/TileTable.txt");
-
-	while (!fin.eof())
+	//TileTable
 	{
+		fin.open("Data/Contents/TileTable.txt");
+
 		string name;
-		fin >> name;
-		int bitFlag;
-		fin >> bitFlag;
-		_tileTable[name] = bitFlag;
-	}
 
-	fin.close();
-
-	fin.open("Data/Contents/DeployableTable.txt");
-
-
-	while (!fin.eof())
-	{
-		vector<short> vals;
-
-		fin >> name;
-		fin >> type;
-
-		for (int i = 0; i < 3; i++)
+		while (!fin.eof())
 		{
-			fin >> tmp;
-			vals.push_back(tmp);
+			string name;
+			fin >> name;
+			int bitFlag;
+			fin >> bitFlag;
+			_tileTable[name] = bitFlag;
 		}
 
-		_deployTable[name] = make_shared<DeployInfo>(type, vals);
+		fin.close();
 	}
-
-	fin.close();
-
-	fin.open("Data/Contents/ItemTable.txt");
-
-	while (!fin.eof())
+	//DeployTable
 	{
-		vector<short> vals;
+		fin.open("Data/Contents/DeployableTable.txt");
+		string name;
+		short type;
+		short val;
 
-		fin >> name;
-		fin >> type;
-		fin >> price;
-
-		for (int i = 0; i < 4; i++)
+		while (!fin.eof())
 		{
-			fin >> tmp;
-			vals.push_back(tmp);
+			vector<short> vals;
+
+			fin >> name;
+			fin >> type;
+
+			for (int i = 0; i < 3; i++)
+			{
+				fin >> val;
+				vals.push_back(val);
+			}
+
+			_deployTable[name] = make_shared<DeployInfo>(type, vals);
 		}
 
-		fin >> subName;
-
-		_itemTable[name] = make_shared<ItemInfo>(subName, type, price, vals);
+		fin.close();
 	}
-
-	fin.close();
-
-	fin.open("Data/Contents/DropTable.txt");
-	string dropItem;
-
-	while (!fin.eof())
+	//ItemTable
 	{
-		vector<short> vals;
-
-		fin >> name;
-		fin >> dropItem;
-		fin >> tmp;
-
-		_dropTable[name] = make_shared<DropInfo>();
-		_dropTable[name]->AddDatas(dropItem, tmp);
-
-		while (true)
+		fin.open("Data/Contents/ItemTable.txt");
+		string name;
+		string deployName;
+		short type;
+		short price;
+		short val;
+		while (!fin.eof())
 		{
+			vector<short> vals;
+
+			fin >> name;
+			fin >> type;
+			fin >> price;
+
+			for (int i = 0; i < 4; i++)
+			{
+				fin >> val;
+				vals.push_back(val);
+			}
+
+			fin >> deployName;
+
+			_itemTable[name] = make_shared<ItemInfo>(deployName, type, price, vals);
+		}
+
+		fin.close();
+	}
+	// DropTable
+	{
+		fin.open("Data/Contents/DropTable.txt");
+		string name;
+		string dropItem;
+		short percent;
+		while (!fin.eof())
+		{
+			vector<short> vals;
+
+			fin >> name;
 			fin >> dropItem;
+			fin >> percent;
 
-			if (dropItem == "/")
-				break;
+			_dropTable[name] = make_shared<DropInfo>();
+			_dropTable[name]->AddDatas(dropItem, percent);
 
-			fin >> tmp;
+			while (true)
+			{
+				fin >> dropItem;
 
-			_dropTable[name]->AddDatas(dropItem, tmp);
+				if (dropItem == "/")
+					break;
+
+				fin >> percent;
+
+				_dropTable[name]->AddDatas(dropItem, percent);
+			}
 		}
+
+		fin.close();
 	}
-
-	fin.close();
-
-	fin.open("Data/Contents/FishTable.txt");
-
-	while (!fin.eof())
+	// FishTable
 	{
-		vector<short> vals;
+		fin.open("Data/Contents/FishTable.txt");
+		_fishTable.push_back(make_shared<FishInfo>());
+		_fishTable.push_back(make_shared<FishInfo>());
 
-		fin >> name;
-		fin >> dropItem;
-		fin >> tmp;
+		string name;
+		short percent;
+		int appearanceTime;
 
-		_dropTable[name] = make_shared<DropInfo>();
-		_dropTable[name]->AddDatas(dropItem, tmp);
-
-		while (true)
+		while (!fin.eof())
 		{
-			fin >> dropItem;
+			fin >> name;
+			fin >> percent;
+			fin >> appearanceTime;
 
-			if (dropItem == "/")
-				break;
-
-			fin >> tmp;
-
-			_dropTable[name]->AddDatas(dropItem, tmp);
+			_fishTable[appearanceTime]->AddFishInfo(name, percent); //float
 		}
+
+		fin.close();
 	}
-
-	fin.close();
-
 }
 
 void DataManager::ReadPlayers()

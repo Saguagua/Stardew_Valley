@@ -19,6 +19,8 @@ Palette::Palette(Vector2 size)
 	CreateTileList();
 	CreateObjectList();
 	CreateSaveList();
+
+	_tileList->SetActive(true);
 }
 
 void Palette::PostRender()
@@ -117,18 +119,18 @@ void Palette::ChangeMap(int index)
 void Palette::CreateChartButtons()
 {
 	Vector2 halfSize = _size * 0.5f;
-	Vector2 buttonSize = _size * 0.05f;
+	Vector2 buttonSize = _size * 0.1f;
 	float space = (_size.x - buttonSize.x * 4) / 5;
 
-	/*shared_ptr<TextureButton> button = make_shared<TextureButton>(L"Resource/Icons/Tiles.png", buttonSize);
-	shared_ptr<TextureButton> button2 = make_shared<TextureButton>(L"Resource/Icons/Tiles.png", buttonSize);
-	shared_ptr<TextureButton> button3 = make_shared<TextureButton>(L"Resource/Icons/file.png", buttonSize);
-	shared_ptr<TextureButton> button4 = make_shared<TextureButton>(L"Resource/Icons/save.png", buttonSize);
+	shared_ptr<TextureButton>  button = make_shared<TextureButton>(XMLPATH, "DungeonTile1", buttonSize);
+	shared_ptr<TextureButton> button2 = make_shared<TextureButton>(XMLPATH, "HorseRadish", buttonSize);
+	shared_ptr<TextureButton> button3 = make_shared<TextureButton>(XMLPATH, "Box", buttonSize);
+	shared_ptr<TextureButton> button4 = make_shared<TextureButton>(XMLPATH, "QualityFertilizer", buttonSize);
 
-	button->GetTransform()->SetPos(Vector2(-halfSize.x + space, halfSize.y - buttonSize.y));
-	button2->GetTransform()->SetPos(Vector2(-halfSize.x + space * 2 + buttonSize.x, halfSize.y - buttonSize.y));
-	button3->GetTransform()->SetPos(Vector2(-halfSize.x + space * 3 + buttonSize.x * 2, halfSize.y - buttonSize.y));
-	button4->GetTransform()->SetPos(Vector2(-halfSize.x + space * 4 + buttonSize.x * 3, halfSize.y - buttonSize.y));
+	button->GetTransform()->SetPos(Vector2(-halfSize.x + space, halfSize.y - buttonSize.y * 0.6f));
+	button2->GetTransform()->SetPos(Vector2(-halfSize.x + space * 2 + buttonSize.x, halfSize.y - buttonSize.y * 0.6f));
+	button3->GetTransform()->SetPos(Vector2(-halfSize.x + space * 3 + buttonSize.x * 2, halfSize.y - buttonSize.y * 0.6f));
+	button4->GetTransform()->SetPos(Vector2(-halfSize.x + space * 4 + buttonSize.x * 3, halfSize.y - buttonSize.y * 0.6f));
 
 	button->GetTransform()->SetParent(_mainRect->GetTransform());
 	button2->GetTransform()->SetParent(_mainRect->GetTransform());
@@ -147,22 +149,35 @@ void Palette::CreateChartButtons()
 	_chartButtons.push_back(button);
 	_chartButtons.push_back(button2);
 	_chartButtons.push_back(button3);
-	_chartButtons.push_back(button4);*/
+	_chartButtons.push_back(button4);
 }
 
 void Palette::CreateTileList()
 {
-	
+	auto tileInfo = DATA->GetTileInfos();
+	vector<string> names;
 
-	_tileList = make_shared<List>(L"Resource/Tile/Tile.png", _size * 0.9f, Vector2(5, 3), 10);
+	for (pair<string, int> tile : tileInfo)
+	{
+		names.push_back(tile.first);
+	}
+
+	_tileList = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 3), names);
 	_tileList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	_tileList->SetParent(_mainRect->GetTransform());
 }
 
 void Palette::CreateObjectList()
 {
-	
-	_objectList = make_shared<List>(L"Resource/Object/Objects.png", _size * 0.9f, Vector2(5, 3), 10);
+	auto deployInfo = DATA->GetDeployInfos();
+	vector<string> names;
+
+	for (auto info : deployInfo)
+	{
+		names.push_back(info.first);
+	}
+
+	_objectList = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 5), names);
 	_objectList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	_objectList->SetParent(_mainRect->GetTransform());
 	_objectList->SetActive(false);
@@ -171,7 +186,14 @@ void Palette::CreateObjectList()
 void Palette::CreateSaveList()
 {
 	_mapInfos = DATA->GetMapInfos();
-	_saveList = make_shared<List>(L"Resource/Tile/Tile.png", _size * 0.9f, Vector2(_mapInfos.size(), 1), _mapInfos.size());
+	vector<string> names;
+
+	for (int i = 0; i < _mapInfos.size(); i++)
+	{
+		names.push_back(to_string(i));
+	}
+
+	_saveList = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(_mapInfos.size(), 5), names);
 
 	vector<CallBackInt> cbs;
 
@@ -180,6 +202,7 @@ void Palette::CreateSaveList()
 		CallBackInt cb = std::bind(&Palette::ChangeMap, this, i);
 		cbs.push_back(cb);
 	}
+
 	_saveList->AddCallBackInt(cbs);
 	_saveList->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	_saveList->SetParent(_mainRect->GetTransform());

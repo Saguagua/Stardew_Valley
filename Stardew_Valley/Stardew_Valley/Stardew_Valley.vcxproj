@@ -318,9 +318,6 @@
     <ResourceCompile Include="Stardew_Valley.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resource\Icons\file.png" />
-    <Image Include="Resource\Icons\save.png" />
-    <Image Include="Resource\Icons\Tiles.png" />
     <Image Include="Resource\Object\house.png" />
     <Image Include="Resource\Object\Objects.png" />
     <Image Include="Resource\Object\Tree.png" />
@@ -331,11 +328,7 @@
     <Image Include="Resource\Tile\spring_outdoors.png" />
     <Image Include="Resource\Tile\Tile.png" />
     <Image Include="Resource\Tile\TileBright.png" />
-    <Image Include="Resource\UI\Border.png" />
     <Image Include="Resource\UI\DialogBoxGreen.png" />
-    <Image Include="Resource\UI\ItemListBox.png" />
-    <Image Include="Resource\UI\ListBox.png" />
-    <Image Include="Resource\UI\UI.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>
@@ -436,9 +429,6 @@
     <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
     <Text Include="Map\Save\Dungeon.txt" />
     <Text Include="Map\Save\Fishing.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="Resource\UI\UI.xml" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Library\DirectXTex\DirectXTex.lib" />
