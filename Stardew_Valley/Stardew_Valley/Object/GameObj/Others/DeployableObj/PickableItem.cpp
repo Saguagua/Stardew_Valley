@@ -12,3 +12,8 @@ void PickableItem::Interaction()
 	}*/
 }
 
+vector<int> PickableItem::GetProperty()
+{
+	return vector<int>(2, (0, 0));
+}
+

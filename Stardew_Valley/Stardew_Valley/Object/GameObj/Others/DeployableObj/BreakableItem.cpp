@@ -28,3 +28,8 @@ void BreakableItem::Interaction()
 		}
 	}*/
 }
+
+vector<int> BreakableItem::GetProperty()
+{
+	return vector<int>(2, (_hp, 0));
+}

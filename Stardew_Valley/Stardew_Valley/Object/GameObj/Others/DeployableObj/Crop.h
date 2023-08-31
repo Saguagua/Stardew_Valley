@@ -24,6 +24,7 @@ public:
 	short GetQuality()	{return _quality; }
 	bool GetWater() { return _water; }
 
+	virtual vector<int> GetProperty() override;
 private:
 	short _period;
 	short _progress;

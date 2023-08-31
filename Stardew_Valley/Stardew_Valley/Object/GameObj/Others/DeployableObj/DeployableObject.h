@@ -6,14 +6,15 @@ public:
 	enum Type
 	{
 		BREAK = 0,
-		PICK = 1,
+		PICK  = 1,
 		LIGHT = 2,
-		BOX = 3,
+		BOX   = 3,
 		HOUSE = 4,
-		CROP = 5,
-		DROP = 6,
-		BLOCK = 7,
-		BLANK = 8
+		CROP  = 5,
+		DROP  = 6,
+		WALL  = 7,
+		DOOR  = 8,
+		BLANK = 9
 	};
 
 	DeployableObject(DeployableObject::Type type, string name, Vector2 pos);
@@ -28,6 +29,8 @@ public:
 	void SetPos(Vector2 pos) { _centerPos = pos; }
 
 	Type GetType() { return _type; }
+
+	virtual vector<int> GetProperty() abstract;
 	
 protected:
 	DeployableObject::Type _type;

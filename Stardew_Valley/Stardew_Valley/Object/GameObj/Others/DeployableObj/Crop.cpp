@@ -45,3 +45,8 @@ void Crop::Interaction()
 	OBJECT_SPAWNER->ActiveDropItem("Potato", "Potato", _centerPos, 2);
 }
 
+vector<int> Crop::GetProperty()
+{
+	return vector<int>(2 ,(_progress, _quality));
+}
+

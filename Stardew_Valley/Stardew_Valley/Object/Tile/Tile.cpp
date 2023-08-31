@@ -11,14 +11,10 @@ Tile::Tile(string name, Vector2 pos)
 void Tile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 {
 	col->GetTransform()->Set_World(0);
+	col->SetScale(Vector2(1,1));
 
 	renderer->ChangePicture(_tileName);
 	renderer->Render();
-
-	if (_obj != nullptr)
-	{
-		_obj->Render(renderer, col);
-	}
 
 	col->Render(); // 여기 수정 필요
 }

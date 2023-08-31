@@ -143,6 +143,8 @@ public:
 	short GetType() { return _type; }
 	vector<short>& GetVals() { return _vals; }
 	Vector2 GetSize() { return _size; }
+
+	void SetSize(Vector2 size) { _size = size; }
 private:
 	short _type;
 	vector<short> _vals;

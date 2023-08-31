@@ -9,9 +9,11 @@ public:
 	~BreakableItem() {}
 
 	virtual void Interaction() override;
+	virtual vector<int> GetProperty() override;
 
 private:
 	short _hp;
 	short _breakType;
+
 };
 

@@ -10,8 +10,8 @@ DataManager* DataManager::_instance = nullptr;
 DataManager::DataManager()
 {
 	ReadMaps();
-	ReadXML();
 	ReadTypes();
+	ReadXML();
 	ReadPlayers();
 }
 
@@ -59,10 +59,11 @@ void DataManager::MapToolSave()
 			string name = tileInfo[i]->GetObjName();
 			fout << name;
 
+
 			if (name != "BLANK")
 			{
-				tileInfo[i]->GetObj()->GetIndex;
-				
+				vector<int> val = tileInfo[i]->GetObj()->GetProperty();
+				fout << " " << val[0] << " " << val[1];
 			}
 
 			if (i + 1 == size.x * size.y)
@@ -309,9 +310,6 @@ void DataManager::LoadMap(string path, string mapName)
 
 	fin.close();
 
-	if (infos.size() > 0)
-		infos.pop_back();
-
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
 
 	fin.open(path + mapName + "Obj.txt");
@@ -387,6 +385,9 @@ void DataManager::ReadXML()
 
 		_xmlTable[name]->AddPosition(pos);
 		_xmlTable[name]->AddSize(size);
+
+		if (_deployTable.count(name) != 0)
+			_deployTable[name]->SetSize(size);
 		row = row->NextSiblingElement();
 	}
 }

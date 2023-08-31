@@ -100,6 +100,8 @@ using namespace Microsoft::WRL;
 #include "Object\GameObj\Others\DeployableObj\BreakableItem.h"
 #include "Object\GameObj\Others\DeployableObj/Crop.h"
 #include "Object\GameObj\Others\DeployableObj/PickableItem.h"
+#include "Object\GameObj\Others\DeployableObj\Wall.h"
+
 
 #include "Object/Tile/Tile.h"
 

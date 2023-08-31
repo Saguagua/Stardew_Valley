@@ -62,8 +62,6 @@ void TileMap::Blocking(shared_ptr<RectCollider> col)
 
 void TileMap::ChangeTile(Vector2 pos, int paletteIndex, string name)
 {
-	
-	
 	if (paletteIndex == 0)
 	{
 		int index = GetWorldIndex(pos);
@@ -72,8 +70,9 @@ void TileMap::ChangeTile(Vector2 pos, int paletteIndex, string name)
 	else if (paletteIndex == 1)
 	{
 		int index = GetWorldIndex(pos);
-		//shared_ptr<MapInfo> map, int index, string objName, short val1, short val2
-		OBJECT_SPAWNER->CreateObj(_mapInfos[_curMapIndex], index, name, 0, 0);
+		auto info = DATA->GetDeployInfo(name);
+		auto vals = info->GetVals();
+		OBJECT_SPAWNER->CreateObj(_mapInfos[_curMapIndex], index, name, vals[0], vals[1]);
 	}
 	
 }
@@ -195,11 +194,24 @@ void TileMap::Render()
 	{
 		_collider->SetPos(_tiles[i]->GetCenterPos());
 		_collider->Update();
-		_collider->Render();
 		_tiles[i]->Render(_renderer, _collider);
 
 		if (_tiles[i]->IsFocus())
 			_focusRenderer->Render();
+	}
+
+	for (int i = 0; i < _tiles.size(); i++) //DepthView 사용필요
+	{
+		_collider->SetPos(_tiles[i]->GetCenterPos());
+		_collider->Update();
+
+		auto obj = _tiles[i]->GetObj();
+
+		if (obj)
+		{
+			obj->Render(_renderer, _collider);
+		}
+		
 	}
 }
 

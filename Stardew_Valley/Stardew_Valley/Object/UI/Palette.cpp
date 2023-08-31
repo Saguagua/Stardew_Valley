@@ -178,7 +178,7 @@ void Palette::CreateObjectList()
 		names.push_back(info.first);
 	}
 
-	shared_ptr<List> list = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 5), names);
+	shared_ptr<List> list = make_shared<List>(XMLPATH, _size * 0.9f, Vector2(5, 8), names);
 	list->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	list->SetParent(_mainRect->GetTransform());
 	list->SetActive(false);

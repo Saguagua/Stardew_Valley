@@ -238,6 +238,7 @@
     <ClInclude Include="Object\Tile\Tile.h" />
     <ClInclude Include="Object\UI\TimeUI.h" />
     <ClInclude Include="Defines.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\System\FishingSystem.cpp" />
@@ -313,6 +314,7 @@
     <ClCompile Include="Object\UI\TextureButton.cpp" />
     <ClCompile Include="Object\Tile\Tile.cpp" />
     <ClCompile Include="Object\UI\TimeUI.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc" />

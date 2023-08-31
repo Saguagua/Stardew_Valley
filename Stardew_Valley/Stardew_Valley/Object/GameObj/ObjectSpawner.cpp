@@ -48,8 +48,8 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 
 	Vector2 size = _deployTable[objName]->GetSize();
 	Vector2 tmp;
-	tmp.x = TILE_SIZE.x * (size.x - 1);
-	tmp.y = TILE_SIZE.y * (size.y - 1);
+	tmp.x = TILE_SIZE.x * (size.x * 0.5f) - TILE_SIZE.x * 0.5f;
+	tmp.y = TILE_SIZE.y * (size.y * 0.5f) - TILE_SIZE.y * 0.5f;
 
 	Vector2 centerPos = tiles[index]->GetCenterPos() + tmp;
 
@@ -65,6 +65,11 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	case DeployableObject::PICK:
 	{
 		obj = make_shared<PickableItem>(objName, centerPos);
+		break;
+	}
+	case DeployableObject::WALL:
+	{
+		obj = make_shared<Wall>(objName, centerPos);
 		break;
 	}
 	case DeployableObject::BLANK:
@@ -83,6 +88,9 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	{
 		for (int j = index; j < index + size.x; j++)
 		{
+			int index = j + i * mapSize.x;
+			if (index >= mapSize.x * mapSize.y)
+				continue;
 			tiles[j + i * mapSize.x]->SetObj(obj);
 		}
 	}
