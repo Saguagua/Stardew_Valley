@@ -7,13 +7,13 @@ ItemSlot::ItemSlot(shared_ptr<PlayerImproved> player)
 {	
 	_transform = make_shared<Transform>();
 
-	CreateButtons(XMLPATH, 10);
+	CreateButtons(XMLPATH1, 10);
 
 	_buttonSize = Vector2(40, 40);
 	Vector2 space = {10, 0};
 	_size.x = _buttonSize.x  * _matrix.x + space.x * 11 + 20;
 	_size.y = _buttonSize.y * _matrix.y + 25;
-	_body = make_shared<Sprite>(XMLPATH, "ItemBar", _size, SpriteType::UI);
+	_body = make_shared<Sprite>(XMLPATH1, "ItemBar", _size, SpriteType::UI);
 	
 	Vector2 startPos = -_size * 0.5f;
 	startPos.x += 40;

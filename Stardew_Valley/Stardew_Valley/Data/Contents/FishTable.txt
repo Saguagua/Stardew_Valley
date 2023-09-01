@@ -1,4 +1,6 @@
-AnglerFish 20 1
-      Tuna 20 0
-     Squid 70 1
-   Anchovy 70 0
+NightSeaCucumber  5 1
+     SeaCucumber  5 0
+      AnglerFish 20 1
+            Tuna 20 0
+           Squid 70 1
+         Anchovy 70 0

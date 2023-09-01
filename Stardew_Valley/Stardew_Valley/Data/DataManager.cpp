@@ -352,7 +352,7 @@ void DataManager::ReadMaps()
 
 void DataManager::ReadXML()
 {
-	string xmlPath = "Resource/XMLResource.xml";
+	string xmlPath = "Resource/XMLResource1.xml";
 	shared_ptr<tinyxml2::XMLDocument> document = make_shared<tinyxml2::XMLDocument>();
 	document->LoadFile(xmlPath.c_str());
 
@@ -382,12 +382,93 @@ void DataManager::ReadXML()
 		pos.h = row->FindAttribute("h")->IntValue();
 		size.x = row->FindAttribute("s1")->FloatValue();
 		size.y = row->FindAttribute("s2")->FloatValue();
+		_xmlTable[name]->SetPage(L"1");
 
 		_xmlTable[name]->AddPosition(pos);
 		_xmlTable[name]->AddSize(size);
 
 		if (_deployTable.count(name) != 0)
 			_deployTable[name]->SetSize(size);
+
+		row = row->NextSiblingElement();
+	}
+
+	xmlPath = "Resource/XMLResource2.xml";
+	document = make_shared<tinyxml2::XMLDocument>();
+	document->LoadFile(xmlPath.c_str());
+
+	textureAtlas = document->FirstChildElement();
+	row = textureAtlas->FirstChildElement();
+
+	while (true)
+	{
+		if (row == nullptr)
+			break;
+
+		name = row->FindAttribute("n")->Value();
+
+		if (_xmlTable.count(name) == 0)
+		{
+			_xmlTable[name] = make_shared<XMLInfo>(name);
+		}
+
+		XMLInfo::Position pos;
+		Vector2 size;
+
+		pos.x = row->FindAttribute("x")->IntValue();
+		pos.y = row->FindAttribute("y")->IntValue();
+		pos.w = row->FindAttribute("w")->IntValue();
+		pos.h = row->FindAttribute("h")->IntValue();
+		size.x = row->FindAttribute("s1")->FloatValue();
+		size.y = row->FindAttribute("s2")->FloatValue();
+
+		_xmlTable[name]->AddPosition(pos);
+		_xmlTable[name]->AddSize(size);
+		_xmlTable[name]->SetPage(L"2");
+
+		if (_deployTable.count(name) != 0)
+			_deployTable[name]->SetSize(size);
+
+		row = row->NextSiblingElement();
+	}
+
+	xmlPath = "Resource/XMLResource3.xml";
+	document = make_shared<tinyxml2::XMLDocument>();
+	document->LoadFile(xmlPath.c_str());
+
+	textureAtlas = document->FirstChildElement();
+	row = textureAtlas->FirstChildElement();
+
+	while (true)
+	{
+		if (row == nullptr)
+			break;
+
+		name = row->FindAttribute("n")->Value();
+
+		if (_xmlTable.count(name) == 0)
+		{
+			_xmlTable[name] = make_shared<XMLInfo>(name);
+		}
+
+		XMLInfo::Position pos;
+		Vector2 size;
+		int page;
+
+		pos.x = row->FindAttribute("x")->IntValue();
+		pos.y = row->FindAttribute("y")->IntValue();
+		pos.w = row->FindAttribute("w")->IntValue();
+		pos.h = row->FindAttribute("h")->IntValue();
+		size.x = row->FindAttribute("s1")->FloatValue();
+		size.y = row->FindAttribute("s2")->FloatValue();
+
+		_xmlTable[name]->AddPosition(pos);
+		_xmlTable[name]->AddSize(size);
+		_xmlTable[name]->SetPage(L"3");
+
+		if (_deployTable.count(name) != 0)
+			_deployTable[name]->SetSize(size);
+
 		row = row->NextSiblingElement();
 	}
 }

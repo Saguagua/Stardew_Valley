@@ -1,3 +1,4 @@
+WoodTile		0
 HoeDirt			2
 WHoeDirt		2
 Dirt			2

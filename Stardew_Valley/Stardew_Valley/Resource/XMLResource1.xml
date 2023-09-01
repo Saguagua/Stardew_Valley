@@ -17,7 +17,7 @@ i => Index
 s1 => Scale.x
 s2 => Scale.y
 r => 'y' if sprite is rotated-->
-<TextureAtlas imagePath="XMLResource" width="634" height="637" scale="1" format="RGBA8888">
+<TextureAtlas imagePath="XMLResource1" width="634" height="637" scale="1" format="RGBA8888">
   <sprite n="Anchovy" x="259" y="602" w="14" h="13" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="AnglerFish" x="468" y="405" w="16" h="12" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Axe" x="597" y="423" w="16" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>

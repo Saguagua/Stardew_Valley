@@ -10,8 +10,8 @@ BagUI::BagUI(shared_ptr<PlayerImproved> player)
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
 
-	_body = make_shared<Sprite>(XMLPATH, "BagUI", Vector2(700, 300), SpriteType::UI);
-	_obj = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(40, 50), SpriteType::UI);
+	_body = make_shared<Sprite>(XMLPATH1, "BagUI", Vector2(700, 300), SpriteType::UI);
+	_obj = make_shared<Sprite>(XMLPATH1, "BLANK", Vector2(40, 50), SpriteType::UI);
 
 	CreateButtons();
 

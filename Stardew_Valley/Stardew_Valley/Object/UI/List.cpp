@@ -5,7 +5,7 @@ List::List(wstring path, Vector2 size, Vector2 matrix, vector<string> names)
 	:_size(size), _matrix(matrix)
 {
 	_transform = make_shared<Transform>();
-	_body = make_shared<Sprite>(XMLPATH, "BLANK", _size, SpriteType::UI);
+	_body = make_shared<Sprite>(XMLPATH1, "BLANK", _size, SpriteType::UI);
 	CreateButtons(path, names);
 
 	Vector2 space;

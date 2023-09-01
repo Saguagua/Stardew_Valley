@@ -98,13 +98,17 @@ public:
 	string GetName() { return _name; }
 	const Position& GetPos(int index) { return _positions[index]; }
 	const Vector2& GetSize(int index) { return _sizes[index]; }
+	const wstring GetPage() { return _page; }
 
 	void AddPosition(Position pos) { _positions.push_back(pos); }
 	void AddSize(Vector2 size) { _sizes.push_back(size); }
+	void SetPage(wstring page) { _page = page; }
+
 private:
 	string _name;
 	vector<Position> _positions;
 	vector<Vector2> _sizes;
+	wstring _page;
 };
 
 struct DropInfo

@@ -12,7 +12,6 @@ Sprite::Sprite(wstring path, string name, Vector2 size, SpriteType type)
 	else if (type == SpriteType::UI)
 		CreateUIData();
 	
-	_xBuffer->SetImgSize(_srv.lock()->GetImageSize());
 	ChangePicture(_curName);
 }
 
@@ -37,9 +36,12 @@ void Sprite::Render()
 
 void Sprite::ChangePicture(string name, int index)
 {
-	if (name != "BLNAK")
-		_curName = name;
-	
+	_curName = name;
+	wstring srvPath = L"Resource/XMLResource" + _map[_curName]->GetPage() + L".png";
+
+	_srv = ADD_SRV(srvPath); 
+	_xBuffer->SetImgSize(_srv.lock()->GetImageSize());
+
 	XMLInfo::Position pos = _map[_curName]->GetPos(index);
 	_xBuffer->SetStart(Vector2(pos.x, pos.y));
 	_xBuffer->SetSize(Vector2(pos.w, pos.h));

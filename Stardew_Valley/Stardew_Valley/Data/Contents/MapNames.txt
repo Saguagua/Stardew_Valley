@@ -3,15 +3,5 @@ Fishing
 Dungeon1
 Dungeon2
 Dungeon3
-Dungeon4
-Dungeon5
-Dungeon6
-Dungeon7
-Dungeon8
-Data/SaveFiles/Test/Farming
-Data/SaveFiles/Test/Fishing
-Data/Contents/Dungeon1
-Data/Contents/Dungeon2
-Data/Contents/Dungeon3
 Dungeon
 Test

@@ -14,8 +14,8 @@ FishingMinigame::FishingMinigame()
 
 	_cursorSlot->SetParent(_bodySlot);
 
-	_body = make_shared<Sprite>(XMLPATH, "FishingGame", Vector2(100, 300), SpriteType::UI);
-	_fish = make_shared<Sprite>(XMLPATH, "FishingGameFish", Vector2(25, 30), SpriteType::UI);
+	_body = make_shared<Sprite>(XMLPATH1, "FishingGame", Vector2(100, 300), SpriteType::UI);
+	_fish = make_shared<Sprite>(XMLPATH1, "FishingGameFish", Vector2(25, 30), SpriteType::UI);
 
 	_guage = make_shared<SingleColorRect>(Vector2(10, 290));
 	_cursor = make_shared<SingleColorRect>(Vector2(20, 60));

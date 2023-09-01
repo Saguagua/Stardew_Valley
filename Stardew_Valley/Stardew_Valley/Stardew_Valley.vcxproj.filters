@@ -525,6 +525,9 @@
     <Image Include="Resource\Object\Objects.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\XMLResource3.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\VertexVS.hlsl" />
@@ -579,5 +582,8 @@
     <None Include="fmod.dll" />
     <None Include="Library\ImGui\ImGUI.idb" />
     <None Include="Library\ImGui\ImGUI.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Resource\XMLResource3.xml" />
   </ItemGroup>
 </Project>

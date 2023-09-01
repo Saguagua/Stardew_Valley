@@ -26,7 +26,7 @@ p => XMLPage
   <sprite n="FileButton" x="143" y="563" w="32" h="27" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
   <sprite n="NightSeaCucumber" x="57" y="579" w="16" h="16" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
   <sprite n="SeaCucumber" x="79" y="579" w="16" h="16" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
-  <sprite n="WoodTile" x="101" y="579" w="16" h="15" pX="0.5" pY="0.5" s1="1"/>
+  <sprite n="WoodTile" x="101" y="579" w="16" h="15" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="SaveButton" x="165" y="509" w="16" h="16" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
   <sprite n="Cherry" x="123" y="596" w="7" h="9" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
 </TextureAtlas>

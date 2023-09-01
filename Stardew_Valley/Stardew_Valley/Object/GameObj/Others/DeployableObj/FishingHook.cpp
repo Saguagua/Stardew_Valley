@@ -4,7 +4,7 @@
 FishingHook::FishingHook()
 {
 	_transform = make_shared<Transform>();
-	_renderer = make_shared<Sprite>(XMLPATH, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
+	_renderer = make_shared<Sprite>(XMLPATH1, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
 	
 	vector<Vector2> indices;
 	indices.push_back(Vector2(0,0));

@@ -1,7 +1,6 @@
 #include "framework.h"
 #include "TestScene.h"
 
-
 TestScene::TestScene()
 {
 	ObjectSpawner::Create();

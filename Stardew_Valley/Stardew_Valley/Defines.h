@@ -67,4 +67,6 @@
 
 #define GRAVITY			9.8f
 
-#define XMLPATH			L"Resource/XMLResource.png"
+#define XMLPATH1			L"Resource/XMLResource1.png"
+#define XMLPATH2			L"Resource/XMLResource2.png"
+#define XMLPATH3			L"Resource/XMLResource3.png"

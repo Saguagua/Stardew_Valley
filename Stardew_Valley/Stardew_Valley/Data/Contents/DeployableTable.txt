@@ -26,6 +26,9 @@ DungeonCorner2		7   0    0   0
 DungeonCorner3		7   0    0   0
 DungeonCornerWall	7   0    0   0
 DungeonSideWall		7   0    0   0
+DungeonSideWall4    7   0    0   0
+DungeonWallNormal   7   0    0   0
+DungeonDoor         8   0    0   0
 Elevator			8   0    0   0
 DungeonGate			8   0    0   0
 BLANK				9	0	 0	 0

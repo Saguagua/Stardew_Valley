@@ -331,6 +331,7 @@
     <Image Include="Resource\Tile\Tile.png" />
     <Image Include="Resource\Tile\TileBright.png" />
     <Image Include="Resource\UI\DialogBoxGreen.png" />
+    <Image Include="Resource\XMLResource3.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>
@@ -462,6 +463,9 @@
     <None Include="fmod.dll" />
     <None Include="Library\ImGui\ImGUI.idb" />
     <None Include="Library\ImGui\ImGUI.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Resource\XMLResource3.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
