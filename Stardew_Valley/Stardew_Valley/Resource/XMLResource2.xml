@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated
+s1 => Scale.x
+s2 => Scale.y
+p => XMLPage
+-->
+<TextureAtlas imagePath="XMLResource2.png" width="706" height="608" scale="1" format="RGBA8888">
+  <sprite n="TileButton" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+  <sprite n="DungeonSideWall4" x="3" y="509" w="48" h="96" pX="0.5" pY="0.5" s1="2" s2="2" p="2"/>
+  <sprite n="DungeonWallNormal" x="57" y="509" w="80" h="64" pX="0.5" pY="0.5" s1="2" s2="2" p="2"/>
+  <sprite n="DungeonDoor" x="143" y="509" w="16" h="48" pX="0.5" pY="0.5" s1="1" s2="3" p="2"/>
+  <sprite n="FileButton" x="143" y="563" w="32" h="27" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+  <sprite n="NightSeaCucumber" x="57" y="579" w="16" h="16" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+  <sprite n="SeaCucumber" x="79" y="579" w="16" h="16" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+  <sprite n="WoodTile" x="101" y="579" w="16" h="15" pX="0.5" pY="0.5" s1="1"/>
+  <sprite n="SaveButton" x="165" y="509" w="16" h="16" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+  <sprite n="Cherry" x="123" y="596" w="7" h="9" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+</TextureAtlas>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated-->
+<TextureAtlas imagePath="XMLResource.png" width="324" height="207" scale="1" format="RGBA8888">
+	<sprite n="HoeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="HoeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="HoeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="HoeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="HoeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="CopperHoeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperHoeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperHoeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperHoeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperHoeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="SteelHoeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelHoeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelHoeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelHoeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelHoeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="PickAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="PickAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="PickAxeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="PickAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="PickAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="CopperPickAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperPickAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperPickAxeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperPickAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperPickAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="SteelPickAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelPickAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelPickAxeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelPickAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelPickAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="AxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="AxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="AxeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="AxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="AxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="CopperAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperAxeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="SteelAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelAxeF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelAxeS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelAxeB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="WateringCanF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="WateringCanF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="WateringCanS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="WateringCanB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="WateringCanB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="CopperWateringCanF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperWateringCanF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperWateringCanS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperWateringCanB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="CopperWateringCanB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="SteelWateringCanF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelWateringCanF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelWateringCanS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelWateringCanB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="SteelWateringCanB" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	
+	<sprite n="FishingS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingS" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	
+	<sprite n="FishingSHold" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingSHold" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+	<sprite n="FishingF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+	<sprite n="FishingF" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+					  
+	<sprite n="FishingFHold" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
+
+
+</TextureAtlas>
