@@ -1,6 +1,5 @@
 #pragma once
 
-
 class Player :public Creature
 {
 public:
@@ -56,7 +55,6 @@ protected:
 	vector<shared_ptr<Action>> _armActions;
 
 	//Renderers
-	shared_ptr<LightTextureRect> _body;
 	shared_ptr<LightTextureRect> _arm;
 	shared_ptr<Sprite> _obj;
 
@@ -64,8 +62,6 @@ protected:
 	short _stamina;
 	vector<shared_ptr<Item>> _items;
 
-
 	int _curIndex = 0;
 	int _armIndex = PlayerAction::IDLE;
-
 };

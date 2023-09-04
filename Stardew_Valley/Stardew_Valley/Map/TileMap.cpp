@@ -74,7 +74,6 @@ void TileMap::ChangeTile(Vector2 pos, int paletteIndex, string name)
 		auto vals = info->GetVals();
 		OBJECT_SPAWNER->CreateObj(_mapInfos[_curMapIndex], index, name, vals[0], vals[1]);
 	}
-	
 }
 
 void TileMap::SetHoeDirt(int index) //algorithm
@@ -192,27 +191,24 @@ void TileMap::Render()
 {
 	for (int i = 0; i < _tiles.size(); i++)
 	{
-		_collider->SetPos(_tiles[i]->GetCenterPos());
-		_collider->Update();
 		_tiles[i]->Render(_renderer, _collider);
 
 		if (_tiles[i]->IsFocus())
 			_focusRenderer->Render();
 	}
 
-	for (int i = 0; i < _tiles.size(); i++) //DepthView 사용필요
-	{
-		_collider->SetPos(_tiles[i]->GetCenterPos());
-		_collider->Update();
+	//for (int i = 0; i < _tiles.size(); i++) //DepthView 사용필요
+	//{
+	//	auto obj = _tiles[i]->GetObj();
 
-		auto obj = _tiles[i]->GetObj();
-
-		if (obj)
-		{
-			obj->Render(_renderer, _collider);
-		}
-		
-	}
+	//	if (obj)
+	//	{
+	//		_collider->SetPos(_tiles[i]->GetCenterPos());
+	//		_collider->Update();
+	//		obj->Render(_renderer, _collider);
+	//	}
+	//	
+	//}
 }
 
 void TileMap::ChangeMap(int index)

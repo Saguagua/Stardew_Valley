@@ -7,6 +7,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 ObjectSpawner::ObjectSpawner()
 {
 	_renderer = make_shared<Sprite>(XMLPATH1, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
+
 	for (int i = 0; i < 60; i++)
 	{
 		_dropItems.push_back(make_shared<DropItem>());
@@ -34,7 +35,21 @@ shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
 	{
 		return nullptr;
 	}
+	case DeployableObject::CROP:
+	{
+		//vector<short> values = _cropTable[objName];
+		short period = 6;
+		vector<short> cvals;
 
+		cvals.push_back(period);
+		cvals.push_back(5);
+		cvals.push_back(2);
+		cvals.push_back(0);
+
+		
+		obj = make_shared<Crop>(objName, Vector2(0,0), cvals);
+		break;
+	}
 	default:
 		break;
 	}

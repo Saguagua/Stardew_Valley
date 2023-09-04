@@ -10,6 +10,9 @@ Tile::Tile(string name, Vector2 pos)
 
 void Tile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 {
+	col->SetPos(_centerPos);
+	col->SetScale(Vector2(1, 1));
+	col->Update();
 	col->GetTransform()->Set_World(0);
 	col->SetScale(Vector2(1,1));
 

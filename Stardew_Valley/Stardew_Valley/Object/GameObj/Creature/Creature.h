@@ -18,6 +18,7 @@ public:
 
 	int GetDirection() { return _dir; }
 	bool IsFreeze() { return _freeze; }
+	void SetActive(bool val) { _isActive = val; }
 
 protected:
 	virtual void CreateAction() abstract;
@@ -26,7 +27,10 @@ protected:
 	void SetDirection(Vector2 pos);
 
 	shared_ptr<RectCollider> _col;
+
 	shared_ptr<Transform> _bodySlot;
+
+	shared_ptr<LightTextureRect> _body;
 
 	vector<shared_ptr<Action>> _actions;
 

@@ -14,16 +14,12 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 	renderer->Render();
 
 	col->Render();
-
-	if (_obj != nullptr)
-	{
-		_obj->Render(renderer, col);
-	}
 	
 	if (!_plantable)
 		return;
 
 	string name;
+
 	if (_crop != nullptr && _crop->GetWater())
 		name = "W";
 
@@ -40,11 +36,6 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 
 	renderer->ChangePicture(name);
 	renderer->Render();
-
-	if (_crop != nullptr)
-	{
-		_crop->Render(renderer, col);
-	}
 }
 
 void ArableTile::Plant(string cropName)

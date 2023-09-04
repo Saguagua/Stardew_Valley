@@ -229,6 +229,7 @@
     <ClInclude Include="Framework\TextureMapping\SRVManager.h" />
     <ClInclude Include="Object\BasicObj\Sprite.h" />
     <ClInclude Include="Object\BasicObj\ShapeLine.h" />
+    <ClInclude Include="Object\GameObj\Creature\Monsters\Slime.h" />
     <ClInclude Include="Stardew_Valley.h" />
     <ClInclude Include="Framework\TextureMapping\StateManager.h" />
     <ClInclude Include="targetver.h" />
@@ -307,6 +308,7 @@
     <ClCompile Include="Framework\TextureMapping\SRVManager.cpp" />
     <ClCompile Include="Object\BasicObj\Sprite.cpp" />
     <ClCompile Include="Object\BasicObj\ShapeLine.cpp" />
+    <ClCompile Include="Object\GameObj\Creature\Monsters\Slime.cpp" />
     <ClCompile Include="Stardew_Valley.cpp" />
     <ClCompile Include="Framework\TextureMapping\StateManager.cpp" />
     <ClCompile Include="Object\BasicObj\RectLine.cpp" />
@@ -320,6 +322,8 @@
     <ResourceCompile Include="Stardew_Valley.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resource\Monsters\Bat.png" />
+    <Image Include="Resource\Monsters\Slime.png" />
     <Image Include="Resource\Object\house.png" />
     <Image Include="Resource\Object\Objects.png" />
     <Image Include="Resource\Object\Tree.png" />

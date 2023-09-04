@@ -29,20 +29,19 @@ Player::Player()
 
 	_armActions[_armIndex]->Play();
 	_actions[_actionIndex]->Play();
+
+	_isActive = true;
 }
 
 void Player::Update()
 {
-	_col->Update();
-	_magnatic->Update();
+	Creature::Update();
 
-	_bodySlot->Update();
+	_magnatic->Update();
 	_itemSlot->Update();
 
-	_actions[_actionIndex]->Update();
 	_armActions[_armIndex]->Update();
-
-	_body->SetCurFrame(_actions[_actionIndex]->GetCurFrame());
+		
 	_arm->SetCurFrame(_armActions[_armIndex]->GetCurFrame());
 }
 

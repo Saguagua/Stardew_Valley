@@ -22,6 +22,9 @@ TestScene::TestScene()
 
 	CAMERA->SetTarget(_player->GetTransform());
 	CAMERA->Update();
+
+	_slime = make_shared<Slime>();
+	_slime->SetActive(true);
 }
 
 TestScene::~TestScene()
@@ -42,7 +45,7 @@ void TestScene::Update()
 	FishingSystem::GetInstance()->Update();
 
 	_map->Blocking(_player->GetCollider());
-	
+	_slime->Update();
 	KeyInput();
 }
 
@@ -52,6 +55,7 @@ void TestScene::Render()
 	OBJECT_SPAWNER->Render();
 	_player->Render();
 	FishingSystem::GetInstance()->Render();
+	_slime->Render();
 }
 
 void TestScene::PostRender()

@@ -7,6 +7,7 @@ class ObjectSpawner
 {
 	ObjectSpawner();
 	~ObjectSpawner() {}
+
 public:
 	static void Create()
 	{

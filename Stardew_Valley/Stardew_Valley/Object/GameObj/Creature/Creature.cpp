@@ -13,12 +13,19 @@ void Creature::Update()
 		return;
 
 	_col->Update();
+	_bodySlot->Update();
+	_actions[_actionIndex]->Update();
+	_body->SetCurFrame(_actions[_actionIndex]->GetCurFrame());
 }
 
 void Creature::Render()
 {
 	if (!_isActive)
 		return;
+
+	_bodySlot->Set_World(0);
+	_body->Render();
+	_col->Render();
 }
 
 void Creature::AddHP(short cost)

@@ -11,7 +11,7 @@ public:
 
 private:
 	void KeyInput();
-
+	shared_ptr<Slime> _slime;
 	shared_ptr<PlayerImproved> _player;
 	shared_ptr<TileMap> _map;
 	vector<shared_ptr<Item>> _items;
