@@ -16,6 +16,11 @@ void Creature::Update()
 	_bodySlot->Update();
 	_actions[_actionIndex]->Update();
 	_body->SetCurFrame(_actions[_actionIndex]->GetCurFrame());
+
+	if (_untouchable > 0)
+	{
+		_untouchable -= DELTA_TIME;
+	}
 }
 
 void Creature::Render()

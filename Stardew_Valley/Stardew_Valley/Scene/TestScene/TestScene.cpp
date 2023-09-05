@@ -25,6 +25,8 @@ TestScene::TestScene()
 
 	_slime = make_shared<Slime>();
 	_slime->SetActive(true);
+	_slime->GetTransform()->SetPos(CENTER);
+	
 }
 
 TestScene::~TestScene()
@@ -43,10 +45,12 @@ void TestScene::Update()
 	_map->Update();
 	_player->Update();
 	FishingSystem::GetInstance()->Update();
+	_slime->Update();
 
 	_map->Blocking(_player->GetCollider());
-	_slime->Update();
+	_map->Blocking(_slime->GetCollider());
 	KeyInput();
+	MonsterAct();
 }
 
 void TestScene::Render()
@@ -124,5 +128,21 @@ void TestScene::KeyInput()
 		}
 		break;
 		}
+	}
+}
+
+void TestScene::MonsterAct()
+{
+
+	if (_slime->GetCollider()->IsCollision(_player->GetCollider()) && !_player->IsUntouchable())
+	{
+		_player->AddHP(-5);
+		_player->StartUntouchable();
+	}
+	if (_slime->GetDetectArea()->IsCollision(_player->GetCollider()))
+	{
+		_dir = (_player->GetWorldPos() - _slime->GetWorldPos()).Normalize();
+		
+		_slime->Move(_dir);
 	}
 }

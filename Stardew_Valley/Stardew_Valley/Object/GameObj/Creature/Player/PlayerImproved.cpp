@@ -63,7 +63,7 @@ void PlayerImproved::AddHP(short cost)
 	if (_hp <= 0)
 		_state = (PlayerState::DEAD);
 
-	float ratio = _hp / _maxHp;
+	float ratio = (float)_hp / (float)_maxHp;
 	PlayerUI::GetInstance()->SetHP(ratio);
 }
 

@@ -153,7 +153,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\GameObj\Creature\Monsters\Bat.h" />
     <ClInclude Include="Framework\System\FishingSystem.h" />
+    <ClInclude Include="Object\GameObj\Creature\Monsters\Monster.h" />
     <ClInclude Include="Object\UI\FishingMinigame.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\FishingHook.h" />
     <ClInclude Include="Object\GameObj\Creature\Creature.h" />
@@ -242,7 +244,9 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\GameObj\Creature\Monsters\Bat.cpp" />
     <ClCompile Include="Framework\System\FishingSystem.cpp" />
+    <ClCompile Include="Object\GameObj\Creature\Monsters\Monster.cpp" />
     <ClCompile Include="Object\UI\FishingMinigame.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\FishingHook.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Creature.cpp" />

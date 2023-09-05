@@ -54,7 +54,7 @@ void BagUI::CreateButtons()
 
 	for (int i = 0; i < 36; i++)
 	{
-		shared_ptr<TextureButton> btn = make_shared<TextureButton>(L"Resource/XMLResource.png", items[i]->GetName(), Vector2(35, 55));
+		shared_ptr<TextureButton> btn = make_shared<TextureButton>(XMLPATH1, items[i]->GetName(), Vector2(35, 55));
 		CallBackInt cb = std::bind(&BagUI::ClickItem, this, i);
 		btn->AddPushEvent(cb);
 		_buttons.push_back(btn);

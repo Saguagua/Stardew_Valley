@@ -22,13 +22,9 @@ public:
 	virtual void Render() override;
 
 	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
-	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
-	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
 	vector<CallBackInt> GetCurIndexCallback();
 
-	short GetMaxHp() { return _maxHp; }
 	short GetMaxStamina() { return _maxStamina; }
-	short GetHp() { return _hp; }
 	short GetStamina() { return _stamina; }
 	int GetCurIndex() { return _curIndex; }
 	vector<shared_ptr<Item>>& GetItems() { return _items; }
