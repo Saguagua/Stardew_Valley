@@ -1,14 +1,9 @@
 #pragma once
 class Monster :public Creature
 {
-	enum MonsterAction
-	{
-		IDLE,
-		MOVE,
-		DEATH
-	};
+	
 public:
-	Monster(string name, Vector2 size);
+	Monster(string name, Vector2 size, float areaSize);
 	virtual ~Monster() {}
 
 	void Move(Vector2 direction);
@@ -16,14 +11,19 @@ public:
 	virtual void Render();
 	virtual void Update();
 
-
 	shared_ptr<CircleCollider> GetDetectArea() { return _detectArea; }
+	void SetIdle();
 protected:
+	enum MonsterAction
+	{
+		IDLE,
+		MOVE,
+		DEATH
+	};
+
+
 	shared_ptr<CircleCollider> _detectArea;
 
 	Vector2 _direction;
-	float _stopTimer = 5.0f;
-	float _moveTimer = 1.0f;
-	float _speed = 100.0f;
 };
 

@@ -24,6 +24,7 @@ public:
 
 	Vector2 GetCurFrame() { return _indices[_curAnimationIndex]; }
 
+	void SetMiddleEvent(CallBack cb) { _middleEvent = cb; }
 	void SetEndEvent(CallBack cb) { _endEvent = cb; }
 	void SetEndIntEvent(CallBackInt cb) { _endIntEvent = cb; }
 private:
@@ -41,6 +42,7 @@ private:
 
 	bool _isReverse = false;
 
+	CallBack _middleEvent = nullptr;
 	CallBack _endEvent = nullptr;
 	CallBackInt _endIntEvent = nullptr;
 };

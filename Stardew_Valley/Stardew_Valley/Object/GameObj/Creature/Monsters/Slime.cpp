@@ -2,7 +2,7 @@
 #include "Slime.h"
 
 Slime::Slime()
-	:Monster("Slime", Vector2(40, 30))
+	:Monster("Slime", Vector2(40, 30), 200.0f)
 {
 	_col->SetDebug(true);
 	_bodySlot = make_shared<Transform>();
@@ -15,7 +15,7 @@ Slime::Slime()
 	_body = make_shared<LightTextureRect>(L"Resource/Monsters/Slime.png", Vector2(4, 5), _size);
 	_eye = make_shared<LightTextureRect>(L"Resource/Monsters/Slime.png", Vector2(4, 5), _size);
 	CreateAction();
-	_actions[SlimeAction::MOVE]->Play();
+	_actions[SlimeAction::IDLE]->Play();
 	_actions[SlimeAction::EYEIDLE]->Play();
 }
 
@@ -27,6 +27,36 @@ void Slime::Update()
 	_actions[_eyeIndex]->Update();
 	_eye->SetCurFrame(_actions[_eyeIndex]->GetCurFrame());
 
+	if (_jumpPower > 0)
+	{
+		_jumpPower -= DELTA_TIME * 15.0f;
+		_col->AddPos(_direction * _jumpPower);
+	}
+	else if (_stopTimer > 0)
+	{
+		_stopTimer -= DELTA_TIME;
+
+		if (_stopTimer <= 0)
+		{
+			_stopTimer = -0.5f;
+			_direction.x = rand() % 2 - 1;
+			_direction.y = rand() % 2 - 1;
+		}
+	}
+	else
+	{
+		_stopTimer += DELTA_TIME;
+		_col->AddPos(_direction * DELTA_TIME * 200.0f);
+
+		if (_stopTimer > 0)
+		{
+			_stopTimer = 3.0f;
+			_direction.x = 0.0f;
+			_direction.y = 0.0f;
+		}
+	}
+
+	_col->Update();
 }
 
 void Slime::Render()
@@ -35,20 +65,25 @@ void Slime::Render()
 
 	_eyeSlot->Set_World(0);
 	_eye->Render();
-
 }
 
-
+void Slime::Move(Vector2 direction)
+{
+	if (_jumpPower > 0)
+		return;
+	Monster::Move(direction);
+	_stopTimer = 3.0f;
+}
 
 void Slime::CreateAction()
 {
 #pragma region Idle
 	{
 		vector<Vector2> indices;
-		indices.push_back({ 0, 0 });
-		indices.push_back({ 1, 0 });
-		indices.push_back({ 2, 0 });
-		indices.push_back({ 3, 0 });
+		indices.push_back({ 0, 1 });
+		indices.push_back({ 1, 1 });
+		indices.push_back({ 2, 1 });
+		indices.push_back({ 3, 1 });
 		shared_ptr<Action> idle = make_shared<Action>(indices, Action::Type::LOOP, 0.3f);
 
 		_actions.push_back(idle);
@@ -58,12 +93,14 @@ void Slime::CreateAction()
 #pragma region Move
 	{
 		vector<Vector2> indices;
-		indices.push_back({ 0, 1 });
-		indices.push_back({ 1, 1 });
-		indices.push_back({ 2, 1 });
-		indices.push_back({ 3, 1 });
-		shared_ptr<Action> move = make_shared<Action>(indices, Action::Type::LOOP, 0.3f);
+		indices.push_back({ 0, 0 });
+		indices.push_back({ 1, 0 });
+		indices.push_back({ 2, 0 });
+		indices.push_back({ 3, 0 });
+		shared_ptr<Action> move = make_shared<Action>(indices, Action::Type::END, 0.3f);
 
+		move->SetMiddleEvent(std::bind(&Slime::Charging, this));
+		move->SetEndEvent(std::bind(&Monster::SetIdle, this));
 		_actions.push_back(move);
 	}
 #pragma endregion
@@ -109,5 +146,13 @@ void Slime::CreateAction()
 	}
 #pragma endregion
 
+}
+
+void Slime::Charging()
+{
+	if (_actions[_actionIndex]->GetCurFrame().x == 1)
+	{
+		_jumpPower = 15.0f;
+	}
 }
 
