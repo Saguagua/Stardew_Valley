@@ -9,7 +9,7 @@ TestScene::TestScene()
 
 	FishingSystem::Create();
 	
-	_player = make_shared<PlayerImproved>();
+	_player = make_shared<PlayerFight>();
 	PlayerUI::Create(_player);
 	OBJECT_SPAWNER->SetPlayer(_player);
 
@@ -138,6 +138,17 @@ void TestScene::KeyInput()
 
 void TestScene::MonsterAct()
 {
+	if (_player->_isAttacking)
+	{
+		if (_player->_weaponCollider->IsCollision(_slime->GetCollider()))
+		{
+			_slime->AddHP(-5);
+		}
+		if (_player->_weaponCollider->IsCollision(_bat->GetCollider()))
+		{
+			_bat->AddHP(-5);
+		}
+	}
 	if (_slime->GetCollider()->IsCollision(_player->GetCollider()) && !_player->IsUntouchable())
 	{
 		_player->AddHP(-5);
@@ -174,7 +185,7 @@ void TestScene::MonsterAct()
 		_dir = (_player->GetWorldPos() - _bat->GetWorldPos()).Normalize();
 
 		_bat->Move(_dir);
-			
 	}
+	
 	
 }

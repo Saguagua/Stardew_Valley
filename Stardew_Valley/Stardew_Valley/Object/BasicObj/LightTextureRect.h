@@ -13,6 +13,7 @@ public:
 	Vector2 GetMaxFrame() { return _fBuffer->GetMaxFrame(); }
 	Vector2 GetCurFrame() { return _fBuffer->GetStart(); }
 
+	shared_ptr<EffectBuffer> GetEBuffer() { return _eBuffer; }
 private:
 	void CreateVertices();
 	void CreateData();
@@ -25,6 +26,7 @@ private:
 	shared_ptr<VertexBuffer> _vBuffer;
 	shared_ptr<IndexBuffer> _iBuffer;
 	shared_ptr<FrameBuffer> _fBuffer;
+	shared_ptr<EffectBuffer> _eBuffer;
 
 	weak_ptr<SRV> _srv;
 	weak_ptr<VertexShader> _vShader;

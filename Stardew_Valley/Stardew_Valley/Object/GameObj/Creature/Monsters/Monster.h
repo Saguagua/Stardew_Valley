@@ -24,6 +24,6 @@ protected:
 
 	shared_ptr<CircleCollider> _detectArea;
 
-	Vector2 _direction;
+	Vector2 _forceDirection;
 };
 

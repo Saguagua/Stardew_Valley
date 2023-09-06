@@ -169,8 +169,12 @@ void TileMap::Watering(Vector2 originPos, Vector2 targetPos, short level)
 
 		if (aTile != nullptr)
 		{
-			if (aTile->GetCrop() != nullptr)
-				aTile->GetCrop()->SetWater(true);
+			auto crop = dynamic_pointer_cast<Crop>(aTile->GetObj());
+
+			if (crop != nullptr)
+			{
+				crop->SetWater(true);
+			}
 		}
 
 		_tiles[index]->SetFocus(false);
@@ -197,18 +201,18 @@ void TileMap::Render()
 			_focusRenderer->Render();
 	}
 
-	//for (int i = 0; i < _tiles.size(); i++) //DepthView 사용필요
-	//{
-	//	auto obj = _tiles[i]->GetObj();
+	for (int i = 0; i < _tiles.size(); i++) //DepthView 사용필요
+	{
+		auto obj = _tiles[i]->GetObj();
 
-	//	if (obj)
-	//	{
-	//		_collider->SetPos(_tiles[i]->GetCenterPos());
-	//		_collider->Update();
-	//		obj->Render(_renderer, _collider);
-	//	}
-	//	
-	//}
+		if (obj)
+		{
+			_collider->SetPos(_tiles[i]->GetCenterPos());
+			_collider->Update();
+			obj->Render(_renderer, _collider);
+		}
+		
+	}
 }
 
 void TileMap::ChangeMap(int index)

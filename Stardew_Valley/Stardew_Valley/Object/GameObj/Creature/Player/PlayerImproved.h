@@ -19,17 +19,13 @@ public:
 
 	void KeyInput();
 
-	void AddMaxHP(short cost);
-	void AddMaxStamina(short cost);
-	virtual void AddHP(short cost) override;
-	void AddStamina(short cost);
-	bool AddItem(string name);
-
 	void SetCurItem(int index);
 	void SwapItems(int index1, int index2);
 
+	bool AddItem(string name);
+
 	void SetFreeze(bool val) { _freeze = val; }
-private:
+protected:
 	void ChangeIndex();
 	void ItemAction();
 	virtual void SetPause(bool val) override;

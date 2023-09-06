@@ -48,36 +48,6 @@ void PlayerImproved::KeyInput()
 	}
 }
 
-void PlayerImproved::AddMaxHP(short cost)
-{
-}
-
-void PlayerImproved::AddMaxStamina(short cost)
-{
-}
-
-void PlayerImproved::AddHP(short cost)
-{
-	_hp += cost;
-
-	if (_hp <= 0)
-		_state = (PlayerState::DEAD);
-
-	float ratio = (float)_hp / (float)_maxHp;
-	PlayerUI::GetInstance()->SetHP(ratio);
-}
-
-void PlayerImproved::AddStamina(short cost)
-{
-	_stamina += cost;
-
-	if (_stamina <= 0)
-		_state = (PlayerState::DEAD);
-
-	float ratio = _stamina / _maxHp;
-	PlayerUI::GetInstance()->SetStamina(ratio);
-}
-
 bool PlayerImproved::AddItem(string name)
 {
 	int empty = -1;

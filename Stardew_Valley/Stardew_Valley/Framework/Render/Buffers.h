@@ -218,3 +218,23 @@ private:
 
 	Data _data;
 };
+
+
+struct EffectBuffer : public ConstantBuffer
+{
+	EffectBuffer():ConstantBuffer(&_data, sizeof(_data)) {}
+
+	void ReverseAlpha() 
+	{ 
+		if (_data.alphaZero) _data.alphaZero = 0;
+		else _data.alphaZero = 1;
+	}
+
+	struct Data
+	{
+		int alphaZero = 0;
+		int padding[3] = {0,0,0};
+	};
+
+	Data _data;
+};

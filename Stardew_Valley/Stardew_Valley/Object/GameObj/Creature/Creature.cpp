@@ -19,7 +19,16 @@ void Creature::Update()
 
 	if (_untouchable > 0)
 	{
+		_body->GetEBuffer()->ReverseAlpha();
+		_body->GetEBuffer()->Update();
+
 		_untouchable -= DELTA_TIME;
+
+		if (_untouchable <= 0)
+		{
+			_body->GetEBuffer()->_data.alphaZero = 0;
+			_body->GetEBuffer()->Update();
+		}
 	}
 }
 
@@ -36,11 +45,14 @@ void Creature::Render()
 void Creature::AddHP(short cost)
 {
 	_hp += cost;
+
+	if (_hp <= 0)
+		_isActive = false;
 }
 
 void Creature::SetAction(int state)
 {
-	state += _dir;
+	state += _direction;
 
 	if (_actionIndex == state)
 		return;
@@ -63,14 +75,14 @@ void Creature::SetDirection(Vector2 pos)
 		else
 			_col->SetScale(Vector2(1, 1));
 
-		_dir = SIDE;
+		_direction = SIDE;
 	}
 	else
 	{
 		if (dir.y < 0)
-			_dir = FRONT;
+			_direction = FRONT;
 		else
-			_dir = BACK;
+			_direction = BACK;
 	}
 }
 

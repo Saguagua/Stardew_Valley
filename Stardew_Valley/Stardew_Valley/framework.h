@@ -121,6 +121,7 @@ using namespace Microsoft::WRL;
 #include "Object/GameObj/Creature/Player/Player.h"
 #include "Object/GameObj/Creature/Player/PlayerSubscribe.h"
 #include "Object/GameObj/Creature/Player/PlayerImproved.h"
+#include "Object\GameObj\Creature\Player\PlayerFight.h"
 
 #include "Object\GameObj\Creature\Monsters\Monster.h"
 #include "Object\GameObj\Creature\Monsters\Bat.h"

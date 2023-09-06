@@ -12,7 +12,7 @@ Monster::Monster(string name, Vector2 size, float areaSize)
 
 void Monster::Move(Vector2 direction)
 {
-	_direction = direction;
+	_forceDirection = direction;
 	SetAction(MonsterAction::MOVE);
 }
 

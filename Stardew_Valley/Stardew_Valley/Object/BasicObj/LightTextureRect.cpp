@@ -10,14 +10,18 @@ LightTextureRect::LightTextureRect(wstring path, Vector2 maxFrame, Vector2 size)
 	_fBuffer->SetMaxFrame(maxFrame);
 	_fBuffer->SetStart(Vector2(0, 0));
 	_fBuffer->Update();
+	_eBuffer->Update();
 }
 
 void LightTextureRect::Render()
 {
-	_fBuffer->Set_PS();
 	_vBuffer->SetIA_VertexBuffer();
 	_iBuffer->SetIA_IndexBuffer();
+
+	_fBuffer->Set_PS();
 	LightManager::GetInstance()->Set_Shader();
+	_eBuffer->Set_PS(2);
+
 	_vShader.lock()->SetIA_InputLayout();
 
 	DC->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -82,6 +86,7 @@ void LightTextureRect::CreateData()
 	_vBuffer = make_shared<VertexBuffer>(_vertices.data(), sizeof(VertexTexture), _vertices.size());
 	_iBuffer = make_shared<IndexBuffer>(_indices.data(), _indices.size());
 	_fBuffer = make_shared<FrameBuffer>();
+	_eBuffer = make_shared<EffectBuffer>();
 
 	_vShader = ADD_VS(L"Shader/LightVS.hlsl");
 	_pShader = ADD_PS(L"Shader/LightPS.hlsl");

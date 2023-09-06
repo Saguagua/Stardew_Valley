@@ -30,7 +30,7 @@ void Slime::Update()
 	if (_jumpPower > 0)
 	{
 		_jumpPower -= DELTA_TIME * 15.0f;
-		_col->AddPos(_direction * _jumpPower);
+		_col->AddPos(_forceDirection * _jumpPower);
 	}
 	else if (_stopTimer > 0)
 	{
@@ -39,20 +39,20 @@ void Slime::Update()
 		if (_stopTimer <= 0)
 		{
 			_stopTimer = -0.5f;
-			_direction.x = rand() % 2 - 1;
-			_direction.y = rand() % 2 - 1;
+			_forceDirection.x = rand() % 2 - 1;
+			_forceDirection.y = rand() % 2 - 1;
 		}
 	}
 	else
 	{
 		_stopTimer += DELTA_TIME;
-		_col->AddPos(_direction * DELTA_TIME * 200.0f);
+		_col->AddPos(_forceDirection * DELTA_TIME * 200.0f);
 
 		if (_stopTimer > 0)
 		{
 			_stopTimer = 3.0f;
-			_direction.x = 0.0f;
-			_direction.y = 0.0f;
+			_forceDirection.x = 0.0f;
+			_forceDirection.y = 0.0f;
 		}
 	}
 

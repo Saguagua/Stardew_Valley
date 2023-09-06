@@ -2,7 +2,7 @@
 #define LEVEL 0
 #define COST 1
 
-class PlayerImproved;
+class PlayerFight;
 class TileMap;
 
 class Item : public GameObject
@@ -42,14 +42,14 @@ public:
 
 	const vector<short>& GetVals() { return _vals; }
 
-	void Hoe(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Water(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Fishing(shared_ptr<PlayerImproved> p);
-	void Weapon(shared_ptr<PlayerImproved> p);
-	void Eat(shared_ptr<PlayerImproved> p);
-	void Seed(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Fertilizer(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Hoe(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
+	void Water(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
+	void Break(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
+	void Fishing(shared_ptr<PlayerFight> p);
+	void Weapon(shared_ptr<PlayerFight> p);
+	void Eat(shared_ptr<PlayerFight> p);
+	void Seed(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
+	void Fertilizer(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
 
 protected:
 	string _subName;

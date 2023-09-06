@@ -26,7 +26,7 @@ bool Item::AddCount()
 	return false;
 }
 
-void Item::Hoe(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
+void Item::Hoe(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
@@ -53,7 +53,7 @@ void Item::Hoe(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 	}
 }
 
-void Item::Water(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
+void Item::Water(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
@@ -81,7 +81,7 @@ void Item::Water(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 	}
 }
 
-void Item::Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
+void Item::Break(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
@@ -99,7 +99,7 @@ void Item::Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
 	}
 }
 
-void Item::Fishing(shared_ptr<PlayerImproved> p)
+void Item::Fishing(shared_ptr<PlayerFight> p)
 {
 	if (FishingSystem::GetInstance()->GetStep() != FishingSystem::Step::THROW)
 		return;
@@ -148,11 +148,11 @@ void Item::Fishing(shared_ptr<PlayerImproved> p)
 	}
 }
 
-void Item::Weapon(shared_ptr<PlayerImproved> p)
+void Item::Weapon(shared_ptr<PlayerFight> p)
 {
 }
 
-void Item::Eat(shared_ptr<PlayerImproved> p)
+void Item::Eat(shared_ptr<PlayerFight> p)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
@@ -170,17 +170,17 @@ void Item::Eat(shared_ptr<PlayerImproved> p)
 	}
 }
 
-void Item::Seed(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
+void Item::Seed(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		_point = W_MOUSE_POS;
 		auto tile = dynamic_pointer_cast<ArableTile>(m->GetFocusedTile(p->GetWorldPos(), _point));
-		if (tile->GetPlantable() && tile->GetCrop() != nullptr)
+		if (tile->GetPlantable() && tile->GetObj() == nullptr)
 			tile->Plant(_subName);
 	}
 }
 
-void Item::Fertilizer(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m)
+void Item::Fertilizer(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 }

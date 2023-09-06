@@ -546,7 +546,7 @@ void Player::CreateAction()
 
 void Player::SetArmAction(int state)
 {
-	state += _dir;
+	state += _direction;
 	if (_armIndex == state) 
 		return;
 
@@ -558,7 +558,7 @@ void Player::SetArmAction(int state)
 		_armIndex = state;
 	}
 	else {
-		_armIndex = PlayerAction::HOLD + _dir;
+		_armIndex = PlayerAction::HOLD + _direction;
 	}
 
 	_armActions[_armIndex]->Play();
@@ -583,7 +583,7 @@ void Player::Move()
 	{
 		if (!(_state & (PlayerState::RUNL | PlayerState::RUNR)))
 		{
-			_dir = BACK;
+			_direction = BACK;
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
@@ -613,7 +613,7 @@ void Player::Move()
 	{
 		if (!(_state & (PlayerState::RUNL | PlayerState::RUNR)))
 		{
-			_dir = FRONT;
+			_direction = FRONT;
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 		}
@@ -643,7 +643,7 @@ void Player::Move()
 	{
 		if (KEY_DOWN('A'))
 		{
-			_dir = SIDE;
+			_direction = SIDE;
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 
@@ -665,13 +665,13 @@ void Player::Move()
 
 			if (_state & PlayerState::RUNF)
 			{
-				_dir = FRONT;
+				_direction = FRONT;
 				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}
 			else if (_state & PlayerState::RUNB)
 			{
-				_dir = BACK;
+				_direction = BACK;
 				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}
@@ -687,7 +687,7 @@ void Player::Move()
 	{
 		if (KEY_DOWN('D'))
 		{
-			_dir = SIDE;
+			_direction = SIDE;
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
 
@@ -710,13 +710,13 @@ void Player::Move()
 
 			if (_state & PlayerState::RUNF)
 			{
-				_dir = FRONT;
+				_direction = FRONT;
 				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}
 			else if (_state & PlayerState::RUNB)
 			{
-				_dir = BACK;
+				_direction = BACK;
 				SetAction(PlayerAction::RUN);
 				SetArmAction(PlayerAction::RUN);
 			}

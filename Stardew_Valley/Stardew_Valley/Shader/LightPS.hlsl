@@ -12,6 +12,12 @@ cbuffer LightBuffer:register(b1)
 	float4 lightColor[30];
 }
 
+cbuffer EffectBuffer : register(b2)
+{
+	int alphaZero;
+	int padding[3];
+}
+
 struct Input
 {
 	float4 pos : SV_POSITION;
@@ -21,6 +27,10 @@ struct Input
 
 float4 PS(Input input) : SV_TARGET
 {
+	if (alphaZero)
+		return float4(0,0,0,0);
+
+
 	float2 resultUV;
 
 	resultUV.x = input.uv.x / maxFrame.x + curFrame.x / maxFrame.x;

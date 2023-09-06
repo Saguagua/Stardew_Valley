@@ -14,7 +14,7 @@ private:
 	void MonsterAct();
 	shared_ptr<Bat> _bat;
 	shared_ptr<Slime> _slime;
-	shared_ptr<PlayerImproved> _player;
+	shared_ptr<PlayerFight> _player;
 	shared_ptr<TileMap> _map;
 	vector<shared_ptr<Item>> _items;
 

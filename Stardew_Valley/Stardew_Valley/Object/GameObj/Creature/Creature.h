@@ -20,12 +20,11 @@ public:
 
 	short GetMaxHp() { return _maxHp; }
 	short GetHp() { return _hp; }
-	int GetDirection() { return _dir; }
+	int GetDirection() { return _direction; }
 	bool IsFreeze() { return _freeze; }
 	void SetActive(bool val) { _isActive = val; }
 	void StartUntouchable() { _untouchable = 1.0f; }
-
-	bool IsUntouchable() { return _untouchable > 0.0f; }
+	bool IsUntouchable() { return _untouchable > 0; }
 protected:
 	virtual void CreateAction() abstract;
 	virtual void SetAction(int index);
@@ -40,6 +39,7 @@ protected:
 
 	vector<shared_ptr<Action>> _actions;
 
+
 	string _name;
 	short _maxHp;
 	short _hp;
@@ -49,8 +49,10 @@ protected:
 	float _untouchable = 0;
 	int _state = 0;
 	int _actionIndex = 0;
-	int _dir = FRONT;
+	int _direction = FRONT;
 	bool _isActive = false;
 	bool _freeze = false;
+
+	float _counter = 0.0f;
 };
 

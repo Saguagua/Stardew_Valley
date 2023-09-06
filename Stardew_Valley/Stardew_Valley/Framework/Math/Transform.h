@@ -22,6 +22,7 @@ public:
 
 	Vector2 GetPos() { return _pos; }
 	Vector2 GetScale() { return _scale; }
+	float GetAngle() { return _angle; }
 	Vector2 GetWorldPos();
 	Vector2 GetWorldScale();
 

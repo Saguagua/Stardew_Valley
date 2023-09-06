@@ -27,19 +27,27 @@ void Bat::Update()
 {
 	Monster::Update();
 
-	if (_power > 0)
-	{
-		_power -= DELTA_TIME * 1.0f;
-		_col->AddPos(_direction * _power);
-	}
+	_forceDirection = _forceDirection * 0.9f;
+	_col->AddPos(_forceDirection * DELTA_TIME);
 }
 
 void Bat::Move(Vector2 dir)
 {
-
 	Monster::Move(dir);
 
-	_power = 5.0f;
+	_forceDirection += dir * 100.0f;
+
+	if (_forceDirection.x > 200.0f)
+		_forceDirection.x = 200.0f;
+
+	else if (_forceDirection.x < -200.0f)
+		_forceDirection.x = -200.0f;
+
+	if (_forceDirection.y > 200.0f)
+		_forceDirection.y = 200.0f;
+
+	if (_forceDirection.y < -200.0f)
+		_forceDirection.y = -200.0f;
 }
 
 void Bat::CreateAction()
@@ -62,7 +70,7 @@ void Bat::CreateAction()
 		indices.push_back({ 1, 0 });
 		indices.push_back({ 2, 0 });
 		indices.push_back({ 3, 0 });
-		shared_ptr<Action> move = make_shared<Action>(indices, Action::Type::END, 0.3f);
+		shared_ptr<Action> move = make_shared<Action>(indices, Action::Type::END);
 
 		move->SetEndEvent(std::bind(&Monster::SetIdle, this));
 		_actions.push_back(move);
