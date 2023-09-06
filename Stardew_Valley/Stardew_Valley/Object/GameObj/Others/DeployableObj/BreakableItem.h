@@ -10,7 +10,7 @@ public:
 
 	virtual void Interaction() override;
 	virtual vector<int> GetProperty() override;
-
+	void GetDamage(shared_ptr<Item> item);
 private:
 	short _hp;
 	short _breakType;

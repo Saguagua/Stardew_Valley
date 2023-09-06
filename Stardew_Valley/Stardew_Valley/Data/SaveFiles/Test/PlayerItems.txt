@@ -7,3 +7,4 @@ PickAxe 1
 PotatoSeed 1
 Radish 1
 FishingRod 1
+Sword 1

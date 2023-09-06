@@ -17,9 +17,11 @@
 #include <unordered_map>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include <wrl/client.h>
 #include <fstream>
 #include <functional>
+#include <random>
 
 #include <d3d11.h>
 #include <d3dcompiler.h>
@@ -126,6 +128,7 @@ using namespace Microsoft::WRL;
 #include "Object\GameObj\Creature\Monsters\Monster.h"
 #include "Object\GameObj\Creature\Monsters\Bat.h"
 #include "Object/GameObj/Creature/Monsters/Slime.h"
+#include "Object/GameObj/Creature/Monsters/MonsterSpawner.h"
 
 //UI
 #include "Object/UI/Button.h"
@@ -152,6 +155,7 @@ using namespace Microsoft::WRL;
 
 //Scene
 #include "Scene/Scene.h"
+#include "Scene/SceneManager.h"
 
 //Program
 #include "Program/Program.h"

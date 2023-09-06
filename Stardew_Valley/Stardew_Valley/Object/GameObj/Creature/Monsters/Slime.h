@@ -17,11 +17,12 @@ public:
 	void Update();
 	void Render();
 
-
-	void Move(Vector2 direction);
+	virtual void Detect(shared_ptr<PlayerFight> col) override;
 
 	float _chargeCount = 0;
 	float _jumpPower = 0;
+
+
 private:
 	virtual void CreateAction() override;
 
@@ -33,6 +34,9 @@ private:
 
 	UINT _eyeIndex = SlimeAction::EYEIDLE;
 	float _stopTimer = 3.0f;
+
+
+	virtual void Initialize() override;
 
 };
 

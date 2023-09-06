@@ -2,7 +2,7 @@
 #include "Slime.h"
 
 Slime::Slime()
-	:Monster("Slime", Vector2(40, 30), 200.0f)
+	:Monster("Slime", Vector2(40, 30), 200.0f, MoveType::WALK)
 {
 	_col->SetDebug(true);
 	_bodySlot = make_shared<Transform>();
@@ -15,8 +15,6 @@ Slime::Slime()
 	_body = make_shared<LightTextureRect>(L"Resource/Monsters/Slime.png", Vector2(4, 5), _size);
 	_eye = make_shared<LightTextureRect>(L"Resource/Monsters/Slime.png", Vector2(4, 5), _size);
 	CreateAction();
-	_actions[SlimeAction::IDLE]->Play();
-	_actions[SlimeAction::EYEIDLE]->Play();
 }
 
 void Slime::Update()
@@ -67,13 +65,6 @@ void Slime::Render()
 	_eye->Render();
 }
 
-void Slime::Move(Vector2 direction)
-{
-	if (_jumpPower > 0)
-		return;
-	Monster::Move(direction);
-	_stopTimer = 3.0f;
-}
 
 void Slime::CreateAction()
 {
@@ -154,5 +145,49 @@ void Slime::Charging()
 	{
 		_jumpPower = 15.0f;
 	}
+}
+
+void Slime::Initialize()
+{
+	_actions[SlimeAction::IDLE]->Play();
+	_actions[SlimeAction::EYEIDLE]->Play();
+
+	_eyeIndex = SlimeAction::EYEIDLE;
+	_actionIndex = MonsterAction::IDLE;
+
+	_hp = 5;
+	_isActive = true;
+}
+
+void Slime::Detect(shared_ptr<PlayerFight> player)
+{
+	if (_col->IsCollision(player->GetCollider()))
+	{
+		player->AddHP(-5);
+		player->StartUntouchable();
+	}
+	
+	if (_jumpPower <= 0)
+	{
+		if (_detectArea->IsCollision(player->GetCollider()))
+		{
+			_chargeCount += DELTA_TIME;
+
+			if (_chargeCount > 1.5f)
+			{
+				_chargeCount = 0.0f;
+				_forceDirection = (player->GetWorldPos() - _col->GetWorldPos()).Normalize();
+
+				SetAction(MonsterAction::MOVE);
+
+				_stopTimer = 3.0f;
+			}
+		}
+		else
+		{
+			_chargeCount = 0.0f;
+		}
+	}
+	
 }
 

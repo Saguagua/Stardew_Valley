@@ -1,4 +1,6 @@
 BlueTorch 		BlueTorch 100 /
+Slime			SlimePiece 100 SlimePiece 70 /
+Bat				BatWing 100 BatWing 70 /
 Torch 			Torch 100 /
 TreeBottom1		Wood_Drop 100 Wood_Drop 80 /
 TreeBottom2		Wood_Drop 100 Wood_Drop 80 /

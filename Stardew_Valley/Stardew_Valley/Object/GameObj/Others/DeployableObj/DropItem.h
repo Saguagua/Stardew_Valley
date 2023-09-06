@@ -8,7 +8,6 @@ public:
 	void Update();
 	void Render(shared_ptr<Sprite> sprite);
 
-	void Interaction();
 	void AddPos(Vector2 pos) { _collider->AddPos(pos); }
 	void Spawn(string name, string itemName, Vector2 pos);
 
@@ -17,11 +16,11 @@ public:
 	bool IsActive() { return _isActive; }
 	bool IsPoping() { return _pop; }
 
+	bool _isActive = false;
+	string _itemName;
 private:
 	shared_ptr<CircleCollider> _collider;
 	string _name;
-	string _itemName;
-	bool _isActive = false;
 
 	float _xDir = 0;
 	float _power = 50.0f;

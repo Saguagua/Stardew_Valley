@@ -42,7 +42,7 @@ void Crop::Interaction()
 		_name = "BLANK";
 	}
 
-	OBJECT_SPAWNER->ActiveDropItem("Potato", "Potato", _centerPos, 2);
+	OBJECT_SPAWNER->ActiveDropItem("Potato", _centerPos);
 }
 
 vector<int> Crop::GetProperty()

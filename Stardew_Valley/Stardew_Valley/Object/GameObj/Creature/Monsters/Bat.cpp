@@ -2,7 +2,7 @@
 #include "Bat.h"
 
 Bat::Bat()
-	:Monster("Bat", Vector2(30, 30), 500.0f)
+	:Monster("Bat", Vector2(30, 30), 500.0f, MoveType::FLYING)
 {
 	_col->SetDebug(true);
 	_bodySlot = make_shared<Transform>();
@@ -10,8 +10,6 @@ Bat::Bat()
 
 	_body = make_shared<LightTextureRect>(L"Resource/Monsters/Bat.png", Vector2(4, 2), _size);
 	CreateAction();
-
-	_actions[MonsterAction::IDLE]->Play();
 }
 
 Bat::~Bat()
@@ -31,24 +29,7 @@ void Bat::Update()
 	_col->AddPos(_forceDirection * DELTA_TIME);
 }
 
-void Bat::Move(Vector2 dir)
-{
-	Monster::Move(dir);
 
-	_forceDirection += dir * 100.0f;
-
-	if (_forceDirection.x > 200.0f)
-		_forceDirection.x = 200.0f;
-
-	else if (_forceDirection.x < -200.0f)
-		_forceDirection.x = -200.0f;
-
-	if (_forceDirection.y > 200.0f)
-		_forceDirection.y = 200.0f;
-
-	if (_forceDirection.y < -200.0f)
-		_forceDirection.y = -200.0f;
-}
 
 void Bat::CreateAction()
 {
@@ -87,4 +68,42 @@ void Bat::CreateAction()
 		_actions.push_back(move);
 	}
 #pragma endregion
+}
+
+void Bat::Initialize()
+{
+	_actions[MonsterAction::IDLE]->Play();
+	_actionIndex = MonsterAction::IDLE;
+
+	_hp = 3;
+	_isActive = true;
+}
+
+void Bat::Detect(shared_ptr<PlayerFight> player)
+{
+	if (_col->IsCollision(player->GetCollider()))
+	{
+		player->AddHP(-5);
+		player->StartUntouchable();
+	}
+
+	if (_detectArea->IsCollision(player->GetCollider()))
+	{
+		SetAction(MonsterAction::MOVE);
+
+		_forceDirection += (player->GetWorldPos() - _col->GetWorldPos()).Normalize() * 100.0f;
+
+		if (_forceDirection.x > 200.0f)
+			_forceDirection.x = 200.0f;
+
+		else if (_forceDirection.x < -200.0f)
+			_forceDirection.x = -200.0f;
+
+		if (_forceDirection.y > 200.0f)
+			_forceDirection.y = 200.0f;
+
+		if (_forceDirection.y < -200.0f)
+			_forceDirection.y = -200.0f;
+	}
+
 }

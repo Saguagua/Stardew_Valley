@@ -5,7 +5,7 @@
 class PlayerFight;
 class TileMap;
 
-class Item : public GameObject
+class Item : public GameObject, public enable_shared_from_this<Item>
 {
 public:
 	enum Type

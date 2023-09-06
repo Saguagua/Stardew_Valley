@@ -38,7 +38,7 @@ public:
 
 	void SetPlayer(shared_ptr<PlayerImproved> player);
 
-	void ActiveDropItem(string dropName, string itemName, Vector2 pos, int count);
+	void ActiveDropItem(string name, Vector2 pos);
 private:
 	static ObjectSpawner* _instance;
 

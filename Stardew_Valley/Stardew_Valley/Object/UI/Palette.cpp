@@ -221,6 +221,7 @@ void Palette::KeyInput()
 
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		_map->ChangeTile(W_MOUSE_POS, _chartIndex, _lists[_chartIndex]->GetCurBotton()->GetName());
+		if (_lists[_chartIndex]->GetCurIndex() != -1)
+			_map->ChangeTile(W_MOUSE_POS, _chartIndex, _lists[_chartIndex]->GetCurBotton()->GetName());
 	}
 }

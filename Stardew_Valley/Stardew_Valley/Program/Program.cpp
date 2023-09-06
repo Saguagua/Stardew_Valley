@@ -10,9 +10,13 @@ Program::Program()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));
 	Initialize();
-	_scene = make_shared<TestScene>();
+
 	TIMER->LockRunTime(60);
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
+
+	ObjectSpawner::Create();
+	LightManager::Create();
+	SceneManager::Create();
 }
 
 Program::~Program()
@@ -20,6 +24,10 @@ Program::~Program()
 	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();
 	ImGui::DestroyContext();
+
+	SceneManager::Delete();
+	LightManager::Delete();
+	ObjectSpawner::Delete();
 }
 
 void Program::Update()
@@ -28,7 +36,9 @@ void Program::Update()
 	CAMERA->Update();
 
 	InputManager::GetInstance()->Update();
-	_scene->Update();
+	OBJECT_SPAWNER->Update();
+	LightManager::GetInstance()->Update();
+	SCENEMANAGER->Update();
 }
 
 void Program::Render()
@@ -40,19 +50,19 @@ void Program::Render()
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
 
-	// Rendering
-	ImGui::Render();
-
 	CAMERA->SetViewBuffer();
 	CAMERA->SetProjectionBuffer();
 
 	ALPHA->SetState();
 
-	_scene->Render();
-
+	SCENEMANAGER->Render();
+	OBJECT_SPAWNER->Render();
 	CAMERA->SetPostViewPort();
 
-	_scene->PostRender();
+	SCENEMANAGER->PostRender();
+
+	// Rendering
+	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 
 	Device::GetInstance()->Present();

@@ -3,11 +3,9 @@
 
 TestScene::TestScene()
 {
-	ObjectSpawner::Create();
 	DATA->LoadPlayerInfo("Test");
-	LightManager::Create();
-
 	FishingSystem::Create();
+	MonsterSpawner::Create();
 	
 	_player = make_shared<PlayerFight>();
 	PlayerUI::Create(_player);
@@ -23,48 +21,41 @@ TestScene::TestScene()
 	CAMERA->SetTarget(_player->GetTransform());
 	CAMERA->Update();
 
-	_slime = make_shared<Slime>();
-	_slime->SetActive(true);
-	_slime->GetTransform()->SetPos(CENTER);
-	_bat = make_shared<Bat>();
-	_bat->SetActive(true);
-	_bat->GetTransform()->SetPos(CENTER - Vector2(10, 10));
+	MONSTER_SPAWNER->SetPlayer(_player);
+	MONSTER_SPAWNER->SetTileMap(_map);
+
+	MONSTER_SPAWNER->Spawn(10);
 }
 
 TestScene::~TestScene()
 {
-	LightManager::Delete();
-	ObjectSpawner::Delete();
+	MonsterSpawner::Delete();
 	FishingSystem::Delete();
 	PlayerUI::Delete();
 }
 
 void TestScene::Update()
 {
-	LightManager::GetInstance()->Update();
-	OBJECT_SPAWNER->Update();
 	PLAYERUI->Update();
 	_map->Update();
 	_player->Update();
 	FishingSystem::GetInstance()->Update();
 
 	_map->Blocking(_player->GetCollider());
-	_map->Blocking(_slime->GetCollider());
 
-	_slime->Update();
-	_bat->Update();
+
+	MONSTER_SPAWNER->Update();
+
 	KeyInput();
-	MonsterAct();
 }
 
 void TestScene::Render()
 {
 	_map->Render();
-	OBJECT_SPAWNER->Render();
 	_player->Render();
 	FishingSystem::GetInstance()->Render();
-	_slime->Render();
-	_bat->Render();
+
+	MONSTER_SPAWNER->Render();
 }
 
 void TestScene::PostRender()
@@ -122,7 +113,7 @@ void TestScene::KeyInput()
 		}
 		case Item::WEAPON:
 		{
-
+			item->Weapon(_player);
 			break;
 		}
 		case Item::FACILITY:
@@ -134,58 +125,4 @@ void TestScene::KeyInput()
 		break;
 		}
 	}
-}
-
-void TestScene::MonsterAct()
-{
-	if (_player->_isAttacking)
-	{
-		if (_player->_weaponCollider->IsCollision(_slime->GetCollider()))
-		{
-			_slime->AddHP(-5);
-		}
-		if (_player->_weaponCollider->IsCollision(_bat->GetCollider()))
-		{
-			_bat->AddHP(-5);
-		}
-	}
-	if (_slime->GetCollider()->IsCollision(_player->GetCollider()) && !_player->IsUntouchable())
-	{
-		_player->AddHP(-5);
-		_player->StartUntouchable();
-	}
-	if (_slime->_jumpPower <= 0)
-	{
-		if (_slime->GetDetectArea()->IsCollision(_player->GetCollider()))
-		{
-			_slime->_chargeCount += DELTA_TIME;
-
-			if (_slime->_chargeCount > 1.5f)
-			{
-				_slime->_chargeCount = 0.0f;
-				_dir = (_player->GetWorldPos() - _slime->GetWorldPos()).Normalize();
-
-				_slime->Move(_dir);
-			}
-		}
-		else
-		{
-			_slime->_chargeCount = 0.0f;
-		}
-	}
-
-	if (_bat->GetCollider()->IsCollision(_player->GetCollider()) && !_player->IsUntouchable())
-	{
-		_player->AddHP(-5);
-		_player->StartUntouchable();
-	}
-	
-	if (_bat->GetDetectArea()->IsCollision(_player->GetCollider()))
-	{
-		_dir = (_player->GetWorldPos() - _bat->GetWorldPos()).Normalize();
-
-		_bat->Move(_dir);
-	}
-	
-	
 }

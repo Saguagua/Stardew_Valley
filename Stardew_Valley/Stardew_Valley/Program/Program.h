@@ -12,6 +12,4 @@ public:
 	static bool _debug;
 private:
 	void Initialize();
-
-	shared_ptr<Scene> _scene;
 };

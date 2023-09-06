@@ -24,6 +24,7 @@ public:
 	vector<shared_ptr<Tile>> GetFocusedTiles(Vector2 point, short level);
 	
 	vector<shared_ptr<MapInfo>>& GetMapInfos() { return _mapInfos; }
+	shared_ptr<MapInfo> GetcurrentMapInfo() { return _mapInfos[_curMapIndex]; }
 
 	void ChangeMap(int index);
 

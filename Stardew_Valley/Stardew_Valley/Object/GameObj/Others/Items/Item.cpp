@@ -92,9 +92,9 @@ void Item::Break(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 		shared_ptr<DeployableObject> obj = m->GetFocusedTile(p->GetWorldPos(), _point)->GetObj();
 		auto breakObj = dynamic_pointer_cast<BreakableItem>(obj);
 
-		if (obj != nullptr)
+		if (breakObj != nullptr)
 		{
-			obj->Interaction();
+			breakObj->GetDamage(shared_from_this());
 		}
 	}
 }
@@ -150,6 +150,26 @@ void Item::Fishing(shared_ptr<PlayerFight> p)
 
 void Item::Weapon(shared_ptr<PlayerFight> p)
 {
+	if (KEY_DOWN(VK_LBUTTON))
+	{
+		if (p->_isAttacking)
+			return;
+		p->_isAttacking = true;
+		p->SetDirection(W_MOUSE_POS);
+		int direction = p->GetDirection();
+
+		if (direction == FRONT)
+			p->_weaponSlot->SetAngle(XM_PIDIV2);
+
+		else if (direction == SIDE)
+			p->_weaponSlot->SetAngle(XM_PI);
+
+		else if (direction == BACK)
+			p->_weaponSlot->SetAngle(-XM_PIDIV2);
+
+		p->_attackCount = 0.0f;
+		p->_isAttacking = true;
+	}
 }
 
 void Item::Eat(shared_ptr<PlayerFight> p)

@@ -4,9 +4,6 @@
 
 MapToolScene::MapToolScene()
 {
-	ObjectSpawner::Create();
-	LightManager::Create();
-	DATA->LoadPlayerInfo("Test");
 	DATA->LoadInitialMaps();
 	Palette::Create();
 
@@ -16,8 +13,6 @@ MapToolScene::MapToolScene()
 MapToolScene::~MapToolScene()
 {
 	Palette::Delete();
-	LightManager::Delete();
-	ObjectSpawner::Delete();
 }
 
 void MapToolScene::Update()

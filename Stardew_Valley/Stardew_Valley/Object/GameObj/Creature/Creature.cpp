@@ -9,9 +9,6 @@ Creature::Creature(string name, Vector2 size)
 
 void Creature::Update()
 {
-	if (!_isActive)
-		return;
-
 	_col->Update();
 	_bodySlot->Update();
 	_actions[_actionIndex]->Update();
@@ -34,9 +31,6 @@ void Creature::Update()
 
 void Creature::Render()
 {
-	if (!_isActive)
-		return;
-
 	_bodySlot->Set_World(0);
 	_body->Render();
 	_col->Render();

@@ -8,11 +8,11 @@ public:
 	void Render();
 	void Update();
 
-	void Move(Vector2 dir);
-	float _power = 0.0f;
-private:
+	virtual void Detect(shared_ptr<PlayerFight> player) override;
 
+private:
 	virtual void CreateAction() override;
+	virtual void Initialize() override;
 
 };
 

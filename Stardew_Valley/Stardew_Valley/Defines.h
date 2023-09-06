@@ -34,8 +34,10 @@
 #define MAP_SIZE		Vector2(50, 50)
 #define TILE_SIZE		Vector2(40, 40)
 
+#define SCENEMANAGER    SceneManager::GetInstance()
 #define PLAYERUI		PlayerUI::GetInstance()
 #define OBJECT_SPAWNER		ObjectSpawner::GetInstance()
+#define MONSTER_SPAWNER		MonsterSpawner::GetInstance()
 
 #define PALETTE			Palette::GetInstance()
 

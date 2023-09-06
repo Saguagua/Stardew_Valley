@@ -166,7 +166,8 @@ void ObjectSpawner::Update()
 			{
 				if (dropItem->GetCollider()->IsCollision(_player.lock()->GetCollider()))
 				{
-					dropItem->Interaction();
+					_player.lock()->AddItem(dropItem->_itemName);
+					dropItem->_isActive = false;
 				}
 				else if (dropItem->GetCollider()->IsCollision(_player.lock()->GetMagnatic()))
 				{
@@ -198,17 +199,24 @@ void ObjectSpawner::SetPlayer(shared_ptr<PlayerImproved> player)
 	_player = player;
 }
 
-void ObjectSpawner::ActiveDropItem(string dropName, string itemName, Vector2 pos, int count)
+void ObjectSpawner::ActiveDropItem(string name, Vector2 pos)
 {
 
-	for (int i = 0; i < count; i++)
+	vector<DropInfo::Data> dropDatas = DATA->GetDropInfo(name)->GetDatas();
+
+	for (int i = 0; i < dropDatas.size(); i++)
 	{
-		for (int i = 0; i < _dropItems.size(); i++)
+		int random = rand() % 100 + 1;
+
+		if (dropDatas[i]._percent >= random)
 		{
-			if (!_dropItems[i]->IsActive())
+			for (int j = 0; j < _dropItems.size(); j++)
 			{
-				_dropItems[i]->Spawn(dropName, itemName, pos);
-				break;
+				if (!_dropItems[j]->IsActive())
+				{
+					_dropItems[j]->Spawn(dropDatas[i]._name, dropDatas[i]._name, pos);
+					break;
+				}
 			}
 		}
 	}

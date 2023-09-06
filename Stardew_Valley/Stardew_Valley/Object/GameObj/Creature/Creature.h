@@ -16,20 +16,24 @@ public:
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 	Vector2 GetWorldPos() { return _col->GetWorldPos(); }
 
+	void AddPos(Vector2 pos) { _col->AddPos(pos); }
+
 	virtual void AddHP(short cost);
 
 	short GetMaxHp() { return _maxHp; }
 	short GetHp() { return _hp; }
 	int GetDirection() { return _direction; }
+
+	bool IsActive() { return _isActive; }
 	bool IsFreeze() { return _freeze; }
 	void SetActive(bool val) { _isActive = val; }
 	void StartUntouchable() { _untouchable = 1.0f; }
 	bool IsUntouchable() { return _untouchable > 0; }
+	void SetDirection(Vector2 pos);
 protected:
 	virtual void CreateAction() abstract;
 	virtual void SetAction(int index);
 	virtual void SetPause(bool val);
-	void SetDirection(Vector2 pos);
 
 	shared_ptr<RectCollider> _col;
 

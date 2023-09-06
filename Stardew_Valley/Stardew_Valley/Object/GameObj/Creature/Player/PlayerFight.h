@@ -16,11 +16,14 @@ public:
 	void AddMaxStamina(short cost);
 	virtual void AddHP(short cost) override;
 	void AddStamina(short cost);
+
 	bool _isAttacking = false;
 	shared_ptr<RectCollider> _weaponCollider;
-private:
 	shared_ptr<Transform> _weaponSlot;
-
 	float _attackCount = 0.0f;
+	shared_ptr<Sprite> _weapon;
+
+private:
+	shared_ptr<Transform> _weaponRotate;
 };
 

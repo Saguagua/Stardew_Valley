@@ -153,6 +153,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Scene\InGame\DungeonScene.h" />
+    <ClInclude Include="Scene\InGame\NormalScene.h" />
+    <ClInclude Include="Object\GameObj\Creature\Monsters\MonsterSpawner.h" />
     <ClInclude Include="Object\GameObj\Creature\Monsters\Bat.h" />
     <ClInclude Include="Framework\System\FishingSystem.h" />
     <ClInclude Include="Object\GameObj\Creature\Monsters\Monster.h" />
@@ -198,6 +201,7 @@
     <ClInclude Include="Object\UI\PlayerUI.h" />
     <ClInclude Include="Object\GameObj\Creature\Player\PlayerImproved.h" />
     <ClInclude Include="Object\GameObj\Creature\Player\PlayerFight.h" />
+    <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
     <ClInclude Include="Framework\Utility\MathUtility.h" />
@@ -245,6 +249,9 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scene\InGame\DungeonScene.cpp" />
+    <ClCompile Include="Scene\InGame\NormalScene.cpp" />
+    <ClCompile Include="Object\GameObj\Creature\Monsters\MonsterSpawner.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Monsters\Bat.cpp" />
     <ClCompile Include="Framework\System\FishingSystem.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Monsters\Monster.cpp" />
@@ -278,6 +285,7 @@
     <ClCompile Include="Object\UI\PlayerUI.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Player\PlayerImproved.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Player\PlayerFight.cpp" />
+    <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />
     <ClCompile Include="Object\BasicObj\CircleLine.cpp" />
