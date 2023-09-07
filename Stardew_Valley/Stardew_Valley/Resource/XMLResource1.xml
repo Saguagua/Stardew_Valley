@@ -93,13 +93,13 @@ r => 'y' if sprite is rotated-->
   <sprite n="DungeonCorner1" x="201" y="183" w="80" h="48" pX="0.5" pY="0.5" i="0" s1="2" s2="2"/>
   <sprite n="DungeonCorner2" x="551" y="258" w="48" h="48" pX="0.5" pY="0.5" i="0" s1="2" s2="2"/>
   <sprite n="DungeonCorner3" x="433" y="137" w="48" h="80" pX="0.5" pY="0.5" i="0" s1="2" s2="2"/>
-  <sprite n="DungeonWall" x="435" y="223" w="80" h="64" pX="0.5" pY="0.5" i="0" s1="2" s2="2"/>
+  <sprite n="DungeonWall" x="435" y="223" w="80" h="64" pX="0.5" pY="0.5" i="0" s1="4" s2="4"/>
   <sprite n="DateTime" x="559" y="3" w="72" h="57" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Daffodil" x="616" y="444" w="15" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Dandelion" x="575" y="468" w="14" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Dirt" x="595" y="488" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="DungeonGate" x="595" y="510" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="DungeonCornerWall" x="201" y="3" w="48" h="174" pX="0.5" pY="0.5" s1="2" s2="2"/>
+  <sprite n="DungeonCornerWall" x="201" y="3" w="48" h="174" pX="0.5" pY="0.5" s1="4" s2="4"/>
   <sprite n="DungeonTile1" x="575" y="532" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="DungeonTile2" x="597" y="532" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="DungeonTile3" x="3" y="559" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
@@ -107,7 +107,7 @@ r => 'y' if sprite is rotated-->
   <sprite n="DiamondStone" x="573" y="490" w="16" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="DiamondStone" x="268" y="539" w="11" h="13" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
   <sprite n="Diamond" x="574" y="607" w="12" h="11" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="DungeonSideWall" x="287" y="289" w="16" h="128" pX="0.5" pY="0.5" i="0" s1="2" s2="2"/>
+  <sprite n="DungeonSideWall" x="287" y="289" w="16" h="128" pX="0.5" pY="0.5" i="0" s1="4" s2="4"/>
   <sprite n="Dagger" x="3" y="624" w="10" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Elevator" x="421" y="513" w="16" h="39" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="8" x="539" y="223" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>

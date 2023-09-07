@@ -19,11 +19,11 @@ void DataManager::MapToolSave()
 {
 	ofstream fout;
 
-	for (int i = 0; i < _mapInfos.size(); i++)
+	for (int i = 0; i < _initialMapInfos.size(); i++)
 	{
-		string mapName = _mapInfos[i]->GetName();
-		Vector2 size = _mapInfos[i]->GetSize();
-		vector<shared_ptr<Tile>> tileInfo = _mapInfos[i]->GetInfos();
+		string mapName = _initialMapInfos[i]->GetName();
+		Vector2 size = _initialMapInfos[i]->GetSize();
+		vector<shared_ptr<Tile>> tileInfo = _initialMapInfos[i]->GetInfos();
 
 		if (_mapTable.count(mapName) == false)
 		{
@@ -96,24 +96,21 @@ void DataManager::PlaySave()
 
 void DataManager::LoadInitialMaps()
 {
-	LoadMap("Data/Contents/InitialMap/", "Farming");
-	LoadMap("Data/Contents/InitialMap/", "Fishing");
-	LoadMap("Data/Contents/InitialMap/", "Dungeon");
-	LoadMap("Data/Contents/InitialMap/", "Test");
-	LoadMap("Data/Contents/InitialMap/", "Dungeon1");
-	LoadMap("Data/Contents/InitialMap/", "Dungeon2");
-	LoadMap("Data/Contents/InitialMap/", "Dungeon3");
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Farming"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Fishing"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Test"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
 }
 
 void DataManager::LoadMaps(string name)
 {
-	LoadMap("Data/SaveFiles/" + name + "/", "Farming");
-	LoadMap("Data/SaveFiles/" + name + "/", "Fishing");
-	LoadMap("Data/SaveFiles/" + name + "/", "Dungeon");
-	LoadMap("Data/SaveFiles/" + name + "/", "Test");
-	LoadMap("Data/Contents/InitialMap/", "Dungeon1");
-	LoadMap("Data/Contents/InitialMap/", "Dungeon2");
-	LoadMap("Data/Contents/InitialMap/", "Dungeon3");
+	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Farming"));
+	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Fishing"));
+	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Dungeon"));
+	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Test"));
 }
 
 void DataManager::SaveMaps()
@@ -121,11 +118,11 @@ void DataManager::SaveMaps()
 	string playerName = _playerInfo->GetName();
 	ofstream fout;
 
-	for (int i = 0; i < _mapInfos.size() - 3; i++)
+	for (int i = 0; i < _playerMapInfos.size() - 3; i++)
 	{
-		string mapName = _mapInfos[i]->GetName();
-		Vector2 size = _mapInfos[i]->GetSize();
-		vector<shared_ptr<Tile>> tileInfo = _mapInfos[i]->GetInfos();
+		string mapName = _playerMapInfos[i]->GetName();
+		Vector2 size = _playerMapInfos[i]->GetSize();
+		vector<shared_ptr<Tile>> tileInfo = _playerMapInfos[i]->GetInfos();
 
 		if (_mapTable.count(mapName) == false)
 		{
@@ -259,7 +256,7 @@ void DataManager::LoadPlayerInfo(string playerName)
 	_playerInfo = make_shared<PlayerInfo>(playerName, vals, pos, items);
 }
 
-void DataManager::LoadMap(string path, string mapName)
+shared_ptr<MapInfo> DataManager::LoadMap(string path, string mapName)
 {
 	ifstream fin;
 	fin.open(path + mapName + "Tile.txt");
@@ -301,7 +298,8 @@ void DataManager::LoadMap(string path, string mapName)
 		infos.push_back(info);
 
 		x++;
-		if (x == MAP_SIZE.x)
+
+		if (x == size.x)
 		{
 			x = 0;
 			y++;
@@ -332,7 +330,7 @@ void DataManager::LoadMap(string path, string mapName)
 
 	fin.close();
 
-	_mapInfos.push_back(mapInfo);
+	return mapInfo;
 }
 
 void DataManager::ReadMaps()

@@ -2,21 +2,14 @@
 #include "../Object/Tile/TileType/ArableTile.h"
 #include "TileMap.h"
 
-TileMap::TileMap()
+TileMap::TileMap(vector<shared_ptr<MapInfo>>& mapInfo)
+	:_mapInfos(mapInfo)
 {
 	_collider = make_shared<RectCollider>(TILE_SIZE);
 
 	_renderer = make_shared<Sprite>("BLANK", TILE_SIZE, SpriteType::OBJECT);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
 	_focusRenderer->SetColor(XMFLOAT4(0, 1, 0, 0.5));
-
-	_mapInfos = DATA->GetMapInfos();
-	ChangeMap(0);
-}
-
-void TileMap::Update()
-{
-
 }
 
 
@@ -226,9 +219,34 @@ void TileMap::ChangeMap(int index)
 
 void TileMap::SetCameraRange()
 {
-	float top = (_curMapSize.y * TILE_SIZE.y) - WIN_HEIGHT / 2 - TILE_SIZE.y;
-	float right = (_curMapSize.x * TILE_SIZE.x) - WIN_WIDTH / 2 - TILE_SIZE.x;
-	CAMERA->SetLeftBottom(CENTER);
+	float top;
+	float right;
+	float left;
+	float bottom;
+
+	if (_curMapSize.y * TILE_SIZE.y < WIN_HEIGHT)
+	{
+		top = _curMapSize.y * TILE_SIZE.y * 0.5f;
+		bottom = top;
+	}
+	else
+	{
+		top = (_curMapSize.y * TILE_SIZE.y) - WIN_HEIGHT / 2 - TILE_SIZE.y;
+		bottom = CENTER.y;
+	}
+
+	if (_curMapSize.x * TILE_SIZE.x < WIN_WIDTH)
+	{
+		right = _curMapSize.x * TILE_SIZE.x * 0.5f;
+		left = right;
+	}
+	else
+	{
+		right = (_curMapSize.x * TILE_SIZE.x) - WIN_WIDTH / 2 - TILE_SIZE.x;
+		left = CENTER.x;
+	}
+
+	CAMERA->SetLeftBottom(Vector2(left, bottom));
 	CAMERA->SetRightTop(Vector2(right, top));
 }
 

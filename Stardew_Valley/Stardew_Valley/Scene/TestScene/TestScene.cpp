@@ -8,11 +8,13 @@ TestScene::TestScene()
 	MonsterSpawner::Create();
 	
 	_player = make_shared<PlayerFight>();
+	_player->GetTransform()->SetPos(CENTER);
 	PlayerUI::Create(_player);
 	OBJECT_SPAWNER->SetPlayer(_player);
 
 	DATA->LoadMaps("Test");
-	_map = make_shared<TileMap>();
+	_map = make_shared<TileMap>(DATA->GetPlayerMapInfos());
+	_map->ChangeMap(0);
 	_items = _player->GetItems();
 
 	FishingSystem::GetInstance()->SetPlayer(_player);
@@ -37,7 +39,6 @@ TestScene::~TestScene()
 void TestScene::Update()
 {
 	PLAYERUI->Update();
-	_map->Update();
 	_player->Update();
 	FishingSystem::GetInstance()->Update();
 
@@ -125,4 +126,8 @@ void TestScene::KeyInput()
 		break;
 		}
 	}
+}
+
+void TestScene::Initialize()
+{
 }

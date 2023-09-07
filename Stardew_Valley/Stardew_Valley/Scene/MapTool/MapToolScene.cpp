@@ -29,3 +29,7 @@ void MapToolScene::PostRender()
 {
 	PALETTE->PostRender();
 }
+
+void MapToolScene::Initialize()
+{
+}

@@ -51,11 +51,14 @@ public:
 	Vector2 GetWorldMousePos();
 	Vector2 GetScreenMousePos();
 
+	bool _freeMode = true;;
+
 private:
 	void FreeMode();
 	void FollowMode();
 	
 	static Camera* _instance;
+
 
 	shared_ptr<Transform> _view;
 	shared_ptr<MatrixBuffer> _postView;

@@ -6,7 +6,8 @@ Palette* Palette::_instance = nullptr;
 Palette::Palette(Vector2 size)
 	:_size(size)
 {
-	_map = make_shared<TileMap>();
+	_map = make_shared<TileMap>(DATA->GetInitialMapInfos());
+	_map->ChangeMap(0);
 	_map->SetDebug(true);
 
 	_mainRect = make_shared<ColorButton>(PURPLE, _size);
@@ -50,8 +51,6 @@ void Palette::Update()
 
 	for (auto list : _lists)
 		list->Update();
-
-	_map->Update();
 
 	KeyInput();
 }
@@ -188,7 +187,7 @@ void Palette::CreateObjectList()
 
 void Palette::CreateLoadList()
 {
-	_mapInfos = DATA->GetMapInfos();
+	_mapInfos = DATA->GetInitialMapInfos();
 	vector<string> names;
 
 	for (int i = 0; i < _mapInfos.size(); i++)

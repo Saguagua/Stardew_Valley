@@ -8,3 +8,7 @@ void DungeonScene::Update()
 void DungeonScene::Render()
 {
 }
+
+void DungeonScene::Initialize()
+{
+}

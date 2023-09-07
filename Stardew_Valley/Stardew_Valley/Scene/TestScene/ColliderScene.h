@@ -8,6 +8,7 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 
+	virtual void Initialize() override;
 private: 
 	shared_ptr<CircleCollider> _circle;
 	shared_ptr<CircleCollider> _circle2;

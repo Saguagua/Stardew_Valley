@@ -25,7 +25,8 @@ public:
 		return nullptr;
 	}
 
-	vector<shared_ptr<class MapInfo>>& GetMapInfos() { return _mapInfos; }
+	vector<shared_ptr<class MapInfo>>& GetPlayerMapInfos() { return _playerMapInfos; }
+	vector<shared_ptr<class MapInfo>>& GetInitialMapInfos() { return _initialMapInfos; }
 
 	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
 
@@ -60,22 +61,27 @@ private:
 
 	void SaveMaps();
 	void SavePlayerInfo();
-	void LoadMap(string path, string mapName);
+	shared_ptr<MapInfo> LoadMap(string path, string mapName);
 
 	static DataManager* _instance;
 
-						  shared_ptr<PlayerInfo> _playerInfo;
+	shared_ptr<PlayerInfo> _playerInfo;
 	
-					  unordered_map<string, bool> _playerTable;
+	unordered_map<string, bool> _playerTable;
 	
-					  vector<shared_ptr<MapInfo>> _mapInfos;
+	vector<shared_ptr<MapInfo>> _playerMapInfos;
+	vector<shared_ptr<MapInfo>> _initialMapInfos;
+					  
 
-					 vector<shared_ptr<FishInfo>> _fishTable;
-					  unordered_map<string, bool> _mapTable;
-					   unordered_map<string, int> _tileTable;
-	   unordered_map<string, shared_ptr<XMLInfo>> _xmlTable;
-	  unordered_map<string, shared_ptr<DropInfo>> _dropTable;
-	  unordered_map<string, shared_ptr<ItemInfo>> _itemTable;
-	  unordered_map<string, shared_ptr<CropInfo>> _cropTable;
+	vector<shared_ptr<FishInfo>> _fishTable;
+
+	unordered_map<string, bool> _mapTable;
+
+	unordered_map<string, int> _tileTable;
+
+	unordered_map<string, shared_ptr<XMLInfo>> _xmlTable;
+	unordered_map<string, shared_ptr<DropInfo>> _dropTable;
+	unordered_map<string, shared_ptr<ItemInfo>> _itemTable;
+	unordered_map<string, shared_ptr<CropInfo>> _cropTable;
 	unordered_map<string, shared_ptr<DeployInfo>> _deployTable;
 };

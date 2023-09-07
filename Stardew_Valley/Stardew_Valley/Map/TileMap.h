@@ -7,7 +7,7 @@ class TileMap
 {
 
 public:
-	TileMap();
+	TileMap(vector<shared_ptr<MapInfo>>& mapInfo);
 	~TileMap() {}
 	
 	void Update();
@@ -33,6 +33,8 @@ public:
 	void Charging(Vector2 originPos, Vector2 tragetPos, short level);
 	void Blocking(shared_ptr<RectCollider> col);
 	void ChangeTile(Vector2 pos, int paletteIndex, string name);
+
+	void SetMapInfo(vector<shared_ptr<MapInfo>> v) { _mapInfos = v; }
 private:
 	void SetCameraRange();
 	void SetHoeDirt(int index);
@@ -42,7 +44,7 @@ private:
 
 	shared_ptr<RectCollider> _collider;
 
-	vector<shared_ptr<MapInfo>>& _mapInfos = DATA->GetMapInfos();
+	vector<shared_ptr<MapInfo>>& _mapInfos;
 	vector<shared_ptr<Tile>> _tiles;
 	unordered_map<string, int>& _tileInfos = DATA->GetTileInfos();
 

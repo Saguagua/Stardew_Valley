@@ -42,3 +42,7 @@ void ColliderScene::Render()
 	_circle->Render();
 	_rect2->Render();
 }
+
+void ColliderScene::Initialize()
+{
+}

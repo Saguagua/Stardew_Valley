@@ -8,3 +8,7 @@ void NormalScene::Update()
 void NormalScene::Render()
 {
 }
+
+void NormalScene::Initialize()
+{
+}
