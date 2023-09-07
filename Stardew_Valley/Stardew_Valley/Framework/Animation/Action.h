@@ -26,6 +26,7 @@ public:
 
 	void SetMiddleEvent(CallBack cb) { _middleEvent = cb; }
 	void SetEndEvent(CallBack cb) { _endEvent = cb; }
+	void SetEndBoolEvent(CallBackBool cb) { _endBoolEvent = cb; }
 	void SetEndIntEvent(CallBackInt cb) { _endIntEvent = cb; }
 private:
 	string _name;
@@ -44,6 +45,7 @@ private:
 
 	CallBack _middleEvent = nullptr;
 	CallBack _endEvent = nullptr;
+	CallBackBool _endBoolEvent = nullptr;
 	CallBackInt _endIntEvent = nullptr;
 };
 

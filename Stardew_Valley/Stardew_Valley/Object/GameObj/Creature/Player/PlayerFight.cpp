@@ -7,9 +7,10 @@ PlayerFight::PlayerFight()
 {
 	_weaponSlot = make_shared<Transform>();
 
+	_weaponSlot->SetPos(Vector2(0.0f, 10.0f));
 	_weaponSlot->SetParent(_col->GetTransform());
 
-	_weaponCollider = make_shared<RectCollider>(Vector2(20,40));
+	_weaponCollider = make_shared<RectCollider>(Vector2(20.0f, 40.0f));
 
 	_weaponCollider->SetPos(Vector2(0.0f, -20.0f));
 	_weaponCollider->SetDebug(true);

@@ -23,7 +23,7 @@ bool CircleCollider::IsCollision(Vector2 other)
 	Vector2 pos = GetWorldPos();
 	float length = (other - pos).Length();
 
-	return length < worldRadius * worldRadius;
+	return length < worldRadius;
 }
 
 bool CircleCollider::IsCollision(shared_ptr<RectCollider> other)
@@ -35,7 +35,8 @@ bool CircleCollider::IsCollision(shared_ptr<CircleCollider> other)
 {
 	float len1 = GetWorldRadius();
 	float len2 = other->GetWorldRadius();
-	float radiusLength = (len1 + len2) * (len1 + len2);
+	//float radiusLength = (len1 + len2) * (len1 + len2);
+	float radiusLength = (len1 + len2);
 
 	Vector2 pos1 = _transform->GetWorldPos();
 	Vector2 pos2 = other->GetTransform()->GetWorldPos();
@@ -48,7 +49,8 @@ bool CircleCollider::Block(shared_ptr<CircleCollider> other)
 {
 	float len1 = GetWorldRadius();
 	float len2 = other->GetWorldRadius();
-	float radiusLength = (len1 + len2) * (len1 + len2);
+	//float radiusLength = (len1 + len2) * (len1 + len2);
+	float radiusLength = (len1 + len2);
 
 	Vector2 pos1 = _transform->GetWorldPos();
 	Vector2 pos2 = other->GetTransform()->GetWorldPos();

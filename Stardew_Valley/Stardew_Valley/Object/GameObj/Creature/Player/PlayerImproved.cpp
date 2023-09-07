@@ -217,16 +217,12 @@ void PlayerImproved::ItemAction()
 	{
 		if (KEY_DOWN(VK_LBUTTON))
 		{
-
+			SetDirection(W_MOUSE_POS);
+			SetAction(PlayerAction::ATTACK);
+			SetArmAction(PlayerAction::ATTACK);
+			SetFreeze(true);
 		}
-		else if (KEY_PRESS(VK_LBUTTON))
-		{
-
-		}
-		else if (KEY_UP(VK_LBUTTON))
-		{
-
-		}
+		
 	}
 }
 

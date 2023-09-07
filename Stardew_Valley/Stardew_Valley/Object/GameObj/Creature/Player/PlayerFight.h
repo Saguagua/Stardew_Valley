@@ -26,4 +26,3 @@ public:
 private:
 	shared_ptr<Transform> _weaponRotate;
 };
-

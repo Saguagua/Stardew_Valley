@@ -6,7 +6,7 @@ public:
 	virtual ~ShapeLine() {}
 
 	void Render();
-	void SetColor(XMFLOAT4 color) {_cBuffer->SetColor(color);}
+	void SetColor(XMFLOAT4 color) { _cBuffer->SetColor(color); _cBuffer->Update(); }
 
 protected:
 	virtual void CreateVertices() abstract;

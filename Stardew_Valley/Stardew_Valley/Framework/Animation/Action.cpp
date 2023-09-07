@@ -75,6 +75,8 @@ void Action::Stop()
 		_endEvent();
 	if (_endIntEvent != nullptr)
 		_endIntEvent(0);
+	if (_endBoolEvent != nullptr)
+		_endBoolEvent(true);
 }
 
 void Action::Reset()

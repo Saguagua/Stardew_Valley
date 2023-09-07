@@ -31,7 +31,7 @@ void MonsterSpawner::Update()
 		{
 			if (_player.lock()->_isAttacking)
 			{
-				if (_player.lock()->_weaponCollider->IsCollision(monster->GetCollider()) && !monster->IsUntouchable())
+				if (_player.lock()->_weaponCollider->OBB(monster->GetCollider()) && !monster->IsUntouchable())
 				{
 					Vector2 dir = (monster->GetWorldPos() - _player.lock()->GetWorldPos()).Normalize();
 					monster->AddPos(dir * 10);
@@ -39,9 +39,6 @@ void MonsterSpawner::Update()
 					monster->StartUntouchable();
 				}
 			}
-
-			if (_player.lock()->IsUntouchable())
-				continue;
 
 			monster->Detect(_player.lock());
 		}

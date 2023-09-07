@@ -37,6 +37,8 @@ private:
 	
 	XMMATRIX _srt = XMMatrixIdentity();
 
+	XMMATRIX _scaleM = XMMatrixIdentity();
+
 	weak_ptr<Transform> _parent;
 };
 

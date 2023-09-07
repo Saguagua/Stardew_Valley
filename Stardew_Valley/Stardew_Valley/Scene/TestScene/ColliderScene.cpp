@@ -20,9 +20,12 @@ ColliderScene::ColliderScene()
 void ColliderScene::Update()
 {
 	_circle->Update();
-	_circle2->Update();
+	_rect2->Update();
 
 	_circle->SetPos(CAMERA->GetWorldMousePos());
+
+	if (KEY_PRESS('Q'))
+		_circle->AddAngle(0.01f);
 
 	if (_circle->IsCollision(_rect2))
 	{
@@ -37,5 +40,5 @@ void ColliderScene::Update()
 void ColliderScene::Render()
 {
 	_circle->Render();
-	_circle2->Render();
+	_rect2->Render();
 }

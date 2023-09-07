@@ -12,7 +12,8 @@ public:
 		FISHING1 = 12,
 		FISHING2 = 15,
 		FISHING3 = 18,
-		HOLD = 21
+		ATTACK = 21,
+		HOLD = 24
 	};
 
 	Player();
@@ -31,7 +32,7 @@ public:
 
 protected:
 	void GetDatas();
-
+	void SetFreeze(bool val) { _freeze = val; }
 	//Actions
 	virtual void CreateAction() override;
 	void SetArmAction(int index);
