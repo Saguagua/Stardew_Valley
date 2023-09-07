@@ -20,7 +20,7 @@ PlayerFight::PlayerFight()
 	_weaponRotate->SetParent(_weaponCollider->GetTransform());
 	_weaponRotate->SetAngle(45.0f * XM_PI / 180.0f);
 
-	_weapon = make_shared<Sprite>(XMLPATH1, "BLANK", Vector2(30, 30), SpriteType::OBJECT);
+	_weapon = make_shared<Sprite>("Sword", Vector2(30, 30), SpriteType::OBJECT);
 }
 
 void PlayerFight::Render()
@@ -30,7 +30,7 @@ void PlayerFight::Render()
 
 	if (_isAttacking)
 	{
-		_weapon->ChangePicture("Sword");
+		_weapon->SetImage("Sword");
 		_weapon->Render();
 		_weaponCollider->Render();
 	}

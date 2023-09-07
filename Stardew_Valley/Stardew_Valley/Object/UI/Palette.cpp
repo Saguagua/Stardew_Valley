@@ -121,10 +121,10 @@ void Palette::CreateChartButtons()
 	Vector2 buttonSize = _size * 0.1f;
 	float space = (_size.x - buttonSize.x * 4) / 5;
 
-	shared_ptr<TextureButton>  button = make_shared<TextureButton>(XMLPATH2, "TileButton", buttonSize);
-	shared_ptr<TextureButton> button2 = make_shared<TextureButton>(XMLPATH1, "HorseRadish", buttonSize);
-	shared_ptr<TextureButton> button3 = make_shared<TextureButton>(XMLPATH2, "FileButton", buttonSize);
-	shared_ptr<TextureButton> button4 = make_shared<TextureButton>(XMLPATH2, "SaveButton", buttonSize);
+	shared_ptr<TextureButton>  button = make_shared<TextureButton>("TileButton", buttonSize);
+	shared_ptr<TextureButton> button2 = make_shared<TextureButton>("HorseRadish", buttonSize);
+	shared_ptr<TextureButton> button3 = make_shared<TextureButton>("FileButton", buttonSize);
+	shared_ptr<TextureButton> button4 = make_shared<TextureButton>("SaveButton", buttonSize);
 
 	button->GetTransform()->SetPos(Vector2(-halfSize.x + space, halfSize.y - buttonSize.y * 0.6f));
 	button2->GetTransform()->SetPos(Vector2(-halfSize.x + space * 2 + buttonSize.x, halfSize.y - buttonSize.y * 0.6f));
@@ -161,7 +161,7 @@ void Palette::CreateTileList()
 		names.push_back(tile.first);
 	}
 
-	shared_ptr<List> list = make_shared<List>(XMLPATH1, _size * 0.9f, Vector2(5, 3), names);
+	shared_ptr<List> list = make_shared<List>(_size * 0.9f, Vector2(5, 3), names);
 	list->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	list->SetParent(_mainRect->GetTransform());
 
@@ -178,7 +178,7 @@ void Palette::CreateObjectList()
 		names.push_back(info.first);
 	}
 
-	shared_ptr<List> list = make_shared<List>(XMLPATH1, _size * 0.9f, Vector2(5, 8), names);
+	shared_ptr<List> list = make_shared<List>(_size * 0.9f, Vector2(5, 8), names);
 	list->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	list->SetParent(_mainRect->GetTransform());
 	list->SetActive(false);
@@ -196,7 +196,7 @@ void Palette::CreateLoadList()
 		names.push_back(to_string(i));
 	}
 
-	shared_ptr<List> list = make_shared<List>(XMLPATH1, _size * 0.9f, Vector2(_mapInfos.size(), 5), names);
+	shared_ptr<List> list = make_shared<List>(_size * 0.9f, Vector2(_mapInfos.size(), 5), names);
 
 	vector<CallBackInt> cbs;
 

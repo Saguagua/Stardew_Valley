@@ -1,7 +1,7 @@
 #include "framework.h"
 #include "Bar.h"
 
-Bar::Bar(shared_ptr<PlayerImproved> player, wstring path, string name, Vector2 size)
+Bar::Bar(shared_ptr<PlayerImproved> player, string name, Vector2 size)
 	:PlayerSubscribe(player, PlayerSubscribe::Type::ALL)
 {
 	if (name == "HPBar")
@@ -14,7 +14,7 @@ Bar::Bar(shared_ptr<PlayerImproved> player, wstring path, string name, Vector2 s
 
 	_bodyTransform = make_shared<Transform>();
 	_guageTransform = make_shared<Transform>();
-	_body = make_shared<Sprite>(path, name, size, SpriteType::UI);
+	_body = make_shared<Sprite>(name, size, SpriteType::UI);
 	_gauge = make_shared<SingleColorRect>(size - Vector2(20, 55));
 
 	_guageTransform->SetPos(Vector2(0, -20));

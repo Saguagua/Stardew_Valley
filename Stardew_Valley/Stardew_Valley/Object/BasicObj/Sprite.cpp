@@ -2,18 +2,22 @@
 #include "Sprite.h"
 
 
-Sprite::Sprite(wstring path, string name, Vector2 size, SpriteType type)
-	:_curName(name), _size(size)
+Sprite::Sprite(string name, Vector2 size, SpriteType type)
+	:_size(size)
 {
-	_srv = ADD_SRV(path);
 	CreateVertices();
+
 	if (type == SpriteType::OBJECT)
 		CreateObjData();
 	else if (type == SpriteType::UI)
 		CreateUIData();
-	
-	_xBuffer->SetImgSize(_srv.lock()->GetImageSize());
-	ChangePicture(_curName);
+
+	SetImage(name);
+}
+
+Sprite::Sprite(wstring path, string name, Vector2 size, SpriteType type)
+{
+
 }
 
 void Sprite::Render()
@@ -35,11 +39,12 @@ void Sprite::Render()
 	DC->DrawIndexed(_indices.size(), 0, 0);
 }
 
-void Sprite::ChangePicture(string name, int index)
+void Sprite::SetImage(string name, int index)
 {
-	if (_map[_curName]->GetPage() != _map[name]->GetPage())
+	if (_curPage != _map[name]->GetPage())
 	{
-		wstring srvPath = L"Resource/XMLResource" + _map[_curName]->GetPage() + L".png";
+		_curPage = _map[name]->GetPage();
+		wstring srvPath = L"Resource/XMLResource" + _curPage + L".png";
 
 		_srv = ADD_SRV(srvPath);
 		_xBuffer->SetImgSize(_srv.lock()->GetImageSize());

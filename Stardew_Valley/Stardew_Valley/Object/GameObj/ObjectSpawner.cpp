@@ -6,7 +6,7 @@ ObjectSpawner* ObjectSpawner::_instance = nullptr;
 
 ObjectSpawner::ObjectSpawner()
 {
-	_renderer = make_shared<Sprite>(XMLPATH1, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
+	_renderer = make_shared<Sprite>("BLANK", Vector2(20, 20), SpriteType::OBJECT);
 
 	for (int i = 0; i < 60; i++)
 	{

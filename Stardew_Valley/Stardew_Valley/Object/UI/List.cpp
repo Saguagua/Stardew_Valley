@@ -1,12 +1,12 @@
 #include "framework.h"
 #include "List.h"
 
-List::List(wstring path, Vector2 size, Vector2 matrix, vector<string> names)
+List::List(Vector2 size, Vector2 matrix, vector<string> names)
 	:_size(size), _matrix(matrix)
 {
 	_transform = make_shared<Transform>();
-	_body = make_shared<Sprite>(XMLPATH1, "BLANK", _size, SpriteType::UI);
-	CreateButtons(path, names);
+	_body = make_shared<Sprite>("BLANK", _size, SpriteType::UI);
+	CreateButtons(names);
 
 	Vector2 space;
 	space.x = (_size.x - _buttonSize.x * matrix.x) / (matrix.x + 1);
@@ -60,14 +60,14 @@ void List::AddCallBackInt(vector<CallBackInt> cbs)
 	}
 }
 
-void List::CreateButtons(wstring path, vector<string> names)
+void List::CreateButtons(vector<string> names)
 {
 	_buttonSize.x = _size.x * 0.9f / (_matrix.x + 1);
 	_buttonSize.y = _size.y * 0.9f / (_matrix.y + 1);
 
 	for (int i = 0; i < names.size(); i++)
 	{
-		shared_ptr<TextureButton> button = make_shared<TextureButton>(path, names[i], _buttonSize);
+		shared_ptr<TextureButton> button = make_shared<TextureButton>(names[i], _buttonSize);
 		_buttons.push_back(button);
 	}
 }

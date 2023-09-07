@@ -2,7 +2,7 @@
 class TextureButton :public Button
 {
 public:
-	TextureButton(wstring path, string name, Vector2 size);
+	TextureButton(string name, Vector2 size);
 	~TextureButton() {}
 
 	virtual void Render() override;

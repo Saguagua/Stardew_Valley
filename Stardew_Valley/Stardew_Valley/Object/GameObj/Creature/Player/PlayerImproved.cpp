@@ -98,13 +98,13 @@ void PlayerImproved::SetCurItem(int index)
 		type == Item::Type::SEED)
 	{
 		_state |= PlayerState::HOLDING;
-		_obj->ChangePicture(_items[_curIndex]->GetName(), _items[_curIndex]->GetIndex());
+		_obj->SetImage(_items[_curIndex]->GetName(), _items[_curIndex]->GetIndex());
 		armIndex = PlayerAction::HOLD;
 	}
 	else
 	{
 		_state &= ~(PlayerState::HOLDING);
-		_obj->ChangePicture("BLANK");
+		_obj->SetImage("BLANK");
 		if (_state != PlayerState::RUN)
 			armIndex = PlayerAction::IDLE;
 		else

@@ -1,10 +1,10 @@
 #include "framework.h"
 #include "TextureButton.h"
 
-TextureButton::TextureButton(wstring path, string name, Vector2 size)
+TextureButton::TextureButton(string name, Vector2 size)
 	:Button(size)
 {
-	_renderer = make_shared<Sprite>(path, name, size, SpriteType::UI);
+	_renderer = make_shared<Sprite>(name, size, SpriteType::UI);
 }
 
 void TextureButton::Render()
@@ -33,5 +33,5 @@ string TextureButton::GetName()
 
 void TextureButton::SetName(string name)
 {
-	_renderer->ChangePicture(name);
+	_renderer->SetImage(name);
 }

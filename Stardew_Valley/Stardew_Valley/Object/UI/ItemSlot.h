@@ -11,7 +11,7 @@ public:
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
 private:
-	void CreateButtons(wstring path, int count);
+	void CreateButtons(int count);
 
 };
 

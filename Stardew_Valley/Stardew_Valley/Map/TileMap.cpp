@@ -6,7 +6,7 @@ TileMap::TileMap()
 {
 	_collider = make_shared<RectCollider>(TILE_SIZE);
 
-	_renderer = make_shared<Sprite>(XMLPATH1, "BLANK", TILE_SIZE, SpriteType::OBJECT);
+	_renderer = make_shared<Sprite>("BLANK", TILE_SIZE, SpriteType::OBJECT);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
 	_focusRenderer->SetColor(XMFLOAT4(0, 1, 0, 0.5));
 

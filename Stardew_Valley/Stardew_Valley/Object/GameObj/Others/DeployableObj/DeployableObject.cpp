@@ -14,7 +14,7 @@ void DeployableObject::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollid
 
 	col->GetTransform()->Set_World(0);
 
-	renderer->ChangePicture(_name, _index);
+	renderer->SetImage(_name, _index);
 	renderer->Render();
 
 	col->Render();

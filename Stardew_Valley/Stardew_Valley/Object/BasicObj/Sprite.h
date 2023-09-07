@@ -4,12 +4,13 @@ class DataManager;
 class Sprite
 {
 public:
+	Sprite(string name, Vector2 size, SpriteType type);
 	Sprite(wstring path, string name, Vector2 size, SpriteType type);
 	~Sprite() {}
 
 	void Render();
 	
-	void ChangePicture(string name, int index = 0);
+	void SetImage(string name, int index = 0);
 	
 	string GetName() { return _curName; }
 	int GetIndex() { return _index; }
@@ -22,6 +23,7 @@ private:
 	string _curName;
 	Vector2 _size;
 
+	wstring _curPage = L"0";
 	int _index;
 
 	vector<VertexTexture> _vertices;

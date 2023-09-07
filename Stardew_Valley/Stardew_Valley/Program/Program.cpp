@@ -84,4 +84,8 @@ void Program::Initialize()
 	// Setup Platform/Renderer backends
 	ImGui_ImplWin32_Init(_hWnd);
 	ImGui_ImplDX11_Init(DEVICE.Get(), DC.Get());
+
+	ADD_SRV(XMLPATH1);
+	ADD_SRV(XMLPATH2);
+	ADD_SRV(XMLPATH3);
 }

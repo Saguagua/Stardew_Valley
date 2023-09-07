@@ -4,7 +4,7 @@
 FishingHook::FishingHook()
 {
 	_transform = make_shared<Transform>();
-	_renderer = make_shared<Sprite>(XMLPATH1, "BLANK", Vector2(20, 20), SpriteType::OBJECT);
+	_renderer = make_shared<Sprite>("BLANK", Vector2(20, 20), SpriteType::OBJECT);
 	
 	vector<Vector2> indices;
 	indices.push_back(Vector2(0,0));
@@ -21,9 +21,9 @@ void FishingHook::Render()
 	_transform->Set_World();
 
 	if (_reversing)
-		_renderer->ChangePicture(_resultName, 0);
+		_renderer->SetImage(_resultName, 0);
 	else
-		_renderer->ChangePicture(_name, _action->GetCurFrame().x);
+		_renderer->SetImage(_name, _action->GetCurFrame().x);
 	
 	_renderer->Render();
 }

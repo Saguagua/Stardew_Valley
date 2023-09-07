@@ -10,8 +10,8 @@ BagUI::BagUI(shared_ptr<PlayerImproved> player)
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
 
-	_body = make_shared<Sprite>(XMLPATH1, "BagUI", Vector2(700, 300), SpriteType::UI);
-	_obj = make_shared<Sprite>(XMLPATH1, "BLANK", Vector2(40, 50), SpriteType::UI);
+	_body = make_shared<Sprite>( "BagUI", Vector2(700, 300), SpriteType::UI);
+	_obj = make_shared<Sprite>("BLANK", Vector2(40, 50), SpriteType::UI);
 
 	CreateButtons();
 
@@ -54,7 +54,7 @@ void BagUI::CreateButtons()
 
 	for (int i = 0; i < 36; i++)
 	{
-		shared_ptr<TextureButton> btn = make_shared<TextureButton>(XMLPATH1, items[i]->GetName(), Vector2(35, 55));
+		shared_ptr<TextureButton> btn = make_shared<TextureButton>(items[i]->GetName(), Vector2(35, 55));
 		CallBackInt cb = std::bind(&BagUI::ClickItem, this, i);
 		btn->AddPushEvent(cb);
 		_buttons.push_back(btn);
@@ -67,7 +67,7 @@ void BagUI::ClickItem(int index)
 		_buttons[index]->GetName() != "BLANK")
 	{
 		_selectedIndex = index;
-		_obj->ChangePicture(_player.lock()->GetItems()[_selectedIndex]->GetName(),0);
+		_obj->SetImage(_player.lock()->GetItems()[_selectedIndex]->GetName(),0);
 	}
 	else if (_selectedIndex != -1)
 	{

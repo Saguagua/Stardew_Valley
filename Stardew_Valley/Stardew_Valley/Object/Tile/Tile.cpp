@@ -16,7 +16,7 @@ void Tile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 	col->GetTransform()->Set_World(0);
 	col->SetScale(Vector2(1,1));
 
-	renderer->ChangePicture(_tileName);
+	renderer->SetImage(_tileName);
 	renderer->Render();
 
 	col->Render(); // 여기 수정 필요

@@ -2,7 +2,7 @@
 class Bar :public PlayerSubscribe
 {
 public:
-	Bar(shared_ptr<PlayerImproved> player, wstring path, string name, Vector2 size);
+	Bar(shared_ptr<PlayerImproved> player, string name, Vector2 size);
 	~Bar() {}
 
 	void Render();

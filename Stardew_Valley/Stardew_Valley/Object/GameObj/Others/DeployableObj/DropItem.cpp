@@ -45,7 +45,7 @@ void DropItem::Update()
 void DropItem::Render(shared_ptr<Sprite> renderer)
 {
     _collider->GetTransform()->Set_World(0);
-    renderer->ChangePicture(_name, 0);
+    renderer->SetImage(_name, 0);
     renderer->Render();
     _collider->Render();
 }

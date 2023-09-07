@@ -7,8 +7,8 @@ TimeUI::TimeUI()
 	_hourHandSlot = make_shared<Transform>();
 	_rotateSlot = make_shared<Transform>();
 
-	_body = make_shared<Sprite>(XMLPATH1, "DateTime", Vector2(150, 150), SpriteType::UI);
-	_hourHand = make_shared<Sprite>(XMLPATH1, "TimePicker", Vector2(25,35), SpriteType::UI);
+	_body = make_shared<Sprite>("DateTime", Vector2(150, 150), SpriteType::UI);
+	_hourHand = make_shared<Sprite>("TimePicker", Vector2(25,35), SpriteType::UI);
 
 	_rotateSlot->SetParent(_bodySlot);
 	_rotateSlot->SetPos(Vector2(-27, 25));

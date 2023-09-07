@@ -10,7 +10,7 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 
 	col->GetTransform()->Set_World(0);
 
-	renderer->ChangePicture(_tileName);
+	renderer->SetImage(_tileName);
 	renderer->Render();
 
 	col->Render();
@@ -36,7 +36,7 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 	if (_connect._left)
 		name += "R";
 
-	renderer->ChangePicture(name);
+	renderer->SetImage(name);
 	renderer->Render();
 }
 
