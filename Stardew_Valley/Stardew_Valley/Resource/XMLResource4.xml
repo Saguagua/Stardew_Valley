@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated-->
+<TextureAtlas imagePath="XMLResource4.png" width="128" height="247" scale="1" format="RGBA8888">
+  <sprite n="DungeonWallRev" x="0" y="0" w="80" h="64" pX="0.5" pY="0.5" s1="4" s2="4"/>
+  <sprite n="DungeonCornerWallRev" x="80" y="0" w="48" h="174" pX="0.5" pY="0.5" s1="2" s2="4"/>
+  <sprite n="DungeonSideWallRev" x="0" y="64" w="16" h="128" pX="0.5" pY="0.5" s1="2" s2="4"/>
+  <sprite n="DungeonCorner3Rev" x="16" y="64" w="48" h="80" pX="0.5" pY="0.5" s1="2" s2="2"/>
+  <sprite n="Bed" x="16" y="144" w="32" h="55" pX="0.5" pY="0.5" s1="1" s2="2"/>
+  <sprite n="DungeonCorner1Rev" x="48" y="174" w="80" h="48" pX="0.5" pY="0.5" s1="2" s2="2"/>
+  <sprite n="DungeonCorner2Rev" x="0" y="199" w="48" h="48" pX="0.5" pY="0.5" s1="2" s2="2"/>
+  <sprite n="Portal" x="0" y="0" w="0" h="0" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+</TextureAtlas>

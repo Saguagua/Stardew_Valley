@@ -21,10 +21,10 @@ Camera::Camera()
 
 void Camera::Update()
 {
-	if (_target.expired())
-		FreeMode();
-	else
+	if (!_target.expired() && !_freeMode)
 		FollowMode();
+	else
+		FreeMode();
 
 	_view->Update();
 }

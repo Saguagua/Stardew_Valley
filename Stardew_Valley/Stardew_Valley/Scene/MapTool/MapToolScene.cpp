@@ -32,4 +32,5 @@ void MapToolScene::PostRender()
 
 void MapToolScene::Initialize()
 {
+	CAMERA->_freeMode = true;
 }

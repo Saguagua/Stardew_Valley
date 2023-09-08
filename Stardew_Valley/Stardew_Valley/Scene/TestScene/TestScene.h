@@ -18,4 +18,6 @@ private:
 	shared_ptr<TileMap> _map;
 	vector<shared_ptr<Item>> _items;
 
+	shared_ptr<RectCollider> _nextArea;
+
 };

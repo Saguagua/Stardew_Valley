@@ -63,9 +63,18 @@ void TileMap::ChangeTile(Vector2 pos, int paletteIndex, string name)
 	else if (paletteIndex == 1)
 	{
 		int index = GetWorldIndex(pos);
-		auto info = DATA->GetDeployInfo(name);
-		auto vals = info->GetVals();
-		OBJECT_SPAWNER->CreateObj(_mapInfos[_curMapIndex], index, name, vals[0], vals[1]);
+
+		if (name == "BLANK")
+		{
+			OBJECT_SPAWNER->DeleteObj(_mapInfos[_curMapIndex], index);
+			return;
+		}
+		else
+		{
+			auto info = DATA->GetDeployInfo(name);
+			auto vals = info->GetVals();
+			OBJECT_SPAWNER->CreateObj(_mapInfos[_curMapIndex], index, name, vals[0], vals[1]);
+		}
 	}
 }
 

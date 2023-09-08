@@ -177,7 +177,7 @@ void Palette::CreateObjectList()
 		names.push_back(info.first);
 	}
 
-	shared_ptr<List> list = make_shared<List>(_size * 0.9f, Vector2(5, 8), names);
+	shared_ptr<List> list = make_shared<List>(_size * 0.9f, Vector2(5, 9), names);
 	list->GetTransform()->SetPos(Vector2(0.0f, -20.0f));
 	list->SetParent(_mainRect->GetTransform());
 	list->SetActive(false);
@@ -218,7 +218,7 @@ void Palette::KeyInput()
 	if (_mainRect->GetFocus())
 		return;
 
-	if (KEY_DOWN(VK_LBUTTON))
+	if (KEY_PRESS(VK_LBUTTON))
 	{
 		if (_lists[_chartIndex]->GetCurIndex() != -1)
 			_map->ChangeTile(W_MOUSE_POS, _chartIndex, _lists[_chartIndex]->GetCurBotton()->GetName());

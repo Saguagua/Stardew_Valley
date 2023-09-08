@@ -20,7 +20,7 @@ p => XMLPage
 -->
 <TextureAtlas imagePath="XMLResource2.png" width="706" height="608" scale="1" format="RGBA8888">
   <sprite n="TileButton" x="3" y="3" w="700" h="500" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>
-  <sprite n="DungeonSideWall4" x="3" y="509" w="48" h="96" pX="0.5" pY="0.5" s1="4" s2="4" p="2"/>
+  <sprite n="DungeonSideWall4" x="3" y="509" w="48" h="96" pX="0.5" pY="0.5" s1="2" s2="4" p="2"/>
   <sprite n="DungeonWallNormal" x="57" y="509" w="80" h="64" pX="0.5" pY="0.5" s1="4" s2="4" p="2"/>
   <sprite n="DungeonDoor" x="143" y="509" w="16" h="48" pX="0.5" pY="0.5" s1="1" s2="3" p="2"/>
   <sprite n="FileButton" x="143" y="563" w="32" h="27" pX="0.5" pY="0.5" s1="1" s2="1" p="2"/>

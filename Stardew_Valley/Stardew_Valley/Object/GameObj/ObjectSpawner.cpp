@@ -128,6 +128,27 @@ Crop* ObjectSpawner::CreateCrop(string name, short progress, short quality, shor
 	return crop;
 }
 
+void ObjectSpawner::DeleteObj(shared_ptr<class MapInfo> map, int index)
+{
+	vector<shared_ptr<Tile>>& tiles = map->GetInfos();
+	Vector2 objSize = _deployTable[tiles[index]->GetObjName()]->GetSize();
+	Vector2 mapSize = map->GetSize();
+
+	int maxSize = mapSize.x * mapSize.y;
+
+	for (int i = 0; i < objSize.y; i++)
+	{
+		for (int j = 0; j < objSize.x; j++)
+		{
+			int curIndex = index + j + i * mapSize.x;
+
+			if (curIndex < maxSize)
+				tiles[curIndex]->DeleteObj();
+		}
+	}
+
+}
+
 void ObjectSpawner::Update_Crops()
 {
 	for (std::list<Crop*>::iterator iter = _crops.begin(); iter != _crops.end(); )

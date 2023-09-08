@@ -265,6 +265,19 @@ shared_ptr<MapInfo> DataManager::LoadMap(string path, string mapName)
 	fin >> size.x;
 	fin >> size.y;
 
+	Vector2 startPos;
+	fin >> startPos.x;
+	fin >> startPos.y;
+
+	int tmp = 0;
+
+	while (tmp != -1)
+	{
+		fin >> tmp;
+
+	}
+
+
 	vector<shared_ptr<Tile>> infos;
 
 	string name;
@@ -463,6 +476,45 @@ void DataManager::ReadXML()
 		_xmlTable[name]->AddPosition(pos);
 		_xmlTable[name]->AddSize(size);
 		_xmlTable[name]->SetPage(L"3");
+
+		if (_deployTable.count(name) != 0)
+			_deployTable[name]->SetSize(size);
+
+		row = row->NextSiblingElement();
+	}
+
+	xmlPath = "Resource/XMLResource4.xml";
+	document = make_shared<tinyxml2::XMLDocument>();
+	document->LoadFile(xmlPath.c_str());
+
+	textureAtlas = document->FirstChildElement();
+	row = textureAtlas->FirstChildElement();
+
+	while (true)
+	{
+		if (row == nullptr)
+			break;
+
+		name = row->FindAttribute("n")->Value();
+
+		if (_xmlTable.count(name) == 0)
+		{
+			_xmlTable[name] = make_shared<XMLInfo>(name);
+		}
+
+		XMLInfo::Position pos;
+		Vector2 size;
+
+		pos.x = row->FindAttribute("x")->IntValue();
+		pos.y = row->FindAttribute("y")->IntValue();
+		pos.w = row->FindAttribute("w")->IntValue();
+		pos.h = row->FindAttribute("h")->IntValue();
+		size.x = row->FindAttribute("s1")->FloatValue();
+		size.y = row->FindAttribute("s2")->FloatValue();
+
+		_xmlTable[name]->AddPosition(pos);
+		_xmlTable[name]->AddSize(size);
+		_xmlTable[name]->SetPage(L"4");
 
 		if (_deployTable.count(name) != 0)
 			_deployTable[name]->SetSize(size);

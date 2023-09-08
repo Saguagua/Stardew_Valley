@@ -43,7 +43,7 @@ private:
 	shared_ptr<SingleColorRect> _focusRenderer;
 
 	shared_ptr<RectCollider> _collider;
-
+	vector<shared_ptr<RectCollider>> _nextAreas;
 	vector<shared_ptr<MapInfo>>& _mapInfos;
 	vector<shared_ptr<Tile>> _tiles;
 	unordered_map<string, int>& _tileInfos = DATA->GetTileInfos();

@@ -88,4 +88,5 @@ void Program::Initialize()
 	ADD_SRV(XMLPATH1);
 	ADD_SRV(XMLPATH2);
 	ADD_SRV(XMLPATH3);
+	ADD_SRV(XMLPATH4);
 }

@@ -27,6 +27,11 @@ TestScene::TestScene()
 	MONSTER_SPAWNER->SetTileMap(_map);
 
 	MONSTER_SPAWNER->Spawn(10);
+
+	_nextArea = make_shared<RectCollider>(TILE_SIZE);
+	_nextArea->SetPos(Vector2(TILE_SIZE.x * 0.5f , TILE_SIZE.y * 0.5f));
+	_nextArea->SetDebug(true);
+	_nextArea->SetColor(RED);
 }
 
 TestScene::~TestScene()
@@ -46,8 +51,11 @@ void TestScene::Update()
 
 
 	MONSTER_SPAWNER->Update();
-
+	_nextArea->Update();
 	KeyInput();
+
+	if (_nextArea->IsCollision(_player->GetCollider()))
+		_map->ChangeMap(1);
 }
 
 void TestScene::Render()
@@ -55,6 +63,7 @@ void TestScene::Render()
 	_map->Render();
 	_player->Render();
 	FishingSystem::GetInstance()->Render();
+	_nextArea->Render();
 
 	MONSTER_SPAWNER->Render();
 }

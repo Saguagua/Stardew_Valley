@@ -350,6 +350,7 @@
     <Image Include="Resource\Tile\TileBright.png" />
     <Image Include="Resource\UI\DialogBoxGreen.png" />
     <Image Include="Resource\XMLResource3.png" />
+    <Image Include="Resource\XMLResource4.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>
@@ -461,12 +462,34 @@
     <Text Include="Data\Contents\InitialMap\TestTile.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
     <Text Include="Data\SaveFiles\Dungeon.txt" />
+    <Text Include="Data\SaveFiles\Dungeon1Obj.txt" />
+    <Text Include="Data\SaveFiles\Dungeon1Tile.txt" />
+    <Text Include="Data\SaveFiles\Dungeon2Obj.txt" />
+    <Text Include="Data\SaveFiles\Dungeon2Tile.txt" />
+    <Text Include="Data\SaveFiles\Dungeon3Obj.txt" />
+    <Text Include="Data\SaveFiles\Dungeon3Tile.txt" />
+    <Text Include="Data\SaveFiles\DungeonObj.txt" />
+    <Text Include="Data\SaveFiles\DungeonTile.txt" />
     <Text Include="Data\SaveFiles\Farming.txt" />
+    <Text Include="Data\SaveFiles\FarmingObj.txt" />
+    <Text Include="Data\SaveFiles\FarmingTile.txt" />
     <Text Include="Data\SaveFiles\Fishing.txt" />
+    <Text Include="Data\SaveFiles\FishingObj.txt" />
     <Text Include="Data\SaveFiles\Test.txt" />
+    <Text Include="Data\SaveFiles\Test\Dungeon1Obj.txt" />
+    <Text Include="Data\SaveFiles\Test\Dungeon1Tile.txt" />
+    <Text Include="Data\SaveFiles\Test\Dungeon2Obj.txt" />
+    <Text Include="Data\SaveFiles\Test\Dungeon2Tile.txt" />
+    <Text Include="Data\SaveFiles\Test\Dungeon3Obj.txt" />
+    <Text Include="Data\SaveFiles\Test\Dungeon3Tile.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
+    <Text Include="Data\SaveFiles\Test\DungeonTile.txt" />
     <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
+    <Text Include="Data\SaveFiles\Test\FarmingTile.txt" />
     <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
+    <Text Include="Data\SaveFiles\Test\FishingTile.txt" />
+    <Text Include="Data\SaveFiles\Test\PlayerInfo.txt" />
+    <Text Include="Data\SaveFiles\Test\PlayerItems.txt" />
     <Text Include="Data\SaveFiles\Test\TestObj.txt" />
     <Text Include="Data\SaveFiles\Test\TestTile.txt" />
     <Text Include="Map\Save\Dungeon.txt" />
@@ -484,6 +507,7 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Resource\XMLResource3.xml" />
+    <Xml Include="Resource\XMLResource4.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

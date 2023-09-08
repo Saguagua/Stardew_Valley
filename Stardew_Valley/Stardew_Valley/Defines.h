@@ -72,3 +72,4 @@
 #define XMLPATH1			L"Resource/XMLResource1.png"
 #define XMLPATH2			L"Resource/XMLResource2.png"
 #define XMLPATH3			L"Resource/XMLResource3.png"
+#define XMLPATH4			L"Resource/XMLResource4.png"

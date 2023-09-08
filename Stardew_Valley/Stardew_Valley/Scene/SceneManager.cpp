@@ -29,7 +29,13 @@ void SceneManager::Render()
 void SceneManager::PostRender()
 {
 	_scenes[_index]->PostRender();
+	int tmp = _index;
+	ImGui::SliderInt("Index", &tmp, 0, _scenes.size()-1);
 
-	ImGui::SliderInt("Index", &_index, 0, _scenes.size()-1);
+	if (tmp != _index)
+	{
+		_index = tmp;
+		_scenes[_index]->Initialize();
+	}
 }
 

@@ -14,7 +14,9 @@ public:
 		DROP  = 6,
 		WALL  = 7,
 		DOOR  = 8,
-		BLANK = 9
+		BED	  = 9,
+		PORTAL = 10,
+		BLANK = 11
 	};
 
 	DeployableObject(DeployableObject::Type type, string name, Vector2 pos);

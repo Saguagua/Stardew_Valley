@@ -23,6 +23,8 @@ public:
 	void SetObjName(string name) { _objName = name; }
 	void SetObj(shared_ptr<DeployableObject> obj) { _obj = obj; }
 
+	void DeleteObj() { _objName = "BLANK"; _obj = nullptr; }
+
 	virtual void Interaction();
 protected:
 	string _tileName;

@@ -60,6 +60,7 @@ private:
 	string _name;
 	Vector2 _size;
 	vector<shared_ptr<Tile>> _tiles;
+
 };
 
 

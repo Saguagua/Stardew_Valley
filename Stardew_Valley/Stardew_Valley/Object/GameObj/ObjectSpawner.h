@@ -31,6 +31,8 @@ public:
 	shared_ptr<DeployableObject> CreateObj(string objName);
 	void CreateObj(shared_ptr<class MapInfo> map, int index, string objName, short val1, short val2);
 	Crop* CreateCrop(string name, short progress = 0, short quality = 2, short level = 0);
+
+	void DeleteObj(shared_ptr<class MapInfo> map, int index);
 	
 	void Update_Crops();
 	void Update();
