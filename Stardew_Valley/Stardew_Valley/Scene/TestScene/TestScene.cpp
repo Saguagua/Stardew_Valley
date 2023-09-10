@@ -7,6 +7,8 @@ TestScene::TestScene()
 	FishingSystem::Create();
 	MonsterSpawner::Create();
 	
+	EffectManager::Create();
+
 	_player = make_shared<PlayerFight>();
 	_player->GetTransform()->SetPos(CENTER);
 	PlayerUI::Create(_player);
@@ -25,13 +27,7 @@ TestScene::TestScene()
 
 	MONSTER_SPAWNER->SetPlayer(_player);
 	MONSTER_SPAWNER->SetTileMap(_map);
-
 	MONSTER_SPAWNER->Spawn(10);
-
-	_nextArea = make_shared<RectCollider>(TILE_SIZE);
-	_nextArea->SetPos(Vector2(TILE_SIZE.x * 0.5f , TILE_SIZE.y * 0.5f));
-	_nextArea->SetDebug(true);
-	_nextArea->SetColor(RED);
 }
 
 TestScene::~TestScene()
@@ -39,6 +35,7 @@ TestScene::~TestScene()
 	MonsterSpawner::Delete();
 	FishingSystem::Delete();
 	PlayerUI::Delete();
+	EffectManager::Delete();
 }
 
 void TestScene::Update()
@@ -49,13 +46,21 @@ void TestScene::Update()
 
 	_map->Blocking(_player->GetCollider());
 
+	for (int i = 0; i < _map->_teleports.size(); i++)
+	{
+		if (_player->GetCollider()->IsCollision(_map->_teleports[i]->_collider))
+		{
+			Vector2 pos = _map->_teleports[i]->_where;
+			_map->ChangeMap(_map->_teleports[i]->_destination);
+			_player->GetTransform()->SetPos(pos);
+		}
+	}
 
 	MONSTER_SPAWNER->Update();
-	_nextArea->Update();
-	KeyInput();
+	EFFECT->Update();
 
-	if (_nextArea->IsCollision(_player->GetCollider()))
-		_map->ChangeMap(1);
+	if (!CAMERA->_freeMode)
+		KeyInput();
 }
 
 void TestScene::Render()
@@ -63,9 +68,9 @@ void TestScene::Render()
 	_map->Render();
 	_player->Render();
 	FishingSystem::GetInstance()->Render();
-	_nextArea->Render();
 
 	MONSTER_SPAWNER->Render();
+	EFFECT->Render();
 }
 
 void TestScene::PostRender()
@@ -139,4 +144,6 @@ void TestScene::KeyInput()
 
 void TestScene::Initialize()
 {
+	CAMERA->_freeMode = false;
+	//CAMERA->SetPos(_player->GetWorldPos());
 }

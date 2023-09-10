@@ -12,7 +12,6 @@ TileMap::TileMap(vector<shared_ptr<MapInfo>>& mapInfo)
 	_focusRenderer->SetColor(XMFLOAT4(0, 1, 0, 0.5));
 }
 
-
 void TileMap::Blocking(shared_ptr<RectCollider> col)
 {
 	int worldIndex = GetWorldIndex(col->GetWorldPos());
@@ -81,6 +80,9 @@ void TileMap::ChangeTile(Vector2 pos, int paletteIndex, string name)
 void TileMap::SetHoeDirt(int index) //algorithm
 {
 	auto thisTile = dynamic_pointer_cast<ArableTile>(_tiles[index]);
+	if (thisTile == nullptr)
+		return;
+
 	int maxIndex = _curMapSize.x * _curMapSize.y;
 
 	if (index + 1 < maxIndex)
@@ -215,6 +217,11 @@ void TileMap::Render()
 		}
 		
 	}
+	
+	for (int i = 0; i < _teleports.size(); i++)
+	{
+		_teleports[i]->_collider->Render();
+	}
 }
 
 void TileMap::ChangeMap(int index)
@@ -223,6 +230,8 @@ void TileMap::ChangeMap(int index)
 	_curMapName = _mapInfos[index]->GetName();
 	_curMapSize = _mapInfos[index]->GetSize();
 	_tiles = _mapInfos[index]->GetInfos();
+	_teleports = _mapInfos[index]->GetTeleports();
+
 	SetCameraRange();
 }
 

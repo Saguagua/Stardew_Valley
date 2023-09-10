@@ -10,7 +10,6 @@ public:
 	TileMap(vector<shared_ptr<MapInfo>>& mapInfo);
 	~TileMap() {}
 	
-	void Update();
 	void Render();
 
 	void SetDebug(bool debug) { _collider->SetDebug(debug); }
@@ -35,6 +34,9 @@ public:
 	void ChangeTile(Vector2 pos, int paletteIndex, string name);
 
 	void SetMapInfo(vector<shared_ptr<MapInfo>> v) { _mapInfos = v; }
+
+	vector<shared_ptr<TeleportInfo>> _teleports;
+
 private:
 	void SetCameraRange();
 	void SetHoeDirt(int index);
@@ -43,7 +45,6 @@ private:
 	shared_ptr<SingleColorRect> _focusRenderer;
 
 	shared_ptr<RectCollider> _collider;
-	vector<shared_ptr<RectCollider>> _nextAreas;
 	vector<shared_ptr<MapInfo>>& _mapInfos;
 	vector<shared_ptr<Tile>> _tiles;
 	unordered_map<string, int>& _tileInfos = DATA->GetTileInfos();

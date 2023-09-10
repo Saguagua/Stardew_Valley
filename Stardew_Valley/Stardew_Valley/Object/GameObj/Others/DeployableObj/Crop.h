@@ -6,7 +6,7 @@ public:
 		:DeployableObject(DeployableObject::Type::CROP, name, pos),
 		_period(vals[0]), _progress(vals[1]), _quality(vals[2])
 	{
-		_index = vals[3];
+		_imgIndex = vals[3];
 	}
 	~Crop() {}
 

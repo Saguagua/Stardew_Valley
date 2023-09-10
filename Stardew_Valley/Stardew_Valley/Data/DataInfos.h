@@ -39,31 +39,6 @@ private:
 	int _curIndex = 0;
 };
 
-class MapInfo
-{
-public:
-	MapInfo(string name, Vector2 size, vector<shared_ptr<Tile>> tile)
-		:_name(name), _size(size), _tiles(tile)
-	{}
-
-	~MapInfo() {}
-
-	string GetName() { return _name; }
-	Vector2 GetSize() { return _size; }
-	vector<shared_ptr<Tile>>& GetInfos() { return _tiles; }
-
-	void SetName(string name) { _name = name; }
-	void SetSize(Vector2 size) { _size = size; }
-	void SetInfos(vector<shared_ptr<Tile>> infos) { _tiles = infos; }
-
-private:
-	string _name;
-	Vector2 _size;
-	vector<shared_ptr<Tile>> _tiles;
-
-};
-
-
 class LightInfo
 {
 public:
@@ -79,6 +54,39 @@ public:
 private:
 	XMFLOAT4 _color;
 	XMFLOAT4 _pos;
+};
+
+
+class TeleportInfo
+{
+public:
+	shared_ptr<RectCollider> _collider;
+	int _destination;
+	Vector2 _where;
+};
+
+class MapInfo
+{
+public:
+	MapInfo(string name, Vector2 size, vector<shared_ptr<Tile>> tile)
+		:_name(name), _size(size), _tiles(tile)
+	{}
+
+	~MapInfo() {}
+
+	string GetName() { return _name; }
+	Vector2 GetSize() { return _size; }
+	vector<shared_ptr<Tile>>& GetInfos() { return _tiles; }
+	vector<shared_ptr<TeleportInfo>>& GetTeleports() { return _teleports; }
+	void SetName(string name) { _name = name; }
+	void SetSize(Vector2 size) { _size = size; }
+	void SetInfos(vector<shared_ptr<Tile>> infos) { _tiles = infos; }
+	void SetTeleportInfo(vector<shared_ptr<TeleportInfo>> info) { _teleports = info; }
+private:
+	string _name;
+	Vector2 _size;
+	vector<shared_ptr<Tile>> _tiles;
+	vector<shared_ptr<TeleportInfo>> _teleports;
 };
 
 struct XMLInfo

@@ -40,12 +40,6 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 	renderer->Render();
 }
 
-void ArableTile::Plant(string cropName)
-{
-	_obj = ObjectSpawner::GetInstance()->CreateObj(cropName);
-	_obj->SetPos(_centerPos);
-}
-
 void ArableTile::Interaction()
 {
 	Tile::Interaction();

@@ -40,5 +40,7 @@ private:
 
 
 	std::random_device rd;
+
+	shared_ptr<class NumberUI> _number;
 };
 

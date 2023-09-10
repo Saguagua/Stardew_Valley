@@ -5,7 +5,6 @@ class Sprite
 {
 public:
 	Sprite(string name, Vector2 size, SpriteType type);
-	Sprite(wstring path, string name, Vector2 size, SpriteType type);
 	~Sprite() {}
 
 	void Render();

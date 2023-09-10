@@ -84,7 +84,7 @@ void Bat::Detect(shared_ptr<PlayerFight> player)
 	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable())
 	{
 		player->AddHP(-5);
-		player->StartUntouchable();
+		player->StartUntouchable(1.0f);
 	}
 
 	if (_detectArea->IsCollision(player->GetCollider()))

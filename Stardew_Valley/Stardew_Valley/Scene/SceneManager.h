@@ -5,6 +5,13 @@ class SceneManager
 	~SceneManager() {}
 
 public:
+	enum SceneIndex
+	{
+		MAPTOOL,
+		TEST,
+		NORMAL,
+		DUNGEON
+	};
 
 	static void Create()
 	{
@@ -31,9 +38,9 @@ public:
 
 	void PostRender();
 
+	int _index = 0;
 private:
 	static SceneManager* _instance;
-	int _index = 0;
 
 	vector<shared_ptr<Scene>> _scenes;
 };

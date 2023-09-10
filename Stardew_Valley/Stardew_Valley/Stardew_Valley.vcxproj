@@ -153,6 +153,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Bed.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Door.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Light.h" />
+    <ClInclude Include="Object\Effect\EffectManager.h" />
+    <ClInclude Include="Object\Effect\DamageEffect.h" />
+    <ClInclude Include="Object\Effect\Effect.h" />
+    <ClInclude Include="Object\UI\NumberUI.h" />
     <ClInclude Include="Scene\InGame\DungeonScene.h" />
     <ClInclude Include="Scene\InGame\NormalScene.h" />
     <ClInclude Include="Object\GameObj\Creature\Monsters\MonsterSpawner.h" />
@@ -249,6 +256,13 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Bed.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Door.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Light.cpp" />
+    <ClCompile Include="Object\Effect\EffectManager.cpp" />
+    <ClCompile Include="Object\Effect\DamageEffect.cpp" />
+    <ClCompile Include="Object\Effect\Effect.cpp" />
+    <ClCompile Include="Object\UI\NumberUI.cpp" />
     <ClCompile Include="Scene\InGame\DungeonScene.cpp" />
     <ClCompile Include="Scene\InGame\NormalScene.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Monsters\MonsterSpawner.cpp" />
@@ -461,27 +475,6 @@
     <Text Include="Data\Contents\InitialMap\TestObj.txt" />
     <Text Include="Data\Contents\InitialMap\TestTile.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
-    <Text Include="Data\SaveFiles\Dungeon.txt" />
-    <Text Include="Data\SaveFiles\Dungeon1Obj.txt" />
-    <Text Include="Data\SaveFiles\Dungeon1Tile.txt" />
-    <Text Include="Data\SaveFiles\Dungeon2Obj.txt" />
-    <Text Include="Data\SaveFiles\Dungeon2Tile.txt" />
-    <Text Include="Data\SaveFiles\Dungeon3Obj.txt" />
-    <Text Include="Data\SaveFiles\Dungeon3Tile.txt" />
-    <Text Include="Data\SaveFiles\DungeonObj.txt" />
-    <Text Include="Data\SaveFiles\DungeonTile.txt" />
-    <Text Include="Data\SaveFiles\Farming.txt" />
-    <Text Include="Data\SaveFiles\FarmingObj.txt" />
-    <Text Include="Data\SaveFiles\FarmingTile.txt" />
-    <Text Include="Data\SaveFiles\Fishing.txt" />
-    <Text Include="Data\SaveFiles\FishingObj.txt" />
-    <Text Include="Data\SaveFiles\Test.txt" />
-    <Text Include="Data\SaveFiles\Test\Dungeon1Obj.txt" />
-    <Text Include="Data\SaveFiles\Test\Dungeon1Tile.txt" />
-    <Text Include="Data\SaveFiles\Test\Dungeon2Obj.txt" />
-    <Text Include="Data\SaveFiles\Test\Dungeon2Tile.txt" />
-    <Text Include="Data\SaveFiles\Test\Dungeon3Obj.txt" />
-    <Text Include="Data\SaveFiles\Test\Dungeon3Tile.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonTile.txt" />
     <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />

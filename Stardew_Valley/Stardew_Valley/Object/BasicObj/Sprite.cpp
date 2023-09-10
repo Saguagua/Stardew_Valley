@@ -15,11 +15,6 @@ Sprite::Sprite(string name, Vector2 size, SpriteType type)
 	SetImage(name);
 }
 
-Sprite::Sprite(wstring path, string name, Vector2 size, SpriteType type)
-{
-
-}
-
 void Sprite::Render()
 {
 	LightManager::GetInstance()->Set_Shader();

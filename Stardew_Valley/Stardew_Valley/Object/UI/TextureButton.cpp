@@ -9,8 +9,9 @@ TextureButton::TextureButton(string name, Vector2 size)
 
 void TextureButton::Render()
 {
-	_col->Render();
+	_col->GetTransform()->Set_World();
 	_renderer->Render();
+	_col->Render();
 }
 
 void TextureButton::PostRender()

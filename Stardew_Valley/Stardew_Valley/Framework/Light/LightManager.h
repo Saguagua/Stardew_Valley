@@ -40,7 +40,7 @@ public:
 	}
 
 	void Update();
-
+	int AddLight(shared_ptr<LightInfo> info);
 private:
 	static LightManager* _instance;
 	shared_ptr<LightPosBuffer> _posBuffer;

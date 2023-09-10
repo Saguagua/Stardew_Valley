@@ -15,7 +15,7 @@ void Crop::Update()
 		_progress++;
 
 		//if (_progress % 2 == 0)
-			_index++;
+		_imgIndex++;
 	}
 
 	_quality -= 1;
@@ -35,7 +35,7 @@ void Crop::Interaction()
 		return;
 	if (_name == "CropKidneyBean")
 	{
-		_index = 7;
+		_imgIndex = 7;
 	}
 	else
 	{

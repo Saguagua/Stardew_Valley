@@ -4,6 +4,7 @@ Hoe 1
 WateringCan 1
 Axe 1
 PickAxe 1
-PotatoSeed 1
+PotatoSeed 10
 Radish 1
 FishingRod 1
+Sword 1

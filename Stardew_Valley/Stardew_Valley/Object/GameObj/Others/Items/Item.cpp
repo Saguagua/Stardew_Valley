@@ -183,10 +183,12 @@ void Item::Eat(shared_ptr<PlayerFight> p)
 		
 		_count--;
 
-		if (_count >= 0)
+		if (_count <= 0)
 		{
 			SetItem("BLANK", 0);
 		}
+
+		p->SendToSubscribers(PlayerSubscribe::ITEMS);
 	}
 }
 
@@ -196,11 +198,26 @@ void Item::Seed(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 	{
 		_point = W_MOUSE_POS;
 		auto tile = dynamic_pointer_cast<ArableTile>(m->GetFocusedTile(p->GetWorldPos(), _point));
-		if (tile->GetPlantable() && tile->GetObj() == nullptr)
-			tile->Plant(_subName);
+
+		if (tile == nullptr)
+			return;
+
+		if (!tile->GetPlantable() || tile->GetObj() != nullptr)
+			return;
+
+		OBJECT_SPAWNER->CreateObj(m->GetcurrentMapInfo(), m->GetFocusedIndex(p->GetWorldPos(), _point), _subName, 1, 1);
+		_count--;
+
+		if (_count <= 0)
+		{
+			SetItem("BLANK", 0);
+		}
+
+		p->SendToSubscribers(PlayerSubscribe::ITEMS);
 	}
 }
 
 void Item::Fertilizer(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 }
+

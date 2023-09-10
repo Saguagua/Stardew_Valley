@@ -20,6 +20,9 @@ ItemSlot::ItemSlot(shared_ptr<PlayerImproved> player)
 	startPos.y = 0;
 
 	SetButtons(startPos, space);
+
+	_number = make_shared<NumberUI>(0, 2, Vector2(20, 20));
+	_number->_originPos = Vector2(15, -15);
 }
 
 void ItemSlot::Update()
@@ -28,6 +31,24 @@ void ItemSlot::Update()
 		return;
 
 	List::Update();
+}
+
+void ItemSlot::Render()
+{
+	if (!_isActive)
+		return;
+
+	_transform->Set_World(0);
+	_body->Render();
+
+	for (int i = 0; i < _buttons.size(); i++)
+	{
+		_buttons[i]->PostRender();
+		_number->_transform->SetParent(_buttons[i]->GetTransform());
+		_number->_transform->Update();
+		_number->SetNumber(_player.lock()->GetItem(i)->GetCount());
+		_number->Render();
+	}
 }
 
 void ItemSlot::PushButtonEvent(int index)

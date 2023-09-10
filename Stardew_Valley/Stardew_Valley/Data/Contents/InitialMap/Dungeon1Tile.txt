@@ -1,5 +1,5 @@
 30 30
-0 0
+0 0 0 0 0 0 0
 -1
 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4
 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4 DungeonTile4

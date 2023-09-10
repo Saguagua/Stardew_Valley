@@ -34,8 +34,11 @@ public:
 	float GetRunTime() { return _runTime; }
 	void LockRunTime(float val) { _lockFPS = val; }
 	int GetHour() { return _hour; }
+	int GetMinute() { return _minute; }
 	int GetTime() { return _hour * 10 + _minute; }
 	int GetDayTime() { return _hour < 17.0f ? 0 : 1; }
+
+	void SetNextDay() { _hour = 6; _minute = 0; }
 private:
 	static Timer* _instance;
 

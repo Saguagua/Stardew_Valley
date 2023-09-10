@@ -28,6 +28,7 @@ public:
 	}
 
 	void Update();
+	void PostRender();
 	void SetPostViewPort();
 
 	void SetViewPort(UINT width = WIN_WIDTH, UINT height = WIN_HEIGHT);

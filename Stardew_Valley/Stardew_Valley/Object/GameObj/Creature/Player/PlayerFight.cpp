@@ -41,7 +41,6 @@ void PlayerFight::Update()
 {
 	PlayerImproved::Update();
 
-
 	if (_isAttacking)
 	{
 		_attackCount += DELTA_TIME;

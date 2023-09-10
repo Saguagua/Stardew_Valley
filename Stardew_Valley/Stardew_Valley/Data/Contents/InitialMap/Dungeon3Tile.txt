@@ -1,5 +1,5 @@
 20 40
-0 0
+0 0 0 0 0 0 0
 -1
 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3
 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3 DungeonTile3

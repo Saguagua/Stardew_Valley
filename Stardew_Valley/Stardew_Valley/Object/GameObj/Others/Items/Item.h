@@ -56,7 +56,7 @@ protected:
 
 	short _type = Type::BLANK;
 	short _price;
-	short _count;
+	short _count = 0.0f;
 
 	vector<short> _vals;
 

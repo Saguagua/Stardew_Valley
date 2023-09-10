@@ -29,6 +29,7 @@ public:
 	short GetStamina() { return _stamina; }
 	int GetCurIndex() { return _curIndex; }
 	vector<shared_ptr<Item>>& GetItems() { return _items; }
+	shared_ptr<Item> GetItem(int index) { return _items[index]; }
 
 protected:
 	void GetDatas();

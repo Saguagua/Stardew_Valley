@@ -8,8 +8,8 @@ LightManager::LightManager()
 	_colorBuffer = make_shared<LightColorBuffer>();
 	_posBuffer = make_shared<LightPosBuffer>();
 
-	XMFLOAT4* poses = _posBuffer->GetPoses();
-	XMFLOAT4* colors = _colorBuffer->GetColors();
+	/*XMFLOAT4* poses = _posBuffer->GetPoses();
+	XMFLOAT4* colors = _colorBuffer->GetColors();*/
 	_colorBuffer->GetSun() = { 0.8f, 0.8f, 0.8f, 1.0f };
 
 	/*poses[0] = { 60, 60, 0, 0 };
@@ -48,6 +48,26 @@ void LightManager::Update()
 	}
 
 	_colorBuffer->Update();
+}
+
+int LightManager::AddLight(shared_ptr<LightInfo> info)
+{
+	for (int i = 0; i < 29; i++)
+	{
+		if (!_posBuffer->_lightOn[i])
+		{
+			XMFLOAT4* poses = _posBuffer->GetPoses();
+			XMFLOAT4* colors = _colorBuffer->GetColors();
+			poses[i] = info->GetPos();
+			colors[i+1] = info->GetColor();
+			_posBuffer->_lightOn[i] = true;
+
+			_posBuffer->Update();
+			_colorBuffer->Update();
+			return i;
+		}
+	}
+	return -1;
 }
 
 void LightManager::SetLight(shared_ptr<LightInfo> info)

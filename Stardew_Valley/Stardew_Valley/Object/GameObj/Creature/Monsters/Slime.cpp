@@ -143,7 +143,7 @@ void Slime::Charging()
 {
 	if (_actions[_actionIndex]->GetCurFrame().x == 1)
 	{
-		_jumpPower = 15.0f;
+		_jumpPower = 10.0f;
 	}
 }
 
@@ -164,7 +164,7 @@ void Slime::Detect(shared_ptr<PlayerFight> player)
 	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable())
 	{
 		player->AddHP(-5);
-		player->StartUntouchable();
+		player->StartUntouchable(1.0f);
 	}
 	
 	if (_jumpPower <= 0)

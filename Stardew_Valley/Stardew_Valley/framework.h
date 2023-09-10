@@ -96,12 +96,16 @@ using namespace Microsoft::WRL;
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/RectCollider.h"
 
+
 //GameObject
 #include "Object\GameObj\Others\GameObject.h"
 #include "Object\GameObj\Others\DeployableObj/DeployableObject.h"
 #include "Object\GameObj\Others\DeployableObj\BreakableItem.h"
 #include "Object\GameObj\Others\DeployableObj/Crop.h"
 #include "Object\GameObj\Others\DeployableObj/PickableItem.h"
+#include "Object/GameObj/Others/DeployableObj/Bed.h"
+#include "Object/GameObj/Others/DeployableObj/Door.h"
+#include "Object/GameObj/Others/DeployableObj/Light.h"
 #include "Object\GameObj\Others\DeployableObj\Wall.h"
 
 
@@ -115,10 +119,16 @@ using namespace Microsoft::WRL;
 //Animation
 #include "Framework/Animation/Action.h"
 
+//Effect
+#include "Object/Effect/Effect.h"
+#include "Object/Effect/DamageEffect.h"
+#include "Object/Effect/EffectManager.h"
+
 #include "Object\GameObj\Others\DeployableObj\FishingHook.h"
 #include "Object\UI\FishingMinigame.h"
 
 #include "Object\GameObj\Creature\Creature.h"
+
 //Player
 #include "Object/GameObj/Creature/Player/Player.h"
 #include "Object/GameObj/Creature/Player/PlayerSubscribe.h"
@@ -131,6 +141,7 @@ using namespace Microsoft::WRL;
 #include "Object/GameObj/Creature/Monsters/MonsterSpawner.h"
 
 //UI
+#include "Object/UI/NumberUI.h"
 #include "Object/UI/Button.h"
 #include "Object/UI/ColorButton.h"
 #include "Object/UI/TextureButton.h"

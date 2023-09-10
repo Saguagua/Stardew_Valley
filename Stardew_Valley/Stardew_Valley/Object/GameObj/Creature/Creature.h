@@ -27,7 +27,7 @@ public:
 	bool IsActive() { return _isActive; }
 	bool IsFreeze() { return _freeze; }
 	void SetActive(bool val) { _isActive = val; }
-	void StartUntouchable() { _untouchable = 1.0f; }
+	void StartUntouchable(float val) { _untouchable = val; }
 	bool IsUntouchable() { return _untouchable > 0; }
 	void SetDirection(Vector2 pos);
 protected:

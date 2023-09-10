@@ -29,6 +29,15 @@ void Camera::Update()
 	_view->Update();
 }
 
+void Camera::PostRender()
+{
+	if (ImGui::BeginMenu("Camera"))
+	{
+		ImGui::Checkbox("FreeMode", (bool*)&_freeMode);
+		ImGui::EndMenu();
+	}
+}
+
 void Camera::SetPostViewPort()
 {
 	_postView->Set_VS(1);

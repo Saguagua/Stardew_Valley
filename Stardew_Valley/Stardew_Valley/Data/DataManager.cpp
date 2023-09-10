@@ -24,6 +24,7 @@ void DataManager::MapToolSave()
 		string mapName = _initialMapInfos[i]->GetName();
 		Vector2 size = _initialMapInfos[i]->GetSize();
 		vector<shared_ptr<Tile>> tileInfo = _initialMapInfos[i]->GetInfos();
+		vector<shared_ptr<TeleportInfo>> teleports = _initialMapInfos[i]->GetTeleports();
 
 		if (_mapTable.count(mapName) == false)
 		{
@@ -37,6 +38,19 @@ void DataManager::MapToolSave()
 		fout.open("Data/Contents/InitialMap/" + mapName + "Tile.txt");
 
 		fout << size.x << " " << size.y << endl;
+
+		for (int i = 0; i < teleports.size(); i++)
+		{
+			Vector2 colSize = teleports[i]->_collider->GetWorldSize();
+			Vector2 worldPos = teleports[i]->_collider->GetWorldPos();
+
+			fout << colSize.x / TILE_SIZE.x << " " << colSize.y / TILE_SIZE.y << " ";
+			fout << worldPos.x << " " << worldPos.y << " ";
+			fout << teleports[i]->_destination << " ";
+			fout << teleports[i]->_where.x << " " << teleports[i]->_where.y << endl;
+		}
+
+		fout << -1 << endl;
 
 		for (int i = 0; i < tileInfo.size(); i++)
 		{
@@ -265,19 +279,38 @@ shared_ptr<MapInfo> DataManager::LoadMap(string path, string mapName)
 	fin >> size.x;
 	fin >> size.y;
 
-	Vector2 startPos;
-	fin >> startPos.x;
-	fin >> startPos.y;
+	vector<shared_ptr<TeleportInfo>> teleportInfos;
+	Vector2 rectSize;
+	Vector2 pos;
+	int index = 0;
+	Vector2 where;
 
-	int tmp = 0;
-
-	while (tmp != -1)
+	while (true)
 	{
-		fin >> tmp;
+		fin >> rectSize.x;
+		if (rectSize.x == -1)
+			break;
+		fin >> rectSize.y;
+		rectSize.x *= TILE_SIZE.x;
+		rectSize.y *= TILE_SIZE.y;
 
+		fin >> pos.x;
+		fin >> pos.y;
+		fin >> index;
+		fin >> where.x;
+		fin >> where.y;
+		auto teleport = make_shared<TeleportInfo>();
+		teleport->_collider = make_shared<RectCollider>(rectSize);
+		teleport->_collider->SetPos(pos);
+		teleport->_collider->SetDebug(true);
+		teleport->_collider->Update();
+
+		teleport->_destination = index;
+		teleport->_where = where;
+
+		teleportInfos.push_back(teleport);
 	}
-
-
+	
 	vector<shared_ptr<Tile>> infos;
 
 	string name;
@@ -322,10 +355,11 @@ shared_ptr<MapInfo> DataManager::LoadMap(string path, string mapName)
 	fin.close();
 
 	shared_ptr<MapInfo> mapInfo = make_shared<MapInfo>(mapName, size, infos);
+	mapInfo->SetTeleportInfo(teleportInfos);
 
 	fin.open(path + mapName + "Obj.txt");
 
-	int index = 0;
+	index = 0;
 
 	while (!fin.eof())
 	{

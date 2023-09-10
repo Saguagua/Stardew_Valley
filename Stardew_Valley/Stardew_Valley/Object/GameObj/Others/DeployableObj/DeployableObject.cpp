@@ -9,12 +9,12 @@ DeployableObject::DeployableObject(DeployableObject::Type type, string name, Vec
 void DeployableObject::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 {
 	col->SetPos(_centerPos);
-	col->SetScale(DATA->GetXMLInfo(_name)->GetSize(_index));
+	col->SetScale(DATA->GetXMLInfo(_name)->GetSize(_imgIndex));
 	col->Update();
 
 	col->GetTransform()->Set_World(0);
 
-	renderer->SetImage(_name, _index);
+	renderer->SetImage(_name, _imgIndex);
 	renderer->Render();
 
 	col->Render();

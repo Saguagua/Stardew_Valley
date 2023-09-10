@@ -38,5 +38,6 @@ DungeonDoor          8   0    0   0
 Elevator			 8   0    0   0				 
 DungeonGate			 8   0    0   0
 Bed					 9 0 0 0
+Bed2			     9 0 0 0
 Portal				10 0 0 0
 BLANK				 11	0	 0	 0

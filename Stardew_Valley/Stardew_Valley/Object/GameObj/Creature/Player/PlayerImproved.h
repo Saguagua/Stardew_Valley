@@ -25,12 +25,12 @@ public:
 	bool AddItem(string name);
 
 	void SetFreeze(bool val) { _freeze = val; }
+	void SendToSubscribers(int type);
 protected:
 	void ChangeIndex();
 	void ItemAction();
 	virtual void SetPause(bool val) override;
 
-	void SendToSubscribers(int type);
 
 	list<PlayerSubscribe*> _subscribers;
 };

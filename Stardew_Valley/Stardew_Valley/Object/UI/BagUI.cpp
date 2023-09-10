@@ -9,9 +9,13 @@ BagUI::BagUI(shared_ptr<PlayerImproved> player)
 {
 	_transform = make_shared<Transform>();
 	_objSlot = make_shared<Transform>();
+	
+	_number = make_shared<NumberUI>(0, 2, Vector2(20, 20));
+	_number->_originPos = Vector2(14, -25);
 
 	_body = make_shared<Sprite>( "BagUI", Vector2(700, 300), SpriteType::UI);
 	_obj = make_shared<Sprite>("BLANK", Vector2(40, 50), SpriteType::UI);
+
 
 	CreateButtons();
 
@@ -39,7 +43,17 @@ void BagUI::Render()
 	if (!_isActive)
 		return;
 
-	List::Render();
+	_transform->Set_World(0);
+	_body->Render();
+
+	for (int i = 0; i < _buttons.size(); i++)
+	{
+		_buttons[i]->PostRender();
+		_number->_transform->SetParent(_buttons[i]->GetTransform());
+		_number->_transform->Update();
+		_number->SetNumber(_player.lock()->GetItem(i)->GetCount());
+		_number->Render();
+	}
 
 	if (_selectedIndex != -1)
 	{

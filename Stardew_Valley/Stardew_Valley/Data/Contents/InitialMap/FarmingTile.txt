@@ -1,7 +1,6 @@
 40 30
-20 15
-1 0 20
-2 39 20
+8 1 800 1220 2 400 40
+1 7 1620 620 1 40 700
 -1
 Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Dirt Dirt Dirt Dirt Dirt Dirt Dirt Dirt Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass
 Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass GrassFlower Dirt Dirt Dirt Dirt Dirt Dirt Dirt Dirt Grass GrassFlower Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass Grass

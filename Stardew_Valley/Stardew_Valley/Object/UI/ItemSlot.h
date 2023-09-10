@@ -6,12 +6,15 @@ public:
 	~ItemSlot() {}
 
 	void Update();
+	void Render();
+
 
 	void PushButtonEvent(int index);
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
 private:
 	void CreateButtons(int count);
+	shared_ptr<NumberUI> _number;
 
 };
 

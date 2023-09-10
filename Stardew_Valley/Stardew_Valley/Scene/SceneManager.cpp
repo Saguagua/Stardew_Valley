@@ -11,7 +11,6 @@ SceneManager::SceneManager()
 {
 	_scenes.push_back(make_shared<MapToolScene>());
 	_scenes.push_back(make_shared<TestScene>());
-	_scenes.push_back(make_shared<ColliderScene>());
 	_scenes.push_back(make_shared<NormalScene>());
 	_scenes.push_back(make_shared<DungeonScene>());
 }

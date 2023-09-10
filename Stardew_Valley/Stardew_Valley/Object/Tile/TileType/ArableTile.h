@@ -21,8 +21,6 @@ public:
 
 	virtual void Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col) override;
 
-	void Plant(string cropName);
-
 	void SetPlantable(bool val) { _plantable = val; }
 
 	bool GetPlantable() { return _plantable; }

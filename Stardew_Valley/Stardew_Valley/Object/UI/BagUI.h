@@ -15,9 +15,9 @@ private:
 	void CreateButtons();
 
 	void ClickItem(int index);
-
 	shared_ptr<Transform> _objSlot;
 	shared_ptr<Sprite> _obj;
+	shared_ptr<NumberUI> _number;
 
 	int _selectedIndex = -1;
 };

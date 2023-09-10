@@ -142,7 +142,10 @@ struct LightPosBuffer : public ConstantBuffer
 	LightPosBuffer() :ConstantBuffer(&_data, sizeof(_data))
 	{
 		for (int i = 0; i < 29; i++)
+		{
 			_data.poses[i] = { -1,-1,-1,-1 };
+			_lightOn[i] = false;
+		}
 	}
 
 	~LightPosBuffer() {}
@@ -152,6 +155,7 @@ struct LightPosBuffer : public ConstantBuffer
 		return _data.poses;
 	}
 
+	bool _lightOn[29];
 private:
 	struct Data
 	{
@@ -210,6 +214,7 @@ struct LightColorBuffer : public ConstantBuffer
 		if (_data.colors[0].z > 1.2)
 			_data.colors[0].z = 1.2;
 	}
+	
 private:
 	struct Data
 	{

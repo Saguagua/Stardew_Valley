@@ -7,13 +7,13 @@ public:
 	virtual ~GameObject() {}
 
 	string GetName() { return _name; }
-	int GetIndex() { return _index; }
+	int GetIndex() { return _imgIndex; }
 
 	void SetName(string name) { _name = name; }
 	bool IsActive() { return _isActive; }
 protected:
 	string _name;
 	bool _isActive = true;
-	int _index = 0;
+	int _imgIndex = 0;
 };
 

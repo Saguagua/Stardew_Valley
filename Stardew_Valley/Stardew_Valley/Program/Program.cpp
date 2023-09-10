@@ -14,8 +14,8 @@ Program::Program()
 	TIMER->LockRunTime(60);
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
 
-	ObjectSpawner::Create();
 	LightManager::Create();
+	ObjectSpawner::Create();
 	SceneManager::Create();
 }
 
@@ -26,8 +26,8 @@ Program::~Program()
 	ImGui::DestroyContext();
 
 	SceneManager::Delete();
-	LightManager::Delete();
 	ObjectSpawner::Delete();
+	LightManager::Delete();
 }
 
 void Program::Update()
@@ -60,6 +60,7 @@ void Program::Render()
 	CAMERA->SetPostViewPort();
 
 	SCENEMANAGER->PostRender();
+	CAMERA->PostRender();
 
 	// Rendering
 	ImGui::Render();

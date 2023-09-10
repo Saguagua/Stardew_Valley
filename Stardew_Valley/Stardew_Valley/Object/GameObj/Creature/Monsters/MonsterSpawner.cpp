@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "MonsterSpawner.h"
+#include "Object/UI/NumberUI.h"
 MonsterSpawner* MonsterSpawner::_instance = nullptr;
 
 MonsterSpawner::MonsterSpawner()
@@ -12,7 +13,7 @@ MonsterSpawner::MonsterSpawner()
 	{
 		_monsters.push_back(make_shared<Bat>());
 	}
-
+	_number = make_shared<NumberUI>(0, 1, Vector2(30, 30));
 }
 
 void MonsterSpawner::Update()
@@ -36,7 +37,8 @@ void MonsterSpawner::Update()
 					Vector2 dir = (monster->GetWorldPos() - _player.lock()->GetWorldPos()).Normalize();
 					monster->AddPos(dir * 10);
 					monster->AddHP(-2);
-					monster->StartUntouchable();
+					monster->StartUntouchable(0.5f);
+					EFFECT->ActiveDamage(2, monster->GetWorldPos());
 				}
 			}
 
@@ -54,6 +56,7 @@ void MonsterSpawner::Render()
 
 		monster->Render();
 	}
+	_number->Render();
 }
 
 void MonsterSpawner::PostRender()
