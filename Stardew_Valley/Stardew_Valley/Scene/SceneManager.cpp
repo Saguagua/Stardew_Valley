@@ -28,13 +28,18 @@ void SceneManager::Render()
 void SceneManager::PostRender()
 {
 	_scenes[_index]->PostRender();
-	int tmp = _index;
-	ImGui::SliderInt("Index", &tmp, 0, _scenes.size()-1);
-
-	if (tmp != _index)
+	if (ImGui::BeginMenu("SceneManager"))
 	{
-		_index = tmp;
-		_scenes[_index]->Initialize();
+		int tmp = _index;
+		ImGui::SliderInt("Index", &tmp, 0, _scenes.size() - 1);
+
+		if (tmp != _index)
+		{
+			_index = tmp;
+			_scenes[_index]->Initialize();
+		}
+
+		ImGui::EndMenu();
 	}
 }
 

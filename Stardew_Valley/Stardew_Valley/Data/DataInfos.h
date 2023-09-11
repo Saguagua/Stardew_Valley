@@ -70,7 +70,10 @@ class MapInfo
 public:
 	MapInfo(string name, Vector2 size, vector<shared_ptr<Tile>> tile)
 		:_name(name), _size(size), _tiles(tile)
-	{}
+	{
+		_lightColors = make_shared<LightColorBuffer>();
+		_lightPoses = make_shared<LightPosBuffer>();
+	}
 
 	~MapInfo() {}
 
@@ -78,15 +81,44 @@ public:
 	Vector2 GetSize() { return _size; }
 	vector<shared_ptr<Tile>>& GetInfos() { return _tiles; }
 	vector<shared_ptr<TeleportInfo>>& GetTeleports() { return _teleports; }
+	shared_ptr<LightColorBuffer> GetLightColors() { return _lightColors; }
+	shared_ptr<LightPosBuffer> GetLightPoses() { return _lightPoses; }
+
 	void SetName(string name) { _name = name; }
 	void SetSize(Vector2 size) { _size = size; }
 	void SetInfos(vector<shared_ptr<Tile>> infos) { _tiles = infos; }
 	void SetTeleportInfo(vector<shared_ptr<TeleportInfo>> info) { _teleports = info; }
+	void SetLightColors(shared_ptr<LightColorBuffer> color) { _lightColors = color; }
+	void SetLightPoses(shared_ptr<LightPosBuffer> pos) { _lightPoses = pos; }
+
+	int AddLight(shared_ptr<LightInfo> light)
+	{
+		for (int i = 0; i < 29; i++)
+		{
+			if (!_lightPoses->_lightOn[i])
+			{
+				XMFLOAT4* poses = _lightPoses->GetPoses();
+				XMFLOAT4* colors = _lightColors->GetColors();
+				poses[i] = light->GetPos();
+				colors[i + 1] = light->GetColor();
+				_lightPoses->_lightOn[i] = true;
+
+				_lightPoses->Update();
+				_lightColors->Update();
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
 private:
 	string _name;
 	Vector2 _size;
 	vector<shared_ptr<Tile>> _tiles;
 	vector<shared_ptr<TeleportInfo>> _teleports;
+	shared_ptr<LightColorBuffer> _lightColors;
+	shared_ptr<LightPosBuffer> _lightPoses;
 };
 
 struct XMLInfo

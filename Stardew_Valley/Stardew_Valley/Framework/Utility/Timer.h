@@ -28,17 +28,21 @@ public:
 	}
 
 	void Update();
+	void PostRender();
 
 	int GetFPS() { return _frameRate; }
 	float GetDeltaTime() { return _deltaTime; }
 	float GetRunTime() { return _runTime; }
 	void LockRunTime(float val) { _lockFPS = val; }
-	int GetHour() { return _hour; }
-	int GetMinute() { return _minute; }
-	int GetTime() { return _hour * 10 + _minute; }
+
+	int& GetMaxHour() { return _maxHour; }
+	int& GetMaxMinute() { return _maxMinute; }
+	int& GetHour() { return _hour; }
+	int& GetMinute() { return _minute; }
+
 	int GetDayTime() { return _hour < 17.0f ? 0 : 1; }
 
-	void SetNextDay() { _hour = 6; _minute = 0; }
+	void SetNextDay();
 private:
 	static Timer* _instance;
 
@@ -57,6 +61,8 @@ private:
 	float _lockFPS = 0.0;
 	int _hour = 6;
 	int _minute = 0;
+	int _maxMinute = 6;
+	int _maxHour = 24;
 
 	bool _dayTime = true;
 };

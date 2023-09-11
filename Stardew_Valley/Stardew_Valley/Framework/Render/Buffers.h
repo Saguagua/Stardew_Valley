@@ -180,9 +180,9 @@ struct LightColorBuffer : public ConstantBuffer
 		return _data.colors;
 	}
 
-	XMFLOAT4& GetSun()
+	void SetSun(XMFLOAT4 sun)
 	{
-		return _data.colors[0];
+		_data.colors[0] = sun;
 	}
 
 	void GetDarker(XMFLOAT4 val)

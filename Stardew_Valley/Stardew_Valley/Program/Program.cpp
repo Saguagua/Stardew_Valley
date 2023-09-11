@@ -37,7 +37,7 @@ void Program::Update()
 
 	InputManager::GetInstance()->Update();
 	OBJECT_SPAWNER->Update();
-	LightManager::GetInstance()->Update();
+	//LightManager::GetInstance()->Update();
 	SCENEMANAGER->Update();
 }
 
@@ -61,6 +61,7 @@ void Program::Render()
 
 	SCENEMANAGER->PostRender();
 	CAMERA->PostRender();
+	TIMER->PostRender();
 
 	// Rendering
 	ImGui::Render();

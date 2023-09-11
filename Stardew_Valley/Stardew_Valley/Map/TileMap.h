@@ -20,7 +20,6 @@ public:
 	
 	shared_ptr<Tile> GetWorldTile(Vector2 pos);
 	shared_ptr<Tile> GetFocusedTile(Vector2 orginPos, Vector2 targetPos);
-	vector<shared_ptr<Tile>> GetFocusedTiles(Vector2 point, short level);
 	
 	vector<shared_ptr<MapInfo>>& GetMapInfos() { return _mapInfos; }
 	shared_ptr<MapInfo> GetcurrentMapInfo() { return _mapInfos[_curMapIndex]; }
@@ -47,6 +46,8 @@ private:
 	shared_ptr<RectCollider> _collider;
 	vector<shared_ptr<MapInfo>>& _mapInfos;
 	vector<shared_ptr<Tile>> _tiles;
+	shared_ptr<LightPosBuffer> _lightPoses;
+	shared_ptr<LightColorBuffer> _lightColors;
 	unordered_map<string, int>& _tileInfos = DATA->GetTileInfos();
 
 	string _curMapName;

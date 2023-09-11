@@ -231,7 +231,8 @@ void TileMap::ChangeMap(int index)
 	_curMapSize = _mapInfos[index]->GetSize();
 	_tiles = _mapInfos[index]->GetInfos();
 	_teleports = _mapInfos[index]->GetTeleports();
-
+	LightManager::GetInstance()->Set_Light(_mapInfos[index]->GetLightColors(), _mapInfos[index]->GetLightPoses());
+	LightManager::GetInstance()->UpdateSun();
 	SetCameraRange();
 }
 
@@ -335,74 +336,6 @@ int TileMap::GetFocusedIndex(Vector2 orginPos, Vector2 targetPos)
 shared_ptr<Tile> TileMap::GetFocusedTile(Vector2 orginPos, Vector2 targetPos)
 {
 	return _tiles[GetFocusedIndex(orginPos, targetPos)];
-}
-
-vector<shared_ptr<Tile>> TileMap::GetFocusedTiles(Vector2 point, short level)
-{
-	/*Vector2 target = point - Player::GetInstance()->GetWorldPos();
-	int worldIndex = GetWorldIndex(Player::GetInstance()->GetWorldPos());
-	float angle = target.Angle() * 57.2958f;
-	int dir, dir2;
-
-	if (angle > -35.0f && angle <= 35.0f)
-	{
-		dir = 1;
-		dir2 = _curMapSize.x;
-	}
-	else if (angle > 35.0f && angle <= 105.0f)
-	{
-		dir = _curMapSize.x;
-		dir2 = 1;
-	}
-	else if (angle > -105.0f && angle <= -35.0f)
-	{
-		dir = -_curMapSize.x;
-		dir2 = -1;
-	}
-	else
-	{
-		dir = -1;
-		dir2 = -_curMapSize.x;
-	}
-
-	worldIndex += dir;
-
-	vector<shared_ptr<Tile>> tiles;
-
-	switch (level)
-	{
-	case 0:
-	{
-		tiles.push_back(_tiles[worldIndex]);
-		break;
-	}
-	case 1:
-	{
-		for (int i = 0; i < 3; i++)
-		{
-			if (worldIndex + i * dir >= 0 && worldIndex + i * dir < _curMapSize.x * _curMapSize.y)
-				tiles.push_back(_tiles[worldIndex + i * dir]);
-		}
-		break;
-	}
-	case 2:
-	{
-
-		for (int i = -2; i < 1; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
-				if (worldIndex + j * dir + (dir2 + i * dir2) >= 0 && worldIndex + j * dir + (dir2 + i * dir2) < _curMapSize.x * _curMapSize.y)
-					tiles.push_back(_tiles[worldIndex + j * dir + (dir2 + i * dir2)]);
-			}
-		}
-		break;
-	}
-	}
-
-	return tiles;*/
-	vector<shared_ptr<Tile>> tiles;
-	return tiles;
 }
 
 vector<int> TileMap::GetFocusedIndices(Vector2 originPos, Vector2 targetPos, short level)

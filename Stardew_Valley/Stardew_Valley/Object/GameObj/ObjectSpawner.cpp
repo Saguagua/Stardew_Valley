@@ -116,7 +116,10 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	{
 		shared_ptr<LightInfo> info = make_shared<LightInfo>(XMFLOAT4(1000, 1000, 0, 1), XMFLOAT4(centerPos.x, centerPos.y, 0, 0));
 
-		int lightIndex = LightManager::GetInstance()->AddLight(info);
+		int lightIndex = map->AddLight(info);
+
+		if (lightIndex == -1)
+			return;
 
 		obj = make_shared<Light>(objName, centerPos, lightIndex);
 

@@ -31,19 +31,31 @@ public:
 		_colorBuffer->Set_PS(1);
 	}
 
-	void SetLight(shared_ptr<class LightInfo> info);
 
 	void DisableLight(int index)
 	{
+		_posBuffer->_lightOn[index] = false;
 		_posBuffer->GetPoses()[index] = { 0,0,0,0 };
-		_colorBuffer->GetColors()[index] = { 0,0,0,0 };
+		_colorBuffer->GetColors()[index + 1] = { 0,0,0,0 };
 	}
 
 	void Update();
-	int AddLight(shared_ptr<LightInfo> info);
+	void UpdateSun();
+
+	void Set_Light(shared_ptr<LightColorBuffer> color, shared_ptr<LightPosBuffer> pos)
+	{
+		_colorBuffer = color;
+		_posBuffer = pos;
+	}
+
 private:
 	static LightManager* _instance;
 	shared_ptr<LightPosBuffer> _posBuffer;
 	shared_ptr<LightColorBuffer> _colorBuffer;
+	XMFLOAT4 _sunLight;
+	int& _maxHour = TIMER->GetMaxHour();
+	int& _maxMinute = TIMER->GetMaxMinute();
+	int& _hour = TIMER->GetHour();
+	int& _minute = TIMER->GetMinute();
 };
 
