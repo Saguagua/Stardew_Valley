@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Framework\System\DungeonSystem.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Bed.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Door.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Light.h" />
@@ -256,6 +257,7 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Framework\System\DungeonSystem.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Bed.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Door.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Light.cpp" />

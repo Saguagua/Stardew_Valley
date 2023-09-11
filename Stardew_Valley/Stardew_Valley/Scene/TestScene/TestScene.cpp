@@ -5,6 +5,7 @@ TestScene::TestScene()
 {
 	DATA->LoadPlayerInfo("Test");
 	FishingSystem::Create();
+	DungeonSystem::Create();
 	MonsterSpawner::Create();
 	
 	EffectManager::Create();
@@ -21,13 +22,17 @@ TestScene::TestScene()
 
 	FishingSystem::GetInstance()->SetPlayer(_player);
 	FishingSystem::GetInstance()->SetMap(_map);
+	
+	DungeonSystem::GetInstance()->SetPlayer(_player);
+	DungeonSystem::GetInstance()->SetMap(_map);
+
 
 	CAMERA->SetTarget(_player->GetTransform());
 	CAMERA->Update();
 
 	MONSTER_SPAWNER->SetPlayer(_player);
 	MONSTER_SPAWNER->SetTileMap(_map);
-	MONSTER_SPAWNER->Spawn(10);
+	//MONSTER_SPAWNER->Spawn(10);
 }
 
 TestScene::~TestScene()
@@ -145,5 +150,6 @@ void TestScene::KeyInput()
 void TestScene::Initialize()
 {
 	CAMERA->_freeMode = false;
-	//CAMERA->SetPos(_player->GetWorldPos());
+	CAMERA->SetPos(_player->GetWorldPos());
+	CAMERA->Update();
 }

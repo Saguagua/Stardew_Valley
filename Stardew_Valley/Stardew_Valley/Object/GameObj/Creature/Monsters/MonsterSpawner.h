@@ -30,7 +30,7 @@ public:
 	void PostRender();
 
 	void Spawn(int count);
-
+	void Initialize();
 private:
 	static MonsterSpawner* _instance;
 
@@ -41,6 +41,6 @@ private:
 
 	std::random_device rd;
 
-	shared_ptr<class NumberUI> _number;
+	
 };
 

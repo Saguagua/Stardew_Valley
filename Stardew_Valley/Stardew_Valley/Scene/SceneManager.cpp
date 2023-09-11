@@ -7,12 +7,12 @@
 #include "SceneManager.h"
 
 SceneManager* SceneManager::_instance = nullptr;
+
 SceneManager::SceneManager()
 {
 	_scenes.push_back(make_shared<MapToolScene>());
 	_scenes.push_back(make_shared<TestScene>());
 	_scenes.push_back(make_shared<NormalScene>());
-	_scenes.push_back(make_shared<DungeonScene>());
 }
 
 void SceneManager::Update()
@@ -28,6 +28,7 @@ void SceneManager::Render()
 void SceneManager::PostRender()
 {
 	_scenes[_index]->PostRender();
+
 	if (ImGui::BeginMenu("SceneManager"))
 	{
 		int tmp = _index;

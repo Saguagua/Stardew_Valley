@@ -109,7 +109,7 @@ r => 'y' if sprite is rotated-->
   <sprite n="Diamond" x="574" y="607" w="12" h="11" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="DungeonSideWall" x="287" y="289" w="16" h="128" pX="0.5" pY="0.5" i="0" s1="2" s2="4"/>
   <sprite n="Dagger" x="3" y="624" w="10" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Elevator" x="421" y="513" w="16" h="39" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="Elevator" x="421" y="513" w="16" h="39" pX="0.5" pY="0.5" i="0" s1="1" s2="2"/>
   <sprite n="8" x="539" y="223" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Emerald" x="137" y="470" w="10" h="9" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="EmeraldStone" x="67" y="581" w="15" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>

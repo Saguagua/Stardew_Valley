@@ -154,6 +154,7 @@ using namespace Microsoft::WRL;
 
 //System
 #include "Framework/System/FishingSystem.h"
+#include "Framework/System/DungeonSystem.h"
 
 //Camera
 #include"Framework/Camera/Camera.h"

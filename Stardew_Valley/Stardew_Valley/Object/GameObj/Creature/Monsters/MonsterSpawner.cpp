@@ -13,7 +13,6 @@ MonsterSpawner::MonsterSpawner()
 	{
 		_monsters.push_back(make_shared<Bat>());
 	}
-	_number = make_shared<NumberUI>(0, 1, Vector2(30, 30));
 }
 
 void MonsterSpawner::Update()
@@ -56,7 +55,6 @@ void MonsterSpawner::Render()
 
 		monster->Render();
 	}
-	_number->Render();
 }
 
 void MonsterSpawner::PostRender()
@@ -83,7 +81,8 @@ void MonsterSpawner::Spawn(int count)
 		{
 			for (; tileIndex < tiles.size(); tileIndex++)
 			{
-				if (tiles[tileIndex]->GetObj() == nullptr)
+				if ((tiles[tileIndex]->GetObj() == nullptr) && 
+					!(DATA->GetTileInfo(tiles[tileIndex]->GetName()) & TileType::BLOCK))
 				{
 					_monsters[i]->Spawn(tiles[tileIndex]->GetCenterPos());
 					monsterCount++;
@@ -114,4 +113,16 @@ void MonsterSpawner::Spawn(int count)
 		}
 	}
 	
+}
+
+void MonsterSpawner::Initialize()
+{
+	for (int i = 0; i < _monsters.size(); i++)
+	{
+		_monsters[i]->SetActive(false);
+	}
+
+	int randomInt = rand() % 10;
+
+	Spawn(randomInt);
 }

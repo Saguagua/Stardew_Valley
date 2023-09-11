@@ -31,6 +31,7 @@ public:
 	vector<shared_ptr<Item>>& GetItems() { return _items; }
 	shared_ptr<Item> GetItem(int index) { return _items[index]; }
 
+	shared_ptr<RectCollider> _interactCol;
 protected:
 	void GetDatas();
 	void SetFreeze(bool val) { _freeze = val; }
@@ -45,7 +46,6 @@ protected:
 
 	//Colliders
 	shared_ptr<CircleCollider> _magnatic;
-
 	//Slots
 	shared_ptr<Transform> _itemSlot;
 

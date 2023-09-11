@@ -21,7 +21,7 @@ void BreakableItem::GetDamage(shared_ptr<Item> item)
 		if (_hp <= 0)
 		{
 			OBJECT_SPAWNER->ActiveDropItem(_name, _centerPos);
-
+			DungeonSystem::GetInstance()->SpawnDoor(_centerPos);
 			_name = "BLANK";
 			_isActive = false;
 		}

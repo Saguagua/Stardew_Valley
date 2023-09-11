@@ -25,8 +25,9 @@ public:
 		return nullptr;
 	}
 
-	vector<shared_ptr<class MapInfo>>& GetPlayerMapInfos() { return _playerMapInfos; }
-	vector<shared_ptr<class MapInfo>>& GetInitialMapInfos() { return _initialMapInfos; }
+	vector<shared_ptr<MapInfo>>& GetPlayerMapInfos() { return _playerMapInfos; }
+	vector<shared_ptr<MapInfo>>& GetInitialMapInfos() { return _initialMapInfos; }
+	vector<shared_ptr<MapInfo>>& GetDungeonMapInfos() { return _dungeonMapInfos; }
 
 	shared_ptr<class PlayerInfo> GetPlayerInfo() { return _playerInfo; }
 
@@ -71,6 +72,7 @@ private:
 	
 	vector<shared_ptr<MapInfo>> _playerMapInfos;
 	vector<shared_ptr<MapInfo>> _initialMapInfos;
+	vector<shared_ptr<MapInfo>> _dungeonMapInfos;
 					  
 
 	vector<shared_ptr<FishInfo>> _fishTable;

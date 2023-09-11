@@ -7,6 +7,8 @@ Player::Player()
 {
 	GetDatas();
 	_magnatic = make_shared<CircleCollider>(50);
+	_interactCol = make_shared<RectCollider>(Vector2(5,5));
+
 	_col->SetDebug(true);
 	_magnatic->SetDebug(true);
 

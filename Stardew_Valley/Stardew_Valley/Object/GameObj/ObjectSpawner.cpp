@@ -13,49 +13,6 @@ ObjectSpawner::ObjectSpawner()
 		_dropItems.push_back(make_shared<DropItem>());
 	}
 }
-//
-//shared_ptr<DeployableObject> ObjectSpawner::CreateObj(string objName)
-//{
-//	vector<short> vals = _deployTable[objName]->GetVals();
-//	shared_ptr<DeployableObject> obj;
-//
-//	switch (_deployTable[objName]->GetType())
-//	{
-//	case DeployableObject::BREAK:
-//	{
-//		 obj = make_shared<BreakableItem>(objName, Vector2(0,0), vals[0], vals[1]);
-//		 break;
-//	}
-//	case DeployableObject::PICK:
-//	{
-//		obj = make_shared<PickableItem>(objName, Vector2(0, 0));
-//		break;
-//	}
-//	case DeployableObject::BLANK:
-//	{
-//		return nullptr;
-//	}
-//	case DeployableObject::CROP:
-//	{
-//		//vector<short> values = _cropTable[objName];
-//		short period = 6;
-//		vector<short> cvals;
-//
-//		cvals.push_back(period);
-//		cvals.push_back(5);
-//		cvals.push_back(2);
-//		cvals.push_back(0);
-//
-//		
-//		obj = make_shared<Crop>(objName, Vector2(0,0), cvals);
-//		break;
-//	}
-//	default:
-//		break;
-//	}
-//
-//	return obj;
-//}
 
 void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName, short val1, short val2)
 {
@@ -263,6 +220,56 @@ void ObjectSpawner::ActiveDropItem(string name, Vector2 pos)
 					break;
 				}
 			}
+		}
+	}
+}
+
+void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map)
+{
+	int objCount = rand() % 10 + 18;
+
+	auto infos = DATA->GetDeployInfos();
+
+	vector<shared_ptr<Tile>> tiles = map->GetcurrentMapInfo()->GetInfos();
+
+	std::random_device rd;
+	std::mt19937 g(rd());
+	std::shuffle(tiles.begin(), tiles.end(), g);
+
+	for (int i = 0; i < objCount; i++)
+	{
+		for (int j = 0; j < tiles.size(); j++)
+		{
+			if (tiles[j]->GetObj() != nullptr)
+				continue;
+
+			if ((DATA->GetTileInfo(tiles[j]->GetName()) & TileType::BLOCK))
+				continue;
+
+			int percent = rand() % 10;
+
+			if (percent < 5)
+			{
+				auto vals = infos["DiamondStone"]->GetVals();
+				CreateObj(map->GetcurrentMapInfo(), j, "DiamondStone", vals[0], vals[1]);
+			}
+			else if (percent < 10)
+			{
+				auto vals = infos["RubyStone"]->GetVals();
+				CreateObj(map->GetcurrentMapInfo(), j, "RubyStone", vals[0], vals[1]);
+			}
+			else if (percent < 20)
+			{
+				auto vals = infos["EmeraldStone"]->GetVals();
+				CreateObj(map->GetcurrentMapInfo(), j, "EmeraldStone", vals[0], vals[1]);
+			}
+			else
+			{
+				auto vals = infos["Stone1"]->GetVals();
+				CreateObj(map->GetcurrentMapInfo(), j, "Stone1", vals[0], vals[1]);
+			}
+
+			break;
 		}
 	}
 }

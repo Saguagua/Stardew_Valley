@@ -114,9 +114,9 @@ void DataManager::LoadInitialMaps()
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Fishing"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Test"));
-	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
-	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
-	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
+	_dungeonMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
+	_dungeonMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
+	_dungeonMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
 }
 
 void DataManager::LoadMaps(string name)
@@ -125,6 +125,9 @@ void DataManager::LoadMaps(string name)
 	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Fishing"));
 	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Dungeon"));
 	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Test"));
+	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
+	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
+	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
 }
 
 void DataManager::SaveMaps()

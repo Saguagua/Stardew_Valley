@@ -10,8 +10,7 @@ void Door::Interaction()
 {
     if (KEY_DOWN(VK_RBUTTON))
     {
-        if (SCENEMANAGER->_index != SceneManager::SceneIndex::DUNGEON)
-            SCENEMANAGER->_index = SceneManager::SceneIndex::DUNGEON;
+        DungeonSystem::GetInstance()->NextStage();
     }
     
 }
