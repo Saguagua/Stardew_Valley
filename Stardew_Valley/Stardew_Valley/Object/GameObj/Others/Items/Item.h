@@ -42,6 +42,8 @@ public:
 
 	const vector<short>& GetVals() { return _vals; }
 
+	void KeyInput(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
+
 	void Hoe(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
 	void Water(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
 	void Break(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);

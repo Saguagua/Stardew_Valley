@@ -37,6 +37,8 @@ public:
 		_posBuffer->_lightOn[index] = false;
 		_posBuffer->GetPoses()[index] = { 0,0,0,0 };
 		_colorBuffer->GetColors()[index + 1] = { 0,0,0,0 };
+		_posBuffer->Update();
+		_colorBuffer->Update();
 	}
 
 	void Update();

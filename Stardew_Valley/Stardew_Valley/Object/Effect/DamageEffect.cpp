@@ -10,20 +10,20 @@ DamageEffect::DamageEffect()
 
 void DamageEffect::Update()
 {
+	_timer -= DELTA_TIME;
 
-	Effect::Update();
+	if (_timer <= 0.0f)
+		_isActive = false;
 }
 
 void DamageEffect::Render()
 {
-
-	Effect::Render();
-
 	_number->Render();
 }
 
 void DamageEffect::Active(Vector2 pos, float timer)
 {
-	Effect::Active(pos, timer);
 	_number->_originPos = pos;
+	_timer = timer;
+	_isActive = true;
 }

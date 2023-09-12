@@ -26,6 +26,61 @@ bool Item::AddCount()
 	return false;
 }
 
+void Item::KeyInput(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
+{
+
+	switch (_type)
+	{
+	case Item::EATABLE:
+	{
+		Eat(p);
+		break;
+	}
+	case Item::FISHINGROD:
+	{
+		Fishing(p);
+		break;
+	}
+	case Item::HOE:
+	{
+		Hoe(p, m);
+		break;
+	}
+	case Item::AXE:
+	case Item::PICKAXE:
+	{
+		Break(p, m);
+		break;
+	}
+	case Item::WATERINGCAN:
+	{
+		Water(p, m);
+		break;
+	}
+	case Item::SEED:
+	{
+		Seed(p, m);
+		break;
+	}
+	case Item::FACILITY:
+	{
+		Collocate(p, m);
+		break;
+	}
+	case Item::FERTILIZER:
+	{
+		Fertilizer(p, m);
+		break;
+	}
+	case Item::WEAPON:
+	{
+		Weapon(p);
+		break;
+	}
+	}
+
+}
+
 void Item::Hoe(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_LBUTTON))
@@ -225,7 +280,7 @@ void Item::Collocate(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 	if (KEY_DOWN(VK_RBUTTON))
 	{
-		auto tile = m->GetFocusedTile(p->GetWorldPos(), _point);
+		auto tile = m->GetFocusedTile(p->GetWorldPos(), W_MOUSE_POS);
 
 		if (tile->GetObj())
 			return;
@@ -233,6 +288,14 @@ void Item::Collocate(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 			return;
 		auto vals = DATA->GetDeployInfo(_name)->GetVals();
 		OBJECT_SPAWNER->CreateObj(m->GetcurrentMapInfo(), tile->_mapIndex, _name, vals[0], vals[1]);
+		_count--;
+
+		if (_count == 0)
+		{
+			SetItem("BLANK",0);
+		}
+
+		p->SendToSubscribers(PlayerSubscribe::ITEMS);
 	}
 }
 

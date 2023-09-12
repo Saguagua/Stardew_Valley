@@ -122,7 +122,7 @@ void MonsterSpawner::Initialize()
 		_monsters[i]->SetActive(false);
 	}
 
-	int randomInt = rand() % 10;
+	int randomInt = rand() % 10 + 1;
 
 	Spawn(randomInt);
 }

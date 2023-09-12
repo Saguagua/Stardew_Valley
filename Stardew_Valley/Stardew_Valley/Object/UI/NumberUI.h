@@ -17,8 +17,8 @@ private:
 
 	shared_ptr<Sprite> _renderer;
 	Vector2 _size;
-	float _startPos;
+	float _startPos = 0;
 	int _maxNumberCount;
-	int _distance;
+	int _distance = 0;
 };
 

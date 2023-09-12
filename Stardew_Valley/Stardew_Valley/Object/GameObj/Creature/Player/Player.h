@@ -30,6 +30,7 @@ public:
 	short GetStamina() { return _stamina; }
 	int GetCurIndex() { return _curIndex; }
 	vector<shared_ptr<Item>>& GetItems() { return _items; }
+	shared_ptr<Item> GetCurItem() { return _items[_curIndex]; }
 	shared_ptr<Item> GetItem(int index) { return _items[index]; }
 
 	shared_ptr<RectCollider> _interactCol;

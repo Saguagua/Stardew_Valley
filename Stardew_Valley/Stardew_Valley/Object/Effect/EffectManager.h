@@ -26,6 +26,7 @@ public:
 	}
 
 	void Render();
+	void PostRender();
 	void Update();
 
 	void ActiveDamage(int damge, Vector2 pos);
@@ -34,6 +35,8 @@ private:
 	static EffectManager* _instance;
 
 	vector<shared_ptr<DamageEffect>> _damageEffects;
+	int _count;
+	int _activeCount = 0;
 	
 };
 

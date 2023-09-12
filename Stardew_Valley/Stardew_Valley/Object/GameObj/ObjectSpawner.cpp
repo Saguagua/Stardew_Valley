@@ -71,7 +71,19 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	}
 	case DeployableObject::LIGHT:
 	{
-		shared_ptr<LightInfo> info = make_shared<LightInfo>(XMFLOAT4(1000, 1000, 0, 1), XMFLOAT4(centerPos.x, centerPos.y, 0, 0));
+
+		XMFLOAT4 color;
+
+		if (objName == "Torch")
+		{
+			color = { 10000, 10000, 0, 1 };
+		}
+		else if (objName == "BlueTorch")
+		{
+			color = { 0, 500, 10000, 1 };
+		}
+
+		shared_ptr<LightInfo> info = make_shared<LightInfo>(color, XMFLOAT4(centerPos.x, centerPos.y, 0, 0));
 
 		int lightIndex = map->AddLight(info);
 

@@ -10,7 +10,7 @@
 
 PlayerUI* PlayerUI::_instance = nullptr;
 
-PlayerUI::PlayerUI(shared_ptr<PlayerImproved> player)
+PlayerUI::PlayerUI(shared_ptr<PlayerFight> player)
 {
 	_transform = make_shared<Transform>();
 	_bagUI = make_shared<BagUI>(player);

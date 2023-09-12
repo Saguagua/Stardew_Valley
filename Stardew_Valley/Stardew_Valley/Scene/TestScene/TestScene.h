@@ -15,6 +15,5 @@ private:
 
 	shared_ptr<PlayerFight> _player;
 	shared_ptr<TileMap> _map;
-	vector<shared_ptr<Item>> _items;
 
 };

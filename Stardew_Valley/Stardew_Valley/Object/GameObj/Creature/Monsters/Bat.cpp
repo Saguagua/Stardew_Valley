@@ -91,19 +91,19 @@ void Bat::Detect(shared_ptr<PlayerFight> player)
 	{
 		SetAction(MonsterAction::MOVE);
 
-		_forceDirection += (player->GetWorldPos() - _col->GetWorldPos()).Normalize() * 100.0f;
+		_forceDirection += (player->GetWorldPos() - _col->GetWorldPos()).Normalize() * 70.0f;
 
-		if (_forceDirection.x > 200.0f)
-			_forceDirection.x = 200.0f;
+		if (_forceDirection.x > 170.0f)
+			_forceDirection.x = 170.0f;
 
-		else if (_forceDirection.x < -200.0f)
-			_forceDirection.x = -200.0f;
+		else if (_forceDirection.x < -170.0f)
+			_forceDirection.x = -170.0f;
 
-		if (_forceDirection.y > 200.0f)
-			_forceDirection.y = 200.0f;
+		if (_forceDirection.y > 170.0f)
+			_forceDirection.y = 170.0f;
 
-		if (_forceDirection.y < -200.0f)
-			_forceDirection.y = -200.0f;
+		if (_forceDirection.y < -170.0f)
+			_forceDirection.y = -170.0f;
 	}
 
 }

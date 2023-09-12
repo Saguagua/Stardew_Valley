@@ -10,8 +10,12 @@ NumberUI::NumberUI(int num, int maxCount, Vector2 size)
 	_singleSize.x = _size.x / maxCount;
 	_renderer = make_shared<Sprite>("0", _singleSize, SpriteType::UI);
 
-	_distance = _size.x / maxCount;
-	_startPos = _distance * maxCount * -0.5f;
+	if (maxCount != 1)
+	{
+		_distance = _size.x / maxCount;
+		_startPos = _distance * maxCount * -0.5f;
+	}
+	
 
 	_transform = make_shared<Transform>();
 

@@ -3,7 +3,7 @@
 class BagUI :public List, PlayerSubscribe
 {
 public:
-	BagUI(shared_ptr<PlayerImproved> player);
+	BagUI(shared_ptr<PlayerFight> player);
 	~BagUI() {}
 
 	void Update();
