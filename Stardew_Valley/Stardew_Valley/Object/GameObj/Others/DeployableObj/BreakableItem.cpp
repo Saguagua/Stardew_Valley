@@ -14,6 +14,8 @@ vector<int> BreakableItem::GetProperty()
 
 void BreakableItem::GetDamage(shared_ptr<Item> item)
 {
+	if (!_isActive)
+		return;
 	if (item->GetType() == _breakType)
 	{
 		_hp -= item->GetVals()[2];

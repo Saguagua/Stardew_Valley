@@ -232,6 +232,7 @@ void TileMap::ChangeMap(int index)
 	_tiles = _mapInfos[index]->GetInfos();
 	_teleports = _mapInfos[index]->GetTeleports();
 	LightManager::GetInstance()->Set_Light(_mapInfos[index]->GetLightColors(), _mapInfos[index]->GetLightPoses());
+	LightManager::GetInstance()->_sunOn = _mapInfos[index]->_sunOn;
 	LightManager::GetInstance()->UpdateSun();
 	SetCameraRange();
 }
@@ -250,7 +251,7 @@ void TileMap::SetCameraRange()
 	}
 	else
 	{
-		top = (_curMapSize.y * TILE_SIZE.y) - WIN_HEIGHT / 2 - TILE_SIZE.y;
+		top = (_curMapSize.y * TILE_SIZE.y) - WIN_HEIGHT / 2;
 		bottom = CENTER.y;
 	}
 
@@ -261,7 +262,7 @@ void TileMap::SetCameraRange()
 	}
 	else
 	{
-		right = (_curMapSize.x * TILE_SIZE.x) - WIN_WIDTH / 2 - TILE_SIZE.x;
+		right = (_curMapSize.x * TILE_SIZE.x) - WIN_WIDTH / 2;
 		left = CENTER.x;
 	}
 

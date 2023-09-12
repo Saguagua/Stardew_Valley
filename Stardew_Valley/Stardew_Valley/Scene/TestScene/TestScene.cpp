@@ -62,6 +62,7 @@ void TestScene::Update()
 	}
 
 	MONSTER_SPAWNER->Update();
+	DungeonSystem::GetInstance()->Update();
 	EFFECT->Update();
 
 	if (!CAMERA->_freeMode)
@@ -73,13 +74,14 @@ void TestScene::Render()
 	_map->Render();
 	_player->Render();
 	FishingSystem::GetInstance()->Render();
-
+	DungeonSystem::GetInstance()->Render();
 	MONSTER_SPAWNER->Render();
 	EFFECT->Render();
 }
 
 void TestScene::PostRender()
 {
+	_player->PostRender();
 	PLAYERUI->PostRender();
 }
 

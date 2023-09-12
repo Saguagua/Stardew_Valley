@@ -36,7 +36,7 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	{
 	case DeployableObject::BREAK:
 	{
-		obj = make_shared<BreakableItem>(objName, centerPos, val1);
+		obj = make_shared<BreakableItem>(objName, centerPos, val1, val2);
 		break;
 	}
 	case DeployableObject::PICK:
@@ -232,44 +232,47 @@ void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map)
 
 	vector<shared_ptr<Tile>> tiles = map->GetcurrentMapInfo()->GetInfos();
 
-	std::random_device rd;
-	std::mt19937 g(rd());
-	std::shuffle(tiles.begin(), tiles.end(), g);
 
 	for (int i = 0; i < objCount; i++)
 	{
-		for (int j = 0; j < tiles.size(); j++)
+		int randomCount = 0;
+
+		while (randomCount < 100)
 		{
-			if (tiles[j]->GetObj() != nullptr)
+			randomCount++;
+			int randomIndex = rand() % tiles.size();
+
+			if (tiles[randomIndex]->GetObj() != nullptr)
 				continue;
 
-			if ((DATA->GetTileInfo(tiles[j]->GetName()) & TileType::BLOCK))
+			if ((DATA->GetTileInfo(tiles[randomIndex]->GetName()) & TileType::BLOCK))
 				continue;
 
-			int percent = rand() % 10;
+			int percent = rand() % 100;
 
 			if (percent < 5)
 			{
 				auto vals = infos["DiamondStone"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), j, "DiamondStone", vals[0], vals[1]);
+				CreateObj(map->GetcurrentMapInfo(), randomIndex, "DiamondStone", vals[0], vals[1]);
 			}
 			else if (percent < 10)
 			{
 				auto vals = infos["RubyStone"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), j, "RubyStone", vals[0], vals[1]);
+				CreateObj(map->GetcurrentMapInfo(), randomIndex, "RubyStone", vals[0], vals[1]);
 			}
 			else if (percent < 20)
 			{
 				auto vals = infos["EmeraldStone"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), j, "EmeraldStone", vals[0], vals[1]);
+				CreateObj(map->GetcurrentMapInfo(), randomIndex, "EmeraldStone", vals[0], vals[1]);
 			}
 			else
 			{
 				auto vals = infos["Stone1"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), j, "Stone1", vals[0], vals[1]);
+				CreateObj(map->GetcurrentMapInfo(), randomIndex, "Stone1", vals[0], vals[1]);
 			}
 
 			break;
 		}
+		
 	}
 }

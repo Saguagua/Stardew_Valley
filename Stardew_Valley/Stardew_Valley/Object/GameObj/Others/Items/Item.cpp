@@ -221,3 +221,18 @@ void Item::Fertilizer(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
 {
 }
 
+void Item::Collocate(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m)
+{
+	if (KEY_DOWN(VK_RBUTTON))
+	{
+		auto tile = m->GetFocusedTile(p->GetWorldPos(), _point);
+
+		if (tile->GetObj())
+			return;
+		if (DATA->GetTileInfo(tile->GetName()) & TileType::BLOCK)
+			return;
+		auto vals = DATA->GetDeployInfo(_name)->GetVals();
+		OBJECT_SPAWNER->CreateObj(m->GetcurrentMapInfo(), tile->_mapIndex, _name, vals[0], vals[1]);
+	}
+}
+

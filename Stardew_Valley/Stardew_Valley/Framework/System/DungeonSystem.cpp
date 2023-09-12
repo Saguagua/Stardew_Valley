@@ -28,7 +28,8 @@ void DungeonSystem::Update()
 
 	if (_player.lock()->GetCollider()->IsCollision(_doorCollider))
 	{
-		NextStage();
+		if (KEY_DOWN(VK_RBUTTON))
+			NextStage();
 	}
 }
 
@@ -36,8 +37,16 @@ void DungeonSystem::NextStage()
 {
 	_active = true;
 	_doorSpawned = false;
+	_breakCount = 0;
 
 	int dungeonIndex = rand() % 3 + 3;
+
+	if (dungeonIndex == 3)
+		_player.lock()->GetCollider()->SetPos(Vector2(400, 730));
+	else if (dungeonIndex == 4)
+		_player.lock()->GetCollider()->SetPos(Vector2(420, 700));
+	else
+		_player.lock()->GetCollider()->SetPos(Vector2(630, 1090));
 
 	_map.lock()->ChangeMap(dungeonIndex);
 	OBJECT_SPAWNER->SpawnObjects(_map.lock());

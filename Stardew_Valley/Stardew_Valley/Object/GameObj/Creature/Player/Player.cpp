@@ -60,6 +60,16 @@ void Player::Render()
 	_magnatic->Render();
 }
 
+void Player::PostRender()
+{
+	if (ImGui::BeginMenu("Player"))
+	{
+		ImGui::Text("X : %f", _col->GetWorldPos().x);
+		ImGui::Text("Y : %f", _col->GetWorldPos().y);
+		ImGui::EndMenu();
+	}
+}
+
 vector<CallBackInt> Player::GetCurIndexCallback()
 {
 	vector<CallBackInt> v;

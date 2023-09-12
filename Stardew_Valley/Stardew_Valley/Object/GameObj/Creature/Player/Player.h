@@ -21,6 +21,7 @@ public:
 	
 	virtual void Update() override;
 	virtual void Render() override;
+	void PostRender();
 
 	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
 	vector<CallBackInt> GetCurIndexCallback();

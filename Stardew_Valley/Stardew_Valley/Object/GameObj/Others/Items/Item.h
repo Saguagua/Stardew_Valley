@@ -50,6 +50,7 @@ public:
 	void Eat(shared_ptr<PlayerFight> p);
 	void Seed(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
 	void Fertilizer(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
+	void Collocate(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
 
 protected:
 	string _subName;

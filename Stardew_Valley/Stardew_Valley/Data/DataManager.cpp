@@ -114,9 +114,17 @@ void DataManager::LoadInitialMaps()
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Fishing"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Test"));
-	_dungeonMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
-	_dungeonMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
-	_dungeonMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
+
+	_initialMapInfos[0]->_sunOn = false;
+	_initialMapInfos[1]->_sunOn = false;
+	_initialMapInfos[2]->_sunOn = false;
+	_initialMapInfos[3]->_sunOn = false;
+	_initialMapInfos[4]->_sunOn = false;
+	_initialMapInfos[5]->_sunOn = false;
+	_initialMapInfos[6]->_sunOn = false;
 }
 
 void DataManager::LoadMaps(string name)
@@ -128,6 +136,12 @@ void DataManager::LoadMaps(string name)
 	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
 	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
 	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
+
+	_playerMapInfos[2]->_sunOn = false;
+	_playerMapInfos[3]->_sunOn = false;
+	_playerMapInfos[4]->_sunOn = false;
+	_playerMapInfos[5]->_sunOn = false;
+	_playerMapInfos[6]->_sunOn = false;
 }
 
 void DataManager::SaveMaps()
@@ -344,6 +358,7 @@ shared_ptr<MapInfo> DataManager::LoadMap(string path, string mapName)
 			info = make_shared<Tile>(name, pos);
 		}
 		
+		info->_mapIndex = x + y * size.x;
 		infos.push_back(info);
 
 		x++;

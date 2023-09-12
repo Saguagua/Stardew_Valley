@@ -34,22 +34,30 @@ void LightManager::Update()
 
 void LightManager::UpdateSun()
 {
-	if (_hour < SUNSET)
+	if (!_sunOn)
 	{
-		float normalValue = 0.2f / ((SUNSET - 6) * _maxMinute);
-		int curTime = (_hour - 6) * _maxMinute + _minute;
-		float val = 0.8f + normalValue * curTime;
-
-		_sunLight = {val, val, val, 1.0f};
+		_sunLight = {0.1f, 0.1f, 0.1f, 1.0f};
 	}
 	else
 	{
-		float normalValue = 0.995f / ((_maxHour - SUNSET) * _maxMinute);
-		int curTime = (_hour - SUNSET) * _maxMinute + _minute;
-		float val = 1.0f - normalValue * curTime;
+		if (_hour < SUNSET)
+		{
+			float normalValue = 0.2f / ((SUNSET - 6) * _maxMinute);
+			int curTime = (_hour - 6) * _maxMinute + _minute;
+			float val = 0.8f + normalValue * curTime;
 
-		_sunLight = { val, val, val, 1.0f };
+			_sunLight = { val, val, val, 1.0f };
+		}
+		else
+		{
+			float normalValue = 0.995f / ((_maxHour - SUNSET) * _maxMinute);
+			int curTime = (_hour - SUNSET) * _maxMinute + _minute;
+			float val = 1.0f - normalValue * curTime;
+
+			_sunLight = { val, val, val, 1.0f };
+		}
 	}
+	
 
 	_colorBuffer->SetSun(_sunLight);
 	_colorBuffer->Update();

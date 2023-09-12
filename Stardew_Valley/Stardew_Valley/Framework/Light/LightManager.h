@@ -48,6 +48,8 @@ public:
 		_posBuffer = pos;
 	}
 
+	bool _sunOn = true;
+
 private:
 	static LightManager* _instance;
 	shared_ptr<LightPosBuffer> _posBuffer;
