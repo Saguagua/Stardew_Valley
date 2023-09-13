@@ -22,5 +22,9 @@ private:
 	shared_ptr<NumberUI> _hourNum;
 	shared_ptr<NumberUI> _minutNum;
 
+	float _minuteAngle;
+	int& _hour = TIMER->GetHour();
+	int& _maxMinute = TIMER->GetMaxMinute();
+	int& _minute = TIMER->GetMinute();
 };
 

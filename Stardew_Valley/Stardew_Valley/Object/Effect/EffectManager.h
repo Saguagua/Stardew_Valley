@@ -35,8 +35,6 @@ private:
 	static EffectManager* _instance;
 
 	vector<shared_ptr<DamageEffect>> _damageEffects;
-	int _count;
-	int _activeCount = 0;
 	
 };
 

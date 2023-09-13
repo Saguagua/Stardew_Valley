@@ -14,7 +14,6 @@ EffectManager::EffectManager()
 
 void EffectManager::Render()
 {
-	_count = 0;
 
 	for (auto effect : _damageEffects)
 	{
@@ -22,16 +21,11 @@ void EffectManager::Render()
 			continue;
 
 		effect->Render();
-		_count++;
-		if (_count > 1)
-			_count = 0;
 	}
 }
 
 void EffectManager::PostRender()
 {
-	ImGui::Text("EffectRenderCount : %d", _count);
-	ImGui::Text("EffectActiveCount : %d", _activeCount);
 }
 
 void EffectManager::Update()
@@ -53,8 +47,7 @@ void EffectManager::ActiveDamage(int damge, Vector2 pos)
 		{
 			_damageEffects[i]->Active(pos, 0.5f);
 			_damageEffects[i]->_number->SetNumber(damge);
-			
-			_activeCount++;
+	
 			break;
 		}
 	}

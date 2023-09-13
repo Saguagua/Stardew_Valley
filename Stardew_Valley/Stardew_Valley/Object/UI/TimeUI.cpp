@@ -17,9 +17,10 @@ TimeUI::TimeUI()
 
 	_rotateSlot->SetParent(_bodySlot);
 	_rotateSlot->SetPos(Vector2(-27, 25));
-	_rotateSlot->SetAngle(3.14159);
+
 	_hourHandSlot->SetParent(_rotateSlot);
 	_hourHandSlot->SetPos(Vector2(0.0f, 17.5f));
+
 	_numberSliceSlot->SetParent(_bodySlot);
 	_numberSliceSlot->SetPos(Vector2(25.0f, -10.0f));
 
@@ -27,6 +28,8 @@ TimeUI::TimeUI()
 	_minutNum->_originPos = Vector2(45, -10);
 	_hourNum->_transform->SetParent(_bodySlot);
 	_minutNum->_transform->SetParent(_bodySlot);
+
+	_minuteAngle = 3.141592f / (18 * TIMER->GetMaxMinute());
 }
 
 void TimeUI::Render()
@@ -43,15 +46,14 @@ void TimeUI::Render()
 
 void TimeUI::Update()
 {
-	int hour = TIMER->GetHour();
-	int minute = TIMER->GetMinute();
+	int time = _hour * _maxMinute + _minute - 6 * _maxMinute;
 
 	_bodySlot->Update();
 	_rotateSlot->Update();
 	_hourHandSlot->Update();
 	_numberSliceSlot->Update();
-	_rotateSlot->AddAngle(-3.14 / 180 * DELTA_TIME); //-3.14 / 180 * 35
+	_rotateSlot->SetAngle(3.141592f - _minuteAngle * time);
 
-	_hourNum->SetNumber(hour);
-	_minutNum->SetNumber(minute);
+	_hourNum->SetNumber(_hour);
+	_minutNum->SetNumber(_minute);
 }

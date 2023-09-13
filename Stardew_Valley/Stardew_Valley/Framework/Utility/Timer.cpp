@@ -45,7 +45,7 @@ void Timer::Update()
 			_hour++;
 			_minute = 0;
 
-			if (_hour > _maxHour) //24
+			if (_hour >= _maxHour) //24
 			{
 				//플레이어 기절 추가
 				SetNextDay();
