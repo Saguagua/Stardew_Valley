@@ -8,10 +8,8 @@ Palette::Palette(Vector2 size)
 {
 	_map = make_shared<TileMap>(DATA->GetInitialMapInfos());
 	_map->ChangeMap(0);
-	_map->SetDebug(true);
 
 	_mainRect = make_shared<ColorButton>(PURPLE, _size);
-	_mainRect->SetDebug(true);
 	CallBack onEvent = std::bind(&Palette::Move, this);
 	_mainRect->SetMouseOnEvent(onEvent);
 

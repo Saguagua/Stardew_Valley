@@ -53,6 +53,14 @@ void Sprite::SetImage(string name, int index)
 	_xBuffer->Update();
 }
 
+void Sprite::SetIndex(int index)
+{
+	XMLInfo::Position pos = _map[_curName]->GetPos(index);
+	_xBuffer->SetStart(Vector2(pos.x, pos.y));
+	_xBuffer->SetSize(Vector2(pos.w, pos.h));
+	_xBuffer->Update();
+}
+
 void Sprite::CreateVertices()
 {
 	VertexTexture v;

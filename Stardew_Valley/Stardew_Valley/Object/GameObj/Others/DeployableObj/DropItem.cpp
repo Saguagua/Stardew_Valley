@@ -5,7 +5,6 @@
 DropItem::DropItem()
 {
     _collider = make_shared<CircleCollider>(10);
-    _collider->SetDebug(true);
 }
 
 void DropItem::Update()

@@ -86,7 +86,6 @@ void List::SetButtons(Vector2 startPos, Vector2 space)
 		_buttons[i]->GetTransform()->SetParent(_transform);
 		CallBackInt cb = std::bind(&List::PushButtonEvent, this, i);
 		_buttons[i]->SetPushEvent(cb);
-		_buttons[i]->SetLineColor(RED);
 		x++;
 
 		if (x == _matrix.x)
@@ -97,17 +96,12 @@ void List::SetButtons(Vector2 startPos, Vector2 space)
 	}
 }
 
-void List::PushButtonEvent(int index)
+void List::PushButtonEvent(int index) //여기 수정, 콜라이더 디버그 static으로 변경 중
 {
-	if (_curIndex != -1)
-		_buttons[_curIndex]->GetCollider()->SetDebug(false);
-	if (_curIndex == index)
-	{
-		_curIndex = -1;
-		return;
-	}
+	if (index > -1)
+		_buttons[_curIndex]->GetCollider()->SetColor(GREEN);
+	_buttons[index]->GetCollider()->SetColor(RED);
 	_curIndex = index;
-	_buttons[_curIndex]->GetCollider()->SetDebug(true);
 }
 
 void List::Scroll()

@@ -5,7 +5,6 @@ Monster::Monster(string name, Vector2 size, float areaSize, MoveType type)
 	:Creature(name, size), _type(type)
 {
 	_detectArea = make_shared<CircleCollider>(areaSize);
-	_detectArea->SetDebug(true);
 
 	_detectArea->SetParent(_col->GetTransform());
 }

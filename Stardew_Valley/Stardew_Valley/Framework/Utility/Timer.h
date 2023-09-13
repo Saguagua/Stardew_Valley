@@ -54,7 +54,7 @@ private:
 	unsigned __int64 _periodFrequency = 0;
 
 	unsigned int _frameRate = 0;
-	unsigned int _frameCount = 0;
+	unsigned int _frameCount = 0; //업데이트 빈도
 
 	float _oneSecCount = 0.0;
 	float _runTime = 0.0;

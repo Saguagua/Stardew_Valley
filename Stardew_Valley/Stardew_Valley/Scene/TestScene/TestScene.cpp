@@ -92,9 +92,6 @@ void TestScene::KeyInput()
 		_player->KeyInput();
 
 		_map->GetFocusedTile(_player->GetCollider()->GetWorldPos(), W_MOUSE_POS)->Interaction();
-		
-		shared_ptr<Item> item = _player->GetCurItem();
-		item->KeyInput(_player, _map);
 	}
 }
 

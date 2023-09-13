@@ -319,7 +319,6 @@ shared_ptr<MapInfo> DataManager::LoadMap(string path, string mapName)
 		auto teleport = make_shared<TeleportInfo>();
 		teleport->_collider = make_shared<RectCollider>(rectSize);
 		teleport->_collider->SetPos(pos);
-		teleport->_collider->SetDebug(true);
 		teleport->_collider->Update();
 
 		teleport->_destination = index;

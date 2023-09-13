@@ -8,11 +8,6 @@ ColliderScene::ColliderScene()
 	_rect = make_shared<RectCollider>(Vector2(50, 50));
 	_rect2 = make_shared<RectCollider>(Vector2(50, 50));
 
-	_circle->SetDebug(true);
-	_circle2->SetDebug(true);
-	_rect->SetDebug(true);
-	_rect2->SetDebug(true);
-
 	_circle->SetPos(Vector2(-100, -100));
 	_rect2->SetPos(CENTER);
 }

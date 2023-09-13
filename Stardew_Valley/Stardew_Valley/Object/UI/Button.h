@@ -9,7 +9,6 @@ public:
 	virtual void Render() abstract;
 	virtual void Update();
 
-	void SetDebug(bool val) { _col->SetDebug(val); }
 	void SetPos(Vector2 pos) { _col->SetPos(pos); }
 
 	void SetLineColor(XMFLOAT4 color) { _col->SetColor(color); }

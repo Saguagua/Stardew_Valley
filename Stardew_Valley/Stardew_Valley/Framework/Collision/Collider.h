@@ -17,7 +17,6 @@ public:
 	void SetScale(Vector2 scale) { _transform->SetScale(scale); }
 	void SetAngle(float angle) { _transform->SetAngle(angle); }
 	void SetParent(shared_ptr<Transform> other) { _transform->SetParent(other); }
-	void SetDebug(bool val) { _isDebug = val; }
 
 	void AddPos(Vector2 pos) { _transform->AddPos(pos); }
 	void AddScale(Vector2 scale) { _transform->AddScale(scale); }
@@ -27,6 +26,7 @@ public:
 	
 	Vector2 GetWorldPos();
 	Vector2 GetWorldScale();
+	static bool _isDebug;
 protected:
 	enum class Type
 	{
@@ -39,6 +39,5 @@ protected:
 	shared_ptr<Transform> _transform = make_shared<Transform>();
 	Collider::Type _type = Collider::Type::NONE;
 
-	bool _isDebug = false;
 
 };

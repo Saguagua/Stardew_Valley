@@ -294,9 +294,6 @@
     <ClInclude Include="Scene\InGame\NormalScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\InGame\DungeonScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\UI\NumberUI.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -546,9 +543,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Scene\InGame\NormalScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\InGame\DungeonScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\UI\NumberUI.cpp">

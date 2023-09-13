@@ -62,6 +62,8 @@ void Program::Render()
 	SCENEMANAGER->PostRender();
 	CAMERA->PostRender();
 	TIMER->PostRender();
+	ImGui::Checkbox("ColliderArea", &Collider::_isDebug);
+
 
 	// Rendering
 	ImGui::Render();

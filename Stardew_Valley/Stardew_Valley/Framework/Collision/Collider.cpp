@@ -2,6 +2,8 @@
 #include "Collider.h"
 #include "../../Object/BasicObj/ShapeLine.h"
 
+bool Collider::_isDebug = true;
+
 void Collider::Update()
 {
 	_transform->Update();

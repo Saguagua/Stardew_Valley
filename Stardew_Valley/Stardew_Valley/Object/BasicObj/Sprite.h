@@ -10,6 +10,7 @@ public:
 	void Render();
 	
 	void SetImage(string name, int index = 0);
+	void SetIndex(int index);
 	
 	string GetName() { return _curName; }
 	int GetIndex() { return _index; }

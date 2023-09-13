@@ -42,19 +42,19 @@ public:
 
 	const vector<short>& GetVals() { return _vals; }
 
-	void KeyInput(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
-
-	void Hoe(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
-	void Water(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
-	void Break(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
-	void Fishing(shared_ptr<PlayerFight> p);
-	void Weapon(shared_ptr<PlayerFight> p);
-	void Eat(shared_ptr<PlayerFight> p);
-	void Seed(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
-	void Fertilizer(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
-	void Collocate(shared_ptr<PlayerFight> p, shared_ptr<TileMap> m);
-
+	void Use(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Charging();
 protected:
+	void Hoe(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Water(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Fishing(shared_ptr<PlayerImproved> p);
+	void Weapon(shared_ptr<PlayerImproved> p);
+	void Eat(shared_ptr<PlayerImproved> p);
+	void Seed(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Fertilizer(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Collocate(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+
 	string _subName;
 
 	short _type = Type::BLANK;

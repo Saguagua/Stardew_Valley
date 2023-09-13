@@ -4,7 +4,6 @@
 Slime::Slime()
 	:Monster("Slime", Vector2(40, 30), 200.0f, MoveType::WALK)
 {
-	_col->SetDebug(true);
 	_bodySlot = make_shared<Transform>();
 	_bodySlot->SetParent(_col->GetTransform());
 
@@ -90,8 +89,8 @@ void Slime::CreateAction()
 		indices.push_back({ 3, 0 });
 		shared_ptr<Action> move = make_shared<Action>(indices, Action::Type::END, 0.3f);
 
-		move->SetMiddleEvent(std::bind(&Slime::Charging, this));
-		move->SetEndEvent(std::bind(&Monster::SetIdle, this));
+		move->AddMiddleEvent(std::bind(&Slime::Charging, this));
+		move->AddEndEvent(std::bind(&Monster::SetIdle, this));
 		_actions.push_back(move);
 	}
 #pragma endregion

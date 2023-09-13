@@ -13,7 +13,7 @@ public:
 		FISHING2 = 15,
 		FISHING3 = 18,
 		ATTACK = 21,
-		HOLD = 24
+		HOLD = 24,
 	};
 
 	Player();
@@ -36,27 +36,27 @@ public:
 	shared_ptr<RectCollider> _interactCol;
 protected:
 	void GetDatas();
+
 	void SetFreeze(bool val) { _freeze = val; }
+	void SetIdle();
+
 	//Actions
 	virtual void CreateAction() override;
 	void SetArmAction(int index);
-	void SetIdle();
 	void SetNextAction(int index);
+
 
 	//Inputs
 	void Move();
 
 	//Colliders
 	shared_ptr<CircleCollider> _magnatic;
-	//Slots
-	shared_ptr<Transform> _itemSlot;
 
 	//Action
 	vector<shared_ptr<Action>> _armActions;
 
 	//Renderers
 	shared_ptr<LightTextureRect> _arm;
-	shared_ptr<Sprite> _obj;
 
 	short _maxStamina;
 	short _stamina;
@@ -64,4 +64,5 @@ protected:
 
 	int _curIndex = 0;
 	int _armIndex = PlayerAction::IDLE;
+
 };

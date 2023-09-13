@@ -161,7 +161,6 @@
     <ClInclude Include="Object\Effect\DamageEffect.h" />
     <ClInclude Include="Object\Effect\Effect.h" />
     <ClInclude Include="Object\UI\NumberUI.h" />
-    <ClInclude Include="Scene\InGame\DungeonScene.h" />
     <ClInclude Include="Scene\InGame\NormalScene.h" />
     <ClInclude Include="Object\GameObj\Creature\Monsters\MonsterSpawner.h" />
     <ClInclude Include="Object\GameObj\Creature\Monsters\Bat.h" />
@@ -265,7 +264,6 @@
     <ClCompile Include="Object\Effect\DamageEffect.cpp" />
     <ClCompile Include="Object\Effect\Effect.cpp" />
     <ClCompile Include="Object\UI\NumberUI.cpp" />
-    <ClCompile Include="Scene\InGame\DungeonScene.cpp" />
     <ClCompile Include="Scene\InGame\NormalScene.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Monsters\MonsterSpawner.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Monsters\Bat.cpp" />

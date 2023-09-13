@@ -12,7 +12,6 @@ public:
 	
 	void Render();
 
-	void SetDebug(bool debug) { _collider->SetDebug(debug); }
 
 	int GetWorldIndex(Vector2 pos);
 	int GetFocusedIndex(Vector2 orginPos, Vector2 targetPos);

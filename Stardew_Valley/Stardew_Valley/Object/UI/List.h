@@ -36,7 +36,7 @@ protected:
 	shared_ptr <Sprite> _body;
 	vector<shared_ptr<TextureButton>> _buttons;
 
-	int _curIndex = -1;
+	int _curIndex = 0;
 	bool _isActive = false;
 
 };

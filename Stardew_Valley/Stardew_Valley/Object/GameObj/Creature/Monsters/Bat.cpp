@@ -4,7 +4,6 @@
 Bat::Bat()
 	:Monster("Bat", Vector2(30, 30), 500.0f, MoveType::FLYING)
 {
-	_col->SetDebug(true);
 	_bodySlot = make_shared<Transform>();
 	_bodySlot->SetParent(_col->GetTransform());
 
@@ -53,7 +52,7 @@ void Bat::CreateAction()
 		indices.push_back({ 3, 0 });
 		shared_ptr<Action> move = make_shared<Action>(indices, Action::Type::END);
 
-		move->SetEndEvent(std::bind(&Monster::SetIdle, this));
+		move->AddEndEvent(std::bind(&Monster::SetIdle, this));
 		_actions.push_back(move);
 	}
 #pragma endregion

@@ -24,8 +24,8 @@ public:
 
 	Vector2 GetCurFrame() { return _indices[_curAnimationIndex]; }
 
-	void SetMiddleEvent(CallBack cb) { _middleEvent = cb; }
-	void SetEndEvent(CallBack cb) { _endEvent = cb; }
+	void AddMiddleEvent(CallBack cb) { _playEvents.push_back(cb); }
+	void AddEndEvent(CallBack cb) { _endEvents.push_back(cb);}
 	void SetEndBoolEvent(CallBackBool cb) { _endBoolEvent = cb; }
 	void SetEndIntEvent(CallBackInt cb) { _endIntEvent = cb; }
 private:
@@ -43,8 +43,8 @@ private:
 
 	bool _isReverse = false;
 
-	CallBack _middleEvent = nullptr;
-	CallBack _endEvent = nullptr;
+	vector<CallBack> _playEvents;
+	vector<CallBack> _endEvents;
 	CallBackBool _endBoolEvent = nullptr;
 	CallBackInt _endIntEvent = nullptr;
 };
