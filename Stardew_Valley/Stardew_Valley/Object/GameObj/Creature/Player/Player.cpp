@@ -21,6 +21,7 @@ Player::Player()
 	_magnatic->SetParent(_col->GetTransform());
 	_bodySlot->AddPos(Vector2(0, 20));
 	_bodySlot->SetParent(_col->GetTransform());
+
 	CreateAction();
 
 	_armActions[_armIndex]->Play();

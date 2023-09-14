@@ -21,6 +21,7 @@ public:
 
 	virtual void Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col) override;
 
+	void SetWater(bool val) { _water = val; }
 	void SetPlantable(bool val) { _plantable = val; }
 
 	bool GetPlantable() { return _plantable; }
@@ -31,5 +32,6 @@ public:
 private:
 	Connect _connect;
 	bool _plantable = false;
+	bool _water = false;
 };
 

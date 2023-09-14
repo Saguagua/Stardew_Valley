@@ -22,7 +22,7 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 
 	auto crop = dynamic_pointer_cast<Crop>(_obj);
 
-	if (crop != nullptr && crop->GetWater())
+	if (_water)
 		name = "W";
 
 	name += "HoeDirt";

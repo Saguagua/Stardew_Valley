@@ -28,6 +28,8 @@ public:
 	void AddEndEvent(CallBack cb) { _endEvents.push_back(cb);}
 	void SetEndBoolEvent(CallBackBool cb) { _endBoolEvent = cb; }
 	void SetEndIntEvent(CallBackInt cb) { _endIntEvent = cb; }
+
+	bool IsPlay() { return _isPlay; }
 private:
 	string _name;
 	

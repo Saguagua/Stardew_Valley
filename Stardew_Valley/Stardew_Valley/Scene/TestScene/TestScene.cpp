@@ -11,6 +11,7 @@ TestScene::TestScene()
 	EffectManager::Create();
 
 	_player = make_shared<PlayerFight>();
+	_player->Initialize();//Fight를 부모로 바꿀듯?
 	_player->GetTransform()->SetPos(CENTER);
 	PlayerUI::Create(_player);
 	OBJECT_SPAWNER->SetPlayer(_player);
@@ -18,6 +19,8 @@ TestScene::TestScene()
 	DATA->LoadMaps("Test");
 	_map = make_shared<TileMap>(DATA->GetPlayerMapInfos());
 	_map->ChangeMap(0);
+
+	_player->SetMap(_map);
 
 	FishingSystem::GetInstance()->SetPlayer(_player);
 	FishingSystem::GetInstance()->SetMap(_map);

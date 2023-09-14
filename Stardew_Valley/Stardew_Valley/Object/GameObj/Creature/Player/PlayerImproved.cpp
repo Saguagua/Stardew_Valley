@@ -5,44 +5,73 @@
 PlayerImproved::PlayerImproved()
 	:Player()
 {
+	_handSlot = make_shared<Transform>();
 	_itemSlot = make_shared<Transform>();
 	_itemRenderer = make_shared<Sprite>("BLANK", Vector2(30, 30), SpriteType::OBJECT);
 
+	_handSlot->AddPos(Vector2(0, 30));
+	_handSlot->SetParent(_bodySlot);
 
-	_itemSlot->AddPos(Vector2(0, 30));
-	_itemSlot->SetParent(_bodySlot);
-
+	_itemSlot->AddPos(Vector2(0, 5));
+	_itemSlot->SetParent(_handSlot);
 	CreateAction();
+}
+
+void PlayerImproved::Initialize()
+{
+	for (auto item : _items)
+		item->SetPlayer(shared_from_this());
 }
 
 void PlayerImproved::Update()
 {
 	Player::Update();
-
+	_handSlot->Update();
 	_itemSlot->Update();
 
 	if (_toolActive)
 	{
+		if (!_toolActions[_itemActionIndex]->IsPlay())
+			return;
+
 		_toolActions[_itemActionIndex]->Update();
 		_itemRenderer->SetIndex(_toolActions[_itemActionIndex]->GetCurFrame().x);
-
-		if (_direction == SIDE)
-			RotateItemSlot();
-		else
-			MoveItemSlot();
+		
+		UpdateHandSlot();
 	}
 }
 
 void PlayerImproved::Render()
 {
-	Player::Render();
-
-	if (_toolActive)
+	if (_direction == BACK)
 	{
-		_itemSlot->Set_World(0);
+		if (_toolActive)
+		{
+			_itemSlot->Set_World(0);
 
-		_itemRenderer->Render();
+			_itemRenderer->Render();
+		}
+		_bodySlot->Set_World(0);
+		_body->Render();
+		_arm->Render();
 	}
+	else
+	{
+		_bodySlot->Set_World(0);
+		_body->Render();
+		_arm->Render();
+
+
+		if (_toolActive)
+		{
+			_itemSlot->Set_World(0);
+
+			_itemRenderer->Render();
+		}
+	}
+	
+	_col->Render();
+	_magnatic->Render();
 }
 
 void PlayerImproved::PlayAction(int action)
@@ -68,12 +97,19 @@ void PlayerImproved::CancelSubscribe(PlayerSubscribe* subscriber)
 void PlayerImproved::KeyInput()
 {
 	ItemAction();
-
+	
 	if (!_freeze)
 	{
 		Player::Move();
 		ChangeIndex();
 	}
+}
+
+void PlayerImproved::SetMap(shared_ptr<TileMap> map)
+{
+	_map = map;
+	for (auto item : _items)
+		item->SetMap(map);
 }
 
 bool PlayerImproved::AddItem(string name)
@@ -142,6 +178,324 @@ void PlayerImproved::SetCurItem(int index)
 	SetArmAction(armIndex);
 }
 
+void PlayerImproved::ChangeIndex()
+{
+	if (KEY_DOWN('1'))
+	{
+		SetCurItem(0);
+	}
+	else if (KEY_DOWN('2'))
+	{
+		SetCurItem(1);
+	}
+	else if (KEY_DOWN('3'))
+	{
+		SetCurItem(2);
+	}
+	else if (KEY_DOWN('4'))
+	{
+		SetCurItem(3);
+	}
+	else if (KEY_DOWN('5'))
+	{
+		SetCurItem(4);
+	}
+	else if (KEY_DOWN('6'))
+	{
+		SetCurItem(5);
+	}
+	else if (KEY_DOWN('7'))
+	{
+		SetCurItem(6);
+	}
+	else if (KEY_DOWN('8'))
+	{
+		SetCurItem(7);
+	}
+	else if (KEY_DOWN('9'))
+	{
+		SetCurItem(8);
+	}
+	else if (KEY_DOWN('0'))
+	{
+		SetCurItem(9);
+	}
+}
+
+void PlayerImproved::ItemAction()
+{
+	int type = _items[_curIndex]->GetType();
+
+	switch (type)
+	{
+	case Item::Type::AXE:
+	case Item::Type::PICKAXE:
+	case Item::Type::HOE:
+	{
+		if (KEY_DOWN(VK_LBUTTON) && !_freeze)
+		{
+			string name = _items[_curIndex]->GetName();
+
+			SetDirection(W_MOUSE_POS);
+
+			if (_direction == FRONT)
+			{
+				name += "F";
+				_itemActionIndex = 0;
+				_handSlot->SetPos(Vector2(-10, 0));
+				_handSlot->SetAngle(0);
+				_handSlotDirection = { 50, -50 };
+				_handSlotRotate = 0.0f;
+			}
+			else if (_direction == SIDE)
+			{
+				name += "S";
+				_itemActionIndex = 1;
+				_handSlot->SetPos(Vector2(-10, 10));
+				_handSlot->SetAngle(0.7f);
+				_handSlotDirection = { 80, -25 };
+				_handSlotRotate = -6.5f;
+			}
+			else
+			{
+				name += "B";
+				_itemActionIndex = 0;
+				_handSlot->SetPos(Vector2(0, 10));
+				_handSlot->SetAngle(0);
+				_handSlotDirection = { 0, 50 };
+				_handSlotRotate = 0.0f;
+			}
+
+			_itemRenderer->SetImage(name);
+
+			_handSlot->SetScale(DATA->GetXMLInfo(name)->GetSize(0));
+
+			SetAction(PlayerAction::TOOL);
+			SetArmAction(PlayerAction::TOOL);
+			_toolActions[_itemActionIndex]->Play();
+
+			_toolActive = true;
+			_freeze = true;
+			SetPause(true);
+
+			_items[_curIndex]->StartCharging(0, 1, _items[_curIndex]->GetVals()[0], 1);
+		}
+		else if (KEY_PRESS(VK_LBUTTON))
+		{
+			_items[_curIndex]->Charging();
+		}
+		else if (KEY_UP(VK_LBUTTON))
+		{
+			SetPause(false);
+		}
+		break;
+	}
+	case Item::Type::WATERINGCAN:
+	{
+		if (KEY_DOWN(VK_LBUTTON) && !_freeze)
+		{
+			string name = _items[_curIndex]->GetName();
+
+			SetDirection(W_MOUSE_POS);
+
+			if (_direction == FRONT)
+			{
+				name += "F";
+				_itemActionIndex = 2;
+				_handSlot->SetPos(Vector2(0, -20));
+				_handSlot->SetAngle(0);
+				_handSlotDirection = { 0, 35 };
+				_handSlotRotate = 0.0f;
+			}
+			else if (_direction == SIDE)
+			{
+				name += "S";
+				_itemActionIndex = 3;
+				_handSlot->SetPos(Vector2(20, -10));
+				_handSlot->SetAngle(0);
+				_handSlotDirection = { 0, 20 };
+				_handSlotRotate = 0.0f;
+			}
+			else
+			{
+				name += "B";
+				_itemActionIndex = 4;
+				_handSlot->SetPos(Vector2(0, 0));
+				_handSlot->SetAngle(0);
+				_handSlotDirection = { 0, 35 };
+				_handSlotRotate = 0.0f;
+			}
+
+			_itemRenderer->SetImage(name);
+
+			_handSlot->SetScale(DATA->GetXMLInfo(name)->GetSize(0));
+
+			SetAction(PlayerAction::TOOL2);
+			SetArmAction(PlayerAction::TOOL2);
+			_toolActions[_itemActionIndex]->Play();
+
+			_toolActive = true;
+			_freeze = true;
+			SetPause(true);
+
+			_items[_curIndex]->StartCharging(0, 1, _items[_curIndex]->GetVals()[0], 1);
+		}
+		else if (KEY_PRESS(VK_LBUTTON))
+		{
+			_items[_curIndex]->Charging();
+		}
+		else if (KEY_UP(VK_LBUTTON))
+		{
+			SetPause(false);
+		}
+	
+		break;
+	}
+	case Item::Type::EATABLE:
+	{
+		if (KEY_DOWN(VK_LBUTTON))
+		{
+			_items[_curIndex]->Use();
+		}
+	}
+	case Item::FISHINGROD:
+	{
+		if (KEY_DOWN(VK_LBUTTON))
+		{
+			string name = _items[_curIndex]->GetName();
+
+			SetDirection(W_MOUSE_POS);
+
+			if (_direction == FRONT)
+			{
+				name += "F";
+				_itemActionIndex = 0;
+				_handSlot->SetPos(Vector2(-10, 0));
+				_handSlot->SetAngle(0);
+				_handSlotDirection = { 50, -50 };
+				_handSlotRotate = 0.0f;
+			}
+			else if (_direction == SIDE)
+			{
+				name += "S";
+				_itemActionIndex = 1;
+				_handSlot->SetPos(Vector2(-10, 10));
+				_handSlot->SetAngle(0.7f);
+				_handSlotDirection = { 80, -25 };
+				_handSlotRotate = -6.5f;
+			}
+			else
+			{
+				name += "F";
+				_itemActionIndex = 0;
+				_handSlot->SetPos(Vector2(0, 10));
+				_handSlot->SetAngle(0);
+				_handSlotDirection = { 0, 50 };
+				_handSlotRotate = 0.0f;
+			}
+
+			_itemRenderer->SetImage(name);
+
+			_handSlot->SetScale(DATA->GetXMLInfo(name)->GetSize(0));
+
+			SetAction(PlayerAction::FISHING1);
+			SetArmAction(PlayerAction::FISHING1);
+			_toolActions[_itemActionIndex]->Play();
+
+			_toolActive = true;
+			_freeze = true;
+			SetPause(true);
+
+			_items[_curIndex]->StartCharging(0, 1, _items[_curIndex]->GetVals()[0], 1);
+		}
+		else if (KEY_UP(VK_LBUTTON))
+		{
+			SetPause(false);
+		}
+	}
+	case Item::Type::WEAPON:
+	{
+		if (KEY_DOWN(VK_LBUTTON))
+		{
+			SetDirection(W_MOUSE_POS);
+			SetAction(PlayerAction::ATTACK);
+			SetArmAction(PlayerAction::ATTACK);
+			SetFreeze(true);
+		}
+	}
+	case Item::Type::SEED:
+	case Item::Type::FACILITY:
+	{
+		if (KEY_DOWN(VK_LBUTTON))
+			_items[_curIndex]->Use();
+		break;
+	}
+
+	default:
+		break;
+	}
+}
+
+void PlayerImproved::SetPause(bool val)
+{
+	_actions[_actionIndex]->Pause(val);
+	_armActions[_armIndex]->Pause(val);
+	_toolActions[_itemActionIndex]->Pause(val);
+}
+
+void PlayerImproved::UpdateHandSlot()
+{
+	_handSlot->AddPos(_handSlotDirection * DELTA_TIME);
+	_handSlot->AddAngle(_handSlotRotate * DELTA_TIME);
+}
+
+void PlayerImproved::SwapItems(int index1, int index2)
+{
+	shared_ptr<Item> tmp = _items[index1];
+	_items[index1] = _items[index2];
+	_items[index2] = tmp;
+
+	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
+}
+
+void PlayerImproved::ToolEndEvent()
+{
+	_items[_curIndex]->Use();
+	_toolActive = false;
+	_freeze = false;
+}
+
+void PlayerImproved::AddMaxHP(short cost)
+{
+}
+
+void PlayerImproved::AddMaxStamina(short cost)
+{
+}
+
+void PlayerImproved::AddHP(short cost)
+{
+	_hp += cost;
+
+	if (_hp <= 0)
+		_state = (PlayerState::DEAD);
+
+	float ratio = (float)_hp / (float)_maxHp;
+	PlayerUI::GetInstance()->SetHP(ratio);
+}
+
+void PlayerImproved::AddStamina(short cost)
+{
+	_stamina += cost;
+
+	if (_stamina <= 0)
+		_state = (PlayerState::DEAD);
+
+	float ratio = (float)_stamina / (float)_maxStamina;
+	PlayerUI::GetInstance()->SetStamina(ratio);
+}
+
+
 void PlayerImproved::CreateAction()
 {
 
@@ -200,9 +554,9 @@ void PlayerImproved::CreateAction()
 		CallBack cb = std::bind(&PlayerImproved::SetIdle, this);
 
 
-		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END);
-		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END);
-		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END);
+		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END, 0.07f);
+		shared_ptr<Action> SideBody = make_shared<Action>(sideBody, Action::Type::END, 0.07f);
+		shared_ptr<Action> BackBody = make_shared<Action>(backBody, Action::Type::END, 0.07f);
 
 		FrontBody->AddEndEvent(cb);
 		SideBody->AddEndEvent(cb);
@@ -212,9 +566,9 @@ void PlayerImproved::CreateAction()
 		_actions.push_back(SideBody);
 		_actions.push_back(BackBody);
 
-		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END);
-		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END);
-		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END);
+		shared_ptr<Action> FrontArm = make_shared<Action>(frontArm, Action::Type::END, 0.07f);
+		shared_ptr<Action> SideArm = make_shared<Action>(sideArm, Action::Type::END, 0.07f);
+		shared_ptr<Action> BackArm = make_shared<Action>(backArm, Action::Type::END, 0.07f);
 
 		FrontArm->AddEndEvent(cb);
 		SideArm->AddEndEvent(cb);
@@ -476,265 +830,126 @@ void PlayerImproved::CreateAction()
 	}
 #pragma endregion
 
-#pragma region ToolActions
+#pragma region ToolActionsPick,Axe,Hoe
 	{
 		vector<Vector2> toolFront;
 		toolFront.push_back(Vector2(0, 0));
 		toolFront.push_back(Vector2(1, 0));
 
-		shared_ptr<Action> ToolFront = make_shared<Action>(toolFront, Action::Type::END, 0.25f);
+		shared_ptr<Action> ToolFront = make_shared<Action>(toolFront, Action::Type::END, 0.1f);
 
 		vector<Vector2> toolSide;
-		toolFront.push_back(Vector2(0, 0));
-		shared_ptr<Action> ToolSide = make_shared<Action>(toolSide, Action::Type::END, 0.5f);
+		toolSide.push_back(Vector2(0, 0));
+		shared_ptr<Action> ToolSide = make_shared<Action>(toolSide, Action::Type::END, 0.2f);
 
 		vector<Vector2> toolBack;
-		toolFront.push_back(Vector2(0, 0));
-		toolFront.push_back(Vector2(1, 0));
-		shared_ptr<Action>ToolBack = make_shared<Action>(toolBack, Action::Type::END, 0.25f);
+		toolBack.push_back(Vector2(0, 0));
+		toolBack.push_back(Vector2(1, 0));
+		shared_ptr<Action>ToolBack = make_shared<Action>(toolBack, Action::Type::END, 0.1f);
 
-		//CallBack slotMove = std::bind(&PlayerImproved::MoveItemSlot, this);
-		//CallBack slotRotate = std::bind(&PlayerImproved::RotateItemSlot, this);
 		CallBack endEvent = std::bind(&PlayerImproved::ToolEndEvent, this);
-
-		//ToolFront->AddMiddleEvent(slotMove);
-		//ToolSide->AddMiddleEvent(slotRotate);
-		//ToolBack->AddMiddleEvent(slotMove);
 
 		ToolFront->AddEndEvent(endEvent);
 		ToolSide->AddEndEvent(endEvent);
 		ToolBack->AddEndEvent(endEvent);
-
 
 		_toolActions.push_back(ToolFront);
 		_toolActions.push_back(ToolSide);
 		_toolActions.push_back(ToolBack);
 	}
 #pragma endregion
-}
 
-void PlayerImproved::ChangeIndex()
-{
-	if (KEY_DOWN('1'))
+#pragma region ToolActionWatering
 	{
-		SetCurItem(0);
+		vector<Vector2> toolFront;
+		toolFront.push_back(Vector2(0, 0));
+		toolFront.push_back(Vector2(1, 0));
+
+		shared_ptr<Action> ToolFront = make_shared<Action>(toolFront, Action::Type::END, 0.1f);
+
+		vector<Vector2> toolSide;
+		toolSide.push_back(Vector2(0, 0));
+		shared_ptr<Action> ToolSide = make_shared<Action>(toolSide, Action::Type::END, 0.4f);
+
+		vector<Vector2> toolBack;
+		toolBack.push_back(Vector2(0, 0));
+		shared_ptr<Action>ToolBack = make_shared<Action>(toolBack, Action::Type::END, 0.1f);
+
+		CallBack endEvent = std::bind(&PlayerImproved::ToolEndEvent, this);
+
+		ToolFront->AddEndEvent(endEvent);
+		ToolSide->AddEndEvent(endEvent);
+		ToolBack->AddEndEvent(endEvent);
+
+		_toolActions.push_back(ToolFront);
+		_toolActions.push_back(ToolSide);
+		_toolActions.push_back(ToolBack);
 	}
-	else if (KEY_DOWN('2'))
+#pragma endregion
+
+
+#pragma region ToolActionFishingStart
 	{
-		SetCurItem(1);
+		vector<Vector2> toolFront;
+		toolFront.push_back(Vector2(0, 0));
+		toolFront.push_back(Vector2(1, 0));
+		toolFront.push_back(Vector2(2, 0));
+
+		shared_ptr<Action> ToolFront = make_shared<Action>(toolFront, Action::Type::END, 0.1f);
+
+		vector<Vector2> toolSide;
+		toolSide.push_back(Vector2(0, 0));
+		toolSide.push_back(Vector2(1, 0));
+		toolSide.push_back(Vector2(2, 0));
+		toolSide.push_back(Vector2(3, 0));
+		toolSide.push_back(Vector2(4, 0));
+		toolSide.push_back(Vector2(5, 0));
+		shared_ptr<Action> ToolSide = make_shared<Action>(toolSide, Action::Type::END, 0.4f);
+
+		vector<Vector2> toolBack;
+		toolBack.push_back(Vector2(0, 0));
+		toolBack.push_back(Vector2(1, 0));
+		toolBack.push_back(Vector2(2, 0));
+		shared_ptr<Action>ToolBack = make_shared<Action>(toolBack, Action::Type::END, 0.1f);
+
+		CallBack endEvent = std::bind(&PlayerImproved::ToolEndEvent, this);
+
+		ToolFront->AddEndEvent(endEvent);
+		ToolSide->AddEndEvent(endEvent);
+		ToolBack->AddEndEvent(endEvent);
+
+		_toolActions.push_back(ToolFront);
+		_toolActions.push_back(ToolSide);
+		_toolActions.push_back(ToolBack);
 	}
-	else if (KEY_DOWN('3'))
+#pragma endregion
+
+
+#pragma region ToolActionFishingPulling
 	{
-		SetCurItem(2);
+		vector<Vector2> toolFront;
+		toolFront.push_back(Vector2(0, 0));
+
+		shared_ptr<Action> ToolFront = make_shared<Action>(toolFront, Action::Type::END, 0.1f);
+
+		vector<Vector2> toolSide;
+		toolSide.push_back(Vector2(0, 0));
+		toolSide.push_back(Vector2(1, 0));
+		shared_ptr<Action> ToolSide = make_shared<Action>(toolSide, Action::Type::END, 0.4f);
+
+		vector<Vector2> toolBack;
+		toolBack.push_back(Vector2(0, 0));
+		shared_ptr<Action>ToolBack = make_shared<Action>(toolBack, Action::Type::END, 0.1f);
+
+		CallBack endEvent = std::bind(&PlayerImproved::ToolEndEvent, this);
+
+		ToolFront->AddEndEvent(endEvent);
+		ToolSide->AddEndEvent(endEvent);
+		ToolBack->AddEndEvent(endEvent);
+
+		_toolActions.push_back(ToolFront);
+		_toolActions.push_back(ToolSide);
+		_toolActions.push_back(ToolBack);
 	}
-	else if (KEY_DOWN('4'))
-	{
-		SetCurItem(3);
-	}
-	else if (KEY_DOWN('5'))
-	{
-		SetCurItem(4);
-	}
-	else if (KEY_DOWN('6'))
-	{
-		SetCurItem(5);
-	}
-	else if (KEY_DOWN('7'))
-	{
-		SetCurItem(6);
-	}
-	else if (KEY_DOWN('8'))
-	{
-		SetCurItem(7);
-	}
-	else if (KEY_DOWN('9'))
-	{
-		SetCurItem(8);
-	}
-	else if (KEY_DOWN('0'))
-	{
-		SetCurItem(9);
-	}
-}
-
-void PlayerImproved::ItemAction()
-{
-	int type = _items[_curIndex]->GetType();
-
-	if (type == Item::Type::AXE ||
-		type == Item::Type::PICKAXE ||
-		type == Item::Type::HOE)
-	{
-		
-		if (KEY_DOWN(VK_LBUTTON))
-		{
-
-			string name = _items[_curIndex]->GetName();
-
-			SetDirection(W_MOUSE_POS);
-
-			if (_direction == FRONT)
-			{
-				name += "F";
-				_itemSlotDirection = { 0, -1 };
-				_itemActionIndex = 0;
-			}
-			else if (_direction == SIDE)
-			{
-				name += "S";
-				_itemActionIndex = 1;
-			}
-			else
-			{
-				name += "B";
-				_itemSlotDirection = { 0, 1 };
-				_itemActionIndex = 0;
-			}
-
-			_itemRenderer->SetImage(name);
-			_itemSlot->SetPos(Vector2(-10, 10));
-			_itemSlot->SetScale(DATA->GetXMLInfo(name)->GetSize(0));
-
-
-			SetAction(PlayerAction::TOOL);
-			SetArmAction(PlayerAction::TOOL);
-			_toolActions[_itemActionIndex]->Play();
-			
-
-			_toolActive = true;
-			SetPause(true);
-		}
-		else if (KEY_UP(VK_LBUTTON))
-		{
-			SetPause(false);
-		}
-	}
-	else if (type == Item::Type::WATERINGCAN)
-	{
-		string name = _items[_curIndex]->GetName();
-
-		if (_direction == FRONT)
-			name += "F";
-		else if (_direction == SIDE)
-			name += "S";
-		else
-			name += "B";
-
-		if (KEY_DOWN(VK_LBUTTON))
-		{
-			SetDirection(W_MOUSE_POS);
-			SetAction(PlayerAction::TOOL2);
-			SetArmAction(PlayerAction::TOOL2);
-			SetPause(true);
-		}
-		else if (KEY_UP(VK_LBUTTON))
-		{
-			SetPause(false);
-		}
-	}
-	else if (type == Item::Type::EATABLE)
-	{
-		if (KEY_DOWN(VK_LBUTTON))
-		{
-
-		}
-	}
-	else if (type == Item::Type::FISHINGROD && FishingSystem::GetInstance()->GetStep() == FishingSystem::Step::THROW)
-	{
-		string name = _items[_curIndex]->GetName();
-
-		if (_direction == FRONT)
-			name += "F";
-		else if (_direction == SIDE)
-			name += "S";
-		else
-			name += "B";
-
-		if (KEY_DOWN(VK_LBUTTON))
-		{
-			SetDirection(W_MOUSE_POS);
-			SetAction(PlayerAction::FISHING1);
-			SetArmAction(PlayerAction::FISHING1);
-			SetPause(true);
-		}
-		else if (KEY_UP(VK_LBUTTON))
-		{
-			SetPause(false);
-		}
-	}
-	else if (type == Item::Type::WEAPON)
-	{
-		
-		if (KEY_DOWN(VK_LBUTTON))
-		{
-			SetDirection(W_MOUSE_POS);
-			SetAction(PlayerAction::ATTACK);
-			SetArmAction(PlayerAction::ATTACK);
-			SetFreeze(true);
-		}
-		
-	}
-}
-
-void PlayerImproved::SetPause(bool val)
-{
-	_actions[_actionIndex]->Pause(val);
-	_armActions[_armIndex]->Pause(val);
-	_toolActions[_itemActionIndex]->Pause(val);
-	_freeze = val;
-}
-
-void PlayerImproved::SwapItems(int index1, int index2)
-{
-	shared_ptr<Item> tmp = _items[index1];
-	_items[index1] = _items[index2];
-	_items[index2] = tmp;
-
-	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
-}
-
-void PlayerImproved::RotateItemSlot()
-{
-	_itemSlot->AddAngle(0.1f * DELTA_TIME);
-}
-
-void PlayerImproved::MoveItemSlot()
-{
-	_itemSlot->AddPos(_itemSlotDirection * DELTA_TIME * 100.0f);
-}
-
-void PlayerImproved::ToolEndEvent()
-{
-	_items[_curIndex]->Use(shared_from_this(), _map.lock());
-	_toolActive = false;
-}
-
-void PlayerImproved::AddMaxHP(short cost)
-{
-}
-
-void PlayerImproved::AddMaxStamina(short cost)
-{
-}
-
-void PlayerImproved::AddHP(short cost)
-{
-	_hp += cost;
-
-	if (_hp <= 0)
-		_state = (PlayerState::DEAD);
-
-	float ratio = (float)_hp / (float)_maxHp;
-	PlayerUI::GetInstance()->SetHP(ratio);
-}
-
-void PlayerImproved::AddStamina(short cost)
-{
-	_stamina += cost;
-
-	if (_stamina <= 0)
-		_state = (PlayerState::DEAD);
-
-	float ratio = (float)_stamina / (float)_maxStamina;
-	PlayerUI::GetInstance()->SetStamina(ratio);
+#pragma endregion
 }

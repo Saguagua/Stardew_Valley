@@ -173,6 +173,7 @@ void TileMap::Watering(Vector2 originPos, Vector2 targetPos, short level)
 
 		if (aTile != nullptr)
 		{
+			aTile->SetWater(true);
 			auto crop = dynamic_pointer_cast<Crop>(aTile->GetObj());
 
 			if (crop != nullptr)

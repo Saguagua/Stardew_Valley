@@ -42,18 +42,22 @@ public:
 
 	const vector<short>& GetVals() { return _vals; }
 
-	void Use(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void SetPlayer(shared_ptr<PlayerImproved> p) { _player = p; }
+	void SetMap(shared_ptr<TileMap> m) { _map = m; }
+
+	void Use();
 	void Charging();
+	void StartCharging(int chargLevelInitial, float timeMax, int chargeMax, int levelPlus);
 protected:
-	void Hoe(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Water(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Break(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Fishing(shared_ptr<PlayerImproved> p);
-	void Weapon(shared_ptr<PlayerImproved> p);
-	void Eat(shared_ptr<PlayerImproved> p);
-	void Seed(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Fertilizer(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
-	void Collocate(shared_ptr<PlayerImproved> p, shared_ptr<TileMap> m);
+	void Hoe();
+	void Water();
+	void Fishing();
+	void Break();
+	void Weapon();
+	void Eat();
+	void Seed();
+	void Fertilizer();
+	void Collocate();
 
 	string _subName;
 
@@ -63,8 +67,15 @@ protected:
 
 	vector<short> _vals;
 
+	float _timeMax;
+	int _chargeMax;
 	float _chargeTime;
-	float _chargeCount;
+	int _chargeLevel;
+	int _levelPlus;
+
 
 	Vector2 _point;
+
+	weak_ptr<TileMap> _map;
+	weak_ptr<PlayerImproved> _player;
 };

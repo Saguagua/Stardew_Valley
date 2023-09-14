@@ -9,6 +9,8 @@ public:
 	PlayerImproved();
 	~PlayerImproved() {}
 
+	void Initialize();
+
 	void Update();
 	virtual void Render() override;
 
@@ -19,7 +21,7 @@ public:
 
 	void KeyInput();
 
-	void SetMap(shared_ptr<TileMap> map) {}
+	void SetMap(shared_ptr<TileMap> map);
 
 	void SetCurItem(int index);
 	void SwapItems(int index1, int index2);
@@ -39,9 +41,8 @@ protected:
 	void ItemAction();
 	virtual void SetPause(bool val) override;
 
+	void UpdateHandSlot();
 	//CallBack
-	void RotateItemSlot();
-	void MoveItemSlot();
 	void ToolEndEvent();
 
 	weak_ptr<TileMap> _map;
@@ -53,10 +54,13 @@ protected:
 
 	//Slots
 	shared_ptr<Transform> _itemSlot;
-	Vector2 _itemSlotDirection;
+	shared_ptr<Transform> _handSlot;
 
 	list<PlayerSubscribe*> _subscribers;
 	bool _toolActive = false;
 	int _itemActionIndex = 0;
+
+	Vector2 _handSlotDirection;
+	float _handSlotRotate;
 };
 
