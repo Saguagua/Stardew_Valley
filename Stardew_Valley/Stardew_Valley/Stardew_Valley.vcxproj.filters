@@ -282,9 +282,6 @@
     <ClInclude Include="Object\GameObj\Creature\Monsters\Bat.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\GameObj\Creature\Player\PlayerFight.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\GameObj\Creature\Monsters\MonsterSpawner.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -531,9 +528,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\GameObj\Creature\Monsters\Bat.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\GameObj\Creature\Player\PlayerFight.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\GameObj\Creature\Monsters\MonsterSpawner.cpp">

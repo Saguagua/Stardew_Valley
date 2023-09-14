@@ -111,12 +111,16 @@ void Item::Hoe()
 {
 	_player.lock()->AddStamina(_vals[1]);
 	_map.lock()->Hoeing(_player.lock()->GetWorldPos(), _point, _chargeLevel);
+	_player.lock()->SetFreeze(false);
+	_player.lock()->SetToolActive(false);
 }
 
 void Item::Water()
 {
 	_player.lock()->AddStamina(_vals[1]);
 	_map.lock()->Watering(_player.lock()->GetWorldPos(), _point, _chargeLevel);
+	_player.lock()->SetFreeze(false);
+	_player.lock()->SetToolActive(false);
 }
 
 void Item::Break()
@@ -132,6 +136,9 @@ void Item::Break()
 	{
 		breakObj->GetDamage(shared_from_this());
 	}
+
+	_player.lock()->SetFreeze(false);
+	_player.lock()->SetToolActive(false);
 }
 
 void Item::Fishing()
@@ -139,48 +146,36 @@ void Item::Fishing()
 	if (FishingSystem::GetInstance()->GetStep() != FishingSystem::Step::THROW)
 		return;
 
-	if (KEY_DOWN(VK_LBUTTON))
-	{
-		_chargeLevel = 300;
-		_chargeTime = 0;
-		_point = W_MOUSE_POS;
-	}
-	else if (KEY_PRESS(VK_LBUTTON))
-	{
-		if (_chargeLevel < 700)
-			_chargeLevel += 5;
-	}
-	else if (KEY_UP(VK_LBUTTON))
-	{
-		_player.lock()->AddStamina(_vals[1]);
+	_player.lock()->AddStamina(_vals[1]);
+	
+	int dir = _player.lock()->GetDirection();
+	Vector2 direction;
+	Vector2 originPos = _player.lock()->GetWorldPos();
+	Vector2 targetPos = originPos;
 
-		int dir = _player.lock()->GetDirection();
-		Vector2 direction;
-		Vector2 originPos = _player.lock()->GetWorldPos();
-		Vector2 targetPos = originPos;
 
-		if (dir == SIDE)
-		{
-			float lr = _player.lock()->GetCollider()->GetWorldScale().x;
-			direction.x = 1 * lr;
-			direction.y = 0;
-			targetPos.x += (_chargeLevel * lr);
-		}
-		else if (dir == FRONT)
-		{
-			direction.x = 0;
-			direction.y = -1;
-			targetPos.y -= _chargeLevel;
-		}
-		else if (dir == BACK)
-		{
-			direction.x = 0;
-			direction.y = 1;
-			targetPos.y += _chargeLevel;
-		}
-
-		FishingSystem::GetInstance()->HookSetting(direction, _chargeLevel);
+	if (dir == SIDE)
+	{
+		float lr = _player.lock()->GetCollider()->GetWorldScale().x;
+		direction.x = 1 * lr;
+		direction.y = 0;
+		targetPos.x += (_chargeLevel * lr);
 	}
+	else if (dir == FRONT)
+	{
+		direction.x = 0;
+		direction.y = -1;
+		targetPos.y -= _chargeLevel;
+	}
+	else if (dir == BACK)
+	{
+		direction.x = 0;
+		direction.y = 1;
+		targetPos.y += _chargeLevel;
+	}
+
+	FishingSystem::GetInstance()->HookSetting(direction, _chargeLevel);
+	FishingSystem::GetInstance()->ActiveFishingHook();
 }
 
 void Item::Weapon()
@@ -205,6 +200,11 @@ void Item::Weapon()
 	//	p->_attackCount = 0.0f;
 	//	p->_isAttacking = true;
 	//}
+
+
+	_player.lock()->SetFreeze(false);
+	_player.lock()->SetToolActive(false);
+	_player.lock()->SetAttacking(false);
 }
 
 void Item::Eat()

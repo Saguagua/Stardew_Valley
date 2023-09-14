@@ -29,7 +29,7 @@ public:
 	void Update();
 
 	void SetMap(shared_ptr<TileMap> map) { _map = map; }
-	void SetPlayer(shared_ptr<PlayerFight> player) { _player = player; }
+	void SetPlayer(shared_ptr<PlayerImproved> player) { _player = player; }
 
 	void NextStage();
 
@@ -41,7 +41,7 @@ private:
 	static DungeonSystem* _instance;
 
 	weak_ptr<TileMap> _map;
-	weak_ptr<PlayerFight> _player;
+	weak_ptr<PlayerImproved> _player;
 
 	shared_ptr<Sprite> _renderer;
 	shared_ptr<RectCollider> _doorCollider;

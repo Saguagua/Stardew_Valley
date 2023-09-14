@@ -9,7 +9,6 @@ Player::Player()
 	_magnatic = make_shared<CircleCollider>(50);
 	_interactCol = make_shared<RectCollider>(Vector2(5,5));
 
-
 	_bodySlot = make_shared<Transform>();
 
 	_body = make_shared<LightTextureRect>(L"Resource/Player/farmer_base.png", Vector2(18, 21), Vector2(40, 60));
@@ -46,7 +45,6 @@ void Player::Render()
 	_bodySlot->Set_World(0);
 	_body->Render();
 	_arm->Render();
-
 
 	_col->Render();
 	_magnatic->Render();

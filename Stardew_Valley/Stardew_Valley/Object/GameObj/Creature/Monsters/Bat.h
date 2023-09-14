@@ -8,7 +8,7 @@ public:
 	void Render();
 	void Update();
 
-	virtual void Detect(shared_ptr<PlayerFight> player) override;
+	virtual void Detect(shared_ptr<PlayerImproved> player) override;
 
 private:
 	virtual void CreateAction() override;

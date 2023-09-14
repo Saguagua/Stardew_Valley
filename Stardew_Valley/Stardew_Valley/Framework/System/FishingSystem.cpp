@@ -103,6 +103,9 @@ void FishingSystem::EndThrowing()
 	{
 		_hook->SetActive(false);
 		_player.lock()->SetFreeze(false);
+		_player.lock()->SetToolActive(false);
+		_player.lock()->PlayAction(Player::PlayerAction::IDLE);
+
 	}
 	else
 	{
@@ -118,7 +121,6 @@ void FishingSystem::EndMinigame(bool result)
 
 	_minigame->SetActive(false);
 	_hook->SetReverse(true);
-
 	if (result)
 		_hook->SetResultName(_fishName);
 	else
@@ -129,6 +131,7 @@ void FishingSystem::EndMinigame(bool result)
 void FishingSystem::EndFishing(string itemName)
 {
 	_step = Step::THROW;
+	_player.lock()->SetToolActive(false);
 
 	if (itemName != "BLANK")
 		_player.lock()->AddItem(itemName);

@@ -75,7 +75,7 @@ void FishingHook::Spawn()
 	_action->Play();
 
 	_resultName = "BLANK";
-	_name = "Potato";
+	_name = "Cherry";
 
 	_transform->Update();
 	_originPos = _transform->GetWorldPos();

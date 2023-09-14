@@ -78,7 +78,7 @@ void Bat::Initialize()
 	_isActive = true;
 }
 
-void Bat::Detect(shared_ptr<PlayerFight> player)
+void Bat::Detect(shared_ptr<PlayerImproved> player)
 {
 	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable())
 	{

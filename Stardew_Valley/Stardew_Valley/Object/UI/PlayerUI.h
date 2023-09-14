@@ -1,11 +1,11 @@
 #pragma once
 class PlayerUI
 {
-	PlayerUI(shared_ptr<PlayerFight> player);
+	PlayerUI(shared_ptr<PlayerImproved> player);
 	~PlayerUI() {}
 
 public:
-	static void Create(shared_ptr<PlayerFight> player)
+	static void Create(shared_ptr<PlayerImproved> player)
 	{
 		if (_instance == nullptr)
 			_instance = new PlayerUI(player);

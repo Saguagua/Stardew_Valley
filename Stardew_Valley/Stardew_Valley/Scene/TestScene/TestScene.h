@@ -13,7 +13,7 @@ public:
 private:
 	void KeyInput();
 
-	shared_ptr<PlayerFight> _player;
+	shared_ptr<PlayerImproved> _player;
 	shared_ptr<TileMap> _map;
 
 };

@@ -7,12 +7,12 @@ public:
 	{
 		IDLE = 0,
 		RUN = 3,
-		TOOL = 6,
-		TOOL2 = 9,
-		FISHING1 = 12,
-		FISHING2 = 15,
-		FISHING3 = 18,
-		ATTACK = 21,
+		ATTACK = 6,
+		TOOL = 9,
+		TOOL2 = 12,
+		FISHING1 = 15,
+		FISHING2 = 18,
+		FISHING3 = 21,
 		HOLD = 24,
 	};
 

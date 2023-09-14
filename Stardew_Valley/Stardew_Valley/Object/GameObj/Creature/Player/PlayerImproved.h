@@ -12,7 +12,7 @@ public:
 	void Initialize();
 
 	void Update();
-	virtual void Render() override;
+	void Render();
 
 	void PlayAction(int action);
 
@@ -29,19 +29,24 @@ public:
 	bool AddItem(string name);
 	void AddMaxHP(short cost);
 	void AddMaxStamina(short cost);
-	virtual void AddHP(short cost) override;
+	void AddHP(short cost);
 	void AddStamina(short cost);
 
 	void SetFreeze(bool val) { _freeze = val; }
+	void SetToolActive(bool val) { _toolActive = val; }
+	void SetAttacking(bool val) { _isAttacking = val; }
 	void SendToSubscribers(int type);
 
+	bool IsAttacking() { return _isAttacking; }
+	shared_ptr<RectCollider> GetWeaponCollider() { return _weaponCollider; }
 protected:
-	virtual void CreateAction() override;
+	void CreateAction();
 	void ChangeIndex();
 	void ItemAction();
-	virtual void SetPause(bool val) override;
+	void SetPause(bool val);
 
 	void UpdateHandSlot();
+	void UpdateCenterSlot();
 	//CallBack
 	void ToolEndEvent();
 
@@ -49,10 +54,12 @@ protected:
 
 	shared_ptr<Sprite> _itemRenderer;
 
+	shared_ptr<RectCollider> _weaponCollider;
 
 	vector<shared_ptr<Action>> _toolActions;
 
 	//Slots
+	shared_ptr<Transform> _centerSlot;
 	shared_ptr<Transform> _itemSlot;
 	shared_ptr<Transform> _handSlot;
 
@@ -62,5 +69,10 @@ protected:
 
 	Vector2 _handSlotDirection;
 	float _handSlotRotate;
+	Vector2 _centerSlotDirection;
+	float _centerSlotRotate;
+
+
+	bool _isAttacking = false;
 };
 

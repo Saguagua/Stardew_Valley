@@ -29,9 +29,9 @@ void MonsterSpawner::Update()
 
 		if (!_player.expired())
 		{
-			if (_player.lock()->_isAttacking)
+			if (_player.lock()->IsAttacking())
 			{
-				if (_player.lock()->_weaponCollider->OBB(monster->GetCollider()) && !monster->IsUntouchable())
+				if (_player.lock()->GetWeaponCollider()->OBB(monster->GetCollider()) && !monster->IsUntouchable())
 				{
 					Vector2 dir = (monster->GetWorldPos() - _player.lock()->GetWorldPos()).Normalize();
 					monster->AddPos(dir * 10);

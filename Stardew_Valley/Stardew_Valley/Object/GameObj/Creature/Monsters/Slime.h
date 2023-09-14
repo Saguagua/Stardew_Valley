@@ -17,7 +17,7 @@ public:
 	void Update();
 	void Render();
 
-	virtual void Detect(shared_ptr<PlayerFight> col) override;
+	virtual void Detect(shared_ptr<PlayerImproved> col) override;
 
 	float _chargeCount = 0;
 	float _jumpPower = 0;

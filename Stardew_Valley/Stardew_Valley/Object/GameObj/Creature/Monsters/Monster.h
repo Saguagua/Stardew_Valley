@@ -13,7 +13,7 @@ public:
 	virtual void Render();
 	virtual void Update();
 
-	virtual void Detect(shared_ptr<PlayerFight> player) abstract;
+	virtual void Detect(shared_ptr<PlayerImproved> player) abstract;
 
 	void AddHP(short cost);
 	shared_ptr<CircleCollider> GetDetectArea() { return _detectArea; }

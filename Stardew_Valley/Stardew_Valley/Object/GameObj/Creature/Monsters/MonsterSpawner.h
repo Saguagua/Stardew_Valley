@@ -22,7 +22,7 @@ public:
 			return _instance;
 	}
 
-	void SetPlayer(shared_ptr<PlayerFight> player) { _player = player; }
+	void SetPlayer(shared_ptr<PlayerImproved> player) { _player = player; }
 	void SetTileMap(shared_ptr<TileMap> map) { _map = map; }
 	void Update();
 	void Render();
@@ -35,7 +35,7 @@ private:
 	static MonsterSpawner* _instance;
 
 	vector<shared_ptr<Monster>> _monsters;
-	weak_ptr<PlayerFight> _player;
+	weak_ptr<PlayerImproved> _player;
 	weak_ptr<TileMap> _map;
 
 

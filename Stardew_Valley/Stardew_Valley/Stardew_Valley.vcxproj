@@ -207,7 +207,6 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\PickableItem.h" />
     <ClInclude Include="Object\UI\PlayerUI.h" />
     <ClInclude Include="Object\GameObj\Creature\Player\PlayerImproved.h" />
-    <ClInclude Include="Object\GameObj\Creature\Player\PlayerFight.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\MapTool\MapToolScene.h" />
     <ClInclude Include="Scene\TestScene\ColliderScene.h" />
@@ -298,7 +297,6 @@
     <ClCompile Include="Object\GameObj\Others\DeployableObj\PickableItem.cpp" />
     <ClCompile Include="Object\UI\PlayerUI.cpp" />
     <ClCompile Include="Object\GameObj\Creature\Player\PlayerImproved.cpp" />
-    <ClCompile Include="Object\GameObj\Creature\Player\PlayerFight.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\MapTool\MapToolScene.cpp" />
     <ClCompile Include="Scene\TestScene\ColliderScene.cpp" />

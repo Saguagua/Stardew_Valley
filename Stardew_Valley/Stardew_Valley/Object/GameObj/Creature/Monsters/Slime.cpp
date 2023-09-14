@@ -158,7 +158,7 @@ void Slime::Initialize()
 	_isActive = true;
 }
 
-void Slime::Detect(shared_ptr<PlayerFight> player)
+void Slime::Detect(shared_ptr<PlayerImproved> player)
 {
 	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable())
 	{

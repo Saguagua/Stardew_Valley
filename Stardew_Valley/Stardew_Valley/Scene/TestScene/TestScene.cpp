@@ -10,7 +10,7 @@ TestScene::TestScene()
 	
 	EffectManager::Create();
 
-	_player = make_shared<PlayerFight>();
+	_player = make_shared<PlayerImproved>();
 	_player->Initialize();//Fight를 부모로 바꿀듯?
 	_player->GetTransform()->SetPos(CENTER);
 	PlayerUI::Create(_player);

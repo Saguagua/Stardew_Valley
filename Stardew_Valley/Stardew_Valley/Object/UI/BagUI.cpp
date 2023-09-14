@@ -4,7 +4,7 @@
 #include "List.h"
 #include "BagUI.h"
 
-BagUI::BagUI(shared_ptr<PlayerFight> player)
+BagUI::BagUI(shared_ptr<PlayerImproved> player)
 	:List(Vector2(12, 3)), PlayerSubscribe(player, Type::ITEMS)
 {
 	_transform = make_shared<Transform>();
