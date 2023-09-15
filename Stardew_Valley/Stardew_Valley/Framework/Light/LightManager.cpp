@@ -6,9 +6,8 @@ LightManager* LightManager::_instance = nullptr;
 LightManager::LightManager()
 {
 	_sunLight = { 0.8f, 0.8f, 0.8f, 1.0f };
-	//_colorBuffer = make_shared<LightColorBuffer>();
-	//_posBuffer = make_shared<LightPosBuffer>();
 	
+
 	/*
 	XMFLOAT4* poses = _posBuffer->GetPoses();
 	XMFLOAT4* colors = _colorBuffer->GetColors();
@@ -24,12 +23,6 @@ LightManager::LightManager()
 	colors[3] = { 0, 0, 10000, 1 };
 	colors[4] = { 1000, 1000, 1000, 1 };
 	*/
-}
-
-void LightManager::Update()
-{
-	_colorBuffer->SetSun(_sunLight);
-	_colorBuffer->Update();
 }
 
 void LightManager::UpdateSun()
@@ -57,8 +50,8 @@ void LightManager::UpdateSun()
 			_sunLight = { val, val, val, 1.0f };
 		}
 	}
-	
 
 	_colorBuffer->SetSun(_sunLight);
 	_colorBuffer->Update();
 }
+

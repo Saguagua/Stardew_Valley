@@ -52,7 +52,7 @@ public:
 	Vector2 GetWorldMousePos();
 	Vector2 GetScreenMousePos();
 
-	bool _freeMode = true;;
+	bool _freeMode = true;
 
 private:
 	void FreeMode();

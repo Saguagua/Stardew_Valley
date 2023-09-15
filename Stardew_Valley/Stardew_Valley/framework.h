@@ -43,6 +43,12 @@
 #include "Library/FMOD/inc/fmod.hpp"
 #pragma comment(lib,"Library/FMOD/fmod_vc.lib")
 
+#include <d2d1_2.h>
+#include <dwrite.h>
+
+#pragma comment(lib, "d2d1.lib")
+#pragma comment(lib, "dwrite.lib")
+
 using namespace std;
 using namespace DirectX;
 using namespace Microsoft::WRL;
@@ -58,7 +64,8 @@ using namespace Microsoft::WRL;
 
 //Device
 #include "Framework/Device/Device.h"
-
+#include "Framework\Utility\Singleton.h"
+#include "Framework\Utility\Font.h"
 //Render
 #include "Framework/Render/InputLayout.h"
 #include "Framework/Render/ConstantBuffer.h"
@@ -147,7 +154,7 @@ using namespace Microsoft::WRL;
 #include "Object\UI\List.h"
 #include "Object/UI/PlayerUI.h"
 #include "Object/UI/Palette.h"
-
+#include "Object/UI/FrontCover.h"
 //Map
 #include "Map/TileMap.h"
 

@@ -39,6 +39,7 @@ public:
 	void PostRender();
 
 	int _index = 0;
+	bool _changeScene;
 private:
 	static SceneManager* _instance;
 

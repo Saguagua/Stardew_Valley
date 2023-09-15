@@ -154,6 +154,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Framework\System\DungeonSystem.h" />
+    <ClInclude Include="Framework\Utility\Font.h" />
+    <ClInclude Include="Framework\Utility\Singleton.h" />
+    <ClInclude Include="Object\UI\FrontCover.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Bed.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Door.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Light.h" />
@@ -257,6 +260,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework\System\DungeonSystem.cpp" />
+    <ClCompile Include="Framework\Utility\Font.cpp" />
+    <ClCompile Include="Object\UI\FrontCover.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Bed.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Door.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Light.cpp" />
@@ -350,6 +355,7 @@
     <ResourceCompile Include="Stardew_Valley.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resource\BlackScreen.png" />
     <Image Include="Resource\Monsters\Bat.png" />
     <Image Include="Resource\Monsters\Slime.png" />
     <Image Include="Resource\Object\house.png" />

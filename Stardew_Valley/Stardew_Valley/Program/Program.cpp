@@ -13,7 +13,9 @@ Program::Program()
 
 	TIMER->LockRunTime(60);
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
-
+	Font::GetInstance();
+	Font::GetInstance()->Add("Nanum", L"Nanum NeuRisNeuRisCe");
+	Font::GetInstance()->Add("D2Coding", L"D2Coding");
 	LightManager::Create();
 	ObjectSpawner::Create();
 	SoundManager::Create();
@@ -30,6 +32,7 @@ Program::~Program()
 	SoundManager::Delete();
 	ObjectSpawner::Delete();
 	LightManager::Delete();
+	Font::Delete();
 }
 
 void Program::Update()
@@ -39,9 +42,9 @@ void Program::Update()
 
 	InputManager::GetInstance()->Update();
 	OBJECT_SPAWNER->Update();
-	//LightManager::GetInstance()->Update();
 	SCENEMANAGER->Update();
 	SOUND->Update();
+
 }
 
 void Program::Render()
@@ -58,6 +61,8 @@ void Program::Render()
 
 	ALPHA->SetState();
 
+	Font::GetInstance()->GetDC()->BeginDraw();
+
 	SCENEMANAGER->Render();
 	OBJECT_SPAWNER->Render();
 	CAMERA->SetPostViewPort();
@@ -65,9 +70,14 @@ void Program::Render()
 	SCENEMANAGER->PostRender();
 	CAMERA->PostRender();
 	TIMER->PostRender();
+
+	//Font::GetInstance()->RenderText(L"Hi", "D2Coding", CENTER);
+
+	Font::GetInstance()->GetDC()->EndDraw();
+
+
+
 	ImGui::Checkbox("ColliderArea", &Collider::_isDebug);
-
-
 	// Rendering
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());

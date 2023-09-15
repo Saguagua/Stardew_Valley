@@ -38,11 +38,11 @@ public:
 	shared_ptr<Item> GetItem(int index) { return _items[index]; }
 
 	shared_ptr<RectCollider> _interactCol;
+	void SetIdle();
 protected:
 	void GetDatas();
 
 	void SetFreeze(bool val) { _freeze = val; }
-	void SetIdle();
 
 	//Actions
 	virtual void CreateAction() override;

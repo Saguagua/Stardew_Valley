@@ -6,12 +6,10 @@
 #include "SceneManager.h"
 
 SceneManager* SceneManager::_instance = nullptr;
-
 SceneManager::SceneManager()
 {
 	_scenes.push_back(make_shared<MapToolScene>());
 	_scenes.push_back(make_shared<TestScene>());
-	_scenes.push_back(make_shared<NormalScene>());
 }
 
 void SceneManager::Update()
@@ -32,6 +30,8 @@ void SceneManager::PostRender()
 	{
 		int tmp = _index;
 		ImGui::SliderInt("Index", &tmp, 0, _scenes.size() - 1);
+		ImGui::Checkbox("Cover", &_changeScene);
+
 
 		if (tmp != _index)
 		{

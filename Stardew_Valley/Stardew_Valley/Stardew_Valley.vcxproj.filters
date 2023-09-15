@@ -318,6 +318,15 @@
     <ClInclude Include="Framework\Utility\SoundManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\UI\FrontCover.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Font.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Singleton.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -569,6 +578,12 @@
     <ClCompile Include="Framework\Utility\SoundManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object\UI\FrontCover.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Font.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -625,6 +640,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\XMLResource4.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\BlackScreen.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

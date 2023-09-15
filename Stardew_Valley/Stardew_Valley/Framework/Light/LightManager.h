@@ -41,7 +41,6 @@ public:
 		_colorBuffer->Update();
 	}
 
-	void Update();
 	void UpdateSun();
 
 	void Set_Light(shared_ptr<LightColorBuffer> color, shared_ptr<LightPosBuffer> pos)
@@ -54,8 +53,10 @@ public:
 
 private:
 	static LightManager* _instance;
+
 	shared_ptr<LightPosBuffer> _posBuffer;
 	shared_ptr<LightColorBuffer> _colorBuffer;
+
 	XMFLOAT4 _sunLight;
 	int& _maxHour = TIMER->GetMaxHour();
 	int& _maxMinute = TIMER->GetMaxMinute();

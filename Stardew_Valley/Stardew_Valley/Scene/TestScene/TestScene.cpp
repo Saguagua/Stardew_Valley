@@ -11,7 +11,7 @@ TestScene::TestScene()
 	EffectManager::Create();
 
 	_player = make_shared<PlayerImproved>();
-	_player->Initialize();//Fight를 부모로 바꿀듯?
+	_player->Initialize();
 	_player->GetTransform()->SetPos(CENTER);
 	PlayerUI::Create(_player);
 	OBJECT_SPAWNER->SetPlayer(_player);
@@ -36,6 +36,10 @@ TestScene::TestScene()
 	MONSTER_SPAWNER->SetTileMap(_map);
 	SOUND->Add("bgm1", "Resource/Sound/bgm1.mp3", true);
 	SOUND->Play("bgm1");
+
+	_cover = make_shared<FrontCover>();
+	CallBack cb = std::bind(&TestScene::ChangeMap, this);
+	_cover->SetCallBack(cb);
 }
 
 TestScene::~TestScene()
@@ -55,22 +59,29 @@ void TestScene::Update()
 
 	_map->Blocking(_player->GetCollider());
 
-	for (int i = 0; i < _map->_teleports.size(); i++)
-	{
-		if (_player->GetCollider()->IsCollision(_map->_teleports[i]->_collider))
-		{
-			Vector2 pos = _map->_teleports[i]->_where;
-			_map->ChangeMap(_map->_teleports[i]->_destination);
-			_player->GetTransform()->SetPos(pos);
-		}
-	}
+	
 
 	MONSTER_SPAWNER->Update();
 	DungeonSystem::GetInstance()->Update();
 	EFFECT->Update();
 
-	if (!CAMERA->_freeMode)
+	if (!CAMERA->_freeMode && !SCENEMANAGER->_changeScene)
+	{
 		KeyInput();
+
+		for (int i = 0; i < _map->_teleports.size(); i++)
+		{
+			if (_player->GetCollider()->IsCollision(_map->_teleports[i]->_collider))
+			{
+				_teleportInfo = _map->_teleports[i];
+				SCENEMANAGER->_changeScene = true;
+			}
+		}
+	}
+	else if (SCENEMANAGER->_changeScene)
+	{
+		_cover->Update();
+	}
 }
 
 void TestScene::Render()
@@ -88,6 +99,11 @@ void TestScene::PostRender()
 	_player->PostRender();
 	PLAYERUI->PostRender();
 	EFFECT->PostRender();
+
+	if (SCENEMANAGER->_changeScene)
+	{
+		_cover->PostRender();
+	}
 }
 
 void TestScene::KeyInput()
@@ -98,6 +114,14 @@ void TestScene::KeyInput()
 
 		_map->GetFocusedTile(_player->GetCollider()->GetWorldPos(), W_MOUSE_POS)->Interaction();
 	}
+}
+
+void TestScene::ChangeMap()
+{
+	Vector2 pos = _teleportInfo->_where;
+	_map->ChangeMap(_teleportInfo->_destination);
+	_player->GetTransform()->SetPos(pos);
+	_player->SetIdle();
 }
 
 void TestScene::Initialize()

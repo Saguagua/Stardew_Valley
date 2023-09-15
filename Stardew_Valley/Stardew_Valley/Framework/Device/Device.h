@@ -35,6 +35,11 @@ public:
 		return _deviceContext;
 	}
 
+	ComPtr<IDXGISwapChain> GetSwapChain()
+	{
+		return _swapChain;
+	}
+
 	void Clear();
 
 	void Present();
