@@ -1,8 +1,10 @@
 SteelHoe 1
-PickAxe 1
+WateringCan 1
 Axe 1
+PickAxe 1
+PotatoSeed 10
+Radish 1
+FishingRod 1
 Sword 1
 Torch 10
-BlueTorch 10
-WateringCan 1
-FishingRod 1
+BlueTorch 5

@@ -1,6 +1,4 @@
 SteelHoe 1
-CopperHoe 1
-Hoe 1
 WateringCan 1
 Axe 1
 PickAxe 1

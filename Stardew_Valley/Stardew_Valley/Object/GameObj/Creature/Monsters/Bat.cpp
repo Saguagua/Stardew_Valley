@@ -80,7 +80,7 @@ void Bat::Initialize()
 
 void Bat::Detect(shared_ptr<PlayerImproved> player)
 {
-	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable())
+	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable() && !player->IsDead())
 	{
 		player->AddHP(-5);
 		player->StartUntouchable(1.0f);

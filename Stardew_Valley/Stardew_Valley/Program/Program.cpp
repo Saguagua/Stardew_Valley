@@ -16,6 +16,7 @@ Program::Program()
 
 	LightManager::Create();
 	ObjectSpawner::Create();
+	SoundManager::Create();
 	SceneManager::Create();
 }
 
@@ -26,6 +27,7 @@ Program::~Program()
 	ImGui::DestroyContext();
 
 	SceneManager::Delete();
+	SoundManager::Delete();
 	ObjectSpawner::Delete();
 	LightManager::Delete();
 }
@@ -39,6 +41,7 @@ void Program::Update()
 	OBJECT_SPAWNER->Update();
 	//LightManager::GetInstance()->Update();
 	SCENEMANAGER->Update();
+	SOUND->Update();
 }
 
 void Program::Render()

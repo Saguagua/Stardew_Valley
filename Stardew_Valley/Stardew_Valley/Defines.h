@@ -39,7 +39,7 @@
 #define OBJECT_SPAWNER		ObjectSpawner::GetInstance()
 #define MONSTER_SPAWNER		MonsterSpawner::GetInstance()
 #define EFFECT			EffectManager::GetInstance()
-
+#define SOUND			SoundManager::GetInstance()
 
 #define PALETTE			Palette::GetInstance()
 

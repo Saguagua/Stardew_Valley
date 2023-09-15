@@ -209,7 +209,6 @@ void Item::Weapon()
 
 void Item::Eat()
 {
-	
 	_player.lock()->AddMaxHP(_vals[0]);
 	_player.lock()->AddMaxStamina(_vals[1]);
 	_player.lock()->AddHP(_vals[2]);
@@ -220,8 +219,13 @@ void Item::Eat()
 	if (_count <= 0)
 	{
 		SetItem("BLANK", 0);
+		_player.lock()->SetCurItem(_player.lock()->GetCurIndex());
+
+		_player.lock()->SetAttacking(false);
 	}
 	
+	_player.lock()->SetToolActive(false);
+	_player.lock()->SetFreeze(false);
 	_player.lock()->SendToSubscribers(PlayerSubscribe::ITEMS);
 	
 }
@@ -244,6 +248,7 @@ void Item::Seed()
 	if (_count <= 0)
 	{
 		SetItem("BLANK", 0);
+		_player.lock()->SetCurItem(_player.lock()->GetCurIndex());
 	}
 
 	_player.lock()->SendToSubscribers(PlayerSubscribe::ITEMS);
@@ -268,6 +273,7 @@ void Item::Collocate()
 	if (_count == 0)
 	{
 		SetItem("BLANK",0);
+		_player.lock()->SetCurItem(_player.lock()->GetCurIndex());
 	}
 
 	_player.lock()->SendToSubscribers(PlayerSubscribe::ITEMS);

@@ -161,6 +161,7 @@ using namespace Microsoft::WRL;
 //Utility
 #include "Framework/Utility/Timer.h"
 #include "Framework/Utility/InputManager.h"
+#include "Framework/Utility/SoundManager.h"
 
 #include "Framework/Light/LightManager.h"
 

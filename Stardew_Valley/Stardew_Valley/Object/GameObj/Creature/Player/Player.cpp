@@ -189,6 +189,7 @@ void Player::CreateAction()
 
 void Player::SetArmAction(int state)
 {
+	bool isEating = (state == PlayerAction::EAT);
 	state += _direction;
 	if (_armIndex == state) 
 		return;
@@ -196,8 +197,9 @@ void Player::SetArmAction(int state)
 	_armActions[_armIndex]->Reset();
 
 	bool isHolding = (_state & PlayerState::HOLDING);
+	
 
-	if (!isHolding) {
+	if (!isHolding || isEating) {
 		_armIndex = state;
 	}
 	else {
@@ -211,6 +213,8 @@ void Player::SetIdle()
 {
 	SetAction(PlayerAction::IDLE);
 	SetArmAction(PlayerAction::IDLE);
+	int tmp = _state & PlayerState::HOLDING;
+	_state = PlayerState::IDLE | tmp;
 	_freeze = false;
 }
 
@@ -236,7 +240,15 @@ void Player::Move()
 	}
 	else if (KEY_PRESS('W'))
 	{
+		if (!(_state & (PlayerState::RUNL | PlayerState::RUNR)))
+			_direction = BACK;
+
 		_col->AddPos(Vector2(0, 1) * DELTA_TIME * 200);
+
+		_state |= PlayerState::RUNB;
+
+		SetAction(PlayerAction::RUN);
+		SetArmAction(PlayerAction::RUN);
 	}
 	else if (KEY_UP('W'))
 	{
@@ -266,7 +278,14 @@ void Player::Move()
 	}
 	else if (KEY_PRESS('S'))
 	{
+		if (!(_state & (PlayerState::RUNL | PlayerState::RUNR)))
+			_direction = FRONT;
 		_col->AddPos(Vector2(0, -1) * DELTA_TIME * 200);
+
+		_state |= PlayerState::RUNF;
+
+		SetAction(PlayerAction::RUN);
+		SetArmAction(PlayerAction::RUN);
 	}
 	else if (KEY_UP('S'))
 	{
@@ -296,6 +315,7 @@ void Player::Move()
 		}
 		else if (KEY_PRESS('A'))
 		{
+			_direction = SIDE;
 			_state |= PlayerState::RUNL;
 			SetAction(PlayerAction::RUN);
 			SetArmAction(PlayerAction::RUN);
@@ -339,6 +359,7 @@ void Player::Move()
 		}
 		if (KEY_PRESS('D'))
 		{
+			_direction = SIDE;
 			_state |= PlayerState::RUNR;
 
 			SetAction(PlayerAction::RUN);

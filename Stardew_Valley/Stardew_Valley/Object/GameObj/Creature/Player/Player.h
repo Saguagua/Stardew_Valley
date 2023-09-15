@@ -13,7 +13,9 @@ public:
 		FISHING1 = 15,
 		FISHING2 = 18,
 		FISHING3 = 21,
-		HOLD = 24,
+		EAT = 24,
+		DEATH = 27,
+		HOLD = 30
 	};
 
 	Player();
@@ -25,6 +27,8 @@ public:
 
 	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
 	vector<CallBackInt> GetCurIndexCallback();
+
+	bool IsDead() { return _state & PlayerState::DEAD; }
 
 	short GetMaxStamina() { return _maxStamina; }
 	short GetStamina() { return _stamina; }

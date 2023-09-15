@@ -160,9 +160,9 @@ void Slime::Initialize()
 
 void Slime::Detect(shared_ptr<PlayerImproved> player)
 {
-	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable())
+	if (_col->IsCollision(player->GetCollider()) && !player->IsUntouchable() && !player->IsDead())
 	{
-		player->AddHP(-5);
+		player->AddHP(-20);
 		player->StartUntouchable(1.0f);
 	}
 	

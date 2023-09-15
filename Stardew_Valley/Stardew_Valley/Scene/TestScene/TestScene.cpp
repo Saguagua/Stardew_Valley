@@ -34,6 +34,8 @@ TestScene::TestScene()
 
 	MONSTER_SPAWNER->SetPlayer(_player);
 	MONSTER_SPAWNER->SetTileMap(_map);
+	SOUND->Add("bgm1", "Resource/Sound/bgm1.mp3", true);
+	SOUND->Play("bgm1");
 }
 
 TestScene::~TestScene()

@@ -19,14 +19,14 @@ void Action::Update()
 		{
 			_curAnimationIndex++;
 
+			if (_curAnimationIndex > _indices.size() - 1)
+				Stop();
+
 			for (auto playEvent : _playEvents)
 			{
 				if (playEvent != nullptr)
 					playEvent();
 			}
-			
-			if (_curAnimationIndex > _indices.size() - 1)
-				Stop();
 		}
 		break;
 		case Action::LOOP:
