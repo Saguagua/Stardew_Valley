@@ -4,13 +4,18 @@
 Door::Door(string name,  Vector2 pos)
     :DeployableObject(Type::DOOR, name, pos)
 {
+    _cb = std::bind(&DungeonSystem::NextStage, DungeonSystem::GetInstance());
 }
 
 void Door::Interaction()
 {
+    if (PLAYERUI->GetBagActive())
+        return;
+
     if (KEY_DOWN(VK_RBUTTON))
     {
-        DungeonSystem::GetInstance()->NextStage();
+        SCENEMANAGER->_cover->_isActive = true;
+        SCENEMANAGER->_cover->SetCallBack(_cb);
     }
     
 }

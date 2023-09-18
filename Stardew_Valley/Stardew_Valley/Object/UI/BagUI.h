@@ -11,14 +11,23 @@ public:
 
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
+
+	void SaleMode(bool val);
 private:
 	void CreateButtons();
 
 	void ClickItem(int index);
+	void ClickSaleButton();
+
 	shared_ptr<Transform> _objSlot;
 	shared_ptr<Sprite> _obj;
+	shared_ptr<Sprite> _saleObj;
 	shared_ptr<NumberUI> _number;
+	shared_ptr<TextureButton> _saleButton;
+
+	shared_ptr<Item> _saleUndoItem;
 
 	int _selectedIndex = -1;
+	bool _saleMode = false;
 };
 

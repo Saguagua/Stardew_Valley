@@ -33,4 +33,9 @@ void MapToolScene::PostRender()
 void MapToolScene::Initialize()
 {
 	CAMERA->_freeMode = true;
+	LightManager::GetInstance()->_mapToolMode = true;
+}
+
+void MapToolScene::WhenCoverDark()
+{
 }

@@ -23,7 +23,7 @@ private:
 	string _curName;
 	Vector2 _size;
 
-	wstring _curPage = L"0";
+	wstring _path = L"";
 	int _index;
 
 	vector<VertexTexture> _vertices;

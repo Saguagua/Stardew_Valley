@@ -6,12 +6,12 @@ public:
 
 	~Bed() {}
 
-
-
 	virtual void Interaction() override;
 	virtual vector<int> GetProperty() override;
 
 private:
+	void SceneChange();
 
+	CallBack _cb;
 };
 

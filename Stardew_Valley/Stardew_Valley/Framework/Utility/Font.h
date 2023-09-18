@@ -33,6 +33,8 @@ public:
 
 	IDWriteTextFormat* GetFormat(string key) { return fonts[key]->format; }
 
+	float GetFontSize(string key);
+
 private:
 	ID2D1Factory1*  factory;
 	IDWriteFactory* writeFactory;

@@ -13,13 +13,13 @@ Program::Program()
 
 	TIMER->LockRunTime(60);
 	CAMERA->SetViewPort(WIN_WIDTH, WIN_HEIGHT);
-	Font::GetInstance();
-	Font::GetInstance()->Add("Nanum", L"Nanum NeuRisNeuRisCe");
-	Font::GetInstance()->Add("D2Coding", L"D2Coding");
+	Font::GetInstance()->Add("Nanum", L"Nanum NeuRisNeuRisCe", XMFLOAT3(1.0f, 1.0f, 1.0f), 40.0f);
+	//Font::GetInstance()->Add("D2Coding", L"D2Coding");
 	LightManager::Create();
 	ObjectSpawner::Create();
 	SoundManager::Create();
 	SceneManager::Create();
+	//SCENEMANAGER->
 }
 
 Program::~Program()
@@ -71,10 +71,8 @@ void Program::Render()
 	CAMERA->PostRender();
 	TIMER->PostRender();
 
-	//Font::GetInstance()->RenderText(L"Hi", "D2Coding", CENTER);
 
 	Font::GetInstance()->GetDC()->EndDraw();
-
 
 
 	ImGui::Checkbox("ColliderArea", &Collider::_isDebug);
@@ -106,4 +104,6 @@ void Program::Initialize()
 	ADD_SRV(XMLPATH2);
 	ADD_SRV(XMLPATH3);
 	ADD_SRV(XMLPATH4);
+	ADD_SRV(XMLPATH5);
+	ADD_SRV(XMLPATH6);
 }

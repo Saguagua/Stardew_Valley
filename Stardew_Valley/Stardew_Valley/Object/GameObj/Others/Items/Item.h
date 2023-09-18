@@ -32,6 +32,8 @@ public:
 
 	virtual ~Item() {}
 
+	void Copy(shared_ptr<Item> other);
+
 	void SetItem(string name, short count);
 
 	bool AddCount();
@@ -72,7 +74,6 @@ protected:
 	float _chargeTime;
 	int _chargeLevel;
 	int _levelPlus;
-
 
 	Vector2 _point;
 

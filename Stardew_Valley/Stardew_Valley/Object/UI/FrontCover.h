@@ -10,6 +10,7 @@ public:
 
 	void SetCallBack(CallBack cb) { _cb = cb; }
 
+	bool _isActive = false;
 private:
 	shared_ptr<Transform> _transform;
 	shared_ptr<SingleColorRect> _renderer;

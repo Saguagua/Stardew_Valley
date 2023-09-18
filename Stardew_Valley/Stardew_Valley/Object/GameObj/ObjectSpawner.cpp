@@ -51,12 +51,8 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	}
 	case DeployableObject::CROP:
 	{
-		vector<short> val;
-		val.push_back(10);//period
-		val.push_back(0);  //pro
-		val.push_back(1);  //qual
-		val.push_back(0);
-		obj = make_shared<Crop>(objName, centerPos, val);
+		obj = make_shared<Crop>(objName, centerPos, val1, val2);
+		_crops.push_back(dynamic_pointer_cast<Crop>(obj));
 		break;
 	}
 	case DeployableObject::DOOR:
@@ -69,6 +65,12 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 		obj = make_shared<Bed>(objName, centerPos);
 		break;
 	}
+	case DeployableObject::BOX:
+	{
+		obj = make_shared<Box>(objName, centerPos);
+		_objs.push_back(obj);
+		break;
+	}
 	case DeployableObject::LIGHT:
 	{
 
@@ -76,11 +78,15 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 
 		if (objName == "Torch")
 		{
-			color = { 10000, 10000, 0, 1 };
+			color = { 10000, 5000, 0, 1 };
 		}
 		else if (objName == "BlueTorch")
 		{
 			color = { 0, 500, 10000, 1 };
+		}
+		else if (objName == "Lantern")
+		{
+			color = { 10000, 10000, 0, 1 };
 		}
 
 		shared_ptr<LightInfo> info = make_shared<LightInfo>(color, XMFLOAT4(centerPos.x, centerPos.y, 0, 0));
@@ -92,6 +98,11 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 
 		obj = make_shared<Light>(objName, centerPos, lightIndex);
 
+		break;
+	}
+	case DeployableObject::ELEVATOR:
+	{
+		obj = make_shared<Elevator>(objName, centerPos);
 		break;
 	}
 	case DeployableObject::BLANK:
@@ -144,16 +155,14 @@ void ObjectSpawner::DeleteObj(shared_ptr<class MapInfo> map, int index)
 
 void ObjectSpawner::Update_Crops()
 {
-	for (std::list<Crop*>::iterator iter = _crops.begin(); iter != _crops.end(); )
+	for (int i = 0; i < _crops.size(); i++)
 	{
-		if ((*iter)->GetName() == "BLANK")
+		_crops[i]->Update();
+
+		if (_crops[i]->GetName() == "BLANK")
 		{
-			iter = _crops.erase(iter);
-		}
-		else
-		{
-			(*iter)->Update();
-			++iter;
+			std::swap(_crops[i], _crops[_crops.size() - 1]);
+			_crops.pop_back();
 		}
 	}
 }
@@ -194,6 +203,11 @@ void ObjectSpawner::Update()
 
 		dropItem->Update();
 
+	}
+
+	for (auto obj : _objs)
+	{
+		obj->Update();
 	}
 }
 

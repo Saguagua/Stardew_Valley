@@ -7,13 +7,15 @@ class PlayerInfo
 public:
 
 	PlayerInfo(string name, vector<short>& vals, Vector2 pos, vector<shared_ptr<class Item>> items)
-		:_name(name), _maxHp(vals[0]), _hp(vals[1]), _maxStamina(vals[2]), _stamina(vals[3]), _pos(pos), _items(items)
-	{}
+		:_name(name), _maxHp(vals[0]), _hp(vals[1]), _maxStamina(vals[2]), _stamina(vals[3]), _money(vals[4]), _items(items)
+	{
+		_col = make_shared<RectCollider>(Vector2(20, 20));
+	}
 
 	~PlayerInfo() {}
 
 	string GetName() { return _name; }
-	Vector2& GetPos() { return _pos; }
+	shared_ptr<RectCollider> GetCollider() { return _col; }
 
 	short	       GetHP() { return _hp; }
 	short	    GetMaxHP() { return _maxHp; }
@@ -22,6 +24,8 @@ public:
 	int		    GetState() { return _playerState; }
 	int& GetStateRef() { return _playerState; }
 	int GetCurIndex() { return _curIndex; }
+	int& GetMoney() { return _money; }
+
 	shared_ptr<Item> GetCurItem() { return _items[_curIndex]; }
 	shared_ptr<Item> GetItem(int index) { return _items[index]; }
 	vector<shared_ptr<Item>>& GetItems() { return _items; }
@@ -33,10 +37,11 @@ private:
 	short _maxStamina;
 	short _stamina;
 	vector<shared_ptr<Item>> _items;
-	Vector2 _pos;
+	shared_ptr<RectCollider> _col;
 
 	int _playerState = PlayerState::IDLE;
 	int _curIndex = 0;
+	int _money;
 };
 
 class LightInfo
@@ -140,17 +145,17 @@ public:
 	string GetName() { return _name; }
 	const Position& GetPos(int index) { return _positions[index]; }
 	const Vector2& GetSize(int index) { return _sizes[index]; }
-	const wstring GetPage() { return _page; }
+	const wstring GetPath() { return _path; }
 
 	void AddPosition(Position pos) { _positions.push_back(pos); }
 	void AddSize(Vector2 size) { _sizes.push_back(size); }
-	void SetPage(wstring page) { _page = page; }
+	void SetPath(wstring path) { _path = path; }
 
 private:
 	string _name;
 	vector<Position> _positions;
 	vector<Vector2> _sizes;
-	wstring _page;
+	wstring _path;
 };
 
 struct DropInfo
@@ -219,10 +224,10 @@ private:
 struct CropInfo
 {
 public:
-
-private:
+	string _dropName;
+	short _type;
 	short _period;
-	short _spawnCount;
+	vector<short> _levels;
 };
 
 
@@ -242,4 +247,11 @@ public:
 	vector<string> _fishNames;
 	vector<short> _percents;
 	UINT _size = 0;
+};
+
+struct SaleInfo
+{
+public:
+	short _type;
+	short _price;
 };

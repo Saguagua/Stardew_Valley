@@ -10,5 +10,6 @@ public:
 	virtual vector<int> GetProperty() override;
 
 private:
+	CallBack _cb;
 };
 

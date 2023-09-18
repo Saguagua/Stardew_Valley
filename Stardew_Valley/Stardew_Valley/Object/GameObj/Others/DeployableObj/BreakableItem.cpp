@@ -2,10 +2,7 @@
 #include "DeployableObject.h"
 #include "BreakableItem.h"
 
-void BreakableItem::Interaction()
-{
-	
-}
+
 
 vector<int> BreakableItem::GetProperty()
 {

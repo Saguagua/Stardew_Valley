@@ -6,7 +6,5 @@ public:
 	~Wall() {}
 
 
-	virtual void Interaction() override;
 	virtual vector<int> GetProperty() override;
 };
-

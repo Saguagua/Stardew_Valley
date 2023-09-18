@@ -19,3 +19,7 @@ void DeployableObject::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollid
 
 	col->Render();
 }
+
+void DeployableObject::Update()
+{
+}

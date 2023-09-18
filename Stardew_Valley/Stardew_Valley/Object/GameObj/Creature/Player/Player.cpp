@@ -82,7 +82,7 @@ void Player::GetDatas()
 	_items		= info->GetItems();
 	_state		= info->GetState();
 	
-	_col->SetPos(info->GetPos());
+	_col= info->GetCollider();
 }
 
 void Player::CreateAction()

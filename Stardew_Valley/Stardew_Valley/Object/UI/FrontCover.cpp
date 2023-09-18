@@ -10,7 +10,7 @@ FrontCover::FrontCover()
 
 void FrontCover::PostRender()
 {
-	if (!SCENEMANAGER->_changeScene)
+	if (!_isActive)
 		return;
 
 	_transform->Set_World(0);
@@ -19,10 +19,10 @@ void FrontCover::PostRender()
 
 void FrontCover::Update()
 {
-	if (!SCENEMANAGER->_changeScene)
+	if (!_isActive)
 		return;
 
-	float val = 1 * DELTA_TIME;
+	float val = 1.0f * DELTA_TIME;
 
 	if (_darker)
 	{
@@ -44,7 +44,7 @@ void FrontCover::Update()
 		{
 			_color.w = 0.0f;
 			_darker = true;
-			SCENEMANAGER->_changeScene = false;
+			_isActive = false;
 		}
 	}
 

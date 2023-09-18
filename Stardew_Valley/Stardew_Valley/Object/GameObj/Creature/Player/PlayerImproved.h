@@ -39,6 +39,9 @@ public:
 
 	bool IsAttacking() { return _isAttacking; }
 	shared_ptr<RectCollider> GetWeaponCollider() { return _weaponCollider; }
+
+	void Kill();
+
 protected:
 	void CreateAction();
 	void ChangeIndex();
@@ -49,6 +52,9 @@ protected:
 	void UpdateCenterSlot();
 	//CallBack
 	void ToolEndEvent();
+	void DeathEvent();
+	void Return();
+	CallBack _cb;
 
 	weak_ptr<TileMap> _map;
 

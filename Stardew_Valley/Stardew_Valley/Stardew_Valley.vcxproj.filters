@@ -327,6 +327,24 @@
     <ClInclude Include="Framework\Utility\Singleton.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Scene\Main\LogoScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Main\DayFinishScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Box.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\System\MoneyManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\UI\CalculateUI.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Elevator.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -584,6 +602,24 @@
     <ClCompile Include="Framework\Utility\Font.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Scene\Main\LogoScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Main\DayFinishScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Box.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\System\MoneyManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\CalculateUI.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Elevator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Stardew_Valley.rc">
@@ -645,6 +681,12 @@
     <Image Include="Resource\BlackScreen.png">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="Resource\XMLResource5.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\XMLResource6.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shader\VertexVS.hlsl" />
@@ -670,7 +712,6 @@
     <Text Include="Data\Contents\InitialMap\Dungeon.txt" />
     <Text Include="Data\Contents\InitialMap\Farming.txt" />
     <Text Include="Data\Contents\InitialMap\Fishing.txt" />
-    <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
     <Text Include="Data\SaveFiles\Test\FarmingTile.txt" />
     <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
     <Text Include="Data\SaveFiles\Test\FishingTile.txt" />
@@ -686,10 +727,14 @@
     <Text Include="Data\Contents\InitialMap\FishingTile.txt" />
     <Text Include="Data\Contents\InitialMap\PlayerInfo.txt" />
     <Text Include="Data\Contents\InitialMap\PlayerItems.txt" />
-    <Text Include="Data\Contents\InitialMap\TestObj.txt" />
-    <Text Include="Data\Contents\InitialMap\TestTile.txt" />
+    <Text Include="Data\Contents\InitialMap\HouseObj.txt" />
+    <Text Include="Data\Contents\InitialMap\HouseTile.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonTile.txt" />
+    <Text Include="Data\Contents\SaleTable.txt" />
+    <Text Include="Data\SaveFiles\Test\HouseTile.txt" />
+    <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
+    <Text Include="Data\SaveFiles\Test\HouseObj.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Library\FMOD\fmod_vc.lib" />
@@ -704,6 +749,8 @@
   <ItemGroup>
     <Xml Include="Resource\XMLResource3.xml" />
     <Xml Include="Resource\XMLResource4.xml" />
+    <Xml Include="Resource\XMLResource5.xml" />
+    <Xml Include="Resource\XMLResource6.xml" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resource\Sound\bgm1.mp3" />

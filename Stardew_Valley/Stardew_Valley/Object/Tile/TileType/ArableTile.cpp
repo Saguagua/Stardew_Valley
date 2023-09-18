@@ -22,8 +22,8 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 
 	auto crop = dynamic_pointer_cast<Crop>(_obj);
 
-	if (_water)
-		name = "W";
+	if (crop && crop->GetWater())
+		name = "W";	
 
 	name += "HoeDirt";
 
@@ -42,12 +42,10 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 
 void ArableTile::Interaction()
 {
-	Tile::Interaction();
-
+	
 	if (_obj != nullptr)
-	{
 		_obj->Interaction();
-	}
+	
 }
 
 

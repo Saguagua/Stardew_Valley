@@ -9,7 +9,8 @@ struct PlayerSubscribe
 		ALL,
 		ITEMS,
 		HP,
-		STAMINA
+		STAMINA,
+		MONEY
 	};
 
 	PlayerSubscribe(shared_ptr<PlayerImproved> player, Type type) 

@@ -10,8 +10,7 @@ public:
 	virtual void PostRender() override;
 
 	virtual void Initialize() override;
+	virtual void WhenCoverDark() override;
+
 private:
-
-
-
 };

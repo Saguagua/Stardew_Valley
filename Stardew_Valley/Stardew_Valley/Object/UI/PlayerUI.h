@@ -32,9 +32,12 @@ public:
 	void SetHP(float hp);
 	void SetStamina(float stamina);
 	
-	bool GetBagMode() { return _bagActive; }
+	void SetBagMode(bool val);
+	bool GetBagActive() { return _bagActive; }
+	void SetSaleMode(bool val);
 private:
 	void Key();
+	bool _bagActive;
 	
 	static PlayerUI* _instance;
 
@@ -45,7 +48,5 @@ private:
 	shared_ptr<class Bar> _hpBar;
 	shared_ptr<class Bar> _staminaBar;
 	shared_ptr<class TimeUI> _timeUI;
-
-	bool _bagActive;
 };
 

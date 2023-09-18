@@ -22,6 +22,7 @@
 #include <fstream>
 #include <functional>
 #include <random>
+#include <stack>
 
 #include <d3d11.h>
 #include <d3dcompiler.h>
@@ -66,6 +67,7 @@ using namespace Microsoft::WRL;
 #include "Framework/Device/Device.h"
 #include "Framework\Utility\Singleton.h"
 #include "Framework\Utility\Font.h"
+
 //Render
 #include "Framework/Render/InputLayout.h"
 #include "Framework/Render/ConstantBuffer.h"
@@ -86,6 +88,7 @@ using namespace Microsoft::WRL;
 
 //Informations
 #include "Data/DataInfos.h"
+
 //Save
 #include "Data/DataManager.h"
 
@@ -103,7 +106,6 @@ using namespace Microsoft::WRL;
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/RectCollider.h"
 
-
 //GameObject
 #include "Object\GameObj\Others\GameObject.h"
 #include "Object\GameObj\Others\DeployableObj/DeployableObject.h"
@@ -114,7 +116,8 @@ using namespace Microsoft::WRL;
 #include "Object/GameObj/Others/DeployableObj/Door.h"
 #include "Object/GameObj/Others/DeployableObj/Light.h"
 #include "Object\GameObj\Others\DeployableObj\Wall.h"
-
+#include "Object/GameObj/Others/DeployableObj/Box.h"
+#include "Object/GameObj/Others/DeployableObj/Elevator.h"
 
 #include "Object/Tile/Tile.h"
 
@@ -155,10 +158,13 @@ using namespace Microsoft::WRL;
 #include "Object/UI/PlayerUI.h"
 #include "Object/UI/Palette.h"
 #include "Object/UI/FrontCover.h"
+#include "Object/UI/CalculateUI.h"
+
 //Map
 #include "Map/TileMap.h"
 
 //System
+#include "Framework/System/MoneyManager.h"
 #include "Framework/System/FishingSystem.h"
 #include "Framework/System/DungeonSystem.h"
 

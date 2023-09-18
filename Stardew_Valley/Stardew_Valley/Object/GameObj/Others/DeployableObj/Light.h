@@ -5,7 +5,6 @@ public:
 	Light(string name, Vector2 pos, int lightIndex);
 	~Light() {}
 
-	virtual void Interaction() override;
 	virtual vector<int> GetProperty() override;
 	virtual void GetDamage(shared_ptr<Item> item) override;
 

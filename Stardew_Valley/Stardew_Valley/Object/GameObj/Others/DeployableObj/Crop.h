@@ -2,12 +2,7 @@
 class Crop : public DeployableObject
 {
 public:
-	Crop(string name, Vector2 pos, vector<short> vals) 
-		:DeployableObject(DeployableObject::Type::CROP, name, pos),
-		_period(vals[0]), _progress(vals[1]), _quality(vals[2])
-	{
-		_imgIndex = vals[3];
-	}
+	Crop(string name, Vector2 pos, short progress, short quality);
 	~Crop() {}
 
 	void Update();
@@ -29,9 +24,10 @@ private:
 	short _period;
 	short _progress;
 	short _quality;
+	short _cropType;
 
-	bool _water;
 	short _waterSave = 0;
-	bool _ferti;
+	bool _water = false;
+	bool _ferti = false;
 };
 

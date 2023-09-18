@@ -15,7 +15,7 @@ public:
 		WALL  = 7,
 		DOOR  = 8,
 		BED	  = 9,
-		PORTAL = 10,
+		ELEVATOR = 10,
 		BLANK = 11
 	};
 
@@ -24,7 +24,7 @@ public:
 
 	void Render(shared_ptr<class Sprite> renderer, shared_ptr<RectCollider> col);
 	
-	virtual void Interaction() abstract;
+	virtual void Interaction() {}
 
 	void SetActive(bool active) { _isActive = active; }
 	void SetType(DeployableObject::Type type) { _type = type; }
@@ -34,6 +34,7 @@ public:
 
 	virtual vector<int> GetProperty() abstract;
 	
+	virtual void Update();
 protected:
 	DeployableObject::Type _type;
 	Vector2 _centerPos;

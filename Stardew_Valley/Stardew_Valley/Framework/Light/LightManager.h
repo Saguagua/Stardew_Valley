@@ -50,6 +50,7 @@ public:
 	}
 
 	bool _sunOn = true;
+	bool _mapToolMode = false;
 
 private:
 	static LightManager* _instance;

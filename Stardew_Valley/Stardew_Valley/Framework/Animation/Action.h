@@ -6,6 +6,7 @@ public:
 	enum Type
 	{
 		END,
+		REVERSE_END,
 		LOOP,
 		PINGPONG
 	};
@@ -21,6 +22,8 @@ public:
 	void Pause(bool val);
 	void Stop();
 	void Reset();
+
+	void SetRepeatType(Action::Type type) { _repeatType = type; }
 
 	Vector2 GetCurFrame() { return _indices[_curAnimationIndex]; }
 

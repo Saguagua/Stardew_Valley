@@ -1,4 +1,6 @@
 #include "framework.h"
+#include "Main/LogoScene.h"
+#include "Main/DayFinishScene.h"
 #include "MapTool/MapToolScene.h"
 #include "TestScene/TestScene.h"
 #include "TestScene\ColliderScene.h"
@@ -8,12 +10,19 @@
 SceneManager* SceneManager::_instance = nullptr;
 SceneManager::SceneManager()
 {
+	_scenes.push_back(make_shared<LogoScene>());
 	_scenes.push_back(make_shared<MapToolScene>());
 	_scenes.push_back(make_shared<TestScene>());
+	_scenes.push_back(make_shared<DayFinishScene>());
+
+	_cover = make_shared<FrontCover>();
+
 }
 
 void SceneManager::Update()
 {
+	_cover->Update();
+
 	_scenes[_index]->Update();
 }
 
@@ -25,21 +34,26 @@ void SceneManager::Render()
 void SceneManager::PostRender()
 {
 	_scenes[_index]->PostRender();
+	_cover->PostRender();
 
 	if (ImGui::BeginMenu("SceneManager"))
 	{
 		int tmp = _index;
 		ImGui::SliderInt("Index", &tmp, 0, _scenes.size() - 1);
-		ImGui::Checkbox("Cover", &_changeScene);
 
 
 		if (tmp != _index)
 		{
-			_index = tmp;
-			_scenes[_index]->Initialize();
+			ChangeScene(tmp);
 		}
 
 		ImGui::EndMenu();
 	}
+
 }
 
+void SceneManager::ChangeScene(int index)
+{
+	_index = index;
+	_scenes[_index]->Initialize();
+}

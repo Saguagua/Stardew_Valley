@@ -15,7 +15,7 @@ PlayerUI::PlayerUI(shared_ptr<PlayerImproved> player)
 	_transform = make_shared<Transform>();
 	_bagUI = make_shared<BagUI>(player);
 	_itemSlot = make_shared<ItemSlot>(player);
-	_timeUI = make_shared<TimeUI>();
+	_timeUI = make_shared<TimeUI>(player);
 	_hpBar = make_shared<Bar>(player, "HPBar", Vector2(35, 200));
 	_staminaBar = make_shared<Bar>(player, "StaminaBar", Vector2(35, 200));
 
@@ -48,6 +48,7 @@ void PlayerUI::Update()
 void PlayerUI::NextDay()
 {
 	_timeUI->SetRotate(3.14159f);
+	_timeUI->UpdateDate();
 }
 
 void PlayerUI::SetHP(float hp)
@@ -58,6 +59,20 @@ void PlayerUI::SetHP(float hp)
 void PlayerUI::SetStamina(float stamina)
 {
 	_staminaBar->SetRatio(Vector2(1.0f, stamina));
+}
+
+void PlayerUI::SetBagMode(bool val)
+{
+	_bagActive = val;
+	_itemSlot->SetActive(!_bagActive);
+	_bagUI->SetActive(_bagActive);
+
+}
+
+void PlayerUI::SetSaleMode(bool val)
+{
+	SetBagMode(val);
+	_bagUI->SaleMode(val);
 }
 
 void PlayerUI::Key()
@@ -104,8 +119,6 @@ void PlayerUI::Key()
 	}
 	else if (KEY_DOWN('E'))
 	{
-		_bagActive = !_bagActive;
-		_itemSlot->SetActive(!_bagActive);
-		_bagUI->SetActive(_bagActive);
+		SetBagMode(!_bagActive);
 	}
 }

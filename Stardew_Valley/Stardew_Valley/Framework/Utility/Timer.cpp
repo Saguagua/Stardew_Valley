@@ -10,6 +10,8 @@ Timer::Timer()
 	QueryPerformanceCounter((LARGE_INTEGER*)&_lastTime);
 
 	_timeScale = 1.0f / (float)_periodFrequency;
+
+	_cb = std::bind(&Timer::ChangeScene, this);
 }
 
 void Timer::Update()
@@ -39,7 +41,6 @@ void Timer::Update()
 
 		
 		_minute++;
-		LightManager::GetInstance()->UpdateSun();
 		if (_minute == _maxMinute) //10
 		{
 			_hour++;
@@ -48,10 +49,15 @@ void Timer::Update()
 			if (_hour >= _maxHour) //24
 			{
 				//플레이어 기절 추가
-				SetNextDay();
+				if (!_player.expired())
+					_player.lock()->Kill();
+
+				//SCENEMANAGER->_cover->_isActive = true;
+				//SCENEMANAGER->_cover->SetCallBack(_cb);
 			}
 		}
 		
+		LightManager::GetInstance()->UpdateSun();
 	}
 
 	_runTime += _deltaTime;
@@ -79,7 +85,24 @@ void Timer::PostRender()
 
 void Timer::SetNextDay()
 {
+	_day++;
+
+	if (_day > 30)
+	{
+		_day = 1;
+		_month++;
+
+		if (_month > 12)
+			_month = 1;
+	}
 	_hour = 6;
 	_minute = 0;
 	OBJECT_SPAWNER->Update_Crops();
+	LightManager::GetInstance()->UpdateSun();
+
+}
+
+void Timer::ChangeScene()
+{
+	SCENEMANAGER->ChangeScene(SceneManager::DAYEND);
 }

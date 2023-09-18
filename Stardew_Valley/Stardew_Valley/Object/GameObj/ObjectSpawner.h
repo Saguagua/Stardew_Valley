@@ -50,7 +50,8 @@ private:
 	unordered_map<string, shared_ptr<CropInfo>>& _cropTable		= DATA->GetCropInfos();
 
 	vector<shared_ptr<class DropItem>> _dropItems;
-	list<Crop*> _crops;
+	vector<shared_ptr<Crop>> _crops;
+	vector<shared_ptr<DeployableObject>> _objs;
 
 	shared_ptr<class PlayerInfo> _playerInfo = DATA->GetPlayerInfo();
 	shared_ptr<Sprite> _renderer;

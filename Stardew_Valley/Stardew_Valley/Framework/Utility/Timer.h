@@ -40,11 +40,20 @@ public:
 	int& GetHour() { return _hour; }
 	int& GetMinute() { return _minute; }
 
+	int GetMonth() { return _month; }
+	int GetDay() { return _day; }
+
 	int GetDayTime() { return _hour < 17.0f ? 0 : 1; }
 
 	void SetNextDay();
+	void SetPlayer(shared_ptr<PlayerImproved> player) { _player = player; }
+
 private:
 	static Timer* _instance;
+
+	void ChangeScene();
+
+	weak_ptr<PlayerImproved> _player;
 
 	float _timeScale = 0.0;
 	float _deltaTime = 0.0;
@@ -65,5 +74,10 @@ private:
 	int _maxHour = 24;
 
 	bool _dayTime = true;
+
+	int _month = 1;
+	int _day = 1;
+
+	CallBack _cb;
 };
 

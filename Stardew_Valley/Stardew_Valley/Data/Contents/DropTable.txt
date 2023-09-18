@@ -15,3 +15,7 @@ Stub			Wood_Drop 100 Wood_Drop 100 Wood_Drop 100 Wood_Drop 100 Wood_Drop 100 /
 Box				Box 100 /
 Stone2			Rock_Drop 100 Rock_Drop 80 /
 RubyStone		Ruby 100 Rock_Drop 80 /
+SugarBeet		SugarBeet 100 /
+KidneyBean		KidneyBean 100 KidneyBean 80 /
+Cauliflower		Cauliflower 100 Cauliflower 30 /
+Potato			Potato 100 Potato 90 Potato 30 /

@@ -42,11 +42,13 @@ public:
 	unordered_map<string, shared_ptr<ItemInfo>>&	GetItemInfos()	{ return _itemTable; }
 	unordered_map<string, shared_ptr<CropInfo>>&	GetCropInfos()	{ return _cropTable; }
 	vector<shared_ptr<FishInfo>>& GetFishInfos() { return _fishTable; }
+	unordered_map<string, shared_ptr<SaleInfo>>& GetSaleInfos() { return _saleTable; }
 
 	shared_ptr<DropInfo>	GetDropInfo(string key)		{ return _dropTable[key]; }
 	shared_ptr<DeployInfo>	GetDeployInfo(string key)	{ return _deployTable[key]; }
 	shared_ptr<ItemInfo>	GetItemInfo(string key)		{ return _itemTable[key]; }
 	shared_ptr<CropInfo>	GetCropInfo(string key)		{ return _cropTable[key]; }
+	shared_ptr<SaleInfo>    GetSaleInfo(string key)		{ return _saleTable[key]; }
 
 	void MapToolSave();
 	void PlaySave();
@@ -85,5 +87,6 @@ private:
 	unordered_map<string, shared_ptr<DropInfo>> _dropTable;
 	unordered_map<string, shared_ptr<ItemInfo>> _itemTable;
 	unordered_map<string, shared_ptr<CropInfo>> _cropTable;
+	unordered_map<string, shared_ptr<SaleInfo>> _saleTable;
 	unordered_map<string, shared_ptr<DeployInfo>> _deployTable;
 };

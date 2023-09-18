@@ -153,9 +153,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Elevator.h" />
+    <ClInclude Include="Object\UI\CalculateUI.h" />
+    <ClInclude Include="Framework\System\MoneyManager.h" />
+    <ClInclude Include="Object\GameObj\Others\DeployableObj\Box.h" />
+    <ClInclude Include="Scene\Main\DayFinishScene.h" />
     <ClInclude Include="Framework\System\DungeonSystem.h" />
     <ClInclude Include="Framework\Utility\Font.h" />
     <ClInclude Include="Framework\Utility\Singleton.h" />
+    <ClInclude Include="Scene\Main\LogoScene.h" />
     <ClInclude Include="Object\UI\FrontCover.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Bed.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Door.h" />
@@ -259,8 +265,14 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Elevator.cpp" />
+    <ClCompile Include="Object\UI\CalculateUI.cpp" />
+    <ClCompile Include="Framework\System\MoneyManager.cpp" />
+    <ClCompile Include="Object\GameObj\Others\DeployableObj\Box.cpp" />
+    <ClCompile Include="Scene\Main\DayFinishScene.cpp" />
     <ClCompile Include="Framework\System\DungeonSystem.cpp" />
     <ClCompile Include="Framework\Utility\Font.cpp" />
+    <ClCompile Include="Scene\Main\LogoScene.cpp" />
     <ClCompile Include="Object\UI\FrontCover.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Bed.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Door.cpp" />
@@ -371,6 +383,8 @@
     <Image Include="Resource\UI\DialogBoxGreen.png" />
     <Image Include="Resource\XMLResource3.png" />
     <Image Include="Resource\XMLResource4.png" />
+    <Image Include="Resource\XMLResource5.png" />
+    <Image Include="Resource\XMLResource6.png" />
     <Image Include="small.ico" />
     <Image Include="Stardew_Valley.ico" />
   </ItemGroup>
@@ -478,8 +492,9 @@
     <Text Include="Data\Contents\InitialMap\FishingTile.txt" />
     <Text Include="Data\Contents\InitialMap\PlayerInfo.txt" />
     <Text Include="Data\Contents\InitialMap\PlayerItems.txt" />
-    <Text Include="Data\Contents\InitialMap\TestObj.txt" />
-    <Text Include="Data\Contents\InitialMap\TestTile.txt" />
+    <Text Include="Data\Contents\InitialMap\HouseObj.txt" />
+    <Text Include="Data\Contents\InitialMap\HouseTile.txt" />
+    <Text Include="Data\Contents\SaleTable.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonTile.txt" />
@@ -487,6 +502,8 @@
     <Text Include="Data\SaveFiles\Test\FarmingTile.txt" />
     <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
     <Text Include="Data\SaveFiles\Test\FishingTile.txt" />
+    <Text Include="Data\SaveFiles\Test\HouseObj.txt" />
+    <Text Include="Data\SaveFiles\Test\HouseTile.txt" />
     <Text Include="Data\SaveFiles\Test\PlayerInfo.txt" />
     <Text Include="Data\SaveFiles\Test\PlayerItems.txt" />
     <Text Include="Data\SaveFiles\Test\TestObj.txt" />
@@ -507,6 +524,8 @@
   <ItemGroup>
     <Xml Include="Resource\XMLResource3.xml" />
     <Xml Include="Resource\XMLResource4.xml" />
+    <Xml Include="Resource\XMLResource5.xml" />
+    <Xml Include="Resource\XMLResource6.xml" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resource\Sound\bgm1.mp3" />

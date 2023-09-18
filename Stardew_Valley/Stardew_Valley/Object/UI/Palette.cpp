@@ -22,11 +22,13 @@ Palette::Palette(Vector2 size)
 	CreateLoadList();
 
 	_lists[TILE]->SetActive(true);
+	
 }
 
 void Palette::Render()
 {
 	_map->Render();
+	
 }
 
 void Palette::PostRender()

@@ -4,6 +4,15 @@
 #include "Item.h"
 
 
+void Item::Copy(shared_ptr<Item> other)
+{
+	_name = other->_name;
+	_count = other->_count;
+	_price = other->_price;
+	_type = other->_type;
+	_vals = other->_vals;
+}
+
 void Item::SetItem(string name, short count)
 {
 	shared_ptr<ItemInfo> info = DATA->GetItemInfo(name);
@@ -238,11 +247,17 @@ void Item::Seed()
 	if (tile == nullptr)
 		return;
 
-	if (!tile->GetPlantable() || tile->GetObj() != nullptr)
+	if (!tile->GetPlantable())
+		return;
+	if (tile->GetObj() != nullptr && tile->GetObj()->GetName() != "BLANK")
 		return;
 
 	OBJECT_SPAWNER->CreateObj(_map.lock()->GetcurrentMapInfo(),
-		_map.lock()->GetFocusedIndex(_player.lock()->GetWorldPos(), _point), _subName, 1, 1);
+		_map.lock()->GetFocusedIndex(_player.lock()->GetWorldPos(), _point),
+		_subName,
+		0,
+		2);
+
 	_count--;
 
 	if (_count <= 0)

@@ -23,6 +23,8 @@ PlayerImproved::PlayerImproved()
 	_itemSlot->AddPos(Vector2(0, 10));
 	_itemSlot->SetParent(_handSlot);
 	CreateAction();
+
+	_cb = std::bind(&PlayerImproved::Return, this);
 }
 
 void PlayerImproved::Initialize()
@@ -163,7 +165,8 @@ void PlayerImproved::SendToSubscribers(int type)
 {
 	for (auto subscriber : _subscribers)
 	{
-		if (subscriber->_type == type)
+		if (type == PlayerSubscribe::Type::ALL ||
+			subscriber->_type == type)
 			subscriber->UpdateInfo();
 	}
 }
@@ -655,6 +658,23 @@ void PlayerImproved::ToolEndEvent()
 	_items[_curIndex]->Use();
 }
 
+void PlayerImproved::DeathEvent()
+{
+	SCENEMANAGER->_cover->_isActive = true;
+	SCENEMANAGER->_cover->SetCallBack(_cb);
+	DungeonSystem::GetInstance()->_active = false;
+	_hp = _maxHp;
+	_stamina = _maxStamina;
+}
+
+void PlayerImproved::Return()
+{
+	_map.lock()->ChangeMap(3);
+	_col->SetPos(Vector2(200, 40));
+	_col->Update();
+	SCENEMANAGER->ChangeScene(SceneManager::DAYEND);
+}
+
 void PlayerImproved::AddMaxHP(short cost)
 {
 }
@@ -668,10 +688,8 @@ void PlayerImproved::AddHP(short cost)
 	_hp += cost;
 
 	if (_hp <= 0)
-	{
-		_state = (PlayerState::DEAD);
-		PlayAction(PlayerAction::DEATH);
-	}
+		Kill();
+		
 
 	float ratio = (float)_hp / (float)_maxHp;
 	PlayerUI::GetInstance()->SetHP(ratio);
@@ -682,12 +700,18 @@ void PlayerImproved::AddStamina(short cost)
 	_stamina += cost;
 
 	if (_stamina <= 0)
-		_state = (PlayerState::DEAD);
+		Kill();
 
 	float ratio = (float)_stamina / (float)_maxStamina;
 	PlayerUI::GetInstance()->SetStamina(ratio);
 }
 
+
+void PlayerImproved::Kill()
+{
+	_state = PlayerState::DEAD;
+	PlayAction(PlayerAction::DEATH);
+}
 
 void PlayerImproved::CreateAction()
 {
@@ -1164,11 +1188,13 @@ void PlayerImproved::CreateAction()
 
 #pragma region Death
 	{
+		CallBack cb = std::bind(&PlayerImproved::DeathEvent, this);
 		vector<Vector2> frontBody;
 		frontBody.push_back(Vector2(4, 0));
 		frontBody.push_back(Vector2(5, 0));
 
 		shared_ptr<Action> FrontBody = make_shared<Action>(frontBody, Action::Type::END, 0.2f);
+		FrontBody->AddEndEvent(cb);
 
 		_actions.push_back(FrontBody);
 		_actions.push_back(FrontBody);

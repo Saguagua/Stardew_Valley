@@ -25,13 +25,19 @@ void Tile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 bool Tile::IsBlock()
 {
 	bool isBlock = DATA->GetTileInfo(_tileName) & TileType::BLOCK;
-	bool objBlock = (_obj != nullptr && _obj->IsActive() && _obj->GetType() != DeployableObject::Type::CROP);
+	bool objBlock = (_obj != nullptr &&
+					 _obj->IsActive() &&
+					 _obj->GetType() != DeployableObject::Type::CROP &&
+					 _obj->GetType() != DeployableObject::Type::BED &&
+					 _obj->GetType() != DeployableObject::Type::LIGHT);
 
 	return isBlock || objBlock;
 }
 
 void Tile::Interaction()
 {
+	
 	if (_obj != nullptr)
 		_obj->Interaction();
+	
 }

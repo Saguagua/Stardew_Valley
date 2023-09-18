@@ -173,7 +173,6 @@ void TileMap::Watering(Vector2 originPos, Vector2 targetPos, short level)
 
 		if (aTile != nullptr)
 		{
-			aTile->SetWater(true);
 			auto crop = dynamic_pointer_cast<Crop>(aTile->GetObj());
 
 			if (crop != nullptr)
@@ -329,6 +328,7 @@ int TileMap::GetFocusedIndex(Vector2 orginPos, Vector2 targetPos)
 	}
 	if (worldIndex < 0)
 		worldIndex = 0;
+
 	else if (worldIndex > _curMapSize.x * _curMapSize.y)
 		worldIndex = _curMapSize.x * _curMapSize.y - 1;
 

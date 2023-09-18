@@ -3,6 +3,7 @@
 #include "../Object/Tile/TileType/ArableTile.h"
 #include "../Object/Tile/TileType/FishableTile.h"
 #include "../Framework/Utility/tinyxml2.h"
+#include "Framework/Collision/RectCollider.h"
 #include "DataManager.h"
 
 DataManager* DataManager::_instance = nullptr;
@@ -113,7 +114,7 @@ void DataManager::LoadInitialMaps()
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Farming"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Fishing"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon"));
-	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Test"));
+	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "House"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
 	_initialMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
@@ -132,7 +133,7 @@ void DataManager::LoadMaps(string name)
 	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Farming"));
 	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Fishing"));
 	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Dungeon"));
-	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "Test"));
+	_playerMapInfos.push_back(LoadMap("Data/SaveFiles/" + name + "/", "House"));
 	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon1"));
 	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon2"));
 	_playerMapInfos.push_back(LoadMap("Data/Contents/InitialMap/", "Dungeon3"));
@@ -149,30 +150,35 @@ void DataManager::SaveMaps()
 	string playerName = _playerInfo->GetName();
 	ofstream fout;
 
-	for (int i = 0; i < _playerMapInfos.size() - 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		string mapName = _playerMapInfos[i]->GetName();
 		Vector2 size = _playerMapInfos[i]->GetSize();
 		vector<shared_ptr<Tile>> tileInfo = _playerMapInfos[i]->GetInfos();
-
-		if (_mapTable.count(mapName) == false)
-		{
-			_mapTable[mapName] = true;
-
-			fout.open("Data/Contents/MapNames.txt", std::ios::app);
-			fout << endl << mapName;
-			fout.close();
-		}
-
+		vector<shared_ptr<TeleportInfo>> teleports = _playerMapInfos[i]->GetTeleports();
+		
 		fout.open("Data/SaveFiles/" + playerName + "/" + mapName + "Tile.txt");
 
 		fout << size.x << " " << size.y << endl;
+
+		for (int i = 0; i < teleports.size(); i++)
+		{
+			Vector2 colSize = teleports[i]->_collider->GetWorldSize();
+			Vector2 worldPos = teleports[i]->_collider->GetWorldPos();
+
+			fout << colSize.x / TILE_SIZE.x << " " << colSize.y / TILE_SIZE.y << " ";
+			fout << worldPos.x << " " << worldPos.y << " ";
+			fout << teleports[i]->_destination << " ";
+			fout << teleports[i]->_where.x << " " << teleports[i]->_where.y << endl;
+		}
+
+		fout << -1 << endl;
 
 		for (int i = 0; i < tileInfo.size(); i++)
 		{
 			fout << tileInfo[i]->GetName();
 
-			if (i + 1 != size.x * size.y)
+			if (i + 1 == size.x * size.y)
 				break;
 			else if ((i + 1) % (int)size.x == 0)
 				fout << endl;
@@ -184,13 +190,19 @@ void DataManager::SaveMaps()
 
 		fout.open("Data/SaveFiles/" + playerName + "/" + mapName + "Obj.txt");
 
-		fout << size.x << " " << size.y << endl;
-
 		for (int i = 0; i < tileInfo.size(); i++)
 		{
-			fout << tileInfo[i]->GetObjName();
+			string name = tileInfo[i]->GetObjName();
+			fout << name;
 
-			if (i + 1 != size.x * size.y)
+
+			if (name != "BLANK")
+			{
+				vector<int> val = tileInfo[i]->GetObj()->GetProperty();
+				fout << " " << val[0] << " " << val[1];
+			}
+
+			if (i + 1 == size.x * size.y)
 				break;
 			else if ((i + 1) % (int)size.x == 0)
 				fout << endl;
@@ -200,31 +212,40 @@ void DataManager::SaveMaps()
 
 		fout.close();
 	}
+
+	
 }
 
 void DataManager::SavePlayerInfo()
 {
-	/*ofstream fout;
+	ofstream fout;
+
 	fout.open("Data/SaveFiles/" + _playerInfo->GetName() + "/PlayerInfo.txt");
 
 	fout << _playerInfo->GetName() << endl;
+
 	fout << _playerInfo->GetMaxHP() << " " << _playerInfo->GetHP() << endl;
+
 	fout << _playerInfo->GetMaxStamina() << " " << _playerInfo->GetStamina() << endl;
+
+	fout << _playerInfo->GetMoney() << endl;
+
 	Vector2 pos = _playerInfo->GetCollider()->GetWorldPos();
+
 	fout << pos.x << " " << pos.y;
 
 	fout.close();
 
 	fout.open("Data/SaveFiles/"+ _playerInfo->GetName() + "/PlayerItems.txt");
 
-	vector<shared_ptr<GameObject>> items = _playerInfo->GetItems();
+	vector<shared_ptr<Item>> items = _playerInfo->GetItems();
 
 	for (int i = 0; i < items.size(); i++)
 	{
-		fout << items[i]->GetCode() << " " << items[i]->GetCount() << endl;
+		fout << items[i]->GetName() << " " << items[i]->GetCount() << endl;
 	}
 
-	fout.close();*/
+	fout.close();
 }
 
 void DataManager::LoadPlayerInfo(string playerName)
@@ -254,6 +275,8 @@ void DataManager::LoadPlayerInfo(string playerName)
 	fin >> tmp; //stamina
 	vals.push_back(tmp);
 
+	fin >> tmp; //money
+	vals.push_back(tmp);
 
 	fin >> tmp; //pos.x
 	fin >> tmp2; //pos.y
@@ -423,155 +446,48 @@ void DataManager::ReadXML()
 
 	string name;
 
-	while (true)
+	for (int i = 1; i <= XMLCOUNT; i++)
 	{
-		if (row == nullptr)
-			break;
+		string xmlPath = "Resource/XMLResource" + to_string(i) + ".xml";
+		shared_ptr<tinyxml2::XMLDocument> document = make_shared<tinyxml2::XMLDocument>();
+		document->LoadFile(xmlPath.c_str());
 
-		name = row->FindAttribute("n")->Value();
+		tinyxml2::XMLElement* textureAtlas = document->FirstChildElement();
+		tinyxml2::XMLElement* row = textureAtlas->FirstChildElement();
 
-		if (_xmlTable.count(name) == 0)
+		while (true)
 		{
-			_xmlTable[name] = make_shared<XMLInfo>(name);
+			if (row == nullptr)
+				break;
+
+			name = row->FindAttribute("n")->Value();
+
+			if (_xmlTable.count(name) == 0)
+			{
+				_xmlTable[name] = make_shared<XMLInfo>(name);
+			}
+
+			XMLInfo::Position pos;
+			Vector2 size;
+
+			pos.x = row->FindAttribute("x")->IntValue();
+			pos.y = row->FindAttribute("y")->IntValue();
+			pos.w = row->FindAttribute("w")->IntValue();
+			pos.h = row->FindAttribute("h")->IntValue();
+			size.x = row->FindAttribute("s1")->FloatValue();
+			size.y = row->FindAttribute("s2")->FloatValue();
+			_xmlTable[name]->SetPath(L"Resource/XMLResource" + to_wstring(i) + L".png");
+
+			_xmlTable[name]->AddPosition(pos);
+			_xmlTable[name]->AddSize(size);
+
+			if (_deployTable.count(name) != 0)
+				_deployTable[name]->SetSize(size);
+
+			row = row->NextSiblingElement();
 		}
-
-		XMLInfo::Position pos;
-		Vector2 size;
-
-		pos.x = row->FindAttribute("x")->IntValue();
-		pos.y = row->FindAttribute("y")->IntValue();
-		pos.w = row->FindAttribute("w")->IntValue();
-		pos.h = row->FindAttribute("h")->IntValue();
-		size.x = row->FindAttribute("s1")->FloatValue();
-		size.y = row->FindAttribute("s2")->FloatValue();
-		_xmlTable[name]->SetPage(L"1");
-
-		_xmlTable[name]->AddPosition(pos);
-		_xmlTable[name]->AddSize(size);
-
-		if (_deployTable.count(name) != 0)
-			_deployTable[name]->SetSize(size);
-
-		row = row->NextSiblingElement();
 	}
 
-	xmlPath = "Resource/XMLResource2.xml";
-	document = make_shared<tinyxml2::XMLDocument>();
-	document->LoadFile(xmlPath.c_str());
-
-	textureAtlas = document->FirstChildElement();
-	row = textureAtlas->FirstChildElement();
-
-	while (true)
-	{
-		if (row == nullptr)
-			break;
-
-		name = row->FindAttribute("n")->Value();
-
-		if (_xmlTable.count(name) == 0)
-		{
-			_xmlTable[name] = make_shared<XMLInfo>(name);
-		}
-
-		XMLInfo::Position pos;
-		Vector2 size;
-
-		pos.x = row->FindAttribute("x")->IntValue();
-		pos.y = row->FindAttribute("y")->IntValue();
-		pos.w = row->FindAttribute("w")->IntValue();
-		pos.h = row->FindAttribute("h")->IntValue();
-		size.x = row->FindAttribute("s1")->FloatValue();
-		size.y = row->FindAttribute("s2")->FloatValue();
-
-		_xmlTable[name]->AddPosition(pos);
-		_xmlTable[name]->AddSize(size);
-		_xmlTable[name]->SetPage(L"2");
-
-		if (_deployTable.count(name) != 0)
-			_deployTable[name]->SetSize(size);
-
-		row = row->NextSiblingElement();
-	}
-
-	xmlPath = "Resource/XMLResource3.xml";
-	document = make_shared<tinyxml2::XMLDocument>();
-	document->LoadFile(xmlPath.c_str());
-
-	textureAtlas = document->FirstChildElement();
-	row = textureAtlas->FirstChildElement();
-
-	while (true)
-	{
-		if (row == nullptr)
-			break;
-
-		name = row->FindAttribute("n")->Value();
-
-		if (_xmlTable.count(name) == 0)
-		{
-			_xmlTable[name] = make_shared<XMLInfo>(name);
-		}
-
-		XMLInfo::Position pos;
-		Vector2 size;
-		int page;
-
-		pos.x = row->FindAttribute("x")->IntValue();
-		pos.y = row->FindAttribute("y")->IntValue();
-		pos.w = row->FindAttribute("w")->IntValue();
-		pos.h = row->FindAttribute("h")->IntValue();
-		size.x = row->FindAttribute("s1")->FloatValue();
-		size.y = row->FindAttribute("s2")->FloatValue();
-
-		_xmlTable[name]->AddPosition(pos);
-		_xmlTable[name]->AddSize(size);
-		_xmlTable[name]->SetPage(L"3");
-
-		if (_deployTable.count(name) != 0)
-			_deployTable[name]->SetSize(size);
-
-		row = row->NextSiblingElement();
-	}
-
-	xmlPath = "Resource/XMLResource4.xml";
-	document = make_shared<tinyxml2::XMLDocument>();
-	document->LoadFile(xmlPath.c_str());
-
-	textureAtlas = document->FirstChildElement();
-	row = textureAtlas->FirstChildElement();
-
-	while (true)
-	{
-		if (row == nullptr)
-			break;
-
-		name = row->FindAttribute("n")->Value();
-
-		if (_xmlTable.count(name) == 0)
-		{
-			_xmlTable[name] = make_shared<XMLInfo>(name);
-		}
-
-		XMLInfo::Position pos;
-		Vector2 size;
-
-		pos.x = row->FindAttribute("x")->IntValue();
-		pos.y = row->FindAttribute("y")->IntValue();
-		pos.w = row->FindAttribute("w")->IntValue();
-		pos.h = row->FindAttribute("h")->IntValue();
-		size.x = row->FindAttribute("s1")->FloatValue();
-		size.y = row->FindAttribute("s2")->FloatValue();
-
-		_xmlTable[name]->AddPosition(pos);
-		_xmlTable[name]->AddSize(size);
-		_xmlTable[name]->SetPage(L"4");
-
-		if (_deployTable.count(name) != 0)
-			_deployTable[name]->SetSize(size);
-
-		row = row->NextSiblingElement();
-	}
 }
 
 void DataManager::ReadTypes()
@@ -698,6 +614,71 @@ void DataManager::ReadTypes()
 			fin >> appearanceTime;
 
 			_fishTable[appearanceTime]->AddFishInfo(name, percent); //float
+		}
+
+		fin.close();
+	}
+	// Crop
+	{
+		fin.open("Data/Contents/CropTable.txt");
+		
+
+		string name;
+		string dropName;
+		short period;
+		int type;
+		short value = 0;
+
+		while (!fin.eof())
+		{
+			fin >> name;
+			fin >> dropName;
+			fin >> period;
+			fin >> type;
+
+			vector<short> levels;
+			value = 0;
+			while (true)
+			{
+				fin >> value;
+
+				if (value == -1)
+					break;
+
+				levels.push_back(value);
+			}
+			shared_ptr<CropInfo> info = make_shared<CropInfo>();
+			info->_dropName = dropName;
+			info->_period = period;
+			info->_type = type;
+			info->_levels = levels;
+
+			_cropTable[name] = info;
+		}
+
+		fin.close();
+	}
+	// Sale
+	{
+		fin.open("Data/Contents/SaleTable.txt");
+
+
+		string name;
+		short type;
+		short price;
+
+		while (!fin.eof())
+		{
+			fin >> name;
+			fin >> type;
+			fin >> price;
+
+			
+			shared_ptr<SaleInfo> info = make_shared<SaleInfo>();
+			info->_type = type;
+			info->_price = price;
+
+			_saleTable[name] = info;
 		}
 
 		fin.close();

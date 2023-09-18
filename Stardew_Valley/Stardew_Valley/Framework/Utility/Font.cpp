@@ -79,3 +79,8 @@ void Font::RenderText(wstring text, string key, Vector2 pos, Vector2 size)
 
 	deviceContext->DrawTextW(text.c_str(), text.size(), fonts[key]->format, &rect, fonts[key]->brush);
 }
+
+float Font::GetFontSize(string key)
+{
+	return fonts[key]->format->GetFontSize();
+}

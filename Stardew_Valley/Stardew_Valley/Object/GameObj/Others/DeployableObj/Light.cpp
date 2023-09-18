@@ -7,9 +7,7 @@ Light::Light(string name, Vector2 pos, int lightIndex)
 	_type = LIGHT;
 }
 
-void Light::Interaction()
-{
-}
+
 
 vector<int> Light::GetProperty()
 {

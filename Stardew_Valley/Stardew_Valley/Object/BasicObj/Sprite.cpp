@@ -36,12 +36,14 @@ void Sprite::Render()
 
 void Sprite::SetImage(string name, int index)
 {
-	if (_curPage != _map[name]->GetPage())
-	{
-		_curPage = _map[name]->GetPage();
-		wstring srvPath = L"Resource/XMLResource" + _curPage + L".png";
+	if (_map.count(name) == 0)
+		return;
 
-		_srv = ADD_SRV(srvPath);
+	if (_path != _map[name]->GetPath())
+	{
+		_path = _map[name]->GetPath();
+
+		_srv = ADD_SRV(_path);
 		_xBuffer->SetImgSize(_srv.lock()->GetImageSize());
 	}
 

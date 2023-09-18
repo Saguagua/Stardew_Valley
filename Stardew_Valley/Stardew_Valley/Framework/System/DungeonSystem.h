@@ -35,6 +35,8 @@ public:
 
 	void SpawnDoor(Vector2 pos);
 
+	void Return();
+
 	int _breakCount = 0;
 	bool _active = false;
 private:
@@ -48,5 +50,7 @@ private:
 	bool _doorSpawned = false;
 
 	int _defaultPercent = 10;
+	
+	CallBack _cb;
 };
 

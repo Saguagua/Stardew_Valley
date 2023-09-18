@@ -9,12 +9,15 @@ TestScene::TestScene()
 	MonsterSpawner::Create();
 	
 	EffectManager::Create();
+	MoneyManager::Create();
 
 	_player = make_shared<PlayerImproved>();
 	_player->Initialize();
 	_player->GetTransform()->SetPos(CENTER);
+
 	PlayerUI::Create(_player);
 	OBJECT_SPAWNER->SetPlayer(_player);
+	TIMER->SetPlayer(_player);
 
 	DATA->LoadMaps("Test");
 	_map = make_shared<TileMap>(DATA->GetPlayerMapInfos());
@@ -37,13 +40,12 @@ TestScene::TestScene()
 	SOUND->Add("bgm1", "Resource/Sound/bgm1.mp3", true);
 	SOUND->Play("bgm1");
 
-	_cover = make_shared<FrontCover>();
-	CallBack cb = std::bind(&TestScene::ChangeMap, this);
-	_cover->SetCallBack(cb);
+	_cb = std::bind(&TestScene::WhenCoverDark, this);
 }
 
 TestScene::~TestScene()
 {
+	MoneyManager::Delete();
 	MonsterSpawner::Delete();
 	FishingSystem::Delete();
 	PlayerUI::Delete();
@@ -53,19 +55,16 @@ TestScene::~TestScene()
 
 void TestScene::Update()
 {
-	PLAYERUI->Update();
 	_player->Update();
 	FishingSystem::GetInstance()->Update();
 
 	_map->Blocking(_player->GetCollider());
 
-	
-
 	MONSTER_SPAWNER->Update();
 	DungeonSystem::GetInstance()->Update();
 	EFFECT->Update();
 
-	if (!CAMERA->_freeMode && !SCENEMANAGER->_changeScene)
+	if (!CAMERA->_freeMode && !SCENEMANAGER->_cover->_isActive)
 	{
 		KeyInput();
 
@@ -74,14 +73,13 @@ void TestScene::Update()
 			if (_player->GetCollider()->IsCollision(_map->_teleports[i]->_collider))
 			{
 				_teleportInfo = _map->_teleports[i];
-				SCENEMANAGER->_changeScene = true;
+				SCENEMANAGER->_cover->_isActive = true;
+				SCENEMANAGER->_cover->SetCallBack(_cb);
 			}
 		}
 	}
-	else if (SCENEMANAGER->_changeScene)
-	{
-		_cover->Update();
-	}
+
+	PLAYERUI->Update();
 }
 
 void TestScene::Render()
@@ -99,24 +97,19 @@ void TestScene::PostRender()
 	_player->PostRender();
 	PLAYERUI->PostRender();
 	EFFECT->PostRender();
-
-	if (SCENEMANAGER->_changeScene)
-	{
-		_cover->PostRender();
-	}
 }
 
 void TestScene::KeyInput()
 {
-	if (!PLAYERUI->GetBagMode())
+	if (!PLAYERUI->GetBagActive())
 	{
 		_player->KeyInput();
-
-		_map->GetFocusedTile(_player->GetCollider()->GetWorldPos(), W_MOUSE_POS)->Interaction();
 	}
+
+	_map->GetFocusedTile(_player->GetCollider()->GetWorldPos(), W_MOUSE_POS)->Interaction();
 }
 
-void TestScene::ChangeMap()
+void TestScene::WhenCoverDark()
 {
 	Vector2 pos = _teleportInfo->_where;
 	_map->ChangeMap(_teleportInfo->_destination);
@@ -126,7 +119,10 @@ void TestScene::ChangeMap()
 
 void TestScene::Initialize()
 {
+	LightManager::GetInstance()->_mapToolMode = false;
 	CAMERA->_freeMode = false;
 	CAMERA->SetPos(_player->GetWorldPos());
 	CAMERA->Update();
+	_player->SendToSubscribers(PlayerSubscribe::ALL);
+	PLAYERUI->NextDay();
 }

@@ -7,10 +7,10 @@ class SceneManager
 public:
 	enum SceneIndex
 	{
+		LOGO,
 		MAPTOOL,
 		TEST,
-		NORMAL,
-		DUNGEON
+		DAYEND
 	};
 
 	static void Create()
@@ -38,10 +38,14 @@ public:
 
 	void PostRender();
 
-	int _index = 0;
-	bool _changeScene;
+	void ChangeScene(int index);
+
+
+	shared_ptr<FrontCover> _cover;
 private:
 	static SceneManager* _instance;
+	int _index = 0;
+
 
 	vector<shared_ptr<Scene>> _scenes;
 };

@@ -15,7 +15,13 @@ BagUI::BagUI(shared_ptr<PlayerImproved> player)
 
 	_body = make_shared<Sprite>( "BagUI", Vector2(700, 300), SpriteType::UI);
 	_obj = make_shared<Sprite>("BLANK", Vector2(40, 50), SpriteType::UI);
+	_saleObj = make_shared<Sprite>("BLANK", Vector2(40, 50), SpriteType::UI);
 
+	_saleButton = make_shared<TextureButton>("DialogBoxGreen", Vector2(100, 100));
+	
+	CallBack cb = std::bind(&BagUI::ClickSaleButton, this);
+	
+	_saleButton->AddPushEvent(cb);
 
 	CreateButtons();
 
@@ -36,6 +42,10 @@ void BagUI::Update()
 	}
 
 	List::Update();
+
+
+	if (_saleMode)
+		_saleButton->Update();
 }
 
 void BagUI::Render()
@@ -54,6 +64,13 @@ void BagUI::Render()
 		_number->SetNumber(_player.lock()->GetItem(i)->GetCount());
 		_number->Render();
 	}
+
+	if (_saleMode)
+	{
+		_saleButton->Render();
+		_saleObj->Render();
+	}
+
 
 	if (_selectedIndex != -1)
 	{
@@ -81,12 +98,31 @@ void BagUI::ClickItem(int index)
 		_buttons[index]->GetName() != "BLANK")
 	{
 		_selectedIndex = index;
-		_obj->SetImage(_player.lock()->GetItems()[_selectedIndex]->GetName(),0);
+		_obj->SetImage(_player.lock()->GetItem(_selectedIndex)->GetName(), 0);
 	}
 	else if (_selectedIndex != -1)
 	{
 		_player.lock()->SwapItems(_selectedIndex, index);
 		_selectedIndex = -1;
+	}
+}
+
+void BagUI::ClickSaleButton()
+{
+	if (!_saleMode)
+		return;
+
+	if (_selectedIndex == -1)
+	{
+		_saleUndoItem = MONEYMANAGER->Undo();
+	}
+	else
+	{
+		auto item = _player.lock()->GetItem(_selectedIndex);
+		_saleObj->SetImage(item->GetName());
+		_obj->SetImage("BLANK");
+		MONEYMANAGER->SaleItem(item);
+		_player.lock()->SendToSubscribers(Type::ITEMS);
 	}
 }
 
@@ -102,4 +138,16 @@ void BagUI::UpdateInfo()
 
 void BagUI::Dead()
 {
+}
+
+void BagUI::SaleMode(bool val)
+{
+	_saleMode = val;
+
+	if (_saleMode)
+		_transform->SetPos(Vector2(0, -200));
+	else
+		_transform->SetPos(Vector2(0, 0));
+
+	_transform->Update();
 }

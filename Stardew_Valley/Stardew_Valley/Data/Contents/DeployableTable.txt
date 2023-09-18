@@ -34,10 +34,10 @@ DungeonSideWallRev   7   0    0   0
 DungeonCorner3Rev    7   0    0   0
 DungeonCorner1Rev    7   0    0   0
 DungeonCorner2Rev    7   0    0   0
+WoodHouseWall		 7   0    0   0
 DungeonDoor          8   0    0   0
-Elevator			 8   0    0   0				 
 DungeonGate			 8   0    0   0
 Bed					 9   0    0   0
 Bed2			     9   0    0   0
-Portal				 10  0    0   0
+Elevator			 10   0    0   0
 BLANK				 11	 0	  0	  0

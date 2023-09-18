@@ -9,6 +9,6 @@ public:
 	virtual void Render() abstract;
 	virtual void PostRender() {}
 	virtual void Initialize() abstract;
-
+	virtual void WhenCoverDark() abstract;
 };
 

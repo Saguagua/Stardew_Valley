@@ -7,6 +7,7 @@ DungeonSystem::DungeonSystem()
 {
 	_renderer = make_shared<Sprite>("DungeonGate", TILE_SIZE, SpriteType::OBJECT);
 	_doorCollider = make_shared<RectCollider>(TILE_SIZE);
+	_cb = std::bind(&DungeonSystem::NextStage, this);
 }
 
 void DungeonSystem::Render()
@@ -31,20 +32,23 @@ void DungeonSystem::Update()
 	if (_player.lock()->GetCollider()->IsCollision(_doorCollider))
 	{
 		if (KEY_DOWN(VK_RBUTTON))
-			NextStage();
+		{
+			SCENEMANAGER->_cover->_isActive = true;
+			SCENEMANAGER->_cover->SetCallBack(_cb);
+		}
 	}
 }
 
 void DungeonSystem::NextStage()
 {
-	int dungeonIndex = rand() % 3 + 3;
+	int dungeonIndex = rand() % 3 + 4;
 
 	if (dungeonIndex >= _map.lock()->GetMapInfos().size())
-		dungeonIndex = 3;
+		dungeonIndex = 4;
 
-	if (dungeonIndex == 3)
+	if (dungeonIndex == 4)
 		_player.lock()->GetCollider()->SetPos(Vector2(400, 730));
-	else if (dungeonIndex == 4)
+	else if (dungeonIndex == 5)
 		_player.lock()->GetCollider()->SetPos(Vector2(420, 700));
 	else
 		_player.lock()->GetCollider()->SetPos(Vector2(630, 1090));
@@ -66,6 +70,9 @@ void DungeonSystem::NextStage()
 			continue;
 		if (type == DeployableObject::Type::DOOR)
 			continue;
+		if (type == DeployableObject::Type::ELEVATOR)
+			continue;
+
 		if (type == DeployableObject::Type::LIGHT)
 		{
 			auto light = dynamic_pointer_cast<Light>(infos[i]->GetObj());
@@ -92,4 +99,10 @@ void DungeonSystem::SpawnDoor(Vector2 pos)
 
 	_doorCollider->SetPos(pos);
 	_doorSpawned = true;
+}
+
+void DungeonSystem::Return()
+{
+	_map.lock()->ChangeMap(2);
+	_player.lock()->GetCollider()->SetPos(CENTER);
 }

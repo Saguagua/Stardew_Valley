@@ -27,10 +27,10 @@ LightManager::LightManager()
 
 void LightManager::UpdateSun()
 {
-	if (!_sunOn)
-	{
+	if (_mapToolMode)
+		_sunLight = { 1.0f, 1.0f, 1.0f, 1.0f };
+	else if (!_sunOn)
 		_sunLight = {0.1f, 0.1f, 0.1f, 1.0f};
-	}
 	else
 	{
 		if (_hour < SUNSET)

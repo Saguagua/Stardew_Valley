@@ -2,7 +2,10 @@ SteelHoe 1
 WateringCan 1
 Axe 1
 PickAxe 1
-PotatoSeed 10
+SugarBeetSeed  3 
+KidneyBeanSeed  3 
+CauliflowerSeed 3 
+PotatoSeed 3
 Radish 1
 FishingRod 1
 Sword 1

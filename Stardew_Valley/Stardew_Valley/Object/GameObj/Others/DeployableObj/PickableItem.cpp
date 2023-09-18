@@ -4,6 +4,9 @@
 
 void PickableItem::Interaction()
 {
+	if (PLAYERUI->GetBagActive())
+		return;
+
 	/*if (DATA->AddItem(_pickCode))
 	{
 		_objCode = 139;
