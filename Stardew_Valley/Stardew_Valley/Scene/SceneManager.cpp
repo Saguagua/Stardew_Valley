@@ -34,7 +34,6 @@ void SceneManager::Render()
 void SceneManager::PostRender()
 {
 	_scenes[_index]->PostRender();
-	_cover->PostRender();
 
 	if (ImGui::BeginMenu("SceneManager"))
 	{
@@ -50,6 +49,7 @@ void SceneManager::PostRender()
 		ImGui::EndMenu();
 	}
 
+	_cover->PostRender();
 }
 
 void SceneManager::ChangeScene(int index)

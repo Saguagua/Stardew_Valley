@@ -28,7 +28,7 @@ public:
 	shared_ptr<CircleCollider> GetMagnatic() { return _magnatic; }
 	vector<CallBackInt> GetCurIndexCallback();
 
-	bool IsDead() { return _state & PlayerState::DEAD; }
+	bool IsDead() { return _state == PlayerState::DEAD; }
 
 	short GetMaxStamina() { return _maxStamina; }
 	short GetStamina() { return _stamina; }

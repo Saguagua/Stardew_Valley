@@ -116,6 +116,9 @@ void PlayerImproved::CancelSubscribe(PlayerSubscribe* subscriber)
 
 void PlayerImproved::KeyInput()
 {
+	if (_state == PlayerState::DEAD)
+		return;
+
 	ItemAction();
 	
 	if (!_freeze)
@@ -690,7 +693,6 @@ void PlayerImproved::AddHP(short cost)
 	if (_hp <= 0)
 		Kill();
 		
-
 	float ratio = (float)_hp / (float)_maxHp;
 	PlayerUI::GetInstance()->SetHP(ratio);
 }

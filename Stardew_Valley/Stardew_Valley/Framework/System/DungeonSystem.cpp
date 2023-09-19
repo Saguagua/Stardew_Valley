@@ -47,11 +47,11 @@ void DungeonSystem::NextStage()
 		dungeonIndex = 4;
 
 	if (dungeonIndex == 4)
-		_player.lock()->GetCollider()->SetPos(Vector2(400, 730));
-	else if (dungeonIndex == 5)
-		_player.lock()->GetCollider()->SetPos(Vector2(420, 700));
+		_player.lock()->GetCollider()->SetPos(Vector2(410, 750));
+	else if (dungeonIndex ==  5)
+		_player.lock()->GetCollider()->SetPos(Vector2(550, 1100));
 	else
-		_player.lock()->GetCollider()->SetPos(Vector2(630, 1090));
+		_player.lock()->GetCollider()->SetPos(Vector2(390, 1490));
 
 	_map.lock()->ChangeMap(dungeonIndex);
 

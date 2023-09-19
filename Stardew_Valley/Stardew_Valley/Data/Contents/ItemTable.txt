@@ -12,9 +12,9 @@ AnglerFish			0	50		0	0	 0	 0	BLANK
 Caulifower			0	80		0	0	 0	 0	BLANK	
 SeaCucumber         0   100		0	0	 0   0  BLANK
 NightSeaCucumber    0   100		0	0	 0   0  BLANK
-SlimePiece			0	15		0	0	 0	 0	BLANK	
-Diamond				0	100		0	0	 0	 0	BLANK	
-Potato				0	15		0	0	 0	 0	BLANK	
+SlimePiece			0	15		0	0	 0	 0	BLANK
+Diamond				0	100		0	0	 0	 0	BLANK
+Potato				0	15		0	0	 0	 0	BLANK
 Rock_Drop			0	0		0	0	 0	 0	BLANK	
 Wood_Drop			0	0		0	0	 0	 0	BLANK		
 Daffodil			0	10		0	0	 0	 0	BLANK
