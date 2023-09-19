@@ -74,6 +74,7 @@ void DayFinishScene::Initialize()
 void DayFinishScene::WhenCoverDark()
 {
 	TIMER->SetNextDay();
+	DATA->PlaySave();
 	SCENEMANAGER->ChangeScene(SceneManager::TEST);
 }
 
@@ -98,5 +99,4 @@ void DayFinishScene::SceneChange()
 {
 	SCENEMANAGER->_cover->_isActive = true;
 	SCENEMANAGER->_cover->SetCallBack(_cb);
-	DATA->PlaySave();
 }

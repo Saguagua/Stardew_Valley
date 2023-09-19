@@ -102,7 +102,8 @@ void BagUI::ClickItem(int index)
 	}
 	else if (_selectedIndex != -1)
 	{
-		_player.lock()->SwapItems(_selectedIndex, index);
+		if (!_saleMode)
+			_player.lock()->SwapItems(_selectedIndex, index);
 		_selectedIndex = -1;
 	}
 }

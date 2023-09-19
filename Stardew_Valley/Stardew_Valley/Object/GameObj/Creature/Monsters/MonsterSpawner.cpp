@@ -126,3 +126,9 @@ void MonsterSpawner::Initialize()
 
 	Spawn(randomInt);
 }
+
+void MonsterSpawner::DiableAll()
+{
+	for (int i = 0; i < _monsters.size(); i++)
+		_monsters[i]->SetActive(false);
+}

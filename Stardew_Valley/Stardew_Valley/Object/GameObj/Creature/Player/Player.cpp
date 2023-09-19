@@ -81,8 +81,6 @@ void Player::GetDatas()
 	_stamina	= info->GetStamina();
 	_items		= info->GetItems();
 	_state		= info->GetState();
-	
-	_col= info->GetCollider();
 }
 
 void Player::CreateAction()

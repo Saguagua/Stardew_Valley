@@ -56,6 +56,9 @@ public:
 	void LoadInitialMaps();
 	void LoadMaps(string name);
 	void LoadPlayerInfo(string playerName);
+
+	int _month;
+	int _day;
 private:
 	void ReadXML();
 	void ReadTypes();

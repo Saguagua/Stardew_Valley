@@ -712,11 +712,8 @@
     <Text Include="Data\Contents\InitialMap\Dungeon.txt" />
     <Text Include="Data\Contents\InitialMap\Farming.txt" />
     <Text Include="Data\Contents\InitialMap\Fishing.txt" />
-    <Text Include="Data\SaveFiles\Test\FarmingTile.txt" />
     <Text Include="Data\SaveFiles\Test\FishingObj.txt" />
     <Text Include="Data\SaveFiles\Test\FishingTile.txt" />
-    <Text Include="Data\SaveFiles\Test\PlayerInfo.txt" />
-    <Text Include="Data\SaveFiles\Test\PlayerItems.txt" />
     <Text Include="Data\SaveFiles\Test\TestObj.txt" />
     <Text Include="Data\SaveFiles\Test\TestTile.txt" />
     <Text Include="Data\Contents\InitialMap\DungeonObj.txt" />
@@ -733,8 +730,11 @@
     <Text Include="Data\SaveFiles\Test\DungeonTile.txt" />
     <Text Include="Data\Contents\SaleTable.txt" />
     <Text Include="Data\SaveFiles\Test\HouseTile.txt" />
-    <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
     <Text Include="Data\SaveFiles\Test\HouseObj.txt" />
+    <Text Include="Data\SaveFiles\Test\FarmingTile.txt" />
+    <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
+    <Text Include="Data\SaveFiles\Test\PlayerItems.txt" />
+    <Text Include="Data\SaveFiles\Test\PlayerInfo.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Library\FMOD\fmod_vc.lib" />

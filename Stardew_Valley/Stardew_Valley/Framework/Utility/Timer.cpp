@@ -12,6 +12,8 @@ Timer::Timer()
 	_timeScale = 1.0f / (float)_periodFrequency;
 
 	_cb = std::bind(&Timer::ChangeScene, this);
+
+	
 }
 
 void Timer::Update()
@@ -81,6 +83,12 @@ void Timer::PostRender()
 
 		ImGui::EndMenu();
 	}
+}
+
+void Timer::InitialMonthAndDay()
+{
+	_month = DATA->_month;
+	_day = DATA->_day;
 }
 
 void Timer::SetNextDay()

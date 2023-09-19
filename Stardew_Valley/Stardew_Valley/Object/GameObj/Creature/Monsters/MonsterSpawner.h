@@ -31,6 +31,8 @@ public:
 
 	void Spawn(int count);
 	void Initialize();
+
+	void DiableAll();
 private:
 	static MonsterSpawner* _instance;
 

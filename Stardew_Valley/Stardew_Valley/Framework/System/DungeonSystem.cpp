@@ -105,4 +105,5 @@ void DungeonSystem::Return()
 {
 	_map.lock()->ChangeMap(2);
 	_player.lock()->GetCollider()->SetPos(CENTER);
+	MONSTER_SPAWNER->DiableAll();
 }

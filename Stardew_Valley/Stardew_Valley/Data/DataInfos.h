@@ -6,16 +6,13 @@ class PlayerInfo
 {
 public:
 
-	PlayerInfo(string name, vector<short>& vals, Vector2 pos, vector<shared_ptr<class Item>> items)
+	PlayerInfo(string name, vector<short>& vals, vector<shared_ptr<class Item>> items)
 		:_name(name), _maxHp(vals[0]), _hp(vals[1]), _maxStamina(vals[2]), _stamina(vals[3]), _money(vals[4]), _items(items)
-	{
-		_col = make_shared<RectCollider>(Vector2(20, 20));
-	}
+	{}
 
 	~PlayerInfo() {}
 
 	string GetName() { return _name; }
-	shared_ptr<RectCollider> GetCollider() { return _col; }
 
 	short	       GetHP() { return _hp; }
 	short	    GetMaxHP() { return _maxHp; }
@@ -37,7 +34,6 @@ private:
 	short _maxStamina;
 	short _stamina;
 	vector<shared_ptr<Item>> _items;
-	shared_ptr<RectCollider> _col;
 
 	int _playerState = PlayerState::IDLE;
 	int _curIndex = 0;

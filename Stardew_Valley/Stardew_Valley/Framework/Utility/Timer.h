@@ -40,6 +40,8 @@ public:
 	int& GetHour() { return _hour; }
 	int& GetMinute() { return _minute; }
 
+	void InitialMonthAndDay();
+
 	int GetMonth() { return _month; }
 	int GetDay() { return _day; }
 
@@ -75,8 +77,8 @@ private:
 
 	bool _dayTime = true;
 
-	int _month = 1;
-	int _day = 1;
+	int _month;
+	int _day;
 
 	CallBack _cb;
 };

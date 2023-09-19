@@ -35,26 +35,26 @@ void SingleColorRect::SetColor(XMFLOAT4 color)
 
 void SingleColorRect::SetRatio(Vector2 ratio)
 {
-	Vector2 curRatio = _cBuffer->GetRatio();
-	XMFLOAT4 color = _cBuffer->GetColor();
-	float del = curRatio.y - ratio.y;
-
-	if (curRatio.y < ratio.y)
-	{
-		if (color.x == 1.0f)
-			AddColor(XMFLOAT4(0.0f, -del * 2, 0.0f, 0.0f));
-		else
-			AddColor(XMFLOAT4(del * 2, 0.0f, 0.0f, 0.0f));
-	}
-	else if (curRatio.y > ratio.y)
-	{
-		if (color.y == 1.0f)
-			AddColor(XMFLOAT4(-del * 2, 0.0f, 0.0f, 0.0f));
-		else
-			AddColor(XMFLOAT4(0.0f, -del * 2, 0.0f, 0.0f));
-	}
-
+	//Vector2 curRatio = _cBuffer->GetRatio();
+	//XMFLOAT4 color = _cBuffer->GetColor();
+	//float del = curRatio.y - ratio.y;
 	_cBuffer->SetRatio(ratio);
+
+	/*if (del > 0)
+	{
+		if (color.x == 1)
+			AddColor(XMFLOAT4(0.0f, -del, 0.0f, 0.0f));
+		else
+			AddColor(XMFLOAT4(del, 0.0f, 0.0f, 0.0f));
+	}
+	else if (del < 0)
+	{
+		if (color.y == 1)
+			AddColor(XMFLOAT4(del, 0.0f, 0.0f, 0.0f));
+		else
+			AddColor(XMFLOAT4(0.0f, -del, 0.0f, 0.0f));
+	}*/
+
 	_cBuffer->Update();
 }
 

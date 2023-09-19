@@ -4,16 +4,18 @@
 TestScene::TestScene()
 {
 	DATA->LoadPlayerInfo("Test");
+	TIMER->InitialMonthAndDay();
+	
 	FishingSystem::Create();
 	DungeonSystem::Create();
 	MonsterSpawner::Create();
 	
 	EffectManager::Create();
 	MoneyManager::Create();
-
+	
 	_player = make_shared<PlayerImproved>();
 	_player->Initialize();
-	_player->GetTransform()->SetPos(CENTER);
+	_player->GetTransform()->SetPos(Vector2(200, 40));
 
 	PlayerUI::Create(_player);
 	OBJECT_SPAWNER->SetPlayer(_player);
@@ -21,7 +23,7 @@ TestScene::TestScene()
 
 	DATA->LoadMaps("Test");
 	_map = make_shared<TileMap>(DATA->GetPlayerMapInfos());
-	_map->ChangeMap(0);
+	_map->ChangeMap(3);
 
 	_player->SetMap(_map);
 

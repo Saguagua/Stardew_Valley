@@ -15,7 +15,7 @@ Bar::Bar(shared_ptr<PlayerImproved> player, string name, Vector2 size)
 	_bodyTransform = make_shared<Transform>();
 	_guageTransform = make_shared<Transform>();
 	_body = make_shared<Sprite>(name, size, SpriteType::UI);
-	_gauge = make_shared<SingleColorRect>(size - Vector2(20, 55));
+	_gauge = make_shared<SingleColorRect>(size - Vector2(20, 55), GREEN);
 
 	_guageTransform->SetPos(Vector2(0, -20));
 	_guageTransform->SetAngle(PI);
@@ -32,7 +32,7 @@ void Bar::Render()
 
 void Bar::SetRatio(Vector2 ratio)
 {
-	Vector2 curRatio = _gauge->GetRatio();
+	/*Vector2 curRatio = _gauge->GetRatio();
 	XMFLOAT4 color = _gauge->GetColor();
 	float del = curRatio.y - ratio.y;
 
@@ -46,10 +46,10 @@ void Bar::SetRatio(Vector2 ratio)
 	else if (del < 0)
 	{
 		if (color.y == 1)
-			_gauge->AddColor(XMFLOAT4(-del * 2, 0.0f, 0.0f, 0.0f));
+			_gauge->AddColor(XMFLOAT4(del * 2, 0.0f, 0.0f, 0.0f));
 		else
-			_gauge->AddColor(XMFLOAT4(0.0f, del * 2, 0.0f, 0.0f));
-	}
+			_gauge->AddColor(XMFLOAT4(0.0f, -del * 2, 0.0f, 0.0f));
+	}*/
 
 	_gauge->SetRatio(ratio);
 }

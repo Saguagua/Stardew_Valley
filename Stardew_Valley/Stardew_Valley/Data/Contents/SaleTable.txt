@@ -9,6 +9,8 @@ Steel	2 10
 BatWing	3 5
 Anchovy	1 1
 AnglerFish 1 20
+NightSeaCucumber 1 20
+NightSeaCucumber 1 20
 Caulifower 0 15
 SlimePiece 3 1
 Diamond	2 100

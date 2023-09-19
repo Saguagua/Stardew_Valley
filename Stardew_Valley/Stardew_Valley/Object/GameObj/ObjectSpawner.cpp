@@ -1,4 +1,5 @@
 #include "framework.h"
+#include "Object/Tile/TileType/ArableTile.h"
 #include "Object\GameObj\Creature\Player\PlayerImproved.h"
 #include "ObjectSpawner.h"
 
@@ -53,6 +54,9 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	{
 		obj = make_shared<Crop>(objName, centerPos, val1, val2);
 		_crops.push_back(dynamic_pointer_cast<Crop>(obj));
+		auto tile = dynamic_pointer_cast<ArableTile>(tiles[index]);
+		tile->SetPlantable(true);
+
 		break;
 	}
 	case DeployableObject::DOOR:

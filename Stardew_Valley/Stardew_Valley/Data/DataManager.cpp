@@ -230,9 +230,9 @@ void DataManager::SavePlayerInfo()
 
 	fout << _playerInfo->GetMoney() << endl;
 
-	Vector2 pos = _playerInfo->GetCollider()->GetWorldPos();
+	fout << TIMER->GetMonth() << endl;
 
-	fout << pos.x << " " << pos.y;
+	fout << TIMER->GetDay() << endl;
 
 	fout.close();
 
@@ -242,7 +242,9 @@ void DataManager::SavePlayerInfo()
 
 	for (int i = 0; i < items.size(); i++)
 	{
-		fout << items[i]->GetName() << " " << items[i]->GetCount() << endl;
+		fout << items[i]->GetName() << " " << items[i]->GetCount();
+		if (i != items.size() - 1)
+			fout << endl;
 	}
 
 	fout.close();
@@ -255,11 +257,11 @@ void DataManager::LoadPlayerInfo(string playerName)
 	vector<short> vals;
 	short tmp;
 	short tmp2;
-
-	Vector2 pos;
 	
 	ifstream fin;
 	fin.open("Data/SaveFiles/"+playerName+"/PlayerInfo.txt");
+
+	fin >> itemName;
 
 	fin >> tmp; //maxHp
 	vals.push_back(tmp);
@@ -271,18 +273,14 @@ void DataManager::LoadPlayerInfo(string playerName)
 	fin >> tmp; //maxStamina
 	vals.push_back(tmp);
 
-
 	fin >> tmp; //stamina
 	vals.push_back(tmp);
 
 	fin >> tmp; //money
 	vals.push_back(tmp);
 
-	fin >> tmp; //pos.x
-	fin >> tmp2; //pos.y
-
-	pos.x = tmp;
-	pos.y = tmp2;
+	fin >> _month;
+	fin >> _day;
 
 	fin.close();
 
@@ -307,7 +305,7 @@ void DataManager::LoadPlayerInfo(string playerName)
 
 	fin.close();
 
-	_playerInfo = make_shared<PlayerInfo>(playerName, vals, pos, items);
+	_playerInfo = make_shared<PlayerInfo>(playerName, vals, items);
 }
 
 shared_ptr<MapInfo> DataManager::LoadMap(string path, string mapName)
