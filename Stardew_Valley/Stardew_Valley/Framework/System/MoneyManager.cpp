@@ -59,12 +59,24 @@ void MoneyManager::Update()
 	
 }
 
+shared_ptr<Item> MoneyManager::GetTopItem()
+{
+	if (_saleItems.size() != 0)
+		return _saleItems.top();
+
+	return nullptr;
+}
+
 shared_ptr<Item> MoneyManager::Undo()
 {
 	if (_saleItems.size() == 0)
 		return nullptr;
 
-	return _saleItems.top();
+	auto item = _saleItems.top();
+
+	_saleItems.pop();
+
+	return item;
 }
 
 void MoneyManager::SaleItem(shared_ptr<Item> item)
@@ -72,7 +84,6 @@ void MoneyManager::SaleItem(shared_ptr<Item> item)
 	shared_ptr<Item> copy = make_shared<Item>();
 	copy->Copy(item);
 
-	item->SetItem("BLANK", 0);
-
 	_saleItems.push(copy);
+	item->SetItem("BLANK", 0);
 }

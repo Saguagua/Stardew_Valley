@@ -25,9 +25,9 @@ private:
 	shared_ptr<NumberUI> _number;
 	shared_ptr<TextureButton> _saleButton;
 
-	shared_ptr<Item> _saleUndoItem;
+	shared_ptr<Item> _selectedItem;
+	shared_ptr<Item> _blankItem;
 
-	int _selectedIndex = -1;
 	bool _saleMode = false;
 };
 

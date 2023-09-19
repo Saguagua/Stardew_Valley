@@ -20,6 +20,9 @@ BagUI::BagUI(shared_ptr<PlayerImproved> player)
 	_saleButton = make_shared<TextureButton>("DialogBoxGreen", Vector2(100, 100));
 	
 	CallBack cb = std::bind(&BagUI::ClickSaleButton, this);
+
+	_selectedItem = make_shared<Item>();
+	_blankItem = make_shared<Item>();
 	
 	_saleButton->AddPushEvent(cb);
 
@@ -35,11 +38,12 @@ void BagUI::Update()
 	if (!_isActive)
 		return;
 
-	if (_selectedIndex != -1)
+	if (_selectedItem->GetName() != "BLANK")
 	{
 		_objSlot->SetPos(S_MOUSE_POS);
 		_objSlot->Update();
 	}
+	
 
 	List::Update();
 
@@ -71,12 +75,9 @@ void BagUI::Render()
 		_saleObj->Render();
 	}
 
-
-	if (_selectedIndex != -1)
-	{
-		_objSlot->Set_World();
-		_obj->Render();
-	}
+	
+	_objSlot->Set_World();
+	_obj->Render();
 }
 
 void BagUI::CreateButtons()
@@ -94,18 +95,9 @@ void BagUI::CreateButtons()
 
 void BagUI::ClickItem(int index)
 {
-	if (_selectedIndex == -1 &&
-		_buttons[index]->GetName() != "BLANK")
-	{
-		_selectedIndex = index;
-		_obj->SetImage(_player.lock()->GetItem(_selectedIndex)->GetName(), 0);
-	}
-	else if (_selectedIndex != -1)
-	{
-		if (!_saleMode)
-			_player.lock()->SwapItems(_selectedIndex, index);
-		_selectedIndex = -1;
-	}
+	_player.lock()->SwapItems(_selectedItem, _player.lock()->GetItem(index));
+	
+	_obj->SetImage(_selectedItem->GetName());
 }
 
 void BagUI::ClickSaleButton()
@@ -113,17 +105,29 @@ void BagUI::ClickSaleButton()
 	if (!_saleMode)
 		return;
 
-	if (_selectedIndex == -1)
+	if (_selectedItem->GetName() == "BLANK")
 	{
-		_saleUndoItem = MONEYMANAGER->Undo();
+		_selectedItem = MONEYMANAGER->Undo();
+		
+		_obj->SetImage(_selectedItem->GetName());
+
+		auto topItem = MONEYMANAGER->GetTopItem();
+
+		if (topItem != nullptr)
+			_saleObj->SetImage(topItem->GetName());
+		else
+			_saleObj->SetImage("BLANK");
 	}
 	else
 	{
-		auto item = _player.lock()->GetItem(_selectedIndex);
-		_saleObj->SetImage(item->GetName());
+		//if (DATA->GetSaleInfo(_))  판매 정보 없으면 빠꾸
+		MONEYMANAGER->SaleItem(_selectedItem);
 		_obj->SetImage("BLANK");
-		MONEYMANAGER->SaleItem(item);
-		_player.lock()->SendToSubscribers(Type::ITEMS);
+
+		auto topItem = MONEYMANAGER->GetTopItem();
+
+		if (topItem != nullptr)
+			_saleObj->SetImage(topItem->GetName());
 	}
 }
 

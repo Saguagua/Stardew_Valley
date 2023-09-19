@@ -27,6 +27,8 @@ public:
 
 	void Update();
 
+	shared_ptr<Item> GetTopItem();
+
 	shared_ptr<Item> Undo();
 
 	void SaleItem(shared_ptr<Item> item);

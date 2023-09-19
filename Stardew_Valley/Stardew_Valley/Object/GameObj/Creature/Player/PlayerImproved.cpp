@@ -647,12 +647,16 @@ void PlayerImproved::UpdateCenterSlot()
 	_centerSlot->AddAngle(_centerSlotRotate * DELTA_TIME);
 }
 
-void PlayerImproved::SwapItems(int index1, int index2)
+void PlayerImproved::SwapItems(shared_ptr<Item> item1, shared_ptr<Item> item2)
 {
-	shared_ptr<Item> tmp = _items[index1];
-	_items[index1] = _items[index2];
-	_items[index2] = tmp;
+	shared_ptr<Item> tmp = make_shared<Item>();
 
+	tmp->Copy(item1);
+
+	item1->Copy(item2);
+
+	item2->Copy(tmp);
+	
 	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
 }
 

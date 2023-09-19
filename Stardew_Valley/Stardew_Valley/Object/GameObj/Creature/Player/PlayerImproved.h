@@ -24,7 +24,7 @@ public:
 	void SetMap(shared_ptr<TileMap> map);
 
 	void SetCurItem(int index);
-	void SwapItems(int index1, int index2);
+	void SwapItems(shared_ptr<Item> item1, shared_ptr<Item> item2);
 
 	bool AddItem(string name);
 	void AddMaxHP(short cost);

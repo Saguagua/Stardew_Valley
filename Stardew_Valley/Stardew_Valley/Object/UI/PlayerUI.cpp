@@ -66,7 +66,6 @@ void PlayerUI::SetBagMode(bool val)
 	_bagActive = val;
 	_itemSlot->SetActive(!_bagActive);
 	_bagUI->SetActive(_bagActive);
-
 }
 
 void PlayerUI::SetSaleMode(bool val)
