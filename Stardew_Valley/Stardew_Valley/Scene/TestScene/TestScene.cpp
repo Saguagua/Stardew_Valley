@@ -108,7 +108,13 @@ void TestScene::KeyInput()
 		_player->KeyInput();
 	}
 
-	_map->GetFocusedTile(_player->GetCollider()->GetWorldPos(), W_MOUSE_POS)->Interaction();
+	auto obj = _map->GetFocusedTile(_player->GetCollider()->GetWorldPos(), W_MOUSE_POS)->GetObj();
+
+	if (obj == nullptr)
+		return;
+
+	obj->Interaction();
+	
 }
 
 void TestScene::WhenCoverDark()

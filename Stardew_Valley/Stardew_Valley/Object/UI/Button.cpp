@@ -5,6 +5,8 @@ Button::Button(Vector2 size)
 	:_size(size)
 {
 	_col = make_shared<RectCollider>(_size);
+	_focusLine = make_shared<RectLine>(_size);
+	_focusLine->SetColor(RED);
 }
 
 void Button::Update()

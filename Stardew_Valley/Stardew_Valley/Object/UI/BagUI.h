@@ -9,10 +9,13 @@ public:
 	void Update();
 	void Render();
 
+	void SetActive(bool val);
+
 	virtual void UpdateInfo() override;
 	virtual void Dead() override;
 
-	void SaleMode(bool val);
+	void SetSaleMode(bool val);
+	bool GetSaleMode() { return _saleMode; }
 private:
 	void CreateButtons();
 

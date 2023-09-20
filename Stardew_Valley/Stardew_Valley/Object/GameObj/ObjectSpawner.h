@@ -39,6 +39,7 @@ public:
 	void SetPlayer(shared_ptr<PlayerImproved> player);
 
 	void ActiveDropItem(string name, Vector2 pos);
+	void ActiveDropItem(string name, Vector2 pos, int count);
 
 	void SpawnObjects(shared_ptr<class TileMap> map);
 private:

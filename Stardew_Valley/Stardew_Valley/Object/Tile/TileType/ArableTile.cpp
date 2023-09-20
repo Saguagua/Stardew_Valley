@@ -5,7 +5,7 @@
 void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> col)
 {
 	col->SetPos(_centerPos);
-	col->SetScale(Vector2(1,1));
+	col->SetScale(Vector2(1, 1));
 	col->Update();
 
 	col->GetTransform()->Set_World(0);
@@ -14,7 +14,7 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 	renderer->Render();
 
 	col->Render();
-	
+
 	if (!_plantable)
 		return;
 
@@ -23,7 +23,7 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 	auto crop = dynamic_pointer_cast<Crop>(_obj);
 
 	if (crop && crop->GetWater())
-		name = "W";	
+		name = "W";
 
 	name += "HoeDirt";
 
@@ -39,13 +39,4 @@ void ArableTile::Render(shared_ptr<Sprite> renderer, shared_ptr<RectCollider> co
 	renderer->SetImage(name);
 	renderer->Render();
 }
-
-void ArableTile::Interaction()
-{
-	
-	if (_obj != nullptr)
-		_obj->Interaction();
-	
-}
-
 

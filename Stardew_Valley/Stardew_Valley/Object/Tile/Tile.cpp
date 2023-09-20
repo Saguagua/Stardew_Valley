@@ -33,11 +33,3 @@ bool Tile::IsBlock()
 
 	return isBlock || objBlock;
 }
-
-void Tile::Interaction()
-{
-	
-	if (_obj != nullptr)
-		_obj->Interaction();
-	
-}

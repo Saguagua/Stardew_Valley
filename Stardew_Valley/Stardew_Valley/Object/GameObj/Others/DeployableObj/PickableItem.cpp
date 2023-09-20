@@ -7,12 +7,11 @@ void PickableItem::Interaction()
 	if (PLAYERUI->GetBagActive())
 		return;
 
-	/*if (DATA->AddItem(_pickCode))
+	if (KEY_DOWN(VK_LBUTTON))
 	{
-		_objCode = 139;
-		_frameIndex = 103;
-		_type = ObjectInfo::Type::BLANK;
-	}*/
+		PLAYERUI->AddItem(_name);
+	}
+	
 }
 
 vector<int> PickableItem::GetProperty()

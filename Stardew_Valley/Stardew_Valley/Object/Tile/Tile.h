@@ -25,7 +25,6 @@ public:
 
 	void DeleteObj() { _objName = "BLANK"; _obj = nullptr; }
 
-	virtual void Interaction();
 	int _mapIndex;
 protected:
 	string _tileName;

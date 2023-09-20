@@ -96,11 +96,11 @@ void List::SetButtons(Vector2 startPos, Vector2 space)
 	}
 }
 
-void List::PushButtonEvent(int index) //여기 수정, 콜라이더 디버그 static으로 변경 중
+void List::PushButtonEvent(int index)
 {
 	if (index > -1)
-		_buttons[_curIndex]->GetCollider()->SetColor(GREEN);
-	_buttons[index]->GetCollider()->SetColor(RED);
+		_buttons[_curIndex]->_activeLine = false;
+	_buttons[index]->_activeLine = true;
 	_curIndex = index;
 }
 

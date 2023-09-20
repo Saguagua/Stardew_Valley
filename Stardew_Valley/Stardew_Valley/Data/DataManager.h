@@ -49,6 +49,7 @@ public:
 	shared_ptr<ItemInfo>	GetItemInfo(string key)		{ return _itemTable[key]; }
 	shared_ptr<CropInfo>	GetCropInfo(string key)		{ return _cropTable[key]; }
 	shared_ptr<SaleInfo>    GetSaleInfo(string key)		{ return _saleTable[key]; }
+	vector<pair<string, int>> GetSpawnInfo(int mapIndex)  { return _spawnTable[mapIndex]; }
 
 	void MapToolSave();
 	void PlaySave();
@@ -67,6 +68,7 @@ private:
 
 	void SaveMaps();
 	void SavePlayerInfo();
+
 	shared_ptr<MapInfo> LoadMap(string path, string mapName);
 
 	static DataManager* _instance;
@@ -78,8 +80,7 @@ private:
 	vector<shared_ptr<MapInfo>> _playerMapInfos;
 	vector<shared_ptr<MapInfo>> _initialMapInfos;
 	vector<shared_ptr<MapInfo>> _dungeonMapInfos;
-					  
-
+	
 	vector<shared_ptr<FishInfo>> _fishTable;
 
 	unordered_map<string, bool> _mapTable;
@@ -92,4 +93,5 @@ private:
 	unordered_map<string, shared_ptr<CropInfo>> _cropTable;
 	unordered_map<string, shared_ptr<SaleInfo>> _saleTable;
 	unordered_map<string, shared_ptr<DeployInfo>> _deployTable;
+	vector<vector<pair<string, int>>> _spawnTable;
 };

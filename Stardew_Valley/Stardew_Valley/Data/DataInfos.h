@@ -251,3 +251,9 @@ public:
 	short _type;
 	short _price;
 };
+
+struct SpawnInfo
+{
+public:
+	vector<vector<string>> _dropInfos;
+};

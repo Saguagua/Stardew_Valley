@@ -35,11 +35,15 @@ public:
 	void SetBagMode(bool val);
 	bool GetBagActive() { return _bagActive; }
 	void SetSaleMode(bool val);
+
+	void AddItem(string itemName);
 private:
 	void Key();
 	bool _bagActive;
 	
 	static PlayerUI* _instance;
+
+	weak_ptr<PlayerImproved> _player;
 
 	shared_ptr<Transform> _transform;
 

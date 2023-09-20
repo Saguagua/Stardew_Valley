@@ -9,6 +9,13 @@ Stone1				 0	 5    1	  0
 Stone2				 0	 5    1	  0
 BigStone			 0   5    10  0
 RubyStone			 0	 5    5	  0
+Radish				 1   0	  0	  0
+Dandelion			 1	 0	  0	  0
+Coal				 1   0    0   0
+CaveCarrot			 1   0    0   0
+Emerald				 1   0    0   0
+Diamond				 1   0    0   0
+Ruby				 1   0    0   0
 Daffodil			 1	 0	  0	  0
 Snail				 1	 0	  0	  0
 Shell				 1	 0	  0	  0

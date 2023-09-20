@@ -735,6 +735,7 @@
     <Text Include="Data\SaveFiles\Test\FarmingObj.txt" />
     <Text Include="Data\SaveFiles\Test\PlayerItems.txt" />
     <Text Include="Data\SaveFiles\Test\PlayerInfo.txt" />
+    <Text Include="Data\Contents\SpawnTable.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Library\FMOD\fmod_vc.lib" />

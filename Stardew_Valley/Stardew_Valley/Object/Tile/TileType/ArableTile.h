@@ -26,8 +26,6 @@ public:
 	bool GetPlantable() { return _plantable; }
 	Connect& GetConnect() { return _connect; }
 
-	virtual void Interaction() override;
-
 private:
 	Connect _connect;
 	bool _plantable = false;

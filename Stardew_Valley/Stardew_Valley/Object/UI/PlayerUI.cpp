@@ -11,6 +11,7 @@
 PlayerUI* PlayerUI::_instance = nullptr;
 
 PlayerUI::PlayerUI(shared_ptr<PlayerImproved> player)
+	:_player(player)
 {
 	_transform = make_shared<Transform>();
 	_bagUI = make_shared<BagUI>(player);
@@ -71,7 +72,13 @@ void PlayerUI::SetBagMode(bool val)
 void PlayerUI::SetSaleMode(bool val)
 {
 	SetBagMode(val);
-	_bagUI->SaleMode(val);
+	_bagUI->SetSaleMode(val);
+}
+
+void PlayerUI::AddItem(string itemName)
+{
+	_player.lock()->PlayAction(Player::PlayerAction::FISHING3);
+	_player.lock()->AddItem(itemName);
 }
 
 void PlayerUI::Key()
@@ -118,6 +125,7 @@ void PlayerUI::Key()
 	}
 	else if (KEY_DOWN('E'))
 	{
-		SetBagMode(!_bagActive);
+		if (!_bagUI->GetSaleMode())
+			SetBagMode(!_bagActive);
 	}
 }

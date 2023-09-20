@@ -33,6 +33,9 @@ void TextureButton::PostRender()
 	_renderer->Render();
 	_col->Render();
 	Font::GetInstance()->RenderText(_font, "Nanum", _fontPos + _fontWorld);
+
+	if (_activeLine)
+		_focusLine->Render();
 }
 
 void TextureButton::Update()

@@ -80,6 +80,18 @@ void BagUI::Render()
 	_obj->Render();
 }
 
+void BagUI::SetActive(bool val)
+{
+	_isActive = val;
+
+	if (!_isActive)
+	{
+		OBJECT_SPAWNER->ActiveDropItem(_selectedItem->GetName(), _player.lock()->GetWorldPos(), _selectedItem->GetCount());
+		_selectedItem->SetItem("BLANK", 0);
+		_obj->SetImage("BLANK");
+	}
+}
+
 void BagUI::CreateButtons()
 {
 	vector<shared_ptr<Item>> items = _player.lock()->GetItems();
@@ -120,7 +132,11 @@ void BagUI::ClickSaleButton()
 	}
 	else
 	{
-		//if (DATA->GetSaleInfo(_))  판매 정보 없으면 빠꾸
+		auto saleInfos = DATA->GetSaleInfos();
+
+		if (saleInfos.count(_selectedItem->GetName()) == 0)
+			return;
+		
 		MONEYMANAGER->SaleItem(_selectedItem);
 		_obj->SetImage("BLANK");
 
@@ -145,7 +161,7 @@ void BagUI::Dead()
 {
 }
 
-void BagUI::SaleMode(bool val)
+void BagUI::SetSaleMode(bool val)
 {
 	_saleMode = val;
 

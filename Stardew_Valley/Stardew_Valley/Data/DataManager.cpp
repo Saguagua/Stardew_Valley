@@ -681,6 +681,28 @@ void DataManager::ReadTypes()
 
 		fin.close();
 	}
+
+	// Spawn
+	{
+		_spawnTable.resize(3);
+		fin.open("Data/Contents/SpawnTable.txt");
+
+		string name;
+		int percent;
+		int mapIndex;
+
+		while (!fin.eof())
+		{
+			fin >> name;
+			fin >> percent;
+			fin >> mapIndex;
+
+			pair<string, int> pair = {name, percent};
+			_spawnTable[mapIndex].push_back(pair);
+		}
+
+		fin.close();
+	}
 }
 
 void DataManager::ReadPlayers()

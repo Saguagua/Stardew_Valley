@@ -2,7 +2,6 @@
 class Button
 {
 public:
-	
 	Button(Vector2 size);
 	virtual ~Button() {}
 
@@ -29,9 +28,10 @@ public:
 	shared_ptr<RectCollider> GetCollider() { return _col; }
 	shared_ptr<Transform> GetTransform() { return _col->GetTransform(); }
 
+	bool _activeLine = false;
 protected:
 	shared_ptr<RectCollider> _col;
-
+	shared_ptr<RectLine> _focusLine;
 	Vector2 _size;
 
 	CallBack _onEvent;
@@ -47,4 +47,3 @@ protected:
 
 	bool _onFocus = false;
 };
-

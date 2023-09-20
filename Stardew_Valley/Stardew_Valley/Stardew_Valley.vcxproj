@@ -495,6 +495,7 @@
     <Text Include="Data\Contents\InitialMap\HouseObj.txt" />
     <Text Include="Data\Contents\InitialMap\HouseTile.txt" />
     <Text Include="Data\Contents\SaleTable.txt" />
+    <Text Include="Data\Contents\SpawnTable.txt" />
     <Text Include="Data\Contents\TileProperty.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonObj.txt" />
     <Text Include="Data\SaveFiles\Test\DungeonTile.txt" />

@@ -254,14 +254,34 @@ void ObjectSpawner::ActiveDropItem(string name, Vector2 pos)
 	}
 }
 
+void ObjectSpawner::ActiveDropItem(string name, Vector2 pos, int count)
+{
+	for (int i = 0; i < count; i++)
+	{
+		for (int j = 0; j < _dropItems.size(); j++)
+		{
+			if (!_dropItems[j]->IsActive())
+			{
+				_dropItems[j]->Spawn(name, name, pos);
+				break;
+			}
+		}
+	}
+}
+
 void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map)
 {
 	int objCount = rand() % 10 + 18;
 
 	auto infos = DATA->GetDeployInfos();
 
-	vector<shared_ptr<Tile>> tiles = map->GetcurrentMapInfo()->GetInfos();
+	auto curMap = map->GetcurrentMapInfo();
 
+	vector<shared_ptr<Tile>> tiles = curMap->GetInfos();
+	int index = map->GetCurrentMapIndex();
+	if (index > 2)
+		index = 2;
+	auto spawnTable = DATA->GetSpawnInfo(index);
 
 	for (int i = 0; i < objCount; i++)
 	{
@@ -278,28 +298,23 @@ void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map)
 			if ((DATA->GetTileInfo(tiles[randomIndex]->GetName()) & TileType::BLOCK))
 				continue;
 
-			int percent = rand() % 100;
+			int percent = rand() % spawnTable.size();
+			int randomIndex2 = rand() % 100;
 
-			if (percent < 5)
+			string objName;
+
+			for (int i = 0; i < spawnTable.size(); i++)
 			{
-				auto vals = infos["DiamondStone"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), randomIndex, "DiamondStone", vals[0], vals[1]);
+				if (randomIndex2 <= spawnTable[i].second)
+				{
+					objName = spawnTable[i].first;
+					break;
+				}
 			}
-			else if (percent < 10)
-			{
-				auto vals = infos["RubyStone"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), randomIndex, "RubyStone", vals[0], vals[1]);
-			}
-			else if (percent < 20)
-			{
-				auto vals = infos["EmeraldStone"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), randomIndex, "EmeraldStone", vals[0], vals[1]);
-			}
-			else
-			{
-				auto vals = infos["Stone1"]->GetVals();
-				CreateObj(map->GetcurrentMapInfo(), randomIndex, "Stone1", vals[0], vals[1]);
-			}
+
+			auto vals = infos[objName]->GetVals();
+
+			CreateObj(map->GetcurrentMapInfo(), randomIndex, objName, vals[0], vals[1]);
 
 			break;
 		}

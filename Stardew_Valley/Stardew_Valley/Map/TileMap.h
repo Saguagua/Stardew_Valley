@@ -14,6 +14,7 @@ public:
 
 
 	int GetWorldIndex(Vector2 pos);
+	int GetCurrentMapIndex() { return _curMapIndex; }
 	int GetFocusedIndex(Vector2 orginPos, Vector2 targetPos);
 	vector<int> GetFocusedIndices(Vector2 originPos, Vector2 targetPos, short level);
 	
