@@ -10,6 +10,7 @@ public:
 	{
 	THROW,
 	WAIT,
+	CLICK,
 	HOLD,
 	CATCH
 	};

@@ -27,12 +27,23 @@ EffectManager::EffectManager()
 
 	_deathAction = make_shared<Action>(indices2, Action::Type::END, 0.1f);
 
+
 	for (int i = 0; i < 30; i++)
 	{
 		_damageEffects.push_back(make_shared<DamageEffect>());
 
 		_effects.push_back(make_shared<Effect>(Vector2(40, 40), 0.5f));
 	}
+
+
+	vector<Vector2> indices3;
+	indices3.push_back(Vector2(0, 0));
+
+	_fishCatchAction = make_shared<Action>(indices3, Action::Type::END, 1.0f);
+
+	_fishingEffect = make_shared<Effect>(Vector2(60, 50), 1.0f);
+	_fishingEffect->SetAction(_fishCatchAction);
+	_fishingEffect->SetImage("FishingEffectCatch");
 }
 
 
@@ -46,7 +57,10 @@ void EffectManager::Render()
 
 		if (_effects[i]->_isActive)
 			_effects[i]->Render();
+
 	}
+	if (_fishingEffect->_isActive)
+		_fishingEffect->Render();
 }
 
 void EffectManager::PostRender()
@@ -62,7 +76,11 @@ void EffectManager::Update()
 
 		if (_effects[i]->_isActive)
 			_effects[i]->Update();
+
 	}
+
+	if (_fishingEffect->_isActive)
+		_fishingEffect->Update();
 }
 
 void EffectManager::ActiveDamage(int damge, Vector2 pos)
@@ -89,14 +107,18 @@ void EffectManager::ActiveEffect(Vector2 pos, int type)
 			{
 				_effects[i]->SetAction(_breakAction);
 				_effects[i]->SetImage("RockBreakEffect");
+				_effects[i]->Active(pos, 0.6f);
 			}
-			else
+			else if (type == 1)
 			{
 				_effects[i]->SetAction(_deathAction);
 				_effects[i]->SetImage("SlimeDeathEffect");
+				_effects[i]->Active(pos, 0.6f);
 			}
-			
-			_effects[i]->Active(pos, 0.6f);
+			else if (type == 2)
+			{
+				_fishingEffect->Active(pos, 1.0f);
+			}
 
 			break;
 		}

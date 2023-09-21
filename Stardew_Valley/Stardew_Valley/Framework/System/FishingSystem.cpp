@@ -26,24 +26,42 @@ void FishingSystem::Update()
 
 		if (_waitCount >= 1.0f)
 		{
-			_waitCount = 0.0f;
 			
 			int random = rand() % 100;
 
 			UINT size = _fishInfos[_dayNightIndex]->_size;
+			_waitCount = 0.0f;
 			
 			for (int i = 0; i < size; i++)
 			{
 				if (random < _fishInfos[_dayNightIndex]->_percents[i])
 				{
+					_waitCount = 1.0f;
 					_fishName = _fishInfos[_dayNightIndex]->_fishNames[i];
-					_step = Step::HOLD;
-					_minigame->SetActive(true);
-					_minigame->Update();
-					_player.lock()->PlayAction(Player::PlayerAction::FISHING2);
+					_step = Step::CLICK;
+					EFFECT->ActiveEffect(_hook->GetWorldPos(), 2);
 					break;
 				}
 			}
+		}
+
+		break;
+	}
+	case FishingSystem::CLICK:
+	{
+		_waitCount -= DELTA_TIME;
+
+		if (_waitCount <= 0)
+		{
+			EndMinigame(false);
+		}
+
+		if (KEY_DOWN(VK_LBUTTON))
+		{
+			_step = Step::HOLD;
+			_minigame->SetActive(true);
+			_minigame->Update();
+			_player.lock()->PlayAction(Player::PlayerAction::FISHING2);
 		}
 
 		break;

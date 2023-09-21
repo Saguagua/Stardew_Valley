@@ -38,6 +38,10 @@ void FrontCover::Update()
 				_cbInt(0);
 		}
 	}
+	else if (_timer > 0)
+	{
+		_timer -= DELTA_TIME;
+	}
 	else
 	{
 		_color.w -= val;
@@ -58,4 +62,5 @@ void FrontCover::FadeStart(CallBack cb, CallBackInt cb2)
 	_cb = cb;
 	_cbInt = cb2;
 	_isActive = true;
+	_timer = 1.0f;
 }

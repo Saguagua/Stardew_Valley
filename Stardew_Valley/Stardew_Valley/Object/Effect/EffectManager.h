@@ -36,8 +36,10 @@ private:
 
 	shared_ptr<Action> _breakAction;
 	shared_ptr<Action> _deathAction;
+	shared_ptr<Action> _fishCatchAction;
 
 	vector<shared_ptr<DamageEffect>> _damageEffects;
 	vector<shared_ptr<Effect>> _effects;
+	shared_ptr<Effect> _fishingEffect;
 };
 

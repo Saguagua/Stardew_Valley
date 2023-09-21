@@ -19,6 +19,8 @@ private:
 	bool _darker = true;
 	bool _isActive = false;
 
+	float _timer;
+
 	CallBack _cb;
 	CallBackInt _cbInt;
 };
