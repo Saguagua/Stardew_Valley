@@ -269,19 +269,16 @@ void ObjectSpawner::ActiveDropItem(string name, Vector2 pos, int count)
 	}
 }
 
-void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map)
+void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map, int mapIndex, int objCount)
 {
-	int objCount = rand() % 10 + 18;
 
 	auto infos = DATA->GetDeployInfos();
 
-	auto curMap = map->GetcurrentMapInfo();
+	shared_ptr<MapInfo> mapInfo = map->GetMapInfos()[mapIndex];
 
-	vector<shared_ptr<Tile>> tiles = curMap->GetInfos();
-	int index = map->GetCurrentMapIndex();
-	if (index > 2)
-		index = 2;
-	auto spawnTable = DATA->GetSpawnInfo(index);
+	vector<shared_ptr<Tile>> tiles = mapInfo->GetInfos();
+
+	auto spawnTable = DATA->GetSpawnInfo(mapIndex);
 
 	for (int i = 0; i < objCount; i++)
 	{
@@ -290,7 +287,9 @@ void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map)
 		while (randomCount < 100)
 		{
 			randomCount++;
+
 			int randomIndex = rand() % tiles.size();
+
 
 			if (tiles[randomIndex]->GetObj() != nullptr)
 				continue;
@@ -314,7 +313,7 @@ void ObjectSpawner::SpawnObjects(shared_ptr<TileMap> map)
 
 			auto vals = infos[objName]->GetVals();
 
-			CreateObj(map->GetcurrentMapInfo(), randomIndex, objName, vals[0], vals[1]);
+			CreateObj(mapInfo, randomIndex, objName, vals[0], vals[1]);
 
 			break;
 		}

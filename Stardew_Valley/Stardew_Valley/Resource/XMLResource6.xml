@@ -14,8 +14,9 @@ oY => y-corner offset
 oW => original width
 oH => original height
 r => 'y' if sprite is rotated-->
-<TextureAtlas imagePath="XMLResource6.png" width="646" height="457" scale="1" format="RGBA8888">
-  <sprite n="StardewPanorama" x="3" y="3" w="640" h="400" pX="0.5" pY="0.5" s1="1" s2="1"/>
-  <sprite n="WoodHouseWall" x="3" y="409" w="16" h="45" pX="0.5" pY="0.5" s1="1" s2="2"/>
-  <sprite n="WoodHouseTile" x="25" y="409" w="32" h="32" pX="0.5" pY="0.5" s1="1" s2="1"/>
+<TextureAtlas imagePath="XMLResource6.png" width="646" height="476" scale="1" format="RGBA8888">
+  <sprite n="stardewPanorama" x="3" y="3" w="640" h="400" pX="0.5" pY="0.5"/>
+  <sprite n="CancelBtn" x="3" y="409" w="64" h="64" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="WoodWall" x="73" y="409" w="16" h="45" pX="0.5" pY="0.5" s1="1" s2="2"/>
+  <sprite n="WoodTile" x="95" y="409" w="32" h="32" pX="0.5" pY="0.5" s1="1" s2="1"/>
 </TextureAtlas>

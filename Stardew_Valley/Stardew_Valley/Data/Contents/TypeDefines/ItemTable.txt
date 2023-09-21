@@ -2,6 +2,7 @@ Copper				0	15		0	0	 0	 0	BLANK
 Emerald				0	50		0	0	 0	 0	BLANK
 Squid				0	50		0	0	 0	 0 	BLANK	
 Coal				0	15		0	0	 0	 0	BLANK
+Coral				0   10      0   0    0   0  BLANK
 SugarBeet			0	25		0	0	 0	 0	BLANK
 Tuna				0	30		0	0	 0	 0	BLANK
 Ruby				0	80		0	0	 0	 0	BLANK

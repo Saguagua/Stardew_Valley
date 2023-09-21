@@ -23,6 +23,7 @@ void BreakableItem::GetDamage(shared_ptr<Item> item)
 			DungeonSystem::GetInstance()->SpawnDoor(_centerPos);
 			_name = "BLANK";
 			_isActive = false;
+			EFFECT->ActiveDamage
 		}
 	}
 }

@@ -60,6 +60,7 @@ void DungeonSystem::NextStage()
 	_breakCount = 0;
 
 	auto infos = _map.lock()->GetcurrentMapInfo()->GetInfos();
+
 	for (int i = 0; i < infos.size(); i++)
 	{
 		if (infos[i]->GetObj() == nullptr)
@@ -81,7 +82,9 @@ void DungeonSystem::NextStage()
 		infos[i]->DeleteObj();
 	}
 
-	OBJECT_SPAWNER->SpawnObjects(_map.lock());
+	int objCount = rand() % 10 + 10;
+
+	OBJECT_SPAWNER->SpawnObjects(_map.lock(), dungeonIndex, objCount);
 	MONSTER_SPAWNER->Initialize();
 }
 

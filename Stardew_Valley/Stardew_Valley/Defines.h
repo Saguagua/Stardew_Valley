@@ -72,7 +72,7 @@
 
 #define GRAVITY			9.8f
 
-#define XMLCOUNT			6
+#define XMLCOUNT			7
 
 #define XMLPATH1			L"Resource/XMLResource1.png"
 #define XMLPATH2			L"Resource/XMLResource2.png"
@@ -80,3 +80,4 @@
 #define XMLPATH4			L"Resource/XMLResource4.png"
 #define XMLPATH5			L"Resource/XMLResource5.png"
 #define XMLPATH6			L"Resource/XMLResource6.png"
+#define XMLPATH7			L"Resource/XMLResource7.png"

@@ -494,7 +494,7 @@ void DataManager::ReadTypes()
 
 	//TileTable
 	{
-		fin.open("Data/Contents/TileTable.txt");
+		fin.open("Data/Contents/TypeDefines/TileTable.txt");
 
 		string name;
 
@@ -511,7 +511,7 @@ void DataManager::ReadTypes()
 	}
 	//DeployTable
 	{
-		fin.open("Data/Contents/DeployableTable.txt");
+		fin.open("Data/Contents/TypeDefines/DeployableTable.txt");
 		string name;
 		short type;
 		short val;
@@ -536,7 +536,7 @@ void DataManager::ReadTypes()
 	}
 	//ItemTable
 	{
-		fin.open("Data/Contents/ItemTable.txt");
+		fin.open("Data/Contents/TypeDefines/ItemTable.txt");
 		string name;
 		string deployName;
 		short type;
@@ -565,7 +565,7 @@ void DataManager::ReadTypes()
 	}
 	// DropTable
 	{
-		fin.open("Data/Contents/DropTable.txt");
+		fin.open("Data/Contents/TypeDefines/DropTable.txt");
 		string name;
 		string dropItem;
 		short percent;
@@ -597,7 +597,7 @@ void DataManager::ReadTypes()
 	}
 	// FishTable
 	{
-		fin.open("Data/Contents/FishTable.txt");
+		fin.open("Data/Contents/TypeDefines/FishTable.txt");
 		_fishTable.push_back(make_shared<FishInfo>());
 		_fishTable.push_back(make_shared<FishInfo>());
 
@@ -618,7 +618,7 @@ void DataManager::ReadTypes()
 	}
 	// Crop
 	{
-		fin.open("Data/Contents/CropTable.txt");
+		fin.open("Data/Contents/TypeDefines/CropTable.txt");
 		
 
 		string name;
@@ -658,7 +658,7 @@ void DataManager::ReadTypes()
 	}
 	// Sale
 	{
-		fin.open("Data/Contents/SaleTable.txt");
+		fin.open("Data/Contents/TypeDefines/SaleTable.txt");
 
 
 		string name;
@@ -684,8 +684,8 @@ void DataManager::ReadTypes()
 
 	// Spawn
 	{
-		_spawnTable.resize(3);
-		fin.open("Data/Contents/SpawnTable.txt");
+		_spawnTable.resize(7);
+		fin.open("Data/Contents/TypeDefines/SpawnTable.txt");
 
 		string name;
 		int percent;
@@ -700,6 +700,7 @@ void DataManager::ReadTypes()
 			pair<string, int> pair = {name, percent};
 			_spawnTable[mapIndex].push_back(pair);
 		}
+
 
 		fin.close();
 	}

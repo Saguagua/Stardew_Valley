@@ -9,7 +9,11 @@ void PickableItem::Interaction()
 
 	if (KEY_DOWN(VK_LBUTTON))
 	{
-		PLAYERUI->AddItem(_name);
+		if (PLAYERUI->AddItem(_name))
+		{
+			_name = "BLANK";
+			_isActive = false;
+		}
 	}
 	
 }

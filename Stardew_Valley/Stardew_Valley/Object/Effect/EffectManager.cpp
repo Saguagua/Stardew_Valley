@@ -8,6 +8,7 @@ EffectManager::EffectManager()
 	for (int i = 0; i < 30; i++)
 	{
 		_damageEffects.push_back(make_shared<DamageEffect>());
+		_breakEffects.push_back(make_shared<Effect>());
 	}
 }
 
@@ -15,12 +16,13 @@ EffectManager::EffectManager()
 void EffectManager::Render()
 {
 
-	for (auto effect : _damageEffects)
+	for (int i = 0; i < 30; i++)
 	{
-		if (!effect->_isActive)
-			continue;
+		if (_damageEffects[i]->_isActive)
+			_damageEffects[i]->Render();
 
-		effect->Render();
+		if (_breakEffects[i]->_isActive)
+			_damageEffects[i]->Render();
 	}
 }
 
@@ -30,12 +32,13 @@ void EffectManager::PostRender()
 
 void EffectManager::Update()
 {
-	for (auto effect : _damageEffects)
+	for (int i = 0; i < 30; i++)
 	{
-		if (!effect->_isActive)
-			continue;
+		if (_damageEffects[i]->_isActive)
+			_damageEffects[i]->Update();
 
-		effect->Update();
+		if (_breakEffects[i]->_isActive)
+			_damageEffects[i]->Update();
 	}
 }
 
@@ -51,4 +54,8 @@ void EffectManager::ActiveDamage(int damge, Vector2 pos)
 			break;
 		}
 	}
+}
+
+void EffectManager::ActiveBreakEffect(Vector2 pos)
+{
 }

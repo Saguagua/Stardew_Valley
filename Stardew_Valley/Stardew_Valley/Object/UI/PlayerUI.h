@@ -36,7 +36,7 @@ public:
 	bool GetBagActive() { return _bagActive; }
 	void SetSaleMode(bool val);
 
-	void AddItem(string itemName);
+	bool AddItem(string itemName);
 private:
 	void Key();
 	bool _bagActive;

@@ -114,7 +114,6 @@ void TestScene::KeyInput()
 		return;
 
 	obj->Interaction();
-	
 }
 
 void TestScene::WhenCoverDark()
@@ -133,4 +132,12 @@ void TestScene::Initialize()
 	CAMERA->Update();
 	_player->SendToSubscribers(PlayerSubscribe::ALL);
 	PLAYERUI->NextDay();
+
+	int objCount = rand() % 10 + 5;
+
+	OBJECT_SPAWNER->SpawnObjects(_map, 0, objCount);
+
+	objCount = rand() % 10 + 5;
+
+	OBJECT_SPAWNER->SpawnObjects(_map, 1, objCount);
 }

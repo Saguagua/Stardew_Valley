@@ -21,6 +21,11 @@ void Effect::Render()
 	_transform->Set_World();
 }
 
+void Effect::SetImage(string name, int index)
+{
+	_renderer->SetImage(name, index);
+}
+
 void Effect::Active(Vector2 pos, float timer)
 {
 	_transform->SetPos(pos);

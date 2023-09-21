@@ -75,10 +75,14 @@ void PlayerUI::SetSaleMode(bool val)
 	_bagUI->SetSaleMode(val);
 }
 
-void PlayerUI::AddItem(string itemName)
+bool PlayerUI::AddItem(string itemName)
 {
-	_player.lock()->PlayAction(Player::PlayerAction::FISHING3);
-	_player.lock()->AddItem(itemName);
+	if (_player.lock()->AddItem(itemName))
+	{
+		_player.lock()->PlayAction(Player::PlayerAction::FISHING3);
+		return true;
+	}
+	return false;
 }
 
 void PlayerUI::Key()

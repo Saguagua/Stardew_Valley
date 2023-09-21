@@ -103,11 +103,11 @@ void Timer::SetNextDay()
 		if (_month > 12)
 			_month = 1;
 	}
+
 	_hour = 6;
 	_minute = 0;
 	OBJECT_SPAWNER->Update_Crops();
 	LightManager::GetInstance()->UpdateSun();
-
 }
 
 void Timer::ChangeScene()

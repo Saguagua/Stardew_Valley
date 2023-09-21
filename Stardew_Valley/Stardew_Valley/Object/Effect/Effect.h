@@ -8,11 +8,20 @@ public:
 	void Update();
 	void Render();
 
+	void SetAction(shared_ptr<Action> action) { _action = action; }
+
+	void SetImage(string name, int index = 0);
+
 	void Active(Vector2 pos, float timer);
 
-	Vector2 _size;
-	shared_ptr<Transform> _transform;
 	float _timer;
 	bool _isActive = false;
+
+private:
+	shared_ptr<Sprite> _renderer;
+	shared_ptr<Transform> _transform;
+
+	shared_ptr<Action> _action;
+	Vector2 _size;
 };
 

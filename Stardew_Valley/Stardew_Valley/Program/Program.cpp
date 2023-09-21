@@ -106,4 +106,5 @@ void Program::Initialize()
 	ADD_SRV(XMLPATH4);
 	ADD_SRV(XMLPATH5);
 	ADD_SRV(XMLPATH6);
+	ADD_SRV(XMLPATH7);
 }

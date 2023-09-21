@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Free texture packer v0.6.7 http://free-tex-packer.com
+Format:
+n  => name
+x  => x pos
+y  => y pos
+w  => width
+h  => height
+pX => x pos of the pivot point
+pY => y pos of the pivot point
+oX => x-corner offset
+oY => y-corner offset
+oW => original width
+oH => original height
+r => 'y' if sprite is rotated-->
+<TextureAtlas imagePath="XMLResource7.png" width="646" height="457" scale="1" format="RGBA8888">
+  <sprite n="RockBreakEffect" x="8" y="3" w="40" h="36" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="RockBreakEffect" x="72" y="780" w="44" h="36" pX="0.5" pY="0.5" s1="1" s2="2"/>
+  <sprite n="RockBreakEffect" x="132" y="780" w="48" h="40" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="RockBreakEffect" x="192" y="784" w="56" h="44" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="RockBreakEffect" x="256" y="788" w="60" h="36" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="RockBreakEffect" x="324" y="788" w="52" h="40" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="RockBreakEffect" x="428" y="800" w="44" h="28" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="RockBreakEffect" x="500" y="812" w="12" h="12" pX="0.5" pY="0.5" s1="1" s2="1"/>
+</TextureAtlas>

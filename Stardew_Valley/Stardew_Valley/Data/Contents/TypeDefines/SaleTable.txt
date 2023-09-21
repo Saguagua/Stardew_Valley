@@ -1,7 +1,7 @@
 Copper    2 5
 Emerald	2 50
 Squid	1 5
-Coal	2 5
+Coral	2 5
 SugarBeet	 0 10
 Tuna      1 5
 Ruby	2 40

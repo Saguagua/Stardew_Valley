@@ -11,7 +11,7 @@ BigStone			 0   5    10  0
 RubyStone			 0	 5    5	  0
 Radish				 1   0	  0	  0
 Dandelion			 1	 0	  0	  0
-Coal				 1   0    0   0
+Coral				 1   0    0   0
 CaveCarrot			 1   0    0   0
 Emerald				 1   0    0   0
 Diamond				 1   0    0   0

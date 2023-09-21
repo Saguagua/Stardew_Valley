@@ -41,7 +41,7 @@ public:
 	void ActiveDropItem(string name, Vector2 pos);
 	void ActiveDropItem(string name, Vector2 pos, int count);
 
-	void SpawnObjects(shared_ptr<class TileMap> map);
+	void SpawnObjects(shared_ptr<class TileMap> map, int mapIndex, int objCount);
 private:
 	static ObjectSpawner* _instance;
 
