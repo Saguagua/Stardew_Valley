@@ -30,11 +30,14 @@ public:
 	void Update();
 
 	void ActiveDamage(int damge, Vector2 pos);
-	void ActiveBreakEffect(Vector2 pos);
+	void ActiveEffect(Vector2 pos, int type);
 private:
 	static EffectManager* _instance;
 
+	shared_ptr<Action> _breakAction;
+	shared_ptr<Action> _deathAction;
+
 	vector<shared_ptr<DamageEffect>> _damageEffects;
-	vector<shared_ptr<Effect>> _breakEffects;
+	vector<shared_ptr<Effect>> _effects;
 };
 

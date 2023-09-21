@@ -7,7 +7,7 @@ void PickableItem::Interaction()
 	if (PLAYERUI->GetBagActive())
 		return;
 
-	if (KEY_DOWN(VK_LBUTTON))
+	if (KEY_DOWN(VK_RBUTTON))
 	{
 		if (PLAYERUI->AddItem(_name))
 		{

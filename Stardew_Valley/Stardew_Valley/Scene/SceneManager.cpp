@@ -17,13 +17,18 @@ SceneManager::SceneManager()
 
 	_cover = make_shared<FrontCover>();
 
+	_escUI = make_shared<EscapeUI>(this);
 }
 
 void SceneManager::Update()
 {
 	_cover->Update();
-
+	_escUI->Update();
 	_scenes[_index]->Update();
+
+	if (KEY_DOWN(VK_ESCAPE) && _index != SceneIndex::LOGO)
+		_escUI->SwitchActive();
+
 }
 
 void SceneManager::Render()
@@ -49,6 +54,7 @@ void SceneManager::PostRender()
 		ImGui::EndMenu();
 	}
 
+	_escUI->PostRender();
 	_cover->PostRender();
 }
 

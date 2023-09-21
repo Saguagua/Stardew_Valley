@@ -345,6 +345,9 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Elevator.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\UI\EscapeUI.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stardew_Valley.cpp">
@@ -618,6 +621,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Elevator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\UI\EscapeUI.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

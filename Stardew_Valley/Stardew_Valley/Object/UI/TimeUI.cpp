@@ -26,7 +26,7 @@ TimeUI::TimeUI(shared_ptr<PlayerImproved> p)
 	_numberSliceSlot->SetPos(Vector2(25.0f, -10.0f));
 
 	_hourNum->_originPos = Vector2(10, -10);
-	_minutNum->_originPos = Vector2(45, -10);
+	_minutNum->_originPos = Vector2(55, -10);
 	_hourNum->_transform->SetParent(_bodySlot);
 	_minutNum->_transform->SetParent(_bodySlot);
 
@@ -37,6 +37,7 @@ TimeUI::TimeUI(shared_ptr<PlayerImproved> p)
 
 void TimeUI::Render()
 {
+	
 	_bodySlot->Set_World();
 	_body->Render();
 	_hourHandSlot->Set_World();
@@ -45,6 +46,10 @@ void TimeUI::Render()
 	_numberSlice->Render();
 	_hourNum->Render();
 	_minutNum->Render();
+	
+	if (SCENEMANAGER->_cover->IsActive())
+		return;
+	
 	wstring date = _month + L"¿ù " + _day + L"ÀÏ";
 
 	Font::GetInstance()->RenderText(date, "Nanum", _datePos);
@@ -65,15 +70,11 @@ void TimeUI::Update()
 	_minutNum->SetNumber(_minute);
 }
 
-
-
 void TimeUI::SetPos(Vector2 pos)
 {
 	_bodySlot->SetPos(pos);
 	UpdateMoney();
 }
-
-
 
 void TimeUI::UpdateMoney()
 {

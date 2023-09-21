@@ -159,6 +159,7 @@ using namespace Microsoft::WRL;
 #include "Object/UI/Palette.h"
 #include "Object/UI/FrontCover.h"
 #include "Object/UI/CalculateUI.h"
+#include "Object\UI\EscapeUI.h"
 
 //Map
 #include "Map/TileMap.h"

@@ -12,7 +12,7 @@ DayFinishScene::DayFinishScene()
 
 	_textPanel = make_shared<Sprite>("TextBox", Vector2(500, 100), SpriteType::UI);
 	_backGround = make_shared<Sprite>("Cloudy_Ocean_BG_Night", Vector2(WIN_WIDTH, WIN_HEIGHT), SpriteType::UI);
-	_okayBtn = make_shared<TextureButton>("OKBtn", Vector2(50, 50));
+	_okayBtn = make_shared<TextureButton>("OkayButton", Vector2(50, 50));
 
 	_okayBtn->SetPos(Vector2(450, -250));
 
@@ -97,6 +97,5 @@ void DayFinishScene::PostRender()
 
 void DayFinishScene::SceneChange()
 {
-	SCENEMANAGER->_cover->_isActive = true;
-	SCENEMANAGER->_cover->SetCallBack(_cb);
+	SCENEMANAGER->_cover->FadeStart(_cb, nullptr);
 }

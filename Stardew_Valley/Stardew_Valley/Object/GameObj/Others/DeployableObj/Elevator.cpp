@@ -14,8 +14,7 @@ void Elevator::Interaction()
 
     if (KEY_DOWN(VK_RBUTTON))
     {
-        SCENEMANAGER->_cover->_isActive = true;
-        SCENEMANAGER->_cover->SetCallBack(_cb);
+        SCENEMANAGER->_cover->FadeStart(_cb, nullptr);
     }
 }
 

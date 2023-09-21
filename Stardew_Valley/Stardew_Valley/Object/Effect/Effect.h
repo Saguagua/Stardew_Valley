@@ -17,11 +17,12 @@ public:
 	float _timer;
 	bool _isActive = false;
 
-private:
-	shared_ptr<Sprite> _renderer;
+protected:
 	shared_ptr<Transform> _transform;
 
 	shared_ptr<Action> _action;
 	Vector2 _size;
+private:
+	shared_ptr<Sprite> _renderer;
 };
 

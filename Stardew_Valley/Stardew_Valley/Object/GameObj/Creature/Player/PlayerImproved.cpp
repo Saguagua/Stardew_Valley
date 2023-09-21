@@ -667,9 +667,10 @@ void PlayerImproved::ToolEndEvent()
 
 void PlayerImproved::DeathEvent()
 {
-	SCENEMANAGER->_cover->_isActive = true;
-	SCENEMANAGER->_cover->SetCallBack(_cb);
+	SCENEMANAGER->_cover->FadeStart(_cb, nullptr);
+
 	DungeonSystem::GetInstance()->_active = false;
+
 	_hp = _maxHp;
 	_stamina = _maxStamina;
 }

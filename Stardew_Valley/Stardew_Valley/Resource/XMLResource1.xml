@@ -50,11 +50,11 @@ r => 'y' if sprite is rotated-->
   <sprite n="Bait" x="560" y="328" w="9" h="6" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
   <sprite n="BlueTorch" x="134" y="623" w="5" h="11" pX="0.5" pY="0.5" i="0" s1="0.5" s2="0.5"/>
   <sprite n="CauliflowerSeed" x="575" y="424" w="14" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="CaveCarrot" x="595" y="444" w="15" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="CaveCarrot" x="595" y="444" w="15" h="16" pX="0.5" pY="0.5" i="0" s1="0.7" s2="0.7"/>
   <sprite n="CopperAxe" x="551" y="482" w="16" h="15" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="CopperHoe" x="137" y="539" w="16" h="14" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="CopperWateringCan" x="490" y="405" w="16" h="11" pX="0.5" pY="0.5" s1="1" s2="1"/>
-  <sprite n="Coral" x="595" y="466" w="16" h="16" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="Coral" x="595" y="466" w="16" h="16" pX="0.5" pY="0.5" s1="0.7" s2="0.7"/>
   <sprite n="CropSugarBeet" x="137" y="500" w="10" h="8" pX="0.5" pY="0.5" i="0" s1="0.5" s2="0.5"/>
   <sprite n="CropSugarBeet" x="137" y="514" w="9" h="8" pX="0.5" pY="0.5" i="1" s1="0.5" s2="0.5"/>
   <sprite n="CropSugarBeet" x="179" y="621" w="11" h="6" pX="0.5" pY="0.5" i="2" s1="0.5" s2="0.5"/>
@@ -108,12 +108,12 @@ r => 'y' if sprite is rotated-->
   <sprite n="DungeonTile4" x="25" y="559" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="DiamondStone" x="573" y="490" w="16" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="DiamondStone" x="268" y="539" w="11" h="13" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
-  <sprite n="Diamond" x="574" y="607" w="12" h="11" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="Diamond" x="574" y="607" w="12" h="11" pX="0.5" pY="0.5" i="0" s1="0.5" s2="0.5"/>
   <sprite n="DungeonSideWall" x="287" y="289" w="16" h="128" pX="0.5" pY="0.5" i="0" s1="2" s2="4"/>
   <sprite n="Dagger" x="3" y="624" w="10" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Elevator" x="421" y="513" w="16" h="39" pX="0.5" pY="0.5" i="0" s1="1" s2="2"/>
   <sprite n="8" x="539" y="223" w="5" h="7" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Emerald" x="137" y="470" w="10" h="9" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="Emerald" x="137" y="470" w="10" h="9" pX="0.5" pY="0.5" i="0" s1="0.5" s2="0.5"/>
   <sprite n="EmeraldStone" x="67" y="581" w="15" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="EmeraldStone" x="319" y="602" w="14" h="11" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
   <sprite n="FishingGameTutorial" x="559" y="66" w="47" h="69" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
@@ -202,8 +202,8 @@ r => 'y' if sprite is rotated-->
   <sprite n="Sunny" x="605" y="268" w="26" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="SteelDagger" x="419" y="602" w="12" h="12" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Sand" x="530" y="554" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Shell" x="552" y="549" w="16" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
-  <sprite n="Snail" x="574" y="554" w="15" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="Shell" x="552" y="549" w="16" h="15" pX="0.5" pY="0.5" i="0" s1="0.7" s2="0.7"/>
+  <sprite n="Snail" x="574" y="554" w="15" h="16" pX="0.5" pY="0.5" i="0" s1="0.7" s2="0.7"/>
   <sprite n="Squid" x="595" y="554" w="16" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="StarFruit" x="617" y="488" w="14" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="SteelAxe" x="486" y="574" w="16" h="15" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
@@ -231,7 +231,7 @@ r => 'y' if sprite is rotated-->
   <sprite n="Radish" x="151" y="581" w="14" h="15" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
   <sprite n="RubyStone" x="155" y="602" w="15" h="14" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="RubyStone" x="176" y="602" w="15" h="13" pX="0.5" pY="0.5" i="1" s1="1" s2="1"/>
-  <sprite n="Ruby" x="421" y="252" w="8" h="12" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
+  <sprite n="Ruby" x="421" y="252" w="8" h="12" pX="0.5" pY="0.5" i="0" s1="0.5" s2="0.5"/>
   <sprite n="Ring" x="388" y="624" w="8" h="10" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="Rock_Drop" x="162" y="623" w="11" h="11" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>
   <sprite n="PotatoSeed" x="619" y="466" w="12" h="16" pX="0.5" pY="0.5" i="0" s1="1" s2="1"/>

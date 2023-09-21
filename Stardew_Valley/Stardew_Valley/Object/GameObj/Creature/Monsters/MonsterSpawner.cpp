@@ -34,10 +34,11 @@ void MonsterSpawner::Update()
 				if (_player.lock()->GetWeaponCollider()->OBB(monster->GetCollider()) && !monster->IsUntouchable())
 				{
 					Vector2 dir = (monster->GetWorldPos() - _player.lock()->GetWorldPos()).Normalize();
+					short damage = _player.lock()->GetCurItem()->GetVals()[1];
 					monster->AddPos(dir * 10);
-					monster->AddHP(-2);
 					monster->StartUntouchable(0.5f);
-					EFFECT->ActiveDamage(2, monster->GetWorldPos());
+					monster->AddHP(damage);
+					EFFECT->ActiveDamage(damage, monster->GetWorldPos());
 				}
 			}
 

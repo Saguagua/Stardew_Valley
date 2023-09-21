@@ -37,7 +37,7 @@ void ObjectSpawner::CreateObj(shared_ptr<MapInfo> map, int index, string objName
 	{
 	case DeployableObject::BREAK:
 	{
-		obj = make_shared<BreakableItem>(objName, centerPos, val1, val2);
+		obj = make_shared<BreakableItem>(objName, centerPos, val2);
 		break;
 	}
 	case DeployableObject::PICK:

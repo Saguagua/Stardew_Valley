@@ -71,9 +71,7 @@ void LogoScene::PostRender()
 
 void LogoScene::SceneChange(int index)
 {
-	SCENEMANAGER->_cover->_isActive = true;
-	SCENEMANAGER->_cover->SetCallBack(_cb);
-
+	SCENEMANAGER->_cover->FadeStart(_cb, nullptr);
 	_nextSceneIndex = index;
 }
 

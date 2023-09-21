@@ -46,7 +46,7 @@ private:
 	static SceneManager* _instance;
 	int _index = 0;
 
-
 	vector<shared_ptr<Scene>> _scenes;
+	shared_ptr<EscapeUI> _escUI;
 };
 

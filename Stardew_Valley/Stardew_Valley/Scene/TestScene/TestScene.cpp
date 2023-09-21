@@ -66,7 +66,7 @@ void TestScene::Update()
 	DungeonSystem::GetInstance()->Update();
 	EFFECT->Update();
 
-	if (!CAMERA->_freeMode && !SCENEMANAGER->_cover->_isActive)
+	if (!CAMERA->_freeMode && !SCENEMANAGER->_cover->IsActive())
 	{
 		KeyInput();
 
@@ -75,8 +75,7 @@ void TestScene::Update()
 			if (_player->GetCollider()->IsCollision(_map->_teleports[i]->_collider))
 			{
 				_teleportInfo = _map->_teleports[i];
-				SCENEMANAGER->_cover->_isActive = true;
-				SCENEMANAGER->_cover->SetCallBack(_cb);
+				SCENEMANAGER->_cover->FadeStart(_cb, nullptr);
 			}
 		}
 	}

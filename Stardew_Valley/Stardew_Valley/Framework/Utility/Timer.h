@@ -72,7 +72,7 @@ private:
 	float _lockFPS = 0.0;
 	int _hour = 6;
 	int _minute = 0;
-	int _maxMinute = 6;
+	int _maxMinute = 60;
 	int _maxHour = 24;
 
 	bool _dayTime = true;

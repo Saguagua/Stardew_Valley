@@ -29,6 +29,7 @@ void Monster::AddHP(short cost)
 	{
 		_isActive = false;
 		OBJECT_SPAWNER->ActiveDropItem(_name, _col->GetWorldPos());
+		EFFECT->ActiveEffect(_col->GetWorldPos(), 1);
 	}
 }
 

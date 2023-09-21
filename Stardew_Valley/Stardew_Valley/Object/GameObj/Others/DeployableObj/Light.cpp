@@ -2,7 +2,7 @@
 #include "Light.h"
 
 Light::Light(string name, Vector2 pos, int lightIndex)
-    :BreakableItem(name, pos, 5, 1), _lightIndex(lightIndex)
+    :BreakableItem(name, pos, 1), _lightIndex(lightIndex)
 {
 	_type = LIGHT;
 }

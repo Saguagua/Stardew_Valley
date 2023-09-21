@@ -34,6 +34,8 @@ void FrontCover::Update()
 			_darker = false;
 			if (_cb != nullptr)
 				_cb();
+			if (_cbInt != nullptr)
+				_cbInt(0);
 		}
 	}
 	else
@@ -49,4 +51,11 @@ void FrontCover::Update()
 	}
 
 	_renderer->SetColor(_color);
+}
+
+void FrontCover::FadeStart(CallBack cb, CallBackInt cb2)
+{
+	_cb = cb;
+	_cbInt = cb2;
+	_isActive = true;
 }

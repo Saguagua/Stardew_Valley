@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\UI\EscapeUI.h" />
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Elevator.h" />
     <ClInclude Include="Object\UI\CalculateUI.h" />
     <ClInclude Include="Framework\System\MoneyManager.h" />
@@ -265,6 +266,7 @@
     <ClInclude Include="Object\GameObj\Others\DeployableObj\Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\UI\EscapeUI.cpp" />
     <ClCompile Include="Object\GameObj\Others\DeployableObj\Elevator.cpp" />
     <ClCompile Include="Object\UI\CalculateUI.cpp" />
     <ClCompile Include="Framework\System\MoneyManager.cpp" />

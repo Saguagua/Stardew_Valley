@@ -22,5 +22,11 @@ r => 'y' if sprite is rotated-->
   <sprite n="RockBreakEffect" x="256" y="788" w="60" h="36" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="RockBreakEffect" x="324" y="788" w="52" h="40" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="RockBreakEffect" x="428" y="800" w="44" h="28" pX="0.5" pY="0.5" s1="1" s2="1"/>
-  <sprite n="RockBreakEffect" x="500" y="812" w="12" h="12" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="SlimeDeathEffect" x="20" y="2832" w="24" h="24" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="SlimeDeathEffect" x="76" y="2828" w="40" h="36" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="SlimeDeathEffect" x="136" y="2824" w="48" h="44" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="SlimeDeathEffect" x="196" y="2824" w="56" h="48" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="SlimeDeathEffect" x="256" y="2824" w="60" h="52" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="SlimeDeathEffect" x="468" y="2888" w="28" h="36" pX="0.5" pY="0.5" s1="1" s2="1"/>
+
 </TextureAtlas>

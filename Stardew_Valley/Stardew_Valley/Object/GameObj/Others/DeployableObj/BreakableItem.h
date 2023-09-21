@@ -2,9 +2,11 @@
 class BreakableItem : public DeployableObject
 {
 public:
-	BreakableItem(string name, Vector2 pos, short breakType, short hp = 1)
-		:DeployableObject(DeployableObject::Type::BREAK, name, pos), _breakType(breakType), _hp(hp)
-	{}
+	BreakableItem(string name, Vector2 pos, short hp = 1)
+		:DeployableObject(DeployableObject::Type::BREAK, name, pos), _hp(hp)
+	{
+		_breakType = DATA->GetDeployInfo(_name)->GetVals()[0];
+	}
 
 	~BreakableItem() {}
 
@@ -13,6 +15,5 @@ public:
 protected:
 	short _hp;
 	short _breakType;
-
 };
 

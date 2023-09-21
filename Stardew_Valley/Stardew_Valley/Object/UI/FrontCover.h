@@ -8,9 +8,8 @@ public:
 	void PostRender();
 	void Update();
 
-	void SetCallBack(CallBack cb) { _cb = cb; }
-
-	bool _isActive = false;
+	void FadeStart(CallBack cb, CallBackInt cb2);
+	bool IsActive() { return _isActive; }
 private:
 	shared_ptr<Transform> _transform;
 	shared_ptr<SingleColorRect> _renderer;
@@ -18,6 +17,8 @@ private:
 	XMFLOAT4 _color = {0.0f, 0.0f, 0.0f, 0.0f};
 
 	bool _darker = true;
+	bool _isActive = false;
 
 	CallBack _cb;
+	CallBackInt _cbInt;
 };

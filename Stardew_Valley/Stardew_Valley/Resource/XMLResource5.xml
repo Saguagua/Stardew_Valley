@@ -21,6 +21,6 @@ r => 'y' if sprite is rotated-->
   <sprite n="DialogBoxGreen" x="408" y="583" w="160" h="160" pX="0.5" pY="0.5" oX="16" oY="16" oW="192" oH="192" s1="1" s2="1"/>
   <sprite n="Button" x="574" y="583" w="89" h="69" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="FishingEffectCatch" x="602" y="529" w="74" h="28" pX="0.5" pY="0.5" s1="1" s2="1"/>
-  <sprite n="OKBtn" x="574" y="658" w="64" h="64" pX="0.5" pY="0.5" s1="1" s2="1"/>
+  <sprite n="OkayButton" x="574" y="658" w="64" h="64" pX="0.5" pY="0.5" s1="1" s2="1"/>
   <sprite n="FishingEffectMax" x="644" y="658" w="50" h="19" pX="0.5" pY="0.5" s1="1" s2="1"/>
 </TextureAtlas>
