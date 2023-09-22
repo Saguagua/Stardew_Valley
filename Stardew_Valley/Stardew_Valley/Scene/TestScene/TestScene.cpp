@@ -130,13 +130,23 @@ void TestScene::Initialize()
 	CAMERA->SetPos(_player->GetWorldPos());
 	CAMERA->Update();
 	_player->SendToSubscribers(PlayerSubscribe::ALL);
+	if (_player->IsDead())
+	{
+		_player->AddHP(50);
+		_player->AddStamina(50);
+	}
+	else
+	{
+		_player->AddHP(100);
+		_player->AddStamina(100);
+	}
 	PLAYERUI->NextDay();
 
 	int objCount = rand() % 10 + 5;
 
 	OBJECT_SPAWNER->SpawnObjects(_map, 0, objCount);
 
-	objCount = rand() % 10 + 5;
+	objCount = rand() % 10;
 
 	OBJECT_SPAWNER->SpawnObjects(_map, 1, objCount);
 }

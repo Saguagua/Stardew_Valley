@@ -80,19 +80,24 @@ void DayFinishScene::WhenCoverDark()
 
 void DayFinishScene::PostRender()
 {
-	_backGroundSlot->Set_World();
-	_backGround->Render();
-
-	_panelSlot->Set_World();
-	_textPanel->Render();
-	Font::GetInstance()->RenderText(_month + L"월 " + _day + L"일", "Nanum", _datePos);
-
-	for (size_t i = 0; i < _calculates.size(); i++)
+	
+	if (!SCENEMANAGER->_cover->IsActive())
 	{
-		_calculates[i]->PostRender();
-	}
+		_backGroundSlot->Set_World();
+		_backGround->Render();
 
-	_okayBtn->Render();
+		_panelSlot->Set_World();
+		_textPanel->Render();
+
+		Font::GetInstance()->RenderText(_month + L"월 " + _day + L"일", "Nanum", _datePos);
+
+		for (size_t i = 0; i < _calculates.size(); i++)
+		{
+			_calculates[i]->PostRender();
+		}
+
+		_okayBtn->Render();
+	}
 }
 
 void DayFinishScene::SceneChange()

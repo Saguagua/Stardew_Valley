@@ -64,6 +64,7 @@ void PlayerUI::SetStamina(float stamina)
 
 void PlayerUI::SetBagMode(bool val)
 {
+	_player.lock()->PlayAction(Player::PlayerAction::IDLE);
 	_bagActive = val;
 	_itemSlot->SetActive(!_bagActive);
 	_bagUI->SetActive(_bagActive);

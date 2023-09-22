@@ -255,7 +255,7 @@ void Item::Seed()
 	OBJECT_SPAWNER->CreateObj(_map.lock()->GetcurrentMapInfo(),
 		_map.lock()->GetFocusedIndex(_player.lock()->GetWorldPos(), _point),
 		_subName,
-		0,
+		1,
 		2);
 
 	_count--;

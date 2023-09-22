@@ -139,6 +139,8 @@ void FishingMinigame::SetActive(bool val)
 	_fishSlot->SetPos(Vector2(8, 0));
 	_guageSlot->SetPos(Vector2(40, 0));
 	_cursorSlot->SetPos(Vector2(6, 0));
+	_fishPower = 0.0f;
+	_fishCount = 0.0f;
 }
 
 void FishingMinigame::KeyInput()

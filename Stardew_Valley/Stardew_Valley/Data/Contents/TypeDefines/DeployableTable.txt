@@ -19,9 +19,9 @@ Ruby				 1   0    0   0
 Daffodil			 1	 0	  0	  0
 Snail				 1	 0	  0	  0
 Shell				 1	 0	  0	  0
-BlueTorch 			 2	 0	  1	  1
-Torch 				 2	 1	  1	  0
-Lantern				 2	 1	  1	  0
+BlueTorch 			 2	 5	  1	  0
+Torch 				 2	 5	  1	  0
+Lantern				 2	 5	  1	  0
 Box					 3	 0	  0	  0
 CropKidneyBean		 5	 2	  7	  0
 CropPotato			 5	 1	  5	  0

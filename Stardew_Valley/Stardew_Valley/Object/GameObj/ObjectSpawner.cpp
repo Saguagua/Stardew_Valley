@@ -167,6 +167,7 @@ void ObjectSpawner::Update_Crops()
 		{
 			std::swap(_crops[i], _crops[_crops.size() - 1]);
 			_crops.pop_back();
+			i--;
 		}
 	}
 }

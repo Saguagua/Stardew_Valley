@@ -539,7 +539,7 @@ void PlayerImproved::ItemAction()
 		}
 		else if (step == FishingSystem::Step::HOLD)
 		{
-			_handSlot->SetPos(Vector2(-10, 10));
+			_itemSlot->SetPos(Vector2(-20, 30));
 		}
 		break;
 	}
@@ -695,8 +695,14 @@ void PlayerImproved::AddHP(short cost)
 {
 	_hp += cost;
 
+	if (_hp > _maxHp)
+		_hp = _maxHp;
+
 	if (_hp <= 0)
+	{
+		_hp = 0;
 		Kill();
+	}
 		
 	float ratio = (float)_hp / (float)_maxHp;
 	PlayerUI::GetInstance()->SetHP(ratio);
@@ -705,9 +711,14 @@ void PlayerImproved::AddHP(short cost)
 void PlayerImproved::AddStamina(short cost)
 {
 	_stamina += cost;
+	if (_stamina > _maxStamina)
+		_stamina = _maxStamina;
 
 	if (_stamina <= 0)
+	{
+		_stamina = 0;
 		Kill();
+	}
 
 	float ratio = (float)_stamina / (float)_maxStamina;
 	PlayerUI::GetInstance()->SetStamina(ratio);

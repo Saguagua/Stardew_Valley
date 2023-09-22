@@ -10,6 +10,25 @@ TileMap::TileMap(vector<shared_ptr<MapInfo>>& mapInfo)
 	_renderer = make_shared<Sprite>("BLANK", TILE_SIZE, SpriteType::OBJECT);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
 	_focusRenderer->SetColor(XMFLOAT4(0, 1, 0, 0.5));
+
+	ChangeMap(0);
+
+	for (int i = 0; i < _mapInfos.size(); i++)
+	{
+		vector<shared_ptr<Tile>> tiles = _mapInfos[i]->GetInfos();
+
+		for (int j = 0; j < tiles.size(); j++)
+		{
+			auto tile = dynamic_pointer_cast<ArableTile>(tiles[j]);
+			if (tile == nullptr)
+				continue;
+
+			if (tile->GetPlantable())
+			{
+				SetHoeDirt(j);
+			}
+		}
+	}
 }
 
 void TileMap::Blocking(shared_ptr<RectCollider> col)

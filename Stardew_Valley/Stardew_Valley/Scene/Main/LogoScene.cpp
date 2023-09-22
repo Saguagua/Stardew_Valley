@@ -64,9 +64,12 @@ void LogoScene::PostRender()
 	_logoSlot->Set_World();
 	_logo->Render();
 
-	_mapToolBtn->PostRender();
-	_playBtn->PostRender();
-	_exitBtn->PostRender();
+	if (!SCENEMANAGER->_cover->IsActive())
+	{
+		_mapToolBtn->PostRender();
+		_playBtn->PostRender();
+		_exitBtn->PostRender();
+	}
 }
 
 void LogoScene::SceneChange(int index)

@@ -8,7 +8,7 @@ Crop::Crop(string name, Vector2 pos, short progress, short quality)
 {
 	shared_ptr<CropInfo> info = DATA->GetCropInfo(name);
 	_period = info->_period;
-	_imgIndex = info->_levels[_progress];
+	_imgIndex = info->_levels[_progress - 1];
 	_cropType = info->_type;
 }
 
@@ -25,7 +25,7 @@ void Crop::Update()
 	{
 		_progress++;
 
-		_imgIndex = DATA->GetCropInfo(_name)->_levels[_progress];
+		_imgIndex = DATA->GetCropInfo(_name)->_levels[_progress - 1];
 
 		_quality -= 1;
 
