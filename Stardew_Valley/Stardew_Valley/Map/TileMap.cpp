@@ -226,13 +226,13 @@ void TileMap::Render()
 
 	for (int i = 0; i < _tiles.size(); i++) //DepthView 사용필요
 	{
-		auto obj = _tiles[i]->GetObj();
+		auto objName = _tiles[i]->GetObjName();
 
-		if (obj)
+		if (objName != "BLANK")
 		{
 			_collider->SetPos(_tiles[i]->GetCenterPos());
 			_collider->Update();
-			obj->Render(_renderer, _collider);
+			_tiles[i]->GetObj()->Render(_renderer, _collider);
 		}
 		
 	}

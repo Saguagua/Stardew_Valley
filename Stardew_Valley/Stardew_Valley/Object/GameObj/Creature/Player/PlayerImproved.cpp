@@ -711,6 +711,7 @@ void PlayerImproved::AddHP(short cost)
 void PlayerImproved::AddStamina(short cost)
 {
 	_stamina += cost;
+
 	if (_stamina > _maxStamina)
 		_stamina = _maxStamina;
 

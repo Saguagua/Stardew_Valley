@@ -4,9 +4,12 @@
 
 void PickableItem::Interaction()
 {
+	if (!_isActive)
+		return;
+	
 	if (PLAYERUI->GetBagActive())
 		return;
-
+	
 	if (KEY_DOWN(VK_RBUTTON))
 	{
 		if (PLAYERUI->AddItem(_name))
@@ -14,8 +17,7 @@ void PickableItem::Interaction()
 			_name = "BLANK";
 			_isActive = false;
 		}
-	}
-	
+	}	
 }
 
 vector<int> PickableItem::GetProperty()
