@@ -31,7 +31,30 @@ Player::Player()
 
 void Player::Update()
 {
-	Creature::Update();
+	_col->Update();
+	_bodySlot->Update();
+	_actions[_actionIndex]->Update();
+	_body->SetCurFrame(_actions[_actionIndex]->GetCurFrame());
+
+	if (_untouchable > 0)
+	{
+		_body->GetEBuffer()->ReverseAlpha();
+		_body->GetEBuffer()->Update();
+
+		_arm->GetEBuffer()->ReverseAlpha();
+		_arm->GetEBuffer()->Update();
+
+		_untouchable -= DELTA_TIME;
+
+		if (_untouchable <= 0)
+		{
+			_body->GetEBuffer()->_data.alphaZero = 0;
+			_body->GetEBuffer()->Update();
+
+			_arm->GetEBuffer()->_data.alphaZero = 0;
+			_arm->GetEBuffer()->Update();
+		}
+	}
 
 	_magnatic->Update();
 

@@ -81,7 +81,7 @@ void DungeonSystem::NextStage()
 		infos[i]->DeleteObj();
 	}
 
-	int objCount = rand() % 10 + 10;
+	int objCount = rand() % 5 + 19;
 
 	OBJECT_SPAWNER->SpawnObjects(_map.lock(), dungeonIndex, objCount);
 	MONSTER_SPAWNER->Initialize();

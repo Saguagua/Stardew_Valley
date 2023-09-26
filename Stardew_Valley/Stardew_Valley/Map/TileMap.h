@@ -5,7 +5,6 @@ class MapInfo;
 
 class TileMap
 {
-
 public:
 	TileMap(vector<shared_ptr<MapInfo>>& mapInfo);
 	~TileMap() {}
@@ -44,6 +43,7 @@ private:
 	shared_ptr<SingleColorRect> _focusRenderer;
 
 	shared_ptr<RectCollider> _collider;
+	shared_ptr<RectCollider> _collider2;
 	vector<shared_ptr<MapInfo>>& _mapInfos;
 	vector<shared_ptr<Tile>> _tiles;
 	shared_ptr<LightPosBuffer> _lightPoses;

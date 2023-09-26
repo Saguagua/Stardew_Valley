@@ -13,7 +13,7 @@ struct PlayerSubscribe
 		MONEY
 	};
 
-	PlayerSubscribe(shared_ptr<PlayerImproved> player, Type type) 
+	PlayerSubscribe(shared_ptr<PlayerImproved> player, PlayerSubscribe::Type type) 
 	{
 		_player = player;
 		_type = type;
@@ -21,11 +21,10 @@ struct PlayerSubscribe
 	}
 	virtual ~PlayerSubscribe() {}
 
-	
 	void SetType(Type type) { _type = type; }
 	virtual void UpdateInfo() abstract;
 	virtual void Dead() abstract;
 
 	weak_ptr<PlayerImproved> _player;
-	int _type = ALL;
+	Type _type = ALL;
 };

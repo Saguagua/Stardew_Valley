@@ -6,6 +6,8 @@ TileMap::TileMap(vector<shared_ptr<MapInfo>>& mapInfo)
 	:_mapInfos(mapInfo)
 {
 	_collider = make_shared<RectCollider>(TILE_SIZE);
+	_collider2 = make_shared<RectCollider>(TILE_SIZE);
+	_collider2->SetColor(RED);
 
 	_renderer = make_shared<Sprite>("BLANK", TILE_SIZE, SpriteType::OBJECT);
 	_focusRenderer = make_shared<SingleColorRect>(TILE_SIZE * 0.9f);
@@ -65,9 +67,9 @@ void TileMap::Blocking(shared_ptr<RectCollider> col)
 
 	if (proximateTileIndex != -1)
 	{
-		_collider->SetPos(_tiles[proximateTileIndex]->GetCenterPos());
-		_collider->Update();
-		_collider->Block(col);
+		_collider2->SetPos(_tiles[proximateTileIndex]->GetCenterPos());
+		_collider2->Update();
+		_collider2->Block(col);
 	}
 }
 
@@ -216,6 +218,7 @@ void TileMap::Charging(Vector2 originPos, Vector2 targetPos, short level)
 
 void TileMap::Render()
 {
+
 	for (int i = 0; i < _tiles.size(); i++)
 	{
 		_tiles[i]->Render(_renderer, _collider);
@@ -241,6 +244,8 @@ void TileMap::Render()
 	{
 		_teleports[i]->_collider->Render();
 	}
+
+	_collider2->Render();
 }
 
 void TileMap::ChangeMap(int index)

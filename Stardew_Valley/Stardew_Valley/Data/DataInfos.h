@@ -112,7 +112,6 @@ public:
 
 		return -1;
 	}
-
 	bool _sunOn = true;
 private:
 	string _name;
