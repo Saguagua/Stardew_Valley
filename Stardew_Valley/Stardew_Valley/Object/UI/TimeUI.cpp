@@ -89,7 +89,7 @@ void TimeUI::UpdateMoney()
 	else if (_money.size() == 3)
 		_moneyPos.x = WIN_WIDTH * 0.5f + pos.x + 0;
 	else if (_money.size() == 4)
-		_moneyPos.x = WIN_WIDTH * 0.5f + pos.x + 20;
+		_moneyPos.x = WIN_WIDTH * 0.5f + pos.x - 20;
 
 	_moneyPos.y = WIN_HEIGHT * 0.5 - pos.y + 50;
 }

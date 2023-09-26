@@ -38,7 +38,7 @@ private:
 	int& _hour = TIMER->GetHour();
 	int& _maxMinute = TIMER->GetMaxMinute();
 	int& _minute = TIMER->GetMinute();
-
+	
 	// PlayerSubscribe을(를) 통해 상속됨
 };
 

@@ -130,10 +130,12 @@ void TestScene::Initialize()
 	CAMERA->SetPos(_player->GetWorldPos());
 	CAMERA->Update();
 	_player->SendToSubscribers(PlayerSubscribe::ALL);
+
 	if (_player->IsDead())
 	{
 		_player->AddHP(50);
 		_player->AddStamina(50);
+		_player->SetIdle();
 	}
 	else
 	{

@@ -12,6 +12,8 @@ DungeonSystem::DungeonSystem()
 
 void DungeonSystem::Render()
 {
+	if (!_isActive)
+		return;
 	if (!_doorSpawned)
 		return;
 
@@ -22,6 +24,8 @@ void DungeonSystem::Render()
 
 void DungeonSystem::Update()
 {
+	if (!_isActive)
+		return; 
 	if (!_doorSpawned)
 		return;
 
@@ -54,7 +58,7 @@ void DungeonSystem::NextStage()
 
 	_map.lock()->ChangeMap(dungeonIndex);
 
-	_active = true;
+	_isActive = true;
 	_doorSpawned = false;
 	_breakCount = 0;
 
@@ -89,7 +93,7 @@ void DungeonSystem::NextStage()
 
 void DungeonSystem::SpawnDoor(Vector2 pos)
 {
-	if (!_active || _doorSpawned)
+	if (!_isActive || _doorSpawned)
 		return;
 
 	_breakCount++;
@@ -106,6 +110,7 @@ void DungeonSystem::SpawnDoor(Vector2 pos)
 void DungeonSystem::Return()
 {
 	_map.lock()->ChangeMap(2);
-	_player.lock()->GetCollider()->SetPos(CENTER);
+	_player.lock()->GetCollider()->SetPos(Vector2(376, 743));
 	MONSTER_SPAWNER->DiableAll();
+	_isActive = false;
 }

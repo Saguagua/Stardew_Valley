@@ -94,6 +94,7 @@ void PlayerImproved::Render()
 	_magnatic->Render();
 }
 
+
 void PlayerImproved::PlayAction(int action)
 {
 	SetAction(action);
@@ -118,6 +119,9 @@ void PlayerImproved::KeyInput()
 {
 	if (_state == PlayerState::DEAD)
 		return;
+
+	if (KEY_DOWN('F'))
+		Kill();
 
 	ItemAction();
 	
@@ -332,7 +336,7 @@ void PlayerImproved::ItemAction()
 
 			_items[_curIndex]->StartCharging(0, 1, _items[_curIndex]->GetVals()[0], 1);
 		}
-		else if (KEY_PRESS(VK_LBUTTON))
+		else if (KEY_PRESS(VK_LBUTTON) && _items[_curIndex]->GetType() == Item::Type::HOE)
 		{
 			_items[_curIndex]->Charging();
 		}
@@ -658,6 +662,7 @@ void PlayerImproved::SwapItems(shared_ptr<Item> item1, shared_ptr<Item> item2)
 	item2->Copy(tmp);
 	
 	SendToSubscribers(PlayerSubscribe::Type::ITEMS);
+	SetCurItem(_curIndex);
 }
 
 void PlayerImproved::ToolEndEvent()
@@ -669,7 +674,7 @@ void PlayerImproved::DeathEvent()
 {
 	SCENEMANAGER->_cover->FadeStart(_cb, nullptr);
 
-	DungeonSystem::GetInstance()->_active = false;
+	DungeonSystem::GetInstance()->_isActive = false;
 
 	_hp = _maxHp;
 	_stamina = _maxStamina;

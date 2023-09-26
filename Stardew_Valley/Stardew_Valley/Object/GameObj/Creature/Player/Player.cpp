@@ -234,6 +234,7 @@ void Player::SetIdle()
 {
 	SetAction(PlayerAction::IDLE);
 	SetArmAction(PlayerAction::IDLE);
+
 	int tmp = _state & PlayerState::HOLDING;
 	_state = PlayerState::IDLE | tmp;
 	_freeze = false;

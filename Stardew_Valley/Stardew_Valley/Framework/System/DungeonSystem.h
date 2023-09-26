@@ -38,7 +38,7 @@ public:
 	void Return();
 
 	int _breakCount = 0;
-	bool _active = false;
+	bool _isActive = false;
 private:
 	static DungeonSystem* _instance;
 

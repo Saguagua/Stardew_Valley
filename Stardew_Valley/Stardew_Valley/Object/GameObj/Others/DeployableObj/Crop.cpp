@@ -21,7 +21,7 @@ void Crop::Update()
 		return;
 	}
 
-	if (_progress < _period - 1)
+	if (_progress < _period)
 	{
 		_progress++;
 
@@ -41,7 +41,7 @@ void Crop::Update()
 
 void Crop::Interaction()
 {
-	if (_progress < _period - 1 || _name == "BLANK")
+	if (_progress < _period || _name == "BLANK")
 		return;
 	if (!KEY_DOWN(VK_LBUTTON))
 		return;
